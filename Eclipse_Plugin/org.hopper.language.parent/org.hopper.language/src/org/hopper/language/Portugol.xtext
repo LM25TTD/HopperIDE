@@ -1,0 +1,134 @@
+grammar org.hopper.language.Portugol with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate portugol "http://www.hopper.org/language/Portugol"
+
+Model:
+	header=HeaderBlock
+	globalDeclarations=DeclarationsBlock
+	(subprograms=Subprograms)?
+	commands=BlockCommand;
+
+HeaderBlock:
+	'algoritmo' name=STRING END_COMMAND;
+
+DeclarationsBlock:
+	'var' END_COMMAND
+	(vars+=Variable END_COMMAND)+;
+
+Variable:
+	varDeclaration=VarDeclaration ':' type=VarType;
+
+VarDeclaration:
+	(vars+=VarName) (',' vars+=VarName)*;
+
+DeclaredVar:
+	(vars+=[VarName]) (',' vars+=[VarName])*;
+
+VarName:
+	name=ID;
+
+VarType:
+	typeName=('real' | 'inteiro' | 'caractere');
+
+Subprograms:
+	(blockSubPrograms+=BlockSubPrograms)+;
+
+BlockSubPrograms:
+	BlockFunction | BlockProcedure;
+
+FunctionName:
+	name=ID;
+
+ProcedureName:
+	name=ID;
+
+BlockFunction:
+	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType END_COMMAND
+	(declarations=DeclarationsBlock)?
+	'inicio' END_COMMAND
+	(commands+=AbstractCommand)+
+	'fimfuncao' END_COMMAND;
+
+BlockProcedure:
+	'procedimento' procedure=ProcedureName '(' paramList=Variable ')' END_COMMAND
+	(declarations=DeclarationsBlock)?
+	'inicio' END_COMMAND
+	(commands+=AbstractCommand)+
+	'fimprocedimento' END_COMMAND;
+
+BlockCommand:
+	'inicio' END_COMMAND
+	(commands+=AbstractCommand)+
+	'fimalgoritmo' END_COMMAND;
+
+AbstractCommand:
+	ReadCommand
+	| WriteCommand;
+
+ReadCommand:
+	'leia' '(' paramList=DeclaredVar ')' END_COMMAND;
+
+WriteCommand:
+	'escreva' '(' writeParam=WriteParam ')' END_COMMAND;
+
+WriteParam:
+	expression+=Expression (',' expression+=Expression)* (precision=OptDecimalPrecision)?;
+
+Expression returns Expression:
+	XorExpression (({Expression.left=current} op=("OR")) right=XorExpression)*;
+
+XorExpression returns Expression:
+	AndExpression (({XorExpression.left=current} op=("XOR")) right=AndExpression)*;
+
+AndExpression returns Expression:
+	Comparison (({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*;
+
+Comparison returns Expression:
+	EquExpression (({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*;
+
+EquExpression returns Expression:
+	AddExpression (({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*;
+
+AddExpression returns Expression:
+	Term (({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*;
+
+Term returns Expression:
+	PowerExpression (({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
+	right=PowerExpression)*;
+
+PowerExpression returns Expression:
+	UnaryExpression ({PowerExpression.left=current} op=('^') right=UnaryExpression)*;
+
+UnaryExpression returns Expression:
+	{BooleanNegation} => "NOT" expression=PrimaryExpression /* right associativity */
+	| {ArithmeticSigned} => "-" expression=PrimaryExpression /* right associativity */
+	| PrimaryExpression;
+
+PrimaryExpression returns Expression:
+	{ExpressionConstant} value=Constant
+	| {ExpressionVariable} value=[VarName]
+	| '(' Expression ')'
+	| FunctionCall;
+
+FunctionCall:
+	fbName=[FunctionName] '(' param=WriteParam ')';
+
+OptDecimalPrecision:
+	':' firstPrecision=INT (':' secondPrecision=INT)?;
+
+Constant:
+	NumericLiteral | StringExpression;
+
+NumericLiteral:
+	intValue?=INT
+	| floatValue?=FLOAT;
+
+StringExpression:
+	literalString=STRING;
+
+terminal FLOAT:
+	INT '.' INT;
+
+terminal END_COMMAND:
+	((' ' | '\t')* ('\r' | '\n')+ (' ' | '\t')*);
