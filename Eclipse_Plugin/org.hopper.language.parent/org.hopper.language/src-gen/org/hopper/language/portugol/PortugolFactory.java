@@ -195,24 +195,6 @@ public interface PortugolFactory extends EFactory
   WriteParam createWriteParam();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
-   * @generated
-   */
-  Expression createExpression();
-
-  /**
-   * Returns a new object of class '<em>Function Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Call</em>'.
-   * @generated
-   */
-  FunctionCall createFunctionCall();
-
-  /**
    * Returns a new object of class '<em>Opt Decimal Precision</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -222,13 +204,13 @@ public interface PortugolFactory extends EFactory
   OptDecimalPrecision createOptDecimalPrecision();
 
   /**
-   * Returns a new object of class '<em>Constant</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constant</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  Constant createConstant();
+  Expression createExpression();
 
   /**
    * Returns a new object of class '<em>Numeric Literal</em>'.
@@ -249,130 +231,31 @@ public interface PortugolFactory extends EFactory
   StringExpression createStringExpression();
 
   /**
-   * Returns a new object of class '<em>Xor Expression</em>'.
+   * Returns a new object of class '<em>Assignment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Xor Expression</em>'.
+   * @return a new object of class '<em>Assignment</em>'.
    * @generated
    */
-  XorExpression createXorExpression();
+  Assignment createAssignment();
 
   /**
-   * Returns a new object of class '<em>And Expression</em>'.
+   * Returns a new object of class '<em>Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>And Expression</em>'.
+   * @return a new object of class '<em>Binary Operation</em>'.
    * @generated
    */
-  AndExpression createAndExpression();
+  BinaryOperation createBinaryOperation();
 
   /**
-   * Returns a new object of class '<em>Comp Expression</em>'.
+   * Returns a new object of class '<em>Unary Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comp Expression</em>'.
+   * @return a new object of class '<em>Unary Expression</em>'.
    * @generated
    */
-  CompExpression createCompExpression();
-
-  /**
-   * Returns a new object of class '<em>Equ Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equ Expression</em>'.
-   * @generated
-   */
-  EquExpression createEquExpression();
-
-  /**
-   * Returns a new object of class '<em>Add Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Add Expression</em>'.
-   * @generated
-   */
-  AddExpression createAddExpression();
-
-  /**
-   * Returns a new object of class '<em>Sub Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Expression</em>'.
-   * @generated
-   */
-  SubExpression createSubExpression();
-
-  /**
-   * Returns a new object of class '<em>Multiply</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiply</em>'.
-   * @generated
-   */
-  Multiply createMultiply();
-
-  /**
-   * Returns a new object of class '<em>Division</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Division</em>'.
-   * @generated
-   */
-  Division createDivision();
-
-  /**
-   * Returns a new object of class '<em>Mod</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mod</em>'.
-   * @generated
-   */
-  Mod createMod();
-
-  /**
-   * Returns a new object of class '<em>Power Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Power Expression</em>'.
-   * @generated
-   */
-  PowerExpression createPowerExpression();
-
-  /**
-   * Returns a new object of class '<em>Boolean Negation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Negation</em>'.
-   * @generated
-   */
-  BooleanNegation createBooleanNegation();
-
-  /**
-   * Returns a new object of class '<em>Arithmetic Signed</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Arithmetic Signed</em>'.
-   * @generated
-   */
-  ArithmeticSigned createArithmeticSigned();
-
-  /**
-   * Returns a new object of class '<em>Expression Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Constant</em>'.
-   * @generated
-   */
-  ExpressionConstant createExpressionConstant();
-
-  /**
-   * Returns a new object of class '<em>Expression Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Variable</em>'.
-   * @generated
-   */
-  ExpressionVariable createExpressionVariable();
+  UnaryExpression createUnaryExpression();
 
   /**
    * Returns the package supported by this factory.

@@ -559,22 +559,51 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	public class AbstractCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AbstractCommand");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cReadCommandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWriteCommandParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cReadCommandParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cWriteCommandParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cExpressionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//AbstractCommand:
-		//	ReadCommand
-		//	| WriteCommand;
+		//	ReadCommand END_COMMAND
+		//	| WriteCommand END_COMMAND
+		//	| Expression END_COMMAND;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ReadCommand | WriteCommand
+		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//ReadCommand END_COMMAND
+		public Group getGroup_0() { return cGroup_0; }
+		
 		//ReadCommand
-		public RuleCall getReadCommandParserRuleCall_0() { return cReadCommandParserRuleCall_0; }
+		public RuleCall getReadCommandParserRuleCall_0_0() { return cReadCommandParserRuleCall_0_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_0_1() { return cEND_COMMANDTerminalRuleCall_0_1; }
+		
+		//WriteCommand END_COMMAND
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//WriteCommand
-		public RuleCall getWriteCommandParserRuleCall_1() { return cWriteCommandParserRuleCall_1; }
+		public RuleCall getWriteCommandParserRuleCall_1_0() { return cWriteCommandParserRuleCall_1_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_1_1() { return cEND_COMMANDTerminalRuleCall_1_1; }
+		
+		//Expression END_COMMAND
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//Expression
+		public RuleCall getExpressionParserRuleCall_2_0() { return cExpressionParserRuleCall_2_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_2_1() { return cEND_COMMANDTerminalRuleCall_2_1; }
 	}
 	public class ReadCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ReadCommand");
@@ -584,13 +613,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParamListAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParamListDeclaredVarParserRuleCall_2_0 = (RuleCall)cParamListAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//ReadCommand:
-		//	'leia' '(' paramList=DeclaredVar ')' END_COMMAND;
+		//	'leia' '(' paramList=DeclaredVar ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'leia' '(' paramList=DeclaredVar ')' END_COMMAND
+		//'leia' '(' paramList=DeclaredVar ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'leia'
@@ -607,9 +635,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_4() { return cEND_COMMANDTerminalRuleCall_4; }
 	}
 	public class WriteCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteCommand");
@@ -619,13 +644,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cWriteParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cWriteParamWriteParamParserRuleCall_2_0 = (RuleCall)cWriteParamAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//WriteCommand:
-		//	'escreva' '(' writeParam=WriteParam ')' END_COMMAND;
+		//	'escreva' '(' writeParam=WriteParam ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'escreva' '(' writeParam=WriteParam ')' END_COMMAND
+		//'escreva' '(' writeParam=WriteParam ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'escreva'
@@ -642,9 +666,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_4() { return cEND_COMMANDTerminalRuleCall_4; }
 	}
 	public class WriteParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteParam");
@@ -689,582 +710,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//OptDecimalPrecision
 		public RuleCall getPrecisionOptDecimalPrecisionParserRuleCall_2_0() { return cPrecisionOptDecimalPrecisionParserRuleCall_2_0; }
 	}
-	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Expression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cXorExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cExpressionLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpORKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightXorExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//Expression:
-		//	XorExpression (({Expression.left=current} op="OR") right=XorExpression)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//XorExpression (({Expression.left=current} op="OR") right=XorExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//XorExpression
-		public RuleCall getXorExpressionParserRuleCall_0() { return cXorExpressionParserRuleCall_0; }
-		
-		//(({Expression.left=current} op="OR") right=XorExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({Expression.left=current} op="OR")
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//{Expression.left=current}
-		public Action getExpressionLeftAction_1_0_0() { return cExpressionLeftAction_1_0_0; }
-		
-		//op="OR"
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
-		
-		//"OR"
-		public Keyword getOpORKeyword_1_0_1_0() { return cOpORKeyword_1_0_1_0; }
-		
-		//right=XorExpression
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//XorExpression
-		public RuleCall getRightXorExpressionParserRuleCall_1_1_0() { return cRightXorExpressionParserRuleCall_1_1_0; }
-	}
-	public class XorExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.XorExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cXorExpressionLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpXORKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightAndExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//XorExpression Expression:
-		//	AndExpression (({XorExpression.left=current} op="XOR") right=AndExpression)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//AndExpression (({XorExpression.left=current} op="XOR") right=AndExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//AndExpression
-		public RuleCall getAndExpressionParserRuleCall_0() { return cAndExpressionParserRuleCall_0; }
-		
-		//(({XorExpression.left=current} op="XOR") right=AndExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({XorExpression.left=current} op="XOR")
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//{XorExpression.left=current}
-		public Action getXorExpressionLeftAction_1_0_0() { return cXorExpressionLeftAction_1_0_0; }
-		
-		//op="XOR"
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
-		
-		//"XOR"
-		public Keyword getOpXORKeyword_1_0_1_0() { return cOpXORKeyword_1_0_1_0; }
-		
-		//right=AndExpression
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//AndExpression
-		public RuleCall getRightAndExpressionParserRuleCall_1_1_0() { return cRightAndExpressionParserRuleCall_1_1_0; }
-	}
-	public class AndExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AndExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cComparisonParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cAndExpressionLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpAmpersandKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpANDKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightComparisonParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//AndExpression Expression:
-		//	Comparison (({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Comparison (({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*
-		public Group getGroup() { return cGroup; }
-		
-		//Comparison
-		public RuleCall getComparisonParserRuleCall_0() { return cComparisonParserRuleCall_0; }
-		
-		//(({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({AndExpression.left=current} op=('&' | 'AND'))
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//{AndExpression.left=current}
-		public Action getAndExpressionLeftAction_1_0_0() { return cAndExpressionLeftAction_1_0_0; }
-		
-		//op=('&' | 'AND')
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
-		
-		//('&' | 'AND')
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
-		
-		//'&'
-		public Keyword getOpAmpersandKeyword_1_0_1_0_0() { return cOpAmpersandKeyword_1_0_1_0_0; }
-		
-		//'AND'
-		public Keyword getOpANDKeyword_1_0_1_0_1() { return cOpANDKeyword_1_0_1_0_1; }
-		
-		//right=Comparison
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//Comparison
-		public RuleCall getRightComparisonParserRuleCall_1_1_0() { return cRightComparisonParserRuleCall_1_1_0; }
-	}
-	public class ComparisonElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Comparison");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cEquExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cCompExpressionLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpEqualsSignKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpLessThanSignGreaterThanSignKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightEquExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//Comparison Expression:
-		//	EquExpression (({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//EquExpression (({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//EquExpression
-		public RuleCall getEquExpressionParserRuleCall_0() { return cEquExpressionParserRuleCall_0; }
-		
-		//(({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({CompExpression.left=current} op=('=' | '<>'))
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//{CompExpression.left=current}
-		public Action getCompExpressionLeftAction_1_0_0() { return cCompExpressionLeftAction_1_0_0; }
-		
-		//op=('=' | '<>')
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
-		
-		//('=' | '<>')
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
-		
-		//'='
-		public Keyword getOpEqualsSignKeyword_1_0_1_0_0() { return cOpEqualsSignKeyword_1_0_1_0_0; }
-		
-		//'<>'
-		public Keyword getOpLessThanSignGreaterThanSignKeyword_1_0_1_0_1() { return cOpLessThanSignGreaterThanSignKeyword_1_0_1_0_1; }
-		
-		//right=EquExpression
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//EquExpression
-		public RuleCall getRightEquExpressionParserRuleCall_1_1_0() { return cRightEquExpressionParserRuleCall_1_1_0; }
-	}
-	public class EquExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.EquExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cAddExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cEquExpressionLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpLessThanSignKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpGreaterThanSignKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
-		private final Keyword cOpLessThanSignEqualsSignKeyword_1_0_1_0_2 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(2);
-		private final Keyword cOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(3);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightAddExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//EquExpression Expression:
-		//	AddExpression (({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//AddExpression (({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//AddExpression
-		public RuleCall getAddExpressionParserRuleCall_0() { return cAddExpressionParserRuleCall_0; }
-		
-		//(({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({EquExpression.left=current} op=('<' | '>' | '<=' | '>='))
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//{EquExpression.left=current}
-		public Action getEquExpressionLeftAction_1_0_0() { return cEquExpressionLeftAction_1_0_0; }
-		
-		//op=('<' | '>' | '<=' | '>=')
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
-		
-		//('<' | '>' | '<=' | '>=')
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
-		
-		//'<'
-		public Keyword getOpLessThanSignKeyword_1_0_1_0_0() { return cOpLessThanSignKeyword_1_0_1_0_0; }
-		
-		//'>'
-		public Keyword getOpGreaterThanSignKeyword_1_0_1_0_1() { return cOpGreaterThanSignKeyword_1_0_1_0_1; }
-		
-		//'<='
-		public Keyword getOpLessThanSignEqualsSignKeyword_1_0_1_0_2() { return cOpLessThanSignEqualsSignKeyword_1_0_1_0_2; }
-		
-		//'>='
-		public Keyword getOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3() { return cOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3; }
-		
-		//right=AddExpression
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//AddExpression
-		public RuleCall getRightAddExpressionParserRuleCall_1_1_0() { return cRightAddExpressionParserRuleCall_1_1_0; }
-	}
-	public class AddExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AddExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cTermParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
-		private final Action cAddExpressionLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
-		private final Keyword cPlusSignKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
-		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
-		private final Action cSubExpressionLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightTermParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//AddExpression Expression:
-		//	Term (({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Term (({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*
-		public Group getGroup() { return cGroup; }
-		
-		//Term
-		public RuleCall getTermParserRuleCall_0() { return cTermParserRuleCall_0; }
-		
-		//(({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({AddExpression.left=current} '+' | {SubExpression.left=current} '-')
-		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
-		
-		//{AddExpression.left=current} '+'
-		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
-		
-		//{AddExpression.left=current}
-		public Action getAddExpressionLeftAction_1_0_0_0() { return cAddExpressionLeftAction_1_0_0_0; }
-		
-		//'+'
-		public Keyword getPlusSignKeyword_1_0_0_1() { return cPlusSignKeyword_1_0_0_1; }
-		
-		//{SubExpression.left=current} '-'
-		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
-		
-		//{SubExpression.left=current}
-		public Action getSubExpressionLeftAction_1_0_1_0() { return cSubExpressionLeftAction_1_0_1_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_1_0_1_1() { return cHyphenMinusKeyword_1_0_1_1; }
-		
-		//right=Term
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//Term
-		public RuleCall getRightTermParserRuleCall_1_1_0() { return cRightTermParserRuleCall_1_1_0; }
-	}
-	public class TermElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Term");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cPowerExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
-		private final Action cMultiplyLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
-		private final Keyword cAsteriskKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
-		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
-		private final Action cDivisionLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
-		private final Keyword cSolidusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
-		private final Group cGroup_1_0_2 = (Group)cAlternatives_1_0.eContents().get(2);
-		private final Action cModLeftAction_1_0_2_0 = (Action)cGroup_1_0_2.eContents().get(0);
-		private final Keyword cMODKeyword_1_0_2_1 = (Keyword)cGroup_1_0_2.eContents().get(1);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightPowerExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
-		
-		//Term Expression:
-		//	PowerExpression (({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
-		//	right=PowerExpression)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//PowerExpression (({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
-		//right=PowerExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//PowerExpression
-		public RuleCall getPowerExpressionParserRuleCall_0() { return cPowerExpressionParserRuleCall_0; }
-		
-		//(({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD') right=PowerExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
-		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
-		
-		//{Multiply.left=current} '*'
-		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
-		
-		//{Multiply.left=current}
-		public Action getMultiplyLeftAction_1_0_0_0() { return cMultiplyLeftAction_1_0_0_0; }
-		
-		//'*'
-		public Keyword getAsteriskKeyword_1_0_0_1() { return cAsteriskKeyword_1_0_0_1; }
-		
-		//{Division.left=current} '/'
-		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
-		
-		//{Division.left=current}
-		public Action getDivisionLeftAction_1_0_1_0() { return cDivisionLeftAction_1_0_1_0; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_1_0_1_1() { return cSolidusKeyword_1_0_1_1; }
-		
-		//{Mod.left=current} 'MOD'
-		public Group getGroup_1_0_2() { return cGroup_1_0_2; }
-		
-		//{Mod.left=current}
-		public Action getModLeftAction_1_0_2_0() { return cModLeftAction_1_0_2_0; }
-		
-		//'MOD'
-		public Keyword getMODKeyword_1_0_2_1() { return cMODKeyword_1_0_2_1; }
-		
-		//right=PowerExpression
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
-		
-		//PowerExpression
-		public RuleCall getRightPowerExpressionParserRuleCall_1_1_0() { return cRightPowerExpressionParserRuleCall_1_1_0; }
-	}
-	public class PowerExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PowerExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cUnaryExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cPowerExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Keyword cOpCircumflexAccentKeyword_1_1_0 = (Keyword)cOpAssignment_1_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightUnaryExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
-		
-		//PowerExpression Expression:
-		//	UnaryExpression ({PowerExpression.left=current} op='^' right=UnaryExpression)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//UnaryExpression ({PowerExpression.left=current} op='^' right=UnaryExpression)*
-		public Group getGroup() { return cGroup; }
-		
-		//UnaryExpression
-		public RuleCall getUnaryExpressionParserRuleCall_0() { return cUnaryExpressionParserRuleCall_0; }
-		
-		//({PowerExpression.left=current} op='^' right=UnaryExpression)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{PowerExpression.left=current}
-		public Action getPowerExpressionLeftAction_1_0() { return cPowerExpressionLeftAction_1_0; }
-		
-		//op='^'
-		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
-		
-		//'^'
-		public Keyword getOpCircumflexAccentKeyword_1_1_0() { return cOpCircumflexAccentKeyword_1_1_0; }
-		
-		//right=UnaryExpression
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-		
-		//UnaryExpression
-		public RuleCall getRightUnaryExpressionParserRuleCall_1_2_0() { return cRightUnaryExpressionParserRuleCall_1_2_0; }
-	}
-	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.UnaryExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cBooleanNegationAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cNOTKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cExpressionPrimaryExpressionParserRuleCall_0_2_0 = (RuleCall)cExpressionAssignment_0_2.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cArithmeticSignedAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cExpressionPrimaryExpressionParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
-		private final RuleCall cPrimaryExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//UnaryExpression Expression:
-		//	{BooleanNegation} => "NOT" expression=PrimaryExpression / * right associativity * /
-		//	| {ArithmeticSigned} => "-" expression=PrimaryExpression / * right associativity * /
-		//	| PrimaryExpression
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{BooleanNegation} => "NOT" expression=PrimaryExpression / * right associativity * / | {ArithmeticSigned} => "-"
-		//expression=PrimaryExpression / * right associativity * / | PrimaryExpression
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//{BooleanNegation} => "NOT" expression=PrimaryExpression
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{BooleanNegation}
-		public Action getBooleanNegationAction_0_0() { return cBooleanNegationAction_0_0; }
-		
-		//=> "NOT"
-		public Keyword getNOTKeyword_0_1() { return cNOTKeyword_0_1; }
-		
-		//expression=PrimaryExpression
-		public Assignment getExpressionAssignment_0_2() { return cExpressionAssignment_0_2; }
-		
-		//PrimaryExpression
-		public RuleCall getExpressionPrimaryExpressionParserRuleCall_0_2_0() { return cExpressionPrimaryExpressionParserRuleCall_0_2_0; }
-		
-		//{ArithmeticSigned} => "-" expression=PrimaryExpression
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{ArithmeticSigned}
-		public Action getArithmeticSignedAction_1_0() { return cArithmeticSignedAction_1_0; }
-		
-		//=> "-"
-		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
-		
-		//expression=PrimaryExpression
-		public Assignment getExpressionAssignment_1_2() { return cExpressionAssignment_1_2; }
-		
-		//PrimaryExpression
-		public RuleCall getExpressionPrimaryExpressionParserRuleCall_1_2_0() { return cExpressionPrimaryExpressionParserRuleCall_1_2_0; }
-		
-		//PrimaryExpression
-		public RuleCall getPrimaryExpressionParserRuleCall_2() { return cPrimaryExpressionParserRuleCall_2; }
-	}
-	public class PrimaryExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PrimaryExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cExpressionConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueConstantParserRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cExpressionVariableAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cValueVarNameCrossReference_1_1_0 = (CrossReference)cValueAssignment_1_1.eContents().get(0);
-		private final RuleCall cValueVarNameIDTerminalRuleCall_1_1_0_1 = (RuleCall)cValueVarNameCrossReference_1_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final RuleCall cFunctionCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		
-		//PrimaryExpression Expression:
-		//	{ExpressionConstant} value=Constant
-		//	| {ExpressionVariable} value=[VarName] | '(' Expression ')'
-		//	| FunctionCall
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{ExpressionConstant} value=Constant | {ExpressionVariable} value=[VarName] | '(' Expression ')' | FunctionCall
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//{ExpressionConstant} value=Constant
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{ExpressionConstant}
-		public Action getExpressionConstantAction_0_0() { return cExpressionConstantAction_0_0; }
-		
-		//value=Constant
-		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
-		
-		//Constant
-		public RuleCall getValueConstantParserRuleCall_0_1_0() { return cValueConstantParserRuleCall_0_1_0; }
-		
-		//{ExpressionVariable} value=[VarName]
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{ExpressionVariable}
-		public Action getExpressionVariableAction_1_0() { return cExpressionVariableAction_1_0; }
-		
-		//value=[VarName]
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
-		
-		//[VarName]
-		public CrossReference getValueVarNameCrossReference_1_1_0() { return cValueVarNameCrossReference_1_1_0; }
-		
-		//ID
-		public RuleCall getValueVarNameIDTerminalRuleCall_1_1_0_1() { return cValueVarNameIDTerminalRuleCall_1_1_0_1; }
-		
-		//'(' Expression ')'
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
-		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_2_1() { return cExpressionParserRuleCall_2_1; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
-		
-		//FunctionCall
-		public RuleCall getFunctionCallParserRuleCall_3() { return cFunctionCallParserRuleCall_3; }
-	}
-	public class FunctionCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionCall");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFbNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cFbNameFunctionNameCrossReference_0_0 = (CrossReference)cFbNameAssignment_0.eContents().get(0);
-		private final RuleCall cFbNameFunctionNameIDTerminalRuleCall_0_0_1 = (RuleCall)cFbNameFunctionNameCrossReference_0_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamWriteParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//FunctionCall:
-		//	fbName=[FunctionName] '(' param=WriteParam ')';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//fbName=[FunctionName] '(' param=WriteParam ')'
-		public Group getGroup() { return cGroup; }
-		
-		//fbName=[FunctionName]
-		public Assignment getFbNameAssignment_0() { return cFbNameAssignment_0; }
-		
-		//[FunctionName]
-		public CrossReference getFbNameFunctionNameCrossReference_0_0() { return cFbNameFunctionNameCrossReference_0_0; }
-		
-		//ID
-		public RuleCall getFbNameFunctionNameIDTerminalRuleCall_0_0_1() { return cFbNameFunctionNameIDTerminalRuleCall_0_0_1; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//param=WriteParam
-		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
-		
-		//WriteParam
-		public RuleCall getParamWriteParamParserRuleCall_2_0() { return cParamWriteParamParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
 	public class OptDecimalPrecisionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OptDecimalPrecision");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1304,14 +749,760 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getSecondPrecisionINTTerminalRuleCall_2_1_0() { return cSecondPrecisionINTTerminalRuleCall_2_1_0; }
 	}
-	public class ConstantElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Constant");
+	public class ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Expression");
+		private final RuleCall cAssignmentParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Expression:
+		//	Assignment;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Assignment
+		public RuleCall getAssignmentParserRuleCall() { return cAssignmentParserRuleCall; }
+	}
+	public class AssignmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Assignment");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cAssignmentAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cTargetAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final CrossReference cTargetVarNameCrossReference_0_1_0 = (CrossReference)cTargetAssignment_0_1.eContents().get(0);
+		private final RuleCall cTargetVarNameIDTerminalRuleCall_0_1_0_1 = (RuleCall)cTargetVarNameCrossReference_0_1_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cValueAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cValueAssignmentParserRuleCall_0_3_0 = (RuleCall)cValueAssignment_0_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cOrExpressionParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Group cGroup_1_1_0 = (Group)cGroup_1_1.eContents().get(0);
+		private final Group cGroup_1_1_0_0 = (Group)cGroup_1_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_1_0_0_0 = (Action)cGroup_1_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_1_0_0_1 = (Assignment)cGroup_1_1_0_0.eContents().get(1);
+		private final Keyword cOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0 = (Keyword)cOpAssignment_1_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cRightAssignmentParserRuleCall_1_1_1_0 = (RuleCall)cRightAssignment_1_1_1.eContents().get(0);
+		
+		//Assignment Expression:
+		//	{Assignment} target=[VarName] '<-' value=Assignment
+		//	| OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Assignment} target=[VarName] '<-' value=Assignment | OrExpression (=> ({BinaryOperation.left=current} op='<-')
+		//right=Assignment)?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{Assignment} target=[VarName] '<-' value=Assignment
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{Assignment}
+		public Action getAssignmentAction_0_0() { return cAssignmentAction_0_0; }
+		
+		//target=[VarName]
+		public Assignment getTargetAssignment_0_1() { return cTargetAssignment_0_1; }
+		
+		//[VarName]
+		public CrossReference getTargetVarNameCrossReference_0_1_0() { return cTargetVarNameCrossReference_0_1_0; }
+		
+		//ID
+		public RuleCall getTargetVarNameIDTerminalRuleCall_0_1_0_1() { return cTargetVarNameIDTerminalRuleCall_0_1_0_1; }
+		
+		//'<-'
+		public Keyword getLessThanSignHyphenMinusKeyword_0_2() { return cLessThanSignHyphenMinusKeyword_0_2; }
+		
+		//value=Assignment
+		public Assignment getValueAssignment_0_3() { return cValueAssignment_0_3; }
+		
+		//Assignment
+		public RuleCall getValueAssignmentParserRuleCall_0_3_0() { return cValueAssignmentParserRuleCall_0_3_0; }
+		
+		//OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//OrExpression
+		public RuleCall getOrExpressionParserRuleCall_1_0() { return cOrExpressionParserRuleCall_1_0; }
+		
+		//(=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//=> ({BinaryOperation.left=current} op='<-')
+		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
+		
+		//({BinaryOperation.left=current} op='<-')
+		public Group getGroup_1_1_0_0() { return cGroup_1_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_1_0_0_0() { return cBinaryOperationLeftAction_1_1_0_0_0; }
+		
+		//op='<-'
+		public Assignment getOpAssignment_1_1_0_0_1() { return cOpAssignment_1_1_0_0_1; }
+		
+		//'<-'
+		public Keyword getOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0() { return cOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0; }
+		
+		//right=Assignment
+		public Assignment getRightAssignment_1_1_1() { return cRightAssignment_1_1_1; }
+		
+		//Assignment
+		public RuleCall getRightAssignmentParserRuleCall_1_1_1_0() { return cRightAssignmentParserRuleCall_1_1_1_0; }
+	}
+	public class OrExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OrExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cXorExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpOUKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightXorExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//OrExpression Expression:
+		//	XorExpression (=> ({BinaryOperation.left=current} op="OU") right=XorExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//XorExpression (=> ({BinaryOperation.left=current} op="OU") right=XorExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//XorExpression
+		public RuleCall getXorExpressionParserRuleCall_0() { return cXorExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op="OU") right=XorExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op="OU")
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op="OU")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op="OU"
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//"OU"
+		public Keyword getOpOUKeyword_1_0_0_1_0() { return cOpOUKeyword_1_0_0_1_0; }
+		
+		//right=XorExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//XorExpression
+		public RuleCall getRightXorExpressionParserRuleCall_1_1_0() { return cRightXorExpressionParserRuleCall_1_1_0; }
+	}
+	public class XorExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.XorExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpXOUKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAndExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//XorExpression Expression:
+		//	AndExpression (=> ({BinaryOperation.left=current} op="XOU") right=AndExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AndExpression (=> ({BinaryOperation.left=current} op="XOU") right=AndExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//AndExpression
+		public RuleCall getAndExpressionParserRuleCall_0() { return cAndExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op="XOU") right=AndExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op="XOU")
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op="XOU")
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op="XOU"
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//"XOU"
+		public Keyword getOpXOUKeyword_1_0_0_1_0() { return cOpXOUKeyword_1_0_0_1_0; }
+		
+		//right=AndExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//AndExpression
+		public RuleCall getRightAndExpressionParserRuleCall_1_1_0() { return cRightAndExpressionParserRuleCall_1_1_0; }
+	}
+	public class AndExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AndExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cComparisonParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpAmpersandKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpEKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightComparisonParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//AndExpression Expression:
+		//	Comparison (=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Comparison (=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*
+		public Group getGroup() { return cGroup; }
+		
+		//Comparison
+		public RuleCall getComparisonParserRuleCall_0() { return cComparisonParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op=('&' | 'E'))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op=('&' | 'E'))
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op=('&' | 'E')
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//('&' | 'E')
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
+		
+		//'&'
+		public Keyword getOpAmpersandKeyword_1_0_0_1_0_0() { return cOpAmpersandKeyword_1_0_0_1_0_0; }
+		
+		//'E'
+		public Keyword getOpEKeyword_1_0_0_1_0_1() { return cOpEKeyword_1_0_0_1_0_1; }
+		
+		//right=Comparison
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//Comparison
+		public RuleCall getRightComparisonParserRuleCall_1_1_0() { return cRightComparisonParserRuleCall_1_1_0; }
+	}
+	public class ComparisonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Comparison");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cEquExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpEqualsSignKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightEquExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//Comparison Expression:
+		//	EquExpression (=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//EquExpression (=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//EquExpression
+		public RuleCall getEquExpressionParserRuleCall_0() { return cEquExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op=('=' | '<>'))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op=('=' | '<>'))
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op=('=' | '<>')
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//('=' | '<>')
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
+		
+		//'='
+		public Keyword getOpEqualsSignKeyword_1_0_0_1_0_0() { return cOpEqualsSignKeyword_1_0_0_1_0_0; }
+		
+		//'<>'
+		public Keyword getOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_1() { return cOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_1; }
+		
+		//right=EquExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//EquExpression
+		public RuleCall getRightEquExpressionParserRuleCall_1_1_0() { return cRightEquExpressionParserRuleCall_1_1_0; }
+	}
+	public class EquExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.EquExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAddExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpLessThanSignKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpGreaterThanSignKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Keyword cOpLessThanSignEqualsSignKeyword_1_0_0_1_0_2 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(2);
+		private final Keyword cOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(3);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAddExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//EquExpression Expression:
+		//	AddExpression (=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AddExpression (=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//AddExpression
+		public RuleCall getAddExpressionParserRuleCall_0() { return cAddExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>='))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>='))
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op=('<' | '>' | '<=' | '>=')
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//('<' | '>' | '<=' | '>=')
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
+		
+		//'<'
+		public Keyword getOpLessThanSignKeyword_1_0_0_1_0_0() { return cOpLessThanSignKeyword_1_0_0_1_0_0; }
+		
+		//'>'
+		public Keyword getOpGreaterThanSignKeyword_1_0_0_1_0_1() { return cOpGreaterThanSignKeyword_1_0_0_1_0_1; }
+		
+		//'<='
+		public Keyword getOpLessThanSignEqualsSignKeyword_1_0_0_1_0_2() { return cOpLessThanSignEqualsSignKeyword_1_0_0_1_0_2; }
+		
+		//'>='
+		public Keyword getOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3() { return cOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3; }
+		
+		//right=AddExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//AddExpression
+		public RuleCall getRightAddExpressionParserRuleCall_1_1_0() { return cRightAddExpressionParserRuleCall_1_1_0; }
+	}
+	public class AddExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AddExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMultiplicativeExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpPlusSignKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpHyphenMinusKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightMultiplicativeExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//AddExpression Expression:
+		//	MultiplicativeExpression (=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//MultiplicativeExpression (=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//MultiplicativeExpression
+		public RuleCall getMultiplicativeExpressionParserRuleCall_0() { return cMultiplicativeExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op=('+' | '-'))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op=('+' | '-'))
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op=('+' | '-')
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//('+' | '-')
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
+		
+		//'+'
+		public Keyword getOpPlusSignKeyword_1_0_0_1_0_0() { return cOpPlusSignKeyword_1_0_0_1_0_0; }
+		
+		//'-'
+		public Keyword getOpHyphenMinusKeyword_1_0_0_1_0_1() { return cOpHyphenMinusKeyword_1_0_0_1_0_1; }
+		
+		//right=MultiplicativeExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//MultiplicativeExpression
+		public RuleCall getRightMultiplicativeExpressionParserRuleCall_1_1_0() { return cRightMultiplicativeExpressionParserRuleCall_1_1_0; }
+	}
+	public class MultiplicativeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.MultiplicativeExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPowerExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_0_1_0 = (Alternatives)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cOpAsteriskKeyword_1_0_0_1_0_0 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(0);
+		private final Keyword cOpSolidusKeyword_1_0_0_1_0_1 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(1);
+		private final Keyword cOpMODKeyword_1_0_0_1_0_2 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(2);
+		private final Keyword cOpPercentSignKeyword_1_0_0_1_0_3 = (Keyword)cOpAlternatives_1_0_0_1_0.eContents().get(3);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightPowerExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//MultiplicativeExpression Expression:
+		//	PowerExpression (=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PowerExpression (=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//PowerExpression
+		public RuleCall getPowerExpressionParserRuleCall_0() { return cPowerExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%'))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%'))
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op=('*' | '/' | 'MOD' | '%')
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//('*' | '/' | 'MOD' | '%')
+		public Alternatives getOpAlternatives_1_0_0_1_0() { return cOpAlternatives_1_0_0_1_0; }
+		
+		//'*'
+		public Keyword getOpAsteriskKeyword_1_0_0_1_0_0() { return cOpAsteriskKeyword_1_0_0_1_0_0; }
+		
+		//'/'
+		public Keyword getOpSolidusKeyword_1_0_0_1_0_1() { return cOpSolidusKeyword_1_0_0_1_0_1; }
+		
+		//'MOD'
+		public Keyword getOpMODKeyword_1_0_0_1_0_2() { return cOpMODKeyword_1_0_0_1_0_2; }
+		
+		//'%'
+		public Keyword getOpPercentSignKeyword_1_0_0_1_0_3() { return cOpPercentSignKeyword_1_0_0_1_0_3; }
+		
+		//right=PowerExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//PowerExpression
+		public RuleCall getRightPowerExpressionParserRuleCall_1_1_0() { return cRightPowerExpressionParserRuleCall_1_1_0; }
+	}
+	public class PowerExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PowerExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cUnaryExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpCircumflexAccentKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightUnaryExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//PowerExpression Expression:
+		//	UnaryExpression (=> ({BinaryOperation.left=current} op='^') right=UnaryExpression)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//UnaryExpression (=> ({BinaryOperation.left=current} op='^') right=UnaryExpression)*
+		public Group getGroup() { return cGroup; }
+		
+		//UnaryExpression
+		public RuleCall getUnaryExpressionParserRuleCall_0() { return cUnaryExpressionParserRuleCall_0; }
+		
+		//(=> ({BinaryOperation.left=current} op='^') right=UnaryExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({BinaryOperation.left=current} op='^')
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({BinaryOperation.left=current} op='^')
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{BinaryOperation.left=current}
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
+		
+		//op='^'
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
+		
+		//'^'
+		public Keyword getOpCircumflexAccentKeyword_1_0_0_1_0() { return cOpCircumflexAccentKeyword_1_0_0_1_0; }
+		
+		//right=UnaryExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//UnaryExpression
+		public RuleCall getRightUnaryExpressionParserRuleCall_1_1_0() { return cRightUnaryExpressionParserRuleCall_1_1_0; }
+	}
+	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.UnaryExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cUnaryExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cOpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_0_1_0 = (Alternatives)cOpAssignment_0_1.eContents().get(0);
+		private final Keyword cOpNOTKeyword_0_1_0_0 = (Keyword)cOpAlternatives_0_1_0.eContents().get(0);
+		private final Keyword cOpHyphenMinusKeyword_0_1_0_1 = (Keyword)cOpAlternatives_0_1_0.eContents().get(1);
+		private final Assignment cOperandAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cOperandUnaryExpressionParserRuleCall_0_2_0 = (RuleCall)cOperandAssignment_0_2.eContents().get(0);
+		private final RuleCall cMemberCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//UnaryExpression Expression:
+		//	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * /
+		//	| MemberCall
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * / | MemberCall
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{UnaryExpression}
+		public Action getUnaryExpressionAction_0_0() { return cUnaryExpressionAction_0_0; }
+		
+		//op=('NOT' | '-')
+		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
+		
+		//('NOT' | '-')
+		public Alternatives getOpAlternatives_0_1_0() { return cOpAlternatives_0_1_0; }
+		
+		//'NOT'
+		public Keyword getOpNOTKeyword_0_1_0_0() { return cOpNOTKeyword_0_1_0_0; }
+		
+		//'-'
+		public Keyword getOpHyphenMinusKeyword_0_1_0_1() { return cOpHyphenMinusKeyword_0_1_0_1; }
+		
+		//operand=UnaryExpression
+		public Assignment getOperandAssignment_0_2() { return cOperandAssignment_0_2; }
+		
+		//UnaryExpression
+		public RuleCall getOperandUnaryExpressionParserRuleCall_0_2_0() { return cOperandUnaryExpressionParserRuleCall_0_2_0; }
+		
+		//MemberCall
+		public RuleCall getMemberCallParserRuleCall_1() { return cMemberCallParserRuleCall_1; }
+	}
+	public class MemberCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.MemberCall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPrimaryExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cAssignmentAssignableAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cFeatureAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final CrossReference cFeatureVarNameCrossReference_1_0_0_1_0 = (CrossReference)cFeatureAssignment_1_0_0_1.eContents().get(0);
+		private final RuleCall cFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1 = (RuleCall)cFeatureVarNameCrossReference_1_0_0_1_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_1_0_0_2 = (Keyword)cGroup_1_0_0.eContents().get(2);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueAssignmentParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		
+		//MemberCall Expression:
+		//	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
+		public Group getGroup() { return cGroup; }
+		
+		//PrimaryExpression
+		public RuleCall getPrimaryExpressionParserRuleCall_0() { return cPrimaryExpressionParserRuleCall_0; }
+		
+		//(=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//=> ({Assignment.assignable=current} feature=[VarName] '<-')
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//({Assignment.assignable=current} feature=[VarName] '<-')
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{Assignment.assignable=current}
+		public Action getAssignmentAssignableAction_1_0_0_0() { return cAssignmentAssignableAction_1_0_0_0; }
+		
+		//feature=[VarName]
+		public Assignment getFeatureAssignment_1_0_0_1() { return cFeatureAssignment_1_0_0_1; }
+		
+		//[VarName]
+		public CrossReference getFeatureVarNameCrossReference_1_0_0_1_0() { return cFeatureVarNameCrossReference_1_0_0_1_0; }
+		
+		//ID
+		public RuleCall getFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1() { return cFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1; }
+		
+		//'<-'
+		public Keyword getLessThanSignHyphenMinusKeyword_1_0_0_2() { return cLessThanSignHyphenMinusKeyword_1_0_0_2; }
+		
+		//value=Assignment
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		
+		//Assignment
+		public RuleCall getValueAssignmentParserRuleCall_1_1_0() { return cValueAssignmentParserRuleCall_1_1_0; }
+	}
+	public class PrimaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PrimaryExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFunctionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		
+		//PrimaryExpression Expression:
+		//	Literal
+		//	| FunctionCall
+		//	| '(' Expression ')'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Literal | FunctionCall | '(' Expression ')'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Literal
+		public RuleCall getLiteralParserRuleCall_0() { return cLiteralParserRuleCall_0; }
+		
+		//FunctionCall
+		public RuleCall getFunctionCallParserRuleCall_1() { return cFunctionCallParserRuleCall_1; }
+		
+		//'(' Expression ')'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		
+		//Expression
+		public RuleCall getExpressionParserRuleCall_2_1() { return cExpressionParserRuleCall_2_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
+	}
+	public class FunctionCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionCall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFbNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cFbNameFunctionNameCrossReference_0_0 = (CrossReference)cFbNameAssignment_0.eContents().get(0);
+		private final RuleCall cFbNameFunctionNameIDTerminalRuleCall_0_0_1 = (RuleCall)cFbNameFunctionNameCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParamWriteParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//FunctionCall Expression:
+		//	fbName=[FunctionName] '(' param=WriteParam ')'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//fbName=[FunctionName] '(' param=WriteParam ')'
+		public Group getGroup() { return cGroup; }
+		
+		//fbName=[FunctionName]
+		public Assignment getFbNameAssignment_0() { return cFbNameAssignment_0; }
+		
+		//[FunctionName]
+		public CrossReference getFbNameFunctionNameCrossReference_0_0() { return cFbNameFunctionNameCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getFbNameFunctionNameIDTerminalRuleCall_0_0_1() { return cFbNameFunctionNameIDTerminalRuleCall_0_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//param=WriteParam
+		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
+		
+		//WriteParam
+		public RuleCall getParamWriteParamParserRuleCall_2_0() { return cParamWriteParamParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class ProcedureCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ProcedureCall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFbNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cFbNameProcedureNameCrossReference_0_0 = (CrossReference)cFbNameAssignment_0.eContents().get(0);
+		private final RuleCall cFbNameProcedureNameIDTerminalRuleCall_0_0_1 = (RuleCall)cFbNameProcedureNameCrossReference_0_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParamWriteParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ProcedureCall Expression:
+		//	fbName=[ProcedureName] '(' param=WriteParam ')'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//fbName=[ProcedureName] '(' param=WriteParam ')'
+		public Group getGroup() { return cGroup; }
+		
+		//fbName=[ProcedureName]
+		public Assignment getFbNameAssignment_0() { return cFbNameAssignment_0; }
+		
+		//[ProcedureName]
+		public CrossReference getFbNameProcedureNameCrossReference_0_0() { return cFbNameProcedureNameCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getFbNameProcedureNameIDTerminalRuleCall_0_0_1() { return cFbNameProcedureNameIDTerminalRuleCall_0_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//param=WriteParam
+		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
+		
+		//WriteParam
+		public RuleCall getParamWriteParamParserRuleCall_2_0() { return cParamWriteParamParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class LiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Literal");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNumericLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cStringExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Constant:
-		//	NumericLiteral | StringExpression;
+		//Literal Expression:
+		//	NumericLiteral | StringExpression
 		@Override public ParserRule getRule() { return rule; }
 		
 		//NumericLiteral | StringExpression
@@ -1387,19 +1578,23 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final ReadCommandElements pReadCommand;
 	private final WriteCommandElements pWriteCommand;
 	private final WriteParamElements pWriteParam;
+	private final OptDecimalPrecisionElements pOptDecimalPrecision;
 	private final ExpressionElements pExpression;
+	private final AssignmentElements pAssignment;
+	private final OrExpressionElements pOrExpression;
 	private final XorExpressionElements pXorExpression;
 	private final AndExpressionElements pAndExpression;
 	private final ComparisonElements pComparison;
 	private final EquExpressionElements pEquExpression;
 	private final AddExpressionElements pAddExpression;
-	private final TermElements pTerm;
+	private final MultiplicativeExpressionElements pMultiplicativeExpression;
 	private final PowerExpressionElements pPowerExpression;
 	private final UnaryExpressionElements pUnaryExpression;
+	private final MemberCallElements pMemberCall;
 	private final PrimaryExpressionElements pPrimaryExpression;
 	private final FunctionCallElements pFunctionCall;
-	private final OptDecimalPrecisionElements pOptDecimalPrecision;
-	private final ConstantElements pConstant;
+	private final ProcedureCallElements pProcedureCall;
+	private final LiteralElements pLiteral;
 	private final NumericLiteralElements pNumericLiteral;
 	private final StringExpressionElements pStringExpression;
 	private final TerminalRule tFLOAT;
@@ -1433,19 +1628,23 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pReadCommand = new ReadCommandElements();
 		this.pWriteCommand = new WriteCommandElements();
 		this.pWriteParam = new WriteParamElements();
+		this.pOptDecimalPrecision = new OptDecimalPrecisionElements();
 		this.pExpression = new ExpressionElements();
+		this.pAssignment = new AssignmentElements();
+		this.pOrExpression = new OrExpressionElements();
 		this.pXorExpression = new XorExpressionElements();
 		this.pAndExpression = new AndExpressionElements();
 		this.pComparison = new ComparisonElements();
 		this.pEquExpression = new EquExpressionElements();
 		this.pAddExpression = new AddExpressionElements();
-		this.pTerm = new TermElements();
+		this.pMultiplicativeExpression = new MultiplicativeExpressionElements();
 		this.pPowerExpression = new PowerExpressionElements();
 		this.pUnaryExpression = new UnaryExpressionElements();
+		this.pMemberCall = new MemberCallElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
 		this.pFunctionCall = new FunctionCallElements();
-		this.pOptDecimalPrecision = new OptDecimalPrecisionElements();
-		this.pConstant = new ConstantElements();
+		this.pProcedureCall = new ProcedureCallElements();
+		this.pLiteral = new LiteralElements();
 		this.pNumericLiteral = new NumericLiteralElements();
 		this.pStringExpression = new StringExpressionElements();
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FLOAT");
@@ -1643,8 +1842,9 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractCommand:
-	//	ReadCommand
-	//	| WriteCommand;
+	//	ReadCommand END_COMMAND
+	//	| WriteCommand END_COMMAND
+	//	| Expression END_COMMAND;
 	public AbstractCommandElements getAbstractCommandAccess() {
 		return pAbstractCommand;
 	}
@@ -1654,7 +1854,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ReadCommand:
-	//	'leia' '(' paramList=DeclaredVar ')' END_COMMAND;
+	//	'leia' '(' paramList=DeclaredVar ')';
 	public ReadCommandElements getReadCommandAccess() {
 		return pReadCommand;
 	}
@@ -1664,7 +1864,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WriteCommand:
-	//	'escreva' '(' writeParam=WriteParam ')' END_COMMAND;
+	//	'escreva' '(' writeParam=WriteParam ')';
 	public WriteCommandElements getWriteCommandAccess() {
 		return pWriteCommand;
 	}
@@ -1683,121 +1883,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getWriteParamAccess().getRule();
 	}
 	
-	//Expression:
-	//	XorExpression (({Expression.left=current} op="OR") right=XorExpression)*;
-	public ExpressionElements getExpressionAccess() {
-		return pExpression;
-	}
-	
-	public ParserRule getExpressionRule() {
-		return getExpressionAccess().getRule();
-	}
-	
-	//XorExpression Expression:
-	//	AndExpression (({XorExpression.left=current} op="XOR") right=AndExpression)*
-	public XorExpressionElements getXorExpressionAccess() {
-		return pXorExpression;
-	}
-	
-	public ParserRule getXorExpressionRule() {
-		return getXorExpressionAccess().getRule();
-	}
-	
-	//AndExpression Expression:
-	//	Comparison (({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*
-	public AndExpressionElements getAndExpressionAccess() {
-		return pAndExpression;
-	}
-	
-	public ParserRule getAndExpressionRule() {
-		return getAndExpressionAccess().getRule();
-	}
-	
-	//Comparison Expression:
-	//	EquExpression (({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*
-	public ComparisonElements getComparisonAccess() {
-		return pComparison;
-	}
-	
-	public ParserRule getComparisonRule() {
-		return getComparisonAccess().getRule();
-	}
-	
-	//EquExpression Expression:
-	//	AddExpression (({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
-	public EquExpressionElements getEquExpressionAccess() {
-		return pEquExpression;
-	}
-	
-	public ParserRule getEquExpressionRule() {
-		return getEquExpressionAccess().getRule();
-	}
-	
-	//AddExpression Expression:
-	//	Term (({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*
-	public AddExpressionElements getAddExpressionAccess() {
-		return pAddExpression;
-	}
-	
-	public ParserRule getAddExpressionRule() {
-		return getAddExpressionAccess().getRule();
-	}
-	
-	//Term Expression:
-	//	PowerExpression (({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
-	//	right=PowerExpression)*
-	public TermElements getTermAccess() {
-		return pTerm;
-	}
-	
-	public ParserRule getTermRule() {
-		return getTermAccess().getRule();
-	}
-	
-	//PowerExpression Expression:
-	//	UnaryExpression ({PowerExpression.left=current} op='^' right=UnaryExpression)*
-	public PowerExpressionElements getPowerExpressionAccess() {
-		return pPowerExpression;
-	}
-	
-	public ParserRule getPowerExpressionRule() {
-		return getPowerExpressionAccess().getRule();
-	}
-	
-	//UnaryExpression Expression:
-	//	{BooleanNegation} => "NOT" expression=PrimaryExpression / * right associativity * /
-	//	| {ArithmeticSigned} => "-" expression=PrimaryExpression / * right associativity * /
-	//	| PrimaryExpression
-	public UnaryExpressionElements getUnaryExpressionAccess() {
-		return pUnaryExpression;
-	}
-	
-	public ParserRule getUnaryExpressionRule() {
-		return getUnaryExpressionAccess().getRule();
-	}
-	
-	//PrimaryExpression Expression:
-	//	{ExpressionConstant} value=Constant
-	//	| {ExpressionVariable} value=[VarName] | '(' Expression ')'
-	//	| FunctionCall
-	public PrimaryExpressionElements getPrimaryExpressionAccess() {
-		return pPrimaryExpression;
-	}
-	
-	public ParserRule getPrimaryExpressionRule() {
-		return getPrimaryExpressionAccess().getRule();
-	}
-	
-	//FunctionCall:
-	//	fbName=[FunctionName] '(' param=WriteParam ')';
-	public FunctionCallElements getFunctionCallAccess() {
-		return pFunctionCall;
-	}
-	
-	public ParserRule getFunctionCallRule() {
-		return getFunctionCallAccess().getRule();
-	}
-	
 	//OptDecimalPrecision:
 	//	':' firstPrecision=INT (':' secondPrecision=INT)?;
 	public OptDecimalPrecisionElements getOptDecimalPrecisionAccess() {
@@ -1808,14 +1893,168 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getOptDecimalPrecisionAccess().getRule();
 	}
 	
-	//Constant:
-	//	NumericLiteral | StringExpression;
-	public ConstantElements getConstantAccess() {
-		return pConstant;
+	//Expression:
+	//	Assignment;
+	public ExpressionElements getExpressionAccess() {
+		return pExpression;
 	}
 	
-	public ParserRule getConstantRule() {
-		return getConstantAccess().getRule();
+	public ParserRule getExpressionRule() {
+		return getExpressionAccess().getRule();
+	}
+	
+	//Assignment Expression:
+	//	{Assignment} target=[VarName] '<-' value=Assignment
+	//	| OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+	public AssignmentElements getAssignmentAccess() {
+		return pAssignment;
+	}
+	
+	public ParserRule getAssignmentRule() {
+		return getAssignmentAccess().getRule();
+	}
+	
+	//OrExpression Expression:
+	//	XorExpression (=> ({BinaryOperation.left=current} op="OU") right=XorExpression)*
+	public OrExpressionElements getOrExpressionAccess() {
+		return pOrExpression;
+	}
+	
+	public ParserRule getOrExpressionRule() {
+		return getOrExpressionAccess().getRule();
+	}
+	
+	//XorExpression Expression:
+	//	AndExpression (=> ({BinaryOperation.left=current} op="XOU") right=AndExpression)*
+	public XorExpressionElements getXorExpressionAccess() {
+		return pXorExpression;
+	}
+	
+	public ParserRule getXorExpressionRule() {
+		return getXorExpressionAccess().getRule();
+	}
+	
+	//AndExpression Expression:
+	//	Comparison (=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*
+	public AndExpressionElements getAndExpressionAccess() {
+		return pAndExpression;
+	}
+	
+	public ParserRule getAndExpressionRule() {
+		return getAndExpressionAccess().getRule();
+	}
+	
+	//Comparison Expression:
+	//	EquExpression (=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*
+	public ComparisonElements getComparisonAccess() {
+		return pComparison;
+	}
+	
+	public ParserRule getComparisonRule() {
+		return getComparisonAccess().getRule();
+	}
+	
+	//EquExpression Expression:
+	//	AddExpression (=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*
+	public EquExpressionElements getEquExpressionAccess() {
+		return pEquExpression;
+	}
+	
+	public ParserRule getEquExpressionRule() {
+		return getEquExpressionAccess().getRule();
+	}
+	
+	//AddExpression Expression:
+	//	MultiplicativeExpression (=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*
+	public AddExpressionElements getAddExpressionAccess() {
+		return pAddExpression;
+	}
+	
+	public ParserRule getAddExpressionRule() {
+		return getAddExpressionAccess().getRule();
+	}
+	
+	//MultiplicativeExpression Expression:
+	//	PowerExpression (=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*
+	public MultiplicativeExpressionElements getMultiplicativeExpressionAccess() {
+		return pMultiplicativeExpression;
+	}
+	
+	public ParserRule getMultiplicativeExpressionRule() {
+		return getMultiplicativeExpressionAccess().getRule();
+	}
+	
+	//PowerExpression Expression:
+	//	UnaryExpression (=> ({BinaryOperation.left=current} op='^') right=UnaryExpression)*
+	public PowerExpressionElements getPowerExpressionAccess() {
+		return pPowerExpression;
+	}
+	
+	public ParserRule getPowerExpressionRule() {
+		return getPowerExpressionAccess().getRule();
+	}
+	
+	//UnaryExpression Expression:
+	//	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * /
+	//	| MemberCall
+	public UnaryExpressionElements getUnaryExpressionAccess() {
+		return pUnaryExpression;
+	}
+	
+	public ParserRule getUnaryExpressionRule() {
+		return getUnaryExpressionAccess().getRule();
+	}
+	
+	//MemberCall Expression:
+	//	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
+	public MemberCallElements getMemberCallAccess() {
+		return pMemberCall;
+	}
+	
+	public ParserRule getMemberCallRule() {
+		return getMemberCallAccess().getRule();
+	}
+	
+	//PrimaryExpression Expression:
+	//	Literal
+	//	| FunctionCall
+	//	| '(' Expression ')'
+	public PrimaryExpressionElements getPrimaryExpressionAccess() {
+		return pPrimaryExpression;
+	}
+	
+	public ParserRule getPrimaryExpressionRule() {
+		return getPrimaryExpressionAccess().getRule();
+	}
+	
+	//FunctionCall Expression:
+	//	fbName=[FunctionName] '(' param=WriteParam ')'
+	public FunctionCallElements getFunctionCallAccess() {
+		return pFunctionCall;
+	}
+	
+	public ParserRule getFunctionCallRule() {
+		return getFunctionCallAccess().getRule();
+	}
+	
+	//ProcedureCall Expression:
+	//	fbName=[ProcedureName] '(' param=WriteParam ')'
+	public ProcedureCallElements getProcedureCallAccess() {
+		return pProcedureCall;
+	}
+	
+	public ParserRule getProcedureCallRule() {
+		return getProcedureCallAccess().getRule();
+	}
+	
+	//Literal Expression:
+	//	NumericLiteral | StringExpression
+	public LiteralElements getLiteralAccess() {
+		return pLiteral;
+	}
+	
+	public ParserRule getLiteralRule() {
+		return getLiteralAccess().getRule();
 	}
 	
 	//NumericLiteral:

@@ -63,61 +63,72 @@ BlockCommand:
 	'fimalgoritmo' END_COMMAND;
 
 AbstractCommand:
-	ReadCommand
-	| WriteCommand;
+	ReadCommand END_COMMAND
+	| WriteCommand END_COMMAND
+	| Expression END_COMMAND;
 
 ReadCommand:
-	'leia' '(' paramList=DeclaredVar ')' END_COMMAND;
+	'leia' '(' paramList=DeclaredVar ')';
 
 WriteCommand:
-	'escreva' '(' writeParam=WriteParam ')' END_COMMAND;
+	'escreva' '(' writeParam=WriteParam ')';
 
 WriteParam:
 	expression+=Expression (',' expression+=Expression)* (precision=OptDecimalPrecision)?;
 
-Expression returns Expression:
-	XorExpression (({Expression.left=current} op=("OR")) right=XorExpression)*;
-
-XorExpression returns Expression:
-	AndExpression (({XorExpression.left=current} op=("XOR")) right=AndExpression)*;
-
-AndExpression returns Expression:
-	Comparison (({AndExpression.left=current} op=('&' | 'AND')) right=Comparison)*;
-
-Comparison returns Expression:
-	EquExpression (({CompExpression.left=current} op=('=' | '<>')) right=EquExpression)*;
-
-EquExpression returns Expression:
-	AddExpression (({EquExpression.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*;
-
-AddExpression returns Expression:
-	Term (({AddExpression.left=current} '+' | {SubExpression.left=current} '-') right=Term)*;
-
-Term returns Expression:
-	PowerExpression (({Multiply.left=current} '*' | {Division.left=current} '/' | {Mod.left=current} 'MOD')
-	right=PowerExpression)*;
-
-PowerExpression returns Expression:
-	UnaryExpression ({PowerExpression.left=current} op=('^') right=UnaryExpression)*;
-
-UnaryExpression returns Expression:
-	{BooleanNegation} => "NOT" expression=PrimaryExpression /* right associativity */
-	| {ArithmeticSigned} => "-" expression=PrimaryExpression /* right associativity */
-	| PrimaryExpression;
-
-PrimaryExpression returns Expression:
-	{ExpressionConstant} value=Constant
-	| {ExpressionVariable} value=[VarName]
-	| '(' Expression ')'
-	| FunctionCall;
-
-FunctionCall:
-	fbName=[FunctionName] '(' param=WriteParam ')';
-
 OptDecimalPrecision:
 	':' firstPrecision=INT (':' secondPrecision=INT)?;
 
-Constant:
+Expression returns Expression:
+	Assignment;
+
+Assignment returns Expression:
+	{Assignment} target=[VarName] '<-' value=Assignment
+	| OrExpression (=> ({BinaryOperation.left=current} op=('<-')) right=Assignment)?;
+
+OrExpression returns Expression:
+	XorExpression (=> ({BinaryOperation.left=current} op=("OU")) right=XorExpression)*;
+
+XorExpression returns Expression:
+	AndExpression (=> ({BinaryOperation.left=current} op=("XOU")) right=AndExpression)*;
+
+AndExpression returns Expression:
+	Comparison (=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*;
+
+Comparison returns Expression:
+	EquExpression (=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*;
+
+EquExpression returns Expression:
+	AddExpression (=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*;
+
+AddExpression returns Expression:
+	MultiplicativeExpression (=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*;
+
+MultiplicativeExpression returns Expression:
+	PowerExpression (=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*;
+
+PowerExpression returns Expression:
+	UnaryExpression (=> ({BinaryOperation.left=current} op=('^')) right=UnaryExpression)*;
+
+UnaryExpression returns Expression:
+	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression /* right associativity */
+	| MemberCall;
+
+MemberCall returns Expression:
+	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*;
+
+PrimaryExpression returns Expression:
+	Literal
+	| FunctionCall
+	| '(' Expression ')';
+
+FunctionCall returns Expression:
+	fbName=[FunctionName] '(' param=WriteParam ')';
+
+ProcedureCall returns Expression:
+	fbName=[ProcedureName] '(' param=WriteParam ')';
+
+Literal returns Expression:
 	NumericLiteral | StringExpression;
 
 NumericLiteral:

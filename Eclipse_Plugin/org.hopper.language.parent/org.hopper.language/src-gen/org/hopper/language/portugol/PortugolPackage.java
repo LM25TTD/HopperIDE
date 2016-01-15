@@ -707,116 +707,6 @@ public interface PortugolPackage extends EPackage
   int WRITE_PARAM_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ExpressionImpl <em>Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
-   * @generated
-   */
-  int EXPRESSION = 19;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__OP = 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__RIGHT = 2;
-
-  /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.FunctionCallImpl <em>Function Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.FunctionCallImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionCall()
-   * @generated
-   */
-  int FUNCTION_CALL = 20;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__FB_NAME = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__PARAM = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Function Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.OptDecimalPrecisionImpl <em>Opt Decimal Precision</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -824,7 +714,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOptDecimalPrecision()
    * @generated
    */
-  int OPT_DECIMAL_PRECISION = 21;
+  int OPT_DECIMAL_PRECISION = 19;
 
   /**
    * The feature id for the '<em><b>First Precision</b></em>' attribute.
@@ -854,23 +744,41 @@ public interface PortugolPackage extends EPackage
   int OPT_DECIMAL_PRECISION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ConstantImpl <em>Constant</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ConstantImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getConstant()
+   * @see org.hopper.language.portugol.impl.ExpressionImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
    * @generated
    */
-  int CONSTANT = 22;
+  int EXPRESSION = 20;
 
   /**
-   * The number of structural features of the '<em>Constant</em>' class.
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTANT_FEATURE_COUNT = 0;
+  int EXPRESSION__FB_NAME = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__PARAM = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
@@ -880,7 +788,25 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 23;
+  int NUMERIC_LITERAL = 21;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_LITERAL__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_LITERAL__PARAM = EXPRESSION__PARAM;
 
   /**
    * The feature id for the '<em><b>Int Value</b></em>' attribute.
@@ -889,7 +815,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMERIC_LITERAL__INT_VALUE = CONSTANT_FEATURE_COUNT + 0;
+  int NUMERIC_LITERAL__INT_VALUE = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Float Value</b></em>' attribute.
@@ -898,7 +824,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMERIC_LITERAL__FLOAT_VALUE = CONSTANT_FEATURE_COUNT + 1;
+  int NUMERIC_LITERAL__FLOAT_VALUE = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Numeric Literal</em>' class.
@@ -907,7 +833,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMERIC_LITERAL_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 2;
+  int NUMERIC_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.StringExpressionImpl <em>String Expression</em>}' class.
@@ -917,7 +843,25 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
    * @generated
    */
-  int STRING_EXPRESSION = 24;
+  int STRING_EXPRESSION = 22;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_EXPRESSION__PARAM = EXPRESSION__PARAM;
 
   /**
    * The feature id for the '<em><b>Literal String</b></em>' attribute.
@@ -926,7 +870,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__LITERAL_STRING = CONSTANT_FEATURE_COUNT + 0;
+  int STRING_EXPRESSION__LITERAL_STRING = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>String Expression</em>' class.
@@ -935,614 +879,44 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
+  int STRING_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.XorExpressionImpl <em>Xor Expression</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.AssignmentImpl <em>Assignment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.XorExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getXorExpression()
+   * @see org.hopper.language.portugol.impl.AssignmentImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAssignment()
    * @generated
    */
-  int XOR_EXPRESSION = 25;
+  int ASSIGNMENT = 23;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int XOR_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XOR_EXPRESSION__OP = EXPRESSION__OP;
+  int ASSIGNMENT__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XOR_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
+  int ASSIGNMENT__PARAM = EXPRESSION__PARAM;
 
   /**
-   * The number of structural features of the '<em>Xor Expression</em>' class.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XOR_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.AndExpressionImpl <em>And Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.AndExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAndExpression()
-   * @generated
-   */
-  int AND_EXPRESSION = 26;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>And Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.CompExpressionImpl <em>Comp Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.CompExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getCompExpression()
-   * @generated
-   */
-  int COMP_EXPRESSION = 27;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMP_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMP_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMP_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Comp Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMP_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.EquExpressionImpl <em>Equ Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.EquExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getEquExpression()
-   * @generated
-   */
-  int EQU_EXPRESSION = 28;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQU_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQU_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQU_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Equ Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQU_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.AddExpressionImpl <em>Add Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.AddExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAddExpression()
-   * @generated
-   */
-  int ADD_EXPRESSION = 29;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Add Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.SubExpressionImpl <em>Sub Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.SubExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubExpression()
-   * @generated
-   */
-  int SUB_EXPRESSION = 30;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Sub Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.MultiplyImpl <em>Multiply</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.MultiplyImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getMultiply()
-   * @generated
-   */
-  int MULTIPLY = 31;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLY__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLY__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLY__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Multiply</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLY_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.DivisionImpl <em>Division</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.DivisionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDivision()
-   * @generated
-   */
-  int DIVISION = 32;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Division</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ModImpl <em>Mod</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ModImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getMod()
-   * @generated
-   */
-  int MOD = 33;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Mod</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.PowerExpressionImpl <em>Power Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.PowerExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getPowerExpression()
-   * @generated
-   */
-  int POWER_EXPRESSION = 34;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POWER_EXPRESSION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POWER_EXPRESSION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POWER_EXPRESSION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Power Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POWER_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.BooleanNegationImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBooleanNegation()
-   * @generated
-   */
-  int BOOLEAN_NEGATION = 35;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NEGATION__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NEGATION__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NEGATION__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NEGATION__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Boolean Negation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NEGATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ArithmeticSignedImpl <em>Arithmetic Signed</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ArithmeticSignedImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getArithmeticSigned()
-   * @generated
-   */
-  int ARITHMETIC_SIGNED = 36;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_SIGNED__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_SIGNED__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_SIGNED__RIGHT = EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_SIGNED__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Arithmetic Signed</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_SIGNED_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ExpressionConstantImpl <em>Expression Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ExpressionConstantImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpressionConstant()
-   * @generated
-   */
-  int EXPRESSION_CONSTANT = 37;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_CONSTANT__LEFT = EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_CONSTANT__OP = EXPRESSION__OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_CONSTANT__RIGHT = EXPRESSION__RIGHT;
+  int ASSIGNMENT__TARGET = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1551,26 +925,62 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+  int ASSIGNMENT__VALUE = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Expression Constant</em>' class.
+   * The feature id for the '<em><b>Assignable</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int ASSIGNMENT__ASSIGNABLE = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ExpressionVariableImpl <em>Expression Variable</em>}' class.
+   * The feature id for the '<em><b>Feature</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ExpressionVariableImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpressionVariable()
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT__FEATURE = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.BinaryOperationImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int EXPRESSION_VARIABLE = 38;
+  int BINARY_OPERATION = 24;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_OPERATION__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_OPERATION__PARAM = EXPRESSION__PARAM;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1579,7 +989,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_VARIABLE__LEFT = EXPRESSION__LEFT;
+  int BINARY_OPERATION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1588,7 +998,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_VARIABLE__OP = EXPRESSION__OP;
+  int BINARY_OPERATION__OP = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1597,25 +1007,71 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_VARIABLE__RIGHT = EXPRESSION__RIGHT;
+  int BINARY_OPERATION__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
+   * The number of structural features of the '<em>Binary Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_VARIABLE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+  int BINARY_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The number of structural features of the '<em>Expression Variable</em>' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.UnaryExpressionImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
+   * @generated
+   */
+  int UNARY_EXPRESSION = 25;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int UNARY_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__OP = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__OPERAND = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Unary Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 
   /**
@@ -2095,81 +1551,6 @@ public interface PortugolPackage extends EPackage
   EReference getWriteParam_Precision();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see org.hopper.language.portugol.Expression
-   * @generated
-   */
-  EClass getExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Expression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.hopper.language.portugol.Expression#getLeft()
-   * @see #getExpression()
-   * @generated
-   */
-  EReference getExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.Expression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.hopper.language.portugol.Expression#getOp()
-   * @see #getExpression()
-   * @generated
-   */
-  EAttribute getExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Expression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.hopper.language.portugol.Expression#getRight()
-   * @see #getExpression()
-   * @generated
-   */
-  EReference getExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.FunctionCall <em>Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Call</em>'.
-   * @see org.hopper.language.portugol.FunctionCall
-   * @generated
-   */
-  EClass getFunctionCall();
-
-  /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.FunctionCall#getFbName <em>Fb Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Fb Name</em>'.
-   * @see org.hopper.language.portugol.FunctionCall#getFbName()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EReference getFunctionCall_FbName();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.FunctionCall#getParam <em>Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Param</em>'.
-   * @see org.hopper.language.portugol.FunctionCall#getParam()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EReference getFunctionCall_Param();
-
-  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.OptDecimalPrecision <em>Opt Decimal Precision</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2202,14 +1583,36 @@ public interface PortugolPackage extends EPackage
   EAttribute getOptDecimalPrecision_SecondPrecision();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Constant <em>Constant</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Constant</em>'.
-   * @see org.hopper.language.portugol.Constant
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see org.hopper.language.portugol.Expression
    * @generated
    */
-  EClass getConstant();
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fb Name</em>'.
+   * @see org.hopper.language.portugol.Expression#getFbName()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_FbName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Param</em>'.
+   * @see org.hopper.language.portugol.Expression#getParam()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Param();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.NumericLiteral <em>Numeric Literal</em>}'.
@@ -2265,188 +1668,133 @@ public interface PortugolPackage extends EPackage
   EAttribute getStringExpression_LiteralString();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.XorExpression <em>Xor Expression</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.Assignment <em>Assignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Xor Expression</em>'.
-   * @see org.hopper.language.portugol.XorExpression
+   * @return the meta object for class '<em>Assignment</em>'.
+   * @see org.hopper.language.portugol.Assignment
    * @generated
    */
-  EClass getXorExpression();
+  EClass getAssignment();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.AndExpression <em>And Expression</em>}'.
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Assignment#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>And Expression</em>'.
-   * @see org.hopper.language.portugol.AndExpression
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see org.hopper.language.portugol.Assignment#getTarget()
+   * @see #getAssignment()
    * @generated
    */
-  EClass getAndExpression();
+  EReference getAssignment_Target();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.CompExpression <em>Comp Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comp Expression</em>'.
-   * @see org.hopper.language.portugol.CompExpression
-   * @generated
-   */
-  EClass getCompExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.EquExpression <em>Equ Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Equ Expression</em>'.
-   * @see org.hopper.language.portugol.EquExpression
-   * @generated
-   */
-  EClass getEquExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.AddExpression <em>Add Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Add Expression</em>'.
-   * @see org.hopper.language.portugol.AddExpression
-   * @generated
-   */
-  EClass getAddExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.SubExpression <em>Sub Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Expression</em>'.
-   * @see org.hopper.language.portugol.SubExpression
-   * @generated
-   */
-  EClass getSubExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Multiply <em>Multiply</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multiply</em>'.
-   * @see org.hopper.language.portugol.Multiply
-   * @generated
-   */
-  EClass getMultiply();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Division <em>Division</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Division</em>'.
-   * @see org.hopper.language.portugol.Division
-   * @generated
-   */
-  EClass getDivision();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Mod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mod</em>'.
-   * @see org.hopper.language.portugol.Mod
-   * @generated
-   */
-  EClass getMod();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.PowerExpression <em>Power Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Power Expression</em>'.
-   * @see org.hopper.language.portugol.PowerExpression
-   * @generated
-   */
-  EClass getPowerExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.BooleanNegation <em>Boolean Negation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Negation</em>'.
-   * @see org.hopper.language.portugol.BooleanNegation
-   * @generated
-   */
-  EClass getBooleanNegation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BooleanNegation#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see org.hopper.language.portugol.BooleanNegation#getExpression()
-   * @see #getBooleanNegation()
-   * @generated
-   */
-  EReference getBooleanNegation_Expression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.ArithmeticSigned <em>Arithmetic Signed</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Arithmetic Signed</em>'.
-   * @see org.hopper.language.portugol.ArithmeticSigned
-   * @generated
-   */
-  EClass getArithmeticSigned();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ArithmeticSigned#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see org.hopper.language.portugol.ArithmeticSigned#getExpression()
-   * @see #getArithmeticSigned()
-   * @generated
-   */
-  EReference getArithmeticSigned_Expression();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.ExpressionConstant <em>Expression Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression Constant</em>'.
-   * @see org.hopper.language.portugol.ExpressionConstant
-   * @generated
-   */
-  EClass getExpressionConstant();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ExpressionConstant#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Assignment#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.hopper.language.portugol.ExpressionConstant#getValue()
-   * @see #getExpressionConstant()
+   * @see org.hopper.language.portugol.Assignment#getValue()
+   * @see #getAssignment()
    * @generated
    */
-  EReference getExpressionConstant_Value();
+  EReference getAssignment_Value();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.ExpressionVariable <em>Expression Variable</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Assignment#getAssignable <em>Assignable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression Variable</em>'.
-   * @see org.hopper.language.portugol.ExpressionVariable
+   * @return the meta object for the containment reference '<em>Assignable</em>'.
+   * @see org.hopper.language.portugol.Assignment#getAssignable()
+   * @see #getAssignment()
    * @generated
    */
-  EClass getExpressionVariable();
+  EReference getAssignment_Assignable();
 
   /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.ExpressionVariable#getValue <em>Value</em>}'.
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Assignment#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see org.hopper.language.portugol.ExpressionVariable#getValue()
-   * @see #getExpressionVariable()
+   * @return the meta object for the reference '<em>Feature</em>'.
+   * @see org.hopper.language.portugol.Assignment#getFeature()
+   * @see #getAssignment()
    * @generated
    */
-  EReference getExpressionVariable_Value();
+  EReference getAssignment_Feature();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.BinaryOperation <em>Binary Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Binary Operation</em>'.
+   * @see org.hopper.language.portugol.BinaryOperation
+   * @generated
+   */
+  EClass getBinaryOperation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BinaryOperation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.hopper.language.portugol.BinaryOperation#getLeft()
+   * @see #getBinaryOperation()
+   * @generated
+   */
+  EReference getBinaryOperation_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.BinaryOperation#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.hopper.language.portugol.BinaryOperation#getOp()
+   * @see #getBinaryOperation()
+   * @generated
+   */
+  EAttribute getBinaryOperation_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BinaryOperation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.hopper.language.portugol.BinaryOperation#getRight()
+   * @see #getBinaryOperation()
+   * @generated
+   */
+  EReference getBinaryOperation_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.UnaryExpression <em>Unary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unary Expression</em>'.
+   * @see org.hopper.language.portugol.UnaryExpression
+   * @generated
+   */
+  EClass getUnaryExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.UnaryExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.hopper.language.portugol.UnaryExpression#getOp()
+   * @see #getUnaryExpression()
+   * @generated
+   */
+  EAttribute getUnaryExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.UnaryExpression#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see org.hopper.language.portugol.UnaryExpression#getOperand()
+   * @see #getUnaryExpression()
+   * @generated
+   */
+  EReference getUnaryExpression_Operand();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2870,66 +2218,6 @@ public interface PortugolPackage extends EPackage
     EReference WRITE_PARAM__PRECISION = eINSTANCE.getWriteParam_Precision();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ExpressionImpl <em>Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
-     * @generated
-     */
-    EClass EXPRESSION = eINSTANCE.getExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION__LEFT = eINSTANCE.getExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPRESSION__OP = eINSTANCE.getExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.FunctionCallImpl <em>Function Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.FunctionCallImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionCall()
-     * @generated
-     */
-    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
-
-    /**
-     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL__FB_NAME = eINSTANCE.getFunctionCall_FbName();
-
-    /**
-     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL__PARAM = eINSTANCE.getFunctionCall_Param();
-
-    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.OptDecimalPrecisionImpl <em>Opt Decimal Precision</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2956,14 +2244,30 @@ public interface PortugolPackage extends EPackage
     EAttribute OPT_DECIMAL_PRECISION__SECOND_PRECISION = eINSTANCE.getOptDecimalPrecision_SecondPrecision();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ConstantImpl <em>Constant</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ExpressionImpl <em>Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ConstantImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getConstant()
+     * @see org.hopper.language.portugol.impl.ExpressionImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
      * @generated
      */
-    EClass CONSTANT = eINSTANCE.getConstant();
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__FB_NAME = eINSTANCE.getExpression_FbName();
+
+    /**
+     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__PARAM = eINSTANCE.getExpression_Param();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
@@ -3010,150 +2314,22 @@ public interface PortugolPackage extends EPackage
     EAttribute STRING_EXPRESSION__LITERAL_STRING = eINSTANCE.getStringExpression_LiteralString();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.XorExpressionImpl <em>Xor Expression</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.AssignmentImpl <em>Assignment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.XorExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getXorExpression()
+     * @see org.hopper.language.portugol.impl.AssignmentImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAssignment()
      * @generated
      */
-    EClass XOR_EXPRESSION = eINSTANCE.getXorExpression();
+    EClass ASSIGNMENT = eINSTANCE.getAssignment();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.AndExpressionImpl <em>And Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.AndExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAndExpression()
-     * @generated
-     */
-    EClass AND_EXPRESSION = eINSTANCE.getAndExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.CompExpressionImpl <em>Comp Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.CompExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getCompExpression()
-     * @generated
-     */
-    EClass COMP_EXPRESSION = eINSTANCE.getCompExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.EquExpressionImpl <em>Equ Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.EquExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getEquExpression()
-     * @generated
-     */
-    EClass EQU_EXPRESSION = eINSTANCE.getEquExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.AddExpressionImpl <em>Add Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.AddExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAddExpression()
-     * @generated
-     */
-    EClass ADD_EXPRESSION = eINSTANCE.getAddExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.SubExpressionImpl <em>Sub Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.SubExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubExpression()
-     * @generated
-     */
-    EClass SUB_EXPRESSION = eINSTANCE.getSubExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.MultiplyImpl <em>Multiply</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.MultiplyImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getMultiply()
-     * @generated
-     */
-    EClass MULTIPLY = eINSTANCE.getMultiply();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.DivisionImpl <em>Division</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.DivisionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDivision()
-     * @generated
-     */
-    EClass DIVISION = eINSTANCE.getDivision();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ModImpl <em>Mod</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ModImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getMod()
-     * @generated
-     */
-    EClass MOD = eINSTANCE.getMod();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.PowerExpressionImpl <em>Power Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.PowerExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getPowerExpression()
-     * @generated
-     */
-    EClass POWER_EXPRESSION = eINSTANCE.getPowerExpression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.BooleanNegationImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBooleanNegation()
-     * @generated
-     */
-    EClass BOOLEAN_NEGATION = eINSTANCE.getBooleanNegation();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOLEAN_NEGATION__EXPRESSION = eINSTANCE.getBooleanNegation_Expression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ArithmeticSignedImpl <em>Arithmetic Signed</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ArithmeticSignedImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getArithmeticSigned()
-     * @generated
-     */
-    EClass ARITHMETIC_SIGNED = eINSTANCE.getArithmeticSigned();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARITHMETIC_SIGNED__EXPRESSION = eINSTANCE.getArithmeticSigned_Expression();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ExpressionConstantImpl <em>Expression Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ExpressionConstantImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpressionConstant()
-     * @generated
-     */
-    EClass EXPRESSION_CONSTANT = eINSTANCE.getExpressionConstant();
+    EReference ASSIGNMENT__TARGET = eINSTANCE.getAssignment_Target();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -3161,25 +2337,83 @@ public interface PortugolPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION_CONSTANT__VALUE = eINSTANCE.getExpressionConstant_Value();
+    EReference ASSIGNMENT__VALUE = eINSTANCE.getAssignment_Value();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ExpressionVariableImpl <em>Expression Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ExpressionVariableImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpressionVariable()
-     * @generated
-     */
-    EClass EXPRESSION_VARIABLE = eINSTANCE.getExpressionVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Assignable</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION_VARIABLE__VALUE = eINSTANCE.getExpressionVariable_Value();
+    EReference ASSIGNMENT__ASSIGNABLE = eINSTANCE.getAssignment_Assignable();
+
+    /**
+     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGNMENT__FEATURE = eINSTANCE.getAssignment_Feature();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.BinaryOperationImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
+     * @generated
+     */
+    EClass BINARY_OPERATION = eINSTANCE.getBinaryOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_OPERATION__LEFT = eINSTANCE.getBinaryOperation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINARY_OPERATION__OP = eINSTANCE.getBinaryOperation_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_OPERATION__RIGHT = eINSTANCE.getBinaryOperation_Right();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.UnaryExpressionImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
+     * @generated
+     */
+    EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNARY_EXPRESSION__OP = eINSTANCE.getUnaryExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNARY_EXPRESSION__OPERAND = eINSTANCE.getUnaryExpression_Operand();
 
   }
 

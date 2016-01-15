@@ -26,7 +26,7 @@ import org.hopper.language.portugol.PortugolPackage;
  *
  * @generated
  */
-public class NumericLiteralImpl extends ConstantImpl implements NumericLiteral
+public class NumericLiteralImpl extends ExpressionImpl implements NumericLiteral
 {
   /**
    * The default value of the '{@link #isIntValue() <em>Int Value</em>}' attribute.

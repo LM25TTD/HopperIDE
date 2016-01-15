@@ -7,13 +7,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.PortugolPackage;
+import org.hopper.language.portugol.WriteParam;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,54 +24,33 @@ import org.hopper.language.portugol.PortugolPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getFbName <em>Fb Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getParam <em>Param</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
+public class ExpressionImpl extends AbstractCommandImpl implements Expression
 {
   /**
-   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
+   * The cached value of the '{@link #getFbName() <em>Fb Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeft()
+   * @see #getFbName()
    * @generated
    * @ordered
    */
-  protected Expression left;
+  protected EObject fbName;
 
   /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The cached value of the '{@link #getParam() <em>Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOp()
+   * @see #getParam()
    * @generated
    * @ordered
    */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRight()
-   * @generated
-   * @ordered
-   */
-  protected Expression right;
+  protected WriteParam param;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,9 +78,19 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getLeft()
+  public EObject getFbName()
   {
-    return left;
+    if (fbName != null && fbName.eIsProxy())
+    {
+      InternalEObject oldFbName = (InternalEObject)fbName;
+      fbName = eResolveProxy(oldFbName);
+      if (fbName != oldFbName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
+      }
+    }
+    return fbName;
   }
 
   /**
@@ -108,13 +98,46 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
+  public EObject basicGetFbName()
   {
-    Expression oldLeft = left;
-    left = newLeft;
+    return fbName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFbName(EObject newFbName)
+  {
+    EObject oldFbName = fbName;
+    fbName = newFbName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WriteParam getParam()
+  {
+    return param;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParam(WriteParam newParam, NotificationChain msgs)
+  {
+    WriteParam oldParam = param;
+    param = newParam;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__PARAM, oldParam, newParam);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -125,91 +148,20 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(Expression newLeft)
+  public void setParam(WriteParam newParam)
   {
-    if (newLeft != left)
+    if (newParam != param)
     {
       NotificationChain msgs = null;
-      if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__LEFT, null, msgs);
-      if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__LEFT, null, msgs);
-      msgs = basicSetLeft(newLeft, msgs);
+      if (param != null)
+        msgs = ((InternalEObject)param).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__PARAM, null, msgs);
+      if (newParam != null)
+        msgs = ((InternalEObject)newParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__PARAM, null, msgs);
+      msgs = basicSetParam(newParam, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__LEFT, newLeft, newLeft));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getOp()
-  {
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOp(String newOp)
-  {
-    String oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__OP, oldOp, op));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expression getRight()
-  {
-    return right;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRight(Expression newRight, NotificationChain msgs)
-  {
-    Expression oldRight = right;
-    right = newRight;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__RIGHT, oldRight, newRight);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRight(Expression newRight)
-  {
-    if (newRight != right)
-    {
-      NotificationChain msgs = null;
-      if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__RIGHT, null, msgs);
-      if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.EXPRESSION__RIGHT, null, msgs);
-      msgs = basicSetRight(newRight, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__PARAM, newParam, newParam));
   }
 
   /**
@@ -222,10 +174,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__LEFT:
-        return basicSetLeft(null, msgs);
-      case PortugolPackage.EXPRESSION__RIGHT:
-        return basicSetRight(null, msgs);
+      case PortugolPackage.EXPRESSION__PARAM:
+        return basicSetParam(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -240,12 +190,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__LEFT:
-        return getLeft();
-      case PortugolPackage.EXPRESSION__OP:
-        return getOp();
-      case PortugolPackage.EXPRESSION__RIGHT:
-        return getRight();
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        if (resolve) return getFbName();
+        return basicGetFbName();
+      case PortugolPackage.EXPRESSION__PARAM:
+        return getParam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -260,14 +209,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__LEFT:
-        setLeft((Expression)newValue);
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        setFbName((EObject)newValue);
         return;
-      case PortugolPackage.EXPRESSION__OP:
-        setOp((String)newValue);
-        return;
-      case PortugolPackage.EXPRESSION__RIGHT:
-        setRight((Expression)newValue);
+      case PortugolPackage.EXPRESSION__PARAM:
+        setParam((WriteParam)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,14 +229,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__LEFT:
-        setLeft((Expression)null);
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        setFbName((EObject)null);
         return;
-      case PortugolPackage.EXPRESSION__OP:
-        setOp(OP_EDEFAULT);
-        return;
-      case PortugolPackage.EXPRESSION__RIGHT:
-        setRight((Expression)null);
+      case PortugolPackage.EXPRESSION__PARAM:
+        setParam((WriteParam)null);
         return;
     }
     super.eUnset(featureID);
@@ -306,31 +249,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__LEFT:
-        return left != null;
-      case PortugolPackage.EXPRESSION__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case PortugolPackage.EXPRESSION__RIGHT:
-        return right != null;
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        return fbName != null;
+      case PortugolPackage.EXPRESSION__PARAM:
+        return param != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExpressionImpl

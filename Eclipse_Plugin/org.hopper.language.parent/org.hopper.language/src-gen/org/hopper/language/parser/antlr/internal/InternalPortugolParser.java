@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalPortugolParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_END_COMMAND", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'algoritmo'", "'var'", "':'", "','", "'real'", "'inteiro'", "'caractere'", "'funcao'", "'('", "')'", "'inicio'", "'fimfuncao'", "'procedimento'", "'fimprocedimento'", "'fimalgoritmo'", "'leia'", "'escreva'", "'OR'", "'XOR'", "'&'", "'AND'", "'='", "'<>'", "'<'", "'>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'MOD'", "'^'", "'NOT'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_END_COMMAND", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'algoritmo'", "'var'", "':'", "','", "'real'", "'inteiro'", "'caractere'", "'funcao'", "'('", "')'", "'inicio'", "'fimfuncao'", "'procedimento'", "'fimprocedimento'", "'fimalgoritmo'", "'leia'", "'escreva'", "'<-'", "'OU'", "'XOU'", "'&'", "'E'", "'='", "'<>'", "'<'", "'>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'MOD'", "'%'", "'^'", "'NOT'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -60,10 +60,12 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     public static final int T__32=32;
     public static final int RULE_WS=11;
     public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int RULE_FLOAT=8;
     public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__42=42;
@@ -2196,7 +2198,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( ((LA9_0>=28 && LA9_0<=29)) ) {
+                if ( (LA9_0==RULE_STRING||(LA9_0>=RULE_ID && LA9_0<=RULE_FLOAT)||LA9_0==21||(LA9_0>=28 && LA9_0<=29)||LA9_0==42||LA9_0==48) ) {
                     alt9=1;
                 }
 
@@ -2515,7 +2517,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=28 && LA11_0<=29)) ) {
+                if ( (LA11_0==RULE_STRING||(LA11_0>=RULE_ID && LA11_0<=RULE_FLOAT)||LA11_0==21||(LA11_0>=28 && LA11_0<=29)||LA11_0==42||LA11_0==48) ) {
                     alt11=1;
                 }
 
@@ -2684,7 +2686,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=28 && LA12_0<=29)) ) {
+                if ( (LA12_0==RULE_STRING||(LA12_0>=RULE_ID && LA12_0<=RULE_FLOAT)||LA12_0==21||(LA12_0>=28 && LA12_0<=29)||LA12_0==42||LA12_0==48) ) {
                     alt12=1;
                 }
 
@@ -2813,81 +2815,159 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractCommand"
-    // InternalPortugol.g:1001:1: ruleAbstractCommand returns [EObject current=null] : (this_ReadCommand_0= ruleReadCommand | this_WriteCommand_1= ruleWriteCommand ) ;
+    // InternalPortugol.g:1001:1: ruleAbstractCommand returns [EObject current=null] : ( (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND ) | (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND ) | (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND ) ) ;
     public final EObject ruleAbstractCommand() throws RecognitionException {
         EObject current = null;
 
+        Token this_END_COMMAND_1=null;
+        Token this_END_COMMAND_3=null;
+        Token this_END_COMMAND_5=null;
         EObject this_ReadCommand_0 = null;
 
-        EObject this_WriteCommand_1 = null;
+        EObject this_WriteCommand_2 = null;
+
+        EObject this_Expression_4 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1007:2: ( (this_ReadCommand_0= ruleReadCommand | this_WriteCommand_1= ruleWriteCommand ) )
-            // InternalPortugol.g:1008:2: (this_ReadCommand_0= ruleReadCommand | this_WriteCommand_1= ruleWriteCommand )
+            // InternalPortugol.g:1007:2: ( ( (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND ) | (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND ) | (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND ) ) )
+            // InternalPortugol.g:1008:2: ( (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND ) | (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND ) | (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND ) )
             {
-            // InternalPortugol.g:1008:2: (this_ReadCommand_0= ruleReadCommand | this_WriteCommand_1= ruleWriteCommand )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==28) ) {
+            // InternalPortugol.g:1008:2: ( (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND ) | (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND ) | (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND ) )
+            int alt13=3;
+            switch ( input.LA(1) ) {
+            case 28:
+                {
                 alt13=1;
-            }
-            else if ( (LA13_0==29) ) {
+                }
+                break;
+            case 29:
+                {
                 alt13=2;
-            }
-            else {
+                }
+                break;
+            case RULE_STRING:
+            case RULE_ID:
+            case RULE_INT:
+            case RULE_FLOAT:
+            case 21:
+            case 42:
+            case 48:
+                {
+                alt13=3;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
+
             switch (alt13) {
                 case 1 :
-                    // InternalPortugol.g:1009:3: this_ReadCommand_0= ruleReadCommand
+                    // InternalPortugol.g:1009:3: (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND )
+                    {
+                    // InternalPortugol.g:1009:3: (this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND )
+                    // InternalPortugol.g:1010:4: this_ReadCommand_0= ruleReadCommand this_END_COMMAND_1= RULE_END_COMMAND
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getAbstractCommandAccess().getReadCommandParserRuleCall_0());
-                      		
+                      				newCompositeNode(grammarAccess.getAbstractCommandAccess().getReadCommandParserRuleCall_0_0());
+                      			
                     }
-                    pushFollow(FOLLOW_2);
+                    pushFollow(FOLLOW_6);
                     this_ReadCommand_0=ruleReadCommand();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_ReadCommand_0;
-                      			afterParserOrEnumRuleCall();
-                      		
+                      				current = this_ReadCommand_0;
+                      				afterParserOrEnumRuleCall();
+                      			
                     }
+                    this_END_COMMAND_1=(Token)match(input,RULE_END_COMMAND,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_END_COMMAND_1, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_0_1());
+                      			
+                    }
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalPortugol.g:1018:3: this_WriteCommand_1= ruleWriteCommand
+                    // InternalPortugol.g:1024:3: (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND )
+                    {
+                    // InternalPortugol.g:1024:3: (this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND )
+                    // InternalPortugol.g:1025:4: this_WriteCommand_2= ruleWriteCommand this_END_COMMAND_3= RULE_END_COMMAND
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getAbstractCommandAccess().getWriteCommandParserRuleCall_1());
-                      		
+                      				newCompositeNode(grammarAccess.getAbstractCommandAccess().getWriteCommandParserRuleCall_1_0());
+                      			
                     }
-                    pushFollow(FOLLOW_2);
-                    this_WriteCommand_1=ruleWriteCommand();
+                    pushFollow(FOLLOW_6);
+                    this_WriteCommand_2=ruleWriteCommand();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_WriteCommand_1;
-                      			afterParserOrEnumRuleCall();
-                      		
+                      				current = this_WriteCommand_2;
+                      				afterParserOrEnumRuleCall();
+                      			
                     }
+                    this_END_COMMAND_3=(Token)match(input,RULE_END_COMMAND,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_END_COMMAND_3, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_1_1());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalPortugol.g:1039:3: (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND )
+                    {
+                    // InternalPortugol.g:1039:3: (this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND )
+                    // InternalPortugol.g:1040:4: this_Expression_4= ruleExpression this_END_COMMAND_5= RULE_END_COMMAND
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      				newCompositeNode(grammarAccess.getAbstractCommandAccess().getExpressionParserRuleCall_2_0());
+                      			
+                    }
+                    pushFollow(FOLLOW_6);
+                    this_Expression_4=ruleExpression();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				current = this_Expression_4;
+                      				afterParserOrEnumRuleCall();
+                      			
+                    }
+                    this_END_COMMAND_5=(Token)match(input,RULE_END_COMMAND,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(this_END_COMMAND_5, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_2_1());
+                      			
+                    }
+
+                    }
+
 
                     }
                     break;
@@ -2916,7 +2996,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReadCommand"
-    // InternalPortugol.g:1030:1: entryRuleReadCommand returns [EObject current=null] : iv_ruleReadCommand= ruleReadCommand EOF ;
+    // InternalPortugol.g:1057:1: entryRuleReadCommand returns [EObject current=null] : iv_ruleReadCommand= ruleReadCommand EOF ;
     public final EObject entryRuleReadCommand() throws RecognitionException {
         EObject current = null;
 
@@ -2924,8 +3004,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1030:52: (iv_ruleReadCommand= ruleReadCommand EOF )
-            // InternalPortugol.g:1031:2: iv_ruleReadCommand= ruleReadCommand EOF
+            // InternalPortugol.g:1057:52: (iv_ruleReadCommand= ruleReadCommand EOF )
+            // InternalPortugol.g:1058:2: iv_ruleReadCommand= ruleReadCommand EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getReadCommandRule()); 
@@ -2956,14 +3036,13 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReadCommand"
-    // InternalPortugol.g:1037:1: ruleReadCommand returns [EObject current=null] : (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND ) ;
+    // InternalPortugol.g:1064:1: ruleReadCommand returns [EObject current=null] : (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' ) ;
     public final EObject ruleReadCommand() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token this_END_COMMAND_4=null;
         EObject lv_paramList_2_0 = null;
 
 
@@ -2971,11 +3050,11 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1043:2: ( (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND ) )
-            // InternalPortugol.g:1044:2: (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND )
+            // InternalPortugol.g:1070:2: ( (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' ) )
+            // InternalPortugol.g:1071:2: (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' )
             {
-            // InternalPortugol.g:1044:2: (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND )
-            // InternalPortugol.g:1045:3: otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND
+            // InternalPortugol.g:1071:2: (otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')' )
+            // InternalPortugol.g:1072:3: otherlv_0= 'leia' otherlv_1= '(' ( (lv_paramList_2_0= ruleDeclaredVar ) ) otherlv_3= ')'
             {
             otherlv_0=(Token)match(input,28,FOLLOW_13); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2989,11 +3068,11 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getReadCommandAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalPortugol.g:1053:3: ( (lv_paramList_2_0= ruleDeclaredVar ) )
-            // InternalPortugol.g:1054:4: (lv_paramList_2_0= ruleDeclaredVar )
+            // InternalPortugol.g:1080:3: ( (lv_paramList_2_0= ruleDeclaredVar ) )
+            // InternalPortugol.g:1081:4: (lv_paramList_2_0= ruleDeclaredVar )
             {
-            // InternalPortugol.g:1054:4: (lv_paramList_2_0= ruleDeclaredVar )
-            // InternalPortugol.g:1055:5: lv_paramList_2_0= ruleDeclaredVar
+            // InternalPortugol.g:1081:4: (lv_paramList_2_0= ruleDeclaredVar )
+            // InternalPortugol.g:1082:5: lv_paramList_2_0= ruleDeclaredVar
             {
             if ( state.backtracking==0 ) {
 
@@ -3024,16 +3103,10 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_6); if (state.failed) return current;
+            otherlv_3=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_3, grammarAccess.getReadCommandAccess().getRightParenthesisKeyword_3());
-              		
-            }
-            this_END_COMMAND_4=(Token)match(input,RULE_END_COMMAND,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(this_END_COMMAND_4, grammarAccess.getReadCommandAccess().getEND_COMMANDTerminalRuleCall_4());
               		
             }
 
@@ -3061,7 +3134,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWriteCommand"
-    // InternalPortugol.g:1084:1: entryRuleWriteCommand returns [EObject current=null] : iv_ruleWriteCommand= ruleWriteCommand EOF ;
+    // InternalPortugol.g:1107:1: entryRuleWriteCommand returns [EObject current=null] : iv_ruleWriteCommand= ruleWriteCommand EOF ;
     public final EObject entryRuleWriteCommand() throws RecognitionException {
         EObject current = null;
 
@@ -3069,8 +3142,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1084:53: (iv_ruleWriteCommand= ruleWriteCommand EOF )
-            // InternalPortugol.g:1085:2: iv_ruleWriteCommand= ruleWriteCommand EOF
+            // InternalPortugol.g:1107:53: (iv_ruleWriteCommand= ruleWriteCommand EOF )
+            // InternalPortugol.g:1108:2: iv_ruleWriteCommand= ruleWriteCommand EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getWriteCommandRule()); 
@@ -3101,14 +3174,13 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWriteCommand"
-    // InternalPortugol.g:1091:1: ruleWriteCommand returns [EObject current=null] : (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND ) ;
+    // InternalPortugol.g:1114:1: ruleWriteCommand returns [EObject current=null] : (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' ) ;
     public final EObject ruleWriteCommand() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token this_END_COMMAND_4=null;
         EObject lv_writeParam_2_0 = null;
 
 
@@ -3116,11 +3188,11 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1097:2: ( (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND ) )
-            // InternalPortugol.g:1098:2: (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND )
+            // InternalPortugol.g:1120:2: ( (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' ) )
+            // InternalPortugol.g:1121:2: (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' )
             {
-            // InternalPortugol.g:1098:2: (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND )
-            // InternalPortugol.g:1099:3: otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' this_END_COMMAND_4= RULE_END_COMMAND
+            // InternalPortugol.g:1121:2: (otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')' )
+            // InternalPortugol.g:1122:3: otherlv_0= 'escreva' otherlv_1= '(' ( (lv_writeParam_2_0= ruleWriteParam ) ) otherlv_3= ')'
             {
             otherlv_0=(Token)match(input,29,FOLLOW_13); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -3128,17 +3200,17 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getWriteCommandAccess().getEscrevaKeyword_0());
               		
             }
-            otherlv_1=(Token)match(input,21,FOLLOW_21); if (state.failed) return current;
+            otherlv_1=(Token)match(input,21,FOLLOW_17); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getWriteCommandAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalPortugol.g:1107:3: ( (lv_writeParam_2_0= ruleWriteParam ) )
-            // InternalPortugol.g:1108:4: (lv_writeParam_2_0= ruleWriteParam )
+            // InternalPortugol.g:1130:3: ( (lv_writeParam_2_0= ruleWriteParam ) )
+            // InternalPortugol.g:1131:4: (lv_writeParam_2_0= ruleWriteParam )
             {
-            // InternalPortugol.g:1108:4: (lv_writeParam_2_0= ruleWriteParam )
-            // InternalPortugol.g:1109:5: lv_writeParam_2_0= ruleWriteParam
+            // InternalPortugol.g:1131:4: (lv_writeParam_2_0= ruleWriteParam )
+            // InternalPortugol.g:1132:5: lv_writeParam_2_0= ruleWriteParam
             {
             if ( state.backtracking==0 ) {
 
@@ -3169,16 +3241,10 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_6); if (state.failed) return current;
+            otherlv_3=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_3, grammarAccess.getWriteCommandAccess().getRightParenthesisKeyword_3());
-              		
-            }
-            this_END_COMMAND_4=(Token)match(input,RULE_END_COMMAND,FOLLOW_2); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(this_END_COMMAND_4, grammarAccess.getWriteCommandAccess().getEND_COMMANDTerminalRuleCall_4());
               		
             }
 
@@ -3206,7 +3272,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWriteParam"
-    // InternalPortugol.g:1138:1: entryRuleWriteParam returns [EObject current=null] : iv_ruleWriteParam= ruleWriteParam EOF ;
+    // InternalPortugol.g:1157:1: entryRuleWriteParam returns [EObject current=null] : iv_ruleWriteParam= ruleWriteParam EOF ;
     public final EObject entryRuleWriteParam() throws RecognitionException {
         EObject current = null;
 
@@ -3214,8 +3280,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1138:51: (iv_ruleWriteParam= ruleWriteParam EOF )
-            // InternalPortugol.g:1139:2: iv_ruleWriteParam= ruleWriteParam EOF
+            // InternalPortugol.g:1157:51: (iv_ruleWriteParam= ruleWriteParam EOF )
+            // InternalPortugol.g:1158:2: iv_ruleWriteParam= ruleWriteParam EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getWriteParamRule()); 
@@ -3246,7 +3312,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWriteParam"
-    // InternalPortugol.g:1145:1: ruleWriteParam returns [EObject current=null] : ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? ) ;
+    // InternalPortugol.g:1164:1: ruleWriteParam returns [EObject current=null] : ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? ) ;
     public final EObject ruleWriteParam() throws RecognitionException {
         EObject current = null;
 
@@ -3262,24 +3328,24 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1151:2: ( ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? ) )
-            // InternalPortugol.g:1152:2: ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? )
+            // InternalPortugol.g:1170:2: ( ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? ) )
+            // InternalPortugol.g:1171:2: ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? )
             {
-            // InternalPortugol.g:1152:2: ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? )
-            // InternalPortugol.g:1153:3: ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )?
+            // InternalPortugol.g:1171:2: ( ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )? )
+            // InternalPortugol.g:1172:3: ( (lv_expression_0_0= ruleExpression ) ) (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )* ( (lv_precision_3_0= ruleOptDecimalPrecision ) )?
             {
-            // InternalPortugol.g:1153:3: ( (lv_expression_0_0= ruleExpression ) )
-            // InternalPortugol.g:1154:4: (lv_expression_0_0= ruleExpression )
+            // InternalPortugol.g:1172:3: ( (lv_expression_0_0= ruleExpression ) )
+            // InternalPortugol.g:1173:4: (lv_expression_0_0= ruleExpression )
             {
-            // InternalPortugol.g:1154:4: (lv_expression_0_0= ruleExpression )
-            // InternalPortugol.g:1155:5: lv_expression_0_0= ruleExpression
+            // InternalPortugol.g:1173:4: (lv_expression_0_0= ruleExpression )
+            // InternalPortugol.g:1174:5: lv_expression_0_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
               					newCompositeNode(grammarAccess.getWriteParamAccess().getExpressionExpressionParserRuleCall_0_0());
               				
             }
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             lv_expression_0_0=ruleExpression();
 
             state._fsp--;
@@ -3303,7 +3369,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPortugol.g:1172:3: (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )*
+            // InternalPortugol.g:1191:3: (otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -3316,26 +3382,26 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalPortugol.g:1173:4: otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) )
+            	    // InternalPortugol.g:1192:4: otherlv_1= ',' ( (lv_expression_2_0= ruleExpression ) )
             	    {
-            	    otherlv_1=(Token)match(input,16,FOLLOW_21); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,16,FOLLOW_17); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				newLeafNode(otherlv_1, grammarAccess.getWriteParamAccess().getCommaKeyword_1_0());
             	      			
             	    }
-            	    // InternalPortugol.g:1177:4: ( (lv_expression_2_0= ruleExpression ) )
-            	    // InternalPortugol.g:1178:5: (lv_expression_2_0= ruleExpression )
+            	    // InternalPortugol.g:1196:4: ( (lv_expression_2_0= ruleExpression ) )
+            	    // InternalPortugol.g:1197:5: (lv_expression_2_0= ruleExpression )
             	    {
-            	    // InternalPortugol.g:1178:5: (lv_expression_2_0= ruleExpression )
-            	    // InternalPortugol.g:1179:6: lv_expression_2_0= ruleExpression
+            	    // InternalPortugol.g:1197:5: (lv_expression_2_0= ruleExpression )
+            	    // InternalPortugol.g:1198:6: lv_expression_2_0= ruleExpression
             	    {
             	    if ( state.backtracking==0 ) {
 
             	      						newCompositeNode(grammarAccess.getWriteParamAccess().getExpressionExpressionParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_22);
+            	    pushFollow(FOLLOW_21);
             	    lv_expression_2_0=ruleExpression();
 
             	    state._fsp--;
@@ -3368,7 +3434,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalPortugol.g:1197:3: ( (lv_precision_3_0= ruleOptDecimalPrecision ) )?
+            // InternalPortugol.g:1216:3: ( (lv_precision_3_0= ruleOptDecimalPrecision ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3377,10 +3443,10 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalPortugol.g:1198:4: (lv_precision_3_0= ruleOptDecimalPrecision )
+                    // InternalPortugol.g:1217:4: (lv_precision_3_0= ruleOptDecimalPrecision )
                     {
-                    // InternalPortugol.g:1198:4: (lv_precision_3_0= ruleOptDecimalPrecision )
-                    // InternalPortugol.g:1199:5: lv_precision_3_0= ruleOptDecimalPrecision
+                    // InternalPortugol.g:1217:4: (lv_precision_3_0= ruleOptDecimalPrecision )
+                    // InternalPortugol.g:1218:5: lv_precision_3_0= ruleOptDecimalPrecision
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3438,8 +3504,181 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleWriteParam"
 
 
+    // $ANTLR start "entryRuleOptDecimalPrecision"
+    // InternalPortugol.g:1239:1: entryRuleOptDecimalPrecision returns [EObject current=null] : iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF ;
+    public final EObject entryRuleOptDecimalPrecision() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleOptDecimalPrecision = null;
+
+
+        try {
+            // InternalPortugol.g:1239:60: (iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF )
+            // InternalPortugol.g:1240:2: iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getOptDecimalPrecisionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleOptDecimalPrecision=ruleOptDecimalPrecision();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleOptDecimalPrecision; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleOptDecimalPrecision"
+
+
+    // $ANTLR start "ruleOptDecimalPrecision"
+    // InternalPortugol.g:1246:1: ruleOptDecimalPrecision returns [EObject current=null] : (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? ) ;
+    public final EObject ruleOptDecimalPrecision() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_firstPrecision_1_0=null;
+        Token otherlv_2=null;
+        Token lv_secondPrecision_3_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:1252:2: ( (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? ) )
+            // InternalPortugol.g:1253:2: (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? )
+            {
+            // InternalPortugol.g:1253:2: (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? )
+            // InternalPortugol.g:1254:3: otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )?
+            {
+            otherlv_0=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			newLeafNode(otherlv_0, grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_0());
+              		
+            }
+            // InternalPortugol.g:1258:3: ( (lv_firstPrecision_1_0= RULE_INT ) )
+            // InternalPortugol.g:1259:4: (lv_firstPrecision_1_0= RULE_INT )
+            {
+            // InternalPortugol.g:1259:4: (lv_firstPrecision_1_0= RULE_INT )
+            // InternalPortugol.g:1260:5: lv_firstPrecision_1_0= RULE_INT
+            {
+            lv_firstPrecision_1_0=(Token)match(input,RULE_INT,FOLLOW_23); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              					newLeafNode(lv_firstPrecision_1_0, grammarAccess.getOptDecimalPrecisionAccess().getFirstPrecisionINTTerminalRuleCall_1_0());
+              				
+            }
+            if ( state.backtracking==0 ) {
+
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getOptDecimalPrecisionRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"firstPrecision",
+              						lv_firstPrecision_1_0,
+              						"org.eclipse.xtext.common.Terminals.INT");
+              				
+            }
+
+            }
+
+
+            }
+
+            // InternalPortugol.g:1276:3: (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==15) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalPortugol.g:1277:4: otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) )
+                    {
+                    otherlv_2=(Token)match(input,15,FOLLOW_22); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_2, grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_2_0());
+                      			
+                    }
+                    // InternalPortugol.g:1281:4: ( (lv_secondPrecision_3_0= RULE_INT ) )
+                    // InternalPortugol.g:1282:5: (lv_secondPrecision_3_0= RULE_INT )
+                    {
+                    // InternalPortugol.g:1282:5: (lv_secondPrecision_3_0= RULE_INT )
+                    // InternalPortugol.g:1283:6: lv_secondPrecision_3_0= RULE_INT
+                    {
+                    lv_secondPrecision_3_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(lv_secondPrecision_3_0, grammarAccess.getOptDecimalPrecisionAccess().getSecondPrecisionINTTerminalRuleCall_2_1_0());
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getOptDecimalPrecisionRule());
+                      						}
+                      						setWithLastConsumed(
+                      							current,
+                      							"secondPrecision",
+                      							lv_secondPrecision_3_0,
+                      							"org.eclipse.xtext.common.Terminals.INT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleOptDecimalPrecision"
+
+
     // $ANTLR start "entryRuleExpression"
-    // InternalPortugol.g:1220:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalPortugol.g:1304:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3447,8 +3686,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1220:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalPortugol.g:1221:2: iv_ruleExpression= ruleExpression EOF
+            // InternalPortugol.g:1304:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalPortugol.g:1305:2: iv_ruleExpression= ruleExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionRule()); 
@@ -3479,149 +3718,36 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalPortugol.g:1227:1: ruleExpression returns [EObject current=null] : (this_XorExpression_0= ruleXorExpression ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* ) ;
+    // InternalPortugol.g:1311:1: ruleExpression returns [EObject current=null] : this_Assignment_0= ruleAssignment ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
-        Token lv_op_2_0=null;
-        EObject this_XorExpression_0 = null;
-
-        EObject lv_right_3_0 = null;
+        EObject this_Assignment_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1233:2: ( (this_XorExpression_0= ruleXorExpression ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* ) )
-            // InternalPortugol.g:1234:2: (this_XorExpression_0= ruleXorExpression ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* )
-            {
-            // InternalPortugol.g:1234:2: (this_XorExpression_0= ruleXorExpression ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* )
-            // InternalPortugol.g:1235:3: this_XorExpression_0= ruleXorExpression ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )*
+            // InternalPortugol.g:1317:2: (this_Assignment_0= ruleAssignment )
+            // InternalPortugol.g:1318:2: this_Assignment_0= ruleAssignment
             {
             if ( state.backtracking==0 ) {
 
-              			newCompositeNode(grammarAccess.getExpressionAccess().getXorExpressionParserRuleCall_0());
-              		
+              		newCompositeNode(grammarAccess.getExpressionAccess().getAssignmentParserRuleCall());
+              	
             }
-            pushFollow(FOLLOW_23);
-            this_XorExpression_0=ruleXorExpression();
+            pushFollow(FOLLOW_2);
+            this_Assignment_0=ruleAssignment();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			current = this_XorExpression_0;
-              			afterParserOrEnumRuleCall();
-              		
+              		current = this_Assignment_0;
+              		afterParserOrEnumRuleCall();
+              	
             }
-            // InternalPortugol.g:1243:3: ( ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )*
-            loop16:
-            do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
-
-                if ( (LA16_0==30) ) {
-                    alt16=1;
-                }
-
-
-                switch (alt16) {
-            	case 1 :
-            	    // InternalPortugol.g:1244:4: ( () ( (lv_op_2_0= 'OR' ) ) ) ( (lv_right_3_0= ruleXorExpression ) )
-            	    {
-            	    // InternalPortugol.g:1244:4: ( () ( (lv_op_2_0= 'OR' ) ) )
-            	    // InternalPortugol.g:1245:5: () ( (lv_op_2_0= 'OR' ) )
-            	    {
-            	    // InternalPortugol.g:1245:5: ()
-            	    // InternalPortugol.g:1246:6: 
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						current = forceCreateModelElementAndSet(
-            	      							grammarAccess.getExpressionAccess().getExpressionLeftAction_1_0_0(),
-            	      							current);
-            	      					
-            	    }
-
-            	    }
-
-            	    // InternalPortugol.g:1252:5: ( (lv_op_2_0= 'OR' ) )
-            	    // InternalPortugol.g:1253:6: (lv_op_2_0= 'OR' )
-            	    {
-            	    // InternalPortugol.g:1253:6: (lv_op_2_0= 'OR' )
-            	    // InternalPortugol.g:1254:7: lv_op_2_0= 'OR'
-            	    {
-            	    lv_op_2_0=(Token)match(input,30,FOLLOW_21); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      							newLeafNode(lv_op_2_0, grammarAccess.getExpressionAccess().getOpORKeyword_1_0_1_0());
-            	      						
-            	    }
-            	    if ( state.backtracking==0 ) {
-
-            	      							if (current==null) {
-            	      								current = createModelElement(grammarAccess.getExpressionRule());
-            	      							}
-            	      							setWithLastConsumed(current, "op", lv_op_2_0, "OR");
-            	      						
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	    // InternalPortugol.g:1267:4: ( (lv_right_3_0= ruleXorExpression ) )
-            	    // InternalPortugol.g:1268:5: (lv_right_3_0= ruleXorExpression )
-            	    {
-            	    // InternalPortugol.g:1268:5: (lv_right_3_0= ruleXorExpression )
-            	    // InternalPortugol.g:1269:6: lv_right_3_0= ruleXorExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getExpressionAccess().getRightXorExpressionParserRuleCall_1_1_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_23);
-            	    lv_right_3_0=ruleXorExpression();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getExpressionRule());
-            	      						}
-            	      						set(
-            	      							current,
-            	      							"right",
-            	      							lv_right_3_0,
-            	      							"org.hopper.language.Portugol.XorExpression");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop16;
-                }
-            } while (true);
-
-
-            }
-
 
             }
 
@@ -3643,28 +3769,28 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleExpression"
 
 
-    // $ANTLR start "entryRuleXorExpression"
-    // InternalPortugol.g:1291:1: entryRuleXorExpression returns [EObject current=null] : iv_ruleXorExpression= ruleXorExpression EOF ;
-    public final EObject entryRuleXorExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleAssignment"
+    // InternalPortugol.g:1329:1: entryRuleAssignment returns [EObject current=null] : iv_ruleAssignment= ruleAssignment EOF ;
+    public final EObject entryRuleAssignment() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleXorExpression = null;
+        EObject iv_ruleAssignment = null;
 
 
         try {
-            // InternalPortugol.g:1291:54: (iv_ruleXorExpression= ruleXorExpression EOF )
-            // InternalPortugol.g:1292:2: iv_ruleXorExpression= ruleXorExpression EOF
+            // InternalPortugol.g:1329:51: (iv_ruleAssignment= ruleAssignment EOF )
+            // InternalPortugol.g:1330:2: iv_ruleAssignment= ruleAssignment EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getXorExpressionRule()); 
+               newCompositeNode(grammarAccess.getAssignmentRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleXorExpression=ruleXorExpression();
+            iv_ruleAssignment=ruleAssignment();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleXorExpression; 
+               current =iv_ruleAssignment; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -3680,150 +3806,289 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleXorExpression"
+    // $ANTLR end "entryRuleAssignment"
 
 
-    // $ANTLR start "ruleXorExpression"
-    // InternalPortugol.g:1298:1: ruleXorExpression returns [EObject current=null] : (this_AndExpression_0= ruleAndExpression ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* ) ;
-    public final EObject ruleXorExpression() throws RecognitionException {
+    // $ANTLR start "ruleAssignment"
+    // InternalPortugol.g:1336:1: ruleAssignment returns [EObject current=null] : ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) ) | (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? ) ) ;
+    public final EObject ruleAssignment() throws RecognitionException {
         EObject current = null;
 
-        Token lv_op_2_0=null;
-        EObject this_AndExpression_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_op_6_0=null;
+        EObject lv_value_3_0 = null;
 
-        EObject lv_right_3_0 = null;
+        EObject this_OrExpression_4 = null;
+
+        EObject lv_right_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1304:2: ( (this_AndExpression_0= ruleAndExpression ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* ) )
-            // InternalPortugol.g:1305:2: (this_AndExpression_0= ruleAndExpression ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* )
+            // InternalPortugol.g:1342:2: ( ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) ) | (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? ) ) )
+            // InternalPortugol.g:1343:2: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) ) | (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? ) )
             {
-            // InternalPortugol.g:1305:2: (this_AndExpression_0= ruleAndExpression ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* )
-            // InternalPortugol.g:1306:3: this_AndExpression_0= ruleAndExpression ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )*
-            {
-            if ( state.backtracking==0 ) {
+            // InternalPortugol.g:1343:2: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) ) | (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? ) )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-              			newCompositeNode(grammarAccess.getXorExpressionAccess().getAndExpressionParserRuleCall_0());
-              		
-            }
-            pushFollow(FOLLOW_24);
-            this_AndExpression_0=ruleAndExpression();
+            if ( (LA18_0==RULE_ID) ) {
+                int LA18_1 = input.LA(2);
 
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			current = this_AndExpression_0;
-              			afterParserOrEnumRuleCall();
-              		
-            }
-            // InternalPortugol.g:1314:3: ( ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
-
-                if ( (LA17_0==31) ) {
-                    alt17=1;
+                if ( (LA18_1==21) ) {
+                    alt18=2;
                 }
-
-
-                switch (alt17) {
-            	case 1 :
-            	    // InternalPortugol.g:1315:4: ( () ( (lv_op_2_0= 'XOR' ) ) ) ( (lv_right_3_0= ruleAndExpression ) )
-            	    {
-            	    // InternalPortugol.g:1315:4: ( () ( (lv_op_2_0= 'XOR' ) ) )
-            	    // InternalPortugol.g:1316:5: () ( (lv_op_2_0= 'XOR' ) )
-            	    {
-            	    // InternalPortugol.g:1316:5: ()
-            	    // InternalPortugol.g:1317:6: 
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						current = forceCreateModelElementAndSet(
-            	      							grammarAccess.getXorExpressionAccess().getXorExpressionLeftAction_1_0_0(),
-            	      							current);
-            	      					
-            	    }
-
-            	    }
-
-            	    // InternalPortugol.g:1323:5: ( (lv_op_2_0= 'XOR' ) )
-            	    // InternalPortugol.g:1324:6: (lv_op_2_0= 'XOR' )
-            	    {
-            	    // InternalPortugol.g:1324:6: (lv_op_2_0= 'XOR' )
-            	    // InternalPortugol.g:1325:7: lv_op_2_0= 'XOR'
-            	    {
-            	    lv_op_2_0=(Token)match(input,31,FOLLOW_21); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      							newLeafNode(lv_op_2_0, grammarAccess.getXorExpressionAccess().getOpXORKeyword_1_0_1_0());
-            	      						
-            	    }
-            	    if ( state.backtracking==0 ) {
-
-            	      							if (current==null) {
-            	      								current = createModelElement(grammarAccess.getXorExpressionRule());
-            	      							}
-            	      							setWithLastConsumed(current, "op", lv_op_2_0, "XOR");
-            	      						
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	    // InternalPortugol.g:1338:4: ( (lv_right_3_0= ruleAndExpression ) )
-            	    // InternalPortugol.g:1339:5: (lv_right_3_0= ruleAndExpression )
-            	    {
-            	    // InternalPortugol.g:1339:5: (lv_right_3_0= ruleAndExpression )
-            	    // InternalPortugol.g:1340:6: lv_right_3_0= ruleAndExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getXorExpressionAccess().getRightAndExpressionParserRuleCall_1_1_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_24);
-            	    lv_right_3_0=ruleAndExpression();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getXorExpressionRule());
-            	      						}
-            	      						set(
-            	      							current,
-            	      							"right",
-            	      							lv_right_3_0,
-            	      							"org.hopper.language.Portugol.AndExpression");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop17;
+                else if ( (LA18_1==30) ) {
+                    alt18=1;
                 }
-            } while (true);
+                else {
+                    if (state.backtracking>0) {state.failed=true; return current;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 18, 1, input);
 
+                    throw nvae;
+                }
+            }
+            else if ( (LA18_0==RULE_STRING||(LA18_0>=RULE_INT && LA18_0<=RULE_FLOAT)||LA18_0==21||LA18_0==42||LA18_0==48) ) {
+                alt18=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 18, 0, input);
+
+                throw nvae;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalPortugol.g:1344:3: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) )
+                    {
+                    // InternalPortugol.g:1344:3: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) ) )
+                    // InternalPortugol.g:1345:4: () ( (otherlv_1= RULE_ID ) ) otherlv_2= '<-' ( (lv_value_3_0= ruleAssignment ) )
+                    {
+                    // InternalPortugol.g:1345:4: ()
+                    // InternalPortugol.g:1346:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getAssignmentAccess().getAssignmentAction_0_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalPortugol.g:1352:4: ( (otherlv_1= RULE_ID ) )
+                    // InternalPortugol.g:1353:5: (otherlv_1= RULE_ID )
+                    {
+                    // InternalPortugol.g:1353:5: (otherlv_1= RULE_ID )
+                    // InternalPortugol.g:1354:6: otherlv_1= RULE_ID
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getAssignmentRule());
+                      						}
+                      					
+                    }
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_24); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(otherlv_1, grammarAccess.getAssignmentAccess().getTargetVarNameCrossReference_0_1_0());
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+                    otherlv_2=(Token)match(input,30,FOLLOW_17); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				newLeafNode(otherlv_2, grammarAccess.getAssignmentAccess().getLessThanSignHyphenMinusKeyword_0_2());
+                      			
+                    }
+                    // InternalPortugol.g:1369:4: ( (lv_value_3_0= ruleAssignment ) )
+                    // InternalPortugol.g:1370:5: (lv_value_3_0= ruleAssignment )
+                    {
+                    // InternalPortugol.g:1370:5: (lv_value_3_0= ruleAssignment )
+                    // InternalPortugol.g:1371:6: lv_value_3_0= ruleAssignment
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						newCompositeNode(grammarAccess.getAssignmentAccess().getValueAssignmentParserRuleCall_0_3_0());
+                      					
+                    }
+                    pushFollow(FOLLOW_2);
+                    lv_value_3_0=ruleAssignment();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElementForParent(grammarAccess.getAssignmentRule());
+                      						}
+                      						set(
+                      							current,
+                      							"value",
+                      							lv_value_3_0,
+                      							"org.hopper.language.Portugol.Assignment");
+                      						afterParserOrEnumRuleCall();
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalPortugol.g:1390:3: (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? )
+                    {
+                    // InternalPortugol.g:1390:3: (this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )? )
+                    // InternalPortugol.g:1391:4: this_OrExpression_4= ruleOrExpression ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )?
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      				newCompositeNode(grammarAccess.getAssignmentAccess().getOrExpressionParserRuleCall_1_0());
+                      			
+                    }
+                    pushFollow(FOLLOW_25);
+                    this_OrExpression_4=ruleOrExpression();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				current = this_OrExpression_4;
+                      				afterParserOrEnumRuleCall();
+                      			
+                    }
+                    // InternalPortugol.g:1399:4: ( ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) ) )?
+                    int alt17=2;
+                    int LA17_0 = input.LA(1);
+
+                    if ( (LA17_0==30) ) {
+                        int LA17_1 = input.LA(2);
+
+                        if ( (synpred1_InternalPortugol()) ) {
+                            alt17=1;
+                        }
+                    }
+                    switch (alt17) {
+                        case 1 :
+                            // InternalPortugol.g:1400:5: ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) ) ( (lv_right_7_0= ruleAssignment ) )
+                            {
+                            // InternalPortugol.g:1400:5: ( ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) ) )
+                            // InternalPortugol.g:1401:6: ( ( () ( ( '<-' ) ) ) )=> ( () ( (lv_op_6_0= '<-' ) ) )
+                            {
+                            // InternalPortugol.g:1411:6: ( () ( (lv_op_6_0= '<-' ) ) )
+                            // InternalPortugol.g:1412:7: () ( (lv_op_6_0= '<-' ) )
+                            {
+                            // InternalPortugol.g:1412:7: ()
+                            // InternalPortugol.g:1413:8: 
+                            {
+                            if ( state.backtracking==0 ) {
+
+                              								current = forceCreateModelElementAndSet(
+                              									grammarAccess.getAssignmentAccess().getBinaryOperationLeftAction_1_1_0_0_0(),
+                              									current);
+                              							
+                            }
+
+                            }
+
+                            // InternalPortugol.g:1419:7: ( (lv_op_6_0= '<-' ) )
+                            // InternalPortugol.g:1420:8: (lv_op_6_0= '<-' )
+                            {
+                            // InternalPortugol.g:1420:8: (lv_op_6_0= '<-' )
+                            // InternalPortugol.g:1421:9: lv_op_6_0= '<-'
+                            {
+                            lv_op_6_0=(Token)match(input,30,FOLLOW_17); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              									newLeafNode(lv_op_6_0, grammarAccess.getAssignmentAccess().getOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0());
+                              								
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              									if (current==null) {
+                              										current = createModelElement(grammarAccess.getAssignmentRule());
+                              									}
+                              									setWithLastConsumed(current, "op", lv_op_6_0, "<-");
+                              								
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+
+                            // InternalPortugol.g:1435:5: ( (lv_right_7_0= ruleAssignment ) )
+                            // InternalPortugol.g:1436:6: (lv_right_7_0= ruleAssignment )
+                            {
+                            // InternalPortugol.g:1436:6: (lv_right_7_0= ruleAssignment )
+                            // InternalPortugol.g:1437:7: lv_right_7_0= ruleAssignment
+                            {
+                            if ( state.backtracking==0 ) {
+
+                              							newCompositeNode(grammarAccess.getAssignmentAccess().getRightAssignmentParserRuleCall_1_1_1_0());
+                              						
+                            }
+                            pushFollow(FOLLOW_2);
+                            lv_right_7_0=ruleAssignment();
+
+                            state._fsp--;
+                            if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              							if (current==null) {
+                              								current = createModelElementForParent(grammarAccess.getAssignmentRule());
+                              							}
+                              							set(
+                              								current,
+                              								"right",
+                              								lv_right_7_0,
+                              								"org.hopper.language.Portugol.Assignment");
+                              							afterParserOrEnumRuleCall();
+                              						
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -3845,31 +4110,31 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleXorExpression"
+    // $ANTLR end "ruleAssignment"
 
 
-    // $ANTLR start "entryRuleAndExpression"
-    // InternalPortugol.g:1362:1: entryRuleAndExpression returns [EObject current=null] : iv_ruleAndExpression= ruleAndExpression EOF ;
-    public final EObject entryRuleAndExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleOrExpression"
+    // InternalPortugol.g:1460:1: entryRuleOrExpression returns [EObject current=null] : iv_ruleOrExpression= ruleOrExpression EOF ;
+    public final EObject entryRuleOrExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAndExpression = null;
+        EObject iv_ruleOrExpression = null;
 
 
         try {
-            // InternalPortugol.g:1362:54: (iv_ruleAndExpression= ruleAndExpression EOF )
-            // InternalPortugol.g:1363:2: iv_ruleAndExpression= ruleAndExpression EOF
+            // InternalPortugol.g:1460:53: (iv_ruleOrExpression= ruleOrExpression EOF )
+            // InternalPortugol.g:1461:2: iv_ruleOrExpression= ruleOrExpression EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getAndExpressionRule()); 
+               newCompositeNode(grammarAccess.getOrExpressionRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleAndExpression=ruleAndExpression();
+            iv_ruleOrExpression=ruleOrExpression();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleAndExpression; 
+               current =iv_ruleOrExpression; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -3885,17 +4150,16 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleAndExpression"
+    // $ANTLR end "entryRuleOrExpression"
 
 
-    // $ANTLR start "ruleAndExpression"
-    // InternalPortugol.g:1369:1: ruleAndExpression returns [EObject current=null] : (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
-    public final EObject ruleAndExpression() throws RecognitionException {
+    // $ANTLR start "ruleOrExpression"
+    // InternalPortugol.g:1467:1: ruleOrExpression returns [EObject current=null] : (this_XorExpression_0= ruleXorExpression ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* ) ;
+    public final EObject ruleOrExpression() throws RecognitionException {
         EObject current = null;
 
-        Token lv_op_2_1=null;
-        Token lv_op_2_2=null;
-        EObject this_Comparison_0 = null;
+        Token lv_op_2_0=null;
+        EObject this_XorExpression_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -3904,161 +4168,126 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1375:2: ( (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
-            // InternalPortugol.g:1376:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // InternalPortugol.g:1473:2: ( (this_XorExpression_0= ruleXorExpression ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* ) )
+            // InternalPortugol.g:1474:2: (this_XorExpression_0= ruleXorExpression ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* )
             {
-            // InternalPortugol.g:1376:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
-            // InternalPortugol.g:1377:3: this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            // InternalPortugol.g:1474:2: (this_XorExpression_0= ruleXorExpression ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )* )
+            // InternalPortugol.g:1475:3: this_XorExpression_0= ruleXorExpression ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
 
-              			newCompositeNode(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0());
+              			newCompositeNode(grammarAccess.getOrExpressionAccess().getXorExpressionParserRuleCall_0());
               		
             }
-            pushFollow(FOLLOW_25);
-            this_Comparison_0=ruleComparison();
+            pushFollow(FOLLOW_26);
+            this_XorExpression_0=ruleXorExpression();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			current = this_Comparison_0;
+              			current = this_XorExpression_0;
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalPortugol.g:1385:3: ( ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            // InternalPortugol.g:1483:3: ( ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) ) )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( ((LA19_0>=32 && LA19_0<=33)) ) {
-                    alt19=1;
+                if ( (LA19_0==31) ) {
+                    int LA19_2 = input.LA(2);
+
+                    if ( (synpred2_InternalPortugol()) ) {
+                        alt19=1;
+                    }
+
+
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalPortugol.g:1386:4: ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) ) ( (lv_right_3_0= ruleComparison ) )
+            	    // InternalPortugol.g:1484:4: ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) ) ( (lv_right_3_0= ruleXorExpression ) )
             	    {
-            	    // InternalPortugol.g:1386:4: ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) ) )
-            	    // InternalPortugol.g:1387:5: () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) )
+            	    // InternalPortugol.g:1484:4: ( ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) ) )
+            	    // InternalPortugol.g:1485:5: ( ( () ( ( 'OU' ) ) ) )=> ( () ( (lv_op_2_0= 'OU' ) ) )
             	    {
-            	    // InternalPortugol.g:1387:5: ()
-            	    // InternalPortugol.g:1388:6: 
+            	    // InternalPortugol.g:1495:5: ( () ( (lv_op_2_0= 'OU' ) ) )
+            	    // InternalPortugol.g:1496:6: () ( (lv_op_2_0= 'OU' ) )
             	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						current = forceCreateModelElementAndSet(
-            	      							grammarAccess.getAndExpressionAccess().getAndExpressionLeftAction_1_0_0(),
-            	      							current);
-            	      					
-            	    }
-
-            	    }
-
-            	    // InternalPortugol.g:1394:5: ( ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) ) )
-            	    // InternalPortugol.g:1395:6: ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) )
-            	    {
-            	    // InternalPortugol.g:1395:6: ( (lv_op_2_1= '&' | lv_op_2_2= 'AND' ) )
-            	    // InternalPortugol.g:1396:7: (lv_op_2_1= '&' | lv_op_2_2= 'AND' )
-            	    {
-            	    // InternalPortugol.g:1396:7: (lv_op_2_1= '&' | lv_op_2_2= 'AND' )
-            	    int alt18=2;
-            	    int LA18_0 = input.LA(1);
-
-            	    if ( (LA18_0==32) ) {
-            	        alt18=1;
-            	    }
-            	    else if ( (LA18_0==33) ) {
-            	        alt18=2;
-            	    }
-            	    else {
-            	        if (state.backtracking>0) {state.failed=true; return current;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 18, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt18) {
-            	        case 1 :
-            	            // InternalPortugol.g:1397:8: lv_op_2_1= '&'
-            	            {
-            	            lv_op_2_1=(Token)match(input,32,FOLLOW_21); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              								newLeafNode(lv_op_2_1, grammarAccess.getAndExpressionAccess().getOpAmpersandKeyword_1_0_1_0_0());
-            	              							
-            	            }
-            	            if ( state.backtracking==0 ) {
-
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getAndExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_1, null);
-            	              							
-            	            }
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalPortugol.g:1408:8: lv_op_2_2= 'AND'
-            	            {
-            	            lv_op_2_2=(Token)match(input,33,FOLLOW_21); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              								newLeafNode(lv_op_2_2, grammarAccess.getAndExpressionAccess().getOpANDKeyword_1_0_1_0_1());
-            	              							
-            	            }
-            	            if ( state.backtracking==0 ) {
-
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getAndExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_2, null);
-            	              							
-            	            }
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	    // InternalPortugol.g:1422:4: ( (lv_right_3_0= ruleComparison ) )
-            	    // InternalPortugol.g:1423:5: (lv_right_3_0= ruleComparison )
-            	    {
-            	    // InternalPortugol.g:1423:5: (lv_right_3_0= ruleComparison )
-            	    // InternalPortugol.g:1424:6: lv_right_3_0= ruleComparison
+            	    // InternalPortugol.g:1496:6: ()
+            	    // InternalPortugol.g:1497:7: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_1_0());
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getOrExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:1503:6: ( (lv_op_2_0= 'OU' ) )
+            	    // InternalPortugol.g:1504:7: (lv_op_2_0= 'OU' )
+            	    {
+            	    // InternalPortugol.g:1504:7: (lv_op_2_0= 'OU' )
+            	    // InternalPortugol.g:1505:8: lv_op_2_0= 'OU'
+            	    {
+            	    lv_op_2_0=(Token)match(input,31,FOLLOW_17); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      								newLeafNode(lv_op_2_0, grammarAccess.getOrExpressionAccess().getOpOUKeyword_1_0_0_1_0());
+            	      							
+            	    }
+            	    if ( state.backtracking==0 ) {
+
+            	      								if (current==null) {
+            	      									current = createModelElement(grammarAccess.getOrExpressionRule());
+            	      								}
+            	      								setWithLastConsumed(current, "op", lv_op_2_0, "OU");
+            	      							
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:1519:4: ( (lv_right_3_0= ruleXorExpression ) )
+            	    // InternalPortugol.g:1520:5: (lv_right_3_0= ruleXorExpression )
+            	    {
+            	    // InternalPortugol.g:1520:5: (lv_right_3_0= ruleXorExpression )
+            	    // InternalPortugol.g:1521:6: lv_right_3_0= ruleXorExpression
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getOrExpressionAccess().getRightXorExpressionParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_25);
-            	    lv_right_3_0=ruleComparison();
+            	    pushFollow(FOLLOW_26);
+            	    lv_right_3_0=ruleXorExpression();
 
             	    state._fsp--;
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getAndExpressionRule());
+            	      							current = createModelElementForParent(grammarAccess.getOrExpressionRule());
             	      						}
             	      						set(
             	      							current,
             	      							"right",
             	      							lv_right_3_0,
-            	      							"org.hopper.language.Portugol.Comparison");
+            	      							"org.hopper.language.Portugol.XorExpression");
             	      						afterParserOrEnumRuleCall();
             	      					
             	    }
@@ -4098,11 +4327,502 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleOrExpression"
+
+
+    // $ANTLR start "entryRuleXorExpression"
+    // InternalPortugol.g:1543:1: entryRuleXorExpression returns [EObject current=null] : iv_ruleXorExpression= ruleXorExpression EOF ;
+    public final EObject entryRuleXorExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleXorExpression = null;
+
+
+        try {
+            // InternalPortugol.g:1543:54: (iv_ruleXorExpression= ruleXorExpression EOF )
+            // InternalPortugol.g:1544:2: iv_ruleXorExpression= ruleXorExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getXorExpressionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleXorExpression=ruleXorExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleXorExpression; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleXorExpression"
+
+
+    // $ANTLR start "ruleXorExpression"
+    // InternalPortugol.g:1550:1: ruleXorExpression returns [EObject current=null] : (this_AndExpression_0= ruleAndExpression ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* ) ;
+    public final EObject ruleXorExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_op_2_0=null;
+        EObject this_AndExpression_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:1556:2: ( (this_AndExpression_0= ruleAndExpression ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* ) )
+            // InternalPortugol.g:1557:2: (this_AndExpression_0= ruleAndExpression ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* )
+            {
+            // InternalPortugol.g:1557:2: (this_AndExpression_0= ruleAndExpression ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )* )
+            // InternalPortugol.g:1558:3: this_AndExpression_0= ruleAndExpression ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+
+              			newCompositeNode(grammarAccess.getXorExpressionAccess().getAndExpressionParserRuleCall_0());
+              		
+            }
+            pushFollow(FOLLOW_27);
+            this_AndExpression_0=ruleAndExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			current = this_AndExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
+            }
+            // InternalPortugol.g:1566:3: ( ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) ) )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
+
+                if ( (LA20_0==32) ) {
+                    int LA20_2 = input.LA(2);
+
+                    if ( (synpred3_InternalPortugol()) ) {
+                        alt20=1;
+                    }
+
+
+                }
+
+
+                switch (alt20) {
+            	case 1 :
+            	    // InternalPortugol.g:1567:4: ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) ) ( (lv_right_3_0= ruleAndExpression ) )
+            	    {
+            	    // InternalPortugol.g:1567:4: ( ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) ) )
+            	    // InternalPortugol.g:1568:5: ( ( () ( ( 'XOU' ) ) ) )=> ( () ( (lv_op_2_0= 'XOU' ) ) )
+            	    {
+            	    // InternalPortugol.g:1578:5: ( () ( (lv_op_2_0= 'XOU' ) ) )
+            	    // InternalPortugol.g:1579:6: () ( (lv_op_2_0= 'XOU' ) )
+            	    {
+            	    // InternalPortugol.g:1579:6: ()
+            	    // InternalPortugol.g:1580:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getXorExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:1586:6: ( (lv_op_2_0= 'XOU' ) )
+            	    // InternalPortugol.g:1587:7: (lv_op_2_0= 'XOU' )
+            	    {
+            	    // InternalPortugol.g:1587:7: (lv_op_2_0= 'XOU' )
+            	    // InternalPortugol.g:1588:8: lv_op_2_0= 'XOU'
+            	    {
+            	    lv_op_2_0=(Token)match(input,32,FOLLOW_17); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      								newLeafNode(lv_op_2_0, grammarAccess.getXorExpressionAccess().getOpXOUKeyword_1_0_0_1_0());
+            	      							
+            	    }
+            	    if ( state.backtracking==0 ) {
+
+            	      								if (current==null) {
+            	      									current = createModelElement(grammarAccess.getXorExpressionRule());
+            	      								}
+            	      								setWithLastConsumed(current, "op", lv_op_2_0, "XOU");
+            	      							
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:1602:4: ( (lv_right_3_0= ruleAndExpression ) )
+            	    // InternalPortugol.g:1603:5: (lv_right_3_0= ruleAndExpression )
+            	    {
+            	    // InternalPortugol.g:1603:5: (lv_right_3_0= ruleAndExpression )
+            	    // InternalPortugol.g:1604:6: lv_right_3_0= ruleAndExpression
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getXorExpressionAccess().getRightAndExpressionParserRuleCall_1_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_27);
+            	    lv_right_3_0=ruleAndExpression();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getXorExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"right",
+            	      							lv_right_3_0,
+            	      							"org.hopper.language.Portugol.AndExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop20;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleXorExpression"
+
+
+    // $ANTLR start "entryRuleAndExpression"
+    // InternalPortugol.g:1626:1: entryRuleAndExpression returns [EObject current=null] : iv_ruleAndExpression= ruleAndExpression EOF ;
+    public final EObject entryRuleAndExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAndExpression = null;
+
+
+        try {
+            // InternalPortugol.g:1626:54: (iv_ruleAndExpression= ruleAndExpression EOF )
+            // InternalPortugol.g:1627:2: iv_ruleAndExpression= ruleAndExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getAndExpressionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleAndExpression=ruleAndExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleAndExpression; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAndExpression"
+
+
+    // $ANTLR start "ruleAndExpression"
+    // InternalPortugol.g:1633:1: ruleAndExpression returns [EObject current=null] : (this_Comparison_0= ruleComparison ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
+    public final EObject ruleAndExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_op_2_1=null;
+        Token lv_op_2_2=null;
+        EObject this_Comparison_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:1639:2: ( (this_Comparison_0= ruleComparison ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
+            // InternalPortugol.g:1640:2: (this_Comparison_0= ruleComparison ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            {
+            // InternalPortugol.g:1640:2: (this_Comparison_0= ruleComparison ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // InternalPortugol.g:1641:3: this_Comparison_0= ruleComparison ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+
+              			newCompositeNode(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0());
+              		
+            }
+            pushFollow(FOLLOW_28);
+            this_Comparison_0=ruleComparison();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			current = this_Comparison_0;
+              			afterParserOrEnumRuleCall();
+              		
+            }
+            // InternalPortugol.g:1649:3: ( ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            loop22:
+            do {
+                int alt22=2;
+                int LA22_0 = input.LA(1);
+
+                if ( (LA22_0==33) ) {
+                    int LA22_2 = input.LA(2);
+
+                    if ( (synpred4_InternalPortugol()) ) {
+                        alt22=1;
+                    }
+
+
+                }
+                else if ( (LA22_0==34) ) {
+                    int LA22_3 = input.LA(2);
+
+                    if ( (synpred4_InternalPortugol()) ) {
+                        alt22=1;
+                    }
+
+
+                }
+
+
+                switch (alt22) {
+            	case 1 :
+            	    // InternalPortugol.g:1650:4: ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) ) ( (lv_right_3_0= ruleComparison ) )
+            	    {
+            	    // InternalPortugol.g:1650:4: ( ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) ) )
+            	    // InternalPortugol.g:1651:5: ( ( () ( ( ( '&' | 'E' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) )
+            	    {
+            	    // InternalPortugol.g:1665:5: ( () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) ) )
+            	    // InternalPortugol.g:1666:6: () ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) )
+            	    {
+            	    // InternalPortugol.g:1666:6: ()
+            	    // InternalPortugol.g:1667:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getAndExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:1673:6: ( ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) ) )
+            	    // InternalPortugol.g:1674:7: ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) )
+            	    {
+            	    // InternalPortugol.g:1674:7: ( (lv_op_2_1= '&' | lv_op_2_2= 'E' ) )
+            	    // InternalPortugol.g:1675:8: (lv_op_2_1= '&' | lv_op_2_2= 'E' )
+            	    {
+            	    // InternalPortugol.g:1675:8: (lv_op_2_1= '&' | lv_op_2_2= 'E' )
+            	    int alt21=2;
+            	    int LA21_0 = input.LA(1);
+
+            	    if ( (LA21_0==33) ) {
+            	        alt21=1;
+            	    }
+            	    else if ( (LA21_0==34) ) {
+            	        alt21=2;
+            	    }
+            	    else {
+            	        if (state.backtracking>0) {state.failed=true; return current;}
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 21, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt21) {
+            	        case 1 :
+            	            // InternalPortugol.g:1676:9: lv_op_2_1= '&'
+            	            {
+            	            lv_op_2_1=(Token)match(input,33,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_1, grammarAccess.getAndExpressionAccess().getOpAmpersandKeyword_1_0_0_1_0_0());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getAndExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_1, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalPortugol.g:1687:9: lv_op_2_2= 'E'
+            	            {
+            	            lv_op_2_2=(Token)match(input,34,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_2, grammarAccess.getAndExpressionAccess().getOpEKeyword_1_0_0_1_0_1());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getAndExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_2, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:1702:4: ( (lv_right_3_0= ruleComparison ) )
+            	    // InternalPortugol.g:1703:5: (lv_right_3_0= ruleComparison )
+            	    {
+            	    // InternalPortugol.g:1703:5: (lv_right_3_0= ruleComparison )
+            	    // InternalPortugol.g:1704:6: lv_right_3_0= ruleComparison
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_28);
+            	    lv_right_3_0=ruleComparison();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getAndExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"right",
+            	      							lv_right_3_0,
+            	      							"org.hopper.language.Portugol.Comparison");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop22;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleAndExpression"
 
 
     // $ANTLR start "entryRuleComparison"
-    // InternalPortugol.g:1446:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // InternalPortugol.g:1726:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final EObject entryRuleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -4110,8 +4830,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1446:51: (iv_ruleComparison= ruleComparison EOF )
-            // InternalPortugol.g:1447:2: iv_ruleComparison= ruleComparison EOF
+            // InternalPortugol.g:1726:51: (iv_ruleComparison= ruleComparison EOF )
+            // InternalPortugol.g:1727:2: iv_ruleComparison= ruleComparison EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getComparisonRule()); 
@@ -4142,7 +4862,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparison"
-    // InternalPortugol.g:1453:1: ruleComparison returns [EObject current=null] : (this_EquExpression_0= ruleEquExpression ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* ) ;
+    // InternalPortugol.g:1733:1: ruleComparison returns [EObject current=null] : (this_EquExpression_0= ruleEquExpression ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* ) ;
     public final EObject ruleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -4157,18 +4877,18 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1459:2: ( (this_EquExpression_0= ruleEquExpression ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* ) )
-            // InternalPortugol.g:1460:2: (this_EquExpression_0= ruleEquExpression ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* )
+            // InternalPortugol.g:1739:2: ( (this_EquExpression_0= ruleEquExpression ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* ) )
+            // InternalPortugol.g:1740:2: (this_EquExpression_0= ruleEquExpression ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* )
             {
-            // InternalPortugol.g:1460:2: (this_EquExpression_0= ruleEquExpression ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* )
-            // InternalPortugol.g:1461:3: this_EquExpression_0= ruleEquExpression ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )*
+            // InternalPortugol.g:1740:2: (this_EquExpression_0= ruleEquExpression ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )* )
+            // InternalPortugol.g:1741:3: this_EquExpression_0= ruleEquExpression ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
 
               			newCompositeNode(grammarAccess.getComparisonAccess().getEquExpressionParserRuleCall_0());
               		
             }
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_29);
             this_EquExpression_0=ruleEquExpression();
 
             state._fsp--;
@@ -4179,97 +4899,115 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalPortugol.g:1469:3: ( ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )*
-            loop21:
+            // InternalPortugol.g:1749:3: ( ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) ) )*
+            loop24:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA21_0>=34 && LA21_0<=35)) ) {
-                    alt21=1;
+                if ( (LA24_0==35) ) {
+                    int LA24_2 = input.LA(2);
+
+                    if ( (synpred5_InternalPortugol()) ) {
+                        alt24=1;
+                    }
+
+
+                }
+                else if ( (LA24_0==36) ) {
+                    int LA24_3 = input.LA(2);
+
+                    if ( (synpred5_InternalPortugol()) ) {
+                        alt24=1;
+                    }
+
+
                 }
 
 
-                switch (alt21) {
+                switch (alt24) {
             	case 1 :
-            	    // InternalPortugol.g:1470:4: ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) )
+            	    // InternalPortugol.g:1750:4: ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) ) ( (lv_right_3_0= ruleEquExpression ) )
             	    {
-            	    // InternalPortugol.g:1470:4: ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) )
-            	    // InternalPortugol.g:1471:5: () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) )
+            	    // InternalPortugol.g:1750:4: ( ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) ) )
+            	    // InternalPortugol.g:1751:5: ( ( () ( ( ( '=' | '<>' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) )
             	    {
-            	    // InternalPortugol.g:1471:5: ()
-            	    // InternalPortugol.g:1472:6: 
+            	    // InternalPortugol.g:1765:5: ( () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) ) )
+            	    // InternalPortugol.g:1766:6: () ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) )
+            	    {
+            	    // InternalPortugol.g:1766:6: ()
+            	    // InternalPortugol.g:1767:7: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						current = forceCreateModelElementAndSet(
-            	      							grammarAccess.getComparisonAccess().getCompExpressionLeftAction_1_0_0(),
-            	      							current);
-            	      					
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getComparisonAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
             	    }
 
             	    }
 
-            	    // InternalPortugol.g:1478:5: ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) )
-            	    // InternalPortugol.g:1479:6: ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) )
+            	    // InternalPortugol.g:1773:6: ( ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) ) )
+            	    // InternalPortugol.g:1774:7: ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) )
             	    {
-            	    // InternalPortugol.g:1479:6: ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) )
-            	    // InternalPortugol.g:1480:7: (lv_op_2_1= '=' | lv_op_2_2= '<>' )
+            	    // InternalPortugol.g:1774:7: ( (lv_op_2_1= '=' | lv_op_2_2= '<>' ) )
+            	    // InternalPortugol.g:1775:8: (lv_op_2_1= '=' | lv_op_2_2= '<>' )
             	    {
-            	    // InternalPortugol.g:1480:7: (lv_op_2_1= '=' | lv_op_2_2= '<>' )
-            	    int alt20=2;
-            	    int LA20_0 = input.LA(1);
+            	    // InternalPortugol.g:1775:8: (lv_op_2_1= '=' | lv_op_2_2= '<>' )
+            	    int alt23=2;
+            	    int LA23_0 = input.LA(1);
 
-            	    if ( (LA20_0==34) ) {
-            	        alt20=1;
+            	    if ( (LA23_0==35) ) {
+            	        alt23=1;
             	    }
-            	    else if ( (LA20_0==35) ) {
-            	        alt20=2;
+            	    else if ( (LA23_0==36) ) {
+            	        alt23=2;
             	    }
             	    else {
             	        if (state.backtracking>0) {state.failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 20, 0, input);
+            	            new NoViableAltException("", 23, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt20) {
+            	    switch (alt23) {
             	        case 1 :
-            	            // InternalPortugol.g:1481:8: lv_op_2_1= '='
+            	            // InternalPortugol.g:1776:9: lv_op_2_1= '='
             	            {
-            	            lv_op_2_1=(Token)match(input,34,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_1=(Token)match(input,35,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_1, grammarAccess.getComparisonAccess().getOpEqualsSignKeyword_1_0_1_0_0());
-            	              							
+            	              									newLeafNode(lv_op_2_1, grammarAccess.getComparisonAccess().getOpEqualsSignKeyword_1_0_0_1_0_0());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getComparisonRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_1, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getComparisonRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_1, null);
+            	              								
             	            }
 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalPortugol.g:1492:8: lv_op_2_2= '<>'
+            	            // InternalPortugol.g:1787:9: lv_op_2_2= '<>'
             	            {
-            	            lv_op_2_2=(Token)match(input,35,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_2=(Token)match(input,36,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_2, grammarAccess.getComparisonAccess().getOpLessThanSignGreaterThanSignKeyword_1_0_1_0_1());
-            	              							
+            	              									newLeafNode(lv_op_2_2, grammarAccess.getComparisonAccess().getOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_1());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getComparisonRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_2, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getComparisonRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_2, null);
+            	              								
             	            }
 
             	            }
@@ -4286,18 +5024,21 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalPortugol.g:1506:4: ( (lv_right_3_0= ruleEquExpression ) )
-            	    // InternalPortugol.g:1507:5: (lv_right_3_0= ruleEquExpression )
+
+            	    }
+
+            	    // InternalPortugol.g:1802:4: ( (lv_right_3_0= ruleEquExpression ) )
+            	    // InternalPortugol.g:1803:5: (lv_right_3_0= ruleEquExpression )
             	    {
-            	    // InternalPortugol.g:1507:5: (lv_right_3_0= ruleEquExpression )
-            	    // InternalPortugol.g:1508:6: lv_right_3_0= ruleEquExpression
+            	    // InternalPortugol.g:1803:5: (lv_right_3_0= ruleEquExpression )
+            	    // InternalPortugol.g:1804:6: lv_right_3_0= ruleEquExpression
             	    {
             	    if ( state.backtracking==0 ) {
 
             	      						newCompositeNode(grammarAccess.getComparisonAccess().getRightEquExpressionParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_29);
             	    lv_right_3_0=ruleEquExpression();
 
             	    state._fsp--;
@@ -4326,7 +5067,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop24;
                 }
             } while (true);
 
@@ -4355,7 +5096,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEquExpression"
-    // InternalPortugol.g:1530:1: entryRuleEquExpression returns [EObject current=null] : iv_ruleEquExpression= ruleEquExpression EOF ;
+    // InternalPortugol.g:1826:1: entryRuleEquExpression returns [EObject current=null] : iv_ruleEquExpression= ruleEquExpression EOF ;
     public final EObject entryRuleEquExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4363,8 +5104,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1530:54: (iv_ruleEquExpression= ruleEquExpression EOF )
-            // InternalPortugol.g:1531:2: iv_ruleEquExpression= ruleEquExpression EOF
+            // InternalPortugol.g:1826:54: (iv_ruleEquExpression= ruleEquExpression EOF )
+            // InternalPortugol.g:1827:2: iv_ruleEquExpression= ruleEquExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEquExpressionRule()); 
@@ -4395,7 +5136,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquExpression"
-    // InternalPortugol.g:1537:1: ruleEquExpression returns [EObject current=null] : (this_AddExpression_0= ruleAddExpression ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* ) ;
+    // InternalPortugol.g:1833:1: ruleEquExpression returns [EObject current=null] : (this_AddExpression_0= ruleAddExpression ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* ) ;
     public final EObject ruleEquExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4412,18 +5153,18 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:1543:2: ( (this_AddExpression_0= ruleAddExpression ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* ) )
-            // InternalPortugol.g:1544:2: (this_AddExpression_0= ruleAddExpression ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* )
+            // InternalPortugol.g:1839:2: ( (this_AddExpression_0= ruleAddExpression ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* ) )
+            // InternalPortugol.g:1840:2: (this_AddExpression_0= ruleAddExpression ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* )
             {
-            // InternalPortugol.g:1544:2: (this_AddExpression_0= ruleAddExpression ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* )
-            // InternalPortugol.g:1545:3: this_AddExpression_0= ruleAddExpression ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )*
+            // InternalPortugol.g:1840:2: (this_AddExpression_0= ruleAddExpression ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )* )
+            // InternalPortugol.g:1841:3: this_AddExpression_0= ruleAddExpression ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
 
               			newCompositeNode(grammarAccess.getEquExpressionAccess().getAddExpressionParserRuleCall_0());
               		
             }
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             this_AddExpression_0=ruleAddExpression();
 
             state._fsp--;
@@ -4434,151 +5175,195 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalPortugol.g:1553:3: ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )*
-            loop23:
+            // InternalPortugol.g:1849:3: ( ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) ) )*
+            loop26:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt26=2;
+                switch ( input.LA(1) ) {
+                case 37:
+                    {
+                    int LA26_2 = input.LA(2);
 
-                if ( ((LA23_0>=36 && LA23_0<=39)) ) {
-                    alt23=1;
+                    if ( (synpred6_InternalPortugol()) ) {
+                        alt26=1;
+                    }
+
+
+                    }
+                    break;
+                case 38:
+                    {
+                    int LA26_3 = input.LA(2);
+
+                    if ( (synpred6_InternalPortugol()) ) {
+                        alt26=1;
+                    }
+
+
+                    }
+                    break;
+                case 39:
+                    {
+                    int LA26_4 = input.LA(2);
+
+                    if ( (synpred6_InternalPortugol()) ) {
+                        alt26=1;
+                    }
+
+
+                    }
+                    break;
+                case 40:
+                    {
+                    int LA26_5 = input.LA(2);
+
+                    if ( (synpred6_InternalPortugol()) ) {
+                        alt26=1;
+                    }
+
+
+                    }
+                    break;
+
                 }
 
-
-                switch (alt23) {
+                switch (alt26) {
             	case 1 :
-            	    // InternalPortugol.g:1554:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) )
+            	    // InternalPortugol.g:1850:4: ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ) ( (lv_right_3_0= ruleAddExpression ) )
             	    {
-            	    // InternalPortugol.g:1554:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) )
-            	    // InternalPortugol.g:1555:5: () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
+            	    // InternalPortugol.g:1850:4: ( ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) )
+            	    // InternalPortugol.g:1851:5: ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) )
             	    {
-            	    // InternalPortugol.g:1555:5: ()
-            	    // InternalPortugol.g:1556:6: 
+            	    // InternalPortugol.g:1869:5: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) )
+            	    // InternalPortugol.g:1870:6: () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
+            	    {
+            	    // InternalPortugol.g:1870:6: ()
+            	    // InternalPortugol.g:1871:7: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						current = forceCreateModelElementAndSet(
-            	      							grammarAccess.getEquExpressionAccess().getEquExpressionLeftAction_1_0_0(),
-            	      							current);
-            	      					
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getEquExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
             	    }
 
             	    }
 
-            	    // InternalPortugol.g:1562:5: ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
-            	    // InternalPortugol.g:1563:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
+            	    // InternalPortugol.g:1877:6: ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
+            	    // InternalPortugol.g:1878:7: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
             	    {
-            	    // InternalPortugol.g:1563:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
-            	    // InternalPortugol.g:1564:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
+            	    // InternalPortugol.g:1878:7: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
+            	    // InternalPortugol.g:1879:8: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
             	    {
-            	    // InternalPortugol.g:1564:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
-            	    int alt22=4;
+            	    // InternalPortugol.g:1879:8: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
+            	    int alt25=4;
             	    switch ( input.LA(1) ) {
-            	    case 36:
-            	        {
-            	        alt22=1;
-            	        }
-            	        break;
             	    case 37:
             	        {
-            	        alt22=2;
+            	        alt25=1;
             	        }
             	        break;
             	    case 38:
             	        {
-            	        alt22=3;
+            	        alt25=2;
             	        }
             	        break;
             	    case 39:
             	        {
-            	        alt22=4;
+            	        alt25=3;
+            	        }
+            	        break;
+            	    case 40:
+            	        {
+            	        alt25=4;
             	        }
             	        break;
             	    default:
             	        if (state.backtracking>0) {state.failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 22, 0, input);
+            	            new NoViableAltException("", 25, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt22) {
+            	    switch (alt25) {
             	        case 1 :
-            	            // InternalPortugol.g:1565:8: lv_op_2_1= '<'
+            	            // InternalPortugol.g:1880:9: lv_op_2_1= '<'
             	            {
-            	            lv_op_2_1=(Token)match(input,36,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_1=(Token)match(input,37,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_1, grammarAccess.getEquExpressionAccess().getOpLessThanSignKeyword_1_0_1_0_0());
-            	              							
+            	              									newLeafNode(lv_op_2_1, grammarAccess.getEquExpressionAccess().getOpLessThanSignKeyword_1_0_0_1_0_0());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getEquExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_1, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getEquExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_1, null);
+            	              								
             	            }
 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalPortugol.g:1576:8: lv_op_2_2= '>'
+            	            // InternalPortugol.g:1891:9: lv_op_2_2= '>'
             	            {
-            	            lv_op_2_2=(Token)match(input,37,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_2=(Token)match(input,38,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_2, grammarAccess.getEquExpressionAccess().getOpGreaterThanSignKeyword_1_0_1_0_1());
-            	              							
+            	              									newLeafNode(lv_op_2_2, grammarAccess.getEquExpressionAccess().getOpGreaterThanSignKeyword_1_0_0_1_0_1());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getEquExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_2, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getEquExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_2, null);
+            	              								
             	            }
 
             	            }
             	            break;
             	        case 3 :
-            	            // InternalPortugol.g:1587:8: lv_op_2_3= '<='
+            	            // InternalPortugol.g:1902:9: lv_op_2_3= '<='
             	            {
-            	            lv_op_2_3=(Token)match(input,38,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_3=(Token)match(input,39,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_3, grammarAccess.getEquExpressionAccess().getOpLessThanSignEqualsSignKeyword_1_0_1_0_2());
-            	              							
+            	              									newLeafNode(lv_op_2_3, grammarAccess.getEquExpressionAccess().getOpLessThanSignEqualsSignKeyword_1_0_0_1_0_2());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getEquExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_3, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getEquExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_3, null);
+            	              								
             	            }
 
             	            }
             	            break;
             	        case 4 :
-            	            // InternalPortugol.g:1598:8: lv_op_2_4= '>='
+            	            // InternalPortugol.g:1913:9: lv_op_2_4= '>='
             	            {
-            	            lv_op_2_4=(Token)match(input,39,FOLLOW_21); if (state.failed) return current;
+            	            lv_op_2_4=(Token)match(input,40,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              								newLeafNode(lv_op_2_4, grammarAccess.getEquExpressionAccess().getOpGreaterThanSignEqualsSignKeyword_1_0_1_0_3());
-            	              							
+            	              									newLeafNode(lv_op_2_4, grammarAccess.getEquExpressionAccess().getOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3());
+            	              								
             	            }
             	            if ( state.backtracking==0 ) {
 
-            	              								if (current==null) {
-            	              									current = createModelElement(grammarAccess.getEquExpressionRule());
-            	              								}
-            	              								setWithLastConsumed(current, "op", lv_op_2_4, null);
-            	              							
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getEquExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_4, null);
+            	              								
             	            }
 
             	            }
@@ -4595,18 +5380,21 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalPortugol.g:1612:4: ( (lv_right_3_0= ruleAddExpression ) )
-            	    // InternalPortugol.g:1613:5: (lv_right_3_0= ruleAddExpression )
+
+            	    }
+
+            	    // InternalPortugol.g:1928:4: ( (lv_right_3_0= ruleAddExpression ) )
+            	    // InternalPortugol.g:1929:5: (lv_right_3_0= ruleAddExpression )
             	    {
-            	    // InternalPortugol.g:1613:5: (lv_right_3_0= ruleAddExpression )
-            	    // InternalPortugol.g:1614:6: lv_right_3_0= ruleAddExpression
+            	    // InternalPortugol.g:1929:5: (lv_right_3_0= ruleAddExpression )
+            	    // InternalPortugol.g:1930:6: lv_right_3_0= ruleAddExpression
             	    {
             	    if ( state.backtracking==0 ) {
 
             	      						newCompositeNode(grammarAccess.getEquExpressionAccess().getRightAddExpressionParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_27);
+            	    pushFollow(FOLLOW_30);
             	    lv_right_3_0=ruleAddExpression();
 
             	    state._fsp--;
@@ -4635,7 +5423,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop26;
                 }
             } while (true);
 
@@ -4664,7 +5452,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddExpression"
-    // InternalPortugol.g:1636:1: entryRuleAddExpression returns [EObject current=null] : iv_ruleAddExpression= ruleAddExpression EOF ;
+    // InternalPortugol.g:1952:1: entryRuleAddExpression returns [EObject current=null] : iv_ruleAddExpression= ruleAddExpression EOF ;
     public final EObject entryRuleAddExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4672,8 +5460,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1636:54: (iv_ruleAddExpression= ruleAddExpression EOF )
-            // InternalPortugol.g:1637:2: iv_ruleAddExpression= ruleAddExpression EOF
+            // InternalPortugol.g:1952:54: (iv_ruleAddExpression= ruleAddExpression EOF )
+            // InternalPortugol.g:1953:2: iv_ruleAddExpression= ruleAddExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAddExpressionRule()); 
@@ -4704,154 +5492,184 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddExpression"
-    // InternalPortugol.g:1643:1: ruleAddExpression returns [EObject current=null] : (this_Term_0= ruleTerm ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )* ) ;
+    // InternalPortugol.g:1959:1: ruleAddExpression returns [EObject current=null] : (this_MultiplicativeExpression_0= ruleMultiplicativeExpression ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )* ) ;
     public final EObject ruleAddExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject this_Term_0 = null;
+        Token lv_op_2_1=null;
+        Token lv_op_2_2=null;
+        EObject this_MultiplicativeExpression_0 = null;
 
-        EObject lv_right_5_0 = null;
+        EObject lv_right_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1649:2: ( (this_Term_0= ruleTerm ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )* ) )
-            // InternalPortugol.g:1650:2: (this_Term_0= ruleTerm ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )* )
+            // InternalPortugol.g:1965:2: ( (this_MultiplicativeExpression_0= ruleMultiplicativeExpression ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )* ) )
+            // InternalPortugol.g:1966:2: (this_MultiplicativeExpression_0= ruleMultiplicativeExpression ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )* )
             {
-            // InternalPortugol.g:1650:2: (this_Term_0= ruleTerm ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )* )
-            // InternalPortugol.g:1651:3: this_Term_0= ruleTerm ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )*
+            // InternalPortugol.g:1966:2: (this_MultiplicativeExpression_0= ruleMultiplicativeExpression ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )* )
+            // InternalPortugol.g:1967:3: this_MultiplicativeExpression_0= ruleMultiplicativeExpression ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
 
-              			newCompositeNode(grammarAccess.getAddExpressionAccess().getTermParserRuleCall_0());
+              			newCompositeNode(grammarAccess.getAddExpressionAccess().getMultiplicativeExpressionParserRuleCall_0());
               		
             }
-            pushFollow(FOLLOW_28);
-            this_Term_0=ruleTerm();
+            pushFollow(FOLLOW_31);
+            this_MultiplicativeExpression_0=ruleMultiplicativeExpression();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			current = this_Term_0;
+              			current = this_MultiplicativeExpression_0;
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalPortugol.g:1659:3: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) ) )*
-            loop25:
+            // InternalPortugol.g:1975:3: ( ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) ) )*
+            loop28:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( ((LA25_0>=40 && LA25_0<=41)) ) {
-                    alt25=1;
+                if ( (LA28_0==41) ) {
+                    int LA28_2 = input.LA(2);
+
+                    if ( (synpred7_InternalPortugol()) ) {
+                        alt28=1;
+                    }
+
+
+                }
+                else if ( (LA28_0==42) ) {
+                    int LA28_3 = input.LA(2);
+
+                    if ( (synpred7_InternalPortugol()) ) {
+                        alt28=1;
+                    }
+
+
                 }
 
 
-                switch (alt25) {
+                switch (alt28) {
             	case 1 :
-            	    // InternalPortugol.g:1660:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleTerm ) )
+            	    // InternalPortugol.g:1976:4: ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) ) ( (lv_right_3_0= ruleMultiplicativeExpression ) )
             	    {
-            	    // InternalPortugol.g:1660:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
-            	    int alt24=2;
-            	    int LA24_0 = input.LA(1);
+            	    // InternalPortugol.g:1976:4: ( ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) ) )
+            	    // InternalPortugol.g:1977:5: ( ( () ( ( ( '+' | '-' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) )
+            	    {
+            	    // InternalPortugol.g:1991:5: ( () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) ) )
+            	    // InternalPortugol.g:1992:6: () ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) )
+            	    {
+            	    // InternalPortugol.g:1992:6: ()
+            	    // InternalPortugol.g:1993:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
 
-            	    if ( (LA24_0==40) ) {
-            	        alt24=1;
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getAddExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
             	    }
-            	    else if ( (LA24_0==41) ) {
-            	        alt24=2;
+
+            	    }
+
+            	    // InternalPortugol.g:1999:6: ( ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) ) )
+            	    // InternalPortugol.g:2000:7: ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) )
+            	    {
+            	    // InternalPortugol.g:2000:7: ( (lv_op_2_1= '+' | lv_op_2_2= '-' ) )
+            	    // InternalPortugol.g:2001:8: (lv_op_2_1= '+' | lv_op_2_2= '-' )
+            	    {
+            	    // InternalPortugol.g:2001:8: (lv_op_2_1= '+' | lv_op_2_2= '-' )
+            	    int alt27=2;
+            	    int LA27_0 = input.LA(1);
+
+            	    if ( (LA27_0==41) ) {
+            	        alt27=1;
+            	    }
+            	    else if ( (LA27_0==42) ) {
+            	        alt27=2;
             	    }
             	    else {
             	        if (state.backtracking>0) {state.failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 24, 0, input);
+            	            new NoViableAltException("", 27, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt24) {
+            	    switch (alt27) {
             	        case 1 :
-            	            // InternalPortugol.g:1661:5: ( () otherlv_2= '+' )
+            	            // InternalPortugol.g:2002:9: lv_op_2_1= '+'
             	            {
-            	            // InternalPortugol.g:1661:5: ( () otherlv_2= '+' )
-            	            // InternalPortugol.g:1662:6: () otherlv_2= '+'
-            	            {
-            	            // InternalPortugol.g:1662:6: ()
-            	            // InternalPortugol.g:1663:7: 
-            	            {
+            	            lv_op_2_1=(Token)match(input,41,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              							current = forceCreateModelElementAndSet(
-            	              								grammarAccess.getAddExpressionAccess().getAddExpressionLeftAction_1_0_0_0(),
-            	              								current);
-            	              						
+            	              									newLeafNode(lv_op_2_1, grammarAccess.getAddExpressionAccess().getOpPlusSignKeyword_1_0_0_1_0_0());
+            	              								
             	            }
-
-            	            }
-
-            	            otherlv_2=(Token)match(input,40,FOLLOW_21); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              						newLeafNode(otherlv_2, grammarAccess.getAddExpressionAccess().getPlusSignKeyword_1_0_0_1());
-            	              					
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getAddExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_1, null);
+            	              								
             	            }
-
-            	            }
-
 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalPortugol.g:1675:5: ( () otherlv_4= '-' )
+            	            // InternalPortugol.g:2013:9: lv_op_2_2= '-'
             	            {
-            	            // InternalPortugol.g:1675:5: ( () otherlv_4= '-' )
-            	            // InternalPortugol.g:1676:6: () otherlv_4= '-'
-            	            {
-            	            // InternalPortugol.g:1676:6: ()
-            	            // InternalPortugol.g:1677:7: 
-            	            {
+            	            lv_op_2_2=(Token)match(input,42,FOLLOW_17); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              							current = forceCreateModelElementAndSet(
-            	              								grammarAccess.getAddExpressionAccess().getSubExpressionLeftAction_1_0_1_0(),
-            	              								current);
-            	              						
+            	              									newLeafNode(lv_op_2_2, grammarAccess.getAddExpressionAccess().getOpHyphenMinusKeyword_1_0_0_1_0_1());
+            	              								
             	            }
-
-            	            }
-
-            	            otherlv_4=(Token)match(input,41,FOLLOW_21); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
-            	              						newLeafNode(otherlv_4, grammarAccess.getAddExpressionAccess().getHyphenMinusKeyword_1_0_1_1());
-            	              					
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getAddExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_2, null);
+            	              								
             	            }
-
-            	            }
-
 
             	            }
             	            break;
 
             	    }
 
-            	    // InternalPortugol.g:1689:4: ( (lv_right_5_0= ruleTerm ) )
-            	    // InternalPortugol.g:1690:5: (lv_right_5_0= ruleTerm )
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:2028:4: ( (lv_right_3_0= ruleMultiplicativeExpression ) )
+            	    // InternalPortugol.g:2029:5: (lv_right_3_0= ruleMultiplicativeExpression )
             	    {
-            	    // InternalPortugol.g:1690:5: (lv_right_5_0= ruleTerm )
-            	    // InternalPortugol.g:1691:6: lv_right_5_0= ruleTerm
+            	    // InternalPortugol.g:2029:5: (lv_right_3_0= ruleMultiplicativeExpression )
+            	    // InternalPortugol.g:2030:6: lv_right_3_0= ruleMultiplicativeExpression
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						newCompositeNode(grammarAccess.getAddExpressionAccess().getRightTermParserRuleCall_1_1_0());
+            	      						newCompositeNode(grammarAccess.getAddExpressionAccess().getRightMultiplicativeExpressionParserRuleCall_1_1_0());
             	      					
             	    }
-            	    pushFollow(FOLLOW_28);
-            	    lv_right_5_0=ruleTerm();
+            	    pushFollow(FOLLOW_31);
+            	    lv_right_3_0=ruleMultiplicativeExpression();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -4863,492 +5681,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
             	      						set(
             	      							current,
             	      							"right",
-            	      							lv_right_5_0,
-            	      							"org.hopper.language.Portugol.Term");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop25;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleAddExpression"
-
-
-    // $ANTLR start "entryRuleTerm"
-    // InternalPortugol.g:1713:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
-    public final EObject entryRuleTerm() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleTerm = null;
-
-
-        try {
-            // InternalPortugol.g:1713:45: (iv_ruleTerm= ruleTerm EOF )
-            // InternalPortugol.g:1714:2: iv_ruleTerm= ruleTerm EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getTermRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleTerm=ruleTerm();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleTerm; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleTerm"
-
-
-    // $ANTLR start "ruleTerm"
-    // InternalPortugol.g:1720:1: ruleTerm returns [EObject current=null] : (this_PowerExpression_0= rulePowerExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )* ) ;
-    public final EObject ruleTerm() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject this_PowerExpression_0 = null;
-
-        EObject lv_right_7_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPortugol.g:1726:2: ( (this_PowerExpression_0= rulePowerExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )* ) )
-            // InternalPortugol.g:1727:2: (this_PowerExpression_0= rulePowerExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )* )
-            {
-            // InternalPortugol.g:1727:2: (this_PowerExpression_0= rulePowerExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )* )
-            // InternalPortugol.g:1728:3: this_PowerExpression_0= rulePowerExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )*
-            {
-            if ( state.backtracking==0 ) {
-
-              			newCompositeNode(grammarAccess.getTermAccess().getPowerExpressionParserRuleCall_0());
-              		
-            }
-            pushFollow(FOLLOW_29);
-            this_PowerExpression_0=rulePowerExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			current = this_PowerExpression_0;
-              			afterParserOrEnumRuleCall();
-              		
-            }
-            // InternalPortugol.g:1736:3: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) ) )*
-            loop27:
-            do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
-
-                if ( ((LA27_0>=42 && LA27_0<=44)) ) {
-                    alt27=1;
-                }
-
-
-                switch (alt27) {
-            	case 1 :
-            	    // InternalPortugol.g:1737:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) ) ( (lv_right_7_0= rulePowerExpression ) )
-            	    {
-            	    // InternalPortugol.g:1737:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) | ( () otherlv_6= 'MOD' ) )
-            	    int alt26=3;
-            	    switch ( input.LA(1) ) {
-            	    case 42:
-            	        {
-            	        alt26=1;
-            	        }
-            	        break;
-            	    case 43:
-            	        {
-            	        alt26=2;
-            	        }
-            	        break;
-            	    case 44:
-            	        {
-            	        alt26=3;
-            	        }
-            	        break;
-            	    default:
-            	        if (state.backtracking>0) {state.failed=true; return current;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 26, 0, input);
-
-            	        throw nvae;
-            	    }
-
-            	    switch (alt26) {
-            	        case 1 :
-            	            // InternalPortugol.g:1738:5: ( () otherlv_2= '*' )
-            	            {
-            	            // InternalPortugol.g:1738:5: ( () otherlv_2= '*' )
-            	            // InternalPortugol.g:1739:6: () otherlv_2= '*'
-            	            {
-            	            // InternalPortugol.g:1739:6: ()
-            	            // InternalPortugol.g:1740:7: 
-            	            {
-            	            if ( state.backtracking==0 ) {
-
-            	              							current = forceCreateModelElementAndSet(
-            	              								grammarAccess.getTermAccess().getMultiplyLeftAction_1_0_0_0(),
-            	              								current);
-            	              						
-            	            }
-
-            	            }
-
-            	            otherlv_2=(Token)match(input,42,FOLLOW_21); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              						newLeafNode(otherlv_2, grammarAccess.getTermAccess().getAsteriskKeyword_1_0_0_1());
-            	              					
-            	            }
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalPortugol.g:1752:5: ( () otherlv_4= '/' )
-            	            {
-            	            // InternalPortugol.g:1752:5: ( () otherlv_4= '/' )
-            	            // InternalPortugol.g:1753:6: () otherlv_4= '/'
-            	            {
-            	            // InternalPortugol.g:1753:6: ()
-            	            // InternalPortugol.g:1754:7: 
-            	            {
-            	            if ( state.backtracking==0 ) {
-
-            	              							current = forceCreateModelElementAndSet(
-            	              								grammarAccess.getTermAccess().getDivisionLeftAction_1_0_1_0(),
-            	              								current);
-            	              						
-            	            }
-
-            	            }
-
-            	            otherlv_4=(Token)match(input,43,FOLLOW_21); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              						newLeafNode(otherlv_4, grammarAccess.getTermAccess().getSolidusKeyword_1_0_1_1());
-            	              					
-            	            }
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 3 :
-            	            // InternalPortugol.g:1766:5: ( () otherlv_6= 'MOD' )
-            	            {
-            	            // InternalPortugol.g:1766:5: ( () otherlv_6= 'MOD' )
-            	            // InternalPortugol.g:1767:6: () otherlv_6= 'MOD'
-            	            {
-            	            // InternalPortugol.g:1767:6: ()
-            	            // InternalPortugol.g:1768:7: 
-            	            {
-            	            if ( state.backtracking==0 ) {
-
-            	              							current = forceCreateModelElementAndSet(
-            	              								grammarAccess.getTermAccess().getModLeftAction_1_0_2_0(),
-            	              								current);
-            	              						
-            	            }
-
-            	            }
-
-            	            otherlv_6=(Token)match(input,44,FOLLOW_21); if (state.failed) return current;
-            	            if ( state.backtracking==0 ) {
-
-            	              						newLeafNode(otherlv_6, grammarAccess.getTermAccess().getMODKeyword_1_0_2_1());
-            	              					
-            	            }
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalPortugol.g:1780:4: ( (lv_right_7_0= rulePowerExpression ) )
-            	    // InternalPortugol.g:1781:5: (lv_right_7_0= rulePowerExpression )
-            	    {
-            	    // InternalPortugol.g:1781:5: (lv_right_7_0= rulePowerExpression )
-            	    // InternalPortugol.g:1782:6: lv_right_7_0= rulePowerExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getTermAccess().getRightPowerExpressionParserRuleCall_1_1_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_29);
-            	    lv_right_7_0=rulePowerExpression();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getTermRule());
-            	      						}
-            	      						set(
-            	      							current,
-            	      							"right",
-            	      							lv_right_7_0,
-            	      							"org.hopper.language.Portugol.PowerExpression");
-            	      						afterParserOrEnumRuleCall();
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop27;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleTerm"
-
-
-    // $ANTLR start "entryRulePowerExpression"
-    // InternalPortugol.g:1804:1: entryRulePowerExpression returns [EObject current=null] : iv_rulePowerExpression= rulePowerExpression EOF ;
-    public final EObject entryRulePowerExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulePowerExpression = null;
-
-
-        try {
-            // InternalPortugol.g:1804:56: (iv_rulePowerExpression= rulePowerExpression EOF )
-            // InternalPortugol.g:1805:2: iv_rulePowerExpression= rulePowerExpression EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getPowerExpressionRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_rulePowerExpression=rulePowerExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_rulePowerExpression; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulePowerExpression"
-
-
-    // $ANTLR start "rulePowerExpression"
-    // InternalPortugol.g:1811:1: rulePowerExpression returns [EObject current=null] : (this_UnaryExpression_0= ruleUnaryExpression ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* ) ;
-    public final EObject rulePowerExpression() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_op_2_0=null;
-        EObject this_UnaryExpression_0 = null;
-
-        EObject lv_right_3_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalPortugol.g:1817:2: ( (this_UnaryExpression_0= ruleUnaryExpression ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* ) )
-            // InternalPortugol.g:1818:2: (this_UnaryExpression_0= ruleUnaryExpression ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* )
-            {
-            // InternalPortugol.g:1818:2: (this_UnaryExpression_0= ruleUnaryExpression ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* )
-            // InternalPortugol.g:1819:3: this_UnaryExpression_0= ruleUnaryExpression ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )*
-            {
-            if ( state.backtracking==0 ) {
-
-              			newCompositeNode(grammarAccess.getPowerExpressionAccess().getUnaryExpressionParserRuleCall_0());
-              		
-            }
-            pushFollow(FOLLOW_30);
-            this_UnaryExpression_0=ruleUnaryExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			current = this_UnaryExpression_0;
-              			afterParserOrEnumRuleCall();
-              		
-            }
-            // InternalPortugol.g:1827:3: ( () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )*
-            loop28:
-            do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
-
-                if ( (LA28_0==45) ) {
-                    alt28=1;
-                }
-
-
-                switch (alt28) {
-            	case 1 :
-            	    // InternalPortugol.g:1828:4: () ( (lv_op_2_0= '^' ) ) ( (lv_right_3_0= ruleUnaryExpression ) )
-            	    {
-            	    // InternalPortugol.g:1828:4: ()
-            	    // InternalPortugol.g:1829:5: 
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      					current = forceCreateModelElementAndSet(
-            	      						grammarAccess.getPowerExpressionAccess().getPowerExpressionLeftAction_1_0(),
-            	      						current);
-            	      				
-            	    }
-
-            	    }
-
-            	    // InternalPortugol.g:1835:4: ( (lv_op_2_0= '^' ) )
-            	    // InternalPortugol.g:1836:5: (lv_op_2_0= '^' )
-            	    {
-            	    // InternalPortugol.g:1836:5: (lv_op_2_0= '^' )
-            	    // InternalPortugol.g:1837:6: lv_op_2_0= '^'
-            	    {
-            	    lv_op_2_0=(Token)match(input,45,FOLLOW_21); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						newLeafNode(lv_op_2_0, grammarAccess.getPowerExpressionAccess().getOpCircumflexAccentKeyword_1_1_0());
-            	      					
-            	    }
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElement(grammarAccess.getPowerExpressionRule());
-            	      						}
-            	      						setWithLastConsumed(current, "op", lv_op_2_0, "^");
-            	      					
-            	    }
-
-            	    }
-
-
-            	    }
-
-            	    // InternalPortugol.g:1849:4: ( (lv_right_3_0= ruleUnaryExpression ) )
-            	    // InternalPortugol.g:1850:5: (lv_right_3_0= ruleUnaryExpression )
-            	    {
-            	    // InternalPortugol.g:1850:5: (lv_right_3_0= ruleUnaryExpression )
-            	    // InternalPortugol.g:1851:6: lv_right_3_0= ruleUnaryExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      						newCompositeNode(grammarAccess.getPowerExpressionAccess().getRightUnaryExpressionParserRuleCall_1_2_0());
-            	      					
-            	    }
-            	    pushFollow(FOLLOW_30);
-            	    lv_right_3_0=ruleUnaryExpression();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getPowerExpressionRule());
-            	      						}
-            	      						set(
-            	      							current,
-            	      							"right",
             	      							lv_right_3_0,
-            	      							"org.hopper.language.Portugol.UnaryExpression");
+            	      							"org.hopper.language.Portugol.MultiplicativeExpression");
             	      						afterParserOrEnumRuleCall();
             	      					
             	    }
@@ -5388,11 +5722,584 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleAddExpression"
+
+
+    // $ANTLR start "entryRuleMultiplicativeExpression"
+    // InternalPortugol.g:2052:1: entryRuleMultiplicativeExpression returns [EObject current=null] : iv_ruleMultiplicativeExpression= ruleMultiplicativeExpression EOF ;
+    public final EObject entryRuleMultiplicativeExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMultiplicativeExpression = null;
+
+
+        try {
+            // InternalPortugol.g:2052:65: (iv_ruleMultiplicativeExpression= ruleMultiplicativeExpression EOF )
+            // InternalPortugol.g:2053:2: iv_ruleMultiplicativeExpression= ruleMultiplicativeExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getMultiplicativeExpressionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleMultiplicativeExpression=ruleMultiplicativeExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleMultiplicativeExpression; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMultiplicativeExpression"
+
+
+    // $ANTLR start "ruleMultiplicativeExpression"
+    // InternalPortugol.g:2059:1: ruleMultiplicativeExpression returns [EObject current=null] : (this_PowerExpression_0= rulePowerExpression ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )* ) ;
+    public final EObject ruleMultiplicativeExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_op_2_1=null;
+        Token lv_op_2_2=null;
+        Token lv_op_2_3=null;
+        Token lv_op_2_4=null;
+        EObject this_PowerExpression_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:2065:2: ( (this_PowerExpression_0= rulePowerExpression ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )* ) )
+            // InternalPortugol.g:2066:2: (this_PowerExpression_0= rulePowerExpression ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )* )
+            {
+            // InternalPortugol.g:2066:2: (this_PowerExpression_0= rulePowerExpression ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )* )
+            // InternalPortugol.g:2067:3: this_PowerExpression_0= rulePowerExpression ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+
+              			newCompositeNode(grammarAccess.getMultiplicativeExpressionAccess().getPowerExpressionParserRuleCall_0());
+              		
+            }
+            pushFollow(FOLLOW_32);
+            this_PowerExpression_0=rulePowerExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			current = this_PowerExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
+            }
+            // InternalPortugol.g:2075:3: ( ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) ) )*
+            loop30:
+            do {
+                int alt30=2;
+                switch ( input.LA(1) ) {
+                case 43:
+                    {
+                    int LA30_2 = input.LA(2);
+
+                    if ( (synpred8_InternalPortugol()) ) {
+                        alt30=1;
+                    }
+
+
+                    }
+                    break;
+                case 44:
+                    {
+                    int LA30_3 = input.LA(2);
+
+                    if ( (synpred8_InternalPortugol()) ) {
+                        alt30=1;
+                    }
+
+
+                    }
+                    break;
+                case 45:
+                    {
+                    int LA30_4 = input.LA(2);
+
+                    if ( (synpred8_InternalPortugol()) ) {
+                        alt30=1;
+                    }
+
+
+                    }
+                    break;
+                case 46:
+                    {
+                    int LA30_5 = input.LA(2);
+
+                    if ( (synpred8_InternalPortugol()) ) {
+                        alt30=1;
+                    }
+
+
+                    }
+                    break;
+
+                }
+
+                switch (alt30) {
+            	case 1 :
+            	    // InternalPortugol.g:2076:4: ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) ) ( (lv_right_3_0= rulePowerExpression ) )
+            	    {
+            	    // InternalPortugol.g:2076:4: ( ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) ) )
+            	    // InternalPortugol.g:2077:5: ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )=> ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) )
+            	    {
+            	    // InternalPortugol.g:2095:5: ( () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) ) )
+            	    // InternalPortugol.g:2096:6: () ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) )
+            	    {
+            	    // InternalPortugol.g:2096:6: ()
+            	    // InternalPortugol.g:2097:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getMultiplicativeExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:2103:6: ( ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) ) )
+            	    // InternalPortugol.g:2104:7: ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) )
+            	    {
+            	    // InternalPortugol.g:2104:7: ( (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' ) )
+            	    // InternalPortugol.g:2105:8: (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' )
+            	    {
+            	    // InternalPortugol.g:2105:8: (lv_op_2_1= '*' | lv_op_2_2= '/' | lv_op_2_3= 'MOD' | lv_op_2_4= '%' )
+            	    int alt29=4;
+            	    switch ( input.LA(1) ) {
+            	    case 43:
+            	        {
+            	        alt29=1;
+            	        }
+            	        break;
+            	    case 44:
+            	        {
+            	        alt29=2;
+            	        }
+            	        break;
+            	    case 45:
+            	        {
+            	        alt29=3;
+            	        }
+            	        break;
+            	    case 46:
+            	        {
+            	        alt29=4;
+            	        }
+            	        break;
+            	    default:
+            	        if (state.backtracking>0) {state.failed=true; return current;}
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 29, 0, input);
+
+            	        throw nvae;
+            	    }
+
+            	    switch (alt29) {
+            	        case 1 :
+            	            // InternalPortugol.g:2106:9: lv_op_2_1= '*'
+            	            {
+            	            lv_op_2_1=(Token)match(input,43,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_1, grammarAccess.getMultiplicativeExpressionAccess().getOpAsteriskKeyword_1_0_0_1_0_0());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getMultiplicativeExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_1, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalPortugol.g:2117:9: lv_op_2_2= '/'
+            	            {
+            	            lv_op_2_2=(Token)match(input,44,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_2, grammarAccess.getMultiplicativeExpressionAccess().getOpSolidusKeyword_1_0_0_1_0_1());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getMultiplicativeExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_2, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            // InternalPortugol.g:2128:9: lv_op_2_3= 'MOD'
+            	            {
+            	            lv_op_2_3=(Token)match(input,45,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_3, grammarAccess.getMultiplicativeExpressionAccess().getOpMODKeyword_1_0_0_1_0_2());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getMultiplicativeExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_3, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+            	        case 4 :
+            	            // InternalPortugol.g:2139:9: lv_op_2_4= '%'
+            	            {
+            	            lv_op_2_4=(Token)match(input,46,FOLLOW_17); if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              									newLeafNode(lv_op_2_4, grammarAccess.getMultiplicativeExpressionAccess().getOpPercentSignKeyword_1_0_0_1_0_3());
+            	              								
+            	            }
+            	            if ( state.backtracking==0 ) {
+
+            	              									if (current==null) {
+            	              										current = createModelElement(grammarAccess.getMultiplicativeExpressionRule());
+            	              									}
+            	              									setWithLastConsumed(current, "op", lv_op_2_4, null);
+            	              								
+            	            }
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:2154:4: ( (lv_right_3_0= rulePowerExpression ) )
+            	    // InternalPortugol.g:2155:5: (lv_right_3_0= rulePowerExpression )
+            	    {
+            	    // InternalPortugol.g:2155:5: (lv_right_3_0= rulePowerExpression )
+            	    // InternalPortugol.g:2156:6: lv_right_3_0= rulePowerExpression
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getMultiplicativeExpressionAccess().getRightPowerExpressionParserRuleCall_1_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_32);
+            	    lv_right_3_0=rulePowerExpression();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getMultiplicativeExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"right",
+            	      							lv_right_3_0,
+            	      							"org.hopper.language.Portugol.PowerExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop30;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMultiplicativeExpression"
+
+
+    // $ANTLR start "entryRulePowerExpression"
+    // InternalPortugol.g:2178:1: entryRulePowerExpression returns [EObject current=null] : iv_rulePowerExpression= rulePowerExpression EOF ;
+    public final EObject entryRulePowerExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePowerExpression = null;
+
+
+        try {
+            // InternalPortugol.g:2178:56: (iv_rulePowerExpression= rulePowerExpression EOF )
+            // InternalPortugol.g:2179:2: iv_rulePowerExpression= rulePowerExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getPowerExpressionRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_rulePowerExpression=rulePowerExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_rulePowerExpression; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePowerExpression"
+
+
+    // $ANTLR start "rulePowerExpression"
+    // InternalPortugol.g:2185:1: rulePowerExpression returns [EObject current=null] : (this_UnaryExpression_0= ruleUnaryExpression ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* ) ;
+    public final EObject rulePowerExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_op_2_0=null;
+        EObject this_UnaryExpression_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:2191:2: ( (this_UnaryExpression_0= ruleUnaryExpression ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* ) )
+            // InternalPortugol.g:2192:2: (this_UnaryExpression_0= ruleUnaryExpression ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* )
+            {
+            // InternalPortugol.g:2192:2: (this_UnaryExpression_0= ruleUnaryExpression ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )* )
+            // InternalPortugol.g:2193:3: this_UnaryExpression_0= ruleUnaryExpression ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+
+              			newCompositeNode(grammarAccess.getPowerExpressionAccess().getUnaryExpressionParserRuleCall_0());
+              		
+            }
+            pushFollow(FOLLOW_33);
+            this_UnaryExpression_0=ruleUnaryExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			current = this_UnaryExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
+            }
+            // InternalPortugol.g:2201:3: ( ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) ) )*
+            loop31:
+            do {
+                int alt31=2;
+                int LA31_0 = input.LA(1);
+
+                if ( (LA31_0==47) ) {
+                    int LA31_2 = input.LA(2);
+
+                    if ( (synpred9_InternalPortugol()) ) {
+                        alt31=1;
+                    }
+
+
+                }
+
+
+                switch (alt31) {
+            	case 1 :
+            	    // InternalPortugol.g:2202:4: ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) ) ( (lv_right_3_0= ruleUnaryExpression ) )
+            	    {
+            	    // InternalPortugol.g:2202:4: ( ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) ) )
+            	    // InternalPortugol.g:2203:5: ( ( () ( ( '^' ) ) ) )=> ( () ( (lv_op_2_0= '^' ) ) )
+            	    {
+            	    // InternalPortugol.g:2213:5: ( () ( (lv_op_2_0= '^' ) ) )
+            	    // InternalPortugol.g:2214:6: () ( (lv_op_2_0= '^' ) )
+            	    {
+            	    // InternalPortugol.g:2214:6: ()
+            	    // InternalPortugol.g:2215:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getPowerExpressionAccess().getBinaryOperationLeftAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:2221:6: ( (lv_op_2_0= '^' ) )
+            	    // InternalPortugol.g:2222:7: (lv_op_2_0= '^' )
+            	    {
+            	    // InternalPortugol.g:2222:7: (lv_op_2_0= '^' )
+            	    // InternalPortugol.g:2223:8: lv_op_2_0= '^'
+            	    {
+            	    lv_op_2_0=(Token)match(input,47,FOLLOW_17); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      								newLeafNode(lv_op_2_0, grammarAccess.getPowerExpressionAccess().getOpCircumflexAccentKeyword_1_0_0_1_0());
+            	      							
+            	    }
+            	    if ( state.backtracking==0 ) {
+
+            	      								if (current==null) {
+            	      									current = createModelElement(grammarAccess.getPowerExpressionRule());
+            	      								}
+            	      								setWithLastConsumed(current, "op", lv_op_2_0, "^");
+            	      							
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:2237:4: ( (lv_right_3_0= ruleUnaryExpression ) )
+            	    // InternalPortugol.g:2238:5: (lv_right_3_0= ruleUnaryExpression )
+            	    {
+            	    // InternalPortugol.g:2238:5: (lv_right_3_0= ruleUnaryExpression )
+            	    // InternalPortugol.g:2239:6: lv_right_3_0= ruleUnaryExpression
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getPowerExpressionAccess().getRightUnaryExpressionParserRuleCall_1_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_33);
+            	    lv_right_3_0=ruleUnaryExpression();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getPowerExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"right",
+            	      							lv_right_3_0,
+            	      							"org.hopper.language.Portugol.UnaryExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop31;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "rulePowerExpression"
 
 
     // $ANTLR start "entryRuleUnaryExpression"
-    // InternalPortugol.g:1873:1: entryRuleUnaryExpression returns [EObject current=null] : iv_ruleUnaryExpression= ruleUnaryExpression EOF ;
+    // InternalPortugol.g:2261:1: entryRuleUnaryExpression returns [EObject current=null] : iv_ruleUnaryExpression= ruleUnaryExpression EOF ;
     public final EObject entryRuleUnaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5400,8 +6307,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1873:56: (iv_ruleUnaryExpression= ruleUnaryExpression EOF )
-            // InternalPortugol.g:1874:2: iv_ruleUnaryExpression= ruleUnaryExpression EOF
+            // InternalPortugol.g:2261:56: (iv_ruleUnaryExpression= ruleUnaryExpression EOF )
+            // InternalPortugol.g:2262:2: iv_ruleUnaryExpression= ruleUnaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnaryExpressionRule()); 
@@ -5432,101 +6339,147 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryExpression"
-    // InternalPortugol.g:1880:1: ruleUnaryExpression returns [EObject current=null] : ( ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | this_PrimaryExpression_6= rulePrimaryExpression ) ;
+    // InternalPortugol.g:2268:1: ruleUnaryExpression returns [EObject current=null] : ( ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) ) | this_MemberCall_3= ruleMemberCall ) ;
     public final EObject ruleUnaryExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_4=null;
-        EObject lv_expression_2_0 = null;
+        Token lv_op_1_1=null;
+        Token lv_op_1_2=null;
+        EObject lv_operand_2_0 = null;
 
-        EObject lv_expression_5_0 = null;
-
-        EObject this_PrimaryExpression_6 = null;
+        EObject this_MemberCall_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1886:2: ( ( ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | this_PrimaryExpression_6= rulePrimaryExpression ) )
-            // InternalPortugol.g:1887:2: ( ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | this_PrimaryExpression_6= rulePrimaryExpression )
+            // InternalPortugol.g:2274:2: ( ( ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) ) | this_MemberCall_3= ruleMemberCall ) )
+            // InternalPortugol.g:2275:2: ( ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) ) | this_MemberCall_3= ruleMemberCall )
             {
-            // InternalPortugol.g:1887:2: ( ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) ) | this_PrimaryExpression_6= rulePrimaryExpression )
-            int alt29=3;
-            switch ( input.LA(1) ) {
-            case 46:
-                {
-                alt29=1;
-                }
-                break;
-            case 41:
-                {
-                alt29=2;
-                }
-                break;
-            case RULE_STRING:
-            case RULE_ID:
-            case RULE_INT:
-            case RULE_FLOAT:
-            case 21:
-                {
-                alt29=3;
-                }
-                break;
-            default:
+            // InternalPortugol.g:2275:2: ( ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) ) | this_MemberCall_3= ruleMemberCall )
+            int alt33=2;
+            int LA33_0 = input.LA(1);
+
+            if ( (LA33_0==42||LA33_0==48) ) {
+                alt33=1;
+            }
+            else if ( (LA33_0==RULE_STRING||(LA33_0>=RULE_ID && LA33_0<=RULE_FLOAT)||LA33_0==21) ) {
+                alt33=2;
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt29) {
+            switch (alt33) {
                 case 1 :
-                    // InternalPortugol.g:1888:3: ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) )
+                    // InternalPortugol.g:2276:3: ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) )
                     {
-                    // InternalPortugol.g:1888:3: ( () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) ) )
-                    // InternalPortugol.g:1889:4: () ( ( 'NOT' )=>otherlv_1= 'NOT' ) ( (lv_expression_2_0= rulePrimaryExpression ) )
+                    // InternalPortugol.g:2276:3: ( () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) ) )
+                    // InternalPortugol.g:2277:4: () ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) ) ( (lv_operand_2_0= ruleUnaryExpression ) )
                     {
-                    // InternalPortugol.g:1889:4: ()
-                    // InternalPortugol.g:1890:5: 
+                    // InternalPortugol.g:2277:4: ()
+                    // InternalPortugol.g:2278:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getUnaryExpressionAccess().getBooleanNegationAction_0_0(),
+                      						grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalPortugol.g:1896:4: ( ( 'NOT' )=>otherlv_1= 'NOT' )
-                    // InternalPortugol.g:1897:5: ( 'NOT' )=>otherlv_1= 'NOT'
+                    // InternalPortugol.g:2284:4: ( ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) ) )
+                    // InternalPortugol.g:2285:5: ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) )
                     {
-                    otherlv_1=(Token)match(input,46,FOLLOW_21); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
+                    // InternalPortugol.g:2285:5: ( (lv_op_1_1= 'NOT' | lv_op_1_2= '-' ) )
+                    // InternalPortugol.g:2286:6: (lv_op_1_1= 'NOT' | lv_op_1_2= '-' )
+                    {
+                    // InternalPortugol.g:2286:6: (lv_op_1_1= 'NOT' | lv_op_1_2= '-' )
+                    int alt32=2;
+                    int LA32_0 = input.LA(1);
 
-                      					newLeafNode(otherlv_1, grammarAccess.getUnaryExpressionAccess().getNOTKeyword_0_1());
-                      				
+                    if ( (LA32_0==48) ) {
+                        alt32=1;
+                    }
+                    else if ( (LA32_0==42) ) {
+                        alt32=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 32, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt32) {
+                        case 1 :
+                            // InternalPortugol.g:2287:7: lv_op_1_1= 'NOT'
+                            {
+                            lv_op_1_1=(Token)match(input,48,FOLLOW_17); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              							newLeafNode(lv_op_1_1, grammarAccess.getUnaryExpressionAccess().getOpNOTKeyword_0_1_0_0());
+                              						
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              							if (current==null) {
+                              								current = createModelElement(grammarAccess.getUnaryExpressionRule());
+                              							}
+                              							setWithLastConsumed(current, "op", lv_op_1_1, null);
+                              						
+                            }
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalPortugol.g:2298:7: lv_op_1_2= '-'
+                            {
+                            lv_op_1_2=(Token)match(input,42,FOLLOW_17); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              							newLeafNode(lv_op_1_2, grammarAccess.getUnaryExpressionAccess().getOpHyphenMinusKeyword_0_1_0_1());
+                              						
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              							if (current==null) {
+                              								current = createModelElement(grammarAccess.getUnaryExpressionRule());
+                              							}
+                              							setWithLastConsumed(current, "op", lv_op_1_2, null);
+                              						
+                            }
+
+                            }
+                            break;
+
                     }
 
+
                     }
 
-                    // InternalPortugol.g:1903:4: ( (lv_expression_2_0= rulePrimaryExpression ) )
-                    // InternalPortugol.g:1904:5: (lv_expression_2_0= rulePrimaryExpression )
+
+                    }
+
+                    // InternalPortugol.g:2311:4: ( (lv_operand_2_0= ruleUnaryExpression ) )
+                    // InternalPortugol.g:2312:5: (lv_operand_2_0= ruleUnaryExpression )
                     {
-                    // InternalPortugol.g:1904:5: (lv_expression_2_0= rulePrimaryExpression )
-                    // InternalPortugol.g:1905:6: lv_expression_2_0= rulePrimaryExpression
+                    // InternalPortugol.g:2312:5: (lv_operand_2_0= ruleUnaryExpression )
+                    // InternalPortugol.g:2313:6: lv_operand_2_0= ruleUnaryExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getUnaryExpressionAccess().getExpressionPrimaryExpressionParserRuleCall_0_2_0());
+                      						newCompositeNode(grammarAccess.getUnaryExpressionAccess().getOperandUnaryExpressionParserRuleCall_0_2_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
-                    lv_expression_2_0=rulePrimaryExpression();
+                    lv_operand_2_0=ruleUnaryExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -5537,9 +6490,9 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                       						}
                       						set(
                       							current,
-                      							"expression",
-                      							lv_expression_2_0,
-                      							"org.hopper.language.Portugol.PrimaryExpression");
+                      							"operand",
+                      							lv_operand_2_0,
+                      							"org.hopper.language.Portugol.UnaryExpression");
                       						afterParserOrEnumRuleCall();
                       					
                     }
@@ -5556,93 +6509,21 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPortugol.g:1924:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) )
-                    {
-                    // InternalPortugol.g:1924:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) ) )
-                    // InternalPortugol.g:1925:4: () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrimaryExpression ) )
-                    {
-                    // InternalPortugol.g:1925:4: ()
-                    // InternalPortugol.g:1926:5: 
+                    // InternalPortugol.g:2332:3: this_MemberCall_3= ruleMemberCall
                     {
                     if ( state.backtracking==0 ) {
 
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getUnaryExpressionAccess().getArithmeticSignedAction_1_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    // InternalPortugol.g:1932:4: ( ( '-' )=>otherlv_4= '-' )
-                    // InternalPortugol.g:1933:5: ( '-' )=>otherlv_4= '-'
-                    {
-                    otherlv_4=(Token)match(input,41,FOLLOW_21); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					newLeafNode(otherlv_4, grammarAccess.getUnaryExpressionAccess().getHyphenMinusKeyword_1_1());
-                      				
-                    }
-
-                    }
-
-                    // InternalPortugol.g:1939:4: ( (lv_expression_5_0= rulePrimaryExpression ) )
-                    // InternalPortugol.g:1940:5: (lv_expression_5_0= rulePrimaryExpression )
-                    {
-                    // InternalPortugol.g:1940:5: (lv_expression_5_0= rulePrimaryExpression )
-                    // InternalPortugol.g:1941:6: lv_expression_5_0= rulePrimaryExpression
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						newCompositeNode(grammarAccess.getUnaryExpressionAccess().getExpressionPrimaryExpressionParserRuleCall_1_2_0());
-                      					
-                    }
-                    pushFollow(FOLLOW_2);
-                    lv_expression_5_0=rulePrimaryExpression();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElementForParent(grammarAccess.getUnaryExpressionRule());
-                      						}
-                      						set(
-                      							current,
-                      							"expression",
-                      							lv_expression_5_0,
-                      							"org.hopper.language.Portugol.PrimaryExpression");
-                      						afterParserOrEnumRuleCall();
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalPortugol.g:1960:3: this_PrimaryExpression_6= rulePrimaryExpression
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      			newCompositeNode(grammarAccess.getUnaryExpressionAccess().getPrimaryExpressionParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getUnaryExpressionAccess().getMemberCallParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_PrimaryExpression_6=rulePrimaryExpression();
+                    this_MemberCall_3=ruleMemberCall();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_PrimaryExpression_6;
+                      			current = this_MemberCall_3;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -5673,8 +6554,231 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleUnaryExpression"
 
 
+    // $ANTLR start "entryRuleMemberCall"
+    // InternalPortugol.g:2344:1: entryRuleMemberCall returns [EObject current=null] : iv_ruleMemberCall= ruleMemberCall EOF ;
+    public final EObject entryRuleMemberCall() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMemberCall = null;
+
+
+        try {
+            // InternalPortugol.g:2344:51: (iv_ruleMemberCall= ruleMemberCall EOF )
+            // InternalPortugol.g:2345:2: iv_ruleMemberCall= ruleMemberCall EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getMemberCallRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleMemberCall=ruleMemberCall();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleMemberCall; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMemberCall"
+
+
+    // $ANTLR start "ruleMemberCall"
+    // InternalPortugol.g:2351:1: ruleMemberCall returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )* ) ;
+    public final EObject ruleMemberCall() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        EObject this_PrimaryExpression_0 = null;
+
+        EObject lv_value_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalPortugol.g:2357:2: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )* ) )
+            // InternalPortugol.g:2358:2: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )* )
+            {
+            // InternalPortugol.g:2358:2: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )* )
+            // InternalPortugol.g:2359:3: this_PrimaryExpression_0= rulePrimaryExpression ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+
+              			newCompositeNode(grammarAccess.getMemberCallAccess().getPrimaryExpressionParserRuleCall_0());
+              		
+            }
+            pushFollow(FOLLOW_8);
+            this_PrimaryExpression_0=rulePrimaryExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              			current = this_PrimaryExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
+            }
+            // InternalPortugol.g:2367:3: ( ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) ) )*
+            loop34:
+            do {
+                int alt34=2;
+                int LA34_0 = input.LA(1);
+
+                if ( (LA34_0==RULE_ID) ) {
+                    int LA34_2 = input.LA(2);
+
+                    if ( (synpred10_InternalPortugol()) ) {
+                        alt34=1;
+                    }
+
+
+                }
+
+
+                switch (alt34) {
+            	case 1 :
+            	    // InternalPortugol.g:2368:4: ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) ) ( (lv_value_4_0= ruleAssignment ) )
+            	    {
+            	    // InternalPortugol.g:2368:4: ( ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' ) )
+            	    // InternalPortugol.g:2369:5: ( ( () ( ( RULE_ID ) ) '<-' ) )=> ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' )
+            	    {
+            	    // InternalPortugol.g:2380:5: ( () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-' )
+            	    // InternalPortugol.g:2381:6: () ( (otherlv_2= RULE_ID ) ) otherlv_3= '<-'
+            	    {
+            	    // InternalPortugol.g:2381:6: ()
+            	    // InternalPortugol.g:2382:7: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      							current = forceCreateModelElementAndSet(
+            	      								grammarAccess.getMemberCallAccess().getAssignmentAssignableAction_1_0_0_0(),
+            	      								current);
+            	      						
+            	    }
+
+            	    }
+
+            	    // InternalPortugol.g:2388:6: ( (otherlv_2= RULE_ID ) )
+            	    // InternalPortugol.g:2389:7: (otherlv_2= RULE_ID )
+            	    {
+            	    // InternalPortugol.g:2389:7: (otherlv_2= RULE_ID )
+            	    // InternalPortugol.g:2390:8: otherlv_2= RULE_ID
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      								if (current==null) {
+            	      									current = createModelElement(grammarAccess.getMemberCallRule());
+            	      								}
+            	      							
+            	    }
+            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_24); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      								newLeafNode(otherlv_2, grammarAccess.getMemberCallAccess().getFeatureVarNameCrossReference_1_0_0_1_0());
+            	      							
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_3=(Token)match(input,30,FOLLOW_17); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						newLeafNode(otherlv_3, grammarAccess.getMemberCallAccess().getLessThanSignHyphenMinusKeyword_1_0_0_2());
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    // InternalPortugol.g:2407:4: ( (lv_value_4_0= ruleAssignment ) )
+            	    // InternalPortugol.g:2408:5: (lv_value_4_0= ruleAssignment )
+            	    {
+            	    // InternalPortugol.g:2408:5: (lv_value_4_0= ruleAssignment )
+            	    // InternalPortugol.g:2409:6: lv_value_4_0= ruleAssignment
+            	    {
+            	    if ( state.backtracking==0 ) {
+
+            	      						newCompositeNode(grammarAccess.getMemberCallAccess().getValueAssignmentParserRuleCall_1_1_0());
+            	      					
+            	    }
+            	    pushFollow(FOLLOW_8);
+            	    lv_value_4_0=ruleAssignment();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getMemberCallRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"value",
+            	      							lv_value_4_0,
+            	      							"org.hopper.language.Portugol.Assignment");
+            	      						afterParserOrEnumRuleCall();
+            	      					
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop34;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMemberCall"
+
+
     // $ANTLR start "entryRulePrimaryExpression"
-    // InternalPortugol.g:1972:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
+    // InternalPortugol.g:2431:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
     public final EObject entryRulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5682,8 +6786,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:1972:58: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
-            // InternalPortugol.g:1973:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
+            // InternalPortugol.g:2431:58: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
+            // InternalPortugol.g:2432:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPrimaryExpressionRule()); 
@@ -5714,190 +6818,109 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimaryExpression"
-    // InternalPortugol.g:1979:1: rulePrimaryExpression returns [EObject current=null] : ( ( () ( (lv_value_1_0= ruleConstant ) ) ) | ( () ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' ) | this_FunctionCall_7= ruleFunctionCall ) ;
+    // InternalPortugol.g:2438:1: rulePrimaryExpression returns [EObject current=null] : (this_Literal_0= ruleLiteral | this_FunctionCall_1= ruleFunctionCall | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' ) ) ;
     public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_3=null;
+        Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject lv_value_1_0 = null;
+        EObject this_Literal_0 = null;
 
-        EObject this_Expression_5 = null;
+        EObject this_FunctionCall_1 = null;
 
-        EObject this_FunctionCall_7 = null;
+        EObject this_Expression_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPortugol.g:1985:2: ( ( ( () ( (lv_value_1_0= ruleConstant ) ) ) | ( () ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' ) | this_FunctionCall_7= ruleFunctionCall ) )
-            // InternalPortugol.g:1986:2: ( ( () ( (lv_value_1_0= ruleConstant ) ) ) | ( () ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' ) | this_FunctionCall_7= ruleFunctionCall )
+            // InternalPortugol.g:2444:2: ( (this_Literal_0= ruleLiteral | this_FunctionCall_1= ruleFunctionCall | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' ) ) )
+            // InternalPortugol.g:2445:2: (this_Literal_0= ruleLiteral | this_FunctionCall_1= ruleFunctionCall | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' ) )
             {
-            // InternalPortugol.g:1986:2: ( ( () ( (lv_value_1_0= ruleConstant ) ) ) | ( () ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' ) | this_FunctionCall_7= ruleFunctionCall )
-            int alt30=4;
+            // InternalPortugol.g:2445:2: (this_Literal_0= ruleLiteral | this_FunctionCall_1= ruleFunctionCall | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' ) )
+            int alt35=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
             case RULE_INT:
             case RULE_FLOAT:
                 {
-                alt30=1;
+                alt35=1;
                 }
                 break;
             case RULE_ID:
                 {
-                int LA30_2 = input.LA(2);
-
-                if ( (LA30_2==21) ) {
-                    alt30=4;
-                }
-                else if ( (LA30_2==EOF||(LA30_2>=15 && LA30_2<=16)||LA30_2==22||(LA30_2>=30 && LA30_2<=45)) ) {
-                    alt30=2;
-                }
-                else {
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 30, 2, input);
-
-                    throw nvae;
-                }
+                alt35=2;
                 }
                 break;
             case 21:
                 {
-                alt30=3;
+                alt35=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt30) {
+            switch (alt35) {
                 case 1 :
-                    // InternalPortugol.g:1987:3: ( () ( (lv_value_1_0= ruleConstant ) ) )
-                    {
-                    // InternalPortugol.g:1987:3: ( () ( (lv_value_1_0= ruleConstant ) ) )
-                    // InternalPortugol.g:1988:4: () ( (lv_value_1_0= ruleConstant ) )
-                    {
-                    // InternalPortugol.g:1988:4: ()
-                    // InternalPortugol.g:1989:5: 
+                    // InternalPortugol.g:2446:3: this_Literal_0= ruleLiteral
                     {
                     if ( state.backtracking==0 ) {
 
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getPrimaryExpressionAccess().getExpressionConstantAction_0_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    // InternalPortugol.g:1995:4: ( (lv_value_1_0= ruleConstant ) )
-                    // InternalPortugol.g:1996:5: (lv_value_1_0= ruleConstant )
-                    {
-                    // InternalPortugol.g:1996:5: (lv_value_1_0= ruleConstant )
-                    // InternalPortugol.g:1997:6: lv_value_1_0= ruleConstant
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getValueConstantParserRuleCall_0_1_0());
-                      					
+                      			newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getLiteralParserRuleCall_0());
+                      		
                     }
                     pushFollow(FOLLOW_2);
-                    lv_value_1_0=ruleConstant();
+                    this_Literal_0=ruleLiteral();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						if (current==null) {
-                      							current = createModelElementForParent(grammarAccess.getPrimaryExpressionRule());
-                      						}
-                      						set(
-                      							current,
-                      							"value",
-                      							lv_value_1_0,
-                      							"org.hopper.language.Portugol.Constant");
-                      						afterParserOrEnumRuleCall();
-                      					
+                      			current = this_Literal_0;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
-
-                    }
-
-
-                    }
-
-
-                    }
-
 
                     }
                     break;
                 case 2 :
-                    // InternalPortugol.g:2016:3: ( () ( (otherlv_3= RULE_ID ) ) )
-                    {
-                    // InternalPortugol.g:2016:3: ( () ( (otherlv_3= RULE_ID ) ) )
-                    // InternalPortugol.g:2017:4: () ( (otherlv_3= RULE_ID ) )
-                    {
-                    // InternalPortugol.g:2017:4: ()
-                    // InternalPortugol.g:2018:5: 
+                    // InternalPortugol.g:2455:3: this_FunctionCall_1= ruleFunctionCall
                     {
                     if ( state.backtracking==0 ) {
 
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getPrimaryExpressionAccess().getExpressionVariableAction_1_0(),
-                      						current);
-                      				
+                      			newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_1());
+                      		
                     }
+                    pushFollow(FOLLOW_2);
+                    this_FunctionCall_1=ruleFunctionCall();
 
-                    }
-
-                    // InternalPortugol.g:2024:4: ( (otherlv_3= RULE_ID ) )
-                    // InternalPortugol.g:2025:5: (otherlv_3= RULE_ID )
-                    {
-                    // InternalPortugol.g:2025:5: (otherlv_3= RULE_ID )
-                    // InternalPortugol.g:2026:6: otherlv_3= RULE_ID
-                    {
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getPrimaryExpressionRule());
-                      						}
-                      					
+                      			current = this_FunctionCall_1;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(otherlv_3, grammarAccess.getPrimaryExpressionAccess().getValueVarNameCrossReference_1_1_0());
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
 
                     }
                     break;
                 case 3 :
-                    // InternalPortugol.g:2039:3: (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' )
+                    // InternalPortugol.g:2464:3: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' )
                     {
-                    // InternalPortugol.g:2039:3: (otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')' )
-                    // InternalPortugol.g:2040:4: otherlv_4= '(' this_Expression_5= ruleExpression otherlv_6= ')'
+                    // InternalPortugol.g:2464:3: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' )
+                    // InternalPortugol.g:2465:4: otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')'
                     {
-                    otherlv_4=(Token)match(input,21,FOLLOW_21); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,21,FOLLOW_17); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_4, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_2_0());
+                      				newLeafNode(otherlv_2, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_2_0());
                       			
                     }
                     if ( state.backtracking==0 ) {
@@ -5906,47 +6929,25 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                       			
                     }
                     pushFollow(FOLLOW_14);
-                    this_Expression_5=ruleExpression();
+                    this_Expression_3=ruleExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				current = this_Expression_5;
+                      				current = this_Expression_3;
                       				afterParserOrEnumRuleCall();
                       			
                     }
-                    otherlv_6=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_6, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_2_2());
+                      				newLeafNode(otherlv_4, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_2_2());
                       			
                     }
 
                     }
 
-
-                    }
-                    break;
-                case 4 :
-                    // InternalPortugol.g:2058:3: this_FunctionCall_7= ruleFunctionCall
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      			newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_3());
-                      		
-                    }
-                    pushFollow(FOLLOW_2);
-                    this_FunctionCall_7=ruleFunctionCall();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      			current = this_FunctionCall_7;
-                      			afterParserOrEnumRuleCall();
-                      		
-                    }
 
                     }
                     break;
@@ -5975,7 +6976,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // InternalPortugol.g:2070:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
+    // InternalPortugol.g:2486:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
     public final EObject entryRuleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -5983,8 +6984,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:2070:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
-            // InternalPortugol.g:2071:2: iv_ruleFunctionCall= ruleFunctionCall EOF
+            // InternalPortugol.g:2486:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
+            // InternalPortugol.g:2487:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunctionCallRule()); 
@@ -6015,7 +7016,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // InternalPortugol.g:2077:1: ruleFunctionCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' ) ;
+    // InternalPortugol.g:2493:1: ruleFunctionCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -6029,17 +7030,17 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:2083:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' ) )
-            // InternalPortugol.g:2084:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' )
+            // InternalPortugol.g:2499:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' ) )
+            // InternalPortugol.g:2500:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' )
             {
-            // InternalPortugol.g:2084:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' )
-            // InternalPortugol.g:2085:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')'
+            // InternalPortugol.g:2500:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')' )
+            // InternalPortugol.g:2501:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_param_2_0= ruleWriteParam ) ) otherlv_3= ')'
             {
-            // InternalPortugol.g:2085:3: ( (otherlv_0= RULE_ID ) )
-            // InternalPortugol.g:2086:4: (otherlv_0= RULE_ID )
+            // InternalPortugol.g:2501:3: ( (otherlv_0= RULE_ID ) )
+            // InternalPortugol.g:2502:4: (otherlv_0= RULE_ID )
             {
-            // InternalPortugol.g:2086:4: (otherlv_0= RULE_ID )
-            // InternalPortugol.g:2087:5: otherlv_0= RULE_ID
+            // InternalPortugol.g:2502:4: (otherlv_0= RULE_ID )
+            // InternalPortugol.g:2503:5: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6060,17 +7061,17 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FOLLOW_21); if (state.failed) return current;
+            otherlv_1=(Token)match(input,21,FOLLOW_17); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalPortugol.g:2102:3: ( (lv_param_2_0= ruleWriteParam ) )
-            // InternalPortugol.g:2103:4: (lv_param_2_0= ruleWriteParam )
+            // InternalPortugol.g:2518:3: ( (lv_param_2_0= ruleWriteParam ) )
+            // InternalPortugol.g:2519:4: (lv_param_2_0= ruleWriteParam )
             {
-            // InternalPortugol.g:2103:4: (lv_param_2_0= ruleWriteParam )
-            // InternalPortugol.g:2104:5: lv_param_2_0= ruleWriteParam
+            // InternalPortugol.g:2519:4: (lv_param_2_0= ruleWriteParam )
+            // InternalPortugol.g:2520:5: lv_param_2_0= ruleWriteParam
             {
             if ( state.backtracking==0 ) {
 
@@ -6131,28 +7132,28 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleFunctionCall"
 
 
-    // $ANTLR start "entryRuleOptDecimalPrecision"
-    // InternalPortugol.g:2129:1: entryRuleOptDecimalPrecision returns [EObject current=null] : iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF ;
-    public final EObject entryRuleOptDecimalPrecision() throws RecognitionException {
+    // $ANTLR start "entryRuleLiteral"
+    // InternalPortugol.g:2545:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    public final EObject entryRuleLiteral() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleOptDecimalPrecision = null;
+        EObject iv_ruleLiteral = null;
 
 
         try {
-            // InternalPortugol.g:2129:60: (iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF )
-            // InternalPortugol.g:2130:2: iv_ruleOptDecimalPrecision= ruleOptDecimalPrecision EOF
+            // InternalPortugol.g:2545:48: (iv_ruleLiteral= ruleLiteral EOF )
+            // InternalPortugol.g:2546:2: iv_ruleLiteral= ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getOptDecimalPrecisionRule()); 
+               newCompositeNode(grammarAccess.getLiteralRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleOptDecimalPrecision=ruleOptDecimalPrecision();
+            iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleOptDecimalPrecision; 
+               current =iv_ruleLiteral; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -6168,185 +7169,12 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleOptDecimalPrecision"
+    // $ANTLR end "entryRuleLiteral"
 
 
-    // $ANTLR start "ruleOptDecimalPrecision"
-    // InternalPortugol.g:2136:1: ruleOptDecimalPrecision returns [EObject current=null] : (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? ) ;
-    public final EObject ruleOptDecimalPrecision() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_firstPrecision_1_0=null;
-        Token otherlv_2=null;
-        Token lv_secondPrecision_3_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalPortugol.g:2142:2: ( (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? ) )
-            // InternalPortugol.g:2143:2: (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? )
-            {
-            // InternalPortugol.g:2143:2: (otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )? )
-            // InternalPortugol.g:2144:3: otherlv_0= ':' ( (lv_firstPrecision_1_0= RULE_INT ) ) (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )?
-            {
-            otherlv_0=(Token)match(input,15,FOLLOW_31); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              			newLeafNode(otherlv_0, grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_0());
-              		
-            }
-            // InternalPortugol.g:2148:3: ( (lv_firstPrecision_1_0= RULE_INT ) )
-            // InternalPortugol.g:2149:4: (lv_firstPrecision_1_0= RULE_INT )
-            {
-            // InternalPortugol.g:2149:4: (lv_firstPrecision_1_0= RULE_INT )
-            // InternalPortugol.g:2150:5: lv_firstPrecision_1_0= RULE_INT
-            {
-            lv_firstPrecision_1_0=(Token)match(input,RULE_INT,FOLLOW_32); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              					newLeafNode(lv_firstPrecision_1_0, grammarAccess.getOptDecimalPrecisionAccess().getFirstPrecisionINTTerminalRuleCall_1_0());
-              				
-            }
-            if ( state.backtracking==0 ) {
-
-              					if (current==null) {
-              						current = createModelElement(grammarAccess.getOptDecimalPrecisionRule());
-              					}
-              					setWithLastConsumed(
-              						current,
-              						"firstPrecision",
-              						lv_firstPrecision_1_0,
-              						"org.eclipse.xtext.common.Terminals.INT");
-              				
-            }
-
-            }
-
-
-            }
-
-            // InternalPortugol.g:2166:3: (otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
-
-            if ( (LA31_0==15) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // InternalPortugol.g:2167:4: otherlv_2= ':' ( (lv_secondPrecision_3_0= RULE_INT ) )
-                    {
-                    otherlv_2=(Token)match(input,15,FOLLOW_31); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				newLeafNode(otherlv_2, grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_2_0());
-                      			
-                    }
-                    // InternalPortugol.g:2171:4: ( (lv_secondPrecision_3_0= RULE_INT ) )
-                    // InternalPortugol.g:2172:5: (lv_secondPrecision_3_0= RULE_INT )
-                    {
-                    // InternalPortugol.g:2172:5: (lv_secondPrecision_3_0= RULE_INT )
-                    // InternalPortugol.g:2173:6: lv_secondPrecision_3_0= RULE_INT
-                    {
-                    lv_secondPrecision_3_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_secondPrecision_3_0, grammarAccess.getOptDecimalPrecisionAccess().getSecondPrecisionINTTerminalRuleCall_2_1_0());
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getOptDecimalPrecisionRule());
-                      						}
-                      						setWithLastConsumed(
-                      							current,
-                      							"secondPrecision",
-                      							lv_secondPrecision_3_0,
-                      							"org.eclipse.xtext.common.Terminals.INT");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleOptDecimalPrecision"
-
-
-    // $ANTLR start "entryRuleConstant"
-    // InternalPortugol.g:2194:1: entryRuleConstant returns [EObject current=null] : iv_ruleConstant= ruleConstant EOF ;
-    public final EObject entryRuleConstant() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleConstant = null;
-
-
-        try {
-            // InternalPortugol.g:2194:49: (iv_ruleConstant= ruleConstant EOF )
-            // InternalPortugol.g:2195:2: iv_ruleConstant= ruleConstant EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getConstantRule()); 
-            }
-            pushFollow(FOLLOW_1);
-            iv_ruleConstant=ruleConstant();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleConstant; 
-            }
-            match(input,EOF,FOLLOW_2); if (state.failed) return current;
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleConstant"
-
-
-    // $ANTLR start "ruleConstant"
-    // InternalPortugol.g:2201:1: ruleConstant returns [EObject current=null] : (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression ) ;
-    public final EObject ruleConstant() throws RecognitionException {
+    // $ANTLR start "ruleLiteral"
+    // InternalPortugol.g:2552:1: ruleLiteral returns [EObject current=null] : (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression ) ;
+    public final EObject ruleLiteral() throws RecognitionException {
         EObject current = null;
 
         EObject this_NumericLiteral_0 = null;
@@ -6358,33 +7186,33 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:2207:2: ( (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression ) )
-            // InternalPortugol.g:2208:2: (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression )
+            // InternalPortugol.g:2558:2: ( (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression ) )
+            // InternalPortugol.g:2559:2: (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression )
             {
-            // InternalPortugol.g:2208:2: (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalPortugol.g:2559:2: (this_NumericLiteral_0= ruleNumericLiteral | this_StringExpression_1= ruleStringExpression )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( ((LA32_0>=RULE_INT && LA32_0<=RULE_FLOAT)) ) {
-                alt32=1;
+            if ( ((LA36_0>=RULE_INT && LA36_0<=RULE_FLOAT)) ) {
+                alt36=1;
             }
-            else if ( (LA32_0==RULE_STRING) ) {
-                alt32=2;
+            else if ( (LA36_0==RULE_STRING) ) {
+                alt36=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt36) {
                 case 1 :
-                    // InternalPortugol.g:2209:3: this_NumericLiteral_0= ruleNumericLiteral
+                    // InternalPortugol.g:2560:3: this_NumericLiteral_0= ruleNumericLiteral
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getConstantAccess().getNumericLiteralParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getLiteralAccess().getNumericLiteralParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6402,11 +7230,11 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPortugol.g:2218:3: this_StringExpression_1= ruleStringExpression
+                    // InternalPortugol.g:2569:3: this_StringExpression_1= ruleStringExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getConstantAccess().getStringExpressionParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getLiteralAccess().getStringExpressionParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6444,11 +7272,11 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleConstant"
+    // $ANTLR end "ruleLiteral"
 
 
     // $ANTLR start "entryRuleNumericLiteral"
-    // InternalPortugol.g:2230:1: entryRuleNumericLiteral returns [EObject current=null] : iv_ruleNumericLiteral= ruleNumericLiteral EOF ;
+    // InternalPortugol.g:2581:1: entryRuleNumericLiteral returns [EObject current=null] : iv_ruleNumericLiteral= ruleNumericLiteral EOF ;
     public final EObject entryRuleNumericLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6456,8 +7284,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:2230:55: (iv_ruleNumericLiteral= ruleNumericLiteral EOF )
-            // InternalPortugol.g:2231:2: iv_ruleNumericLiteral= ruleNumericLiteral EOF
+            // InternalPortugol.g:2581:55: (iv_ruleNumericLiteral= ruleNumericLiteral EOF )
+            // InternalPortugol.g:2582:2: iv_ruleNumericLiteral= ruleNumericLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNumericLiteralRule()); 
@@ -6488,7 +7316,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericLiteral"
-    // InternalPortugol.g:2237:1: ruleNumericLiteral returns [EObject current=null] : ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) ) ;
+    // InternalPortugol.g:2588:1: ruleNumericLiteral returns [EObject current=null] : ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) ) ;
     public final EObject ruleNumericLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6499,35 +7327,35 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:2243:2: ( ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) ) )
-            // InternalPortugol.g:2244:2: ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) )
+            // InternalPortugol.g:2594:2: ( ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) ) )
+            // InternalPortugol.g:2595:2: ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) )
             {
-            // InternalPortugol.g:2244:2: ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalPortugol.g:2595:2: ( ( (lv_intValue_0_0= RULE_INT ) ) | ( (lv_floatValue_1_0= RULE_FLOAT ) ) )
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA33_0==RULE_INT) ) {
-                alt33=1;
+            if ( (LA37_0==RULE_INT) ) {
+                alt37=1;
             }
-            else if ( (LA33_0==RULE_FLOAT) ) {
-                alt33=2;
+            else if ( (LA37_0==RULE_FLOAT) ) {
+                alt37=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt37) {
                 case 1 :
-                    // InternalPortugol.g:2245:3: ( (lv_intValue_0_0= RULE_INT ) )
+                    // InternalPortugol.g:2596:3: ( (lv_intValue_0_0= RULE_INT ) )
                     {
-                    // InternalPortugol.g:2245:3: ( (lv_intValue_0_0= RULE_INT ) )
-                    // InternalPortugol.g:2246:4: (lv_intValue_0_0= RULE_INT )
+                    // InternalPortugol.g:2596:3: ( (lv_intValue_0_0= RULE_INT ) )
+                    // InternalPortugol.g:2597:4: (lv_intValue_0_0= RULE_INT )
                     {
-                    // InternalPortugol.g:2246:4: (lv_intValue_0_0= RULE_INT )
-                    // InternalPortugol.g:2247:5: lv_intValue_0_0= RULE_INT
+                    // InternalPortugol.g:2597:4: (lv_intValue_0_0= RULE_INT )
+                    // InternalPortugol.g:2598:5: lv_intValue_0_0= RULE_INT
                     {
                     lv_intValue_0_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -6557,13 +7385,13 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPortugol.g:2264:3: ( (lv_floatValue_1_0= RULE_FLOAT ) )
+                    // InternalPortugol.g:2615:3: ( (lv_floatValue_1_0= RULE_FLOAT ) )
                     {
-                    // InternalPortugol.g:2264:3: ( (lv_floatValue_1_0= RULE_FLOAT ) )
-                    // InternalPortugol.g:2265:4: (lv_floatValue_1_0= RULE_FLOAT )
+                    // InternalPortugol.g:2615:3: ( (lv_floatValue_1_0= RULE_FLOAT ) )
+                    // InternalPortugol.g:2616:4: (lv_floatValue_1_0= RULE_FLOAT )
                     {
-                    // InternalPortugol.g:2265:4: (lv_floatValue_1_0= RULE_FLOAT )
-                    // InternalPortugol.g:2266:5: lv_floatValue_1_0= RULE_FLOAT
+                    // InternalPortugol.g:2616:4: (lv_floatValue_1_0= RULE_FLOAT )
+                    // InternalPortugol.g:2617:5: lv_floatValue_1_0= RULE_FLOAT
                     {
                     lv_floatValue_1_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -6617,7 +7445,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringExpression"
-    // InternalPortugol.g:2286:1: entryRuleStringExpression returns [EObject current=null] : iv_ruleStringExpression= ruleStringExpression EOF ;
+    // InternalPortugol.g:2637:1: entryRuleStringExpression returns [EObject current=null] : iv_ruleStringExpression= ruleStringExpression EOF ;
     public final EObject entryRuleStringExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6625,8 +7453,8 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPortugol.g:2286:57: (iv_ruleStringExpression= ruleStringExpression EOF )
-            // InternalPortugol.g:2287:2: iv_ruleStringExpression= ruleStringExpression EOF
+            // InternalPortugol.g:2637:57: (iv_ruleStringExpression= ruleStringExpression EOF )
+            // InternalPortugol.g:2638:2: iv_ruleStringExpression= ruleStringExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringExpressionRule()); 
@@ -6657,7 +7485,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringExpression"
-    // InternalPortugol.g:2293:1: ruleStringExpression returns [EObject current=null] : ( (lv_literalString_0_0= RULE_STRING ) ) ;
+    // InternalPortugol.g:2644:1: ruleStringExpression returns [EObject current=null] : ( (lv_literalString_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6667,14 +7495,14 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugol.g:2299:2: ( ( (lv_literalString_0_0= RULE_STRING ) ) )
-            // InternalPortugol.g:2300:2: ( (lv_literalString_0_0= RULE_STRING ) )
+            // InternalPortugol.g:2650:2: ( ( (lv_literalString_0_0= RULE_STRING ) ) )
+            // InternalPortugol.g:2651:2: ( (lv_literalString_0_0= RULE_STRING ) )
             {
-            // InternalPortugol.g:2300:2: ( (lv_literalString_0_0= RULE_STRING ) )
-            // InternalPortugol.g:2301:3: (lv_literalString_0_0= RULE_STRING )
+            // InternalPortugol.g:2651:2: ( (lv_literalString_0_0= RULE_STRING ) )
+            // InternalPortugol.g:2652:3: (lv_literalString_0_0= RULE_STRING )
             {
-            // InternalPortugol.g:2301:3: (lv_literalString_0_0= RULE_STRING )
-            // InternalPortugol.g:2302:4: lv_literalString_0_0= RULE_STRING
+            // InternalPortugol.g:2652:3: (lv_literalString_0_0= RULE_STRING )
+            // InternalPortugol.g:2653:4: lv_literalString_0_0= RULE_STRING
             {
             lv_literalString_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -6720,7 +7548,534 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleStringExpression"
 
+    // $ANTLR start synpred1_InternalPortugol
+    public final void synpred1_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1401:6: ( ( () ( ( '<-' ) ) ) )
+        // InternalPortugol.g:1401:7: ( () ( ( '<-' ) ) )
+        {
+        // InternalPortugol.g:1401:7: ( () ( ( '<-' ) ) )
+        // InternalPortugol.g:1402:7: () ( ( '<-' ) )
+        {
+        // InternalPortugol.g:1402:7: ()
+        // InternalPortugol.g:1403:7: 
+        {
+        }
+
+        // InternalPortugol.g:1404:7: ( ( '<-' ) )
+        // InternalPortugol.g:1405:8: ( '<-' )
+        {
+        // InternalPortugol.g:1405:8: ( '<-' )
+        // InternalPortugol.g:1406:9: '<-'
+        {
+        match(input,30,FOLLOW_2); if (state.failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred1_InternalPortugol
+
+    // $ANTLR start synpred2_InternalPortugol
+    public final void synpred2_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1485:5: ( ( () ( ( 'OU' ) ) ) )
+        // InternalPortugol.g:1485:6: ( () ( ( 'OU' ) ) )
+        {
+        // InternalPortugol.g:1485:6: ( () ( ( 'OU' ) ) )
+        // InternalPortugol.g:1486:6: () ( ( 'OU' ) )
+        {
+        // InternalPortugol.g:1486:6: ()
+        // InternalPortugol.g:1487:6: 
+        {
+        }
+
+        // InternalPortugol.g:1488:6: ( ( 'OU' ) )
+        // InternalPortugol.g:1489:7: ( 'OU' )
+        {
+        // InternalPortugol.g:1489:7: ( 'OU' )
+        // InternalPortugol.g:1490:8: 'OU'
+        {
+        match(input,31,FOLLOW_2); if (state.failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred2_InternalPortugol
+
+    // $ANTLR start synpred3_InternalPortugol
+    public final void synpred3_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1568:5: ( ( () ( ( 'XOU' ) ) ) )
+        // InternalPortugol.g:1568:6: ( () ( ( 'XOU' ) ) )
+        {
+        // InternalPortugol.g:1568:6: ( () ( ( 'XOU' ) ) )
+        // InternalPortugol.g:1569:6: () ( ( 'XOU' ) )
+        {
+        // InternalPortugol.g:1569:6: ()
+        // InternalPortugol.g:1570:6: 
+        {
+        }
+
+        // InternalPortugol.g:1571:6: ( ( 'XOU' ) )
+        // InternalPortugol.g:1572:7: ( 'XOU' )
+        {
+        // InternalPortugol.g:1572:7: ( 'XOU' )
+        // InternalPortugol.g:1573:8: 'XOU'
+        {
+        match(input,32,FOLLOW_2); if (state.failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred3_InternalPortugol
+
+    // $ANTLR start synpred4_InternalPortugol
+    public final void synpred4_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1651:5: ( ( () ( ( ( '&' | 'E' ) ) ) ) )
+        // InternalPortugol.g:1651:6: ( () ( ( ( '&' | 'E' ) ) ) )
+        {
+        // InternalPortugol.g:1651:6: ( () ( ( ( '&' | 'E' ) ) ) )
+        // InternalPortugol.g:1652:6: () ( ( ( '&' | 'E' ) ) )
+        {
+        // InternalPortugol.g:1652:6: ()
+        // InternalPortugol.g:1653:6: 
+        {
+        }
+
+        // InternalPortugol.g:1654:6: ( ( ( '&' | 'E' ) ) )
+        // InternalPortugol.g:1655:7: ( ( '&' | 'E' ) )
+        {
+        // InternalPortugol.g:1655:7: ( ( '&' | 'E' ) )
+        // InternalPortugol.g:1656:8: ( '&' | 'E' )
+        {
+        if ( (input.LA(1)>=33 && input.LA(1)<=34) ) {
+            input.consume();
+            state.errorRecovery=false;state.failed=false;
+        }
+        else {
+            if (state.backtracking>0) {state.failed=true; return ;}
+            MismatchedSetException mse = new MismatchedSetException(null,input);
+            throw mse;
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred4_InternalPortugol
+
+    // $ANTLR start synpred5_InternalPortugol
+    public final void synpred5_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1751:5: ( ( () ( ( ( '=' | '<>' ) ) ) ) )
+        // InternalPortugol.g:1751:6: ( () ( ( ( '=' | '<>' ) ) ) )
+        {
+        // InternalPortugol.g:1751:6: ( () ( ( ( '=' | '<>' ) ) ) )
+        // InternalPortugol.g:1752:6: () ( ( ( '=' | '<>' ) ) )
+        {
+        // InternalPortugol.g:1752:6: ()
+        // InternalPortugol.g:1753:6: 
+        {
+        }
+
+        // InternalPortugol.g:1754:6: ( ( ( '=' | '<>' ) ) )
+        // InternalPortugol.g:1755:7: ( ( '=' | '<>' ) )
+        {
+        // InternalPortugol.g:1755:7: ( ( '=' | '<>' ) )
+        // InternalPortugol.g:1756:8: ( '=' | '<>' )
+        {
+        if ( (input.LA(1)>=35 && input.LA(1)<=36) ) {
+            input.consume();
+            state.errorRecovery=false;state.failed=false;
+        }
+        else {
+            if (state.backtracking>0) {state.failed=true; return ;}
+            MismatchedSetException mse = new MismatchedSetException(null,input);
+            throw mse;
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred5_InternalPortugol
+
+    // $ANTLR start synpred6_InternalPortugol
+    public final void synpred6_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1851:5: ( ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) ) )
+        // InternalPortugol.g:1851:6: ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) )
+        {
+        // InternalPortugol.g:1851:6: ( () ( ( ( '<' | '>' | '<=' | '>=' ) ) ) )
+        // InternalPortugol.g:1852:6: () ( ( ( '<' | '>' | '<=' | '>=' ) ) )
+        {
+        // InternalPortugol.g:1852:6: ()
+        // InternalPortugol.g:1853:6: 
+        {
+        }
+
+        // InternalPortugol.g:1854:6: ( ( ( '<' | '>' | '<=' | '>=' ) ) )
+        // InternalPortugol.g:1855:7: ( ( '<' | '>' | '<=' | '>=' ) )
+        {
+        // InternalPortugol.g:1855:7: ( ( '<' | '>' | '<=' | '>=' ) )
+        // InternalPortugol.g:1856:8: ( '<' | '>' | '<=' | '>=' )
+        {
+        if ( (input.LA(1)>=37 && input.LA(1)<=40) ) {
+            input.consume();
+            state.errorRecovery=false;state.failed=false;
+        }
+        else {
+            if (state.backtracking>0) {state.failed=true; return ;}
+            MismatchedSetException mse = new MismatchedSetException(null,input);
+            throw mse;
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred6_InternalPortugol
+
+    // $ANTLR start synpred7_InternalPortugol
+    public final void synpred7_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:1977:5: ( ( () ( ( ( '+' | '-' ) ) ) ) )
+        // InternalPortugol.g:1977:6: ( () ( ( ( '+' | '-' ) ) ) )
+        {
+        // InternalPortugol.g:1977:6: ( () ( ( ( '+' | '-' ) ) ) )
+        // InternalPortugol.g:1978:6: () ( ( ( '+' | '-' ) ) )
+        {
+        // InternalPortugol.g:1978:6: ()
+        // InternalPortugol.g:1979:6: 
+        {
+        }
+
+        // InternalPortugol.g:1980:6: ( ( ( '+' | '-' ) ) )
+        // InternalPortugol.g:1981:7: ( ( '+' | '-' ) )
+        {
+        // InternalPortugol.g:1981:7: ( ( '+' | '-' ) )
+        // InternalPortugol.g:1982:8: ( '+' | '-' )
+        {
+        if ( (input.LA(1)>=41 && input.LA(1)<=42) ) {
+            input.consume();
+            state.errorRecovery=false;state.failed=false;
+        }
+        else {
+            if (state.backtracking>0) {state.failed=true; return ;}
+            MismatchedSetException mse = new MismatchedSetException(null,input);
+            throw mse;
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred7_InternalPortugol
+
+    // $ANTLR start synpred8_InternalPortugol
+    public final void synpred8_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:2077:5: ( ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) ) )
+        // InternalPortugol.g:2077:6: ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) )
+        {
+        // InternalPortugol.g:2077:6: ( () ( ( ( '*' | '/' | 'MOD' | '%' ) ) ) )
+        // InternalPortugol.g:2078:6: () ( ( ( '*' | '/' | 'MOD' | '%' ) ) )
+        {
+        // InternalPortugol.g:2078:6: ()
+        // InternalPortugol.g:2079:6: 
+        {
+        }
+
+        // InternalPortugol.g:2080:6: ( ( ( '*' | '/' | 'MOD' | '%' ) ) )
+        // InternalPortugol.g:2081:7: ( ( '*' | '/' | 'MOD' | '%' ) )
+        {
+        // InternalPortugol.g:2081:7: ( ( '*' | '/' | 'MOD' | '%' ) )
+        // InternalPortugol.g:2082:8: ( '*' | '/' | 'MOD' | '%' )
+        {
+        if ( (input.LA(1)>=43 && input.LA(1)<=46) ) {
+            input.consume();
+            state.errorRecovery=false;state.failed=false;
+        }
+        else {
+            if (state.backtracking>0) {state.failed=true; return ;}
+            MismatchedSetException mse = new MismatchedSetException(null,input);
+            throw mse;
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred8_InternalPortugol
+
+    // $ANTLR start synpred9_InternalPortugol
+    public final void synpred9_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:2203:5: ( ( () ( ( '^' ) ) ) )
+        // InternalPortugol.g:2203:6: ( () ( ( '^' ) ) )
+        {
+        // InternalPortugol.g:2203:6: ( () ( ( '^' ) ) )
+        // InternalPortugol.g:2204:6: () ( ( '^' ) )
+        {
+        // InternalPortugol.g:2204:6: ()
+        // InternalPortugol.g:2205:6: 
+        {
+        }
+
+        // InternalPortugol.g:2206:6: ( ( '^' ) )
+        // InternalPortugol.g:2207:7: ( '^' )
+        {
+        // InternalPortugol.g:2207:7: ( '^' )
+        // InternalPortugol.g:2208:8: '^'
+        {
+        match(input,47,FOLLOW_2); if (state.failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred9_InternalPortugol
+
+    // $ANTLR start synpred10_InternalPortugol
+    public final void synpred10_InternalPortugol_fragment() throws RecognitionException {   
+        // InternalPortugol.g:2369:5: ( ( () ( ( RULE_ID ) ) '<-' ) )
+        // InternalPortugol.g:2369:6: ( () ( ( RULE_ID ) ) '<-' )
+        {
+        // InternalPortugol.g:2369:6: ( () ( ( RULE_ID ) ) '<-' )
+        // InternalPortugol.g:2370:6: () ( ( RULE_ID ) ) '<-'
+        {
+        // InternalPortugol.g:2370:6: ()
+        // InternalPortugol.g:2371:6: 
+        {
+        }
+
+        // InternalPortugol.g:2372:6: ( ( RULE_ID ) )
+        // InternalPortugol.g:2373:7: ( RULE_ID )
+        {
+        // InternalPortugol.g:2373:7: ( RULE_ID )
+        // InternalPortugol.g:2374:8: RULE_ID
+        {
+        match(input,RULE_ID,FOLLOW_24); if (state.failed) return ;
+
+        }
+
+
+        }
+
+        match(input,30,FOLLOW_2); if (state.failed) return ;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred10_InternalPortugol
+
     // Delegated rules
+
+    public final boolean synpred7_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred6_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred3_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred1_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred2_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred4_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred5_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred10_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred8_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred9_InternalPortugol() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_InternalPortugol_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
 
 
  
@@ -6741,21 +8096,22 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000030000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000031000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000034000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000038000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00004200002001D0L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000018002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000300000002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000C00000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000000F000000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000030000000002L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00001C0000000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00010400302001D0L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00010400312001D0L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00010400342001D0L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00010400382001D0L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000018002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000600000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001800000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x000001E000000002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000060000000002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000780000000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000800000000002L});
 
 }

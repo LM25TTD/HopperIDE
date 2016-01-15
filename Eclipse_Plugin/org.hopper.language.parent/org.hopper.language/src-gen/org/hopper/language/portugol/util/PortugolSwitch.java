@@ -210,21 +210,6 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.EXPRESSION:
-      {
-        Expression expression = (Expression)theEObject;
-        T result = caseExpression(expression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.FUNCTION_CALL:
-      {
-        FunctionCall functionCall = (FunctionCall)theEObject;
-        T result = caseFunctionCall(functionCall);
-        if (result == null) result = caseExpression(functionCall);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case PortugolPackage.OPT_DECIMAL_PRECISION:
       {
         OptDecimalPrecision optDecimalPrecision = (OptDecimalPrecision)theEObject;
@@ -232,10 +217,11 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.CONSTANT:
+      case PortugolPackage.EXPRESSION:
       {
-        Constant constant = (Constant)theEObject;
-        T result = caseConstant(constant);
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = caseAbstractCommand(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -243,7 +229,8 @@ public class PortugolSwitch<T> extends Switch<T>
       {
         NumericLiteral numericLiteral = (NumericLiteral)theEObject;
         T result = caseNumericLiteral(numericLiteral);
-        if (result == null) result = caseConstant(numericLiteral);
+        if (result == null) result = caseExpression(numericLiteral);
+        if (result == null) result = caseAbstractCommand(numericLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -251,119 +238,35 @@ public class PortugolSwitch<T> extends Switch<T>
       {
         StringExpression stringExpression = (StringExpression)theEObject;
         T result = caseStringExpression(stringExpression);
-        if (result == null) result = caseConstant(stringExpression);
+        if (result == null) result = caseExpression(stringExpression);
+        if (result == null) result = caseAbstractCommand(stringExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.XOR_EXPRESSION:
+      case PortugolPackage.ASSIGNMENT:
       {
-        XorExpression xorExpression = (XorExpression)theEObject;
-        T result = caseXorExpression(xorExpression);
-        if (result == null) result = caseExpression(xorExpression);
+        Assignment assignment = (Assignment)theEObject;
+        T result = caseAssignment(assignment);
+        if (result == null) result = caseExpression(assignment);
+        if (result == null) result = caseAbstractCommand(assignment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.AND_EXPRESSION:
+      case PortugolPackage.BINARY_OPERATION:
       {
-        AndExpression andExpression = (AndExpression)theEObject;
-        T result = caseAndExpression(andExpression);
-        if (result == null) result = caseExpression(andExpression);
+        BinaryOperation binaryOperation = (BinaryOperation)theEObject;
+        T result = caseBinaryOperation(binaryOperation);
+        if (result == null) result = caseExpression(binaryOperation);
+        if (result == null) result = caseAbstractCommand(binaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.COMP_EXPRESSION:
+      case PortugolPackage.UNARY_EXPRESSION:
       {
-        CompExpression compExpression = (CompExpression)theEObject;
-        T result = caseCompExpression(compExpression);
-        if (result == null) result = caseExpression(compExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.EQU_EXPRESSION:
-      {
-        EquExpression equExpression = (EquExpression)theEObject;
-        T result = caseEquExpression(equExpression);
-        if (result == null) result = caseExpression(equExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.ADD_EXPRESSION:
-      {
-        AddExpression addExpression = (AddExpression)theEObject;
-        T result = caseAddExpression(addExpression);
-        if (result == null) result = caseExpression(addExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.SUB_EXPRESSION:
-      {
-        SubExpression subExpression = (SubExpression)theEObject;
-        T result = caseSubExpression(subExpression);
-        if (result == null) result = caseExpression(subExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.MULTIPLY:
-      {
-        Multiply multiply = (Multiply)theEObject;
-        T result = caseMultiply(multiply);
-        if (result == null) result = caseExpression(multiply);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.DIVISION:
-      {
-        Division division = (Division)theEObject;
-        T result = caseDivision(division);
-        if (result == null) result = caseExpression(division);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.MOD:
-      {
-        Mod mod = (Mod)theEObject;
-        T result = caseMod(mod);
-        if (result == null) result = caseExpression(mod);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.POWER_EXPRESSION:
-      {
-        PowerExpression powerExpression = (PowerExpression)theEObject;
-        T result = casePowerExpression(powerExpression);
-        if (result == null) result = caseExpression(powerExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.BOOLEAN_NEGATION:
-      {
-        BooleanNegation booleanNegation = (BooleanNegation)theEObject;
-        T result = caseBooleanNegation(booleanNegation);
-        if (result == null) result = caseExpression(booleanNegation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.ARITHMETIC_SIGNED:
-      {
-        ArithmeticSigned arithmeticSigned = (ArithmeticSigned)theEObject;
-        T result = caseArithmeticSigned(arithmeticSigned);
-        if (result == null) result = caseExpression(arithmeticSigned);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.EXPRESSION_CONSTANT:
-      {
-        ExpressionConstant expressionConstant = (ExpressionConstant)theEObject;
-        T result = caseExpressionConstant(expressionConstant);
-        if (result == null) result = caseExpression(expressionConstant);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.EXPRESSION_VARIABLE:
-      {
-        ExpressionVariable expressionVariable = (ExpressionVariable)theEObject;
-        T result = caseExpressionVariable(expressionVariable);
-        if (result == null) result = caseExpression(expressionVariable);
+        UnaryExpression unaryExpression = (UnaryExpression)theEObject;
+        T result = caseUnaryExpression(unaryExpression);
+        if (result == null) result = caseExpression(unaryExpression);
+        if (result == null) result = caseAbstractCommand(unaryExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -676,38 +579,6 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpression(Expression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFunctionCall(FunctionCall object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Opt Decimal Precision</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -724,17 +595,17 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConstant(Constant object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
@@ -772,225 +643,49 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Xor Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Xor Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXorExpression(XorExpression object)
+  public T caseAssignment(Assignment object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Binary Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAndExpression(AndExpression object)
+  public T caseBinaryOperation(BinaryOperation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Comp Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comp Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCompExpression(CompExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Equ Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Equ Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEquExpression(EquExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Add Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Add Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAddExpression(AddExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubExpression(SubExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Multiply</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multiply</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMultiply(Multiply object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Division</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Division</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDivision(Division object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mod</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mod</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMod(Mod object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Power Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Power Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePowerExpression(PowerExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Negation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Negation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBooleanNegation(BooleanNegation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Arithmetic Signed</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Arithmetic Signed</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseArithmeticSigned(ArithmeticSigned object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression Constant</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression Constant</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpressionConstant(ExpressionConstant object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpressionVariable(ExpressionVariable object)
+  public T caseUnaryExpression(UnaryExpression object)
   {
     return null;
   }

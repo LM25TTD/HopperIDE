@@ -21,7 +21,7 @@ package org.hopper.language.portugol;
  * @model
  * @generated
  */
-public interface NumericLiteral extends Constant
+public interface NumericLiteral extends Expression
 {
   /**
    * Returns the value of the '<em><b>Int Value</b></em>' attribute.

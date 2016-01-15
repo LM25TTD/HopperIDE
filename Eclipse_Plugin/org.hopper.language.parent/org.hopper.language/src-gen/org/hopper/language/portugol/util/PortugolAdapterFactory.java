@@ -171,24 +171,14 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createWriteParamAdapter();
       }
       @Override
-      public Adapter caseExpression(Expression object)
-      {
-        return createExpressionAdapter();
-      }
-      @Override
-      public Adapter caseFunctionCall(FunctionCall object)
-      {
-        return createFunctionCallAdapter();
-      }
-      @Override
       public Adapter caseOptDecimalPrecision(OptDecimalPrecision object)
       {
         return createOptDecimalPrecisionAdapter();
       }
       @Override
-      public Adapter caseConstant(Constant object)
+      public Adapter caseExpression(Expression object)
       {
-        return createConstantAdapter();
+        return createExpressionAdapter();
       }
       @Override
       public Adapter caseNumericLiteral(NumericLiteral object)
@@ -201,74 +191,19 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createStringExpressionAdapter();
       }
       @Override
-      public Adapter caseXorExpression(XorExpression object)
+      public Adapter caseAssignment(Assignment object)
       {
-        return createXorExpressionAdapter();
+        return createAssignmentAdapter();
       }
       @Override
-      public Adapter caseAndExpression(AndExpression object)
+      public Adapter caseBinaryOperation(BinaryOperation object)
       {
-        return createAndExpressionAdapter();
+        return createBinaryOperationAdapter();
       }
       @Override
-      public Adapter caseCompExpression(CompExpression object)
+      public Adapter caseUnaryExpression(UnaryExpression object)
       {
-        return createCompExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEquExpression(EquExpression object)
-      {
-        return createEquExpressionAdapter();
-      }
-      @Override
-      public Adapter caseAddExpression(AddExpression object)
-      {
-        return createAddExpressionAdapter();
-      }
-      @Override
-      public Adapter caseSubExpression(SubExpression object)
-      {
-        return createSubExpressionAdapter();
-      }
-      @Override
-      public Adapter caseMultiply(Multiply object)
-      {
-        return createMultiplyAdapter();
-      }
-      @Override
-      public Adapter caseDivision(Division object)
-      {
-        return createDivisionAdapter();
-      }
-      @Override
-      public Adapter caseMod(Mod object)
-      {
-        return createModAdapter();
-      }
-      @Override
-      public Adapter casePowerExpression(PowerExpression object)
-      {
-        return createPowerExpressionAdapter();
-      }
-      @Override
-      public Adapter caseBooleanNegation(BooleanNegation object)
-      {
-        return createBooleanNegationAdapter();
-      }
-      @Override
-      public Adapter caseArithmeticSigned(ArithmeticSigned object)
-      {
-        return createArithmeticSignedAdapter();
-      }
-      @Override
-      public Adapter caseExpressionConstant(ExpressionConstant object)
-      {
-        return createExpressionConstantAdapter();
-      }
-      @Override
-      public Adapter caseExpressionVariable(ExpressionVariable object)
-      {
-        return createExpressionVariableAdapter();
+        return createUnaryExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -578,36 +513,6 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.Expression
-   * @generated
-   */
-  public Adapter createExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.FunctionCall <em>Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.FunctionCall
-   * @generated
-   */
-  public Adapter createFunctionCallAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.OptDecimalPrecision <em>Opt Decimal Precision</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -623,16 +528,16 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Constant <em>Constant</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.Constant
+   * @see org.hopper.language.portugol.Expression
    * @generated
    */
-  public Adapter createConstantAdapter()
+  public Adapter createExpressionAdapter()
   {
     return null;
   }
@@ -668,211 +573,46 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.XorExpression <em>Xor Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Assignment <em>Assignment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.XorExpression
+   * @see org.hopper.language.portugol.Assignment
    * @generated
    */
-  public Adapter createXorExpressionAdapter()
+  public Adapter createAssignmentAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.AndExpression <em>And Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.BinaryOperation <em>Binary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.AndExpression
+   * @see org.hopper.language.portugol.BinaryOperation
    * @generated
    */
-  public Adapter createAndExpressionAdapter()
+  public Adapter createBinaryOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.CompExpression <em>Comp Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.UnaryExpression <em>Unary Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.CompExpression
+   * @see org.hopper.language.portugol.UnaryExpression
    * @generated
    */
-  public Adapter createCompExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.EquExpression <em>Equ Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.EquExpression
-   * @generated
-   */
-  public Adapter createEquExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.AddExpression <em>Add Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.AddExpression
-   * @generated
-   */
-  public Adapter createAddExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.SubExpression <em>Sub Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.SubExpression
-   * @generated
-   */
-  public Adapter createSubExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Multiply <em>Multiply</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.Multiply
-   * @generated
-   */
-  public Adapter createMultiplyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Division <em>Division</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.Division
-   * @generated
-   */
-  public Adapter createDivisionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Mod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.Mod
-   * @generated
-   */
-  public Adapter createModAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.PowerExpression <em>Power Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.PowerExpression
-   * @generated
-   */
-  public Adapter createPowerExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.BooleanNegation <em>Boolean Negation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.BooleanNegation
-   * @generated
-   */
-  public Adapter createBooleanNegationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ArithmeticSigned <em>Arithmetic Signed</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.ArithmeticSigned
-   * @generated
-   */
-  public Adapter createArithmeticSignedAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ExpressionConstant <em>Expression Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.ExpressionConstant
-   * @generated
-   */
-  public Adapter createExpressionConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ExpressionVariable <em>Expression Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.ExpressionVariable
-   * @generated
-   */
-  public Adapter createExpressionVariableAdapter()
+  public Adapter createUnaryExpressionAdapter()
   {
     return null;
   }

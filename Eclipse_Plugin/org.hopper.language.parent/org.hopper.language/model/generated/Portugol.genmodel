@@ -69,20 +69,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteParam/expression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteParam/precision"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//Expression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//Expression/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//FunctionCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//FunctionCall/fbName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//FunctionCall/param"/>
-    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//OptDecimalPrecision">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//OptDecimalPrecision/firstPrecision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//OptDecimalPrecision/secondPrecision"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//Constant"/>
+    <genClasses ecoreClass="Portugol.ecore#//Expression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/fbName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/param"/>
+    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//NumericLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/intValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/floatValue"/>
@@ -90,27 +84,20 @@
     <genClasses ecoreClass="Portugol.ecore#//StringExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//StringExpression/literalString"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//XorExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//AndExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//CompExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//EquExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//AddExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//SubExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//Multiply"/>
-    <genClasses ecoreClass="Portugol.ecore#//Division"/>
-    <genClasses ecoreClass="Portugol.ecore#//Mod"/>
-    <genClasses ecoreClass="Portugol.ecore#//PowerExpression"/>
-    <genClasses ecoreClass="Portugol.ecore#//BooleanNegation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BooleanNegation/expression"/>
+    <genClasses ecoreClass="Portugol.ecore#//Assignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/assignable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/feature"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//ArithmeticSigned">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ArithmeticSigned/expression"/>
+    <genClasses ecoreClass="Portugol.ecore#//BinaryOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//BinaryOperation/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/right"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//ExpressionConstant">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ExpressionConstant/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//ExpressionVariable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//ExpressionVariable/value"/>
+    <genClasses ecoreClass="Portugol.ecore#//UnaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//UnaryExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//UnaryExpression/operand"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

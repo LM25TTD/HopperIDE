@@ -20,7 +20,7 @@ package org.hopper.language.portugol;
  * @model
  * @generated
  */
-public interface StringExpression extends Constant
+public interface StringExpression extends Expression
 {
   /**
    * Returns the value of the '<em><b>Literal String</b></em>' attribute.

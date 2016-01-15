@@ -11,46 +11,33 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.hopper.language.portugol.AbstractCommand;
-import org.hopper.language.portugol.AddExpression;
-import org.hopper.language.portugol.AndExpression;
-import org.hopper.language.portugol.ArithmeticSigned;
+import org.hopper.language.portugol.Assignment;
+import org.hopper.language.portugol.BinaryOperation;
 import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
 import org.hopper.language.portugol.BlockSubPrograms;
-import org.hopper.language.portugol.BooleanNegation;
-import org.hopper.language.portugol.CompExpression;
-import org.hopper.language.portugol.Constant;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
-import org.hopper.language.portugol.Division;
-import org.hopper.language.portugol.EquExpression;
 import org.hopper.language.portugol.Expression;
-import org.hopper.language.portugol.ExpressionConstant;
-import org.hopper.language.portugol.ExpressionVariable;
-import org.hopper.language.portugol.FunctionCall;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
-import org.hopper.language.portugol.Mod;
 import org.hopper.language.portugol.Model;
-import org.hopper.language.portugol.Multiply;
 import org.hopper.language.portugol.NumericLiteral;
 import org.hopper.language.portugol.OptDecimalPrecision;
 import org.hopper.language.portugol.PortugolFactory;
 import org.hopper.language.portugol.PortugolPackage;
-import org.hopper.language.portugol.PowerExpression;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.StringExpression;
-import org.hopper.language.portugol.SubExpression;
 import org.hopper.language.portugol.Subprograms;
+import org.hopper.language.portugol.UnaryExpression;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarName;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
 import org.hopper.language.portugol.WriteCommand;
 import org.hopper.language.portugol.WriteParam;
-import org.hopper.language.portugol.XorExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,20 +185,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionCallEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass optDecimalPrecisionEClass = null;
 
   /**
@@ -219,7 +192,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass constantEClass = null;
+  private EClass expressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -240,98 +213,21 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass xorExpressionEClass = null;
+  private EClass assignmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass andExpressionEClass = null;
+  private EClass binaryOperationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass compExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass equExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass addExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass subExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass multiplyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass divisionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass modEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass powerExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass booleanNegationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass arithmeticSignedEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass expressionConstantEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass expressionVariableEClass = null;
+  private EClass unaryExpressionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -851,76 +747,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpression()
-  {
-    return expressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpression_Left()
-  {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpression_Op()
-  {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpression_Right()
-  {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionCall()
-  {
-    return functionCallEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionCall_FbName()
-  {
-    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionCall_Param()
-  {
-    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOptDecimalPrecision()
   {
     return optDecimalPrecisionEClass;
@@ -951,9 +777,29 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getConstant()
+  public EClass getExpression()
   {
-    return constantEClass;
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_FbName()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Param()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1011,9 +857,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getXorExpression()
+  public EClass getAssignment()
   {
-    return xorExpressionEClass;
+    return assignmentEClass;
   }
 
   /**
@@ -1021,9 +867,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAndExpression()
+  public EReference getAssignment_Target()
   {
-    return andExpressionEClass;
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1031,9 +877,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCompExpression()
+  public EReference getAssignment_Value()
   {
-    return compExpressionEClass;
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1041,9 +887,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEquExpression()
+  public EReference getAssignment_Assignable()
   {
-    return equExpressionEClass;
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1051,9 +897,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAddExpression()
+  public EReference getAssignment_Feature()
   {
-    return addExpressionEClass;
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1061,9 +907,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSubExpression()
+  public EClass getBinaryOperation()
   {
-    return subExpressionEClass;
+    return binaryOperationEClass;
   }
 
   /**
@@ -1071,9 +917,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMultiply()
+  public EReference getBinaryOperation_Left()
   {
-    return multiplyEClass;
+    return (EReference)binaryOperationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1081,9 +927,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDivision()
+  public EAttribute getBinaryOperation_Op()
   {
-    return divisionEClass;
+    return (EAttribute)binaryOperationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1091,9 +937,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMod()
+  public EReference getBinaryOperation_Right()
   {
-    return modEClass;
+    return (EReference)binaryOperationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1101,9 +947,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPowerExpression()
+  public EClass getUnaryExpression()
   {
-    return powerExpressionEClass;
+    return unaryExpressionEClass;
   }
 
   /**
@@ -1111,9 +957,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBooleanNegation()
+  public EAttribute getUnaryExpression_Op()
   {
-    return booleanNegationEClass;
+    return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1121,69 +967,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanNegation_Expression()
+  public EReference getUnaryExpression_Operand()
   {
-    return (EReference)booleanNegationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getArithmeticSigned()
-  {
-    return arithmeticSignedEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArithmeticSigned_Expression()
-  {
-    return (EReference)arithmeticSignedEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExpressionConstant()
-  {
-    return expressionConstantEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpressionConstant_Value()
-  {
-    return (EReference)expressionConstantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExpressionVariable()
-  {
-    return expressionVariableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpressionVariable_Value()
-  {
-    return (EReference)expressionVariableEClass.getEStructuralFeatures().get(0);
+    return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1280,20 +1066,13 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(writeParamEClass, WRITE_PARAM__EXPRESSION);
     createEReference(writeParamEClass, WRITE_PARAM__PRECISION);
 
-    expressionEClass = createEClass(EXPRESSION);
-    createEReference(expressionEClass, EXPRESSION__LEFT);
-    createEAttribute(expressionEClass, EXPRESSION__OP);
-    createEReference(expressionEClass, EXPRESSION__RIGHT);
-
-    functionCallEClass = createEClass(FUNCTION_CALL);
-    createEReference(functionCallEClass, FUNCTION_CALL__FB_NAME);
-    createEReference(functionCallEClass, FUNCTION_CALL__PARAM);
-
     optDecimalPrecisionEClass = createEClass(OPT_DECIMAL_PRECISION);
     createEAttribute(optDecimalPrecisionEClass, OPT_DECIMAL_PRECISION__FIRST_PRECISION);
     createEAttribute(optDecimalPrecisionEClass, OPT_DECIMAL_PRECISION__SECOND_PRECISION);
 
-    constantEClass = createEClass(CONSTANT);
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__FB_NAME);
+    createEReference(expressionEClass, EXPRESSION__PARAM);
 
     numericLiteralEClass = createEClass(NUMERIC_LITERAL);
     createEAttribute(numericLiteralEClass, NUMERIC_LITERAL__INT_VALUE);
@@ -1302,37 +1081,20 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     stringExpressionEClass = createEClass(STRING_EXPRESSION);
     createEAttribute(stringExpressionEClass, STRING_EXPRESSION__LITERAL_STRING);
 
-    xorExpressionEClass = createEClass(XOR_EXPRESSION);
+    assignmentEClass = createEClass(ASSIGNMENT);
+    createEReference(assignmentEClass, ASSIGNMENT__TARGET);
+    createEReference(assignmentEClass, ASSIGNMENT__VALUE);
+    createEReference(assignmentEClass, ASSIGNMENT__ASSIGNABLE);
+    createEReference(assignmentEClass, ASSIGNMENT__FEATURE);
 
-    andExpressionEClass = createEClass(AND_EXPRESSION);
+    binaryOperationEClass = createEClass(BINARY_OPERATION);
+    createEReference(binaryOperationEClass, BINARY_OPERATION__LEFT);
+    createEAttribute(binaryOperationEClass, BINARY_OPERATION__OP);
+    createEReference(binaryOperationEClass, BINARY_OPERATION__RIGHT);
 
-    compExpressionEClass = createEClass(COMP_EXPRESSION);
-
-    equExpressionEClass = createEClass(EQU_EXPRESSION);
-
-    addExpressionEClass = createEClass(ADD_EXPRESSION);
-
-    subExpressionEClass = createEClass(SUB_EXPRESSION);
-
-    multiplyEClass = createEClass(MULTIPLY);
-
-    divisionEClass = createEClass(DIVISION);
-
-    modEClass = createEClass(MOD);
-
-    powerExpressionEClass = createEClass(POWER_EXPRESSION);
-
-    booleanNegationEClass = createEClass(BOOLEAN_NEGATION);
-    createEReference(booleanNegationEClass, BOOLEAN_NEGATION__EXPRESSION);
-
-    arithmeticSignedEClass = createEClass(ARITHMETIC_SIGNED);
-    createEReference(arithmeticSignedEClass, ARITHMETIC_SIGNED__EXPRESSION);
-
-    expressionConstantEClass = createEClass(EXPRESSION_CONSTANT);
-    createEReference(expressionConstantEClass, EXPRESSION_CONSTANT__VALUE);
-
-    expressionVariableEClass = createEClass(EXPRESSION_VARIABLE);
-    createEReference(expressionVariableEClass, EXPRESSION_VARIABLE__VALUE);
+    unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
+    createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__OP);
+    createEReference(unaryExpressionEClass, UNARY_EXPRESSION__OPERAND);
   }
 
   /**
@@ -1368,23 +1130,12 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     blockProcedureEClass.getESuperTypes().add(this.getBlockSubPrograms());
     readCommandEClass.getESuperTypes().add(this.getAbstractCommand());
     writeCommandEClass.getESuperTypes().add(this.getAbstractCommand());
-    functionCallEClass.getESuperTypes().add(this.getExpression());
-    numericLiteralEClass.getESuperTypes().add(this.getConstant());
-    stringExpressionEClass.getESuperTypes().add(this.getConstant());
-    xorExpressionEClass.getESuperTypes().add(this.getExpression());
-    andExpressionEClass.getESuperTypes().add(this.getExpression());
-    compExpressionEClass.getESuperTypes().add(this.getExpression());
-    equExpressionEClass.getESuperTypes().add(this.getExpression());
-    addExpressionEClass.getESuperTypes().add(this.getExpression());
-    subExpressionEClass.getESuperTypes().add(this.getExpression());
-    multiplyEClass.getESuperTypes().add(this.getExpression());
-    divisionEClass.getESuperTypes().add(this.getExpression());
-    modEClass.getESuperTypes().add(this.getExpression());
-    powerExpressionEClass.getESuperTypes().add(this.getExpression());
-    booleanNegationEClass.getESuperTypes().add(this.getExpression());
-    arithmeticSignedEClass.getESuperTypes().add(this.getExpression());
-    expressionConstantEClass.getESuperTypes().add(this.getExpression());
-    expressionVariableEClass.getESuperTypes().add(this.getExpression());
+    expressionEClass.getESuperTypes().add(this.getAbstractCommand());
+    numericLiteralEClass.getESuperTypes().add(this.getExpression());
+    stringExpressionEClass.getESuperTypes().add(this.getExpression());
+    assignmentEClass.getESuperTypes().add(this.getExpression());
+    binaryOperationEClass.getESuperTypes().add(this.getExpression());
+    unaryExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1451,20 +1202,13 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getWriteParam_Expression(), this.getExpression(), null, "expression", null, 0, -1, WriteParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWriteParam_Precision(), this.getOptDecimalPrecision(), null, "precision", null, 0, 1, WriteParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionCall_FbName(), this.getFunctionName(), null, "fbName", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionCall_Param(), this.getWriteParam(), null, "param", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(optDecimalPrecisionEClass, OptDecimalPrecision.class, "OptDecimalPrecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOptDecimalPrecision_FirstPrecision(), ecorePackage.getEInt(), "firstPrecision", null, 0, 1, OptDecimalPrecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOptDecimalPrecision_SecondPrecision(), ecorePackage.getEInt(), "secondPrecision", null, 0, 1, OptDecimalPrecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_FbName(), ecorePackage.getEObject(), null, "fbName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Param(), this.getWriteParam(), null, "param", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numericLiteralEClass, NumericLiteral.class, "NumericLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumericLiteral_IntValue(), ecorePackage.getEBoolean(), "intValue", null, 0, 1, NumericLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1473,37 +1217,20 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEClass(stringExpressionEClass, StringExpression.class, "StringExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStringExpression_LiteralString(), ecorePackage.getEString(), "literalString", null, 0, 1, StringExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(xorExpressionEClass, XorExpression.class, "XorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssignment_Target(), this.getVarName(), null, "target", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Value(), this.getExpression(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Assignable(), this.getExpression(), null, "assignable", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Feature(), this.getVarName(), null, "feature", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(andExpressionEClass, AndExpression.class, "AndExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(binaryOperationEClass, BinaryOperation.class, "BinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBinaryOperation_Left(), this.getExpression(), null, "left", null, 0, 1, BinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBinaryOperation_Op(), ecorePackage.getEString(), "op", null, 0, 1, BinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinaryOperation_Right(), this.getExpression(), null, "right", null, 0, 1, BinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(compExpressionEClass, CompExpression.class, "CompExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(equExpressionEClass, EquExpression.class, "EquExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(addExpressionEClass, AddExpression.class, "AddExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(subExpressionEClass, SubExpression.class, "SubExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(multiplyEClass, Multiply.class, "Multiply", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(divisionEClass, Division.class, "Division", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(modEClass, Mod.class, "Mod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(powerExpressionEClass, PowerExpression.class, "PowerExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(booleanNegationEClass, BooleanNegation.class, "BooleanNegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanNegation_Expression(), this.getExpression(), null, "expression", null, 0, 1, BooleanNegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(arithmeticSignedEClass, ArithmeticSigned.class, "ArithmeticSigned", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArithmeticSigned_Expression(), this.getExpression(), null, "expression", null, 0, 1, ArithmeticSigned.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expressionConstantEClass, ExpressionConstant.class, "ExpressionConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpressionConstant_Value(), this.getConstant(), null, "value", null, 0, 1, ExpressionConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expressionVariableEClass, ExpressionVariable.class, "ExpressionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpressionVariable_Value(), this.getVarName(), null, "value", null, 0, 1, ExpressionVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUnaryExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnaryExpression_Operand(), this.getExpression(), null, "operand", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

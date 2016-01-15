@@ -25,7 +25,7 @@ import org.hopper.language.portugol.StringExpression;
  *
  * @generated
  */
-public class StringExpressionImpl extends ConstantImpl implements StringExpression
+public class StringExpressionImpl extends ExpressionImpl implements StringExpression
 {
   /**
    * The default value of the '{@link #getLiteralString() <em>Literal String</em>}' attribute.

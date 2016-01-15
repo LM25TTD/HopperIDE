@@ -84,26 +84,13 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.READ_COMMAND: return createReadCommand();
       case PortugolPackage.WRITE_COMMAND: return createWriteCommand();
       case PortugolPackage.WRITE_PARAM: return createWriteParam();
-      case PortugolPackage.EXPRESSION: return createExpression();
-      case PortugolPackage.FUNCTION_CALL: return createFunctionCall();
       case PortugolPackage.OPT_DECIMAL_PRECISION: return createOptDecimalPrecision();
-      case PortugolPackage.CONSTANT: return createConstant();
+      case PortugolPackage.EXPRESSION: return createExpression();
       case PortugolPackage.NUMERIC_LITERAL: return createNumericLiteral();
       case PortugolPackage.STRING_EXPRESSION: return createStringExpression();
-      case PortugolPackage.XOR_EXPRESSION: return createXorExpression();
-      case PortugolPackage.AND_EXPRESSION: return createAndExpression();
-      case PortugolPackage.COMP_EXPRESSION: return createCompExpression();
-      case PortugolPackage.EQU_EXPRESSION: return createEquExpression();
-      case PortugolPackage.ADD_EXPRESSION: return createAddExpression();
-      case PortugolPackage.SUB_EXPRESSION: return createSubExpression();
-      case PortugolPackage.MULTIPLY: return createMultiply();
-      case PortugolPackage.DIVISION: return createDivision();
-      case PortugolPackage.MOD: return createMod();
-      case PortugolPackage.POWER_EXPRESSION: return createPowerExpression();
-      case PortugolPackage.BOOLEAN_NEGATION: return createBooleanNegation();
-      case PortugolPackage.ARITHMETIC_SIGNED: return createArithmeticSigned();
-      case PortugolPackage.EXPRESSION_CONSTANT: return createExpressionConstant();
-      case PortugolPackage.EXPRESSION_VARIABLE: return createExpressionVariable();
+      case PortugolPackage.ASSIGNMENT: return createAssignment();
+      case PortugolPackage.BINARY_OPERATION: return createBinaryOperation();
+      case PortugolPackage.UNARY_EXPRESSION: return createUnaryExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -323,28 +310,6 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression createExpression()
-  {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionCall createFunctionCall()
-  {
-    FunctionCallImpl functionCall = new FunctionCallImpl();
-    return functionCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public OptDecimalPrecision createOptDecimalPrecision()
   {
     OptDecimalPrecisionImpl optDecimalPrecision = new OptDecimalPrecisionImpl();
@@ -356,10 +321,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Constant createConstant()
+  public Expression createExpression()
   {
-    ConstantImpl constant = new ConstantImpl();
-    return constant;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -389,10 +354,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XorExpression createXorExpression()
+  public Assignment createAssignment()
   {
-    XorExpressionImpl xorExpression = new XorExpressionImpl();
-    return xorExpression;
+    AssignmentImpl assignment = new AssignmentImpl();
+    return assignment;
   }
 
   /**
@@ -400,10 +365,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndExpression createAndExpression()
+  public BinaryOperation createBinaryOperation()
   {
-    AndExpressionImpl andExpression = new AndExpressionImpl();
-    return andExpression;
+    BinaryOperationImpl binaryOperation = new BinaryOperationImpl();
+    return binaryOperation;
   }
 
   /**
@@ -411,131 +376,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CompExpression createCompExpression()
+  public UnaryExpression createUnaryExpression()
   {
-    CompExpressionImpl compExpression = new CompExpressionImpl();
-    return compExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EquExpression createEquExpression()
-  {
-    EquExpressionImpl equExpression = new EquExpressionImpl();
-    return equExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AddExpression createAddExpression()
-  {
-    AddExpressionImpl addExpression = new AddExpressionImpl();
-    return addExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SubExpression createSubExpression()
-  {
-    SubExpressionImpl subExpression = new SubExpressionImpl();
-    return subExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Multiply createMultiply()
-  {
-    MultiplyImpl multiply = new MultiplyImpl();
-    return multiply;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Division createDivision()
-  {
-    DivisionImpl division = new DivisionImpl();
-    return division;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Mod createMod()
-  {
-    ModImpl mod = new ModImpl();
-    return mod;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PowerExpression createPowerExpression()
-  {
-    PowerExpressionImpl powerExpression = new PowerExpressionImpl();
-    return powerExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BooleanNegation createBooleanNegation()
-  {
-    BooleanNegationImpl booleanNegation = new BooleanNegationImpl();
-    return booleanNegation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ArithmeticSigned createArithmeticSigned()
-  {
-    ArithmeticSignedImpl arithmeticSigned = new ArithmeticSignedImpl();
-    return arithmeticSigned;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpressionConstant createExpressionConstant()
-  {
-    ExpressionConstantImpl expressionConstant = new ExpressionConstantImpl();
-    return expressionConstant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExpressionVariable createExpressionVariable()
-  {
-    ExpressionVariableImpl expressionVariable = new ExpressionVariableImpl();
-    return expressionVariable;
+    UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
+    return unaryExpression;
   }
 
   /**

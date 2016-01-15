@@ -14,93 +14,66 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.Expression#getLeft <em>Left</em>}</li>
- *   <li>{@link org.hopper.language.portugol.Expression#getOp <em>Op</em>}</li>
- *   <li>{@link org.hopper.language.portugol.Expression#getRight <em>Right</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getExpression()
  * @model
  * @generated
  */
-public interface Expression extends EObject
+public interface Expression extends AbstractCommand
 {
   /**
-   * Returns the value of the '<em><b>Left</b></em>' containment reference.
+   * Returns the value of the '<em><b>Fb Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Fb Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(Expression)
-   * @see org.hopper.language.portugol.PortugolPackage#getExpression_Left()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getLeft();
-
-  /**
-   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getLeft <em>Left</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left</em>' containment reference.
-   * @see #getLeft()
-   * @generated
-   */
-  void setLeft(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see org.hopper.language.portugol.PortugolPackage#getExpression_Op()
+   * @return the value of the '<em>Fb Name</em>' reference.
+   * @see #setFbName(EObject)
+   * @see org.hopper.language.portugol.PortugolPackage#getExpression_FbName()
    * @model
    * @generated
    */
-  String getOp();
+  EObject getFbName();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getOp <em>Op</em>}' attribute.
+   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
+   * @param value the new value of the '<em>Fb Name</em>' reference.
+   * @see #getFbName()
    * @generated
    */
-  void setOp(String value);
+  void setFbName(EObject value);
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * Returns the value of the '<em><b>Param</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Param</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(Expression)
-   * @see org.hopper.language.portugol.PortugolPackage#getExpression_Right()
+   * @return the value of the '<em>Param</em>' containment reference.
+   * @see #setParam(WriteParam)
+   * @see org.hopper.language.portugol.PortugolPackage#getExpression_Param()
    * @model containment="true"
    * @generated
    */
-  Expression getRight();
+  WriteParam getParam();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getRight <em>Right</em>}' containment reference.
+   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right</em>' containment reference.
-   * @see #getRight()
+   * @param value the new value of the '<em>Param</em>' containment reference.
+   * @see #getParam()
    * @generated
    */
-  void setRight(Expression value);
+  void setParam(WriteParam value);
 
 } // Expression

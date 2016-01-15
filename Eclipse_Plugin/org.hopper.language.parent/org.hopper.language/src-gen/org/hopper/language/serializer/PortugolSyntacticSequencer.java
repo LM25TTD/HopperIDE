@@ -89,22 +89,15 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '-' expression=PrimaryExpression
-	 *     (rule start) (ambiguity) 'NOT' expression=PrimaryExpression
 	 *     (rule start) (ambiguity) fbName=[FunctionName|ID]
-	 *     (rule start) (ambiguity) value=Constant
-	 *     (rule start) (ambiguity) value=[VarName|ID]
-	 *     (rule start) (ambiguity) {AddExpression.left=}
-	 *     (rule start) (ambiguity) {AndExpression.left=}
-	 *     (rule start) (ambiguity) {CompExpression.left=}
-	 *     (rule start) (ambiguity) {Division.left=}
-	 *     (rule start) (ambiguity) {EquExpression.left=}
-	 *     (rule start) (ambiguity) {Expression.left=}
-	 *     (rule start) (ambiguity) {Mod.left=}
-	 *     (rule start) (ambiguity) {Multiply.left=}
-	 *     (rule start) (ambiguity) {PowerExpression.left=}
-	 *     (rule start) (ambiguity) {SubExpression.left=}
-	 *     (rule start) (ambiguity) {XorExpression.left=}
+	 *     (rule start) (ambiguity) floatValue?=FLOAT
+	 *     (rule start) (ambiguity) intValue?=INT
+	 *     (rule start) (ambiguity) literalString=STRING
+	 *     (rule start) (ambiguity) op='-'
+	 *     (rule start) (ambiguity) op='NOT'
+	 *     (rule start) (ambiguity) target=[VarName|ID]
+	 *     (rule start) (ambiguity) {Assignment.assignable=}
+	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
 	protected void emit_PrimaryExpression_LeftParenthesisKeyword_2_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -115,19 +108,11 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '-' expression=PrimaryExpression
-	 *     (rule start) (ambiguity) 'NOT' expression=PrimaryExpression
-	 *     (rule start) (ambiguity) {AddExpression.left=}
-	 *     (rule start) (ambiguity) {AndExpression.left=}
-	 *     (rule start) (ambiguity) {CompExpression.left=}
-	 *     (rule start) (ambiguity) {Division.left=}
-	 *     (rule start) (ambiguity) {EquExpression.left=}
-	 *     (rule start) (ambiguity) {Expression.left=}
-	 *     (rule start) (ambiguity) {Mod.left=}
-	 *     (rule start) (ambiguity) {Multiply.left=}
-	 *     (rule start) (ambiguity) {PowerExpression.left=}
-	 *     (rule start) (ambiguity) {SubExpression.left=}
-	 *     (rule start) (ambiguity) {XorExpression.left=}
+	 *     (rule start) (ambiguity) op='-'
+	 *     (rule start) (ambiguity) op='NOT'
+	 *     (rule start) (ambiguity) target=[VarName|ID]
+	 *     (rule start) (ambiguity) {Assignment.assignable=}
+	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
 	protected void emit_PrimaryExpression_LeftParenthesisKeyword_2_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
