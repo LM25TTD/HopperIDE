@@ -20,14 +20,12 @@ import org.hopper.language.services.PortugolGrammarAccess;
 public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PortugolGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BlockCommand_END_COMMANDTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_3_0_a;
 	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_3_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PortugolGrammarAccess) access;
-		match_BlockCommand_END_COMMANDTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getBlockCommandAccess().getEND_COMMANDTerminalRuleCall_4());
 		match_PrimaryExpression_LeftParenthesisKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_3_0());
 		match_PrimaryExpression_LeftParenthesisKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_3_0());
 	}
@@ -44,13 +42,13 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal END_COMMAND:
-	 * 	((' ' | '\t')* ('\r' | '\n')+ (' ' | '\t')*);
+	 * END_COMMAND:
+	 * 	';';
 	 */
 	protected String getEND_COMMANDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "\r";
+		return ";";
 	}
 	
 	/**
@@ -78,9 +76,7 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_BlockCommand_END_COMMANDTerminalRuleCall_4_q.equals(syntax))
-				emit_BlockCommand_END_COMMANDTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PrimaryExpression_LeftParenthesisKeyword_3_0_a.equals(syntax))
+			if (match_PrimaryExpression_LeftParenthesisKeyword_3_0_a.equals(syntax))
 				emit_PrimaryExpression_LeftParenthesisKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PrimaryExpression_LeftParenthesisKeyword_3_0_p.equals(syntax))
 				emit_PrimaryExpression_LeftParenthesisKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -88,17 +84,6 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     END_COMMAND?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     commands+=AbstractCommand 'fimalgoritmo' (ambiguity) (rule end)
-	 */
-	protected void emit_BlockCommand_END_COMMANDTerminalRuleCall_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     '('*

@@ -13,7 +13,7 @@ HeaderBlock:
 	'algoritmo' algorithmName=STRING END_COMMAND;
 
 DeclarationsBlock:
-	'var' END_COMMAND
+	'var' 
 	(vars+=Variable END_COMMAND)+;
 
 Variable:
@@ -44,71 +44,71 @@ FunctionName:
 	name=ID;
 
 BlockFunction:
-	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType END_COMMAND
+	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
 	(declarations=DeclarationsBlock)?
-	'inicio' END_COMMAND
+	'inicio'
 	(commands+=AbstractCommand)+
-	'fimfuncao' END_COMMAND;
+	'fimfuncao';
 
 BlockProcedure:
-	'procedimento' procedure=ProcedureName '(' paramList=Variable ')' END_COMMAND
+	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
 	(declarations=DeclarationsBlock)?
-	'inicio' END_COMMAND
+	'inicio'
 	(commands+=AbstractCommand)+
-	'fimprocedimento' END_COMMAND;
+	'fimprocedimento';
 
 BlockCommand:
-	'inicio' END_COMMAND
+	'inicio'
 	(commands+=AbstractCommand)+
-	'fimalgoritmo' END_COMMAND?;
+	'fimalgoritmo';
 
 AbstractCommand:
 	ReadCommand END_COMMAND
 	| WriteCommand END_COMMAND
 	| Expression END_COMMAND
-	| IfStatement END_COMMAND
-	| SwitchCaseStatement END_COMMAND
-	| ForStatement END_COMMAND
-	| RepeatStatement END_COMMAND
-	| WhileStatement END_COMMAND;
+	| IfStatement
+	| SwitchCaseStatement
+	| ForStatement
+	| RepeatStatement
+	| WhileStatement;
 
 IfStatement:
-	'se' expr=Expression 'entao' END_COMMAND
+	'se' expr=Expression 'entao'
 	(commands+=AbstractCommand)+
-	('senao' END_COMMAND (elseCommands+=AbstractCommand)+)?
+	('senao' (elseCommands+=AbstractCommand)+)?
 	'fimse';
 
 SwitchCaseStatement:
-	'escolha' variable=[VarName] END_COMMAND
+	'escolha' variable=[VarName]
 	(caseList+=CaseList)+
 	(otherCase=OtherCase)?
 	'fimescolha';
 
 CaseList:
-	'caso' expr=Expression END_COMMAND
+	'caso' expr=Expression ':'
 	(commands+=AbstractCommand)+
 	(breakStatement?='interrompa' END_COMMAND)?;
 
 OtherCase:
-	'outrocaso' END_COMMAND
+	'outrocaso' ':'
 	(otherCaseCommands+=AbstractCommand)+
 	(breakStatement?='interrompa' END_COMMAND)?;
 
 ForStatement:
 	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
-	'faca' END_COMMAND
+	'faca'
 	(commands+=AbstractCommand)+
 	'fimpara';
 
 WhileStatement:
-	'enquanto' whileExpr=Expression 'faca' END_COMMAND
+	'enquanto' whileExpr=Expression 'faca'
 	(commands+=AbstractCommand)+
 	'fimenquanto';
 
 RepeatStatement:
-	'repita' END_COMMAND
+	'repita'
 	(commands+=AbstractCommand)+
-	'ate' (untilExpr=Expression);
+	'ate' (untilExpr=Expression) END_COMMAND;
 
 SubprogramParam:
 	expression+=Expression (',' expression+=Expression)*;
@@ -183,5 +183,5 @@ StringExpression:
 terminal FLOAT:
 	INT '.' INT;
 
-terminal END_COMMAND:
-	((' ' | '\t')* ('\r' | '\n')+ (' ' | '\t')*);
+END_COMMAND:
+	';';

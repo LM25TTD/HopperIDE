@@ -76,7 +76,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAlgoritmoKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cAlgorithmNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAlgorithmNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cAlgorithmNameAssignment_1.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cEND_COMMANDParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//HeaderBlock:
 		//	'algoritmo' algorithmName=STRING END_COMMAND;
@@ -95,42 +95,38 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getAlgorithmNameSTRINGTerminalRuleCall_1_0() { return cAlgorithmNameSTRINGTerminalRuleCall_1_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
+		public RuleCall getEND_COMMANDParserRuleCall_2() { return cEND_COMMANDParserRuleCall_2; }
 	}
 	public class DeclarationsBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.DeclarationsBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cVarsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cVarsVariableParserRuleCall_2_0_0 = (RuleCall)cVarsAssignment_2_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cVarsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cVarsVariableParserRuleCall_1_0_0 = (RuleCall)cVarsAssignment_1_0.eContents().get(0);
+		private final RuleCall cEND_COMMANDParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//DeclarationsBlock:
-		//	'var' END_COMMAND (vars+=Variable END_COMMAND)+;
+		//	'var' (vars+=Variable END_COMMAND)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'var' END_COMMAND (vars+=Variable END_COMMAND)+
+		//'var' (vars+=Variable END_COMMAND)+
 		public Group getGroup() { return cGroup; }
 		
 		//'var'
 		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_1() { return cEND_COMMANDTerminalRuleCall_1; }
-		
 		//(vars+=Variable END_COMMAND)+
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//vars+=Variable
-		public Assignment getVarsAssignment_2_0() { return cVarsAssignment_2_0; }
+		public Assignment getVarsAssignment_1_0() { return cVarsAssignment_1_0; }
 		
 		//Variable
-		public RuleCall getVarsVariableParserRuleCall_2_0_0() { return cVarsVariableParserRuleCall_2_0_0; }
+		public RuleCall getVarsVariableParserRuleCall_1_0_0() { return cVarsVariableParserRuleCall_1_0_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_2_1() { return cEND_COMMANDTerminalRuleCall_2_1; }
+		public RuleCall getEND_COMMANDParserRuleCall_1_1() { return cEND_COMMANDParserRuleCall_1_1; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Variable");
@@ -364,26 +360,23 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cReturnTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cReturnTypeVarTypeParserRuleCall_6_0 = (RuleCall)cReturnTypeAssignment_6.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final Assignment cDeclarationsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cDeclarationsDeclarationsBlockParserRuleCall_8_0 = (RuleCall)cDeclarationsAssignment_8.eContents().get(0);
-		private final Keyword cInicioKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
-		private final Assignment cCommandsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_11_0 = (RuleCall)cCommandsAssignment_11.eContents().get(0);
-		private final Keyword cFimfuncaoKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_13 = (RuleCall)cGroup.eContents().get(13);
+		private final Assignment cDeclarationsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cDeclarationsDeclarationsBlockParserRuleCall_7_0 = (RuleCall)cDeclarationsAssignment_7.eContents().get(0);
+		private final Keyword cInicioKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cCommandsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_9_0 = (RuleCall)cCommandsAssignment_9.eContents().get(0);
+		private final Keyword cFimfuncaoKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BlockFunction:
-		//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType END_COMMAND
+		//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
 		//	declarations=DeclarationsBlock?
-		//	'inicio' END_COMMAND
+		//	'inicio'
 		//	commands+=AbstractCommand+
-		//	'fimfuncao' END_COMMAND;
+		//	'fimfuncao';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType END_COMMAND
-		//declarations=DeclarationsBlock? 'inicio' END_COMMAND commands+=AbstractCommand+ 'fimfuncao' END_COMMAND
+		//'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType declarations=DeclarationsBlock?
+		//'inicio' commands+=AbstractCommand+ 'fimfuncao'
 		public Group getGroup() { return cGroup; }
 		
 		//'funcao'
@@ -416,32 +409,23 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//VarType
 		public RuleCall getReturnTypeVarTypeParserRuleCall_6_0() { return cReturnTypeVarTypeParserRuleCall_6_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_7() { return cEND_COMMANDTerminalRuleCall_7; }
-		
 		//declarations=DeclarationsBlock?
-		public Assignment getDeclarationsAssignment_8() { return cDeclarationsAssignment_8; }
+		public Assignment getDeclarationsAssignment_7() { return cDeclarationsAssignment_7; }
 		
 		//DeclarationsBlock
-		public RuleCall getDeclarationsDeclarationsBlockParserRuleCall_8_0() { return cDeclarationsDeclarationsBlockParserRuleCall_8_0; }
+		public RuleCall getDeclarationsDeclarationsBlockParserRuleCall_7_0() { return cDeclarationsDeclarationsBlockParserRuleCall_7_0; }
 		
 		//'inicio'
-		public Keyword getInicioKeyword_9() { return cInicioKeyword_9; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_10() { return cEND_COMMANDTerminalRuleCall_10; }
+		public Keyword getInicioKeyword_8() { return cInicioKeyword_8; }
 		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_11() { return cCommandsAssignment_11; }
+		public Assignment getCommandsAssignment_9() { return cCommandsAssignment_9; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_11_0() { return cCommandsAbstractCommandParserRuleCall_11_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_9_0() { return cCommandsAbstractCommandParserRuleCall_9_0; }
 		
 		//'fimfuncao'
-		public Keyword getFimfuncaoKeyword_12() { return cFimfuncaoKeyword_12; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_13() { return cEND_COMMANDTerminalRuleCall_13; }
+		public Keyword getFimfuncaoKeyword_10() { return cFimfuncaoKeyword_10; }
 	}
 	public class BlockProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.BlockProcedure");
@@ -453,26 +437,23 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParamListAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cParamListVariableParserRuleCall_3_0 = (RuleCall)cParamListAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Assignment cDeclarationsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cDeclarationsDeclarationsBlockParserRuleCall_6_0 = (RuleCall)cDeclarationsAssignment_6.eContents().get(0);
-		private final Keyword cInicioKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-		private final Assignment cCommandsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_9_0 = (RuleCall)cCommandsAssignment_9.eContents().get(0);
-		private final Keyword cFimprocedimentoKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
+		private final Assignment cDeclarationsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDeclarationsDeclarationsBlockParserRuleCall_5_0 = (RuleCall)cDeclarationsAssignment_5.eContents().get(0);
+		private final Keyword cInicioKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cCommandsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_7_0 = (RuleCall)cCommandsAssignment_7.eContents().get(0);
+		private final Keyword cFimprocedimentoKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//BlockProcedure:
-		//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')' END_COMMAND
+		//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
 		//	declarations=DeclarationsBlock?
-		//	'inicio' END_COMMAND
+		//	'inicio'
 		//	commands+=AbstractCommand+
-		//	'fimprocedimento' END_COMMAND;
+		//	'fimprocedimento';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'procedimento' procedure=ProcedureName '(' paramList=Variable ')' END_COMMAND declarations=DeclarationsBlock? 'inicio'
-		//END_COMMAND commands+=AbstractCommand+ 'fimprocedimento' END_COMMAND
+		//'procedimento' procedure=ProcedureName '(' paramList=Variable ')' declarations=DeclarationsBlock? 'inicio'
+		//commands+=AbstractCommand+ 'fimprocedimento'
 		public Group getGroup() { return cGroup; }
 		
 		//'procedimento'
@@ -496,111 +477,84 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_5() { return cEND_COMMANDTerminalRuleCall_5; }
-		
 		//declarations=DeclarationsBlock?
-		public Assignment getDeclarationsAssignment_6() { return cDeclarationsAssignment_6; }
+		public Assignment getDeclarationsAssignment_5() { return cDeclarationsAssignment_5; }
 		
 		//DeclarationsBlock
-		public RuleCall getDeclarationsDeclarationsBlockParserRuleCall_6_0() { return cDeclarationsDeclarationsBlockParserRuleCall_6_0; }
+		public RuleCall getDeclarationsDeclarationsBlockParserRuleCall_5_0() { return cDeclarationsDeclarationsBlockParserRuleCall_5_0; }
 		
 		//'inicio'
-		public Keyword getInicioKeyword_7() { return cInicioKeyword_7; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_8() { return cEND_COMMANDTerminalRuleCall_8; }
+		public Keyword getInicioKeyword_6() { return cInicioKeyword_6; }
 		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_9() { return cCommandsAssignment_9; }
+		public Assignment getCommandsAssignment_7() { return cCommandsAssignment_7; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_9_0() { return cCommandsAbstractCommandParserRuleCall_9_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_7_0() { return cCommandsAbstractCommandParserRuleCall_7_0; }
 		
 		//'fimprocedimento'
-		public Keyword getFimprocedimentoKeyword_10() { return cFimprocedimentoKeyword_10; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_11() { return cEND_COMMANDTerminalRuleCall_11; }
+		public Keyword getFimprocedimentoKeyword_8() { return cFimprocedimentoKeyword_8; }
 	}
 	public class BlockCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.BlockCommand");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInicioKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_2_0 = (RuleCall)cCommandsAssignment_2.eContents().get(0);
-		private final Keyword cFimalgoritmoKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cCommandsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_1_0 = (RuleCall)cCommandsAssignment_1.eContents().get(0);
+		private final Keyword cFimalgoritmoKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//BlockCommand:
-		//	'inicio' END_COMMAND
+		//	'inicio'
 		//	commands+=AbstractCommand+
-		//	'fimalgoritmo' END_COMMAND?;
+		//	'fimalgoritmo';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'inicio' END_COMMAND commands+=AbstractCommand+ 'fimalgoritmo' END_COMMAND?
+		//'inicio' commands+=AbstractCommand+ 'fimalgoritmo'
 		public Group getGroup() { return cGroup; }
 		
 		//'inicio'
 		public Keyword getInicioKeyword_0() { return cInicioKeyword_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_1() { return cEND_COMMANDTerminalRuleCall_1; }
-		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_2() { return cCommandsAssignment_2; }
+		public Assignment getCommandsAssignment_1() { return cCommandsAssignment_1; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_2_0() { return cCommandsAbstractCommandParserRuleCall_2_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_1_0() { return cCommandsAbstractCommandParserRuleCall_1_0; }
 		
 		//'fimalgoritmo'
-		public Keyword getFimalgoritmoKeyword_3() { return cFimalgoritmoKeyword_3; }
-		
-		//END_COMMAND?
-		public RuleCall getEND_COMMANDTerminalRuleCall_4() { return cEND_COMMANDTerminalRuleCall_4; }
+		public Keyword getFimalgoritmoKeyword_2() { return cFimalgoritmoKeyword_2; }
 	}
 	public class AbstractCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.AbstractCommand");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final RuleCall cReadCommandParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cEND_COMMANDParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final RuleCall cWriteCommandParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cEND_COMMANDParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final RuleCall cExpressionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cIfStatementParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cSwitchCaseStatementParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cForStatementParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final RuleCall cRepeatStatementParserRuleCall_6_0 = (RuleCall)cGroup_6.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final RuleCall cWhileStatementParserRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+		private final RuleCall cEND_COMMANDParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cIfStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cSwitchCaseStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cForStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cRepeatStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cWhileStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//AbstractCommand:
 		//	ReadCommand END_COMMAND
 		//	| WriteCommand END_COMMAND
 		//	| Expression END_COMMAND
-		//	| IfStatement END_COMMAND
-		//	| SwitchCaseStatement END_COMMAND
-		//	| ForStatement END_COMMAND
-		//	| RepeatStatement END_COMMAND
-		//	| WhileStatement END_COMMAND;
+		//	| IfStatement
+		//	| SwitchCaseStatement
+		//	| ForStatement
+		//	| RepeatStatement
+		//	| WhileStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND | IfStatement END_COMMAND |
-		//SwitchCaseStatement END_COMMAND | ForStatement END_COMMAND | RepeatStatement END_COMMAND | WhileStatement END_COMMAND
+		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND | IfStatement | SwitchCaseStatement |
+		//ForStatement | RepeatStatement | WhileStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ReadCommand END_COMMAND
@@ -610,7 +564,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getReadCommandParserRuleCall_0_0() { return cReadCommandParserRuleCall_0_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_0_1() { return cEND_COMMANDTerminalRuleCall_0_1; }
+		public RuleCall getEND_COMMANDParserRuleCall_0_1() { return cEND_COMMANDParserRuleCall_0_1; }
 		
 		//WriteCommand END_COMMAND
 		public Group getGroup_1() { return cGroup_1; }
@@ -619,7 +573,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getWriteCommandParserRuleCall_1_0() { return cWriteCommandParserRuleCall_1_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_1_1() { return cEND_COMMANDTerminalRuleCall_1_1; }
+		public RuleCall getEND_COMMANDParserRuleCall_1_1() { return cEND_COMMANDParserRuleCall_1_1; }
 		
 		//Expression END_COMMAND
 		public Group getGroup_2() { return cGroup_2; }
@@ -628,52 +582,22 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getExpressionParserRuleCall_2_0() { return cExpressionParserRuleCall_2_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_2_1() { return cEND_COMMANDTerminalRuleCall_2_1; }
-		
-		//IfStatement END_COMMAND
-		public Group getGroup_3() { return cGroup_3; }
+		public RuleCall getEND_COMMANDParserRuleCall_2_1() { return cEND_COMMANDParserRuleCall_2_1; }
 		
 		//IfStatement
-		public RuleCall getIfStatementParserRuleCall_3_0() { return cIfStatementParserRuleCall_3_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_3_1() { return cEND_COMMANDTerminalRuleCall_3_1; }
-		
-		//SwitchCaseStatement END_COMMAND
-		public Group getGroup_4() { return cGroup_4; }
+		public RuleCall getIfStatementParserRuleCall_3() { return cIfStatementParserRuleCall_3; }
 		
 		//SwitchCaseStatement
-		public RuleCall getSwitchCaseStatementParserRuleCall_4_0() { return cSwitchCaseStatementParserRuleCall_4_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_4_1() { return cEND_COMMANDTerminalRuleCall_4_1; }
-		
-		//ForStatement END_COMMAND
-		public Group getGroup_5() { return cGroup_5; }
+		public RuleCall getSwitchCaseStatementParserRuleCall_4() { return cSwitchCaseStatementParserRuleCall_4; }
 		
 		//ForStatement
-		public RuleCall getForStatementParserRuleCall_5_0() { return cForStatementParserRuleCall_5_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_5_1() { return cEND_COMMANDTerminalRuleCall_5_1; }
-		
-		//RepeatStatement END_COMMAND
-		public Group getGroup_6() { return cGroup_6; }
+		public RuleCall getForStatementParserRuleCall_5() { return cForStatementParserRuleCall_5; }
 		
 		//RepeatStatement
-		public RuleCall getRepeatStatementParserRuleCall_6_0() { return cRepeatStatementParserRuleCall_6_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_6_1() { return cEND_COMMANDTerminalRuleCall_6_1; }
-		
-		//WhileStatement END_COMMAND
-		public Group getGroup_7() { return cGroup_7; }
+		public RuleCall getRepeatStatementParserRuleCall_6() { return cRepeatStatementParserRuleCall_6; }
 		
 		//WhileStatement
-		public RuleCall getWhileStatementParserRuleCall_7_0() { return cWhileStatementParserRuleCall_7_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_7_1() { return cEND_COMMANDTerminalRuleCall_7_1; }
+		public RuleCall getWhileStatementParserRuleCall_7() { return cWhileStatementParserRuleCall_7; }
 	}
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.IfStatement");
@@ -682,24 +606,21 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExprExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
 		private final Keyword cEntaoKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cCommandsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_4_0 = (RuleCall)cCommandsAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSenaoKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cElseCommandsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cElseCommandsAbstractCommandParserRuleCall_5_2_0 = (RuleCall)cElseCommandsAssignment_5_2.eContents().get(0);
-		private final Keyword cFimseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_3_0 = (RuleCall)cCommandsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cSenaoKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cElseCommandsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cElseCommandsAbstractCommandParserRuleCall_4_1_0 = (RuleCall)cElseCommandsAssignment_4_1.eContents().get(0);
+		private final Keyword cFimseKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//IfStatement:
-		//	'se' expr=Expression 'entao' END_COMMAND
-		//	commands+=AbstractCommand+ ('senao' END_COMMAND elseCommands+=AbstractCommand+)?
+		//	'se' expr=Expression 'entao'
+		//	commands+=AbstractCommand+ ('senao' elseCommands+=AbstractCommand+)?
 		//	'fimse';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'se' expr=Expression 'entao' END_COMMAND commands+=AbstractCommand+ ('senao' END_COMMAND
-		//elseCommands+=AbstractCommand+)? 'fimse'
+		//'se' expr=Expression 'entao' commands+=AbstractCommand+ ('senao' elseCommands+=AbstractCommand+)? 'fimse'
 		public Group getGroup() { return cGroup; }
 		
 		//'se'
@@ -714,32 +635,26 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'entao'
 		public Keyword getEntaoKeyword_2() { return cEntaoKeyword_2; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_3() { return cEND_COMMANDTerminalRuleCall_3; }
-		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_4() { return cCommandsAssignment_4; }
+		public Assignment getCommandsAssignment_3() { return cCommandsAssignment_3; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_4_0() { return cCommandsAbstractCommandParserRuleCall_4_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_3_0() { return cCommandsAbstractCommandParserRuleCall_3_0; }
 		
-		//('senao' END_COMMAND elseCommands+=AbstractCommand+)?
-		public Group getGroup_5() { return cGroup_5; }
+		//('senao' elseCommands+=AbstractCommand+)?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'senao'
-		public Keyword getSenaoKeyword_5_0() { return cSenaoKeyword_5_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_5_1() { return cEND_COMMANDTerminalRuleCall_5_1; }
+		public Keyword getSenaoKeyword_4_0() { return cSenaoKeyword_4_0; }
 		
 		//elseCommands+=AbstractCommand+
-		public Assignment getElseCommandsAssignment_5_2() { return cElseCommandsAssignment_5_2; }
+		public Assignment getElseCommandsAssignment_4_1() { return cElseCommandsAssignment_4_1; }
 		
 		//AbstractCommand
-		public RuleCall getElseCommandsAbstractCommandParserRuleCall_5_2_0() { return cElseCommandsAbstractCommandParserRuleCall_5_2_0; }
+		public RuleCall getElseCommandsAbstractCommandParserRuleCall_4_1_0() { return cElseCommandsAbstractCommandParserRuleCall_4_1_0; }
 		
 		//'fimse'
-		public Keyword getFimseKeyword_6() { return cFimseKeyword_6; }
+		public Keyword getFimseKeyword_5() { return cFimseKeyword_5; }
 	}
 	public class SwitchCaseStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.SwitchCaseStatement");
@@ -748,21 +663,19 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cVariableVarNameCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
 		private final RuleCall cVariableVarNameIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableVarNameCrossReference_1_0.eContents().get(1);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cCaseListAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCaseListCaseListParserRuleCall_3_0 = (RuleCall)cCaseListAssignment_3.eContents().get(0);
-		private final Assignment cOtherCaseAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cOtherCaseOtherCaseParserRuleCall_4_0 = (RuleCall)cOtherCaseAssignment_4.eContents().get(0);
-		private final Keyword cFimescolhaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cCaseListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCaseListCaseListParserRuleCall_2_0 = (RuleCall)cCaseListAssignment_2.eContents().get(0);
+		private final Assignment cOtherCaseAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOtherCaseOtherCaseParserRuleCall_3_0 = (RuleCall)cOtherCaseAssignment_3.eContents().get(0);
+		private final Keyword cFimescolhaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SwitchCaseStatement:
-		//	'escolha' variable=[VarName] END_COMMAND
-		//	caseList+=CaseList+
+		//	'escolha' variable=[VarName] caseList+=CaseList+
 		//	otherCase=OtherCase?
 		//	'fimescolha';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'escolha' variable=[VarName] END_COMMAND caseList+=CaseList+ otherCase=OtherCase? 'fimescolha'
+		//'escolha' variable=[VarName] caseList+=CaseList+ otherCase=OtherCase? 'fimescolha'
 		public Group getGroup() { return cGroup; }
 		
 		//'escolha'
@@ -777,23 +690,20 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getVariableVarNameIDTerminalRuleCall_1_0_1() { return cVariableVarNameIDTerminalRuleCall_1_0_1; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
-		
 		//caseList+=CaseList+
-		public Assignment getCaseListAssignment_3() { return cCaseListAssignment_3; }
+		public Assignment getCaseListAssignment_2() { return cCaseListAssignment_2; }
 		
 		//CaseList
-		public RuleCall getCaseListCaseListParserRuleCall_3_0() { return cCaseListCaseListParserRuleCall_3_0; }
+		public RuleCall getCaseListCaseListParserRuleCall_2_0() { return cCaseListCaseListParserRuleCall_2_0; }
 		
 		//otherCase=OtherCase?
-		public Assignment getOtherCaseAssignment_4() { return cOtherCaseAssignment_4; }
+		public Assignment getOtherCaseAssignment_3() { return cOtherCaseAssignment_3; }
 		
 		//OtherCase
-		public RuleCall getOtherCaseOtherCaseParserRuleCall_4_0() { return cOtherCaseOtherCaseParserRuleCall_4_0; }
+		public RuleCall getOtherCaseOtherCaseParserRuleCall_3_0() { return cOtherCaseOtherCaseParserRuleCall_3_0; }
 		
 		//'fimescolha'
-		public Keyword getFimescolhaKeyword_5() { return cFimescolhaKeyword_5; }
+		public Keyword getFimescolhaKeyword_4() { return cFimescolhaKeyword_4; }
 	}
 	public class CaseListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.CaseList");
@@ -801,20 +711,20 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCasoKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExprExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCommandsAbstractCommandParserRuleCall_3_0 = (RuleCall)cCommandsAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Assignment cBreakStatementAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
 		private final Keyword cBreakStatementInterrompaKeyword_4_0_0 = (Keyword)cBreakStatementAssignment_4_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final RuleCall cEND_COMMANDParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		
 		//CaseList:
-		//	'caso' expr=Expression END_COMMAND
+		//	'caso' expr=Expression ':'
 		//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'caso' expr=Expression END_COMMAND commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		//'caso' expr=Expression ':' commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
 		public Group getGroup() { return cGroup; }
 		
 		//'caso'
@@ -826,8 +736,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getExprExpressionParserRuleCall_1_0() { return cExprExpressionParserRuleCall_1_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//commands+=AbstractCommand+
 		public Assignment getCommandsAssignment_3() { return cCommandsAssignment_3; }
@@ -845,33 +755,33 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getBreakStatementInterrompaKeyword_4_0_0() { return cBreakStatementInterrompaKeyword_4_0_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_4_1() { return cEND_COMMANDTerminalRuleCall_4_1; }
+		public RuleCall getEND_COMMANDParserRuleCall_4_1() { return cEND_COMMANDParserRuleCall_4_1; }
 	}
 	public class OtherCaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OtherCase");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cOutrocasoKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cOtherCaseCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOtherCaseCommandsAbstractCommandParserRuleCall_2_0 = (RuleCall)cOtherCaseCommandsAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cBreakStatementAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final Keyword cBreakStatementInterrompaKeyword_3_0_0 = (Keyword)cBreakStatementAssignment_3_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final RuleCall cEND_COMMANDParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		
 		//OtherCase:
-		//	'outrocaso' END_COMMAND
+		//	'outrocaso' ':'
 		//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'outrocaso' END_COMMAND otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		//'outrocaso' ':' otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
 		public Group getGroup() { return cGroup; }
 		
 		//'outrocaso'
 		public Keyword getOutrocasoKeyword_0() { return cOutrocasoKeyword_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_1() { return cEND_COMMANDTerminalRuleCall_1; }
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
 		//otherCaseCommands+=AbstractCommand+
 		public Assignment getOtherCaseCommandsAssignment_2() { return cOtherCaseCommandsAssignment_2; }
@@ -889,7 +799,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getBreakStatementInterrompaKeyword_3_0_0() { return cBreakStatementInterrompaKeyword_3_0_0; }
 		
 		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_3_1() { return cEND_COMMANDTerminalRuleCall_3_1; }
+		public RuleCall getEND_COMMANDParserRuleCall_3_1() { return cEND_COMMANDParserRuleCall_3_1; }
 	}
 	public class ForStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ForStatement");
@@ -908,20 +818,19 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStepExpeAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cStepExpeExpressionParserRuleCall_6_1_0 = (RuleCall)cStepExpeAssignment_6_1.eContents().get(0);
 		private final Keyword cFacaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
-		private final Assignment cCommandsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_9_0 = (RuleCall)cCommandsAssignment_9.eContents().get(0);
-		private final Keyword cFimparaKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cCommandsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_8_0 = (RuleCall)cCommandsAssignment_8.eContents().get(0);
+		private final Keyword cFimparaKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ForStatement:
 		//	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
-		//	'faca' END_COMMAND
+		//	'faca'
 		//	commands+=AbstractCommand+
 		//	'fimpara';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)? 'faca'
-		//END_COMMAND commands+=AbstractCommand+ 'fimpara'
+		//commands+=AbstractCommand+ 'fimpara'
 		public Group getGroup() { return cGroup; }
 		
 		//'para'
@@ -966,17 +875,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'faca'
 		public Keyword getFacaKeyword_7() { return cFacaKeyword_7; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_8() { return cEND_COMMANDTerminalRuleCall_8; }
-		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_9() { return cCommandsAssignment_9; }
+		public Assignment getCommandsAssignment_8() { return cCommandsAssignment_8; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_9_0() { return cCommandsAbstractCommandParserRuleCall_9_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_8_0() { return cCommandsAbstractCommandParserRuleCall_8_0; }
 		
 		//'fimpara'
-		public Keyword getFimparaKeyword_10() { return cFimparaKeyword_10; }
+		public Keyword getFimparaKeyword_9() { return cFimparaKeyword_9; }
 	}
 	public class WhileStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WhileStatement");
@@ -985,18 +891,17 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cWhileExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cWhileExprExpressionParserRuleCall_1_0 = (RuleCall)cWhileExprAssignment_1.eContents().get(0);
 		private final Keyword cFacaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cCommandsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_4_0 = (RuleCall)cCommandsAssignment_4.eContents().get(0);
-		private final Keyword cFimenquantoKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_3_0 = (RuleCall)cCommandsAssignment_3.eContents().get(0);
+		private final Keyword cFimenquantoKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//WhileStatement:
-		//	'enquanto' whileExpr=Expression 'faca' END_COMMAND
+		//	'enquanto' whileExpr=Expression 'faca'
 		//	commands+=AbstractCommand+
 		//	'fimenquanto';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'enquanto' whileExpr=Expression 'faca' END_COMMAND commands+=AbstractCommand+ 'fimenquanto'
+		//'enquanto' whileExpr=Expression 'faca' commands+=AbstractCommand+ 'fimenquanto'
 		public Group getGroup() { return cGroup; }
 		
 		//'enquanto'
@@ -1011,58 +916,55 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'faca'
 		public Keyword getFacaKeyword_2() { return cFacaKeyword_2; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_3() { return cEND_COMMANDTerminalRuleCall_3; }
-		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_4() { return cCommandsAssignment_4; }
+		public Assignment getCommandsAssignment_3() { return cCommandsAssignment_3; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_4_0() { return cCommandsAbstractCommandParserRuleCall_4_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_3_0() { return cCommandsAbstractCommandParserRuleCall_3_0; }
 		
 		//'fimenquanto'
-		public Keyword getFimenquantoKeyword_5() { return cFimenquantoKeyword_5; }
+		public Keyword getFimenquantoKeyword_4() { return cFimenquantoKeyword_4; }
 	}
 	public class RepeatStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.RepeatStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRepitaKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cEND_COMMANDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCommandsAbstractCommandParserRuleCall_2_0 = (RuleCall)cCommandsAssignment_2.eContents().get(0);
-		private final Keyword cAteKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cUntilExprAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cUntilExprExpressionParserRuleCall_4_0 = (RuleCall)cUntilExprAssignment_4.eContents().get(0);
+		private final Assignment cCommandsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_1_0 = (RuleCall)cCommandsAssignment_1.eContents().get(0);
+		private final Keyword cAteKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cUntilExprAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cUntilExprExpressionParserRuleCall_3_0 = (RuleCall)cUntilExprAssignment_3.eContents().get(0);
+		private final RuleCall cEND_COMMANDParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//RepeatStatement:
-		//	'repita' END_COMMAND
+		//	'repita'
 		//	commands+=AbstractCommand+
-		//	'ate' untilExpr=Expression;
+		//	'ate' untilExpr=Expression END_COMMAND;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'repita' END_COMMAND commands+=AbstractCommand+ 'ate' untilExpr=Expression
+		//'repita' commands+=AbstractCommand+ 'ate' untilExpr=Expression END_COMMAND
 		public Group getGroup() { return cGroup; }
 		
 		//'repita'
 		public Keyword getRepitaKeyword_0() { return cRepitaKeyword_0; }
 		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDTerminalRuleCall_1() { return cEND_COMMANDTerminalRuleCall_1; }
-		
 		//commands+=AbstractCommand+
-		public Assignment getCommandsAssignment_2() { return cCommandsAssignment_2; }
+		public Assignment getCommandsAssignment_1() { return cCommandsAssignment_1; }
 		
 		//AbstractCommand
-		public RuleCall getCommandsAbstractCommandParserRuleCall_2_0() { return cCommandsAbstractCommandParserRuleCall_2_0; }
+		public RuleCall getCommandsAbstractCommandParserRuleCall_1_0() { return cCommandsAbstractCommandParserRuleCall_1_0; }
 		
 		//'ate'
-		public Keyword getAteKeyword_3() { return cAteKeyword_3; }
+		public Keyword getAteKeyword_2() { return cAteKeyword_2; }
 		
 		//untilExpr=Expression
-		public Assignment getUntilExprAssignment_4() { return cUntilExprAssignment_4; }
+		public Assignment getUntilExprAssignment_3() { return cUntilExprAssignment_3; }
 		
 		//Expression
-		public RuleCall getUntilExprExpressionParserRuleCall_4_0() { return cUntilExprExpressionParserRuleCall_4_0; }
+		public RuleCall getUntilExprExpressionParserRuleCall_3_0() { return cUntilExprExpressionParserRuleCall_3_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDParserRuleCall_4() { return cEND_COMMANDParserRuleCall_4; }
 	}
 	public class SubprogramParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.SubprogramParam");
@@ -1974,6 +1876,17 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLiteralStringSTRINGTerminalRuleCall_0() { return cLiteralStringSTRINGTerminalRuleCall_0; }
 	}
+	public class END_COMMANDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.END_COMMAND");
+		private final Keyword cSemicolonKeyword = (Keyword)rule.eContents().get(1);
+		
+		//END_COMMAND:
+		//	';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//';'
+		public Keyword getSemicolonKeyword() { return cSemicolonKeyword; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -2023,7 +1936,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final NumericLiteralElements pNumericLiteral;
 	private final StringExpressionElements pStringExpression;
 	private final TerminalRule tFLOAT;
-	private final TerminalRule tEND_COMMAND;
+	private final END_COMMANDElements pEND_COMMAND;
 	
 	private final Grammar grammar;
 	
@@ -2081,7 +1994,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNumericLiteral = new NumericLiteralElements();
 		this.pStringExpression = new StringExpressionElements();
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FLOAT");
-		this.tEND_COMMAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.END_COMMAND");
+		this.pEND_COMMAND = new END_COMMANDElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2135,7 +2048,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DeclarationsBlock:
-	//	'var' END_COMMAND (vars+=Variable END_COMMAND)+;
+	//	'var' (vars+=Variable END_COMMAND)+;
 	public DeclarationsBlockElements getDeclarationsBlockAccess() {
 		return pDeclarationsBlock;
 	}
@@ -2235,11 +2148,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockFunction:
-	//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType END_COMMAND
+	//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
 	//	declarations=DeclarationsBlock?
-	//	'inicio' END_COMMAND
+	//	'inicio'
 	//	commands+=AbstractCommand+
-	//	'fimfuncao' END_COMMAND;
+	//	'fimfuncao';
 	public BlockFunctionElements getBlockFunctionAccess() {
 		return pBlockFunction;
 	}
@@ -2249,11 +2162,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockProcedure:
-	//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')' END_COMMAND
+	//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
 	//	declarations=DeclarationsBlock?
-	//	'inicio' END_COMMAND
+	//	'inicio'
 	//	commands+=AbstractCommand+
-	//	'fimprocedimento' END_COMMAND;
+	//	'fimprocedimento';
 	public BlockProcedureElements getBlockProcedureAccess() {
 		return pBlockProcedure;
 	}
@@ -2263,9 +2176,9 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockCommand:
-	//	'inicio' END_COMMAND
+	//	'inicio'
 	//	commands+=AbstractCommand+
-	//	'fimalgoritmo' END_COMMAND?;
+	//	'fimalgoritmo';
 	public BlockCommandElements getBlockCommandAccess() {
 		return pBlockCommand;
 	}
@@ -2278,11 +2191,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	//	ReadCommand END_COMMAND
 	//	| WriteCommand END_COMMAND
 	//	| Expression END_COMMAND
-	//	| IfStatement END_COMMAND
-	//	| SwitchCaseStatement END_COMMAND
-	//	| ForStatement END_COMMAND
-	//	| RepeatStatement END_COMMAND
-	//	| WhileStatement END_COMMAND;
+	//	| IfStatement
+	//	| SwitchCaseStatement
+	//	| ForStatement
+	//	| RepeatStatement
+	//	| WhileStatement;
 	public AbstractCommandElements getAbstractCommandAccess() {
 		return pAbstractCommand;
 	}
@@ -2292,8 +2205,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IfStatement:
-	//	'se' expr=Expression 'entao' END_COMMAND
-	//	commands+=AbstractCommand+ ('senao' END_COMMAND elseCommands+=AbstractCommand+)?
+	//	'se' expr=Expression 'entao'
+	//	commands+=AbstractCommand+ ('senao' elseCommands+=AbstractCommand+)?
 	//	'fimse';
 	public IfStatementElements getIfStatementAccess() {
 		return pIfStatement;
@@ -2304,8 +2217,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SwitchCaseStatement:
-	//	'escolha' variable=[VarName] END_COMMAND
-	//	caseList+=CaseList+
+	//	'escolha' variable=[VarName] caseList+=CaseList+
 	//	otherCase=OtherCase?
 	//	'fimescolha';
 	public SwitchCaseStatementElements getSwitchCaseStatementAccess() {
@@ -2317,7 +2229,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CaseList:
-	//	'caso' expr=Expression END_COMMAND
+	//	'caso' expr=Expression ':'
 	//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
 	public CaseListElements getCaseListAccess() {
 		return pCaseList;
@@ -2328,7 +2240,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//OtherCase:
-	//	'outrocaso' END_COMMAND
+	//	'outrocaso' ':'
 	//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
 	public OtherCaseElements getOtherCaseAccess() {
 		return pOtherCase;
@@ -2340,7 +2252,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ForStatement:
 	//	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
-	//	'faca' END_COMMAND
+	//	'faca'
 	//	commands+=AbstractCommand+
 	//	'fimpara';
 	public ForStatementElements getForStatementAccess() {
@@ -2352,7 +2264,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WhileStatement:
-	//	'enquanto' whileExpr=Expression 'faca' END_COMMAND
+	//	'enquanto' whileExpr=Expression 'faca'
 	//	commands+=AbstractCommand+
 	//	'fimenquanto';
 	public WhileStatementElements getWhileStatementAccess() {
@@ -2364,9 +2276,9 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RepeatStatement:
-	//	'repita' END_COMMAND
+	//	'repita'
 	//	commands+=AbstractCommand+
-	//	'ate' untilExpr=Expression;
+	//	'ate' untilExpr=Expression END_COMMAND;
 	public RepeatStatementElements getRepeatStatementAccess() {
 		return pRepeatStatement;
 	}
@@ -2612,10 +2524,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return tFLOAT;
 	}
 	
-	//terminal END_COMMAND:
-	//	(' ' | '\t')* ('\r' | '\n')+ (' ' | '\t')*;
-	public TerminalRule getEND_COMMANDRule() {
-		return tEND_COMMAND;
+	//END_COMMAND:
+	//	';';
+	public END_COMMANDElements getEND_COMMANDAccess() {
+		return pEND_COMMAND;
+	}
+	
+	public ParserRule getEND_COMMANDRule() {
+		return getEND_COMMANDAccess().getRule();
 	}
 	
 	//terminal ID:
