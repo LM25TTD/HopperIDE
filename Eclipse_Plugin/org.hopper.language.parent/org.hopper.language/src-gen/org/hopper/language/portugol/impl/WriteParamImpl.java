@@ -3,12 +3,8 @@
  */
 package org.hopper.language.portugol.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -16,12 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.OptDecimalPrecision;
 import org.hopper.language.portugol.PortugolPackage;
+import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.WriteParam;
 
 /**
@@ -32,7 +25,7 @@ import org.hopper.language.portugol.WriteParam;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.WriteParamImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.WriteParamImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.WriteParamImpl#getPrecision <em>Precision</em>}</li>
  * </ul>
  *
@@ -41,14 +34,14 @@ import org.hopper.language.portugol.WriteParam;
 public class WriteParamImpl extends MinimalEObjectImpl.Container implements WriteParam
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference list.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected EList<Expression> expression;
+  protected SubprogramParam params;
 
   /**
    * The cached value of the '{@link #getPrecision() <em>Precision</em>}' containment reference.
@@ -86,13 +79,47 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Expression> getExpression()
+  public SubprogramParam getParams()
   {
-    if (expression == null)
+    return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParams(SubprogramParam newParams, NotificationChain msgs)
+  {
+    SubprogramParam oldParams = params;
+    params = newParams;
+    if (eNotificationRequired())
     {
-      expression = new EObjectContainmentEList<Expression>(Expression.class, this, PortugolPackage.WRITE_PARAM__EXPRESSION);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.WRITE_PARAM__PARAMS, oldParams, newParams);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return expression;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParams(SubprogramParam newParams)
+  {
+    if (newParams != params)
+    {
+      NotificationChain msgs = null;
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.WRITE_PARAM__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.WRITE_PARAM__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.WRITE_PARAM__PARAMS, newParams, newParams));
   }
 
   /**
@@ -153,8 +180,8 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
   {
     switch (featureID)
     {
-      case PortugolPackage.WRITE_PARAM__EXPRESSION:
-        return ((InternalEList<?>)getExpression()).basicRemove(otherEnd, msgs);
+      case PortugolPackage.WRITE_PARAM__PARAMS:
+        return basicSetParams(null, msgs);
       case PortugolPackage.WRITE_PARAM__PRECISION:
         return basicSetPrecision(null, msgs);
     }
@@ -171,8 +198,8 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
   {
     switch (featureID)
     {
-      case PortugolPackage.WRITE_PARAM__EXPRESSION:
-        return getExpression();
+      case PortugolPackage.WRITE_PARAM__PARAMS:
+        return getParams();
       case PortugolPackage.WRITE_PARAM__PRECISION:
         return getPrecision();
     }
@@ -184,15 +211,13 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case PortugolPackage.WRITE_PARAM__EXPRESSION:
-        getExpression().clear();
-        getExpression().addAll((Collection<? extends Expression>)newValue);
+      case PortugolPackage.WRITE_PARAM__PARAMS:
+        setParams((SubprogramParam)newValue);
         return;
       case PortugolPackage.WRITE_PARAM__PRECISION:
         setPrecision((OptDecimalPrecision)newValue);
@@ -211,8 +236,8 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
   {
     switch (featureID)
     {
-      case PortugolPackage.WRITE_PARAM__EXPRESSION:
-        getExpression().clear();
+      case PortugolPackage.WRITE_PARAM__PARAMS:
+        setParams((SubprogramParam)null);
         return;
       case PortugolPackage.WRITE_PARAM__PRECISION:
         setPrecision((OptDecimalPrecision)null);
@@ -231,8 +256,8 @@ public class WriteParamImpl extends MinimalEObjectImpl.Container implements Writ
   {
     switch (featureID)
     {
-      case PortugolPackage.WRITE_PARAM__EXPRESSION:
-        return expression != null && !expression.isEmpty();
+      case PortugolPackage.WRITE_PARAM__PARAMS:
+        return params != null;
       case PortugolPackage.WRITE_PARAM__PRECISION:
         return precision != null;
     }

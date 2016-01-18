@@ -3,15 +3,12 @@
  */
 package org.hopper.language.portugol.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.PortugolPackage;
@@ -25,22 +22,22 @@ import org.hopper.language.portugol.VarName;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.DeclaredVarImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.DeclaredVarImpl#getVarName <em>Var Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements DeclaredVar
+public class DeclaredVarImpl extends ExpressionImpl implements DeclaredVar
 {
   /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' reference list.
+   * The cached value of the '{@link #getVarName() <em>Var Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVars()
+   * @see #getVarName()
    * @generated
    * @ordered
    */
-  protected EList<VarName> vars;
+  protected VarName varName;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +65,42 @@ public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VarName> getVars()
+  public VarName getVarName()
   {
-    if (vars == null)
+    if (varName != null && varName.eIsProxy())
     {
-      vars = new EObjectResolvingEList<VarName>(VarName.class, this, PortugolPackage.DECLARED_VAR__VARS);
+      InternalEObject oldVarName = (InternalEObject)varName;
+      varName = (VarName)eResolveProxy(oldVarName);
+      if (varName != oldVarName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortugolPackage.DECLARED_VAR__VAR_NAME, oldVarName, varName));
+      }
     }
-    return vars;
+    return varName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarName basicGetVarName()
+  {
+    return varName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVarName(VarName newVarName)
+  {
+    VarName oldVarName = varName;
+    varName = newVarName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.DECLARED_VAR__VAR_NAME, oldVarName, varName));
   }
 
   /**
@@ -87,8 +113,9 @@ public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case PortugolPackage.DECLARED_VAR__VARS:
-        return getVars();
+      case PortugolPackage.DECLARED_VAR__VAR_NAME:
+        if (resolve) return getVarName();
+        return basicGetVarName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +125,13 @@ public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case PortugolPackage.DECLARED_VAR__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends VarName>)newValue);
+      case PortugolPackage.DECLARED_VAR__VAR_NAME:
+        setVarName((VarName)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +147,8 @@ public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case PortugolPackage.DECLARED_VAR__VARS:
-        getVars().clear();
+      case PortugolPackage.DECLARED_VAR__VAR_NAME:
+        setVarName((VarName)null);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +164,8 @@ public class DeclaredVarImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case PortugolPackage.DECLARED_VAR__VARS:
-        return vars != null && !vars.isEmpty();
+      case PortugolPackage.DECLARED_VAR__VAR_NAME:
+        return varName != null;
     }
     return super.eIsSet(featureID);
   }

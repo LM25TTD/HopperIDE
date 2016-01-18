@@ -69,13 +69,13 @@ public interface PortugolFactory extends EFactory
   VarDeclaration createVarDeclaration();
 
   /**
-   * Returns a new object of class '<em>Declared Var</em>'.
+   * Returns a new object of class '<em>Declared Var List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Declared Var</em>'.
+   * @return a new object of class '<em>Declared Var List</em>'.
    * @generated
    */
-  DeclaredVar createDeclaredVar();
+  DeclaredVarList createDeclaredVarList();
 
   /**
    * Returns a new object of class '<em>Var Name</em>'.
@@ -114,15 +114,6 @@ public interface PortugolFactory extends EFactory
   BlockSubPrograms createBlockSubPrograms();
 
   /**
-   * Returns a new object of class '<em>Function Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Name</em>'.
-   * @generated
-   */
-  FunctionName createFunctionName();
-
-  /**
    * Returns a new object of class '<em>Procedure Name</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +121,15 @@ public interface PortugolFactory extends EFactory
    * @generated
    */
   ProcedureName createProcedureName();
+
+  /**
+   * Returns a new object of class '<em>Function Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Name</em>'.
+   * @generated
+   */
+  FunctionName createFunctionName();
 
   /**
    * Returns a new object of class '<em>Block Function</em>'.
@@ -166,6 +166,51 @@ public interface PortugolFactory extends EFactory
    * @generated
    */
   AbstractCommand createAbstractCommand();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>Switch Case Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Switch Case Statement</em>'.
+   * @generated
+   */
+  SwitchCaseStatement createSwitchCaseStatement();
+
+  /**
+   * Returns a new object of class '<em>Case List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Case List</em>'.
+   * @generated
+   */
+  CaseList createCaseList();
+
+  /**
+   * Returns a new object of class '<em>Other Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Other Case</em>'.
+   * @generated
+   */
+  OtherCase createOtherCase();
+
+  /**
+   * Returns a new object of class '<em>Subprogram Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subprogram Param</em>'.
+   * @generated
+   */
+  SubprogramParam createSubprogramParam();
 
   /**
    * Returns a new object of class '<em>Read Command</em>'.
@@ -213,6 +258,15 @@ public interface PortugolFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Declared Var</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declared Var</em>'.
+   * @generated
+   */
+  DeclaredVar createDeclaredVar();
+
+  /**
    * Returns a new object of class '<em>Numeric Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,15 +283,6 @@ public interface PortugolFactory extends EFactory
    * @generated
    */
   StringExpression createStringExpression();
-
-  /**
-   * Returns a new object of class '<em>Assignment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Assignment</em>'.
-   * @generated
-   */
-  Assignment createAssignment();
 
   /**
    * Returns a new object of class '<em>Binary Operation</em>'.

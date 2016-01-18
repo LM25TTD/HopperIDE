@@ -123,13 +123,13 @@ public interface PortugolPackage extends EPackage
   int HEADER_BLOCK = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Algorithm Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HEADER_BLOCK__NAME = 0;
+  int HEADER_BLOCK__ALGORITHM_NAME = 0;
 
   /**
    * The number of structural features of the '<em>Header Block</em>' class.
@@ -234,14 +234,14 @@ public interface PortugolPackage extends EPackage
   int VAR_DECLARATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.DeclaredVarListImpl <em>Declared Var List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.DeclaredVarImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
+   * @see org.hopper.language.portugol.impl.DeclaredVarListImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVarList()
    * @generated
    */
-  int DECLARED_VAR = 5;
+  int DECLARED_VAR_LIST = 5;
 
   /**
    * The feature id for the '<em><b>Vars</b></em>' reference list.
@@ -250,16 +250,16 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARED_VAR__VARS = 0;
+  int DECLARED_VAR_LIST__VARS = 0;
 
   /**
-   * The number of structural features of the '<em>Declared Var</em>' class.
+   * The number of structural features of the '<em>Declared Var List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARED_VAR_FEATURE_COUNT = 1;
+  int DECLARED_VAR_LIST_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.VarNameImpl <em>Var Name</em>}' class.
@@ -392,34 +392,6 @@ public interface PortugolPackage extends EPackage
   int BLOCK_SUB_PROGRAMS_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.FunctionNameImpl <em>Function Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.FunctionNameImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionName()
-   * @generated
-   */
-  int FUNCTION_NAME = 10;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_NAME__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Function Name</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_NAME_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.ProcedureNameImpl <em>Procedure Name</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -427,7 +399,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getProcedureName()
    * @generated
    */
-  int PROCEDURE_NAME = 11;
+  int PROCEDURE_NAME = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -446,6 +418,34 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int PROCEDURE_NAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.FunctionNameImpl <em>Function Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.FunctionNameImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionName()
+   * @generated
+   */
+  int FUNCTION_NAME = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_NAME__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Function Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_NAME_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.BlockFunctionImpl <em>Block Function</em>}' class.
@@ -614,6 +614,209 @@ public interface PortugolPackage extends EPackage
   int ABSTRACT_COMMAND_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.IfStatementImpl <em>If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.IfStatementImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getIfStatement()
+   * @generated
+   */
+  int IF_STATEMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__COMMANDS = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Else Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSE_COMMANDS = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.SwitchCaseStatementImpl <em>Switch Case Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.SwitchCaseStatementImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSwitchCaseStatement()
+   * @generated
+   */
+  int SWITCH_CASE_STATEMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_CASE_STATEMENT__VARIABLE = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Case List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_CASE_STATEMENT__CASE_LIST = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Other Case</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_CASE_STATEMENT__OTHER_CASE = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Switch Case Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCH_CASE_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.CaseListImpl <em>Case List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.CaseListImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getCaseList()
+   * @generated
+   */
+  int CASE_LIST = 18;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_LIST__EXPR = 0;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_LIST__COMMANDS = 1;
+
+  /**
+   * The feature id for the '<em><b>Break Statement</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_LIST__BREAK_STATEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Case List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_LIST_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.OtherCaseImpl <em>Other Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.OtherCaseImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOtherCase()
+   * @generated
+   */
+  int OTHER_CASE = 19;
+
+  /**
+   * The feature id for the '<em><b>Other Case Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OTHER_CASE__OTHER_CASE_COMMANDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Break Statement</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OTHER_CASE__BREAK_STATEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Other Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OTHER_CASE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.SubprogramParamImpl <em>Subprogram Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.SubprogramParamImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParam()
+   * @generated
+   */
+  int SUBPROGRAM_PARAM = 20;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBPROGRAM_PARAM__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Subprogram Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBPROGRAM_PARAM_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.ReadCommandImpl <em>Read Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -621,7 +824,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReadCommand()
    * @generated
    */
-  int READ_COMMAND = 16;
+  int READ_COMMAND = 21;
 
   /**
    * The feature id for the '<em><b>Param List</b></em>' containment reference.
@@ -649,7 +852,16 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteCommand()
    * @generated
    */
-  int WRITE_COMMAND = 17;
+  int WRITE_COMMAND = 22;
+
+  /**
+   * The feature id for the '<em><b>Write Command</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WRITE_COMMAND__WRITE_COMMAND = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Write Param</b></em>' containment reference.
@@ -658,7 +870,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WRITE_COMMAND__WRITE_PARAM = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+  int WRITE_COMMAND__WRITE_PARAM = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Write Command</em>' class.
@@ -667,7 +879,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WRITE_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+  int WRITE_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.WriteParamImpl <em>Write Param</em>}' class.
@@ -677,16 +889,16 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteParam()
    * @generated
    */
-  int WRITE_PARAM = 18;
+  int WRITE_PARAM = 23;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference list.
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WRITE_PARAM__EXPRESSION = 0;
+  int WRITE_PARAM__PARAMS = 0;
 
   /**
    * The feature id for the '<em><b>Precision</b></em>' containment reference.
@@ -714,7 +926,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOptDecimalPrecision()
    * @generated
    */
-  int OPT_DECIMAL_PRECISION = 19;
+  int OPT_DECIMAL_PRECISION = 24;
 
   /**
    * The feature id for the '<em><b>First Precision</b></em>' attribute.
@@ -751,7 +963,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 20;
+  int EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -781,6 +993,52 @@ public interface PortugolPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.DeclaredVarImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
+   * @generated
+   */
+  int DECLARED_VAR = 26;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VAR__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VAR__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Var Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VAR__VAR_NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declared Var</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VAR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -788,7 +1046,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 21;
+  int NUMERIC_LITERAL = 27;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -843,7 +1101,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
    * @generated
    */
-  int STRING_EXPRESSION = 22;
+  int STRING_EXPRESSION = 28;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -882,79 +1140,6 @@ public interface PortugolPackage extends EPackage
   int STRING_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.AssignmentImpl <em>Assignment</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.AssignmentImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAssignment()
-   * @generated
-   */
-  int ASSIGNMENT = 23;
-
-  /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__FB_NAME = EXPRESSION__FB_NAME;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__PARAM = EXPRESSION__PARAM;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__TARGET = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__VALUE = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Assignable</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__ASSIGNABLE = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT__FEATURE = EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Assignment</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGNMENT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -962,7 +1147,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int BINARY_OPERATION = 24;
+  int BINARY_OPERATION = 29;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1026,7 +1211,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 25;
+  int UNARY_EXPRESSION = 30;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1139,15 +1324,15 @@ public interface PortugolPackage extends EPackage
   EClass getHeaderBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.HeaderBlock#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.HeaderBlock#getAlgorithmName <em>Algorithm Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.hopper.language.portugol.HeaderBlock#getName()
+   * @return the meta object for the attribute '<em>Algorithm Name</em>'.
+   * @see org.hopper.language.portugol.HeaderBlock#getAlgorithmName()
    * @see #getHeaderBlock()
    * @generated
    */
-  EAttribute getHeaderBlock_Name();
+  EAttribute getHeaderBlock_AlgorithmName();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.DeclarationsBlock <em>Declarations Block</em>}'.
@@ -1224,25 +1409,25 @@ public interface PortugolPackage extends EPackage
   EReference getVarDeclaration_Vars();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.DeclaredVar <em>Declared Var</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.DeclaredVarList <em>Declared Var List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Declared Var</em>'.
-   * @see org.hopper.language.portugol.DeclaredVar
+   * @return the meta object for class '<em>Declared Var List</em>'.
+   * @see org.hopper.language.portugol.DeclaredVarList
    * @generated
    */
-  EClass getDeclaredVar();
+  EClass getDeclaredVarList();
 
   /**
-   * Returns the meta object for the reference list '{@link org.hopper.language.portugol.DeclaredVar#getVars <em>Vars</em>}'.
+   * Returns the meta object for the reference list '{@link org.hopper.language.portugol.DeclaredVarList#getVars <em>Vars</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Vars</em>'.
-   * @see org.hopper.language.portugol.DeclaredVar#getVars()
-   * @see #getDeclaredVar()
+   * @see org.hopper.language.portugol.DeclaredVarList#getVars()
+   * @see #getDeclaredVarList()
    * @generated
    */
-  EReference getDeclaredVar_Vars();
+  EReference getDeclaredVarList_Vars();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.VarName <em>Var Name</em>}'.
@@ -1351,27 +1536,6 @@ public interface PortugolPackage extends EPackage
   EReference getBlockSubPrograms_Commands();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.FunctionName <em>Function Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Name</em>'.
-   * @see org.hopper.language.portugol.FunctionName
-   * @generated
-   */
-  EClass getFunctionName();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.FunctionName#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.hopper.language.portugol.FunctionName#getName()
-   * @see #getFunctionName()
-   * @generated
-   */
-  EAttribute getFunctionName_Name();
-
-  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.ProcedureName <em>Procedure Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1391,6 +1555,27 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EAttribute getProcedureName_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.FunctionName <em>Function Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Name</em>'.
+   * @see org.hopper.language.portugol.FunctionName
+   * @generated
+   */
+  EClass getFunctionName();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.FunctionName#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.hopper.language.portugol.FunctionName#getName()
+   * @see #getFunctionName()
+   * @generated
+   */
+  EAttribute getFunctionName_Name();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BlockFunction <em>Block Function</em>}'.
@@ -1477,6 +1662,188 @@ public interface PortugolPackage extends EPackage
   EClass getAbstractCommand();
 
   /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Statement</em>'.
+   * @see org.hopper.language.portugol.IfStatement
+   * @generated
+   */
+  EClass getIfStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.IfStatement#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.hopper.language.portugol.IfStatement#getExpr()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Expr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.IfStatement#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
+   * @see org.hopper.language.portugol.IfStatement#getCommands()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Commands();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.IfStatement#getElseCommands <em>Else Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else Commands</em>'.
+   * @see org.hopper.language.portugol.IfStatement#getElseCommands()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_ElseCommands();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.SwitchCaseStatement <em>Switch Case Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Switch Case Statement</em>'.
+   * @see org.hopper.language.portugol.SwitchCaseStatement
+   * @generated
+   */
+  EClass getSwitchCaseStatement();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.SwitchCaseStatement#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see org.hopper.language.portugol.SwitchCaseStatement#getVariable()
+   * @see #getSwitchCaseStatement()
+   * @generated
+   */
+  EReference getSwitchCaseStatement_Variable();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.SwitchCaseStatement#getCaseList <em>Case List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Case List</em>'.
+   * @see org.hopper.language.portugol.SwitchCaseStatement#getCaseList()
+   * @see #getSwitchCaseStatement()
+   * @generated
+   */
+  EReference getSwitchCaseStatement_CaseList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.SwitchCaseStatement#getOtherCase <em>Other Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Other Case</em>'.
+   * @see org.hopper.language.portugol.SwitchCaseStatement#getOtherCase()
+   * @see #getSwitchCaseStatement()
+   * @generated
+   */
+  EReference getSwitchCaseStatement_OtherCase();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.CaseList <em>Case List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Case List</em>'.
+   * @see org.hopper.language.portugol.CaseList
+   * @generated
+   */
+  EClass getCaseList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.CaseList#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.hopper.language.portugol.CaseList#getExpr()
+   * @see #getCaseList()
+   * @generated
+   */
+  EReference getCaseList_Expr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.CaseList#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
+   * @see org.hopper.language.portugol.CaseList#getCommands()
+   * @see #getCaseList()
+   * @generated
+   */
+  EReference getCaseList_Commands();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.CaseList#isBreakStatement <em>Break Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Break Statement</em>'.
+   * @see org.hopper.language.portugol.CaseList#isBreakStatement()
+   * @see #getCaseList()
+   * @generated
+   */
+  EAttribute getCaseList_BreakStatement();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.OtherCase <em>Other Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Other Case</em>'.
+   * @see org.hopper.language.portugol.OtherCase
+   * @generated
+   */
+  EClass getOtherCase();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.OtherCase#getOtherCaseCommands <em>Other Case Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Other Case Commands</em>'.
+   * @see org.hopper.language.portugol.OtherCase#getOtherCaseCommands()
+   * @see #getOtherCase()
+   * @generated
+   */
+  EReference getOtherCase_OtherCaseCommands();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.OtherCase#isBreakStatement <em>Break Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Break Statement</em>'.
+   * @see org.hopper.language.portugol.OtherCase#isBreakStatement()
+   * @see #getOtherCase()
+   * @generated
+   */
+  EAttribute getOtherCase_BreakStatement();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.SubprogramParam <em>Subprogram Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subprogram Param</em>'.
+   * @see org.hopper.language.portugol.SubprogramParam
+   * @generated
+   */
+  EClass getSubprogramParam();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.SubprogramParam#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expression</em>'.
+   * @see org.hopper.language.portugol.SubprogramParam#getExpression()
+   * @see #getSubprogramParam()
+   * @generated
+   */
+  EReference getSubprogramParam_Expression();
+
+  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.ReadCommand <em>Read Command</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1508,6 +1875,17 @@ public interface PortugolPackage extends EPackage
   EClass getWriteCommand();
 
   /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.WriteCommand#getWriteCommand <em>Write Command</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Write Command</em>'.
+   * @see org.hopper.language.portugol.WriteCommand#getWriteCommand()
+   * @see #getWriteCommand()
+   * @generated
+   */
+  EAttribute getWriteCommand_WriteCommand();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.WriteCommand#getWriteParam <em>Write Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1529,15 +1907,15 @@ public interface PortugolPackage extends EPackage
   EClass getWriteParam();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.WriteParam#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.WriteParam#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expression</em>'.
-   * @see org.hopper.language.portugol.WriteParam#getExpression()
+   * @return the meta object for the containment reference '<em>Params</em>'.
+   * @see org.hopper.language.portugol.WriteParam#getParams()
    * @see #getWriteParam()
    * @generated
    */
-  EReference getWriteParam_Expression();
+  EReference getWriteParam_Params();
 
   /**
    * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.WriteParam#getPrecision <em>Precision</em>}'.
@@ -1615,6 +1993,27 @@ public interface PortugolPackage extends EPackage
   EReference getExpression_Param();
 
   /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.DeclaredVar <em>Declared Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declared Var</em>'.
+   * @see org.hopper.language.portugol.DeclaredVar
+   * @generated
+   */
+  EClass getDeclaredVar();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.DeclaredVar#getVarName <em>Var Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var Name</em>'.
+   * @see org.hopper.language.portugol.DeclaredVar#getVarName()
+   * @see #getDeclaredVar()
+   * @generated
+   */
+  EReference getDeclaredVar_VarName();
+
+  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.NumericLiteral <em>Numeric Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1666,60 +2065,6 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EAttribute getStringExpression_LiteralString();
-
-  /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Assignment <em>Assignment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Assignment</em>'.
-   * @see org.hopper.language.portugol.Assignment
-   * @generated
-   */
-  EClass getAssignment();
-
-  /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Assignment#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
-   * @see org.hopper.language.portugol.Assignment#getTarget()
-   * @see #getAssignment()
-   * @generated
-   */
-  EReference getAssignment_Target();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Assignment#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see org.hopper.language.portugol.Assignment#getValue()
-   * @see #getAssignment()
-   * @generated
-   */
-  EReference getAssignment_Value();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Assignment#getAssignable <em>Assignable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Assignable</em>'.
-   * @see org.hopper.language.portugol.Assignment#getAssignable()
-   * @see #getAssignment()
-   * @generated
-   */
-  EReference getAssignment_Assignable();
-
-  /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Assignment#getFeature <em>Feature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Feature</em>'.
-   * @see org.hopper.language.portugol.Assignment#getFeature()
-   * @see #getAssignment()
-   * @generated
-   */
-  EReference getAssignment_Feature();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BinaryOperation <em>Binary Operation</em>}'.
@@ -1872,12 +2217,12 @@ public interface PortugolPackage extends EPackage
     EClass HEADER_BLOCK = eINSTANCE.getHeaderBlock();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Algorithm Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute HEADER_BLOCK__NAME = eINSTANCE.getHeaderBlock_Name();
+    EAttribute HEADER_BLOCK__ALGORITHM_NAME = eINSTANCE.getHeaderBlock_AlgorithmName();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclarationsBlockImpl <em>Declarations Block</em>}' class.
@@ -1942,14 +2287,14 @@ public interface PortugolPackage extends EPackage
     EReference VAR_DECLARATION__VARS = eINSTANCE.getVarDeclaration_Vars();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclaredVarListImpl <em>Declared Var List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.DeclaredVarImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
+     * @see org.hopper.language.portugol.impl.DeclaredVarListImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVarList()
      * @generated
      */
-    EClass DECLARED_VAR = eINSTANCE.getDeclaredVar();
+    EClass DECLARED_VAR_LIST = eINSTANCE.getDeclaredVarList();
 
     /**
      * The meta object literal for the '<em><b>Vars</b></em>' reference list feature.
@@ -1957,7 +2302,7 @@ public interface PortugolPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DECLARED_VAR__VARS = eINSTANCE.getDeclaredVar_Vars();
+    EReference DECLARED_VAR_LIST__VARS = eINSTANCE.getDeclaredVarList_Vars();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.VarNameImpl <em>Var Name</em>}' class.
@@ -2048,24 +2393,6 @@ public interface PortugolPackage extends EPackage
     EReference BLOCK_SUB_PROGRAMS__COMMANDS = eINSTANCE.getBlockSubPrograms_Commands();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.FunctionNameImpl <em>Function Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.FunctionNameImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionName()
-     * @generated
-     */
-    EClass FUNCTION_NAME = eINSTANCE.getFunctionName();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_NAME__NAME = eINSTANCE.getFunctionName_Name();
-
-    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.ProcedureNameImpl <em>Procedure Name</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2082,6 +2409,24 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EAttribute PROCEDURE_NAME__NAME = eINSTANCE.getProcedureName_Name();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.FunctionNameImpl <em>Function Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.FunctionNameImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionName()
+     * @generated
+     */
+    EClass FUNCTION_NAME = eINSTANCE.getFunctionName();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_NAME__NAME = eINSTANCE.getFunctionName_Name();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BlockFunctionImpl <em>Block Function</em>}' class.
@@ -2156,6 +2501,152 @@ public interface PortugolPackage extends EPackage
     EClass ABSTRACT_COMMAND = eINSTANCE.getAbstractCommand();
 
     /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.IfStatementImpl <em>If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.IfStatementImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getIfStatement()
+     * @generated
+     */
+    EClass IF_STATEMENT = eINSTANCE.getIfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__EXPR = eINSTANCE.getIfStatement_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__COMMANDS = eINSTANCE.getIfStatement_Commands();
+
+    /**
+     * The meta object literal for the '<em><b>Else Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSE_COMMANDS = eINSTANCE.getIfStatement_ElseCommands();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.SwitchCaseStatementImpl <em>Switch Case Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.SwitchCaseStatementImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSwitchCaseStatement()
+     * @generated
+     */
+    EClass SWITCH_CASE_STATEMENT = eINSTANCE.getSwitchCaseStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_CASE_STATEMENT__VARIABLE = eINSTANCE.getSwitchCaseStatement_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Case List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_CASE_STATEMENT__CASE_LIST = eINSTANCE.getSwitchCaseStatement_CaseList();
+
+    /**
+     * The meta object literal for the '<em><b>Other Case</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SWITCH_CASE_STATEMENT__OTHER_CASE = eINSTANCE.getSwitchCaseStatement_OtherCase();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.CaseListImpl <em>Case List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.CaseListImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getCaseList()
+     * @generated
+     */
+    EClass CASE_LIST = eINSTANCE.getCaseList();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASE_LIST__EXPR = eINSTANCE.getCaseList_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASE_LIST__COMMANDS = eINSTANCE.getCaseList_Commands();
+
+    /**
+     * The meta object literal for the '<em><b>Break Statement</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CASE_LIST__BREAK_STATEMENT = eINSTANCE.getCaseList_BreakStatement();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.OtherCaseImpl <em>Other Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.OtherCaseImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOtherCase()
+     * @generated
+     */
+    EClass OTHER_CASE = eINSTANCE.getOtherCase();
+
+    /**
+     * The meta object literal for the '<em><b>Other Case Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OTHER_CASE__OTHER_CASE_COMMANDS = eINSTANCE.getOtherCase_OtherCaseCommands();
+
+    /**
+     * The meta object literal for the '<em><b>Break Statement</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OTHER_CASE__BREAK_STATEMENT = eINSTANCE.getOtherCase_BreakStatement();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.SubprogramParamImpl <em>Subprogram Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.SubprogramParamImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParam()
+     * @generated
+     */
+    EClass SUBPROGRAM_PARAM = eINSTANCE.getSubprogramParam();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBPROGRAM_PARAM__EXPRESSION = eINSTANCE.getSubprogramParam_Expression();
+
+    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.ReadCommandImpl <em>Read Command</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2184,6 +2675,14 @@ public interface PortugolPackage extends EPackage
     EClass WRITE_COMMAND = eINSTANCE.getWriteCommand();
 
     /**
+     * The meta object literal for the '<em><b>Write Command</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WRITE_COMMAND__WRITE_COMMAND = eINSTANCE.getWriteCommand_WriteCommand();
+
+    /**
      * The meta object literal for the '<em><b>Write Param</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2202,12 +2701,12 @@ public interface PortugolPackage extends EPackage
     EClass WRITE_PARAM = eINSTANCE.getWriteParam();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WRITE_PARAM__EXPRESSION = eINSTANCE.getWriteParam_Expression();
+    EReference WRITE_PARAM__PARAMS = eINSTANCE.getWriteParam_Params();
 
     /**
      * The meta object literal for the '<em><b>Precision</b></em>' containment reference feature.
@@ -2270,6 +2769,24 @@ public interface PortugolPackage extends EPackage
     EReference EXPRESSION__PARAM = eINSTANCE.getExpression_Param();
 
     /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.DeclaredVarImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
+     * @generated
+     */
+    EClass DECLARED_VAR = eINSTANCE.getDeclaredVar();
+
+    /**
+     * The meta object literal for the '<em><b>Var Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARED_VAR__VAR_NAME = eINSTANCE.getDeclaredVar_VarName();
+
+    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2312,48 +2829,6 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EAttribute STRING_EXPRESSION__LITERAL_STRING = eINSTANCE.getStringExpression_LiteralString();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.AssignmentImpl <em>Assignment</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.AssignmentImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAssignment()
-     * @generated
-     */
-    EClass ASSIGNMENT = eINSTANCE.getAssignment();
-
-    /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGNMENT__TARGET = eINSTANCE.getAssignment_Target();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGNMENT__VALUE = eINSTANCE.getAssignment_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Assignable</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGNMENT__ASSIGNABLE = eINSTANCE.getAssignment_Assignable();
-
-    /**
-     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGNMENT__FEATURE = eINSTANCE.getAssignment_Feature();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.

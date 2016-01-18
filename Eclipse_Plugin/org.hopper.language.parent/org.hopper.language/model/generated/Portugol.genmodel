@@ -13,7 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Model/commands"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//HeaderBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//HeaderBlock/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//HeaderBlock/algorithmName"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//DeclarationsBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//DeclarationsBlock/vars"/>
@@ -25,8 +25,8 @@
     <genClasses ecoreClass="Portugol.ecore#//VarDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//VarDeclaration/vars"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//DeclaredVar">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//DeclaredVar/vars"/>
+    <genClasses ecoreClass="Portugol.ecore#//DeclaredVarList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//DeclaredVarList/vars"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//VarName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//VarName/name"/>
@@ -42,11 +42,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/commands"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//FunctionName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//FunctionName/name"/>
-    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//ProcedureName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//ProcedureName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//FunctionName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//FunctionName/name"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockFunction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockFunction/functionName"/>
@@ -59,14 +59,37 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockCommand/commands"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//AbstractCommand"/>
+    <genClasses ecoreClass="Portugol.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//IfStatement/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//IfStatement/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//IfStatement/elseCommands"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//SwitchCaseStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//SwitchCaseStatement/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//SwitchCaseStatement/caseList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//SwitchCaseStatement/otherCase"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//CaseList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//CaseList/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//CaseList/commands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//CaseList/breakStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//OtherCase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//OtherCase/otherCaseCommands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//OtherCase/breakStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//SubprogramParam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//SubprogramParam/expression"/>
+    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//ReadCommand">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ReadCommand/paramList"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//WriteCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//WriteCommand/writeCommand"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteCommand/writeParam"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//WriteParam">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteParam/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteParam/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WriteParam/precision"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//OptDecimalPrecision">
@@ -77,18 +100,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/fbName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/param"/>
     </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//DeclaredVar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//DeclaredVar/varName"/>
+    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//NumericLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/intValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/floatValue"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//StringExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//StringExpression/literalString"/>
-    </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//Assignment">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/assignable"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Assignment/feature"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BinaryOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/left"/>

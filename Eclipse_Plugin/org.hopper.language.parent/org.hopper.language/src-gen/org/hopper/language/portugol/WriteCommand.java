@@ -13,6 +13,7 @@ package org.hopper.language.portugol;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.hopper.language.portugol.WriteCommand#getWriteCommand <em>Write Command</em>}</li>
  *   <li>{@link org.hopper.language.portugol.WriteCommand#getWriteParam <em>Write Param</em>}</li>
  * </ul>
  *
@@ -22,6 +23,32 @@ package org.hopper.language.portugol;
  */
 public interface WriteCommand extends AbstractCommand
 {
+  /**
+   * Returns the value of the '<em><b>Write Command</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Write Command</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Write Command</em>' attribute.
+   * @see #setWriteCommand(String)
+   * @see org.hopper.language.portugol.PortugolPackage#getWriteCommand_WriteCommand()
+   * @model
+   * @generated
+   */
+  String getWriteCommand();
+
+  /**
+   * Sets the value of the '{@link org.hopper.language.portugol.WriteCommand#getWriteCommand <em>Write Command</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Write Command</em>' attribute.
+   * @see #getWriteCommand()
+   * @generated
+   */
+  void setWriteCommand(String value);
+
   /**
    * Returns the value of the '<em><b>Write Param</b></em>' containment reference.
    * <!-- begin-user-doc -->

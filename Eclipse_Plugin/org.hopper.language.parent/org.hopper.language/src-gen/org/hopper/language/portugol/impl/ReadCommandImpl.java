@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.hopper.language.portugol.DeclaredVar;
+import org.hopper.language.portugol.DeclaredVarList;
 import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ReadCommand;
 
@@ -38,7 +38,7 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
    * @generated
    * @ordered
    */
-  protected DeclaredVar paramList;
+  protected DeclaredVarList paramList;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
    * <!-- end-user-doc -->
    * @generated
    */
-  public DeclaredVar getParamList()
+  public DeclaredVarList getParamList()
   {
     return paramList;
   }
@@ -76,9 +76,9 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParamList(DeclaredVar newParamList, NotificationChain msgs)
+  public NotificationChain basicSetParamList(DeclaredVarList newParamList, NotificationChain msgs)
   {
-    DeclaredVar oldParamList = paramList;
+    DeclaredVarList oldParamList = paramList;
     paramList = newParamList;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParamList(DeclaredVar newParamList)
+  public void setParamList(DeclaredVarList newParamList)
   {
     if (newParamList != paramList)
     {
@@ -152,7 +152,7 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
     switch (featureID)
     {
       case PortugolPackage.READ_COMMAND__PARAM_LIST:
-        setParamList((DeclaredVar)newValue);
+        setParamList((DeclaredVarList)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class ReadCommandImpl extends AbstractCommandImpl implements ReadCommand
     switch (featureID)
     {
       case PortugolPackage.READ_COMMAND__PARAM_LIST:
-        setParamList((DeclaredVar)null);
+        setParamList((DeclaredVarList)null);
         return;
     }
     super.eUnset(featureID);

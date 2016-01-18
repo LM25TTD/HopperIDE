@@ -10,7 +10,7 @@ Model:
 	commands=BlockCommand;
 
 HeaderBlock:
-	'algoritmo' name=STRING END_COMMAND;
+	'algoritmo' algorithmName=STRING END_COMMAND;
 
 DeclarationsBlock:
 	'var' END_COMMAND
@@ -22,14 +22,14 @@ Variable:
 VarDeclaration:
 	(vars+=VarName) (',' vars+=VarName)*;
 
-DeclaredVar:
+DeclaredVarList:
 	(vars+=[VarName]) (',' vars+=[VarName])*;
 
 VarName:
 	name=ID;
 
 VarType:
-	typeName=('real' | 'inteiro' | 'caractere');
+	typeName=('real' | 'inteiro' | 'caractere' | 'caracter');
 
 Subprograms:
 	(blockSubPrograms+=BlockSubPrograms)+;
@@ -37,10 +37,10 @@ Subprograms:
 BlockSubPrograms:
 	BlockFunction | BlockProcedure;
 
-FunctionName:
+ProcedureName:
 	name=ID;
 
-ProcedureName:
+FunctionName:
 	name=ID;
 
 BlockFunction:
@@ -60,21 +60,52 @@ BlockProcedure:
 BlockCommand:
 	'inicio' END_COMMAND
 	(commands+=AbstractCommand)+
-	'fimalgoritmo' END_COMMAND;
+	'fimalgoritmo' END_COMMAND?;
 
 AbstractCommand:
 	ReadCommand END_COMMAND
 	| WriteCommand END_COMMAND
-	| Expression END_COMMAND;
+	| Expression END_COMMAND
+	| IfStatement END_COMMAND
+	| SwitchCaseStatement END_COMMAND
+	//| ForStatement
+	//| WhileStatement
+	//| RepeatStatement
+;
+
+IfStatement:
+	'se' expr=Expression 'entao' END_COMMAND
+	(commands+=AbstractCommand)+
+	('senao' END_COMMAND (elseCommands+=AbstractCommand)+)?
+	'fimse';
+
+SwitchCaseStatement:
+	'escolha' variable=[VarName] END_COMMAND
+	(caseList+=CaseList)+
+	(otherCase=OtherCase)?
+	'fimescolha';
+
+CaseList:
+	'caso' expr=Expression END_COMMAND
+	(commands+=AbstractCommand)+
+	(breakStatement?='interrompa' END_COMMAND)?;
+
+OtherCase:
+	'outrocaso' END_COMMAND
+	(otherCaseCommands+=AbstractCommand)+
+	(breakStatement?='interrompa' END_COMMAND)?;
+
+SubprogramParam:
+	expression+=Expression (',' expression+=Expression)*;
 
 ReadCommand:
-	'leia' '(' paramList=DeclaredVar ')';
+	'leia' '(' paramList=DeclaredVarList ')';
 
 WriteCommand:
-	'escreva' '(' writeParam=WriteParam ')';
+	writeCommand=('escreva' | 'escreval') '(' writeParam=WriteParam ')';
 
 WriteParam:
-	expression+=Expression (',' expression+=Expression)* (precision=OptDecimalPrecision)?;
+	params=SubprogramParam (precision=OptDecimalPrecision)?;
 
 OptDecimalPrecision:
 	':' firstPrecision=INT (':' secondPrecision=INT)?;
@@ -83,8 +114,7 @@ Expression returns Expression:
 	Assignment;
 
 Assignment returns Expression:
-	{Assignment} target=[VarName] '<-' value=Assignment
-	| OrExpression (=> ({BinaryOperation.left=current} op=('<-')) right=Assignment)?;
+	OrExpression (=> ({BinaryOperation.left=current} op=('<-')) right=Assignment)*;
 
 OrExpression returns Expression:
 	XorExpression (=> ({BinaryOperation.left=current} op=("OU")) right=XorExpression)*;
@@ -112,24 +142,25 @@ PowerExpression returns Expression:
 
 UnaryExpression returns Expression:
 	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression /* right associativity */
-	| MemberCall;
-
-MemberCall returns Expression:
-	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*;
+	| PrimaryExpression;
 
 PrimaryExpression returns Expression:
 	Literal
 	| FunctionCall
+	| DeclaredVar
 	| '(' Expression ')';
 
 FunctionCall returns Expression:
-	fbName=[FunctionName] '(' param=WriteParam ')';
+	fbName=[FunctionName] '(' param=SubprogramParam ')';
 
 ProcedureCall returns Expression:
-	fbName=[ProcedureName] '(' param=WriteParam ')';
+	fbName=[ProcedureName] '(' param=SubprogramParam ')';
 
 Literal returns Expression:
 	NumericLiteral | StringExpression;
+
+DeclaredVar:
+	varName=[VarName];
 
 NumericLiteral:
 	intValue?=INT

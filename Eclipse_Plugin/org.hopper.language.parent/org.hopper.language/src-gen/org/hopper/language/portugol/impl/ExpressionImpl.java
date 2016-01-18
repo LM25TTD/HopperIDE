@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.PortugolPackage;
-import org.hopper.language.portugol.WriteParam;
+import org.hopper.language.portugol.SubprogramParam;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * @generated
    * @ordered
    */
-  protected WriteParam param;
+  protected SubprogramParam param;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public WriteParam getParam()
+  public SubprogramParam getParam()
   {
     return param;
   }
@@ -131,9 +131,9 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParam(WriteParam newParam, NotificationChain msgs)
+  public NotificationChain basicSetParam(SubprogramParam newParam, NotificationChain msgs)
   {
-    WriteParam oldParam = param;
+    SubprogramParam oldParam = param;
     param = newParam;
     if (eNotificationRequired())
     {
@@ -148,7 +148,7 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParam(WriteParam newParam)
+  public void setParam(SubprogramParam newParam)
   {
     if (newParam != param)
     {
@@ -213,7 +213,7 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
         setFbName((EObject)newValue);
         return;
       case PortugolPackage.EXPRESSION__PARAM:
-        setParam((WriteParam)newValue);
+        setParam((SubprogramParam)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,7 +233,7 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
         setFbName((EObject)null);
         return;
       case PortugolPackage.EXPRESSION__PARAM:
-        setParam((WriteParam)null);
+        setParam((SubprogramParam)null);
         return;
     }
     super.eUnset(featureID);

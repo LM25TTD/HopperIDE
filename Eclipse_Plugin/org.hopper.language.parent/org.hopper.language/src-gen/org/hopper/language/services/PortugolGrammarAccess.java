@@ -74,25 +74,25 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.HeaderBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAlgoritmoKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cAlgorithmNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAlgorithmNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cAlgorithmNameAssignment_1.eContents().get(0);
 		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//HeaderBlock:
-		//	'algoritmo' name=STRING END_COMMAND;
+		//	'algoritmo' algorithmName=STRING END_COMMAND;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'algoritmo' name=STRING END_COMMAND
+		//'algoritmo' algorithmName=STRING END_COMMAND
 		public Group getGroup() { return cGroup; }
 		
 		//'algoritmo'
 		public Keyword getAlgoritmoKeyword_0() { return cAlgoritmoKeyword_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//algorithmName=STRING
+		public Assignment getAlgorithmNameAssignment_1() { return cAlgorithmNameAssignment_1; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getAlgorithmNameSTRINGTerminalRuleCall_1_0() { return cAlgorithmNameSTRINGTerminalRuleCall_1_0; }
 		
 		//END_COMMAND
 		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
@@ -198,8 +198,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//VarName
 		public RuleCall getVarsVarNameParserRuleCall_1_1_0() { return cVarsVarNameParserRuleCall_1_1_0; }
 	}
-	public class DeclaredVarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.DeclaredVar");
+	public class DeclaredVarListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.DeclaredVarList");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVarsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cVarsVarNameCrossReference_0_0 = (CrossReference)cVarsAssignment_0.eContents().get(0);
@@ -210,7 +210,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cVarsVarNameCrossReference_1_1_0 = (CrossReference)cVarsAssignment_1_1.eContents().get(0);
 		private final RuleCall cVarsVarNameIDTerminalRuleCall_1_1_0_1 = (RuleCall)cVarsVarNameCrossReference_1_1_0.eContents().get(1);
 		
-		//DeclaredVar:
+		//DeclaredVarList:
 		//	vars+=[VarName] (',' vars+=[VarName])*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -263,15 +263,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeNameRealKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
 		private final Keyword cTypeNameInteiroKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
 		private final Keyword cTypeNameCaractereKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameCaracterKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
 		
 		//VarType:
-		//	typeName=('real' | 'inteiro' | 'caractere');
+		//	typeName=('real' | 'inteiro' | 'caractere' | 'caracter');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//typeName=('real' | 'inteiro' | 'caractere')
+		//typeName=('real' | 'inteiro' | 'caractere' | 'caracter')
 		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
 		
-		//('real' | 'inteiro' | 'caractere')
+		//('real' | 'inteiro' | 'caractere' | 'caracter')
 		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 		
 		//'real'
@@ -282,6 +283,9 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'caractere'
 		public Keyword getTypeNameCaractereKeyword_0_2() { return cTypeNameCaractereKeyword_0_2; }
+		
+		//'caracter'
+		public Keyword getTypeNameCaracterKeyword_0_3() { return cTypeNameCaracterKeyword_0_3; }
 	}
 	public class SubprogramsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Subprograms");
@@ -317,12 +321,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//BlockProcedure
 		public RuleCall getBlockProcedureParserRuleCall_1() { return cBlockProcedureParserRuleCall_1; }
 	}
-	public class FunctionNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionName");
+	public class ProcedureNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ProcedureName");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
-		//FunctionName:
+		//ProcedureName:
 		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -332,12 +336,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
-	public class ProcedureNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ProcedureName");
+	public class FunctionNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionName");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
-		//ProcedureName:
+		//FunctionName:
 		//	name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -532,10 +536,10 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//BlockCommand:
 		//	'inicio' END_COMMAND
 		//	commands+=AbstractCommand+
-		//	'fimalgoritmo' END_COMMAND;
+		//	'fimalgoritmo' END_COMMAND?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'inicio' END_COMMAND commands+=AbstractCommand+ 'fimalgoritmo' END_COMMAND
+		//'inicio' END_COMMAND commands+=AbstractCommand+ 'fimalgoritmo' END_COMMAND?
 		public Group getGroup() { return cGroup; }
 		
 		//'inicio'
@@ -553,7 +557,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'fimalgoritmo'
 		public Keyword getFimalgoritmoKeyword_3() { return cFimalgoritmoKeyword_3; }
 		
-		//END_COMMAND
+		//END_COMMAND?
 		public RuleCall getEND_COMMANDTerminalRuleCall_4() { return cEND_COMMANDTerminalRuleCall_4; }
 	}
 	public class AbstractCommandElements extends AbstractParserRuleElementFinder {
@@ -568,14 +572,27 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final RuleCall cExpressionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
 		private final RuleCall cEND_COMMANDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final RuleCall cIfStatementParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final RuleCall cSwitchCaseStatementParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		
 		//AbstractCommand:
 		//	ReadCommand END_COMMAND
 		//	| WriteCommand END_COMMAND
-		//	| Expression END_COMMAND;
+		//	| Expression END_COMMAND
+		//	| IfStatement END_COMMAND
+		//	| SwitchCaseStatement END_COMMAND
+		//	//| ForStatement
+		//	//| WhileStatement
+		//	//| RepeatStatement
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND
+		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND | IfStatement END_COMMAND |
+		//SwitchCaseStatement END_COMMAND
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ReadCommand END_COMMAND
@@ -604,71 +621,243 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//END_COMMAND
 		public RuleCall getEND_COMMANDTerminalRuleCall_2_1() { return cEND_COMMANDTerminalRuleCall_2_1; }
-	}
-	public class ReadCommandElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ReadCommand");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeiaKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cParamListAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamListDeclaredVarParserRuleCall_2_0 = (RuleCall)cParamListAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//ReadCommand:
-		//	'leia' '(' paramList=DeclaredVar ')';
+		//IfStatement END_COMMAND
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//IfStatement
+		public RuleCall getIfStatementParserRuleCall_3_0() { return cIfStatementParserRuleCall_3_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_3_1() { return cEND_COMMANDTerminalRuleCall_3_1; }
+		
+		//SwitchCaseStatement END_COMMAND
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//SwitchCaseStatement
+		public RuleCall getSwitchCaseStatementParserRuleCall_4_0() { return cSwitchCaseStatementParserRuleCall_4_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_4_1() { return cEND_COMMANDTerminalRuleCall_4_1; }
+	}
+	public class IfStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.IfStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExprExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
+		private final Keyword cEntaoKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Assignment cCommandsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_4_0 = (RuleCall)cCommandsAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cSenaoKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+		private final Assignment cElseCommandsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cElseCommandsAbstractCommandParserRuleCall_5_2_0 = (RuleCall)cElseCommandsAssignment_5_2.eContents().get(0);
+		private final Keyword cFimseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//IfStatement:
+		//	'se' expr=Expression 'entao' END_COMMAND
+		//	commands+=AbstractCommand+ ('senao' END_COMMAND elseCommands+=AbstractCommand+)?
+		//	'fimse';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'leia' '(' paramList=DeclaredVar ')'
+		//'se' expr=Expression 'entao' END_COMMAND commands+=AbstractCommand+ ('senao' END_COMMAND
+		//elseCommands+=AbstractCommand+)? 'fimse'
 		public Group getGroup() { return cGroup; }
 		
-		//'leia'
-		public Keyword getLeiaKeyword_0() { return cLeiaKeyword_0; }
+		//'se'
+		public Keyword getSeKeyword_0() { return cSeKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//expr=Expression
+		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
 		
-		//paramList=DeclaredVar
-		public Assignment getParamListAssignment_2() { return cParamListAssignment_2; }
+		//Expression
+		public RuleCall getExprExpressionParserRuleCall_1_0() { return cExprExpressionParserRuleCall_1_0; }
 		
-		//DeclaredVar
-		public RuleCall getParamListDeclaredVarParserRuleCall_2_0() { return cParamListDeclaredVarParserRuleCall_2_0; }
+		//'entao'
+		public Keyword getEntaoKeyword_2() { return cEntaoKeyword_2; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_3() { return cEND_COMMANDTerminalRuleCall_3; }
+		
+		//commands+=AbstractCommand+
+		public Assignment getCommandsAssignment_4() { return cCommandsAssignment_4; }
+		
+		//AbstractCommand
+		public RuleCall getCommandsAbstractCommandParserRuleCall_4_0() { return cCommandsAbstractCommandParserRuleCall_4_0; }
+		
+		//('senao' END_COMMAND elseCommands+=AbstractCommand+)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'senao'
+		public Keyword getSenaoKeyword_5_0() { return cSenaoKeyword_5_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_5_1() { return cEND_COMMANDTerminalRuleCall_5_1; }
+		
+		//elseCommands+=AbstractCommand+
+		public Assignment getElseCommandsAssignment_5_2() { return cElseCommandsAssignment_5_2; }
+		
+		//AbstractCommand
+		public RuleCall getElseCommandsAbstractCommandParserRuleCall_5_2_0() { return cElseCommandsAbstractCommandParserRuleCall_5_2_0; }
+		
+		//'fimse'
+		public Keyword getFimseKeyword_6() { return cFimseKeyword_6; }
 	}
-	public class WriteCommandElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteCommand");
+	public class SwitchCaseStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.SwitchCaseStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEscrevaKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cWriteParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cWriteParamWriteParamParserRuleCall_2_0 = (RuleCall)cWriteParamAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cEscolhaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cVariableVarNameCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
+		private final RuleCall cVariableVarNameIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableVarNameCrossReference_1_0.eContents().get(1);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cCaseListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCaseListCaseListParserRuleCall_3_0 = (RuleCall)cCaseListAssignment_3.eContents().get(0);
+		private final Assignment cOtherCaseAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOtherCaseOtherCaseParserRuleCall_4_0 = (RuleCall)cOtherCaseAssignment_4.eContents().get(0);
+		private final Keyword cFimescolhaKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//WriteCommand:
-		//	'escreva' '(' writeParam=WriteParam ')';
+		//SwitchCaseStatement:
+		//	'escolha' variable=[VarName] END_COMMAND
+		//	caseList+=CaseList+
+		//	otherCase=OtherCase?
+		//	'fimescolha';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'escreva' '(' writeParam=WriteParam ')'
+		//'escolha' variable=[VarName] END_COMMAND caseList+=CaseList+ otherCase=OtherCase? 'fimescolha'
 		public Group getGroup() { return cGroup; }
 		
-		//'escreva'
-		public Keyword getEscrevaKeyword_0() { return cEscrevaKeyword_0; }
+		//'escolha'
+		public Keyword getEscolhaKeyword_0() { return cEscolhaKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//variable=[VarName]
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
 		
-		//writeParam=WriteParam
-		public Assignment getWriteParamAssignment_2() { return cWriteParamAssignment_2; }
+		//[VarName]
+		public CrossReference getVariableVarNameCrossReference_1_0() { return cVariableVarNameCrossReference_1_0; }
 		
-		//WriteParam
-		public RuleCall getWriteParamWriteParamParserRuleCall_2_0() { return cWriteParamWriteParamParserRuleCall_2_0; }
+		//ID
+		public RuleCall getVariableVarNameIDTerminalRuleCall_1_0_1() { return cVariableVarNameIDTerminalRuleCall_1_0_1; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
+		
+		//caseList+=CaseList+
+		public Assignment getCaseListAssignment_3() { return cCaseListAssignment_3; }
+		
+		//CaseList
+		public RuleCall getCaseListCaseListParserRuleCall_3_0() { return cCaseListCaseListParserRuleCall_3_0; }
+		
+		//otherCase=OtherCase?
+		public Assignment getOtherCaseAssignment_4() { return cOtherCaseAssignment_4; }
+		
+		//OtherCase
+		public RuleCall getOtherCaseOtherCaseParserRuleCall_4_0() { return cOtherCaseOtherCaseParserRuleCall_4_0; }
+		
+		//'fimescolha'
+		public Keyword getFimescolhaKeyword_5() { return cFimescolhaKeyword_5; }
 	}
-	public class WriteParamElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteParam");
+	public class CaseListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.CaseList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCasoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExprExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCommandsAbstractCommandParserRuleCall_3_0 = (RuleCall)cCommandsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cBreakStatementAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final Keyword cBreakStatementInterrompaKeyword_4_0_0 = (Keyword)cBreakStatementAssignment_4_0.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		
+		//CaseList:
+		//	'caso' expr=Expression END_COMMAND
+		//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'caso' expr=Expression END_COMMAND commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		public Group getGroup() { return cGroup; }
+		
+		//'caso'
+		public Keyword getCasoKeyword_0() { return cCasoKeyword_0; }
+		
+		//expr=Expression
+		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
+		
+		//Expression
+		public RuleCall getExprExpressionParserRuleCall_1_0() { return cExprExpressionParserRuleCall_1_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_2() { return cEND_COMMANDTerminalRuleCall_2; }
+		
+		//commands+=AbstractCommand+
+		public Assignment getCommandsAssignment_3() { return cCommandsAssignment_3; }
+		
+		//AbstractCommand
+		public RuleCall getCommandsAbstractCommandParserRuleCall_3_0() { return cCommandsAbstractCommandParserRuleCall_3_0; }
+		
+		//(breakStatement?='interrompa' END_COMMAND)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//breakStatement?='interrompa'
+		public Assignment getBreakStatementAssignment_4_0() { return cBreakStatementAssignment_4_0; }
+		
+		//'interrompa'
+		public Keyword getBreakStatementInterrompaKeyword_4_0_0() { return cBreakStatementInterrompaKeyword_4_0_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_4_1() { return cEND_COMMANDTerminalRuleCall_4_1; }
+	}
+	public class OtherCaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OtherCase");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOutrocasoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cOtherCaseCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOtherCaseCommandsAbstractCommandParserRuleCall_2_0 = (RuleCall)cOtherCaseCommandsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cBreakStatementAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Keyword cBreakStatementInterrompaKeyword_3_0_0 = (Keyword)cBreakStatementAssignment_3_0.eContents().get(0);
+		private final RuleCall cEND_COMMANDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		
+		//OtherCase:
+		//	'outrocaso' END_COMMAND
+		//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'outrocaso' END_COMMAND otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		public Group getGroup() { return cGroup; }
+		
+		//'outrocaso'
+		public Keyword getOutrocasoKeyword_0() { return cOutrocasoKeyword_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_1() { return cEND_COMMANDTerminalRuleCall_1; }
+		
+		//otherCaseCommands+=AbstractCommand+
+		public Assignment getOtherCaseCommandsAssignment_2() { return cOtherCaseCommandsAssignment_2; }
+		
+		//AbstractCommand
+		public RuleCall getOtherCaseCommandsAbstractCommandParserRuleCall_2_0() { return cOtherCaseCommandsAbstractCommandParserRuleCall_2_0; }
+		
+		//(breakStatement?='interrompa' END_COMMAND)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//breakStatement?='interrompa'
+		public Assignment getBreakStatementAssignment_3_0() { return cBreakStatementAssignment_3_0; }
+		
+		//'interrompa'
+		public Keyword getBreakStatementInterrompaKeyword_3_0_0() { return cBreakStatementInterrompaKeyword_3_0_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDTerminalRuleCall_3_1() { return cEND_COMMANDTerminalRuleCall_3_1; }
+	}
+	public class SubprogramParamElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.SubprogramParam");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cExpressionExpressionParserRuleCall_0_0 = (RuleCall)cExpressionAssignment_0.eContents().get(0);
@@ -676,14 +865,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cExpressionExpressionParserRuleCall_1_1_0 = (RuleCall)cExpressionAssignment_1_1.eContents().get(0);
-		private final Assignment cPrecisionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPrecisionOptDecimalPrecisionParserRuleCall_2_0 = (RuleCall)cPrecisionAssignment_2.eContents().get(0);
 		
-		//WriteParam:
-		//	expression+=Expression (',' expression+=Expression)* precision=OptDecimalPrecision?;
+		//SubprogramParam:
+		//	expression+=Expression (',' expression+=Expression)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//expression+=Expression (',' expression+=Expression)* precision=OptDecimalPrecision?
+		//expression+=Expression (',' expression+=Expression)*
 		public Group getGroup() { return cGroup; }
 		
 		//expression+=Expression
@@ -703,12 +890,107 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_1_1_0() { return cExpressionExpressionParserRuleCall_1_1_0; }
+	}
+	public class ReadCommandElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ReadCommand");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeiaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParamListDeclaredVarListParserRuleCall_2_0 = (RuleCall)cParamListAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ReadCommand:
+		//	'leia' '(' paramList=DeclaredVarList ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'leia' '(' paramList=DeclaredVarList ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'leia'
+		public Keyword getLeiaKeyword_0() { return cLeiaKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//paramList=DeclaredVarList
+		public Assignment getParamListAssignment_2() { return cParamListAssignment_2; }
+		
+		//DeclaredVarList
+		public RuleCall getParamListDeclaredVarListParserRuleCall_2_0() { return cParamListDeclaredVarListParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class WriteCommandElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteCommand");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cWriteCommandAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cWriteCommandAlternatives_0_0 = (Alternatives)cWriteCommandAssignment_0.eContents().get(0);
+		private final Keyword cWriteCommandEscrevaKeyword_0_0_0 = (Keyword)cWriteCommandAlternatives_0_0.eContents().get(0);
+		private final Keyword cWriteCommandEscrevalKeyword_0_0_1 = (Keyword)cWriteCommandAlternatives_0_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cWriteParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cWriteParamWriteParamParserRuleCall_2_0 = (RuleCall)cWriteParamAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//WriteCommand:
+		//	writeCommand=('escreva' | 'escreval') '(' writeParam=WriteParam ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//writeCommand=('escreva' | 'escreval') '(' writeParam=WriteParam ')'
+		public Group getGroup() { return cGroup; }
+		
+		//writeCommand=('escreva' | 'escreval')
+		public Assignment getWriteCommandAssignment_0() { return cWriteCommandAssignment_0; }
+		
+		//('escreva' | 'escreval')
+		public Alternatives getWriteCommandAlternatives_0_0() { return cWriteCommandAlternatives_0_0; }
+		
+		//'escreva'
+		public Keyword getWriteCommandEscrevaKeyword_0_0_0() { return cWriteCommandEscrevaKeyword_0_0_0; }
+		
+		//'escreval'
+		public Keyword getWriteCommandEscrevalKeyword_0_0_1() { return cWriteCommandEscrevalKeyword_0_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//writeParam=WriteParam
+		public Assignment getWriteParamAssignment_2() { return cWriteParamAssignment_2; }
+		
+		//WriteParam
+		public RuleCall getWriteParamWriteParamParserRuleCall_2_0() { return cWriteParamWriteParamParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class WriteParamElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.WriteParam");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cParamsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cParamsSubprogramParamParserRuleCall_0_0 = (RuleCall)cParamsAssignment_0.eContents().get(0);
+		private final Assignment cPrecisionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPrecisionOptDecimalPrecisionParserRuleCall_1_0 = (RuleCall)cPrecisionAssignment_1.eContents().get(0);
+		
+		//WriteParam:
+		//	params=SubprogramParam precision=OptDecimalPrecision?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//params=SubprogramParam precision=OptDecimalPrecision?
+		public Group getGroup() { return cGroup; }
+		
+		//params=SubprogramParam
+		public Assignment getParamsAssignment_0() { return cParamsAssignment_0; }
+		
+		//SubprogramParam
+		public RuleCall getParamsSubprogramParamParserRuleCall_0_0() { return cParamsSubprogramParamParserRuleCall_0_0; }
 		
 		//precision=OptDecimalPrecision?
-		public Assignment getPrecisionAssignment_2() { return cPrecisionAssignment_2; }
+		public Assignment getPrecisionAssignment_1() { return cPrecisionAssignment_1; }
 		
 		//OptDecimalPrecision
-		public RuleCall getPrecisionOptDecimalPrecisionParserRuleCall_2_0() { return cPrecisionOptDecimalPrecisionParserRuleCall_2_0; }
+		public RuleCall getPrecisionOptDecimalPrecisionParserRuleCall_1_0() { return cPrecisionOptDecimalPrecisionParserRuleCall_1_0; }
 	}
 	public class OptDecimalPrecisionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OptDecimalPrecision");
@@ -762,88 +1044,50 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Assignment");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cAssignmentAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cTargetAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final CrossReference cTargetVarNameCrossReference_0_1_0 = (CrossReference)cTargetAssignment_0_1.eContents().get(0);
-		private final RuleCall cTargetVarNameIDTerminalRuleCall_0_1_0_1 = (RuleCall)cTargetVarNameCrossReference_0_1_0.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cValueAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cValueAssignmentParserRuleCall_0_3_0 = (RuleCall)cValueAssignment_0_3.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cOrExpressionParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Group cGroup_1_1_0 = (Group)cGroup_1_1.eContents().get(0);
-		private final Group cGroup_1_1_0_0 = (Group)cGroup_1_1_0.eContents().get(0);
-		private final Action cBinaryOperationLeftAction_1_1_0_0_0 = (Action)cGroup_1_1_0_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_0_0_1 = (Assignment)cGroup_1_1_0_0.eContents().get(1);
-		private final Keyword cOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0 = (Keyword)cOpAssignment_1_1_0_0_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cRightAssignmentParserRuleCall_1_1_1_0 = (RuleCall)cRightAssignment_1_1_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cOrExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Action cBinaryOperationLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpLessThanSignHyphenMinusKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAssignmentParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//Assignment Expression:
-		//	{Assignment} target=[VarName] '<-' value=Assignment
-		//	| OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+		//	OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)*
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Assignment} target=[VarName] '<-' value=Assignment | OrExpression (=> ({BinaryOperation.left=current} op='<-')
-		//right=Assignment)?
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//{Assignment} target=[VarName] '<-' value=Assignment
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{Assignment}
-		public Action getAssignmentAction_0_0() { return cAssignmentAction_0_0; }
-		
-		//target=[VarName]
-		public Assignment getTargetAssignment_0_1() { return cTargetAssignment_0_1; }
-		
-		//[VarName]
-		public CrossReference getTargetVarNameCrossReference_0_1_0() { return cTargetVarNameCrossReference_0_1_0; }
-		
-		//ID
-		public RuleCall getTargetVarNameIDTerminalRuleCall_0_1_0_1() { return cTargetVarNameIDTerminalRuleCall_0_1_0_1; }
-		
-		//'<-'
-		public Keyword getLessThanSignHyphenMinusKeyword_0_2() { return cLessThanSignHyphenMinusKeyword_0_2; }
-		
-		//value=Assignment
-		public Assignment getValueAssignment_0_3() { return cValueAssignment_0_3; }
-		
-		//Assignment
-		public RuleCall getValueAssignmentParserRuleCall_0_3_0() { return cValueAssignmentParserRuleCall_0_3_0; }
-		
-		//OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
-		public Group getGroup_1() { return cGroup_1; }
+		//OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)*
+		public Group getGroup() { return cGroup; }
 		
 		//OrExpression
-		public RuleCall getOrExpressionParserRuleCall_1_0() { return cOrExpressionParserRuleCall_1_0; }
+		public RuleCall getOrExpressionParserRuleCall_0() { return cOrExpressionParserRuleCall_0; }
 		
-		//(=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
-		public Group getGroup_1_1() { return cGroup_1_1; }
+		//(=> ({BinaryOperation.left=current} op='<-') right=Assignment)*
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//=> ({BinaryOperation.left=current} op='<-')
-		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
+		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//({BinaryOperation.left=current} op='<-')
-		public Group getGroup_1_1_0_0() { return cGroup_1_1_0_0; }
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 		
 		//{BinaryOperation.left=current}
-		public Action getBinaryOperationLeftAction_1_1_0_0_0() { return cBinaryOperationLeftAction_1_1_0_0_0; }
+		public Action getBinaryOperationLeftAction_1_0_0_0() { return cBinaryOperationLeftAction_1_0_0_0; }
 		
 		//op='<-'
-		public Assignment getOpAssignment_1_1_0_0_1() { return cOpAssignment_1_1_0_0_1; }
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 		
 		//'<-'
-		public Keyword getOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0() { return cOpLessThanSignHyphenMinusKeyword_1_1_0_0_1_0; }
+		public Keyword getOpLessThanSignHyphenMinusKeyword_1_0_0_1_0() { return cOpLessThanSignHyphenMinusKeyword_1_0_0_1_0; }
 		
 		//right=Assignment
-		public Assignment getRightAssignment_1_1_1() { return cRightAssignment_1_1_1; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 		
 		//Assignment
-		public RuleCall getRightAssignmentParserRuleCall_1_1_1_0() { return cRightAssignmentParserRuleCall_1_1_1_0; }
+		public RuleCall getRightAssignmentParserRuleCall_1_1_0() { return cRightAssignmentParserRuleCall_1_1_0; }
 	}
 	public class OrExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OrExpression");
@@ -1288,14 +1532,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOpHyphenMinusKeyword_0_1_0_1 = (Keyword)cOpAlternatives_0_1_0.eContents().get(1);
 		private final Assignment cOperandAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cOperandUnaryExpressionParserRuleCall_0_2_0 = (RuleCall)cOperandAssignment_0_2.eContents().get(0);
-		private final RuleCall cMemberCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPrimaryExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//UnaryExpression Expression:
 		//	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * /
-		//	| MemberCall
+		//	| PrimaryExpression
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * / | MemberCall
+		//{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * / | PrimaryExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression
@@ -1322,81 +1566,28 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//UnaryExpression
 		public RuleCall getOperandUnaryExpressionParserRuleCall_0_2_0() { return cOperandUnaryExpressionParserRuleCall_0_2_0; }
 		
-		//MemberCall
-		public RuleCall getMemberCallParserRuleCall_1() { return cMemberCallParserRuleCall_1; }
-	}
-	public class MemberCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.MemberCall");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cPrimaryExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
-		private final Action cAssignmentAssignableAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
-		private final Assignment cFeatureAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
-		private final CrossReference cFeatureVarNameCrossReference_1_0_0_1_0 = (CrossReference)cFeatureAssignment_1_0_0_1.eContents().get(0);
-		private final RuleCall cFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1 = (RuleCall)cFeatureVarNameCrossReference_1_0_0_1_0.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusKeyword_1_0_0_2 = (Keyword)cGroup_1_0_0.eContents().get(2);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueAssignmentParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		
-		//MemberCall Expression:
-		//	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
-		@Override public ParserRule getRule() { return rule; }
-		
-		//PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
-		public Group getGroup() { return cGroup; }
-		
 		//PrimaryExpression
-		public RuleCall getPrimaryExpressionParserRuleCall_0() { return cPrimaryExpressionParserRuleCall_0; }
-		
-		//(=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//=> ({Assignment.assignable=current} feature=[VarName] '<-')
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//({Assignment.assignable=current} feature=[VarName] '<-')
-		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
-		
-		//{Assignment.assignable=current}
-		public Action getAssignmentAssignableAction_1_0_0_0() { return cAssignmentAssignableAction_1_0_0_0; }
-		
-		//feature=[VarName]
-		public Assignment getFeatureAssignment_1_0_0_1() { return cFeatureAssignment_1_0_0_1; }
-		
-		//[VarName]
-		public CrossReference getFeatureVarNameCrossReference_1_0_0_1_0() { return cFeatureVarNameCrossReference_1_0_0_1_0; }
-		
-		//ID
-		public RuleCall getFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1() { return cFeatureVarNameIDTerminalRuleCall_1_0_0_1_0_1; }
-		
-		//'<-'
-		public Keyword getLessThanSignHyphenMinusKeyword_1_0_0_2() { return cLessThanSignHyphenMinusKeyword_1_0_0_2; }
-		
-		//value=Assignment
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
-		
-		//Assignment
-		public RuleCall getValueAssignmentParserRuleCall_1_1_0() { return cValueAssignmentParserRuleCall_1_1_0; }
+		public RuleCall getPrimaryExpressionParserRuleCall_1() { return cPrimaryExpressionParserRuleCall_1; }
 	}
 	public class PrimaryExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PrimaryExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFunctionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final RuleCall cDeclaredVarParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//PrimaryExpression Expression:
 		//	Literal
 		//	| FunctionCall
+		//	| DeclaredVar
 		//	| '(' Expression ')'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Literal | FunctionCall | '(' Expression ')'
+		//Literal | FunctionCall | DeclaredVar | '(' Expression ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Literal
@@ -1405,17 +1596,20 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//FunctionCall
 		public RuleCall getFunctionCallParserRuleCall_1() { return cFunctionCallParserRuleCall_1; }
 		
+		//DeclaredVar
+		public RuleCall getDeclaredVarParserRuleCall_2() { return cDeclaredVarParserRuleCall_2; }
+		
 		//'(' Expression ')'
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 		
 		//Expression
-		public RuleCall getExpressionParserRuleCall_2_1() { return cExpressionParserRuleCall_2_1; }
+		public RuleCall getExpressionParserRuleCall_3_1() { return cExpressionParserRuleCall_3_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
+		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 	}
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionCall");
@@ -1425,14 +1619,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFbNameFunctionNameIDTerminalRuleCall_0_0_1 = (RuleCall)cFbNameFunctionNameCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamWriteParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
+		private final RuleCall cParamSubprogramParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FunctionCall Expression:
-		//	fbName=[FunctionName] '(' param=WriteParam ')'
+		//	fbName=[FunctionName] '(' param=SubprogramParam ')'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//fbName=[FunctionName] '(' param=WriteParam ')'
+		//fbName=[FunctionName] '(' param=SubprogramParam ')'
 		public Group getGroup() { return cGroup; }
 		
 		//fbName=[FunctionName]
@@ -1447,11 +1641,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//param=WriteParam
+		//param=SubprogramParam
 		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
 		
-		//WriteParam
-		public RuleCall getParamWriteParamParserRuleCall_2_0() { return cParamWriteParamParserRuleCall_2_0; }
+		//SubprogramParam
+		public RuleCall getParamSubprogramParamParserRuleCall_2_0() { return cParamSubprogramParamParserRuleCall_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1464,14 +1658,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFbNameProcedureNameIDTerminalRuleCall_0_0_1 = (RuleCall)cFbNameProcedureNameCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamWriteParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
+		private final RuleCall cParamSubprogramParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ProcedureCall Expression:
-		//	fbName=[ProcedureName] '(' param=WriteParam ')'
+		//	fbName=[ProcedureName] '(' param=SubprogramParam ')'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//fbName=[ProcedureName] '(' param=WriteParam ')'
+		//fbName=[ProcedureName] '(' param=SubprogramParam ')'
 		public Group getGroup() { return cGroup; }
 		
 		//fbName=[ProcedureName]
@@ -1486,11 +1680,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//param=WriteParam
+		//param=SubprogramParam
 		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
 		
-		//WriteParam
-		public RuleCall getParamWriteParamParserRuleCall_2_0() { return cParamWriteParamParserRuleCall_2_0; }
+		//SubprogramParam
+		public RuleCall getParamSubprogramParamParserRuleCall_2_0() { return cParamSubprogramParamParserRuleCall_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1513,6 +1707,25 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//StringExpression
 		public RuleCall getStringExpressionParserRuleCall_1() { return cStringExpressionParserRuleCall_1; }
+	}
+	public class DeclaredVarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.DeclaredVar");
+		private final Assignment cVarNameAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cVarNameVarNameCrossReference_0 = (CrossReference)cVarNameAssignment.eContents().get(0);
+		private final RuleCall cVarNameVarNameIDTerminalRuleCall_0_1 = (RuleCall)cVarNameVarNameCrossReference_0.eContents().get(1);
+		
+		//DeclaredVar:
+		//	varName=[VarName];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//varName=[VarName]
+		public Assignment getVarNameAssignment() { return cVarNameAssignment; }
+		
+		//[VarName]
+		public CrossReference getVarNameVarNameCrossReference_0() { return cVarNameVarNameCrossReference_0; }
+		
+		//ID
+		public RuleCall getVarNameVarNameIDTerminalRuleCall_0_1() { return cVarNameVarNameIDTerminalRuleCall_0_1; }
 	}
 	public class NumericLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.NumericLiteral");
@@ -1564,17 +1777,22 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final DeclarationsBlockElements pDeclarationsBlock;
 	private final VariableElements pVariable;
 	private final VarDeclarationElements pVarDeclaration;
-	private final DeclaredVarElements pDeclaredVar;
+	private final DeclaredVarListElements pDeclaredVarList;
 	private final VarNameElements pVarName;
 	private final VarTypeElements pVarType;
 	private final SubprogramsElements pSubprograms;
 	private final BlockSubProgramsElements pBlockSubPrograms;
-	private final FunctionNameElements pFunctionName;
 	private final ProcedureNameElements pProcedureName;
+	private final FunctionNameElements pFunctionName;
 	private final BlockFunctionElements pBlockFunction;
 	private final BlockProcedureElements pBlockProcedure;
 	private final BlockCommandElements pBlockCommand;
 	private final AbstractCommandElements pAbstractCommand;
+	private final IfStatementElements pIfStatement;
+	private final SwitchCaseStatementElements pSwitchCaseStatement;
+	private final CaseListElements pCaseList;
+	private final OtherCaseElements pOtherCase;
+	private final SubprogramParamElements pSubprogramParam;
 	private final ReadCommandElements pReadCommand;
 	private final WriteCommandElements pWriteCommand;
 	private final WriteParamElements pWriteParam;
@@ -1590,11 +1808,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final MultiplicativeExpressionElements pMultiplicativeExpression;
 	private final PowerExpressionElements pPowerExpression;
 	private final UnaryExpressionElements pUnaryExpression;
-	private final MemberCallElements pMemberCall;
 	private final PrimaryExpressionElements pPrimaryExpression;
 	private final FunctionCallElements pFunctionCall;
 	private final ProcedureCallElements pProcedureCall;
 	private final LiteralElements pLiteral;
+	private final DeclaredVarElements pDeclaredVar;
 	private final NumericLiteralElements pNumericLiteral;
 	private final StringExpressionElements pStringExpression;
 	private final TerminalRule tFLOAT;
@@ -1614,17 +1832,22 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDeclarationsBlock = new DeclarationsBlockElements();
 		this.pVariable = new VariableElements();
 		this.pVarDeclaration = new VarDeclarationElements();
-		this.pDeclaredVar = new DeclaredVarElements();
+		this.pDeclaredVarList = new DeclaredVarListElements();
 		this.pVarName = new VarNameElements();
 		this.pVarType = new VarTypeElements();
 		this.pSubprograms = new SubprogramsElements();
 		this.pBlockSubPrograms = new BlockSubProgramsElements();
-		this.pFunctionName = new FunctionNameElements();
 		this.pProcedureName = new ProcedureNameElements();
+		this.pFunctionName = new FunctionNameElements();
 		this.pBlockFunction = new BlockFunctionElements();
 		this.pBlockProcedure = new BlockProcedureElements();
 		this.pBlockCommand = new BlockCommandElements();
 		this.pAbstractCommand = new AbstractCommandElements();
+		this.pIfStatement = new IfStatementElements();
+		this.pSwitchCaseStatement = new SwitchCaseStatementElements();
+		this.pCaseList = new CaseListElements();
+		this.pOtherCase = new OtherCaseElements();
+		this.pSubprogramParam = new SubprogramParamElements();
 		this.pReadCommand = new ReadCommandElements();
 		this.pWriteCommand = new WriteCommandElements();
 		this.pWriteParam = new WriteParamElements();
@@ -1640,11 +1863,11 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMultiplicativeExpression = new MultiplicativeExpressionElements();
 		this.pPowerExpression = new PowerExpressionElements();
 		this.pUnaryExpression = new UnaryExpressionElements();
-		this.pMemberCall = new MemberCallElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pProcedureCall = new ProcedureCallElements();
 		this.pLiteral = new LiteralElements();
+		this.pDeclaredVar = new DeclaredVarElements();
 		this.pNumericLiteral = new NumericLiteralElements();
 		this.pStringExpression = new StringExpressionElements();
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FLOAT");
@@ -1692,7 +1915,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//HeaderBlock:
-	//	'algoritmo' name=STRING END_COMMAND;
+	//	'algoritmo' algorithmName=STRING END_COMMAND;
 	public HeaderBlockElements getHeaderBlockAccess() {
 		return pHeaderBlock;
 	}
@@ -1731,14 +1954,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getVarDeclarationAccess().getRule();
 	}
 	
-	//DeclaredVar:
+	//DeclaredVarList:
 	//	vars+=[VarName] (',' vars+=[VarName])*;
-	public DeclaredVarElements getDeclaredVarAccess() {
-		return pDeclaredVar;
+	public DeclaredVarListElements getDeclaredVarListAccess() {
+		return pDeclaredVarList;
 	}
 	
-	public ParserRule getDeclaredVarRule() {
-		return getDeclaredVarAccess().getRule();
+	public ParserRule getDeclaredVarListRule() {
+		return getDeclaredVarListAccess().getRule();
 	}
 	
 	//VarName:
@@ -1752,7 +1975,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//VarType:
-	//	typeName=('real' | 'inteiro' | 'caractere');
+	//	typeName=('real' | 'inteiro' | 'caractere' | 'caracter');
 	public VarTypeElements getVarTypeAccess() {
 		return pVarType;
 	}
@@ -1781,16 +2004,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlockSubProgramsAccess().getRule();
 	}
 	
-	//FunctionName:
-	//	name=ID;
-	public FunctionNameElements getFunctionNameAccess() {
-		return pFunctionName;
-	}
-	
-	public ParserRule getFunctionNameRule() {
-		return getFunctionNameAccess().getRule();
-	}
-	
 	//ProcedureName:
 	//	name=ID;
 	public ProcedureNameElements getProcedureNameAccess() {
@@ -1799,6 +2012,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getProcedureNameRule() {
 		return getProcedureNameAccess().getRule();
+	}
+	
+	//FunctionName:
+	//	name=ID;
+	public FunctionNameElements getFunctionNameAccess() {
+		return pFunctionName;
+	}
+	
+	public ParserRule getFunctionNameRule() {
+		return getFunctionNameAccess().getRule();
 	}
 	
 	//BlockFunction:
@@ -1832,7 +2055,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	//BlockCommand:
 	//	'inicio' END_COMMAND
 	//	commands+=AbstractCommand+
-	//	'fimalgoritmo' END_COMMAND;
+	//	'fimalgoritmo' END_COMMAND?;
 	public BlockCommandElements getBlockCommandAccess() {
 		return pBlockCommand;
 	}
@@ -1844,7 +2067,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	//AbstractCommand:
 	//	ReadCommand END_COMMAND
 	//	| WriteCommand END_COMMAND
-	//	| Expression END_COMMAND;
+	//	| Expression END_COMMAND
+	//	| IfStatement END_COMMAND
+	//	| SwitchCaseStatement END_COMMAND
+	//	//| ForStatement
+	//	//| WhileStatement
+	//	//| RepeatStatement
+	//;
 	public AbstractCommandElements getAbstractCommandAccess() {
 		return pAbstractCommand;
 	}
@@ -1853,8 +2082,65 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractCommandAccess().getRule();
 	}
 	
+	//IfStatement:
+	//	'se' expr=Expression 'entao' END_COMMAND
+	//	commands+=AbstractCommand+ ('senao' END_COMMAND elseCommands+=AbstractCommand+)?
+	//	'fimse';
+	public IfStatementElements getIfStatementAccess() {
+		return pIfStatement;
+	}
+	
+	public ParserRule getIfStatementRule() {
+		return getIfStatementAccess().getRule();
+	}
+	
+	//SwitchCaseStatement:
+	//	'escolha' variable=[VarName] END_COMMAND
+	//	caseList+=CaseList+
+	//	otherCase=OtherCase?
+	//	'fimescolha';
+	public SwitchCaseStatementElements getSwitchCaseStatementAccess() {
+		return pSwitchCaseStatement;
+	}
+	
+	public ParserRule getSwitchCaseStatementRule() {
+		return getSwitchCaseStatementAccess().getRule();
+	}
+	
+	//CaseList:
+	//	'caso' expr=Expression END_COMMAND
+	//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+	public CaseListElements getCaseListAccess() {
+		return pCaseList;
+	}
+	
+	public ParserRule getCaseListRule() {
+		return getCaseListAccess().getRule();
+	}
+	
+	//OtherCase:
+	//	'outrocaso' END_COMMAND
+	//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+	public OtherCaseElements getOtherCaseAccess() {
+		return pOtherCase;
+	}
+	
+	public ParserRule getOtherCaseRule() {
+		return getOtherCaseAccess().getRule();
+	}
+	
+	//SubprogramParam:
+	//	expression+=Expression (',' expression+=Expression)*;
+	public SubprogramParamElements getSubprogramParamAccess() {
+		return pSubprogramParam;
+	}
+	
+	public ParserRule getSubprogramParamRule() {
+		return getSubprogramParamAccess().getRule();
+	}
+	
 	//ReadCommand:
-	//	'leia' '(' paramList=DeclaredVar ')';
+	//	'leia' '(' paramList=DeclaredVarList ')';
 	public ReadCommandElements getReadCommandAccess() {
 		return pReadCommand;
 	}
@@ -1864,7 +2150,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WriteCommand:
-	//	'escreva' '(' writeParam=WriteParam ')';
+	//	writeCommand=('escreva' | 'escreval') '(' writeParam=WriteParam ')';
 	public WriteCommandElements getWriteCommandAccess() {
 		return pWriteCommand;
 	}
@@ -1874,7 +2160,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WriteParam:
-	//	expression+=Expression (',' expression+=Expression)* precision=OptDecimalPrecision?;
+	//	params=SubprogramParam precision=OptDecimalPrecision?;
 	public WriteParamElements getWriteParamAccess() {
 		return pWriteParam;
 	}
@@ -1904,8 +2190,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Assignment Expression:
-	//	{Assignment} target=[VarName] '<-' value=Assignment
-	//	| OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)?
+	//	OrExpression (=> ({BinaryOperation.left=current} op='<-') right=Assignment)*
 	public AssignmentElements getAssignmentAccess() {
 		return pAssignment;
 	}
@@ -1996,7 +2281,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//UnaryExpression Expression:
 	//	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression / * right associativity * /
-	//	| MemberCall
+	//	| PrimaryExpression
 	public UnaryExpressionElements getUnaryExpressionAccess() {
 		return pUnaryExpression;
 	}
@@ -2005,19 +2290,10 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnaryExpressionAccess().getRule();
 	}
 	
-	//MemberCall Expression:
-	//	PrimaryExpression (=> ({Assignment.assignable=current} feature=[VarName] '<-') value=Assignment)*
-	public MemberCallElements getMemberCallAccess() {
-		return pMemberCall;
-	}
-	
-	public ParserRule getMemberCallRule() {
-		return getMemberCallAccess().getRule();
-	}
-	
 	//PrimaryExpression Expression:
 	//	Literal
 	//	| FunctionCall
+	//	| DeclaredVar
 	//	| '(' Expression ')'
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return pPrimaryExpression;
@@ -2028,7 +2304,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FunctionCall Expression:
-	//	fbName=[FunctionName] '(' param=WriteParam ')'
+	//	fbName=[FunctionName] '(' param=SubprogramParam ')'
 	public FunctionCallElements getFunctionCallAccess() {
 		return pFunctionCall;
 	}
@@ -2038,7 +2314,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ProcedureCall Expression:
-	//	fbName=[ProcedureName] '(' param=WriteParam ')'
+	//	fbName=[ProcedureName] '(' param=SubprogramParam ')'
 	public ProcedureCallElements getProcedureCallAccess() {
 		return pProcedureCall;
 	}
@@ -2055,6 +2331,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLiteralRule() {
 		return getLiteralAccess().getRule();
+	}
+	
+	//DeclaredVar:
+	//	varName=[VarName];
+	public DeclaredVarElements getDeclaredVarAccess() {
+		return pDeclaredVar;
+	}
+	
+	public ParserRule getDeclaredVarRule() {
+		return getDeclaredVarAccess().getRule();
 	}
 	
 	//NumericLiteral:

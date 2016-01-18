@@ -21,7 +21,7 @@ import org.hopper.language.portugol.PortugolPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.HeaderBlockImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.HeaderBlockImpl#getAlgorithmName <em>Algorithm Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.hopper.language.portugol.PortugolPackage;
 public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements HeaderBlock
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getAlgorithmName() <em>Algorithm Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAlgorithmName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String ALGORITHM_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAlgorithmName() <em>Algorithm Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAlgorithmName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String algorithmName = ALGORITHM_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getAlgorithmName()
   {
-    return name;
+    return algorithmName;
   }
 
   /**
@@ -84,12 +84,12 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setAlgorithmName(String newAlgorithmName)
   {
-    String oldName = name;
-    name = newName;
+    String oldAlgorithmName = algorithmName;
+    algorithmName = newAlgorithmName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.HEADER_BLOCK__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.HEADER_BLOCK__ALGORITHM_NAME, oldAlgorithmName, algorithmName));
   }
 
   /**
@@ -102,8 +102,8 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
   {
     switch (featureID)
     {
-      case PortugolPackage.HEADER_BLOCK__NAME:
-        return getName();
+      case PortugolPackage.HEADER_BLOCK__ALGORITHM_NAME:
+        return getAlgorithmName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
   {
     switch (featureID)
     {
-      case PortugolPackage.HEADER_BLOCK__NAME:
-        setName((String)newValue);
+      case PortugolPackage.HEADER_BLOCK__ALGORITHM_NAME:
+        setAlgorithmName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
   {
     switch (featureID)
     {
-      case PortugolPackage.HEADER_BLOCK__NAME:
-        setName(NAME_EDEFAULT);
+      case PortugolPackage.HEADER_BLOCK__ALGORITHM_NAME:
+        setAlgorithmName(ALGORITHM_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
   {
     switch (featureID)
     {
-      case PortugolPackage.HEADER_BLOCK__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PortugolPackage.HEADER_BLOCK__ALGORITHM_NAME:
+        return ALGORITHM_NAME_EDEFAULT == null ? algorithmName != null : !ALGORITHM_NAME_EDEFAULT.equals(algorithmName);
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +169,8 @@ public class HeaderBlockImpl extends MinimalEObjectImpl.Container implements Hea
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (algorithmName: ");
+    result.append(algorithmName);
     result.append(')');
     return result.toString();
   }

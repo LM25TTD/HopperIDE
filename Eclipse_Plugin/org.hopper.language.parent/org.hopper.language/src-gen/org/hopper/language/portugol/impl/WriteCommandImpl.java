@@ -23,6 +23,7 @@ import org.hopper.language.portugol.WriteParam;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.hopper.language.portugol.impl.WriteCommandImpl#getWriteCommand <em>Write Command</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.WriteCommandImpl#getWriteParam <em>Write Param</em>}</li>
  * </ul>
  *
@@ -30,6 +31,26 @@ import org.hopper.language.portugol.WriteParam;
  */
 public class WriteCommandImpl extends AbstractCommandImpl implements WriteCommand
 {
+  /**
+   * The default value of the '{@link #getWriteCommand() <em>Write Command</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWriteCommand()
+   * @generated
+   * @ordered
+   */
+  protected static final String WRITE_COMMAND_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getWriteCommand() <em>Write Command</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWriteCommand()
+   * @generated
+   * @ordered
+   */
+  protected String writeCommand = WRITE_COMMAND_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getWriteParam() <em>Write Param</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +80,29 @@ public class WriteCommandImpl extends AbstractCommandImpl implements WriteComman
   protected EClass eStaticClass()
   {
     return PortugolPackage.Literals.WRITE_COMMAND;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getWriteCommand()
+  {
+    return writeCommand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWriteCommand(String newWriteCommand)
+  {
+    String oldWriteCommand = writeCommand;
+    writeCommand = newWriteCommand;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.WRITE_COMMAND__WRITE_COMMAND, oldWriteCommand, writeCommand));
   }
 
   /**
@@ -135,6 +179,8 @@ public class WriteCommandImpl extends AbstractCommandImpl implements WriteComman
   {
     switch (featureID)
     {
+      case PortugolPackage.WRITE_COMMAND__WRITE_COMMAND:
+        return getWriteCommand();
       case PortugolPackage.WRITE_COMMAND__WRITE_PARAM:
         return getWriteParam();
     }
@@ -151,6 +197,9 @@ public class WriteCommandImpl extends AbstractCommandImpl implements WriteComman
   {
     switch (featureID)
     {
+      case PortugolPackage.WRITE_COMMAND__WRITE_COMMAND:
+        setWriteCommand((String)newValue);
+        return;
       case PortugolPackage.WRITE_COMMAND__WRITE_PARAM:
         setWriteParam((WriteParam)newValue);
         return;
@@ -168,6 +217,9 @@ public class WriteCommandImpl extends AbstractCommandImpl implements WriteComman
   {
     switch (featureID)
     {
+      case PortugolPackage.WRITE_COMMAND__WRITE_COMMAND:
+        setWriteCommand(WRITE_COMMAND_EDEFAULT);
+        return;
       case PortugolPackage.WRITE_COMMAND__WRITE_PARAM:
         setWriteParam((WriteParam)null);
         return;
@@ -185,10 +237,29 @@ public class WriteCommandImpl extends AbstractCommandImpl implements WriteComman
   {
     switch (featureID)
     {
+      case PortugolPackage.WRITE_COMMAND__WRITE_COMMAND:
+        return WRITE_COMMAND_EDEFAULT == null ? writeCommand != null : !WRITE_COMMAND_EDEFAULT.equals(writeCommand);
       case PortugolPackage.WRITE_COMMAND__WRITE_PARAM:
         return writeParam != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (writeCommand: ");
+    result.append(writeCommand);
+    result.append(')');
+    return result.toString();
   }
 
 } //WriteCommandImpl

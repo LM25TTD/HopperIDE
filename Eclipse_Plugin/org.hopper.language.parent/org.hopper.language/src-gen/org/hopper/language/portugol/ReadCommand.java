@@ -31,12 +31,12 @@ public interface ReadCommand extends AbstractCommand
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Param List</em>' containment reference.
-   * @see #setParamList(DeclaredVar)
+   * @see #setParamList(DeclaredVarList)
    * @see org.hopper.language.portugol.PortugolPackage#getReadCommand_ParamList()
    * @model containment="true"
    * @generated
    */
-  DeclaredVar getParamList();
+  DeclaredVarList getParamList();
 
   /**
    * Sets the value of the '{@link org.hopper.language.portugol.ReadCommand#getParamList <em>Param List</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface ReadCommand extends AbstractCommand
    * @see #getParamList()
    * @generated
    */
-  void setParamList(DeclaredVar value);
+  void setParamList(DeclaredVarList value);
 
 } // ReadCommand

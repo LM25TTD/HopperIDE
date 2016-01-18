@@ -108,10 +108,10 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.DECLARED_VAR:
+      case PortugolPackage.DECLARED_VAR_LIST:
       {
-        DeclaredVar declaredVar = (DeclaredVar)theEObject;
-        T result = caseDeclaredVar(declaredVar);
+        DeclaredVarList declaredVarList = (DeclaredVarList)theEObject;
+        T result = caseDeclaredVarList(declaredVarList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -143,17 +143,17 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.FUNCTION_NAME:
-      {
-        FunctionName functionName = (FunctionName)theEObject;
-        T result = caseFunctionName(functionName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case PortugolPackage.PROCEDURE_NAME:
       {
         ProcedureName procedureName = (ProcedureName)theEObject;
         T result = caseProcedureName(procedureName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.FUNCTION_NAME:
+      {
+        FunctionName functionName = (FunctionName)theEObject;
+        T result = caseFunctionName(functionName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -184,6 +184,43 @@ public class PortugolSwitch<T> extends Switch<T>
       {
         AbstractCommand abstractCommand = (AbstractCommand)theEObject;
         T result = caseAbstractCommand(abstractCommand);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.IF_STATEMENT:
+      {
+        IfStatement ifStatement = (IfStatement)theEObject;
+        T result = caseIfStatement(ifStatement);
+        if (result == null) result = caseAbstractCommand(ifStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.SWITCH_CASE_STATEMENT:
+      {
+        SwitchCaseStatement switchCaseStatement = (SwitchCaseStatement)theEObject;
+        T result = caseSwitchCaseStatement(switchCaseStatement);
+        if (result == null) result = caseAbstractCommand(switchCaseStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.CASE_LIST:
+      {
+        CaseList caseList = (CaseList)theEObject;
+        T result = caseCaseList(caseList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.OTHER_CASE:
+      {
+        OtherCase otherCase = (OtherCase)theEObject;
+        T result = caseOtherCase(otherCase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.SUBPROGRAM_PARAM:
+      {
+        SubprogramParam subprogramParam = (SubprogramParam)theEObject;
+        T result = caseSubprogramParam(subprogramParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -225,6 +262,15 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PortugolPackage.DECLARED_VAR:
+      {
+        DeclaredVar declaredVar = (DeclaredVar)theEObject;
+        T result = caseDeclaredVar(declaredVar);
+        if (result == null) result = caseExpression(declaredVar);
+        if (result == null) result = caseAbstractCommand(declaredVar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PortugolPackage.NUMERIC_LITERAL:
       {
         NumericLiteral numericLiteral = (NumericLiteral)theEObject;
@@ -240,15 +286,6 @@ public class PortugolSwitch<T> extends Switch<T>
         T result = caseStringExpression(stringExpression);
         if (result == null) result = caseExpression(stringExpression);
         if (result == null) result = caseAbstractCommand(stringExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case PortugolPackage.ASSIGNMENT:
-      {
-        Assignment assignment = (Assignment)theEObject;
-        T result = caseAssignment(assignment);
-        if (result == null) result = caseExpression(assignment);
-        if (result == null) result = caseAbstractCommand(assignment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -355,17 +392,17 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Declared Var</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Declared Var List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Declared Var</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Declared Var List</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeclaredVar(DeclaredVar object)
+  public T caseDeclaredVarList(DeclaredVarList object)
   {
     return null;
   }
@@ -435,22 +472,6 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFunctionName(FunctionName object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Procedure Name</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -462,6 +483,22 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProcedureName(ProcedureName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionName(FunctionName object)
   {
     return null;
   }
@@ -526,6 +563,86 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractCommand(AbstractCommand object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Switch Case Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Switch Case Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSwitchCaseStatement(SwitchCaseStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Case List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Case List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCaseList(CaseList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Other Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Other Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOtherCase(OtherCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subprogram Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subprogram Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubprogramParam(SubprogramParam object)
   {
     return null;
   }
@@ -611,6 +728,22 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Declared Var</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declared Var</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaredVar(DeclaredVar object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Numeric Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -638,22 +771,6 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringExpression(StringExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAssignment(Assignment object)
   {
     return null;
   }

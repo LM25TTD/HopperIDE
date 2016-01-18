@@ -20,7 +20,7 @@ class PortugolParsingTest {
 	ParseHelper<Model> parseHelper;
 
 	@Test
-	def void loadModel() {
+	def void testIfScenario1() {
 		val result = parseHelper.parse('''
 			algoritmo "Maior_de_dois"
 			// Função : Faça um Programa que peça dois números e imprima o maior deles.
@@ -47,4 +47,340 @@ class PortugolParsingTest {
 		Assert.assertNotNull(result)
 	}
 
+	@Test
+	def void testIfScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "Negativo_ou_positivo"
+			// Função : Faça um Programa que peça um valor
+			//          e mostre na tela se o valor é positivo ou negativo.
+			// Autor : Iasmim Cunha
+			// Data : 5/8/2013
+			// Seção de Declarações 
+			var
+			  valor : real
+			inicio
+			// Seção de Comandos
+			escreval("Entre com o primeiro valor...")
+			leia(primeiro)
+			escreval("Entre com o segundo valor...")
+			leia(segundo)
+			
+			   se(primeiro > segundo) entao
+			       escreval("O maior valor entre os números é:",primeiro)
+			   senao
+			       escreval("O maior valor entre os números é:",segundo)
+			   fimse
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testIfScenario3() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_05"
+			
+			// Descricao : Programa faz a leitura de duas notas parciais de um aluno e
+			//             calcula e mostra a média alcançada pelo aluno.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			var
+			    media, nota_parcial1, nota_parcial2:real
+			inicio
+				// Faz a leitura das duas notas reais do aluno.
+				   escreva("informe sua primeira nota parcial: ")
+				   leia(nota_parcial1)
+				   escreva("informe sua segunda nota parcial: ")
+				   leia(nota_parcial2)	
+				// Faz o calculo da media aritmetica, consulte http://pt.wikipedia.org/wiki/M%C3%A9dia_aritm%C3%A9tica.
+				   media <- (nota_parcial1 + nota_parcial2)/2
+				// Realiza a comparacao do valor da media e exibe a mensagem correspondente.
+				se media = 10.0 entao
+				       escreva("Aprovado com Distincao com a media de: ", media:2:2)
+				   senao
+				       se media >= 7.0 entao
+				           escreva("Aprovado com a media de: ", media:2:2)
+				       senao
+				           se media < 7.0 entao
+				               escreva("Reprovado com a media de: ", media:2:2)
+				           fimse
+				      fimse
+				  fimse  
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testIfScenario4() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_06"
+			
+			// Descricao : Programa que le três números inteiros e mostra o maior deles.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			var
+			    num1, num2, num3, maior:inteiro
+			
+			inicio
+				// Faz a leitura dos 3 numeros inteiros.
+				   escreva("Informe o primeiro numero: ")
+				   leia(num1)
+				   escreva("Informe o segundo numero: ")
+				   leia(num2)
+				   escreva("Informe o terceiro numero: ")
+				   leia(num3)
+				   
+				// Faz a comparacao um a um para descobrir o maior valor informado
+				// e atribuir se valor para a variavel 'maior'.
+				
+				   se num1 > num2 entao
+				       se num1 > num3 entao
+				          maior <- num1
+				       senao
+				          maior <- num3
+				       fimse
+				  senao
+				       se num2 > num3  entao
+				           maior <- num2
+				       senao
+				            maior <- num3
+				       fimse
+				   fimse
+				// Exibe na tela maior valor informado.	
+				   escreva("O maior valor digitado foi: <", maior, ">")
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testIfScenario5() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_07"
+			
+			// Descricao : Programa que le três números e mostra o maior e o menor deles.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			
+			var
+			    num1, num2, num3, menor, maior:inteiro
+			
+			inicio
+				// Faz a leitura dos 3 numeros inteiros.
+				   escreva("Informe o primeiro numero: ")
+				   leia(num1)
+				   escreva("Informe o segundo numero: ")
+				   leia(num2)
+				   escreva("Informe o terceiro numero: ")
+				   leia(num3)
+				
+				// Faz a comparacao um a um para descobrir o maior e o menor valor informado
+				// e atribuir se valor para a variavel 'maior' e 'menor', respectivamente.
+				
+				   se num1 > num2 entao
+				       se num1 > num3 entao
+				           maior <- num1
+				           se num2 > num3 entao
+				               menor <- num3
+				           senao
+				               menor <- num2
+				           fimse
+				       senao
+				           maior <- num3
+				           menor <- num2
+				       fimse
+				   senao
+				       se num2 > num3  entao
+				           maior <- num2
+				           se num1 > num3 entao
+				               menor <- num3
+				           senao
+				               menor <- num1
+				           fimse
+				       senao
+				           maior <- num3
+				           menor <- num1
+				       fimse
+				   fimse
+				
+				// Exibe na tela maior e o menor valor informado.
+				   escreva("O maior valor digitado foi: <", maior)
+				   escreva("> e o menor valor digitado foi: <", menor,">")
+				   
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testIfScenario6() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_08"
+			
+			// Descrição : Programa que pergunta o preço de três produtos e
+			//             informe qual produto você deve comprar, sabendo
+			//             que a decisão é sempre pelo mais barato.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			var
+			    preco_prod1, preco_prod2, preco_prod3:real
+			
+			inicio
+			    // Faz a leitura dos 3 valores reais de cada produto.
+			    escreva("Informe o preco do primeiro produto R$: ")
+			    leia(preco_prod1)
+			    escreva("Informe o preco do segundo produto R$: ")
+			    leia(preco_prod2)
+			    escreva("Informe o preco do terceiro produto R$: ")
+			    leia(preco_prod3)
+				// Faz a comparacao um a um para descobrir o menor valor informado
+				// e exibe na tela qual e o produto mais barato.
+				   se preco_prod1 > preco_prod2 entao
+				       se preco_prod2 > preco_prod3 entao
+				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3)
+				       senao
+				           escreva("Recomendamos o segundo produto, com o preco de R$: ", preco_prod2)
+				       fimse
+				   senao
+				       se preco_prod3 > preco_prod1 entao
+				           escreva("Recomendamos o primeiro produto, com o preco de R$: ", preco_prod1)
+				       senao
+				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3)
+				       fimse
+				   fimse
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testIfScenario7() {
+		val result = parseHelper.parse('''
+			algoritmo "decrescente"
+			// Função : Lê três números e os mostra em ordem decrescente
+			// Autor :  Leandro Bentes
+			var
+			   num1, num2, num3: inteiro
+			inicio
+			      escreval("Entre com tres numeros: ")
+			      leia(num1, num2, num3)//Faz a leitura dos tres numeros
+			      
+			      escreva("Numeros em ordem decrescente: ")
+			      
+			      //Este bloco testa todas as possibilidades de ordem para os tres numeros
+			      //primeiro encontrando o maior, depois definindo a ordem do dois restantes\
+			      //imprimindo na tela conforme a ordem eh encontrada
+			      se (num1>=num2) e (num1>=num3) entao  //Numero 1 eh maior que todos
+			         escreva(num1, ", ") //Exibe na tela acompanhada de uma virgula
+			         se (num2>=num3) entao //Numero 2 eh maior que Num3
+			            escreva(num2, ", ")
+			            escreva(num3) //Apenas exibe na tela
+			         senao//Num 3 eh maior que num 2
+			            escreva(num3, ", ")
+			            escreva(num2)
+			         fimse
+			      senao
+			         se (num2>=num1) e (num2>=num3) entao //Numero 2 eh o maior de todos
+			           escreva(num2, ", ")
+			           se (num1>=num3) entao //Numero 1 eh maior que o numero 3
+			              escreva(num1, ", ")
+			              escreva(num3)
+			           senao //Numero 3 eh maior que o numero 1
+			                escreva(num3, ", ")
+			                escreva(num1)
+			           fimse
+			         senao
+			              se (num3>=num2) e (num3>=num1) entao //Numero 3 eh o maior de todos
+			                 escreva(num3, ", ")
+			                 se (num2>=num1) entao //Numero 2 eh maior que o numero 1
+			                    escreva(num2, ", ")
+			                    escreva(num1)
+			                 senao //Numero 1 eh maior que o numero 2
+			                    escreva(num1, ", ")
+			                    escreva(num2)
+			                 fimse
+			              fimse
+			         fimse
+			      fimse
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testCaseScenario1() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_03"
+			
+			// Descricao : Programa que verifica se uma letra digitada é "F" ou "M". 
+			//			   Conforme a letra, escreve: F - Feminino, M - Masculino, Sexo Inválido.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			var
+			    sexo_letra: caractere
+			
+			inicio
+				// Faz a leitura da letra.
+				   escreva("Informe seu sexo, F para feminino ou M para masculino: ")
+				   leia(sexo_letra)
+				   
+				// Faz a decisao da mensagem a ser mostrada. 
+				// O portugol nao e case sensitive, entao 'M' == 'm'.	
+				
+				   escolha sexo_letra
+				   caso "M"
+				       escreva("Seu sexo = M - masculino")
+				   caso "F"
+				    escreva("Seu sexo = F - feminino")
+				   outrocaso
+				       escreva("Sexo invalido")
+				   fimescolha 
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testCaseScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "questao_04"
+			
+			// Descricao: Programa que verifica se uma letra digitada é vogal ou consoante.
+			// Autor : Darlisson Jesus
+			// Data : 5/7/2013
+			var
+			    letra_digitada:caracter
+			
+			inicio
+				// Faz a leitura da letra.
+				   escreva("Digite uma letra do alfabeto: ")
+				   leia(letra_digitada)	
+				// Faz a decisao da mensagem a ser mostrada. 
+				   escolha letra_digitada	
+				  // Se a letra digitada nao se encaixa nos casos de vogal('a','e','i','o','u')
+				  // entao trata-se de um outro caso, uma consoante.   
+				   caso "a"
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
+				       interrompa
+				   caso "e"
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
+				       interrompa
+				   caso "i"
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
+				       interrompa
+				caso "o"
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
+				       interrompa
+				caso "u"
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
+				       interrompa
+				   outrocaso
+				       escreva("A letra <" ,letra_digitada,"> eh uma consoante")
+				       interrompa
+				   fimescolha
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
 }

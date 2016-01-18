@@ -59,12 +59,12 @@ public interface Expression extends AbstractCommand
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Param</em>' containment reference.
-   * @see #setParam(WriteParam)
+   * @see #setParam(SubprogramParam)
    * @see org.hopper.language.portugol.PortugolPackage#getExpression_Param()
    * @model containment="true"
    * @generated
    */
-  WriteParam getParam();
+  SubprogramParam getParam();
 
   /**
    * Sets the value of the '{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}' containment reference.
@@ -74,6 +74,6 @@ public interface Expression extends AbstractCommand
    * @see #getParam()
    * @generated
    */
-  void setParam(WriteParam value);
+  void setParam(SubprogramParam value);
 
 } // Expression

@@ -3,8 +3,6 @@
  */
 package org.hopper.language.portugol;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.WriteParam#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.WriteParam#getParams <em>Params</em>}</li>
  *   <li>{@link org.hopper.language.portugol.WriteParam#getPrecision <em>Precision</em>}</li>
  * </ul>
  *
@@ -27,20 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface WriteParam extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference list.
-   * The list contents are of type {@link org.hopper.language.portugol.Expression}.
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference list.
-   * @see org.hopper.language.portugol.PortugolPackage#getWriteParam_Expression()
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(SubprogramParam)
+   * @see org.hopper.language.portugol.PortugolPackage#getWriteParam_Params()
    * @model containment="true"
    * @generated
    */
-  EList<Expression> getExpression();
+  SubprogramParam getParams();
+
+  /**
+   * Sets the value of the '{@link org.hopper.language.portugol.WriteParam#getParams <em>Params</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
+   * @generated
+   */
+  void setParams(SubprogramParam value);
 
   /**
    * Returns the value of the '<em><b>Precision</b></em>' containment reference.

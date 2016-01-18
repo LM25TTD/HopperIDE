@@ -70,25 +70,30 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.DECLARATIONS_BLOCK: return createDeclarationsBlock();
       case PortugolPackage.VARIABLE: return createVariable();
       case PortugolPackage.VAR_DECLARATION: return createVarDeclaration();
-      case PortugolPackage.DECLARED_VAR: return createDeclaredVar();
+      case PortugolPackage.DECLARED_VAR_LIST: return createDeclaredVarList();
       case PortugolPackage.VAR_NAME: return createVarName();
       case PortugolPackage.VAR_TYPE: return createVarType();
       case PortugolPackage.SUBPROGRAMS: return createSubprograms();
       case PortugolPackage.BLOCK_SUB_PROGRAMS: return createBlockSubPrograms();
-      case PortugolPackage.FUNCTION_NAME: return createFunctionName();
       case PortugolPackage.PROCEDURE_NAME: return createProcedureName();
+      case PortugolPackage.FUNCTION_NAME: return createFunctionName();
       case PortugolPackage.BLOCK_FUNCTION: return createBlockFunction();
       case PortugolPackage.BLOCK_PROCEDURE: return createBlockProcedure();
       case PortugolPackage.BLOCK_COMMAND: return createBlockCommand();
       case PortugolPackage.ABSTRACT_COMMAND: return createAbstractCommand();
+      case PortugolPackage.IF_STATEMENT: return createIfStatement();
+      case PortugolPackage.SWITCH_CASE_STATEMENT: return createSwitchCaseStatement();
+      case PortugolPackage.CASE_LIST: return createCaseList();
+      case PortugolPackage.OTHER_CASE: return createOtherCase();
+      case PortugolPackage.SUBPROGRAM_PARAM: return createSubprogramParam();
       case PortugolPackage.READ_COMMAND: return createReadCommand();
       case PortugolPackage.WRITE_COMMAND: return createWriteCommand();
       case PortugolPackage.WRITE_PARAM: return createWriteParam();
       case PortugolPackage.OPT_DECIMAL_PRECISION: return createOptDecimalPrecision();
       case PortugolPackage.EXPRESSION: return createExpression();
+      case PortugolPackage.DECLARED_VAR: return createDeclaredVar();
       case PortugolPackage.NUMERIC_LITERAL: return createNumericLiteral();
       case PortugolPackage.STRING_EXPRESSION: return createStringExpression();
-      case PortugolPackage.ASSIGNMENT: return createAssignment();
       case PortugolPackage.BINARY_OPERATION: return createBinaryOperation();
       case PortugolPackage.UNARY_EXPRESSION: return createUnaryExpression();
       default:
@@ -156,10 +161,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DeclaredVar createDeclaredVar()
+  public DeclaredVarList createDeclaredVarList()
   {
-    DeclaredVarImpl declaredVar = new DeclaredVarImpl();
-    return declaredVar;
+    DeclaredVarListImpl declaredVarList = new DeclaredVarListImpl();
+    return declaredVarList;
   }
 
   /**
@@ -211,10 +216,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionName createFunctionName()
+  public ProcedureName createProcedureName()
   {
-    FunctionNameImpl functionName = new FunctionNameImpl();
-    return functionName;
+    ProcedureNameImpl procedureName = new ProcedureNameImpl();
+    return procedureName;
   }
 
   /**
@@ -222,10 +227,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProcedureName createProcedureName()
+  public FunctionName createFunctionName()
   {
-    ProcedureNameImpl procedureName = new ProcedureNameImpl();
-    return procedureName;
+    FunctionNameImpl functionName = new FunctionNameImpl();
+    return functionName;
   }
 
   /**
@@ -270,6 +275,61 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     AbstractCommandImpl abstractCommand = new AbstractCommandImpl();
     return abstractCommand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfStatement createIfStatement()
+  {
+    IfStatementImpl ifStatement = new IfStatementImpl();
+    return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SwitchCaseStatement createSwitchCaseStatement()
+  {
+    SwitchCaseStatementImpl switchCaseStatement = new SwitchCaseStatementImpl();
+    return switchCaseStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CaseList createCaseList()
+  {
+    CaseListImpl caseList = new CaseListImpl();
+    return caseList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OtherCase createOtherCase()
+  {
+    OtherCaseImpl otherCase = new OtherCaseImpl();
+    return otherCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubprogramParam createSubprogramParam()
+  {
+    SubprogramParamImpl subprogramParam = new SubprogramParamImpl();
+    return subprogramParam;
   }
 
   /**
@@ -332,6 +392,17 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DeclaredVar createDeclaredVar()
+  {
+    DeclaredVarImpl declaredVar = new DeclaredVarImpl();
+    return declaredVar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NumericLiteral createNumericLiteral()
   {
     NumericLiteralImpl numericLiteral = new NumericLiteralImpl();
@@ -347,17 +418,6 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     StringExpressionImpl stringExpression = new StringExpressionImpl();
     return stringExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Assignment createAssignment()
-  {
-    AssignmentImpl assignment = new AssignmentImpl();
-    return assignment;
   }
 
   /**

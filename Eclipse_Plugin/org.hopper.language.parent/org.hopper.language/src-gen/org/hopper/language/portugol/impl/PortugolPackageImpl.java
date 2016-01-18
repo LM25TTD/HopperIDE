@@ -11,26 +11,31 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.hopper.language.portugol.AbstractCommand;
-import org.hopper.language.portugol.Assignment;
 import org.hopper.language.portugol.BinaryOperation;
 import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
 import org.hopper.language.portugol.BlockSubPrograms;
+import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
+import org.hopper.language.portugol.DeclaredVarList;
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
+import org.hopper.language.portugol.IfStatement;
 import org.hopper.language.portugol.Model;
 import org.hopper.language.portugol.NumericLiteral;
 import org.hopper.language.portugol.OptDecimalPrecision;
+import org.hopper.language.portugol.OtherCase;
 import org.hopper.language.portugol.PortugolFactory;
 import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.StringExpression;
+import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.Subprograms;
+import org.hopper.language.portugol.SwitchCaseStatement;
 import org.hopper.language.portugol.UnaryExpression;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarName;
@@ -87,7 +92,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass declaredVarEClass = null;
+  private EClass declaredVarListEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,14 +127,14 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass functionNameEClass = null;
+  private EClass procedureNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass procedureNameEClass = null;
+  private EClass functionNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +163,41 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass abstractCommandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass switchCaseStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass caseListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass otherCaseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subprogramParamEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -199,6 +239,13 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass declaredVarEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass numericLiteralEClass = null;
 
   /**
@@ -207,13 +254,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass stringExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass assignmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -357,7 +397,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getHeaderBlock_Name()
+  public EAttribute getHeaderBlock_AlgorithmName()
   {
     return (EAttribute)headerBlockEClass.getEStructuralFeatures().get(0);
   }
@@ -437,9 +477,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDeclaredVar()
+  public EClass getDeclaredVarList()
   {
-    return declaredVarEClass;
+    return declaredVarListEClass;
   }
 
   /**
@@ -447,9 +487,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDeclaredVar_Vars()
+  public EReference getDeclaredVarList_Vars()
   {
-    return (EReference)declaredVarEClass.getEStructuralFeatures().get(0);
+    return (EReference)declaredVarListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -557,26 +597,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFunctionName()
-  {
-    return functionNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionName_Name()
-  {
-    return (EAttribute)functionNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getProcedureName()
   {
     return procedureNameEClass;
@@ -590,6 +610,26 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
   public EAttribute getProcedureName_Name()
   {
     return (EAttribute)procedureNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionName()
+  {
+    return functionNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionName_Name()
+  {
+    return (EAttribute)functionNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -677,6 +717,176 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getIfStatement()
+  {
+    return ifStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfStatement_Expr()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfStatement_Commands()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfStatement_ElseCommands()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSwitchCaseStatement()
+  {
+    return switchCaseStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitchCaseStatement_Variable()
+  {
+    return (EReference)switchCaseStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitchCaseStatement_CaseList()
+  {
+    return (EReference)switchCaseStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitchCaseStatement_OtherCase()
+  {
+    return (EReference)switchCaseStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCaseList()
+  {
+    return caseListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaseList_Expr()
+  {
+    return (EReference)caseListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaseList_Commands()
+  {
+    return (EReference)caseListEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCaseList_BreakStatement()
+  {
+    return (EAttribute)caseListEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOtherCase()
+  {
+    return otherCaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOtherCase_OtherCaseCommands()
+  {
+    return (EReference)otherCaseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOtherCase_BreakStatement()
+  {
+    return (EAttribute)otherCaseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSubprogramParam()
+  {
+    return subprogramParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubprogramParam_Expression()
+  {
+    return (EReference)subprogramParamEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getReadCommand()
   {
     return readCommandEClass;
@@ -707,9 +917,19 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWriteCommand_WriteCommand()
+  {
+    return (EAttribute)writeCommandEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getWriteCommand_WriteParam()
   {
-    return (EReference)writeCommandEClass.getEStructuralFeatures().get(0);
+    return (EReference)writeCommandEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -727,7 +947,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getWriteParam_Expression()
+  public EReference getWriteParam_Params()
   {
     return (EReference)writeParamEClass.getEStructuralFeatures().get(0);
   }
@@ -807,6 +1027,26 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDeclaredVar()
+  {
+    return declaredVarEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclaredVar_VarName()
+  {
+    return (EReference)declaredVarEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNumericLiteral()
   {
     return numericLiteralEClass;
@@ -850,56 +1090,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
   public EAttribute getStringExpression_LiteralString()
   {
     return (EAttribute)stringExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAssignment()
-  {
-    return assignmentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAssignment_Target()
-  {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAssignment_Value()
-  {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAssignment_Assignable()
-  {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAssignment_Feature()
-  {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1009,7 +1199,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(modelEClass, MODEL__COMMANDS);
 
     headerBlockEClass = createEClass(HEADER_BLOCK);
-    createEAttribute(headerBlockEClass, HEADER_BLOCK__NAME);
+    createEAttribute(headerBlockEClass, HEADER_BLOCK__ALGORITHM_NAME);
 
     declarationsBlockEClass = createEClass(DECLARATIONS_BLOCK);
     createEReference(declarationsBlockEClass, DECLARATIONS_BLOCK__VARS);
@@ -1021,8 +1211,8 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     varDeclarationEClass = createEClass(VAR_DECLARATION);
     createEReference(varDeclarationEClass, VAR_DECLARATION__VARS);
 
-    declaredVarEClass = createEClass(DECLARED_VAR);
-    createEReference(declaredVarEClass, DECLARED_VAR__VARS);
+    declaredVarListEClass = createEClass(DECLARED_VAR_LIST);
+    createEReference(declaredVarListEClass, DECLARED_VAR_LIST__VARS);
 
     varNameEClass = createEClass(VAR_NAME);
     createEAttribute(varNameEClass, VAR_NAME__NAME);
@@ -1038,11 +1228,11 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__DECLARATIONS);
     createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__COMMANDS);
 
-    functionNameEClass = createEClass(FUNCTION_NAME);
-    createEAttribute(functionNameEClass, FUNCTION_NAME__NAME);
-
     procedureNameEClass = createEClass(PROCEDURE_NAME);
     createEAttribute(procedureNameEClass, PROCEDURE_NAME__NAME);
+
+    functionNameEClass = createEClass(FUNCTION_NAME);
+    createEAttribute(functionNameEClass, FUNCTION_NAME__NAME);
 
     blockFunctionEClass = createEClass(BLOCK_FUNCTION);
     createEReference(blockFunctionEClass, BLOCK_FUNCTION__FUNCTION_NAME);
@@ -1056,14 +1246,37 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
 
+    ifStatementEClass = createEClass(IF_STATEMENT);
+    createEReference(ifStatementEClass, IF_STATEMENT__EXPR);
+    createEReference(ifStatementEClass, IF_STATEMENT__COMMANDS);
+    createEReference(ifStatementEClass, IF_STATEMENT__ELSE_COMMANDS);
+
+    switchCaseStatementEClass = createEClass(SWITCH_CASE_STATEMENT);
+    createEReference(switchCaseStatementEClass, SWITCH_CASE_STATEMENT__VARIABLE);
+    createEReference(switchCaseStatementEClass, SWITCH_CASE_STATEMENT__CASE_LIST);
+    createEReference(switchCaseStatementEClass, SWITCH_CASE_STATEMENT__OTHER_CASE);
+
+    caseListEClass = createEClass(CASE_LIST);
+    createEReference(caseListEClass, CASE_LIST__EXPR);
+    createEReference(caseListEClass, CASE_LIST__COMMANDS);
+    createEAttribute(caseListEClass, CASE_LIST__BREAK_STATEMENT);
+
+    otherCaseEClass = createEClass(OTHER_CASE);
+    createEReference(otherCaseEClass, OTHER_CASE__OTHER_CASE_COMMANDS);
+    createEAttribute(otherCaseEClass, OTHER_CASE__BREAK_STATEMENT);
+
+    subprogramParamEClass = createEClass(SUBPROGRAM_PARAM);
+    createEReference(subprogramParamEClass, SUBPROGRAM_PARAM__EXPRESSION);
+
     readCommandEClass = createEClass(READ_COMMAND);
     createEReference(readCommandEClass, READ_COMMAND__PARAM_LIST);
 
     writeCommandEClass = createEClass(WRITE_COMMAND);
+    createEAttribute(writeCommandEClass, WRITE_COMMAND__WRITE_COMMAND);
     createEReference(writeCommandEClass, WRITE_COMMAND__WRITE_PARAM);
 
     writeParamEClass = createEClass(WRITE_PARAM);
-    createEReference(writeParamEClass, WRITE_PARAM__EXPRESSION);
+    createEReference(writeParamEClass, WRITE_PARAM__PARAMS);
     createEReference(writeParamEClass, WRITE_PARAM__PRECISION);
 
     optDecimalPrecisionEClass = createEClass(OPT_DECIMAL_PRECISION);
@@ -1074,18 +1287,15 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(expressionEClass, EXPRESSION__FB_NAME);
     createEReference(expressionEClass, EXPRESSION__PARAM);
 
+    declaredVarEClass = createEClass(DECLARED_VAR);
+    createEReference(declaredVarEClass, DECLARED_VAR__VAR_NAME);
+
     numericLiteralEClass = createEClass(NUMERIC_LITERAL);
     createEAttribute(numericLiteralEClass, NUMERIC_LITERAL__INT_VALUE);
     createEAttribute(numericLiteralEClass, NUMERIC_LITERAL__FLOAT_VALUE);
 
     stringExpressionEClass = createEClass(STRING_EXPRESSION);
     createEAttribute(stringExpressionEClass, STRING_EXPRESSION__LITERAL_STRING);
-
-    assignmentEClass = createEClass(ASSIGNMENT);
-    createEReference(assignmentEClass, ASSIGNMENT__TARGET);
-    createEReference(assignmentEClass, ASSIGNMENT__VALUE);
-    createEReference(assignmentEClass, ASSIGNMENT__ASSIGNABLE);
-    createEReference(assignmentEClass, ASSIGNMENT__FEATURE);
 
     binaryOperationEClass = createEClass(BINARY_OPERATION);
     createEReference(binaryOperationEClass, BINARY_OPERATION__LEFT);
@@ -1128,12 +1338,14 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     // Add supertypes to classes
     blockFunctionEClass.getESuperTypes().add(this.getBlockSubPrograms());
     blockProcedureEClass.getESuperTypes().add(this.getBlockSubPrograms());
+    ifStatementEClass.getESuperTypes().add(this.getAbstractCommand());
+    switchCaseStatementEClass.getESuperTypes().add(this.getAbstractCommand());
     readCommandEClass.getESuperTypes().add(this.getAbstractCommand());
     writeCommandEClass.getESuperTypes().add(this.getAbstractCommand());
     expressionEClass.getESuperTypes().add(this.getAbstractCommand());
+    declaredVarEClass.getESuperTypes().add(this.getExpression());
     numericLiteralEClass.getESuperTypes().add(this.getExpression());
     stringExpressionEClass.getESuperTypes().add(this.getExpression());
-    assignmentEClass.getESuperTypes().add(this.getExpression());
     binaryOperationEClass.getESuperTypes().add(this.getExpression());
     unaryExpressionEClass.getESuperTypes().add(this.getExpression());
 
@@ -1145,7 +1357,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getModel_Commands(), this.getBlockCommand(), null, "commands", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(headerBlockEClass, HeaderBlock.class, "HeaderBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHeaderBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, HeaderBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHeaderBlock_AlgorithmName(), ecorePackage.getEString(), "algorithmName", null, 0, 1, HeaderBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationsBlockEClass, DeclarationsBlock.class, "DeclarationsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclarationsBlock_Vars(), this.getVariable(), null, "vars", null, 0, -1, DeclarationsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1157,8 +1369,8 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEClass(varDeclarationEClass, VarDeclaration.class, "VarDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVarDeclaration_Vars(), this.getVarName(), null, "vars", null, 0, -1, VarDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(declaredVarEClass, DeclaredVar.class, "DeclaredVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDeclaredVar_Vars(), this.getVarName(), null, "vars", null, 0, -1, DeclaredVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(declaredVarListEClass, DeclaredVarList.class, "DeclaredVarList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaredVarList_Vars(), this.getVarName(), null, "vars", null, 0, -1, DeclaredVarList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varNameEClass, VarName.class, "VarName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVarName_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1174,11 +1386,11 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getBlockSubPrograms_Declarations(), this.getDeclarationsBlock(), null, "declarations", null, 0, 1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBlockSubPrograms_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(functionNameEClass, FunctionName.class, "FunctionName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionName_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(procedureNameEClass, ProcedureName.class, "ProcedureName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProcedureName_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProcedureName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionNameEClass, FunctionName.class, "FunctionName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunctionName_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockFunctionEClass, BlockFunction.class, "BlockFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBlockFunction_FunctionName(), this.getFunctionName(), null, "functionName", null, 0, 1, BlockFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1192,14 +1404,37 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfStatement_Expr(), this.getExpression(), null, "expr", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_ElseCommands(), this.getAbstractCommand(), null, "elseCommands", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(switchCaseStatementEClass, SwitchCaseStatement.class, "SwitchCaseStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSwitchCaseStatement_Variable(), this.getVarName(), null, "variable", null, 0, 1, SwitchCaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitchCaseStatement_CaseList(), this.getCaseList(), null, "caseList", null, 0, -1, SwitchCaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitchCaseStatement_OtherCase(), this.getOtherCase(), null, "otherCase", null, 0, 1, SwitchCaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(caseListEClass, CaseList.class, "CaseList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCaseList_Expr(), this.getExpression(), null, "expr", null, 0, 1, CaseList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaseList_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, CaseList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCaseList_BreakStatement(), ecorePackage.getEBoolean(), "breakStatement", null, 0, 1, CaseList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(otherCaseEClass, OtherCase.class, "OtherCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOtherCase_OtherCaseCommands(), this.getAbstractCommand(), null, "otherCaseCommands", null, 0, -1, OtherCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOtherCase_BreakStatement(), ecorePackage.getEBoolean(), "breakStatement", null, 0, 1, OtherCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subprogramParamEClass, SubprogramParam.class, "SubprogramParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubprogramParam_Expression(), this.getExpression(), null, "expression", null, 0, -1, SubprogramParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(readCommandEClass, ReadCommand.class, "ReadCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReadCommand_ParamList(), this.getDeclaredVar(), null, "paramList", null, 0, 1, ReadCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReadCommand_ParamList(), this.getDeclaredVarList(), null, "paramList", null, 0, 1, ReadCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(writeCommandEClass, WriteCommand.class, "WriteCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWriteCommand_WriteCommand(), ecorePackage.getEString(), "writeCommand", null, 0, 1, WriteCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWriteCommand_WriteParam(), this.getWriteParam(), null, "writeParam", null, 0, 1, WriteCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(writeParamEClass, WriteParam.class, "WriteParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWriteParam_Expression(), this.getExpression(), null, "expression", null, 0, -1, WriteParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWriteParam_Params(), this.getSubprogramParam(), null, "params", null, 0, 1, WriteParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWriteParam_Precision(), this.getOptDecimalPrecision(), null, "precision", null, 0, 1, WriteParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optDecimalPrecisionEClass, OptDecimalPrecision.class, "OptDecimalPrecision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1208,7 +1443,10 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_FbName(), ecorePackage.getEObject(), null, "fbName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Param(), this.getWriteParam(), null, "param", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Param(), this.getSubprogramParam(), null, "param", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declaredVarEClass, DeclaredVar.class, "DeclaredVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaredVar_VarName(), this.getVarName(), null, "varName", null, 0, 1, DeclaredVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numericLiteralEClass, NumericLiteral.class, "NumericLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumericLiteral_IntValue(), ecorePackage.getEBoolean(), "intValue", null, 0, 1, NumericLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1216,12 +1454,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     initEClass(stringExpressionEClass, StringExpression.class, "StringExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStringExpression_LiteralString(), ecorePackage.getEString(), "literalString", null, 0, 1, StringExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssignment_Target(), this.getVarName(), null, "target", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssignment_Value(), this.getExpression(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssignment_Assignable(), this.getExpression(), null, "assignable", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssignment_Feature(), this.getVarName(), null, "feature", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binaryOperationEClass, BinaryOperation.class, "BinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinaryOperation_Left(), this.getExpression(), null, "left", null, 0, 1, BinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

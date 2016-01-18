@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.HeaderBlock#getName <em>Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.HeaderBlock#getAlgorithmName <em>Algorithm Name</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getHeaderBlock()
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface HeaderBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Algorithm Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Algorithm Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.hopper.language.portugol.PortugolPackage#getHeaderBlock_Name()
+   * @return the value of the '<em>Algorithm Name</em>' attribute.
+   * @see #setAlgorithmName(String)
+   * @see org.hopper.language.portugol.PortugolPackage#getHeaderBlock_AlgorithmName()
    * @model
    * @generated
    */
-  String getName();
+  String getAlgorithmName();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.HeaderBlock#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.hopper.language.portugol.HeaderBlock#getAlgorithmName <em>Algorithm Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Algorithm Name</em>' attribute.
+   * @see #getAlgorithmName()
    * @generated
    */
-  void setName(String value);
+  void setAlgorithmName(String value);
 
 } // HeaderBlock

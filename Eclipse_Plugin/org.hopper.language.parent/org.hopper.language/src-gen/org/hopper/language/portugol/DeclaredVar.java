@@ -3,9 +3,6 @@
  */
 package org.hopper.language.portugol;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,29 +13,39 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.DeclaredVar#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.DeclaredVar#getVarName <em>Var Name</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getDeclaredVar()
  * @model
  * @generated
  */
-public interface DeclaredVar extends EObject
+public interface DeclaredVar extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Vars</b></em>' reference list.
-   * The list contents are of type {@link org.hopper.language.portugol.VarName}.
+   * Returns the value of the '<em><b>Var Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Vars</em>' reference list isn't clear,
+   * If the meaning of the '<em>Var Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Vars</em>' reference list.
-   * @see org.hopper.language.portugol.PortugolPackage#getDeclaredVar_Vars()
+   * @return the value of the '<em>Var Name</em>' reference.
+   * @see #setVarName(VarName)
+   * @see org.hopper.language.portugol.PortugolPackage#getDeclaredVar_VarName()
    * @model
    * @generated
    */
-  EList<VarName> getVars();
+  VarName getVarName();
+
+  /**
+   * Sets the value of the '{@link org.hopper.language.portugol.DeclaredVar#getVarName <em>Var Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var Name</em>' reference.
+   * @see #getVarName()
+   * @generated
+   */
+  void setVarName(VarName value);
 
 } // DeclaredVar
