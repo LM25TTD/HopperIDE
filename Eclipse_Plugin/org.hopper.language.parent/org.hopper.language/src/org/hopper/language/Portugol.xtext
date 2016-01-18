@@ -68,10 +68,9 @@ AbstractCommand:
 	| Expression END_COMMAND
 	| IfStatement END_COMMAND
 	| SwitchCaseStatement END_COMMAND
-	//| ForStatement
-	//| WhileStatement
-	//| RepeatStatement
-;
+	| ForStatement END_COMMAND
+	| RepeatStatement END_COMMAND
+	| WhileStatement END_COMMAND;
 
 IfStatement:
 	'se' expr=Expression 'entao' END_COMMAND
@@ -94,6 +93,22 @@ OtherCase:
 	'outrocaso' END_COMMAND
 	(otherCaseCommands+=AbstractCommand)+
 	(breakStatement?='interrompa' END_COMMAND)?;
+
+ForStatement:
+	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
+	'faca' END_COMMAND
+	(commands+=AbstractCommand)+
+	'fimpara';
+
+WhileStatement:
+	'enquanto' whileExpr=Expression 'faca' END_COMMAND
+	(commands+=AbstractCommand)+
+	'fimenquanto';
+
+RepeatStatement:
+	'repita' END_COMMAND
+	(commands+=AbstractCommand)+
+	'ate' (untilExpr=Expression);
 
 SubprogramParam:
 	expression+=Expression (',' expression+=Expression)*;
@@ -145,10 +160,7 @@ UnaryExpression returns Expression:
 	| PrimaryExpression;
 
 PrimaryExpression returns Expression:
-	Literal
-	| FunctionCall
-	| DeclaredVar
-	| '(' Expression ')';
+	Literal | FunctionCall | DeclaredVar | '(' Expression ')';
 
 FunctionCall returns Expression:
 	fbName=[FunctionName] '(' param=SubprogramParam ')';
@@ -163,8 +175,7 @@ DeclaredVar:
 	varName=[VarName];
 
 NumericLiteral:
-	intValue?=INT
-	| floatValue?=FLOAT;
+	intValue?=INT | floatValue?=FLOAT;
 
 StringExpression:
 	literalString=STRING;

@@ -204,6 +204,33 @@ public interface PortugolFactory extends EFactory
   OtherCase createOtherCase();
 
   /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  ForStatement createForStatement();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
+
+  /**
+   * Returns a new object of class '<em>Repeat Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Repeat Statement</em>'.
+   * @generated
+   */
+  RepeatStatement createRepeatStatement();
+
+  /**
    * Returns a new object of class '<em>Subprogram Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

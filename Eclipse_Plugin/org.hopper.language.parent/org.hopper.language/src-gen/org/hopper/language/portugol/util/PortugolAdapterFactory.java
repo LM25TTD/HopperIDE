@@ -176,6 +176,21 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createOtherCaseAdapter();
       }
       @Override
+      public Adapter caseForStatement(ForStatement object)
+      {
+        return createForStatementAdapter();
+      }
+      @Override
+      public Adapter caseWhileStatement(WhileStatement object)
+      {
+        return createWhileStatementAdapter();
+      }
+      @Override
+      public Adapter caseRepeatStatement(RepeatStatement object)
+      {
+        return createRepeatStatementAdapter();
+      }
+      @Override
       public Adapter caseSubprogramParam(SubprogramParam object)
       {
         return createSubprogramParamAdapter();
@@ -548,6 +563,51 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOtherCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.ForStatement
+   * @generated
+   */
+  public Adapter createForStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.WhileStatement
+   * @generated
+   */
+  public Adapter createWhileStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.RepeatStatement <em>Repeat Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.RepeatStatement
+   * @generated
+   */
+  public Adapter createRepeatStatementAdapter()
   {
     return null;
   }

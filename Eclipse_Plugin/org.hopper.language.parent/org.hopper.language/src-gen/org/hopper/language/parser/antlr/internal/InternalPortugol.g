@@ -1093,6 +1093,51 @@ ruleAbstractCommand returns [EObject current=null]
 				newLeafNode(this_END_COMMAND_9, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_4_1());
 			}
 		)
+		    |
+		(
+			{
+				newCompositeNode(grammarAccess.getAbstractCommandAccess().getForStatementParserRuleCall_5_0());
+			}
+			this_ForStatement_10=ruleForStatement
+			{
+				$current = $this_ForStatement_10.current;
+				afterParserOrEnumRuleCall();
+			}
+			this_END_COMMAND_11=RULE_END_COMMAND
+			{
+				newLeafNode(this_END_COMMAND_11, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_5_1());
+			}
+		)
+		    |
+		(
+			{
+				newCompositeNode(grammarAccess.getAbstractCommandAccess().getRepeatStatementParserRuleCall_6_0());
+			}
+			this_RepeatStatement_12=ruleRepeatStatement
+			{
+				$current = $this_RepeatStatement_12.current;
+				afterParserOrEnumRuleCall();
+			}
+			this_END_COMMAND_13=RULE_END_COMMAND
+			{
+				newLeafNode(this_END_COMMAND_13, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_6_1());
+			}
+		)
+		    |
+		(
+			{
+				newCompositeNode(grammarAccess.getAbstractCommandAccess().getWhileStatementParserRuleCall_7_0());
+			}
+			this_WhileStatement_14=ruleWhileStatement
+			{
+				$current = $this_WhileStatement_14.current;
+				afterParserOrEnumRuleCall();
+			}
+			this_END_COMMAND_15=RULE_END_COMMAND
+			{
+				newLeafNode(this_END_COMMAND_15, grammarAccess.getAbstractCommandAccess().getEND_COMMANDTerminalRuleCall_7_1());
+			}
+		)
 	)
 ;
 
@@ -1428,6 +1473,292 @@ ruleOtherCase returns [EObject current=null]
 				newLeafNode(this_END_COMMAND_4, grammarAccess.getOtherCaseAccess().getEND_COMMANDTerminalRuleCall_3_1());
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleForStatement
+entryRuleForStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getForStatementRule()); }
+	iv_ruleForStatement=ruleForStatement
+	{ $current=$iv_ruleForStatement.current; }
+	EOF;
+
+// Rule ForStatement
+ruleForStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='para'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getForStatementAccess().getParaKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0());
+				}
+				lv_operatorExpr_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getForStatementRule());
+					}
+					set(
+						$current,
+						"operatorExpr",
+						lv_operatorExpr_1_0,
+						"org.hopper.language.Portugol.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='de'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getForStatementAccess().getDeKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getForStatementAccess().getStartExprExpressionParserRuleCall_3_0());
+				}
+				lv_startExpr_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getForStatementRule());
+					}
+					set(
+						$current,
+						"startExpr",
+						lv_startExpr_3_0,
+						"org.hopper.language.Portugol.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='ate'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getForStatementAccess().getAteKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getForStatementAccess().getEndExprExpressionParserRuleCall_5_0());
+				}
+				lv_endExpr_5_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getForStatementRule());
+					}
+					set(
+						$current,
+						"endExpr",
+						lv_endExpr_5_0,
+						"org.hopper.language.Portugol.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_6='passo'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getForStatementAccess().getPassoKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getForStatementAccess().getStepExpeExpressionParserRuleCall_6_1_0());
+					}
+					lv_stepExpe_7_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getForStatementRule());
+						}
+						set(
+							$current,
+							"stepExpe",
+							lv_stepExpe_7_0,
+							"org.hopper.language.Portugol.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_8='faca'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getForStatementAccess().getFacaKeyword_7());
+		}
+		this_END_COMMAND_9=RULE_END_COMMAND
+		{
+			newLeafNode(this_END_COMMAND_9, grammarAccess.getForStatementAccess().getEND_COMMANDTerminalRuleCall_8());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getForStatementAccess().getCommandsAbstractCommandParserRuleCall_9_0());
+				}
+				lv_commands_10_0=ruleAbstractCommand
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getForStatementRule());
+					}
+					add(
+						$current,
+						"commands",
+						lv_commands_10_0,
+						"org.hopper.language.Portugol.AbstractCommand");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_11='fimpara'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getForStatementAccess().getFimparaKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleWhileStatement
+entryRuleWhileStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWhileStatementRule()); }
+	iv_ruleWhileStatement=ruleWhileStatement
+	{ $current=$iv_ruleWhileStatement.current; }
+	EOF;
+
+// Rule WhileStatement
+ruleWhileStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='enquanto'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWhileStatementAccess().getEnquantoKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getWhileExprExpressionParserRuleCall_1_0());
+				}
+				lv_whileExpr_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					set(
+						$current,
+						"whileExpr",
+						lv_whileExpr_1_0,
+						"org.hopper.language.Portugol.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='faca'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWhileStatementAccess().getFacaKeyword_2());
+		}
+		this_END_COMMAND_3=RULE_END_COMMAND
+		{
+			newLeafNode(this_END_COMMAND_3, grammarAccess.getWhileStatementAccess().getEND_COMMANDTerminalRuleCall_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getCommandsAbstractCommandParserRuleCall_4_0());
+				}
+				lv_commands_4_0=ruleAbstractCommand
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					add(
+						$current,
+						"commands",
+						lv_commands_4_0,
+						"org.hopper.language.Portugol.AbstractCommand");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_5='fimenquanto'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getWhileStatementAccess().getFimenquantoKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleRepeatStatement
+entryRuleRepeatStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRepeatStatementRule()); }
+	iv_ruleRepeatStatement=ruleRepeatStatement
+	{ $current=$iv_ruleRepeatStatement.current; }
+	EOF;
+
+// Rule RepeatStatement
+ruleRepeatStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='repita'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRepeatStatementAccess().getRepitaKeyword_0());
+		}
+		this_END_COMMAND_1=RULE_END_COMMAND
+		{
+			newLeafNode(this_END_COMMAND_1, grammarAccess.getRepeatStatementAccess().getEND_COMMANDTerminalRuleCall_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRepeatStatementAccess().getCommandsAbstractCommandParserRuleCall_2_0());
+				}
+				lv_commands_2_0=ruleAbstractCommand
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRepeatStatementRule());
+					}
+					add(
+						$current,
+						"commands",
+						lv_commands_2_0,
+						"org.hopper.language.Portugol.AbstractCommand");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_3='ate'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRepeatStatementAccess().getAteKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRepeatStatementAccess().getUntilExprExpressionParserRuleCall_4_0());
+				}
+				lv_untilExpr_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRepeatStatementRule());
+					}
+					set(
+						$current,
+						"untilExpr",
+						lv_untilExpr_4_0,
+						"org.hopper.language.Portugol.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

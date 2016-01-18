@@ -21,6 +21,7 @@ import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.DeclaredVarList;
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
@@ -32,6 +33,7 @@ import org.hopper.language.portugol.PortugolFactory;
 import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
+import org.hopper.language.portugol.RepeatStatement;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.Subprograms;
@@ -41,6 +43,7 @@ import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarName;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
+import org.hopper.language.portugol.WhileStatement;
 import org.hopper.language.portugol.WriteCommand;
 import org.hopper.language.portugol.WriteParam;
 
@@ -191,6 +194,27 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass otherCaseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whileStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass repeatStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -867,6 +891,126 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getForStatement()
+  {
+    return forStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForStatement_OperatorExpr()
+  {
+    return (EReference)forStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForStatement_StartExpr()
+  {
+    return (EReference)forStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForStatement_EndExpr()
+  {
+    return (EReference)forStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForStatement_StepExpe()
+  {
+    return (EReference)forStatementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForStatement_Commands()
+  {
+    return (EReference)forStatementEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWhileStatement()
+  {
+    return whileStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWhileStatement_WhileExpr()
+  {
+    return (EReference)whileStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWhileStatement_Commands()
+  {
+    return (EReference)whileStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRepeatStatement()
+  {
+    return repeatStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRepeatStatement_Commands()
+  {
+    return (EReference)repeatStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRepeatStatement_UntilExpr()
+  {
+    return (EReference)repeatStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSubprogramParam()
   {
     return subprogramParamEClass;
@@ -1265,6 +1409,21 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(otherCaseEClass, OTHER_CASE__OTHER_CASE_COMMANDS);
     createEAttribute(otherCaseEClass, OTHER_CASE__BREAK_STATEMENT);
 
+    forStatementEClass = createEClass(FOR_STATEMENT);
+    createEReference(forStatementEClass, FOR_STATEMENT__OPERATOR_EXPR);
+    createEReference(forStatementEClass, FOR_STATEMENT__START_EXPR);
+    createEReference(forStatementEClass, FOR_STATEMENT__END_EXPR);
+    createEReference(forStatementEClass, FOR_STATEMENT__STEP_EXPE);
+    createEReference(forStatementEClass, FOR_STATEMENT__COMMANDS);
+
+    whileStatementEClass = createEClass(WHILE_STATEMENT);
+    createEReference(whileStatementEClass, WHILE_STATEMENT__WHILE_EXPR);
+    createEReference(whileStatementEClass, WHILE_STATEMENT__COMMANDS);
+
+    repeatStatementEClass = createEClass(REPEAT_STATEMENT);
+    createEReference(repeatStatementEClass, REPEAT_STATEMENT__COMMANDS);
+    createEReference(repeatStatementEClass, REPEAT_STATEMENT__UNTIL_EXPR);
+
     subprogramParamEClass = createEClass(SUBPROGRAM_PARAM);
     createEReference(subprogramParamEClass, SUBPROGRAM_PARAM__EXPRESSION);
 
@@ -1340,6 +1499,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     blockProcedureEClass.getESuperTypes().add(this.getBlockSubPrograms());
     ifStatementEClass.getESuperTypes().add(this.getAbstractCommand());
     switchCaseStatementEClass.getESuperTypes().add(this.getAbstractCommand());
+    forStatementEClass.getESuperTypes().add(this.getAbstractCommand());
+    whileStatementEClass.getESuperTypes().add(this.getAbstractCommand());
+    repeatStatementEClass.getESuperTypes().add(this.getAbstractCommand());
     readCommandEClass.getESuperTypes().add(this.getAbstractCommand());
     writeCommandEClass.getESuperTypes().add(this.getAbstractCommand());
     expressionEClass.getESuperTypes().add(this.getAbstractCommand());
@@ -1422,6 +1584,21 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEClass(otherCaseEClass, OtherCase.class, "OtherCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOtherCase_OtherCaseCommands(), this.getAbstractCommand(), null, "otherCaseCommands", null, 0, -1, OtherCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOtherCase_BreakStatement(), ecorePackage.getEBoolean(), "breakStatement", null, 0, 1, OtherCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getForStatement_OperatorExpr(), this.getExpression(), null, "operatorExpr", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForStatement_StartExpr(), this.getExpression(), null, "startExpr", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForStatement_EndExpr(), this.getExpression(), null, "endExpr", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForStatement_StepExpe(), this.getExpression(), null, "stepExpe", null, 0, 1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForStatement_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, ForStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhileStatement_WhileExpr(), this.getExpression(), null, "whileExpr", null, 0, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhileStatement_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRepeatStatement_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRepeatStatement_UntilExpr(), this.getExpression(), null, "untilExpr", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subprogramParamEClass, SubprogramParam.class, "SubprogramParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubprogramParam_Expression(), this.getExpression(), null, "expression", null, 0, -1, SubprogramParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -66,6 +66,9 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAbstractCommandAccess().getGroup_2(), "rule__AbstractCommand__Group_2__0");
 					put(grammarAccess.getAbstractCommandAccess().getGroup_3(), "rule__AbstractCommand__Group_3__0");
 					put(grammarAccess.getAbstractCommandAccess().getGroup_4(), "rule__AbstractCommand__Group_4__0");
+					put(grammarAccess.getAbstractCommandAccess().getGroup_5(), "rule__AbstractCommand__Group_5__0");
+					put(grammarAccess.getAbstractCommandAccess().getGroup_6(), "rule__AbstractCommand__Group_6__0");
+					put(grammarAccess.getAbstractCommandAccess().getGroup_7(), "rule__AbstractCommand__Group_7__0");
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
 					put(grammarAccess.getSwitchCaseStatementAccess().getGroup(), "rule__SwitchCaseStatement__Group__0");
@@ -73,6 +76,10 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCaseListAccess().getGroup_4(), "rule__CaseList__Group_4__0");
 					put(grammarAccess.getOtherCaseAccess().getGroup(), "rule__OtherCase__Group__0");
 					put(grammarAccess.getOtherCaseAccess().getGroup_3(), "rule__OtherCase__Group_3__0");
+					put(grammarAccess.getForStatementAccess().getGroup(), "rule__ForStatement__Group__0");
+					put(grammarAccess.getForStatementAccess().getGroup_6(), "rule__ForStatement__Group_6__0");
+					put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
+					put(grammarAccess.getRepeatStatementAccess().getGroup(), "rule__RepeatStatement__Group__0");
 					put(grammarAccess.getSubprogramParamAccess().getGroup(), "rule__SubprogramParam__Group__0");
 					put(grammarAccess.getSubprogramParamAccess().getGroup_1(), "rule__SubprogramParam__Group_1__0");
 					put(grammarAccess.getReadCommandAccess().getGroup(), "rule__ReadCommand__Group__0");
@@ -158,6 +165,15 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCaseListAccess().getBreakStatementAssignment_4_0(), "rule__CaseList__BreakStatementAssignment_4_0");
 					put(grammarAccess.getOtherCaseAccess().getOtherCaseCommandsAssignment_2(), "rule__OtherCase__OtherCaseCommandsAssignment_2");
 					put(grammarAccess.getOtherCaseAccess().getBreakStatementAssignment_3_0(), "rule__OtherCase__BreakStatementAssignment_3_0");
+					put(grammarAccess.getForStatementAccess().getOperatorExprAssignment_1(), "rule__ForStatement__OperatorExprAssignment_1");
+					put(grammarAccess.getForStatementAccess().getStartExprAssignment_3(), "rule__ForStatement__StartExprAssignment_3");
+					put(grammarAccess.getForStatementAccess().getEndExprAssignment_5(), "rule__ForStatement__EndExprAssignment_5");
+					put(grammarAccess.getForStatementAccess().getStepExpeAssignment_6_1(), "rule__ForStatement__StepExpeAssignment_6_1");
+					put(grammarAccess.getForStatementAccess().getCommandsAssignment_9(), "rule__ForStatement__CommandsAssignment_9");
+					put(grammarAccess.getWhileStatementAccess().getWhileExprAssignment_1(), "rule__WhileStatement__WhileExprAssignment_1");
+					put(grammarAccess.getWhileStatementAccess().getCommandsAssignment_4(), "rule__WhileStatement__CommandsAssignment_4");
+					put(grammarAccess.getRepeatStatementAccess().getCommandsAssignment_2(), "rule__RepeatStatement__CommandsAssignment_2");
+					put(grammarAccess.getRepeatStatementAccess().getUntilExprAssignment_4(), "rule__RepeatStatement__UntilExprAssignment_4");
 					put(grammarAccess.getSubprogramParamAccess().getExpressionAssignment_0(), "rule__SubprogramParam__ExpressionAssignment_0");
 					put(grammarAccess.getSubprogramParamAccess().getExpressionAssignment_1_1(), "rule__SubprogramParam__ExpressionAssignment_1_1");
 					put(grammarAccess.getReadCommandAccess().getParamListAssignment_2(), "rule__ReadCommand__ParamListAssignment_2");

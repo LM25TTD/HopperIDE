@@ -78,6 +78,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//OtherCase/otherCaseCommands"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//OtherCase/breakStatement"/>
     </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//ForStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/operatorExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/startExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/endExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/stepExpe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//WhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WhileStatement/whileExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//WhileStatement/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//RepeatStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//RepeatStatement/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//RepeatStatement/untilExpr"/>
+    </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//SubprogramParam">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//SubprogramParam/expression"/>
     </genClasses>

@@ -217,6 +217,30 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PortugolPackage.FOR_STATEMENT:
+      {
+        ForStatement forStatement = (ForStatement)theEObject;
+        T result = caseForStatement(forStatement);
+        if (result == null) result = caseAbstractCommand(forStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.WHILE_STATEMENT:
+      {
+        WhileStatement whileStatement = (WhileStatement)theEObject;
+        T result = caseWhileStatement(whileStatement);
+        if (result == null) result = caseAbstractCommand(whileStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.REPEAT_STATEMENT:
+      {
+        RepeatStatement repeatStatement = (RepeatStatement)theEObject;
+        T result = caseRepeatStatement(repeatStatement);
+        if (result == null) result = caseAbstractCommand(repeatStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PortugolPackage.SUBPROGRAM_PARAM:
       {
         SubprogramParam subprogramParam = (SubprogramParam)theEObject;
@@ -627,6 +651,54 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOtherCase(OtherCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForStatement(ForStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhileStatement(WhileStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRepeatStatement(RepeatStatement object)
   {
     return null;
   }

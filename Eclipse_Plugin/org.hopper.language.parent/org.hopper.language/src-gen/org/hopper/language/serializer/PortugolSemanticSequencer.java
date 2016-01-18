@@ -23,6 +23,7 @@ import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.DeclaredVarList;
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
@@ -33,6 +34,7 @@ import org.hopper.language.portugol.OtherCase;
 import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
+import org.hopper.language.portugol.RepeatStatement;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.Subprograms;
@@ -42,6 +44,7 @@ import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarName;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
+import org.hopper.language.portugol.WhileStatement;
 import org.hopper.language.portugol.WriteCommand;
 import org.hopper.language.portugol.WriteParam;
 import org.hopper.language.services.PortugolGrammarAccess;
@@ -116,6 +119,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					return; 
 				}
 				else break;
+			case PortugolPackage.FOR_STATEMENT:
+				sequence_ForStatement(context, (ForStatement) semanticObject); 
+				return; 
 			case PortugolPackage.FUNCTION_NAME:
 				sequence_FunctionName(context, (FunctionName) semanticObject); 
 				return; 
@@ -143,6 +149,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.READ_COMMAND:
 				sequence_ReadCommand(context, (ReadCommand) semanticObject); 
 				return; 
+			case PortugolPackage.REPEAT_STATEMENT:
+				sequence_RepeatStatement(context, (RepeatStatement) semanticObject); 
+				return; 
 			case PortugolPackage.STRING_EXPRESSION:
 				sequence_StringExpression(context, (StringExpression) semanticObject); 
 				return; 
@@ -169,6 +178,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case PortugolPackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
+			case PortugolPackage.WHILE_STATEMENT:
+				sequence_WhileStatement(context, (WhileStatement) semanticObject); 
 				return; 
 			case PortugolPackage.WRITE_COMMAND:
 				sequence_WriteCommand(context, (WriteCommand) semanticObject); 
@@ -335,6 +347,19 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDeclaredVarAccess().getVarNameVarNameIDTerminalRuleCall_0_1(), semanticObject.getVarName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCommand returns ForStatement
+	 *     ForStatement returns ForStatement
+	 *
+	 * Constraint:
+	 *     (operatorExpr=Expression startExpr=Expression endExpr=Expression stepExpe=Expression? commands+=AbstractCommand+)
+	 */
+	protected void sequence_ForStatement(ISerializationContext context, ForStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -561,6 +586,19 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractCommand returns RepeatStatement
+	 *     RepeatStatement returns RepeatStatement
+	 *
+	 * Constraint:
+	 *     (commands+=AbstractCommand+ untilExpr=Expression)
+	 */
+	protected void sequence_RepeatStatement(ISerializationContext context, RepeatStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractCommand returns StringExpression
 	 *     Expression returns StringExpression
 	 *     Assignment returns StringExpression
@@ -730,6 +768,19 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getVariableAccess().getVarDeclarationVarDeclarationParserRuleCall_0_0(), semanticObject.getVarDeclaration());
 		feeder.accept(grammarAccess.getVariableAccess().getTypeVarTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCommand returns WhileStatement
+	 *     WhileStatement returns WhileStatement
+	 *
+	 * Constraint:
+	 *     (whileExpr=Expression commands+=AbstractCommand+)
+	 */
+	protected void sequence_WhileStatement(ISerializationContext context, WhileStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

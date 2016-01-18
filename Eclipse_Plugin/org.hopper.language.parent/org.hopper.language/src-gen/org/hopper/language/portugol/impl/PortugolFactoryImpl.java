@@ -85,6 +85,9 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.SWITCH_CASE_STATEMENT: return createSwitchCaseStatement();
       case PortugolPackage.CASE_LIST: return createCaseList();
       case PortugolPackage.OTHER_CASE: return createOtherCase();
+      case PortugolPackage.FOR_STATEMENT: return createForStatement();
+      case PortugolPackage.WHILE_STATEMENT: return createWhileStatement();
+      case PortugolPackage.REPEAT_STATEMENT: return createRepeatStatement();
       case PortugolPackage.SUBPROGRAM_PARAM: return createSubprogramParam();
       case PortugolPackage.READ_COMMAND: return createReadCommand();
       case PortugolPackage.WRITE_COMMAND: return createWriteCommand();
@@ -319,6 +322,39 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     OtherCaseImpl otherCase = new OtherCaseImpl();
     return otherCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForStatement createForStatement()
+  {
+    ForStatementImpl forStatement = new ForStatementImpl();
+    return forStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WhileStatement createWhileStatement()
+  {
+    WhileStatementImpl whileStatement = new WhileStatementImpl();
+    return whileStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RepeatStatement createRepeatStatement()
+  {
+    RepeatStatementImpl repeatStatement = new RepeatStatementImpl();
+    return repeatStatement;
   }
 
   /**

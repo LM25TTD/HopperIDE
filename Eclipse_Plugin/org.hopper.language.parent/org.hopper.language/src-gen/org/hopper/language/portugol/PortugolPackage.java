@@ -789,6 +789,144 @@ public interface PortugolPackage extends EPackage
   int OTHER_CASE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.ForStatementImpl <em>For Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.ForStatementImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getForStatement()
+   * @generated
+   */
+  int FOR_STATEMENT = 20;
+
+  /**
+   * The feature id for the '<em><b>Operator Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__OPERATOR_EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Start Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__START_EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>End Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__END_EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Step Expe</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__STEP_EXPE = ABSTRACT_COMMAND_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__COMMANDS = ABSTRACT_COMMAND_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>For Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.WhileStatementImpl <em>While Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.WhileStatementImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWhileStatement()
+   * @generated
+   */
+  int WHILE_STATEMENT = 21;
+
+  /**
+   * The feature id for the '<em><b>While Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__WHILE_EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__COMMANDS = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>While Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.RepeatStatementImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getRepeatStatement()
+   * @generated
+   */
+  int REPEAT_STATEMENT = 22;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEAT_STATEMENT__COMMANDS = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Until Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEAT_STATEMENT__UNTIL_EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Repeat Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEAT_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.SubprogramParamImpl <em>Subprogram Param</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -796,7 +934,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParam()
    * @generated
    */
-  int SUBPROGRAM_PARAM = 20;
+  int SUBPROGRAM_PARAM = 23;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -824,7 +962,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReadCommand()
    * @generated
    */
-  int READ_COMMAND = 21;
+  int READ_COMMAND = 24;
 
   /**
    * The feature id for the '<em><b>Param List</b></em>' containment reference.
@@ -852,7 +990,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteCommand()
    * @generated
    */
-  int WRITE_COMMAND = 22;
+  int WRITE_COMMAND = 25;
 
   /**
    * The feature id for the '<em><b>Write Command</b></em>' attribute.
@@ -889,7 +1027,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteParam()
    * @generated
    */
-  int WRITE_PARAM = 23;
+  int WRITE_PARAM = 26;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference.
@@ -926,7 +1064,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOptDecimalPrecision()
    * @generated
    */
-  int OPT_DECIMAL_PRECISION = 24;
+  int OPT_DECIMAL_PRECISION = 27;
 
   /**
    * The feature id for the '<em><b>First Precision</b></em>' attribute.
@@ -963,7 +1101,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 25;
+  int EXPRESSION = 28;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1000,7 +1138,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
    * @generated
    */
-  int DECLARED_VAR = 26;
+  int DECLARED_VAR = 29;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1046,7 +1184,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 27;
+  int NUMERIC_LITERAL = 30;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1101,7 +1239,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
    * @generated
    */
-  int STRING_EXPRESSION = 28;
+  int STRING_EXPRESSION = 31;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1147,7 +1285,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int BINARY_OPERATION = 29;
+  int BINARY_OPERATION = 32;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1211,7 +1349,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 30;
+  int UNARY_EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1821,6 +1959,135 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EAttribute getOtherCase_BreakStatement();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.ForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Statement</em>'.
+   * @see org.hopper.language.portugol.ForStatement
+   * @generated
+   */
+  EClass getForStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ForStatement#getOperatorExpr <em>Operator Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operator Expr</em>'.
+   * @see org.hopper.language.portugol.ForStatement#getOperatorExpr()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_OperatorExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ForStatement#getStartExpr <em>Start Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Start Expr</em>'.
+   * @see org.hopper.language.portugol.ForStatement#getStartExpr()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_StartExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ForStatement#getEndExpr <em>End Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>End Expr</em>'.
+   * @see org.hopper.language.portugol.ForStatement#getEndExpr()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_EndExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ForStatement#getStepExpe <em>Step Expe</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Step Expe</em>'.
+   * @see org.hopper.language.portugol.ForStatement#getStepExpe()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_StepExpe();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.ForStatement#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
+   * @see org.hopper.language.portugol.ForStatement#getCommands()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_Commands();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>While Statement</em>'.
+   * @see org.hopper.language.portugol.WhileStatement
+   * @generated
+   */
+  EClass getWhileStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.WhileStatement#getWhileExpr <em>While Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>While Expr</em>'.
+   * @see org.hopper.language.portugol.WhileStatement#getWhileExpr()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_WhileExpr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.WhileStatement#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
+   * @see org.hopper.language.portugol.WhileStatement#getCommands()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Commands();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.RepeatStatement <em>Repeat Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Repeat Statement</em>'.
+   * @see org.hopper.language.portugol.RepeatStatement
+   * @generated
+   */
+  EClass getRepeatStatement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.RepeatStatement#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
+   * @see org.hopper.language.portugol.RepeatStatement#getCommands()
+   * @see #getRepeatStatement()
+   * @generated
+   */
+  EReference getRepeatStatement_Commands();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.RepeatStatement#getUntilExpr <em>Until Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Until Expr</em>'.
+   * @see org.hopper.language.portugol.RepeatStatement#getUntilExpr()
+   * @see #getRepeatStatement()
+   * @generated
+   */
+  EReference getRepeatStatement_UntilExpr();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.SubprogramParam <em>Subprogram Param</em>}'.
@@ -2627,6 +2894,108 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EAttribute OTHER_CASE__BREAK_STATEMENT = eINSTANCE.getOtherCase_BreakStatement();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ForStatementImpl <em>For Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.ForStatementImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getForStatement()
+     * @generated
+     */
+    EClass FOR_STATEMENT = eINSTANCE.getForStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Operator Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__OPERATOR_EXPR = eINSTANCE.getForStatement_OperatorExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Start Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__START_EXPR = eINSTANCE.getForStatement_StartExpr();
+
+    /**
+     * The meta object literal for the '<em><b>End Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__END_EXPR = eINSTANCE.getForStatement_EndExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Step Expe</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__STEP_EXPE = eINSTANCE.getForStatement_StepExpe();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__COMMANDS = eINSTANCE.getForStatement_Commands();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.WhileStatementImpl <em>While Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.WhileStatementImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWhileStatement()
+     * @generated
+     */
+    EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
+
+    /**
+     * The meta object literal for the '<em><b>While Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__WHILE_EXPR = eINSTANCE.getWhileStatement_WhileExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__COMMANDS = eINSTANCE.getWhileStatement_Commands();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.RepeatStatementImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getRepeatStatement()
+     * @generated
+     */
+    EClass REPEAT_STATEMENT = eINSTANCE.getRepeatStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPEAT_STATEMENT__COMMANDS = eINSTANCE.getRepeatStatement_Commands();
+
+    /**
+     * The meta object literal for the '<em><b>Until Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPEAT_STATEMENT__UNTIL_EXPR = eINSTANCE.getRepeatStatement_UntilExpr();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.SubprogramParamImpl <em>Subprogram Param</em>}' class.
