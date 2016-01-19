@@ -3,7 +3,6 @@
  */
 package org.hopper.language.validation
 
-
 /**
  * This class contains custom validation rules. 
  *
@@ -21,5 +20,4 @@ class PortugolValidator extends AbstractPortugolValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	
 }

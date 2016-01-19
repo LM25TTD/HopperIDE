@@ -541,6 +541,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cRepeatStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cWhileStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final RuleCall cBreakStatementParserRuleCall_8_0 = (RuleCall)cGroup_8.eContents().get(0);
+		private final RuleCall cEND_COMMANDParserRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final RuleCall cReturnStatementParserRuleCall_9_0 = (RuleCall)cGroup_9.eContents().get(0);
+		private final RuleCall cEND_COMMANDParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
 		
 		//AbstractCommand:
 		//	ReadCommand END_COMMAND
@@ -550,11 +556,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//	| SwitchCaseStatement
 		//	| ForStatement
 		//	| RepeatStatement
-		//	| WhileStatement;
+		//	| WhileStatement
+		//	| BreakStatement END_COMMAND
+		//	| ReturnStatement END_COMMAND;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ReadCommand END_COMMAND | WriteCommand END_COMMAND | Expression END_COMMAND | IfStatement | SwitchCaseStatement |
-		//ForStatement | RepeatStatement | WhileStatement
+		//ForStatement | RepeatStatement | WhileStatement | BreakStatement END_COMMAND | ReturnStatement END_COMMAND
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ReadCommand END_COMMAND
@@ -598,6 +606,70 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//WhileStatement
 		public RuleCall getWhileStatementParserRuleCall_7() { return cWhileStatementParserRuleCall_7; }
+		
+		//BreakStatement END_COMMAND
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//BreakStatement
+		public RuleCall getBreakStatementParserRuleCall_8_0() { return cBreakStatementParserRuleCall_8_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDParserRuleCall_8_1() { return cEND_COMMANDParserRuleCall_8_1; }
+		
+		//ReturnStatement END_COMMAND
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//ReturnStatement
+		public RuleCall getReturnStatementParserRuleCall_9_0() { return cReturnStatementParserRuleCall_9_0; }
+		
+		//END_COMMAND
+		public RuleCall getEND_COMMANDParserRuleCall_9_1() { return cEND_COMMANDParserRuleCall_9_1; }
+	}
+	public class BreakStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.BreakStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBreakStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cInterrompaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//BreakStatement:
+		//	{BreakStatement} 'interrompa';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BreakStatement} 'interrompa'
+		public Group getGroup() { return cGroup; }
+		
+		//{BreakStatement}
+		public Action getBreakStatementAction_0() { return cBreakStatementAction_0; }
+		
+		//'interrompa'
+		public Keyword getInterrompaKeyword_1() { return cInterrompaKeyword_1; }
+	}
+	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ReturnStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cReturnExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cRetorneKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExprAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExprExpressionParserRuleCall_2_0 = (RuleCall)cExprAssignment_2.eContents().get(0);
+		
+		//ReturnStatement:
+		//	{ReturnExpression} 'retorne' expr=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ReturnExpression} 'retorne' expr=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//{ReturnExpression}
+		public Action getReturnExpressionAction_0() { return cReturnExpressionAction_0; }
+		
+		//'retorne'
+		public Keyword getRetorneKeyword_1() { return cRetorneKeyword_1; }
+		
+		//expr=Expression
+		public Assignment getExprAssignment_2() { return cExprAssignment_2; }
+		
+		//Expression
+		public RuleCall getExprExpressionParserRuleCall_2_0() { return cExprExpressionParserRuleCall_2_0; }
 	}
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.IfStatement");
@@ -714,17 +786,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCommandsAbstractCommandParserRuleCall_3_0 = (RuleCall)cCommandsAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cBreakStatementAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final Keyword cBreakStatementInterrompaKeyword_4_0_0 = (Keyword)cBreakStatementAssignment_4_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		
 		//CaseList:
 		//	'caso' expr=Expression ':'
-		//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+		//	commands+=AbstractCommand+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'caso' expr=Expression ':' commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		//'caso' expr=Expression ':' commands+=AbstractCommand+
 		public Group getGroup() { return cGroup; }
 		
 		//'caso'
@@ -744,18 +812,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AbstractCommand
 		public RuleCall getCommandsAbstractCommandParserRuleCall_3_0() { return cCommandsAbstractCommandParserRuleCall_3_0; }
-		
-		//(breakStatement?='interrompa' END_COMMAND)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//breakStatement?='interrompa'
-		public Assignment getBreakStatementAssignment_4_0() { return cBreakStatementAssignment_4_0; }
-		
-		//'interrompa'
-		public Keyword getBreakStatementInterrompaKeyword_4_0_0() { return cBreakStatementInterrompaKeyword_4_0_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDParserRuleCall_4_1() { return cEND_COMMANDParserRuleCall_4_1; }
 	}
 	public class OtherCaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.OtherCase");
@@ -764,17 +820,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cOtherCaseCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOtherCaseCommandsAbstractCommandParserRuleCall_2_0 = (RuleCall)cOtherCaseCommandsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cBreakStatementAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final Keyword cBreakStatementInterrompaKeyword_3_0_0 = (Keyword)cBreakStatementAssignment_3_0.eContents().get(0);
-		private final RuleCall cEND_COMMANDParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		
 		//OtherCase:
 		//	'outrocaso' ':'
-		//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+		//	otherCaseCommands+=AbstractCommand+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'outrocaso' ':' otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?
+		//'outrocaso' ':' otherCaseCommands+=AbstractCommand+
 		public Group getGroup() { return cGroup; }
 		
 		//'outrocaso'
@@ -788,18 +840,6 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AbstractCommand
 		public RuleCall getOtherCaseCommandsAbstractCommandParserRuleCall_2_0() { return cOtherCaseCommandsAbstractCommandParserRuleCall_2_0; }
-		
-		//(breakStatement?='interrompa' END_COMMAND)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//breakStatement?='interrompa'
-		public Assignment getBreakStatementAssignment_3_0() { return cBreakStatementAssignment_3_0; }
-		
-		//'interrompa'
-		public Keyword getBreakStatementInterrompaKeyword_3_0_0() { return cBreakStatementInterrompaKeyword_3_0_0; }
-		
-		//END_COMMAND
-		public RuleCall getEND_COMMANDParserRuleCall_3_1() { return cEND_COMMANDParserRuleCall_3_1; }
 	}
 	public class ForStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ForStatement");
@@ -1691,7 +1731,10 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//PrimaryExpression Expression:
-		//	Literal | FunctionCall | DeclaredVar | '(' Expression ')'
+		//	Literal
+		//	| FunctionCall
+		//	| DeclaredVar
+		//	| '(' Expression ')'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//Literal | FunctionCall | DeclaredVar | '(' Expression ')'
@@ -1905,6 +1948,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final BlockProcedureElements pBlockProcedure;
 	private final BlockCommandElements pBlockCommand;
 	private final AbstractCommandElements pAbstractCommand;
+	private final BreakStatementElements pBreakStatement;
+	private final ReturnStatementElements pReturnStatement;
 	private final IfStatementElements pIfStatement;
 	private final SwitchCaseStatementElements pSwitchCaseStatement;
 	private final CaseListElements pCaseList;
@@ -1963,6 +2008,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBlockProcedure = new BlockProcedureElements();
 		this.pBlockCommand = new BlockCommandElements();
 		this.pAbstractCommand = new AbstractCommandElements();
+		this.pBreakStatement = new BreakStatementElements();
+		this.pReturnStatement = new ReturnStatementElements();
 		this.pIfStatement = new IfStatementElements();
 		this.pSwitchCaseStatement = new SwitchCaseStatementElements();
 		this.pCaseList = new CaseListElements();
@@ -2195,13 +2242,35 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	//	| SwitchCaseStatement
 	//	| ForStatement
 	//	| RepeatStatement
-	//	| WhileStatement;
+	//	| WhileStatement
+	//	| BreakStatement END_COMMAND
+	//	| ReturnStatement END_COMMAND;
 	public AbstractCommandElements getAbstractCommandAccess() {
 		return pAbstractCommand;
 	}
 	
 	public ParserRule getAbstractCommandRule() {
 		return getAbstractCommandAccess().getRule();
+	}
+	
+	//BreakStatement:
+	//	{BreakStatement} 'interrompa';
+	public BreakStatementElements getBreakStatementAccess() {
+		return pBreakStatement;
+	}
+	
+	public ParserRule getBreakStatementRule() {
+		return getBreakStatementAccess().getRule();
+	}
+	
+	//ReturnStatement:
+	//	{ReturnExpression} 'retorne' expr=Expression;
+	public ReturnStatementElements getReturnStatementAccess() {
+		return pReturnStatement;
+	}
+	
+	public ParserRule getReturnStatementRule() {
+		return getReturnStatementAccess().getRule();
 	}
 	
 	//IfStatement:
@@ -2230,7 +2299,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CaseList:
 	//	'caso' expr=Expression ':'
-	//	commands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+	//	commands+=AbstractCommand+;
 	public CaseListElements getCaseListAccess() {
 		return pCaseList;
 	}
@@ -2241,7 +2310,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//OtherCase:
 	//	'outrocaso' ':'
-	//	otherCaseCommands+=AbstractCommand+ (breakStatement?='interrompa' END_COMMAND)?;
+	//	otherCaseCommands+=AbstractCommand+;
 	public OtherCaseElements getOtherCaseAccess() {
 		return pOtherCase;
 	}
@@ -2449,7 +2518,10 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PrimaryExpression Expression:
-	//	Literal | FunctionCall | DeclaredVar | '(' Expression ')'
+	//	Literal
+	//	| FunctionCall
+	//	| DeclaredVar
+	//	| '(' Expression ')'
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return pPrimaryExpression;
 	}

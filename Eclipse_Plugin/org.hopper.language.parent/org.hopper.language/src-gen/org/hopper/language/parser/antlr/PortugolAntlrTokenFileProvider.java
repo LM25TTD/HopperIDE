@@ -11,6 +11,6 @@ public class PortugolAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-		return classLoader.getResourceAsStream("org/hopper/language/parser/antlr/internal/InternalPortugol.tokens");
+		return classLoader.getResourceAsStream("org/hopper/language/parser/antlr/internal/InternalPortugolParser.tokens");
 	}
 }

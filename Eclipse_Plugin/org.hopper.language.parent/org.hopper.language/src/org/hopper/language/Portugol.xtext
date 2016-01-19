@@ -13,7 +13,7 @@ HeaderBlock:
 	'algoritmo' algorithmName=STRING END_COMMAND;
 
 DeclarationsBlock:
-	'var' 
+	'var'
 	(vars+=Variable END_COMMAND)+;
 
 Variable:
@@ -70,7 +70,15 @@ AbstractCommand:
 	| SwitchCaseStatement
 	| ForStatement
 	| RepeatStatement
-	| WhileStatement;
+	| WhileStatement
+	| BreakStatement END_COMMAND
+	| ReturnStatement END_COMMAND;
+
+BreakStatement:
+	{BreakStatement} 'interrompa';
+
+ReturnStatement:
+	{ReturnExpression} 'retorne' expr=Expression;
 
 IfStatement:
 	'se' expr=Expression 'entao'
@@ -86,13 +94,11 @@ SwitchCaseStatement:
 
 CaseList:
 	'caso' expr=Expression ':'
-	(commands+=AbstractCommand)+
-	(breakStatement?='interrompa' END_COMMAND)?;
+	(commands+=AbstractCommand)+;
 
 OtherCase:
 	'outrocaso' ':'
-	(otherCaseCommands+=AbstractCommand)+
-	(breakStatement?='interrompa' END_COMMAND)?;
+	(otherCaseCommands+=AbstractCommand)+;
 
 ForStatement:
 	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
@@ -160,7 +166,10 @@ UnaryExpression returns Expression:
 	| PrimaryExpression;
 
 PrimaryExpression returns Expression:
-	Literal | FunctionCall | DeclaredVar | '(' Expression ')';
+	Literal
+	| FunctionCall
+	| DeclaredVar
+	| '(' Expression ')';
 
 FunctionCall returns Expression:
 	fbName=[FunctionName] '(' param=SubprogramParam ')';

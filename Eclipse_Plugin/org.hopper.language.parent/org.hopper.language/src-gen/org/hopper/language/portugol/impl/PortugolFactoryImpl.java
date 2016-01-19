@@ -81,6 +81,8 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.BLOCK_PROCEDURE: return createBlockProcedure();
       case PortugolPackage.BLOCK_COMMAND: return createBlockCommand();
       case PortugolPackage.ABSTRACT_COMMAND: return createAbstractCommand();
+      case PortugolPackage.BREAK_STATEMENT: return createBreakStatement();
+      case PortugolPackage.RETURN_STATEMENT: return createReturnStatement();
       case PortugolPackage.IF_STATEMENT: return createIfStatement();
       case PortugolPackage.SWITCH_CASE_STATEMENT: return createSwitchCaseStatement();
       case PortugolPackage.CASE_LIST: return createCaseList();
@@ -97,6 +99,7 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.DECLARED_VAR: return createDeclaredVar();
       case PortugolPackage.NUMERIC_LITERAL: return createNumericLiteral();
       case PortugolPackage.STRING_EXPRESSION: return createStringExpression();
+      case PortugolPackage.RETURN_EXPRESSION: return createReturnExpression();
       case PortugolPackage.BINARY_OPERATION: return createBinaryOperation();
       case PortugolPackage.UNARY_EXPRESSION: return createUnaryExpression();
       default:
@@ -285,6 +288,28 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public BreakStatement createBreakStatement()
+  {
+    BreakStatementImpl breakStatement = new BreakStatementImpl();
+    return breakStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnStatement createReturnStatement()
+  {
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IfStatement createIfStatement()
   {
     IfStatementImpl ifStatement = new IfStatementImpl();
@@ -454,6 +479,17 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     StringExpressionImpl stringExpression = new StringExpressionImpl();
     return stringExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnExpression createReturnExpression()
+  {
+    ReturnExpressionImpl returnExpression = new ReturnExpressionImpl();
+    return returnExpression;
   }
 
   /**

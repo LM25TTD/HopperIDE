@@ -10,5 +10,6 @@ Require-Bundle: org.hopper.language,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.hopper.language.ide.contentassist.antlr,
- org.hopper.language.ide.contentassist.antlr.internal
+ org.hopper.language.ide.contentassist.antlr.internal,
+ org.hopper.language.ide.contentassist.antlr.lexer
 

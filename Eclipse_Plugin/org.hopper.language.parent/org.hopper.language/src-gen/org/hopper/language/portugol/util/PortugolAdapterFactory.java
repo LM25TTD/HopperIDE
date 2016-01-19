@@ -156,6 +156,16 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createAbstractCommandAdapter();
       }
       @Override
+      public Adapter caseBreakStatement(BreakStatement object)
+      {
+        return createBreakStatementAdapter();
+      }
+      @Override
+      public Adapter caseReturnStatement(ReturnStatement object)
+      {
+        return createReturnStatementAdapter();
+      }
+      @Override
       public Adapter caseIfStatement(IfStatement object)
       {
         return createIfStatementAdapter();
@@ -234,6 +244,11 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStringExpression(StringExpression object)
       {
         return createStringExpressionAdapter();
+      }
+      @Override
+      public Adapter caseReturnExpression(ReturnExpression object)
+      {
+        return createReturnExpressionAdapter();
       }
       @Override
       public Adapter caseBinaryOperation(BinaryOperation object)
@@ -508,6 +523,36 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.BreakStatement <em>Break Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.BreakStatement
+   * @generated
+   */
+  public Adapter createBreakStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ReturnStatement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.ReturnStatement
+   * @generated
+   */
+  public Adapter createReturnStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.IfStatement <em>If Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -743,6 +788,21 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ReturnExpression <em>Return Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.ReturnExpression
+   * @generated
+   */
+  public Adapter createReturnExpressionAdapter()
   {
     return null;
   }

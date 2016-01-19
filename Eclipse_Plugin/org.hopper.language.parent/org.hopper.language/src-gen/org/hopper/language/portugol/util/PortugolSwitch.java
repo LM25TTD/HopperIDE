@@ -187,6 +187,22 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PortugolPackage.BREAK_STATEMENT:
+      {
+        BreakStatement breakStatement = (BreakStatement)theEObject;
+        T result = caseBreakStatement(breakStatement);
+        if (result == null) result = caseAbstractCommand(breakStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.RETURN_STATEMENT:
+      {
+        ReturnStatement returnStatement = (ReturnStatement)theEObject;
+        T result = caseReturnStatement(returnStatement);
+        if (result == null) result = caseAbstractCommand(returnStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PortugolPackage.IF_STATEMENT:
       {
         IfStatement ifStatement = (IfStatement)theEObject;
@@ -310,6 +326,15 @@ public class PortugolSwitch<T> extends Switch<T>
         T result = caseStringExpression(stringExpression);
         if (result == null) result = caseExpression(stringExpression);
         if (result == null) result = caseAbstractCommand(stringExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.RETURN_EXPRESSION:
+      {
+        ReturnExpression returnExpression = (ReturnExpression)theEObject;
+        T result = caseReturnExpression(returnExpression);
+        if (result == null) result = caseReturnStatement(returnExpression);
+        if (result == null) result = caseAbstractCommand(returnExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -592,6 +617,38 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBreakStatement(BreakStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnStatement(ReturnStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -843,6 +900,22 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringExpression(StringExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnExpression(ReturnExpression object)
   {
     return null;
   }

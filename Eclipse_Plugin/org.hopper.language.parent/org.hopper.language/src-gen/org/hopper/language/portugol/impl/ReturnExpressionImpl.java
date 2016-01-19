@@ -3,42 +3,32 @@
  */
 package org.hopper.language.portugol.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.hopper.language.portugol.AbstractCommand;
-import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.PortugolPackage;
+import org.hopper.language.portugol.ReturnExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Case List</b></em>'.
+ * An implementation of the model object '<em><b>Return Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.CaseListImpl#getExpr <em>Expr</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.CaseListImpl#getCommands <em>Commands</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.ReturnExpressionImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseList
+public class ReturnExpressionImpl extends ReturnStatementImpl implements ReturnExpression
 {
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -51,21 +41,11 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   protected Expression expr;
 
   /**
-   * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCommands()
-   * @generated
-   * @ordered
-   */
-  protected EList<AbstractCommand> commands;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CaseListImpl()
+  protected ReturnExpressionImpl()
   {
     super();
   }
@@ -78,7 +58,7 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   @Override
   protected EClass eStaticClass()
   {
-    return PortugolPackage.Literals.CASE_LIST;
+    return PortugolPackage.Literals.RETURN_EXPRESSION;
   }
 
   /**
@@ -102,7 +82,7 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
     expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.CASE_LIST__EXPR, oldExpr, newExpr);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.RETURN_EXPRESSION__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -119,28 +99,14 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
     {
       NotificationChain msgs = null;
       if (expr != null)
-        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.CASE_LIST__EXPR, null, msgs);
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.RETURN_EXPRESSION__EXPR, null, msgs);
       if (newExpr != null)
-        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.CASE_LIST__EXPR, null, msgs);
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.RETURN_EXPRESSION__EXPR, null, msgs);
       msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.CASE_LIST__EXPR, newExpr, newExpr));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<AbstractCommand> getCommands()
-  {
-    if (commands == null)
-    {
-      commands = new EObjectContainmentEList<AbstractCommand>(AbstractCommand.class, this, PortugolPackage.CASE_LIST__COMMANDS);
-    }
-    return commands;
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.RETURN_EXPRESSION__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -153,10 +119,8 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   {
     switch (featureID)
     {
-      case PortugolPackage.CASE_LIST__EXPR:
+      case PortugolPackage.RETURN_EXPRESSION__EXPR:
         return basicSetExpr(null, msgs);
-      case PortugolPackage.CASE_LIST__COMMANDS:
-        return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -171,10 +135,8 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   {
     switch (featureID)
     {
-      case PortugolPackage.CASE_LIST__EXPR:
+      case PortugolPackage.RETURN_EXPRESSION__EXPR:
         return getExpr();
-      case PortugolPackage.CASE_LIST__COMMANDS:
-        return getCommands();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -184,18 +146,13 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case PortugolPackage.CASE_LIST__EXPR:
+      case PortugolPackage.RETURN_EXPRESSION__EXPR:
         setExpr((Expression)newValue);
-        return;
-      case PortugolPackage.CASE_LIST__COMMANDS:
-        getCommands().clear();
-        getCommands().addAll((Collection<? extends AbstractCommand>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,11 +168,8 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   {
     switch (featureID)
     {
-      case PortugolPackage.CASE_LIST__EXPR:
+      case PortugolPackage.RETURN_EXPRESSION__EXPR:
         setExpr((Expression)null);
-        return;
-      case PortugolPackage.CASE_LIST__COMMANDS:
-        getCommands().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,12 +185,10 @@ public class CaseListImpl extends MinimalEObjectImpl.Container implements CaseLi
   {
     switch (featureID)
     {
-      case PortugolPackage.CASE_LIST__EXPR:
+      case PortugolPackage.RETURN_EXPRESSION__EXPR:
         return expr != null;
-      case PortugolPackage.CASE_LIST__COMMANDS:
-        return commands != null && !commands.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //CaseListImpl
+} //ReturnExpressionImpl

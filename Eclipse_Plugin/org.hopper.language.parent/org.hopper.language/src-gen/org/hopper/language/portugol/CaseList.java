@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.hopper.language.portugol.CaseList#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.hopper.language.portugol.CaseList#getCommands <em>Commands</em>}</li>
- *   <li>{@link org.hopper.language.portugol.CaseList#isBreakStatement <em>Break Statement</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getCaseList()
@@ -68,31 +67,5 @@ public interface CaseList extends EObject
    * @generated
    */
   EList<AbstractCommand> getCommands();
-
-  /**
-   * Returns the value of the '<em><b>Break Statement</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Break Statement</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Break Statement</em>' attribute.
-   * @see #setBreakStatement(boolean)
-   * @see org.hopper.language.portugol.PortugolPackage#getCaseList_BreakStatement()
-   * @model
-   * @generated
-   */
-  boolean isBreakStatement();
-
-  /**
-   * Sets the value of the '{@link org.hopper.language.portugol.CaseList#isBreakStatement <em>Break Statement</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Break Statement</em>' attribute.
-   * @see #isBreakStatement()
-   * @generated
-   */
-  void setBreakStatement(boolean value);
 
 } // CaseList

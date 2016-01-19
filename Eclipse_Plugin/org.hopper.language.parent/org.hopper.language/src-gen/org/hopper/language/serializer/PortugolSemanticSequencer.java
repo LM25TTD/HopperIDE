@@ -18,6 +18,7 @@ import org.hopper.language.portugol.BinaryOperation;
 import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
+import org.hopper.language.portugol.BreakStatement;
 import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
@@ -35,6 +36,7 @@ import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.RepeatStatement;
+import org.hopper.language.portugol.ReturnExpression;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.Subprograms;
@@ -74,6 +76,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case PortugolPackage.BLOCK_PROCEDURE:
 				sequence_BlockProcedure(context, (BlockProcedure) semanticObject); 
+				return; 
+			case PortugolPackage.BREAK_STATEMENT:
+				sequence_BreakStatement(context, (BreakStatement) semanticObject); 
 				return; 
 			case PortugolPackage.CASE_LIST:
 				sequence_CaseList(context, (CaseList) semanticObject); 
@@ -151,6 +156,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case PortugolPackage.REPEAT_STATEMENT:
 				sequence_RepeatStatement(context, (RepeatStatement) semanticObject); 
+				return; 
+			case PortugolPackage.RETURN_EXPRESSION:
+				sequence_ReturnStatement(context, (ReturnExpression) semanticObject); 
 				return; 
 			case PortugolPackage.STRING_EXPRESSION:
 				sequence_StringExpression(context, (StringExpression) semanticObject); 
@@ -276,10 +284,23 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractCommand returns BreakStatement
+	 *     BreakStatement returns BreakStatement
+	 *
+	 * Constraint:
+	 *     {BreakStatement}
+	 */
+	protected void sequence_BreakStatement(ISerializationContext context, BreakStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CaseList returns CaseList
 	 *
 	 * Constraint:
-	 *     (expr=Expression commands+=AbstractCommand+ breakStatement?='interrompa'?)
+	 *     (expr=Expression commands+=AbstractCommand+)
 	 */
 	protected void sequence_CaseList(ISerializationContext context, CaseList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -519,7 +540,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OtherCase returns OtherCase
 	 *
 	 * Constraint:
-	 *     (otherCaseCommands+=AbstractCommand+ breakStatement?='interrompa'?)
+	 *     otherCaseCommands+=AbstractCommand+
 	 */
 	protected void sequence_OtherCase(ISerializationContext context, OtherCase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -594,6 +615,25 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_RepeatStatement(ISerializationContext context, RepeatStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCommand returns ReturnExpression
+	 *     ReturnStatement returns ReturnExpression
+	 *
+	 * Constraint:
+	 *     expr=Expression
+	 */
+	protected void sequence_ReturnStatement(ISerializationContext context, ReturnExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.RETURN_EXPRESSION__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.RETURN_EXPRESSION__EXPR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getReturnStatementAccess().getExprExpressionParserRuleCall_2_0(), semanticObject.getExpr());
+		feeder.finish();
 	}
 	
 	

@@ -69,7 +69,7 @@ import org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider;
 import org.eclipse.xtext.ui.shared.Access;
 import org.hopper.language.ide.contentassist.antlr.PartialPortugolContentAssistParser;
 import org.hopper.language.ide.contentassist.antlr.PortugolParser;
-import org.hopper.language.ide.contentassist.antlr.internal.InternalPortugolLexer;
+import org.hopper.language.ide.contentassist.antlr.lexer.InternalPortugolLexer;
 import org.hopper.language.ui.contentassist.PortugolProposalProvider;
 import org.hopper.language.ui.labeling.PortugolDescriptionLabelProvider;
 import org.hopper.language.ui.labeling.PortugolLabelProvider;
@@ -107,7 +107,7 @@ public abstract class AbstractPortugolUiModule extends DefaultUiModule {
 	public void configureHighlightingLexer(Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class)
 			.annotatedWith(Names.named(LexerIdeBindings.HIGHLIGHTING))
-			.to(org.hopper.language.parser.antlr.internal.InternalPortugolLexer.class);
+			.to(org.hopper.language.parser.antlr.lexer.InternalPortugolLexer.class);
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2

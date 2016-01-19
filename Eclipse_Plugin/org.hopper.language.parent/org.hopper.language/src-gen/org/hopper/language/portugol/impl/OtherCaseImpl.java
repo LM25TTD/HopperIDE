@@ -5,7 +5,6 @@ package org.hopper.language.portugol.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +30,6 @@ import org.hopper.language.portugol.PortugolPackage;
  * </p>
  * <ul>
  *   <li>{@link org.hopper.language.portugol.impl.OtherCaseImpl#getOtherCaseCommands <em>Other Case Commands</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.OtherCaseImpl#isBreakStatement <em>Break Statement</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,26 +45,6 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
    * @ordered
    */
   protected EList<AbstractCommand> otherCaseCommands;
-
-  /**
-   * The default value of the '{@link #isBreakStatement() <em>Break Statement</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isBreakStatement()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean BREAK_STATEMENT_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isBreakStatement() <em>Break Statement</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isBreakStatement()
-   * @generated
-   * @ordered
-   */
-  protected boolean breakStatement = BREAK_STATEMENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,29 +86,6 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isBreakStatement()
-  {
-    return breakStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBreakStatement(boolean newBreakStatement)
-  {
-    boolean oldBreakStatement = breakStatement;
-    breakStatement = newBreakStatement;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.OTHER_CASE__BREAK_STATEMENT, oldBreakStatement, breakStatement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -155,8 +109,6 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
     {
       case PortugolPackage.OTHER_CASE__OTHER_CASE_COMMANDS:
         return getOtherCaseCommands();
-      case PortugolPackage.OTHER_CASE__BREAK_STATEMENT:
-        return isBreakStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -176,9 +128,6 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
         getOtherCaseCommands().clear();
         getOtherCaseCommands().addAll((Collection<? extends AbstractCommand>)newValue);
         return;
-      case PortugolPackage.OTHER_CASE__BREAK_STATEMENT:
-        setBreakStatement((Boolean)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -196,9 +145,6 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
       case PortugolPackage.OTHER_CASE__OTHER_CASE_COMMANDS:
         getOtherCaseCommands().clear();
         return;
-      case PortugolPackage.OTHER_CASE__BREAK_STATEMENT:
-        setBreakStatement(BREAK_STATEMENT_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -215,27 +161,8 @@ public class OtherCaseImpl extends MinimalEObjectImpl.Container implements Other
     {
       case PortugolPackage.OTHER_CASE__OTHER_CASE_COMMANDS:
         return otherCaseCommands != null && !otherCaseCommands.isEmpty();
-      case PortugolPackage.OTHER_CASE__BREAK_STATEMENT:
-        return breakStatement != BREAK_STATEMENT_EDEFAULT;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (breakStatement: ");
-    result.append(breakStatement);
-    result.append(')');
-    return result.toString();
   }
 
 } //OtherCaseImpl

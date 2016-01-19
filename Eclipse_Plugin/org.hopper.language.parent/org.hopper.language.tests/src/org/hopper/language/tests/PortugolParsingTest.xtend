@@ -22,25 +22,25 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario1() {
 		val result = parseHelper.parse('''
-			algoritmo "Maior_de_dois"
-			// Fun��o : Fa�a um Programa que pe�a dois n�meros e imprima o maior deles.
+			algoritmo "Maior_de_dois";
+			// Função : Faça um Programa que peça dois números e imprima o maior deles.
 			// Autor :    Iasmim Cunha
 			// Data : 5/8/2013
-			// Se��o de Declara��es 
+			// Seção de Declarações 
 			var
-			  primeiro : real
-			  segundo : real
+			  primeiro : real;
+			  segundo : real;
 			inicio
-			// Se��o de Comandos 
-			escreval("Entre com o primeiro valor...")
-			leia(primeiro)
-			escreval("Entre com o segundo valor...")
-			leia(segundo)
+			// Seção de Comandos 
+			escreval("Entre com o primeiro valor...");
+			leia(primeiro);
+			escreval("Entre com o segundo valor...");
+			leia(segundo);
 			
 			   se(primeiro > segundo) entao
-			       escreval("O maior valor entre os n�meros �:",primeiro)
+			       escreval("O maior valor entre os números é:",primeiro);
 			   senao
-			       escreval("O maior valor entre os n�meros �:",segundo)
+			       escreval("O maior valor entre os números é:",segundo);
 			   fimse
 			fimalgoritmo
 		''')
@@ -50,25 +50,25 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario2() {
 		val result = parseHelper.parse('''
-			algoritmo "Negativo_ou_positivo"
-			// Fun��o : Fa�a um Programa que pe�a um valor
-			//          e mostre na tela se o valor � positivo ou negativo.
+			algoritmo "Negativo_ou_positivo";
+			// Função : Faça um Programa que peça um valor
+			//          e mostre na tela se o valor é positivo ou negativo.
 			// Autor : Iasmim Cunha
 			// Data : 5/8/2013
-			// Se��o de Declara��es 
+			// Seção de Declarações 
 			var
-			  valor : real
+			  primeiro, segundo : real;
 			inicio
-			// Se��o de Comandos
-			escreval("Entre com o primeiro valor...")
-			leia(primeiro)
-			escreval("Entre com o segundo valor...")
-			leia(segundo)
+			// Seção de Comandos
+			escreval("Entre com o primeiro valor...");
+			leia(primeiro);
+			escreval("Entre com o segundo valor...");
+			leia(segundo);
 			
 			   se(primeiro > segundo) entao
-			       escreval("O maior valor entre os n�meros �:",primeiro)
+			       escreval("O maior valor entre os números é:",primeiro);
 			   senao
-			       escreval("O maior valor entre os n�meros �:",segundo)
+			       escreval("O maior valor entre os números é:",segundo);
 			   fimse
 			fimalgoritmo
 		''')
@@ -78,34 +78,39 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario3() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_05"
+			algoritmo "questao_05";
 			
 			// Descricao : Programa faz a leitura de duas notas parciais de um aluno e
-			//             calcula e mostra a m�dia alcan�ada pelo aluno.
+			//             calcula e mostra a média alcançada pelo aluno.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
+			
 			var
-			    media, nota_parcial1, nota_parcial2:real
+			    media, nota_parcial1, nota_parcial2:real;
 			inicio
 				// Faz a leitura das duas notas reais do aluno.
-				   escreva("informe sua primeira nota parcial: ")
-				   leia(nota_parcial1)
-				   escreva("informe sua segunda nota parcial: ")
-				   leia(nota_parcial2)	
+				   escreva("informe sua primeira nota parcial: ");
+				   leia(nota_parcial1);
+				   escreva("informe sua segunda nota parcial: ");
+				   leia(nota_parcial2);
+				
 				// Faz o calculo da media aritmetica, consulte http://pt.wikipedia.org/wiki/M%C3%A9dia_aritm%C3%A9tica.
-				   media <- (nota_parcial1 + nota_parcial2)/2
+				 
+				   media <- (nota_parcial1 + nota_parcial2)/2;
+				   
 				// Realiza a comparacao do valor da media e exibe a mensagem correspondente.
 				se media = 10.0 entao
-				       escreva("Aprovado com Distincao com a media de: ", media:2:2)
+				       escreva("Aprovado com Distincao com a media de: ", media:2:2);
 				   senao
 				       se media >= 7.0 entao
-				           escreva("Aprovado com a media de: ", media:2:2)
+				           escreva("Aprovado com a media de: ", media:2:2);
 				       senao
 				           se media < 7.0 entao
-				               escreva("Reprovado com a media de: ", media:2:2)
+				               escreva("Reprovado com a media de: ", media:2:2);
 				           fimse
 				      fimse
-				  fimse  
+				  fimse
+				 
 			fimalgoritmo
 		''')
 		Assert.assertNotNull(result)
@@ -114,41 +119,44 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario4() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_06"
+			algoritmo "questao_06";
 			
-			// Descricao : Programa que le tr�s n�meros inteiros e mostra o maior deles.
+			// Descricao : Programa que le três números inteiros e mostra o maior deles.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
+			
 			var
-			    num1, num2, num3, maior:inteiro
+			    num1, num2, num3, maior:inteiro;
 			
 			inicio
 				// Faz a leitura dos 3 numeros inteiros.
-				   escreva("Informe o primeiro numero: ")
-				   leia(num1)
-				   escreva("Informe o segundo numero: ")
-				   leia(num2)
-				   escreva("Informe o terceiro numero: ")
-				   leia(num3)
+				   escreva("Informe o primeiro numero: ");
+				   leia(num1);
+				   escreva("Informe o segundo numero: ");
+				   leia(num2);
+				   escreva("Informe o terceiro numero: ");
+				   leia(num3);
 				   
 				// Faz a comparacao um a um para descobrir o maior valor informado
 				// e atribuir se valor para a variavel 'maior'.
 				
 				   se num1 > num2 entao
 				       se num1 > num3 entao
-				          maior <- num1
+				          maior <- num1;
 				       senao
-				          maior <- num3
+				          maior <- num3;
 				       fimse
 				  senao
 				       se num2 > num3  entao
-				           maior <- num2
+				           maior <- num2;
 				       senao
-				            maior <- num3
+				            maior <- num3;
 				       fimse
 				   fimse
+				
 				// Exibe na tela maior valor informado.	
-				   escreva("O maior valor digitado foi: <", maior, ">")
+				   escreva("O maior valor digitado foi: <", maior, ">");
+				  
 			fimalgoritmo
 		''')
 		Assert.assertNotNull(result)
@@ -157,56 +165,56 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario5() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_07"
+			algoritmo "questao_07";
 			
-			// Descricao : Programa que le tr�s n�meros e mostra o maior e o menor deles.
+			// Descricao : Programa que le três números e mostra o maior e o menor deles.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
 			
 			var
-			    num1, num2, num3, menor, maior:inteiro
+			    num1, num2, num3, menor, maior:inteiro;
 			
 			inicio
 				// Faz a leitura dos 3 numeros inteiros.
-				   escreva("Informe o primeiro numero: ")
-				   leia(num1)
-				   escreva("Informe o segundo numero: ")
-				   leia(num2)
-				   escreva("Informe o terceiro numero: ")
-				   leia(num3)
+				   escreva("Informe o primeiro numero: ");
+				   leia(num1);
+				   escreva("Informe o segundo numero: ");
+				   leia(num2);
+				   escreva("Informe o terceiro numero: ");
+				   leia(num3);
 				
 				// Faz a comparacao um a um para descobrir o maior e o menor valor informado
 				// e atribuir se valor para a variavel 'maior' e 'menor', respectivamente.
 				
 				   se num1 > num2 entao
 				       se num1 > num3 entao
-				           maior <- num1
+				           maior <- num1;
 				           se num2 > num3 entao
-				               menor <- num3
+				               menor <- num3;
 				           senao
-				               menor <- num2
+				               menor <- num2;
 				           fimse
 				       senao
-				           maior <- num3
-				           menor <- num2
+				           maior <- num3;
+				           menor <- num2;
 				       fimse
 				   senao
 				       se num2 > num3  entao
-				           maior <- num2
+				           maior <- num2;
 				           se num1 > num3 entao
-				               menor <- num3
+				               menor <- num3;
 				           senao
-				               menor <- num1
+				               menor <- num1;
 				           fimse
 				       senao
-				           maior <- num3
-				           menor <- num1
+				           maior <- num3;
+				           menor <- num1;
 				       fimse
 				   fimse
 				
 				// Exibe na tela maior e o menor valor informado.
-				   escreva("O maior valor digitado foi: <", maior)
-				   escreva("> e o menor valor digitado foi: <", menor,">")
+				   escreva("O maior valor digitado foi: <", maior);
+				   escreva("> e o menor valor digitado foi: <", menor,">");
 				   
 			fimalgoritmo
 		''')
@@ -216,39 +224,43 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario6() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_08"
+			algoritmo "questao_08";
 			
-			// Descri��o : Programa que pergunta o pre�o de tr�s produtos e
-			//             informe qual produto voc� deve comprar, sabendo
-			//             que a decis�o � sempre pelo mais barato.
+			// Descrição : Programa que pergunta o preço de três produtos e
+			//             informe qual produto você deve comprar, sabendo
+			//             que a decisão é sempre pelo mais barato.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
+			
 			var
-			    preco_prod1, preco_prod2, preco_prod3:real
+			    preco_prod1, preco_prod2, preco_prod3:real;
 			
 			inicio
 			    // Faz a leitura dos 3 valores reais de cada produto.
-			    escreva("Informe o preco do primeiro produto R$: ")
-			    leia(preco_prod1)
-			    escreva("Informe o preco do segundo produto R$: ")
-			    leia(preco_prod2)
-			    escreva("Informe o preco do terceiro produto R$: ")
-			    leia(preco_prod3)
+			    escreva("Informe o preco do primeiro produto R$: ");
+			    leia(preco_prod1);
+			    escreva("Informe o preco do segundo produto R$: ");
+			    leia(preco_prod2);
+			    escreva("Informe o preco do terceiro produto R$: ");
+			    leia(preco_prod3);
+			
 				// Faz a comparacao um a um para descobrir o menor valor informado
 				// e exibe na tela qual e o produto mais barato.
+				
 				   se preco_prod1 > preco_prod2 entao
 				       se preco_prod2 > preco_prod3 entao
-				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3)
+				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3);
 				       senao
-				           escreva("Recomendamos o segundo produto, com o preco de R$: ", preco_prod2)
+				           escreva("Recomendamos o segundo produto, com o preco de R$: ", preco_prod2);
 				       fimse
 				   senao
 				       se preco_prod3 > preco_prod1 entao
-				           escreva("Recomendamos o primeiro produto, com o preco de R$: ", preco_prod1)
+				           escreva("Recomendamos o primeiro produto, com o preco de R$: ", preco_prod1);
 				       senao
-				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3)
+				           escreva("Recomendamos o terceiro produto, com o preco de R$: ", preco_prod3);
 				       fimse
 				   fimse
+			
 			fimalgoritmo
 		''')
 		Assert.assertNotNull(result)
@@ -257,48 +269,48 @@ class PortugolParsingTest {
 	@Test
 	def void testIfScenario7() {
 		val result = parseHelper.parse('''
-			algoritmo "decrescente"
-			// Fun��o : L� tr�s n�meros e os mostra em ordem decrescente
+			algoritmo "decrescente";
+			// Função : Lê três números e os mostra em ordem decrescente
 			// Autor :  Leandro Bentes
 			var
-			   num1, num2, num3: inteiro
+			   num1, num2, num3: inteiro;
 			inicio
-			      escreval("Entre com tres numeros: ")
-			      leia(num1, num2, num3)//Faz a leitura dos tres numeros
+			      escreval("Entre com tres numeros: ");
+			      leia(num1, num2, num3);//Faz a leitura dos tres numeros
 			      
-			      escreva("Numeros em ordem decrescente: ")
+			      escreva("Numeros em ordem decrescente: ");
 			      
 			      //Este bloco testa todas as possibilidades de ordem para os tres numeros
 			      //primeiro encontrando o maior, depois definindo a ordem do dois restantes\
 			      //imprimindo na tela conforme a ordem eh encontrada
 			      se (num1>=num2) e (num1>=num3) entao  //Numero 1 eh maior que todos
-			         escreva(num1, ", ") //Exibe na tela acompanhada de uma virgula
+			         escreva(num1, ", "); //Exibe na tela acompanhada de uma virgula
 			         se (num2>=num3) entao //Numero 2 eh maior que Num3
-			            escreva(num2, ", ")
-			            escreva(num3) //Apenas exibe na tela
+			            escreva(num2, ", ");
+			            escreva(num3); //Apenas exibe na tela
 			         senao//Num 3 eh maior que num 2
-			            escreva(num3, ", ")
-			            escreva(num2)
+			            escreva(num3, ", ");
+			            escreva(num2);
 			         fimse
 			      senao
 			         se (num2>=num1) e (num2>=num3) entao //Numero 2 eh o maior de todos
-			           escreva(num2, ", ")
+			           escreva(num2, ", ");
 			           se (num1>=num3) entao //Numero 1 eh maior que o numero 3
-			              escreva(num1, ", ")
-			              escreva(num3)
+			              escreva(num1, ", ");
+			              escreva(num3);
 			           senao //Numero 3 eh maior que o numero 1
-			                escreva(num3, ", ")
-			                escreva(num1)
+			                escreva(num3, ", ");
+			                escreva(num1);
 			           fimse
 			         senao
 			              se (num3>=num2) e (num3>=num1) entao //Numero 3 eh o maior de todos
-			                 escreva(num3, ", ")
+			                 escreva(num3, ", ");
 			                 se (num2>=num1) entao //Numero 2 eh maior que o numero 1
-			                    escreva(num2, ", ")
-			                    escreva(num1)
+			                    escreva(num2, ", ");
+			                    escreva(num1);
 			                 senao //Numero 1 eh maior que o numero 2
-			                    escreva(num1, ", ")
-			                    escreva(num2)
+			                    escreva(num1, ", ");
+			                    escreva(num2);
 			                 fimse
 			              fimse
 			         fimse
@@ -311,31 +323,36 @@ class PortugolParsingTest {
 	@Test
 	def void testCaseScenario1() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_03"
+			algoritmo "questao_03";
 			
-			// Descricao : Programa que verifica se uma letra digitada � "F" ou "M". 
-			//			   Conforme a letra, escreve: F - Feminino, M - Masculino, Sexo Inv�lido.
+			// Descricao : Programa que verifica se uma letra digitada é "F" ou "M". 
+			//			   Conforme a letra, escreve: F - Feminino, M - Masculino, Sexo Inválido.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
+			
 			var
-			    sexo_letra: caractere
+			    sexo_letra: caracter;
 			
 			inicio
 				// Faz a leitura da letra.
-				   escreva("Informe seu sexo, F para feminino ou M para masculino: ")
-				   leia(sexo_letra)
+				   escreva("Informe seu sexo, F para feminino ou M para masculino: ");
+				   leia(sexo_letra);
 				   
 				// Faz a decisao da mensagem a ser mostrada. 
 				// O portugol nao e case sensitive, entao 'M' == 'm'.	
 				
 				   escolha sexo_letra
-				   caso "M"
-				       escreva("Seu sexo = M - masculino")
-				   caso "F"
-				    escreva("Seu sexo = F - feminino")
-				   outrocaso
-				       escreva("Sexo invalido")
-				   fimescolha 
+				   caso "M":
+				       escreva("Seu sexo = M - masculino");
+				       interrompa;
+				   caso "F":
+				    escreva("Seu sexo = F - feminino");
+				    interrompa;
+				   outrocaso:
+				       escreva("Sexo invalido");
+				       interrompa;
+				   fimescolha
+			
 			fimalgoritmo
 		''')
 		Assert.assertNotNull(result)
@@ -344,43 +361,492 @@ class PortugolParsingTest {
 	@Test
 	def void testCaseScenario2() {
 		val result = parseHelper.parse('''
-			algoritmo "questao_04"
+			algoritmo "questao_04";
 			
-			// Descricao: Programa que verifica se uma letra digitada � vogal ou consoante.
+			// Descricao: Programa que verifica se uma letra digitada é vogal ou consoante.
 			// Autor : Darlisson Jesus
 			// Data : 5/7/2013
+			
 			var
-			    letra_digitada:caracter
+			    letra_digitada:caracter;
 			
 			inicio
 				// Faz a leitura da letra.
-				   escreva("Digite uma letra do alfabeto: ")
-				   leia(letra_digitada)	
+				   escreva("Digite uma letra do alfabeto: ");
+				   leia(letra_digitada);
+				
 				// Faz a decisao da mensagem a ser mostrada. 
-				   escolha letra_digitada	
+				   escolha letra_digitada
+				
 				  // Se a letra digitada nao se encaixa nos casos de vogal('a','e','i','o','u')
-				  // entao trata-se de um outro caso, uma consoante.   
-				   caso "a"
-				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
-				       interrompa
-				   caso "e"
-				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
-				       interrompa
-				   caso "i"
-				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
-				       interrompa
-				caso "o"
-				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
-				       interrompa
-				caso "u"
-				       escreva("A letra <" ,letra_digitada,"> eh uma vogal")
-				       interrompa
-				   outrocaso
-				       escreva("A letra <" ,letra_digitada,"> eh uma consoante")
-				       interrompa
+				  // entao trata-se de um outro caso, uma consoante.
+				  
+				   caso "a":
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal");
+				       interrompa;
+				   caso "e":
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal");
+				       interrompa;
+				   caso "i":
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal");
+				       interrompa;
+				caso "o":
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal");
+				       interrompa;
+				caso "u":
+				       escreva("A letra <" ,letra_digitada,"> eh uma vogal");
+				       interrompa;
+				   outrocaso:
+				       escreva("A letra <" ,letra_digitada,"> eh uma consoante");
+				       interrompa;
 				   fimescolha
+			
 			fimalgoritmo
 		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testFunctionsScenario1() {
+		val result = parseHelper.parse('''
+			algoritmo "funcao_imposto";
+			
+			var
+			   taxa, custo : real;
+			
+			procedimento somaImposto(ptaxa, pcusto : real)
+			inicio
+			      custo <- pcusto + (taxa/100)*pcusto;
+			fimprocedimento
+			
+			inicio
+			      escreva("Informe o valor da taxa de imposto (%): ");
+			      leia(taxa);
+			      escreva("Informa o valor do custo da compra: ");
+			      leia(custo);
+			      somaImposto(taxa, custo);
+			      escreva("O valor de custo da sua compra + impostos é: ", custo);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testFunctionsScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "funcao_positivo_negativo";
+			
+			var
+			   a : inteiro;
+			   resultado : caracter;
+			
+			funcao verifica(a : inteiro) : caracter
+			inicio
+			      se (a > 0) entao
+			         retorne "P";
+			      senao
+			         retorne "N";
+			      fimse
+			
+			fimfuncao
+			
+			inicio
+			      escreva("Informe o valor a ser verificado: ");
+			      leia(a);
+			      resultado <- verifica(a);
+			      escreval(resultado);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testFunctionsScenario3() {
+		val result = parseHelper.parse('''
+			algoritmo "funcao_soma";
+			
+			var
+			   a,b,c,resultado_soma : inteiro;
+			
+			funcao soma(a, b, c : inteiro) : inteiro
+			inicio
+			      retorne a+b+c;
+			fimfuncao
+			
+			inicio
+			      escreva("Informe o valor de a: ");
+			      leia(a);
+			      escreva("Informe o valor de b: ");
+			      leia(b);
+			      escreva("Informe o valor de c: ");
+			      leia(c);
+			
+			      resultado_soma <- soma(a,b,c);
+			      escreval("O Resultado da soma e: ",resultado_soma);
+			      
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testFunctionsScenario4() {
+		val result = parseHelper.parse('''
+			algoritmo "imprime_nesima_01";
+			
+			var
+			   n : inteiro;
+			
+			procedimento imprime(n : inteiro)
+			var
+			   i, j : inteiro;
+			inicio
+			      para i de 1 ate n faca
+			       para j de 1 ate i faca
+			           escreva(i);
+			       fimpara
+			       escreval(" ");
+			      fimpara
+			fimprocedimento
+			
+			inicio
+			      escreva("Informe o valor de n: ");
+			      leia(n);
+			      imprime(n);
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testFunctionsScenario5() {
+		val result = parseHelper.parse('''
+			algoritmo "imprime_nesima_02";
+			
+			var
+			   n : inteiro;
+			
+			procedimento imprime(n : inteiro)
+			var
+			   i, j : inteiro;
+			inicio
+			      para i de 1 ate n faca
+			       para j de 1 ate i faca
+			           escreva(j);
+			       fimpara
+			       escreval(" ");
+			      fimpara
+			fimprocedimento
+			
+			inicio
+			      escreva("Informe o valor de n: ");
+			      leia(n);
+			      imprime(n);
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario1() {
+		val result = parseHelper.parse('''
+			algoritmo "AlgoritmoFibonacci";
+			// Função : Gera a sequencia de Fibonacci até a posicao informada pelo usuario
+			//          Consideremos a série como 1 1 2 3 5 8 13 21 34 ...
+			// Autor :  Leandro Bentes
+			var
+			   cont, n, num, atual, ant : inteiro;
+			inicio
+			      cont <- 0;
+			      escreval ("Quantos numeros da cadeia fibonacci deseja ver?");
+			      escreval ("Digite um numero maior que zero!");
+			      leia (n); //Lê o valor de entrada do usuário
+			
+			      se n <=0 entao
+			         escreval ("Numero Inválido!!!");
+			      senao
+			           se (n=1) entao //Caso o usuário só queira a primeira posicao
+			              escreval ("");
+			              escreval ("O primeiro numero da cadeia Fibonacci: ");
+			              escreval ("1 ");
+			           senao //Caso o usuário deseja mais de uma posicao
+			                 escreval ("");
+			                 escreval ("Os",n," primeiros numeros da cadeia Fibonacci: ");
+			                 escreva ("1  ");//Primeiro elemento considerado como 1
+			                 atual <- 1;
+			                 ant <- 0;
+			                 //Este bloco aplica a definicao matematica da serie de
+			                 //Fibonacci, onde a o elemento da posicao N na sequencia é a
+			                 //soma dos dois anteriores N-1 + N-2
+			                 repita
+			                       num <- atual + ant; //A saída é a soma dos dois valores anteriores
+			                       escreva ("- ", num, "  ");  // Exibe a saída N
+			                       ant <- atual;  // N-2 receve o valor de N-1
+			                       atual <- num ; // N-1 recebe o valor de N
+			                       cont <- cont + 1;
+			                 ate (cont = n-1);  //termina a repeticao assim quando o laço
+			                                   // a posicao desejada -1, pois o primeiro
+			                                   //elemento ja foi impresso fora do laco
+			           fimse
+			      fimse
+			      escreval ("");
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "FibMaior500";
+			var
+			// Função : Gera a sequencia de Fibonacci até que o valor seja maior que 500
+			//          Consideremos a série como 0 1 1 2 3 5 8 13 21 34 ...
+			// Autor :  Leandro Bentes
+			cont, num, atual, ant : inteiro;
+			inicio
+			      escreval ("Gerando série Fibonacci até valor maior que 500...");
+			      escreval ("");
+			      escreva ("0 1");
+			      atual <- 1; //Guarda o valor do elemento N-1 da série
+			      ant <- 0;  // Guarda o valor do elemento N-2 da série
+			      //Este bloco aplica a definicao matematica da serie de Fibonacci, onde a
+			      //o elemento da posicao N na sequencia é a soma dos dois anteriores
+			      // N-1 + N-2
+			      repita
+			            num <- atual + ant; //A saída é a soma dos dois valores anteriores
+			            escreva (num); // Saída N
+			            ant <- atual; // N-2 receve o valor de N-1
+			            atual <- num; // N-1 recebe o valor de N
+			      ate (atual > 500); //termina a repeticao assim que atigir valor maior q 500
+			      escreval ("");
+			      escreval ("");
+			      escreval ("Ultimo elemento da serie foi", atual);
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario3() {
+		val result = parseHelper.parse('''
+			algoritmo "Fatorial";
+			// Função : Calcula o fatorial de um número inteiro fornecido pelo usuário
+			// Autor :  Leandro Bentes
+			var
+			      cont, num, mult: inteiro;
+			inicio
+			   mult <- 1;
+			   escreva ("Informe um número para calcular o fatorial:  ");
+			   leia (num); //Faz a leitura da entrada do usuario
+			   se (num <0) entao //Valida numero negativos
+			      escreval ("");
+			      escreval ("Numero invalido para calculo!");
+			   senao
+			        se (num = 0) ou (num = 1) entao //Retorna fatorial 1 para entradas 0 e 1
+			           escreval ("");
+			           escreval ("O fatorial de ", num, " é: 1");
+			        senao
+			            //Este bloco aplica o principio matematico do fatorial, realiza a
+			            //multiplicacao do numero com seu anterior até 2, usando um contador
+			            //decrementa (passo -1), ignorando a
+			            //multiplicacao por 1 que nao altera o resultado. Ex:
+			            //5 * 4 * 3 * 2 = , fatorial de 5
+			            para cont de num ate 2 passo -1 faca
+			                   mult <- mult * (cont);
+			            fimpara
+			            
+			            escreval ("");
+			            escreval ("O fatorial de ", num, " é: ", mult);
+			        fimse
+			   fimse
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario4() {
+		val result = parseHelper.parse('''
+			algoritmo "MaiorMenorSoma";
+			// Função : Dado um conjunto de N números inteiros positivos, determina o menor
+			//          valor, o maior valor e a soma dos valores.
+			// Autor :  Leandro Bentes
+			var
+			      num, maior, menor, soma: inteiro;
+			inicio
+			      num <- 0;//Inicializa a variavel que armazena a leitura de dados
+			               //com 0 para entrar no laço abaixo. O valor será substituído
+			               //pela entrada do usuário
+			      maior <- 0; //Variavel que guardará o maior número, inicializada com
+			                 //o menor valor possível, que logo será substituído
+			      menor <- 9999; //Variavel que guardará o menor número, inicializada com
+			                    //valor alto para ser substituída pelo menor número assim
+			                    //que inserido
+			      soma <- 0;  //Acumulador que guarda a soma dos números de entrada
+			
+			      //Este bloco mantém a repetição enquanto o usuário inserir números válidos
+			      //encerrando o programa caso o usuário entre com um número negativo
+			      enquanto num >= 0 faca
+			               escreva("Insira um número (numero negativo encerra): ");
+			               leia(num); //Realiza a leitura do valor inserido pelo usuário
+			
+			               se num < 0 entao
+			                  escreval("Encerrando!");
+			               senao
+			                    //Verifica se a entrada supera o maior numero ate o momento
+			                    se num > maior entao
+			                       maior <- num;
+			                    fimse
+			                    //Vê se a entrada é inferior ao menor numero registrado
+			                    se num < menor entao
+			                       menor <- num;
+			                    fimse
+			                    //Acumula os valores inseridos
+			                    soma <- soma + num;
+			               fimse
+			      fimenquanto
+			
+			      escreval("Maior numero: ", maior);
+			      escreval("Menor numero: ", menor);
+			      escreval("Soma dos numeros: ", soma);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario5() {
+		val result = parseHelper.parse('''
+			algoritmo "MaiorMenorSomaLimited";
+			// Função : Dado um conjunto de N números, determina o menor valor, o 
+			//			maior valor e a soma dos valores.
+			//          Aceita como entrada números inteiros ENTRE  0 e 1000 (1 a 999)
+			// Autor :  Leandro Bentes
+			var
+			      num, maior, menor, soma: inteiro;
+			inicio
+			      num <- 1; //Inicializa a variavel que armazena a leitura de dados
+			               //com 1 para entrar no laço abaixo. O valor será substituído
+			               //pela entrada do usuário
+			      maior <- 0; //Variavel que guardará o maior número, inicializada com
+			                 //o menor valor possível, que logo será substituído
+			      menor <- 9999; //Variavel que guardará o menor número, inicializada com
+			                    //valor alto para ser substituída pelo menor número assim
+			                    //que inserido
+			      soma <- 0; //Acumulador que guarda a soma dos números de entrada
+			
+			      //Este bloco mantém a repetição enquanto o usuário inserir números válidos
+			      enquanto ((num > 0) e (num < 1000)) faca
+			               escreva("Insira um número (<=0 ou >=1000 encerra): ");
+			               leia(num);
+			               se (num <= 0) ou (num >=1000) entao
+			                  escreval("Encerrando!");
+			               senao
+			                    //Verifica se a entrada supera o maior numero ate o momento
+			                    se num > maior entao
+			                       maior <- num;
+			                    fimse
+			                    //Vê se a entrada é inferior ao menor numero registrado
+			                    se num < menor entao
+			                       menor <- num;
+			                    fimse
+			                    //Acumula os valores inseridos
+			                    soma <- soma + num;
+			               fimse
+			      fimenquanto
+			
+			      escreval("Maior numero: ", maior);
+			      escreval("Menor numero: ", menor);
+			      escreval("Soma dos numeros: ", soma);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario6() {
+		val result = parseHelper.parse('''
+			algoritmo "Fatorial de numeros inteiros positivos menores ou iguais a 16";
+			// Função : Fatorial de numeros inteiros positivos menores ou iguais a 16
+			// Autor :  Daniel Aquino
+			// Data : 7/5/2013
+			// Seção de Declarações 
+			var
+			num, i, fatorial: inteiro;
+			inicio
+			// Seção de Comandos 
+			   repita
+			         escreva("Digite um número inteiro positivo menor ou igual a 16: ");
+			         leia(num);
+			
+			         //inicio da fatoração
+			         fatorial <- 1;
+			
+			         //calcula e imprime resultado se o numero do fatorial for inteiro positivo menor ou igual a 16
+			         se(num > 0) e (num < 17) entao
+			                //calculo da fatoracao
+			                para i de num ate 1 passo -1 faca
+			                     fatorial <- fatorial * num;
+			                fimpara
+			                escreval(fatorial);
+			         fimse
+			   //se numero for menor que 1 ou maior que 16, interrompe
+			   ate ((num < 1) ou (num > 16));
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario7() {
+		val result = parseHelper.parse('''
+	
+	''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario8() {
+		val result = parseHelper.parse('''
+	
+	''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario9() {
+		val result = parseHelper.parse('''
+	
+	''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario10() {
+		val result = parseHelper.parse('''
+	
+	''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testLoopScenario11() {
+		val result = parseHelper.parse('''
+	
+	''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testCaseEmpty() {
+		val result = parseHelper.parse('''
+	
+	''')
 		Assert.assertNotNull(result)
 	}
 }

@@ -59,6 +59,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockCommand/commands"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//AbstractCommand"/>
+    <genClasses ecoreClass="Portugol.ecore#//BreakStatement"/>
+    <genClasses ecoreClass="Portugol.ecore#//ReturnStatement"/>
     <genClasses ecoreClass="Portugol.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//IfStatement/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//IfStatement/commands"/>
@@ -72,11 +74,9 @@
     <genClasses ecoreClass="Portugol.ecore#//CaseList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//CaseList/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//CaseList/commands"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//CaseList/breakStatement"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//OtherCase">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//OtherCase/otherCaseCommands"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//OtherCase/breakStatement"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//ForStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ForStatement/operatorExpr"/>
@@ -124,6 +124,9 @@
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//StringExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//StringExpression/literalString"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//ReturnExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//ReturnExpression/expr"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BinaryOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/left"/>

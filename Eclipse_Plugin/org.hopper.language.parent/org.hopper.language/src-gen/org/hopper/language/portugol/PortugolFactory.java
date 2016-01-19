@@ -168,6 +168,24 @@ public interface PortugolFactory extends EFactory
   AbstractCommand createAbstractCommand();
 
   /**
+   * Returns a new object of class '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Break Statement</em>'.
+   * @generated
+   */
+  BreakStatement createBreakStatement();
+
+  /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  ReturnStatement createReturnStatement();
+
+  /**
    * Returns a new object of class '<em>If Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -310,6 +328,15 @@ public interface PortugolFactory extends EFactory
    * @generated
    */
   StringExpression createStringExpression();
+
+  /**
+   * Returns a new object of class '<em>Return Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Expression</em>'.
+   * @generated
+   */
+  ReturnExpression createReturnExpression();
 
   /**
    * Returns a new object of class '<em>Binary Operation</em>'.

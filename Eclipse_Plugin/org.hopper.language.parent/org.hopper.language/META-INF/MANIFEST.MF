@@ -25,5 +25,6 @@ Export-Package: org.hopper.language.parser.antlr.internal,
  org.hopper.language.services,
  org.hopper.language.validation,
  org.hopper.language.serializer,
- org.hopper.language.portugol.util
+ org.hopper.language.portugol.util,
+ org.hopper.language.parser.antlr.lexer
 Import-Package: org.apache.log4j
