@@ -14,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.Expression#getPreDefFunctionName <em>Pre Def Function Name</em>}</li>
  *   <li>{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getExpression()
@@ -25,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expression extends AbstractCommand
 {
   /**
-   * Returns the value of the '<em><b>Fb Name</b></em>' reference.
+   * Returns the value of the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fb Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Pre Def Function Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fb Name</em>' reference.
-   * @see #setFbName(EObject)
-   * @see org.hopper.language.portugol.PortugolPackage#getExpression_FbName()
+   * @return the value of the '<em>Pre Def Function Name</em>' attribute.
+   * @see #setPreDefFunctionName(String)
+   * @see org.hopper.language.portugol.PortugolPackage#getExpression_PreDefFunctionName()
    * @model
    * @generated
    */
-  EObject getFbName();
+  String getPreDefFunctionName();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}' reference.
+   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getPreDefFunctionName <em>Pre Def Function Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fb Name</em>' reference.
-   * @see #getFbName()
+   * @param value the new value of the '<em>Pre Def Function Name</em>' attribute.
+   * @see #getPreDefFunctionName()
    * @generated
    */
-  void setFbName(EObject value);
+  void setPreDefFunctionName(String value);
 
   /**
    * Returns the value of the '<em><b>Param</b></em>' containment reference.
@@ -75,5 +76,31 @@ public interface Expression extends AbstractCommand
    * @generated
    */
   void setParam(SubprogramParam value);
+
+  /**
+   * Returns the value of the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fb Name</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fb Name</em>' reference.
+   * @see #setFbName(EObject)
+   * @see org.hopper.language.portugol.PortugolPackage#getExpression_FbName()
+   * @model
+   * @generated
+   */
+  EObject getFbName();
+
+  /**
+   * Sets the value of the '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fb Name</em>' reference.
+   * @see #getFbName()
+   * @generated
+   */
+  void setFbName(EObject value);
 
 } // Expression

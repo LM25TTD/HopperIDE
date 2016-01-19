@@ -805,48 +805,733 @@ class PortugolParsingTest {
 	@Test
 	def void testLoopScenario7() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "Numero primo";
+			// Função : Determinar se número é o não é primo
+			// Autor : Daniel
+			// Data : 7/5/2013
+			// Seção de Declarações 
+			var
+			   num, i, j: inteiro;
+			inicio
+			   // Seção de Comandos
+			   repita
+			      escreva("Escreva um numero inteiro positivo: ");
+			      leia(num);
+			   ate (num > 0);
+			   
+			   j <- 0;
+			   para i de 1 ate num faca
+			        //verifica se o número é divisível; se for divisivel por mais que 2 números, não é primo
+			    se((num mod i) = 0) entao
+			                j <- j + 1;
+			        fimse
+			        //interrompe se número não é primo
+			    se j > 2 entao
+			           interrompa;
+			        fimse
+			   fimpara
+			   //imprime se numero é primo ou não
+			   se j > 2 entao
+			        escreva("O número não é primo");
+			   senao
+			        escreva("O número é primo");
+			   fimse
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 
 	@Test
 	def void testLoopScenario8() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "Numero primo";
+			// Função : Determinar se número é o não é primo.
+			//          Se não primo, mostrar todos os seus divisiveis.
+			// Autor : Daniel
+			// Data : 7/5/2013
+			// Seção de Declarações
+			var
+			   num, i, j: inteiro;
+			inicio
+			   // Seção de Comandos
+			   repita
+			      escreva("Escreva um numero inteiro positivo: ");
+			      leia(num);
+			   ate (num > 0);
+			
+			   j <- 0;
+			   para i de 1 ate num faca
+			        se((num mod i) = 0) entao
+			                j <- j + 1;
+			        fimse
+			    //o número não é primo
+			        se j > 2 entao
+			           interrompa;
+			        fimse
+			   fimpara
+				//imprime se número é primo ou não
+				  se j > 2 entao
+				       escreval("O número não é primo");
+				   //se não primo, imprive os seus divisíveis        
+				   para i de 1 ate num faca
+				          se((num mod i) = 0) entao
+				                  escreval(i);
+				          fimse
+				     fimpara
+				  senao
+				       escreva("O número é primo");
+				  fimse
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 
 	@Test
 	def void testLoopScenario9() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "Numero primo";
+			// Função : Determinar se número é o não é primo.
+			//          Se não primo, mostrar todos os seus divisiveis.
+			// Autor : Daniel
+			// Data : 7/5/2013
+			// Seção de Declarações
+			var
+			   num, i, j, k, total: inteiro;
+			   ic: real;
+			inicio
+			   // Seção de Comandos
+			   repita
+			      escreva("Escreva um numero inteiro positivo: ");
+			      leia(num);
+			   ate (num > 0);
+			
+				//variável que conta o número total de divisões   
+				total <- 0;
+				// Verifica os Num primeiros números e verifica quais são primos
+				  para i de 1 ate num faca
+				       k <- 0;
+				  
+				   //verifica até que ponto devo fazer as divisões para saber se um número é primo
+				       ic <- (i / 2);
+				       j <- 1;
+				       //verifica se o número i é primo ou não
+				   enquanto (j <= ic) faca
+				          total <- total + 1;
+				          se((i mod j) = 0) entao
+				                k <- k + 1;
+				          fimse
+				    //se k for maior que 1, o número não é primo
+				          se k > 1 entao
+				             interrompa;
+				          fimse
+				          j <- j + 1;
+				       fimenquanto
+				   //imprime se número i for primo
+				       se k <= 1 entao
+				          escreval(i);
+				       fimse
+				  fimpara
+				  //imprime o número total de divisões realizadas
+				  escreval("Total de divisões realizadas: ", total);
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 
 	@Test
 	def void testLoopScenario10() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "Média de idade";
+			// Função : Calcula a média de notas
+			// Autor : Daniel Aquino
+			// Data : 8/5/2013
+			// Seção de Declarações
+			var
+			nota, total, soma, num, i: inteiro;
+			media: real;
+			inicio
+			      total <- 0;
+			      soma <- 0;
+			      //insere as notas a media que elas estiverem dentro da faixe entre 0 e 10 inclusive
+			      repita
+			            escreva("Escreva o numero total de notas: ");
+			            leia(num);
+			      ate (num > 0);
+			
+			      para i de 1 ate num faca
+			            escreva("Escreva a nota ", i, ": ");
+			            leia(nota);
+			            //soma das notas
+			            soma <- soma + nota;
+			            //total das notas
+			            total <- total + 1;
+			      fimpara
+			      
+			      //calculo da média
+			      media <- soma / total;
+			      //imprime média da turma
+			      escreval("Média da turma: ", media:1:2);
+			
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 
 	@Test
 	def void testLoopScenario11() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "Média de idade";
+			// Função : Calcula a média de idade
+			// Autor : Daniel Aquino
+			// Data : 8/5/2013
+			// Seção de Declarações
+			var
+			idade, total, soma, num, i: inteiro;
+			media: real;
+			inicio
+			      total <- 0;
+			      soma <- 0;
+			      //insere as notas a media que elas estiverem dentro da faixe entre 0 e 10 inclusive
+			      repita
+			            escreva("Escreva o numero total de pessoas: ");
+			            leia(num);
+			      ate (num > 0);
+			
+			      para i de 1 ate num faca
+			            escreva("Informa a idade da pessoa ", i, ": ");
+			            leia(idade);
+			            //soma das notas
+			            soma <- soma + idade;
+			            //total das notas
+			            total <- total + 1;
+			      fimpara
+			
+			      //calculo da média
+			      media <- soma / total;
+			      //imprime se a turma é jovem, adulta ou idosa
+			      se (media < 26) entao
+			         escreval("A turma é jovem");
+			      senao
+			         se (media < 61) entao
+			               escreval("A turma é adulta");
+			         senao
+			           escreval("A turma é idosa");
+			         fimse
+			      fimse
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 
 	@Test
-	def void testCaseEmpty() {
+	def void testSequenceScenario1() {
 		val result = parseHelper.parse('''
-	
-	''')
+			algoritmo "01_Alo Mundo";
+			// Função :       Mostrar a Mensagem "Alo Mundo" na tela
+			// Autor :        Williams Araújo
+			// Data : 7/5/2013
+			// Seção de Declarações 
+			inicio
+			      //Imprime na tela "Alo Mundo!"
+			      escreval("Alo Mundo!");
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "02_numero_informado";
+						// Função : Recebe um número informado pelo usuário
+						//          e então mostre a mensagem O número informado
+						//          foi [número].
+						// Autor :  Williams Araújo
+						// Data : 7/5/2013
+						// Seção de Declarações 
+						var
+						   n : real;
+						inicio
+						      escreval("Digite um Número: ");
+						      leia(n);
+						      escreval("O número informado foi ", n);
+						fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario3() {
+		val result = parseHelper.parse('''
+			algoritmo "03_soma";
+			// Função : Imprime a soma de dois números informados pelo usuário.
+			// Autor : Williams Araújo
+			// Data : 7/5/2013
+			// Seção de Declarações 
+			var
+			   a, b, soma : real;
+			inicio
+			      //Faz a leitura de dois números informados pelo usuário
+			      escreval("Digite o primeiro numero: ");
+			      leia(a);
+			      escreval("Digite o segundo numero: ");
+			      leia(b);
+			      
+			      //Efetua o cálculo para a obtenção da soma
+			      soma <- a+b;
+			      escreva("A soma é: ", soma);
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario4() {
+		val result = parseHelper.parse('''
+			algoritmo "04_media";
+			// Função : Calcula a Média de 4 notas bimestrais informadas pelo usuario
+			// Autor : Williams Araújo
+			// Data : 7/5/2013
+			// Seção de Declarações 
+			var
+			   n1, n2, n3, n4, media : real;
+			inicio
+			      //Efetua a leitura das 4 notas bimestrais
+			      escreval("Digite a nota do 1 bimestre: ");
+			      leia(n1);
+			      escreval("Digite a nota do 2 bimestre: ");
+			      leia(n2);
+			      escreval("Digite a nota do 3 bimestre: ");
+			      leia(n3);
+			      escreval("Digite a nota do 4 bimestre: ");
+			      leia(n4);
+			      
+			      //Calculo para obtenção da média
+			      media <- (n1+n2+n3+n4)/4;
+			      
+			      escreval("Média do aluno: ", media);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario5() {
+		val result = parseHelper.parse('''
+			algoritmo "05_metros_centimetros";
+			// Função :  Converte um valor em metros informado pelo usuário
+			//           para centímetros.
+			// Autor :   Williams Araújo
+			// Data :    7/5/2013
+			var
+			   metro, centimetro : real;
+			inicio
+			      escreval("Digite um valor em metros: ");
+			      leia(metro);
+			      
+			      //Calculo para a obtenção do valor equivalente em centímetro
+			      centimetro <- metro * 100;
+			      
+			      escreval("O valor em centímetros é: ", centimetro);
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario6() {
+		val result = parseHelper.parse('''
+			algoritmo "06_area_circulo";
+			// Função :  Recebe o raio do círculo informada pelo usuário,calcula
+			//           e mostra sua área.
+			// Autor :   Williams Araújo
+			// Data :    7/5/2013
+			var
+			   raio, area: real;
+			inicio
+			      escreval("Informe o raio do círculo: ");
+			      leia(raio);
+			      
+			      //O portugol já possui uma constante chamada pi
+			      area <- pi*(raio^2);
+			      
+			      escreval("A área do círculo é: ", area);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario7() {
+		val result = parseHelper.parse('''
+			algoritmo "Dobro_quadrado";
+			// Função :Faça um Programa que calcule a área de um quadrado
+			//        , em seguida mostre o dobro desta área para o usuário.
+			// Autor : Iasmim Cunha
+			// Data : 5/8/2013
+			// Seção de Declarações 
+			var
+			lado :real;
+			area :real;
+			inicio
+			// Seção de Comandos 
+			escreval("Entre com o valor da lado do quadrado");
+			leia(lado);
+			area <- lado * lado;
+			escreval("O Dobro da área do quadrado é",2*area);
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario8() {
+		val result = parseHelper.parse('''
+			algoritmo "Retorna_Salario";
+			// Função :Faça um Programa que pergunte quanto você
+			//         ganha por hora e o número de horas trabalhadas no mês
+			//         Calcule e mostre o total do seu salário no referido mês.
+			// Autor : Iasmim Cunha
+			// Data : 5/8/2013
+			// Seção de Declarações 
+			var
+			salario_hora : real;
+			horas_mes :real;
+			salario_base : real;
+			inicio
+			// Seção de Comandos 
+			escreval("Quanto você ganha por hora?");
+			leia(salario_hora);
+			escreval("Quantas horas você trabalho em um mês?");
+			leia(horas_mes);
+			
+			salario_base <- salario_hora*horas_mes;
+			
+			escreval("Você ganha em torno de :",salario_base," por mês");
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario9() {
+		val result = parseHelper.parse('''
+			algoritmo "Transforma_FC";
+			// Função :   Faça um Programa que peça a temperatura
+			//            em graus Farenheit, transforme e mostre
+			//            a temperatura em graus Celsius.
+			// Autor : Iasmim Cunha
+			// Data : 5/8/2013
+			// Seção de Declarações 
+			var
+			celsius : real;
+			farenheit : real;
+			inicio
+			// Seção de Comandos
+			escreval("Entre com o valor da temperatura em Graus Farenheit");
+			leia(farenheit);
+			celsius <- (5 * (farenheit-32) / 9);
+			escreval("O valor  ",farenheit," em Farenheit,equivale a ",celsius," em graus Celsius ");
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testSequenceScenario10() {
+		val result = parseHelper.parse('''
+			algoritmo "Transforma_cf";
+			// Função :Faça um Programa que peça
+			//         a temperatura em graus Celsius
+			//         , transforme e mostre em graus Farenheit
+			// Autor : Iasmim Cunha
+			// Data : 5/8/2013
+			// Seção de Declarações 
+			var
+			celsius : real;
+			farenheit : real;
+			inicio
+			// Seção de Comandos
+			escreval("Entre com o valor da temperatura em Graus Celsius");
+			leia(celsius);
+			farenheit <- (celsius*9/5) +32;
+			escreval("O valor  ",celsius," em Celsius,equivale a ",farenheit," em graus Farenheit ");
+			fimalgoritmo			
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testStringScenario1() {
+		val result = parseHelper.parse('''
+			algoritmo "nome_maiusc";
+			// Função : Programa que permita ao usuario digitar
+			//          o seu nome e em seguida mostra o nome do usuario
+			//          de tras para frente utilizando somente letras
+			//          maiusculas.
+			// Autor : Darlisson Jesus
+			// Data : 6/6/2013
+			
+			var
+			
+			   // Declaracao de variaveis.
+			   
+			   letra,nome: caracter;
+			   nome_tam,i:inteiro;
+			   
+			inicio
+			
+			   // Solicita que o usuario informe seu nome.
+			
+			   escreva("Digite seu nome: ");
+			   leia(nome);
+			   
+			   // Usa a funcao maiusc() para transformar o nome do usuario
+			   // para maiusculo.
+			   // maiusc() recebe uma cadeia de caracteres e retorna essa cadeia
+			   // em maiusculo.
+			   
+			   nome <-maiusc(nome);
+			
+			   // Usa a funcao compr()para obter o tamanho do nome do usuario
+			   // compr() recebe uma cadeia de caracteres e retorna um seu tamanho
+			   nome_tam<- compr(nome);
+			   
+			   // Inicio a impressao do nome do usuario em maiusculo e
+			   // invertido.
+			   
+			   escreva("Seu nome em Maiusculo invertido: ");
+			   
+			   // Nesse trecho usa-se um laco de repeticao para obter caracter por caracter
+			   // do nome do usuario, de tras para frente que eh armazenado na variavel letra,
+			   // usando a funcao copia().
+			
+			   // Usa-se a funcao copia(str,posicao_inicial,qtd) que retorna uma quantidade
+			   // especifica de caracateres a partir de uma posicao da string.
+			   // onde str - eh uma cadeia de caracteres
+			   // posicao_inicial -  representa a posicao na string para iniciar a copia
+			   // qtd representa a quantidade de caracteres que se deseja copiar.
+			
+			   // A variavel letra recebe um caracter de tras pra frente do nome
+			   // em cada iteracao do laco.
+			   
+			   para i de nome_tam ate 1 passo -1 faca
+			      letra <- copia(nome,i,1);
+			      escreva(letra);
+			   fimpara
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testStringScenario2() {
+		val result = parseHelper.parse('''
+			algoritmo "nome_na_vertical";
+			// Função : Programa que solicita o nome do usuario e o imprime na vertical.
+			// Autor :  Darlisson Jesus
+			// Data : 6/6/2013
+			
+			var
+			
+			   // Declaracao de variaveis.
+			   letra,nome: caracter;
+			   nome_tam,i: inteiro;
+			
+			inicio
+			
+			      // Solicita o nome do usuario.
+			      
+			      escreva("Digite seu nome: ");
+			      leia(nome);
+			
+			      // Transforma em maiusculo o nome do usuario.
+			      
+			      nome <-maiusc(nome);
+			      
+			      // Obtem o tamanho do nome do usuario.
+			
+			      nome_tam <- compr(nome);
+			
+			      // Usa um laco de repeticao para percorrer caracter
+			      // por caracter do nome do usuario e imprime um caracter por
+			      // linha no console.
+			      
+			      // Usa-se a funcao copia() para se obter um unico caracter
+			      // a cada laco de repeticao.
+			      
+			      i <- 1;
+			      repita
+			           letra <- copia(nome,i,1);
+			           escreval(letra);
+			           i <- i+1;
+			      ate i = nome_tam+1;
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testStringScenario3() {
+		val result = parseHelper.parse('''
+			algoritmo "nome_na_vertical_escada";
+			// Função : Programa que solicita o nome do usuario e o imprime na vertical
+			//          em forma de escada.
+			// Autor :  Darlisson Jesus
+			// Data : 6/6/2013
+			
+			var
+			
+			   // Declaracao de variaveis.
+			   letra,nome: caracter;
+			   nome_tam,i: inteiro;
+			
+			inicio
+			
+			      // Solicita o nome do usuario.
+			      
+			      escreva("Digite seu nome: ");
+			      leia(nome);
+			
+			      // Transforma em maiusculo o nome do usuario.
+			      
+			      nome <-maiusc(nome);
+			      
+			      // Obtem o tamanho do nome do usuario.
+			
+			      nome_tam <- compr(nome);
+			
+			      // Usa-se um laco de repeticao para incrementar a quantidade de caracteres do
+			      // nome do usuario que sera impressa por linha do console a cada iteracao.
+			
+			      // Usa-se a funcao copia() para se obter o conjunto de caracteres
+			      // de um tamanho 'i'.
+			      
+			      i <- 1;
+			      repita
+			           letra <- copia(nome,1,i);
+			           escreval(letra);
+			           i <- i+1;
+			      ate i = nome_tam+1;
+			
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testStringScenario4() {
+		val result = parseHelper.parse('''
+			algoritmo "nome_na_vertical_escada_inv";
+			// Função : Programa que solicita o nome do usuario e o imprime na vertical
+			//          em forma de escada invertida.
+			// Autor :  Darlisson Jesus
+			// Data : 6/6/2013
+			
+			var
+			
+			   // Declaracao de variaveis.
+			   letra,nome: caracter;
+			   nome_tam,i: inteiro;
+			
+			inicio
+			
+			      // Solicita o nome do usuario.
+			      
+			      escreva("Digite seu nome: ");
+			      leia(nome);
+			
+			      // Transforma em maiusculo o nome do usuario.
+			      
+			      nome <-maiusc(nome);
+			      
+			      // Obtem o tamanho do nome do usuario.
+			
+			      nome_tam <- compr(nome);
+			
+			      // Usa-se um laco de repeticao para decrementar a quantidade de caracteres do
+			      // nome do usuario que sera impressa por linha do console a cada iteracao.
+			      
+			      // Usa-se a funcao copia() para se obter o conjunto de caracteres
+			      // de um tamanho 'i'.
+			      
+			      para i de nome_tam ate 1 passo -1 faca
+			           letra <- copia(nome,1,i);
+			           escreval(letra);
+			      fimpara
+			      
+			fimalgoritmo
+		''')
+		Assert.assertNotNull(result)
+	}
+
+	@Test
+	def void testStringScenario5() {
+		val result = parseHelper.parse('''
+			algoritmo "compara_strings";
+			
+			// Função : Programa que ler 2 strings e informa o
+			//          conteudo delas seguido do seu comprimento.
+			//          Informa tambem se as duas strings possuem o
+			//          mesmo comprimento e se sao iguais ou diferentes no conteudo.
+			// Autor : Darlisson Jesus
+			// Data : 6/6/2013
+			
+			var
+			   // Declaracao de variaveis
+			   str1, str2:caracter;
+			   str1_tam, str2_tam:inteiro;
+			   
+			inicio
+			
+			      // Solicita que o usuario informe as strings.
+			      
+			      escreva("Digite a primeira string: ");
+			      leia(str1);
+			      escreva("Digite a segunda string: ");
+			      leia(str2);
+			      
+			      // Imprime para o usuario informacoes
+			      // sobre as strings.
+			      
+			      escreval("Compara duas strings");
+			      escreval("string 1: ", str1 );
+			      escreval("string 2: ", str2 );
+			
+			      // Atribui as variaveis inteiro tam1 e tam2
+			      // o tamanho das respectivas strings ( str1 e str2)
+			      // Usa-se a funcao da linguagem compr() que recebe uma
+			      // cadeia de caracter e retorna tamanho dessa cadeia.
+			      
+			      str1_tam <- compr(str1);
+			      str2_tam <- compr(str2);
+			
+			      // Informa ao usuario o tamanho das strings.
+			      
+			      escreval("Tamanho de '", str1,"' :",str1_tam," caracteres.");
+			      escreval("Tamanho de '", str2,"' :",str2_tam, " caracteres.");
+			      
+			      // Informa ao usuario se as strings possuem o mesmo
+			      // tamanho e mesmo conteudo.
+			      
+			      se(str1_tam = str2_tam)entao
+			          escreval("As duas strings sao de tamanhos iguais.");
+			
+			          se (str1 = str2) entao
+			             escreval("As duas strings possuem conteudos iguais.");
+			          fimse
+			      senao
+			          escreval("As duas strings sao de tamanhos diferentes.");
+			          escreval("As duas strings possuem conteudos diferentes.");
+			      fimse
+			
+			fimalgoritmo
+		''')
 		Assert.assertNotNull(result)
 	}
 }

@@ -28,6 +28,7 @@ import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
+import org.hopper.language.portugol.Literal;
 import org.hopper.language.portugol.Model;
 import org.hopper.language.portugol.NumericLiteral;
 import org.hopper.language.portugol.OptDecimalPrecision;
@@ -93,7 +94,11 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_DeclaredVarList(context, (DeclaredVarList) semanticObject); 
 				return; 
 			case PortugolPackage.EXPRESSION:
-				if (rule == grammarAccess.getAbstractCommandRule()
+				if (rule == grammarAccess.getFunctionCallRule()) {
+					sequence_FunctionCall(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAbstractCommandRule()
 						|| rule == grammarAccess.getExpressionRule()
 						|| rule == grammarAccess.getAssignmentRule()
 						|| action == grammarAccess.getAssignmentAccess().getBinaryOperationLeftAction_1_0_0_0()
@@ -114,9 +119,12 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 						|| rule == grammarAccess.getPowerExpressionRule()
 						|| action == grammarAccess.getPowerExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
 						|| rule == grammarAccess.getUnaryExpressionRule()
-						|| rule == grammarAccess.getPrimaryExpressionRule()
-						|| rule == grammarAccess.getFunctionCallRule()) {
-					sequence_FunctionCall(context, (Expression) semanticObject); 
+						|| rule == grammarAccess.getPrimaryExpressionRule()) {
+					sequence_FunctionCall_PreDefinedFunctionCall(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPreDefinedFunctionCallRule()) {
+					sequence_PreDefinedFunctionCall(context, (Expression) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getProcedureCallRule()) {
@@ -135,6 +143,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case PortugolPackage.IF_STATEMENT:
 				sequence_IfStatement(context, (IfStatement) semanticObject); 
+				return; 
+			case PortugolPackage.LITERAL:
+				sequence_Literal(context, (Literal) semanticObject); 
 				return; 
 			case PortugolPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -386,6 +397,27 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     FunctionCall returns Expression
+	 *
+	 * Constraint:
+	 *     (fbName=[FunctionName|ID] param=SubprogramParam)
+	 */
+	protected void sequence_FunctionCall(ISerializationContext context, Expression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameIDTerminalRuleCall_0_0_1(), semanticObject.getFbName());
+		feeder.accept(grammarAccess.getFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0(), semanticObject.getParam());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractCommand returns Expression
 	 *     Expression returns Expression
 	 *     Assignment returns Expression
@@ -408,22 +440,12 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     PowerExpression.BinaryOperation_1_0_0_0 returns Expression
 	 *     UnaryExpression returns Expression
 	 *     PrimaryExpression returns Expression
-	 *     FunctionCall returns Expression
 	 *
 	 * Constraint:
-	 *     (fbName=[FunctionName|ID] param=SubprogramParam)
+	 *     ((preDefFunctionName=PredefineFunctions param=SubprogramParam) | (fbName=[FunctionName|ID] param=SubprogramParam))
 	 */
-	protected void sequence_FunctionCall(ISerializationContext context, Expression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME));
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameIDTerminalRuleCall_0_0_1(), semanticObject.getFbName());
-		feeder.accept(grammarAccess.getFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0(), semanticObject.getParam());
-		feeder.finish();
+	protected void sequence_FunctionCall_PreDefinedFunctionCall(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -478,10 +500,44 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractCommand returns Literal
+	 *     Expression returns Literal
+	 *     Assignment returns Literal
+	 *     Assignment.BinaryOperation_1_0_0_0 returns Literal
+	 *     OrExpression returns Literal
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     XorExpression returns Literal
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     AndExpression returns Literal
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     Comparison returns Literal
+	 *     Comparison.BinaryOperation_1_0_0_0 returns Literal
+	 *     EquExpression returns Literal
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     AddExpression returns Literal
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     MultiplicativeExpression returns Literal
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     PowerExpression returns Literal
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns Literal
+	 *     UnaryExpression returns Literal
+	 *     PrimaryExpression returns Literal
+	 *     Literal returns Literal
+	 *
+	 * Constraint:
+	 *     {Literal}
+	 */
+	protected void sequence_Literal(ISerializationContext context, Literal semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (header=HeaderBlock globalDeclarations=DeclarationsBlock subprograms=Subprograms? commands=BlockCommand)
+	 *     (header=HeaderBlock globalDeclarations=DeclarationsBlock? subprograms=Subprograms? commands=BlockCommand)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -544,6 +600,27 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_OtherCase(ISerializationContext context, OtherCase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PreDefinedFunctionCall returns Expression
+	 *
+	 * Constraint:
+	 *     (preDefFunctionName=PredefineFunctions param=SubprogramParam)
+	 */
+	protected void sequence_PreDefinedFunctionCall(ISerializationContext context, Expression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PRE_DEF_FUNCTION_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PRE_DEF_FUNCTION_NAME));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPreDefinedFunctionCallAccess().getPreDefFunctionNamePredefineFunctionsParserRuleCall_0_0(), semanticObject.getPreDefFunctionName());
+		feeder.accept(grammarAccess.getPreDefinedFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0(), semanticObject.getParam());
+		feeder.finish();
 	}
 	
 	

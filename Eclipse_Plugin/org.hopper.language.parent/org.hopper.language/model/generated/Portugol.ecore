@@ -146,9 +146,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondPrecision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//AbstractCommand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fbName" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preDefFunctionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//SubprogramParam"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fbName" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclaredVar" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="varName" eType="#//VarName"/>
@@ -176,4 +177,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//Expression"/>
 </ecore:EPackage>

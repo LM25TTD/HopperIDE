@@ -102,6 +102,7 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.RETURN_EXPRESSION: return createReturnExpression();
       case PortugolPackage.BINARY_OPERATION: return createBinaryOperation();
       case PortugolPackage.UNARY_EXPRESSION: return createUnaryExpression();
+      case PortugolPackage.LITERAL: return createLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -512,6 +513,17 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
     return unaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Literal createLiteral()
+  {
+    LiteralImpl literal = new LiteralImpl();
+    return literal;
   }
 
   /**

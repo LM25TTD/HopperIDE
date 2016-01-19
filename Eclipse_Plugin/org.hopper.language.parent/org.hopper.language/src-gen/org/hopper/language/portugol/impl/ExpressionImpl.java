@@ -24,8 +24,9 @@ import org.hopper.language.portugol.SubprogramParam;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getFbName <em>Fb Name</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getPreDefFunctionName <em>Pre Def Function Name</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getParam <em>Param</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getFbName <em>Fb Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,14 +34,24 @@ import org.hopper.language.portugol.SubprogramParam;
 public class ExpressionImpl extends AbstractCommandImpl implements Expression
 {
   /**
-   * The cached value of the '{@link #getFbName() <em>Fb Name</em>}' reference.
+   * The default value of the '{@link #getPreDefFunctionName() <em>Pre Def Function Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFbName()
+   * @see #getPreDefFunctionName()
    * @generated
    * @ordered
    */
-  protected EObject fbName;
+  protected static final String PRE_DEF_FUNCTION_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPreDefFunctionName() <em>Pre Def Function Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreDefFunctionName()
+   * @generated
+   * @ordered
+   */
+  protected String preDefFunctionName = PRE_DEF_FUNCTION_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getParam() <em>Param</em>}' containment reference.
@@ -51,6 +62,16 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * @ordered
    */
   protected SubprogramParam param;
+
+  /**
+   * The cached value of the '{@link #getFbName() <em>Fb Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFbName()
+   * @generated
+   * @ordered
+   */
+  protected EObject fbName;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,19 +99,9 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getFbName()
+  public String getPreDefFunctionName()
   {
-    if (fbName != null && fbName.eIsProxy())
-    {
-      InternalEObject oldFbName = (InternalEObject)fbName;
-      fbName = eResolveProxy(oldFbName);
-      if (fbName != oldFbName)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
-      }
-    }
-    return fbName;
+    return preDefFunctionName;
   }
 
   /**
@@ -98,22 +109,12 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject basicGetFbName()
+  public void setPreDefFunctionName(String newPreDefFunctionName)
   {
-    return fbName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFbName(EObject newFbName)
-  {
-    EObject oldFbName = fbName;
-    fbName = newFbName;
+    String oldPreDefFunctionName = preDefFunctionName;
+    preDefFunctionName = newPreDefFunctionName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__PRE_DEF_FUNCTION_NAME, oldPreDefFunctionName, preDefFunctionName));
   }
 
   /**
@@ -169,6 +170,49 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
+  public EObject getFbName()
+  {
+    if (fbName != null && fbName.eIsProxy())
+    {
+      InternalEObject oldFbName = (InternalEObject)fbName;
+      fbName = eResolveProxy(oldFbName);
+      if (fbName != oldFbName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
+      }
+    }
+    return fbName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObject basicGetFbName()
+  {
+    return fbName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFbName(EObject newFbName)
+  {
+    EObject oldFbName = fbName;
+    fbName = newFbName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -190,11 +234,13 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
   {
     switch (featureID)
     {
+      case PortugolPackage.EXPRESSION__PRE_DEF_FUNCTION_NAME:
+        return getPreDefFunctionName();
+      case PortugolPackage.EXPRESSION__PARAM:
+        return getParam();
       case PortugolPackage.EXPRESSION__FB_NAME:
         if (resolve) return getFbName();
         return basicGetFbName();
-      case PortugolPackage.EXPRESSION__PARAM:
-        return getParam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -209,11 +255,14 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        setFbName((EObject)newValue);
+      case PortugolPackage.EXPRESSION__PRE_DEF_FUNCTION_NAME:
+        setPreDefFunctionName((String)newValue);
         return;
       case PortugolPackage.EXPRESSION__PARAM:
         setParam((SubprogramParam)newValue);
+        return;
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        setFbName((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,11 +278,14 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        setFbName((EObject)null);
+      case PortugolPackage.EXPRESSION__PRE_DEF_FUNCTION_NAME:
+        setPreDefFunctionName(PRE_DEF_FUNCTION_NAME_EDEFAULT);
         return;
       case PortugolPackage.EXPRESSION__PARAM:
         setParam((SubprogramParam)null);
+        return;
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        setFbName((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -249,12 +301,31 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
   {
     switch (featureID)
     {
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        return fbName != null;
+      case PortugolPackage.EXPRESSION__PRE_DEF_FUNCTION_NAME:
+        return PRE_DEF_FUNCTION_NAME_EDEFAULT == null ? preDefFunctionName != null : !PRE_DEF_FUNCTION_NAME_EDEFAULT.equals(preDefFunctionName);
       case PortugolPackage.EXPRESSION__PARAM:
         return param != null;
+      case PortugolPackage.EXPRESSION__FB_NAME:
+        return fbName != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (preDefFunctionName: ");
+    result.append(preDefFunctionName);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExpressionImpl

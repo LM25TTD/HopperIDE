@@ -47,6 +47,7 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExpressionAccess().getAlternatives(), "rule__UnaryExpression__Alternatives");
 					put(grammarAccess.getUnaryExpressionAccess().getOpAlternatives_0_1_0(), "rule__UnaryExpression__OpAlternatives_0_1_0");
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
+					put(grammarAccess.getPredefineFunctionsAccess().getAlternatives(), "rule__PredefineFunctions__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getNumericLiteralAccess().getAlternatives(), "rule__NumericLiteral__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
@@ -121,9 +122,11 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPowerExpressionAccess().getGroup_1_0(), "rule__PowerExpression__Group_1_0__0");
 					put(grammarAccess.getPowerExpressionAccess().getGroup_1_0_0(), "rule__PowerExpression__Group_1_0_0__0");
 					put(grammarAccess.getUnaryExpressionAccess().getGroup_0(), "rule__UnaryExpression__Group_0__0");
-					put(grammarAccess.getPrimaryExpressionAccess().getGroup_3(), "rule__PrimaryExpression__Group_3__0");
+					put(grammarAccess.getPrimaryExpressionAccess().getGroup_4(), "rule__PrimaryExpression__Group_4__0");
+					put(grammarAccess.getPreDefinedFunctionCallAccess().getGroup(), "rule__PreDefinedFunctionCall__Group__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
 					put(grammarAccess.getProcedureCallAccess().getGroup(), "rule__ProcedureCall__Group__0");
+					put(grammarAccess.getLiteralAccess().getGroup_0(), "rule__Literal__Group_0__0");
 					put(grammarAccess.getModelAccess().getHeaderAssignment_0(), "rule__Model__HeaderAssignment_0");
 					put(grammarAccess.getModelAccess().getGlobalDeclarationsAssignment_1(), "rule__Model__GlobalDeclarationsAssignment_1");
 					put(grammarAccess.getModelAccess().getSubprogramsAssignment_2(), "rule__Model__SubprogramsAssignment_2");
@@ -199,6 +202,8 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPowerExpressionAccess().getRightAssignment_1_1(), "rule__PowerExpression__RightAssignment_1_1");
 					put(grammarAccess.getUnaryExpressionAccess().getOpAssignment_0_1(), "rule__UnaryExpression__OpAssignment_0_1");
 					put(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_0_2(), "rule__UnaryExpression__OperandAssignment_0_2");
+					put(grammarAccess.getPreDefinedFunctionCallAccess().getPreDefFunctionNameAssignment_0(), "rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0");
+					put(grammarAccess.getPreDefinedFunctionCallAccess().getParamAssignment_2(), "rule__PreDefinedFunctionCall__ParamAssignment_2");
 					put(grammarAccess.getFunctionCallAccess().getFbNameAssignment_0(), "rule__FunctionCall__FbNameAssignment_0");
 					put(grammarAccess.getFunctionCallAccess().getParamAssignment_2(), "rule__FunctionCall__ParamAssignment_2");
 					put(grammarAccess.getProcedureCallAccess().getFbNameAssignment_0(), "rule__ProcedureCall__FbNameAssignment_0");

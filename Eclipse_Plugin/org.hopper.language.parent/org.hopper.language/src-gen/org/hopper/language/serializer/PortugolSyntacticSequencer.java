@@ -20,14 +20,14 @@ import org.hopper.language.services.PortugolGrammarAccess;
 public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PortugolGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_3_0_a;
-	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_3_0_p;
+	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_4_0_a;
+	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_4_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PortugolGrammarAccess) access;
-		match_PrimaryExpression_LeftParenthesisKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_3_0());
-		match_PrimaryExpression_LeftParenthesisKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_3_0());
+		match_PrimaryExpression_LeftParenthesisKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_4_0());
+		match_PrimaryExpression_LeftParenthesisKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_4_0());
 	}
 	
 	@Override
@@ -38,6 +38,8 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getFLOATToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getINTRule())
 			return getINTToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getPiLiteralRule())
+			return getPiLiteralToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -70,16 +72,26 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "";
 	}
 	
+	/**
+	 * PiLiteral:
+	 * 	'pi';
+	 */
+	protected String getPiLiteralToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "pi";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_PrimaryExpression_LeftParenthesisKeyword_3_0_a.equals(syntax))
-				emit_PrimaryExpression_LeftParenthesisKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PrimaryExpression_LeftParenthesisKeyword_3_0_p.equals(syntax))
-				emit_PrimaryExpression_LeftParenthesisKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_PrimaryExpression_LeftParenthesisKeyword_4_0_a.equals(syntax))
+				emit_PrimaryExpression_LeftParenthesisKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PrimaryExpression_LeftParenthesisKeyword_4_0_p.equals(syntax))
+				emit_PrimaryExpression_LeftParenthesisKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -89,16 +101,19 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) PiLiteral (rule start)
+	 *     (rule start) (ambiguity) PiLiteral END_COMMAND (rule start)
 	 *     (rule start) (ambiguity) fbName=[FunctionName|ID]
 	 *     (rule start) (ambiguity) floatValue?=FLOAT
 	 *     (rule start) (ambiguity) intValue?=INT
 	 *     (rule start) (ambiguity) literalString=STRING
 	 *     (rule start) (ambiguity) op='-'
 	 *     (rule start) (ambiguity) op='NOT'
+	 *     (rule start) (ambiguity) preDefFunctionName=PredefineFunctions
 	 *     (rule start) (ambiguity) varName=[VarName|ID]
 	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
-	protected void emit_PrimaryExpression_LeftParenthesisKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PrimaryExpression_LeftParenthesisKeyword_4_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -111,7 +126,7 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) op='NOT'
 	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
-	protected void emit_PrimaryExpression_LeftParenthesisKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PrimaryExpression_LeftParenthesisKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

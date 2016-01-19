@@ -1124,13 +1124,13 @@ public interface PortugolPackage extends EPackage
   int EXPRESSION = 30;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__FB_NAME = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+  int EXPRESSION__PRE_DEF_FUNCTION_NAME = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1142,13 +1142,22 @@ public interface PortugolPackage extends EPackage
   int EXPRESSION__PARAM = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__FB_NAME = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+  int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
@@ -1161,13 +1170,13 @@ public interface PortugolPackage extends EPackage
   int DECLARED_VAR = 31;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARED_VAR__FB_NAME = EXPRESSION__FB_NAME;
+  int DECLARED_VAR__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1177,6 +1186,15 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int DECLARED_VAR__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARED_VAR__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
    * The feature id for the '<em><b>Var Name</b></em>' reference.
@@ -1207,13 +1225,13 @@ public interface PortugolPackage extends EPackage
   int NUMERIC_LITERAL = 32;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMERIC_LITERAL__FB_NAME = EXPRESSION__FB_NAME;
+  int NUMERIC_LITERAL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1223,6 +1241,15 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int NUMERIC_LITERAL__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMERIC_LITERAL__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
    * The feature id for the '<em><b>Int Value</b></em>' attribute.
@@ -1262,13 +1289,13 @@ public interface PortugolPackage extends EPackage
   int STRING_EXPRESSION = 33;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
+  int STRING_EXPRESSION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1278,6 +1305,15 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int STRING_EXPRESSION__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
    * The feature id for the '<em><b>Literal String</b></em>' attribute.
@@ -1336,13 +1372,13 @@ public interface PortugolPackage extends EPackage
   int BINARY_OPERATION = 35;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_OPERATION__FB_NAME = EXPRESSION__FB_NAME;
+  int BINARY_OPERATION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1352,6 +1388,15 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int BINARY_OPERATION__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_OPERATION__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1400,13 +1445,13 @@ public interface PortugolPackage extends EPackage
   int UNARY_EXPRESSION = 36;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
+  int UNARY_EXPRESSION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1416,6 +1461,15 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int UNARY_EXPRESSION__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1443,6 +1497,52 @@ public interface PortugolPackage extends EPackage
    * @ordered
    */
   int UNARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.LiteralImpl <em>Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.LiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
+   * @generated
+   */
+  int LITERAL = 37;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__FB_NAME = EXPRESSION__FB_NAME;
+
+  /**
+   * The number of structural features of the '<em>Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
@@ -2284,15 +2384,15 @@ public interface PortugolPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.Expression#getPreDefFunctionName <em>Pre Def Function Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Fb Name</em>'.
-   * @see org.hopper.language.portugol.Expression#getFbName()
+   * @return the meta object for the attribute '<em>Pre Def Function Name</em>'.
+   * @see org.hopper.language.portugol.Expression#getPreDefFunctionName()
    * @see #getExpression()
    * @generated
    */
-  EReference getExpression_FbName();
+  EAttribute getExpression_PreDefFunctionName();
 
   /**
    * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.Expression#getParam <em>Param</em>}'.
@@ -2304,6 +2404,17 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EReference getExpression_Param();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fb Name</em>'.
+   * @see org.hopper.language.portugol.Expression#getFbName()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_FbName();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.DeclaredVar <em>Declared Var</em>}'.
@@ -2474,6 +2585,16 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EReference getUnaryExpression_Operand();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.Literal <em>Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literal</em>'.
+   * @see org.hopper.language.portugol.Literal
+   * @generated
+   */
+  EClass getLiteral();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3193,12 +3314,12 @@ public interface PortugolPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Pre Def Function Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__FB_NAME = eINSTANCE.getExpression_FbName();
+    EAttribute EXPRESSION__PRE_DEF_FUNCTION_NAME = eINSTANCE.getExpression_PreDefFunctionName();
 
     /**
      * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
@@ -3207,6 +3328,14 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EReference EXPRESSION__PARAM = eINSTANCE.getExpression_Param();
+
+    /**
+     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__FB_NAME = eINSTANCE.getExpression_FbName();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
@@ -3347,6 +3476,16 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EReference UNARY_EXPRESSION__OPERAND = eINSTANCE.getUnaryExpression_Operand();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.LiteralImpl <em>Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.LiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
+     * @generated
+     */
+    EClass LITERAL = eINSTANCE.getLiteral();
 
   }
 

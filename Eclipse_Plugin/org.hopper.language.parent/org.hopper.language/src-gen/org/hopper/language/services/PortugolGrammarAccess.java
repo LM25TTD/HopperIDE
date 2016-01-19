@@ -38,12 +38,12 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Model:
 		//	header=HeaderBlock
-		//	globalDeclarations=DeclarationsBlock
+		//	globalDeclarations=DeclarationsBlock?
 		//	subprograms=Subprograms?
 		//	commands=BlockCommand;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//header=HeaderBlock globalDeclarations=DeclarationsBlock subprograms=Subprograms? commands=BlockCommand
+		//header=HeaderBlock globalDeclarations=DeclarationsBlock? subprograms=Subprograms? commands=BlockCommand
 		public Group getGroup() { return cGroup; }
 		
 		//header=HeaderBlock
@@ -52,7 +52,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//HeaderBlock
 		public RuleCall getHeaderHeaderBlockParserRuleCall_0_0() { return cHeaderHeaderBlockParserRuleCall_0_0; }
 		
-		//globalDeclarations=DeclarationsBlock
+		//globalDeclarations=DeclarationsBlock?
 		public Assignment getGlobalDeclarationsAssignment_1() { return cGlobalDeclarationsAssignment_1; }
 		
 		//DeclarationsBlock
@@ -1723,43 +1723,83 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PrimaryExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFunctionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDeclaredVarParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final RuleCall cPreDefinedFunctionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFunctionCallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDeclaredVarParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//PrimaryExpression Expression:
 		//	Literal
+		//	| PreDefinedFunctionCall
 		//	| FunctionCall
 		//	| DeclaredVar
 		//	| '(' Expression ')'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Literal | FunctionCall | DeclaredVar | '(' Expression ')'
+		//Literal | PreDefinedFunctionCall | FunctionCall | DeclaredVar | '(' Expression ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Literal
 		public RuleCall getLiteralParserRuleCall_0() { return cLiteralParserRuleCall_0; }
 		
+		//PreDefinedFunctionCall
+		public RuleCall getPreDefinedFunctionCallParserRuleCall_1() { return cPreDefinedFunctionCallParserRuleCall_1; }
+		
 		//FunctionCall
-		public RuleCall getFunctionCallParserRuleCall_1() { return cFunctionCallParserRuleCall_1; }
+		public RuleCall getFunctionCallParserRuleCall_2() { return cFunctionCallParserRuleCall_2; }
 		
 		//DeclaredVar
-		public RuleCall getDeclaredVarParserRuleCall_2() { return cDeclaredVarParserRuleCall_2; }
+		public RuleCall getDeclaredVarParserRuleCall_3() { return cDeclaredVarParserRuleCall_3; }
 		
 		//'(' Expression ')'
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
+		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
 		
 		//Expression
-		public RuleCall getExpressionParserRuleCall_3_1() { return cExpressionParserRuleCall_3_1; }
+		public RuleCall getExpressionParserRuleCall_4_1() { return cExpressionParserRuleCall_4_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
+		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
+	}
+	public class PreDefinedFunctionCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PreDefinedFunctionCall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPreDefFunctionNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPreDefFunctionNamePredefineFunctionsParserRuleCall_0_0 = (RuleCall)cPreDefFunctionNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParamSubprogramParamParserRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//PreDefinedFunctionCall Expression:
+		//	preDefFunctionName=PredefineFunctions '(' param=SubprogramParam ')'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//preDefFunctionName=PredefineFunctions '(' param=SubprogramParam ')'
+		public Group getGroup() { return cGroup; }
+		
+		//preDefFunctionName=PredefineFunctions
+		public Assignment getPreDefFunctionNameAssignment_0() { return cPreDefFunctionNameAssignment_0; }
+		
+		//PredefineFunctions
+		public RuleCall getPreDefFunctionNamePredefineFunctionsParserRuleCall_0_0() { return cPreDefFunctionNamePredefineFunctionsParserRuleCall_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//param=SubprogramParam
+		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
+		
+		//SubprogramParam
+		public RuleCall getParamSubprogramParamParserRuleCall_2_0() { return cParamSubprogramParamParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FunctionCall");
@@ -1799,6 +1839,33 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class PredefineFunctionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PredefineFunctions");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cMaiuscKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cComprKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cRaizqKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cCopiaKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//PredefineFunctions:
+		//	'maiusc' | 'compr' | 'raizq' | 'copia';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'maiusc' | 'compr' | 'raizq' | 'copia'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'maiusc'
+		public Keyword getMaiuscKeyword_0() { return cMaiuscKeyword_0; }
+		
+		//'compr'
+		public Keyword getComprKeyword_1() { return cComprKeyword_1; }
+		
+		//'raizq'
+		public Keyword getRaizqKeyword_2() { return cRaizqKeyword_2; }
+		
+		//'copia'
+		public Keyword getCopiaKeyword_3() { return cCopiaKeyword_3; }
 	}
 	public class ProcedureCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ProcedureCall");
@@ -1842,21 +1909,35 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	public class LiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.Literal");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cNumericLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cStringExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cLiteralAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final RuleCall cPiLiteralParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cNumericLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cStringExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Literal Expression:
-		//	NumericLiteral | StringExpression
+		//	{Literal} PiLiteral
+		//	| NumericLiteral
+		//	| StringExpression
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NumericLiteral | StringExpression
+		//{Literal} PiLiteral | NumericLiteral | StringExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//{Literal} PiLiteral
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{Literal}
+		public Action getLiteralAction_0_0() { return cLiteralAction_0_0; }
+		
+		//PiLiteral
+		public RuleCall getPiLiteralParserRuleCall_0_1() { return cPiLiteralParserRuleCall_0_1; }
+		
 		//NumericLiteral
-		public RuleCall getNumericLiteralParserRuleCall_0() { return cNumericLiteralParserRuleCall_0; }
+		public RuleCall getNumericLiteralParserRuleCall_1() { return cNumericLiteralParserRuleCall_1; }
 		
 		//StringExpression
-		public RuleCall getStringExpressionParserRuleCall_1() { return cStringExpressionParserRuleCall_1; }
+		public RuleCall getStringExpressionParserRuleCall_2() { return cStringExpressionParserRuleCall_2; }
 	}
 	public class DeclaredVarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.DeclaredVar");
@@ -1919,6 +2000,17 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLiteralStringSTRINGTerminalRuleCall_0() { return cLiteralStringSTRINGTerminalRuleCall_0; }
 	}
+	public class PiLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.PiLiteral");
+		private final Keyword cPiKeyword = (Keyword)rule.eContents().get(1);
+		
+		//PiLiteral:
+		//	'pi';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'pi'
+		public Keyword getPiKeyword() { return cPiKeyword; }
+	}
 	public class END_COMMANDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.END_COMMAND");
 		private final Keyword cSemicolonKeyword = (Keyword)rule.eContents().get(1);
@@ -1974,12 +2066,15 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	private final PowerExpressionElements pPowerExpression;
 	private final UnaryExpressionElements pUnaryExpression;
 	private final PrimaryExpressionElements pPrimaryExpression;
+	private final PreDefinedFunctionCallElements pPreDefinedFunctionCall;
 	private final FunctionCallElements pFunctionCall;
+	private final PredefineFunctionsElements pPredefineFunctions;
 	private final ProcedureCallElements pProcedureCall;
 	private final LiteralElements pLiteral;
 	private final DeclaredVarElements pDeclaredVar;
 	private final NumericLiteralElements pNumericLiteral;
 	private final StringExpressionElements pStringExpression;
+	private final PiLiteralElements pPiLiteral;
 	private final TerminalRule tFLOAT;
 	private final END_COMMANDElements pEND_COMMAND;
 	
@@ -2034,12 +2129,15 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPowerExpression = new PowerExpressionElements();
 		this.pUnaryExpression = new UnaryExpressionElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
+		this.pPreDefinedFunctionCall = new PreDefinedFunctionCallElements();
 		this.pFunctionCall = new FunctionCallElements();
+		this.pPredefineFunctions = new PredefineFunctionsElements();
 		this.pProcedureCall = new ProcedureCallElements();
 		this.pLiteral = new LiteralElements();
 		this.pDeclaredVar = new DeclaredVarElements();
 		this.pNumericLiteral = new NumericLiteralElements();
 		this.pStringExpression = new StringExpressionElements();
+		this.pPiLiteral = new PiLiteralElements();
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.FLOAT");
 		this.pEND_COMMAND = new END_COMMANDElements();
 	}
@@ -2073,7 +2171,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Model:
 	//	header=HeaderBlock
-	//	globalDeclarations=DeclarationsBlock
+	//	globalDeclarations=DeclarationsBlock?
 	//	subprograms=Subprograms?
 	//	commands=BlockCommand;
 	public ModelElements getModelAccess() {
@@ -2519,6 +2617,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PrimaryExpression Expression:
 	//	Literal
+	//	| PreDefinedFunctionCall
 	//	| FunctionCall
 	//	| DeclaredVar
 	//	| '(' Expression ')'
@@ -2530,6 +2629,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrimaryExpressionAccess().getRule();
 	}
 	
+	//PreDefinedFunctionCall Expression:
+	//	preDefFunctionName=PredefineFunctions '(' param=SubprogramParam ')'
+	public PreDefinedFunctionCallElements getPreDefinedFunctionCallAccess() {
+		return pPreDefinedFunctionCall;
+	}
+	
+	public ParserRule getPreDefinedFunctionCallRule() {
+		return getPreDefinedFunctionCallAccess().getRule();
+	}
+	
 	//FunctionCall Expression:
 	//	fbName=[FunctionName] '(' param=SubprogramParam ')'
 	public FunctionCallElements getFunctionCallAccess() {
@@ -2538,6 +2647,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getFunctionCallRule() {
 		return getFunctionCallAccess().getRule();
+	}
+	
+	//PredefineFunctions:
+	//	'maiusc' | 'compr' | 'raizq' | 'copia';
+	public PredefineFunctionsElements getPredefineFunctionsAccess() {
+		return pPredefineFunctions;
+	}
+	
+	public ParserRule getPredefineFunctionsRule() {
+		return getPredefineFunctionsAccess().getRule();
 	}
 	
 	//ProcedureCall Expression:
@@ -2551,7 +2670,9 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Literal Expression:
-	//	NumericLiteral | StringExpression
+	//	{Literal} PiLiteral
+	//	| NumericLiteral
+	//	| StringExpression
 	public LiteralElements getLiteralAccess() {
 		return pLiteral;
 	}
@@ -2588,6 +2709,16 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getStringExpressionRule() {
 		return getStringExpressionAccess().getRule();
+	}
+	
+	//PiLiteral:
+	//	'pi';
+	public PiLiteralElements getPiLiteralAccess() {
+		return pPiLiteral;
+	}
+	
+	public ParserRule getPiLiteralRule() {
+		return getPiLiteralAccess().getRule();
 	}
 	
 	//terminal FLOAT:

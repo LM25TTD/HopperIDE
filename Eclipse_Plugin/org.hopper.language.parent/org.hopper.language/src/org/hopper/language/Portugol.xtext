@@ -5,7 +5,7 @@ generate portugol "http://www.hopper.org/language/Portugol"
 
 Model:
 	header=HeaderBlock
-	globalDeclarations=DeclarationsBlock
+	(globalDeclarations=DeclarationsBlock)?
 	(subprograms=Subprograms)?
 	commands=BlockCommand;
 
@@ -167,18 +167,27 @@ UnaryExpression returns Expression:
 
 PrimaryExpression returns Expression:
 	Literal
+	| PreDefinedFunctionCall
 	| FunctionCall
 	| DeclaredVar
 	| '(' Expression ')';
 
+PreDefinedFunctionCall returns Expression:
+	preDefFunctionName=PredefineFunctions '(' param=SubprogramParam ')';
+
 FunctionCall returns Expression:
 	fbName=[FunctionName] '(' param=SubprogramParam ')';
+
+PredefineFunctions:
+	'maiusc' | 'compr' | 'raizq' | 'copia';
 
 ProcedureCall returns Expression:
 	fbName=[ProcedureName] '(' param=SubprogramParam ')';
 
 Literal returns Expression:
-	NumericLiteral | StringExpression;
+	{Literal} PiLiteral
+	| NumericLiteral
+	| StringExpression;
 
 DeclaredVar:
 	varName=[VarName];
@@ -188,6 +197,9 @@ NumericLiteral:
 
 StringExpression:
 	literalString=STRING;
+
+PiLiteral:
+	'pi';
 
 terminal FLOAT:
 	INT '.' INT;

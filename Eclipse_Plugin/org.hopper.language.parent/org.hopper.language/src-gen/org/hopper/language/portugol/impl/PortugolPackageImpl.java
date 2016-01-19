@@ -26,6 +26,7 @@ import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
+import org.hopper.language.portugol.Literal;
 import org.hopper.language.portugol.Model;
 import org.hopper.language.portugol.NumericLiteral;
 import org.hopper.language.portugol.OptDecimalPrecision;
@@ -316,6 +317,13 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass unaryExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass literalEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1175,9 +1183,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_FbName()
+  public EAttribute getExpression_PreDefFunctionName()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1188,6 +1196,16 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
   public EReference getExpression_Param()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_FbName()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1355,6 +1373,16 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getLiteral()
+  {
+    return literalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PortugolFactory getPortugolFactory()
   {
     return (PortugolFactory)getEFactoryInstance();
@@ -1489,8 +1517,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEAttribute(optDecimalPrecisionEClass, OPT_DECIMAL_PRECISION__SECOND_PRECISION);
 
     expressionEClass = createEClass(EXPRESSION);
-    createEReference(expressionEClass, EXPRESSION__FB_NAME);
+    createEAttribute(expressionEClass, EXPRESSION__PRE_DEF_FUNCTION_NAME);
     createEReference(expressionEClass, EXPRESSION__PARAM);
+    createEReference(expressionEClass, EXPRESSION__FB_NAME);
 
     declaredVarEClass = createEClass(DECLARED_VAR);
     createEReference(declaredVarEClass, DECLARED_VAR__VAR_NAME);
@@ -1513,6 +1542,8 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
     createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__OP);
     createEReference(unaryExpressionEClass, UNARY_EXPRESSION__OPERAND);
+
+    literalEClass = createEClass(LITERAL);
   }
 
   /**
@@ -1562,6 +1593,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     returnExpressionEClass.getESuperTypes().add(this.getReturnStatement());
     binaryOperationEClass.getESuperTypes().add(this.getExpression());
     unaryExpressionEClass.getESuperTypes().add(this.getExpression());
+    literalEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1673,8 +1705,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEAttribute(getOptDecimalPrecision_SecondPrecision(), ecorePackage.getEInt(), "secondPrecision", null, 0, 1, OptDecimalPrecision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_FbName(), ecorePackage.getEObject(), null, "fbName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_PreDefFunctionName(), ecorePackage.getEString(), "preDefFunctionName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Param(), this.getSubprogramParam(), null, "param", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_FbName(), ecorePackage.getEObject(), null, "fbName", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declaredVarEClass, DeclaredVar.class, "DeclaredVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclaredVar_VarName(), this.getVarName(), null, "varName", null, 0, 1, DeclaredVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1697,6 +1730,8 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnaryExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUnaryExpression_Operand(), this.getExpression(), null, "operand", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);
