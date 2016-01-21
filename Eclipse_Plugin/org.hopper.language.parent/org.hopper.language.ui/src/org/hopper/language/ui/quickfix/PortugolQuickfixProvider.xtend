@@ -3,22 +3,98 @@
  */
 package org.hopper.language.ui.quickfix
 
+import org.eclipse.xtext.diagnostics.Diagnostic
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.validation.Issue
+import org.hopper.language.portugol.Model
+import org.hopper.language.portugol.PortugolFactory
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Custom quickfixes.
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#quick-fixes
  */
 class PortugolQuickfixProvider extends DefaultQuickfixProvider {
 
-//	@Fix(PortugolValidator.INVALID_NAME)
-//	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [
-//			context |
-//			val xtextDocument = context.xtextDocument
-//			val firstLetter = xtextDocument.get(issue.offset, 1)
-//			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
-//		]
-//	}
+	@Fix(Diagnostic::LINKING_DIAGNOSTIC)
+	def void createGlobalIntegerVariable(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(
+			issue,
+			"Criar variável global do tipo inteiro",
+			"Cria uma nova variável global do tipo inteiro com este nome",
+			"Entity.gif",
+			[ element, context |				
+				val model = element.getContainerOfType(typeof(Model))
+				model.globalDeclarations.vars.add(
+					model.globalDeclarations.vars.size - 1,
+					PortugolFactory::eINSTANCE.createVariable() => [
+						varDeclaration = PortugolFactory::eINSTANCE.createVarDeclaration() => [
+							vars.add(PortugolFactory::eINSTANCE.createVarName() => [
+								name = context.xtextDocument.get(issue.offset, issue.length);
+							]);
+						]
+						type = PortugolFactory::eINSTANCE.createVarType() => [
+							typeName = 'inteiro'
+						]
+					]
+				)
+			]
+		);
+	}
+	
+	@Fix(Diagnostic::LINKING_DIAGNOSTIC)
+	def void createGlobalFloatVariable(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(
+			issue,
+			"Criar variável global do tipo real",
+			"Cria uma nova variável global do tipo real com este nome",
+			"Entity.gif",
+			[ element, context |
+				val model = element.getContainerOfType(typeof(Model))
+				model.globalDeclarations.vars.add(
+					model.globalDeclarations.vars.size - 1,
+					PortugolFactory::eINSTANCE.createVariable() => [
+						varDeclaration = PortugolFactory::eINSTANCE.createVarDeclaration() => [
+							vars.add(PortugolFactory::eINSTANCE.createVarName() => [
+								name = context.xtextDocument.get(issue.offset, issue.length);
+							]);
+						]
+						type = PortugolFactory::eINSTANCE.createVarType() => [
+							typeName = 'real'
+						]
+					]
+				)
+			]
+		);
+	}
+	
+	@Fix(Diagnostic::LINKING_DIAGNOSTIC)
+	def void createGlobalStringVariable(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(
+			issue,
+			"Criar variável global do tipo caractere",
+			"Cria uma nova variável global do tipo caractere com este nome",
+			"Entity.gif",
+			[ element, context |
+				val model = element.getContainerOfType(typeof(Model))
+				model.globalDeclarations.vars.add(
+					model.globalDeclarations.vars.size - 1,
+					PortugolFactory::eINSTANCE.createVariable() => [
+						varDeclaration = PortugolFactory::eINSTANCE.createVarDeclaration() => [
+							vars.add(PortugolFactory::eINSTANCE.createVarName() => [
+								name = context.xtextDocument.get(issue.offset, issue.length);
+							]);
+						]
+						type = PortugolFactory::eINSTANCE.createVarType() => [
+							typeName = 'caractere'
+						]
+					]
+				)
+			]
+		);
+	}
 }
