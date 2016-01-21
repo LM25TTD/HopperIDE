@@ -60,7 +60,11 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeclaredVarListAccess().getGroup(), "rule__DeclaredVarList__Group__0");
 					put(grammarAccess.getDeclaredVarListAccess().getGroup_1(), "rule__DeclaredVarList__Group_1__0");
 					put(grammarAccess.getBlockFunctionAccess().getGroup(), "rule__BlockFunction__Group__0");
+					put(grammarAccess.getBlockFunctionAccess().getGroup_3(), "rule__BlockFunction__Group_3__0");
+					put(grammarAccess.getBlockFunctionAccess().getGroup_3_1(), "rule__BlockFunction__Group_3_1__0");
 					put(grammarAccess.getBlockProcedureAccess().getGroup(), "rule__BlockProcedure__Group__0");
+					put(grammarAccess.getBlockProcedureAccess().getGroup_3(), "rule__BlockProcedure__Group_3__0");
+					put(grammarAccess.getBlockProcedureAccess().getGroup_3_1(), "rule__BlockProcedure__Group_3_1__0");
 					put(grammarAccess.getBlockCommandAccess().getGroup(), "rule__BlockCommand__Group__0");
 					put(grammarAccess.getAbstractCommandAccess().getGroup_0(), "rule__AbstractCommand__Group_0__0");
 					put(grammarAccess.getAbstractCommandAccess().getGroup_1(), "rule__AbstractCommand__Group_1__0");
@@ -145,12 +149,14 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProcedureNameAccess().getNameAssignment(), "rule__ProcedureName__NameAssignment");
 					put(grammarAccess.getFunctionNameAccess().getNameAssignment(), "rule__FunctionName__NameAssignment");
 					put(grammarAccess.getBlockFunctionAccess().getFunctionNameAssignment_1(), "rule__BlockFunction__FunctionNameAssignment_1");
-					put(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3(), "rule__BlockFunction__ParamListAssignment_3");
+					put(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_0(), "rule__BlockFunction__ParamListAssignment_3_0");
+					put(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_1_1(), "rule__BlockFunction__ParamListAssignment_3_1_1");
 					put(grammarAccess.getBlockFunctionAccess().getReturnTypeAssignment_6(), "rule__BlockFunction__ReturnTypeAssignment_6");
 					put(grammarAccess.getBlockFunctionAccess().getDeclarationsAssignment_7(), "rule__BlockFunction__DeclarationsAssignment_7");
 					put(grammarAccess.getBlockFunctionAccess().getCommandsAssignment_9(), "rule__BlockFunction__CommandsAssignment_9");
 					put(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1(), "rule__BlockProcedure__ProcedureNameAssignment_1");
-					put(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3(), "rule__BlockProcedure__ParamListAssignment_3");
+					put(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_0(), "rule__BlockProcedure__ParamListAssignment_3_0");
+					put(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_1_1(), "rule__BlockProcedure__ParamListAssignment_3_1_1");
 					put(grammarAccess.getBlockProcedureAccess().getDeclarationsAssignment_5(), "rule__BlockProcedure__DeclarationsAssignment_5");
 					put(grammarAccess.getBlockProcedureAccess().getCommandsAssignment_7(), "rule__BlockProcedure__CommandsAssignment_7");
 					put(grammarAccess.getBlockCommandAccess().getCommandsAssignment_1(), "rule__BlockCommand__CommandsAssignment_1");

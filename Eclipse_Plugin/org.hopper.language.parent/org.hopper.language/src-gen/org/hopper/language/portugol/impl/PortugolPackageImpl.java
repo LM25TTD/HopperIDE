@@ -1628,7 +1628,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getSubprograms_BlockSubPrograms(), this.getBlockSubPrograms(), null, "blockSubPrograms", null, 0, -1, Subprograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockSubProgramsEClass, BlockSubPrograms.class, "BlockSubPrograms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBlockSubPrograms_ParamList(), this.getVariable(), null, "paramList", null, 0, 1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBlockSubPrograms_ParamList(), this.getVariable(), null, "paramList", null, 0, -1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBlockSubPrograms_Declarations(), this.getDeclarationsBlock(), null, "declarations", null, 0, 1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBlockSubPrograms_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

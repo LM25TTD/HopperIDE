@@ -14,6 +14,13 @@ import org.hopper.language.portugol.Model
 import org.hopper.language.portugol.Subprograms
 import org.hopper.language.portugol.VarType
 import org.hopper.language.portugol.Variable
+import org.hopper.language.portugol.BlockCommand
+import org.eclipse.emf.common.util.EList
+import org.hopper.language.portugol.AbstractCommand
+import org.hopper.language.portugol.WriteCommand
+import org.hopper.language.portugol.Expression
+import org.hopper.language.portugol.WriteParam
+import org.hopper.language.portugol.StringExpression
 
 /**
  * Generates code from your model files on save.
@@ -41,9 +48,46 @@ class PortugolGenerator extends AbstractGenerator {
 				
 				«IF model.subprograms != null»
 					«model.subprograms.compile»
-				«ENDIF»		
+				«ENDIF»					
+				«model.commands.compile»
 			}	
 		'''
+	}
+
+	def compile(BlockCommand blockCommand) {
+		'''
+			public static void main(String[] args){
+				«IF blockCommand.commands!=null»
+					«blockCommand.commands.compile»
+				«ENDIF»
+			}
+		'''
+	}
+
+	def compile(EList<AbstractCommand> commands) {
+		'''
+			«IF commands!=null»
+				«FOR command:commands»
+					«IF command instanceof WriteCommand»
+						«compile(command as WriteCommand)»
+					«ENDIF»
+				«ENDFOR»
+			«ENDIF»
+		'''
+	}
+
+	def compile(
+		WriteCommand command) {
+		'''System.out.print«IF command.writeCommand.equalsIgnoreCase('escreval')»ln«ENDIF»(«command.writeParam.compile»);'''
+	}
+
+	def compile(
+		WriteParam writeParam) {
+		'''«IF writeParam.params != null && writeParam.params.expression != null»«FOR expression : writeParam.params.expression»«expression.compile»«ENDFOR»«ENDIF»'''
+	}
+
+	def compile(Expression expression) {
+		'''«IF expression instanceof StringExpression»"«(expression as StringExpression).literalString»"«ENDIF»'''
 	}
 
 	def compile(Subprograms subprograms) {
@@ -59,11 +103,13 @@ class PortugolGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def compile(BlockFunction blockFunction) {
+	def compile(
+		BlockFunction blockFunction) {
 		'''
 			private static «blockFunction.returnType.compile» «blockFunction.functionName.name»(«blockFunction.paramList.compileAsParameter»){
 				«IF blockFunction.declarations != null»
 					«blockFunction.declarations.compile(false)»
+					«blockFunction.commands.compile»
 				«ENDIF»	
 			}
 		'''
@@ -74,6 +120,7 @@ class PortugolGenerator extends AbstractGenerator {
 			private static void «blockProcedure.procedureName.name»(«blockProcedure.paramList.compileAsParameter»){
 				«IF blockProcedure.declarations != null»
 					«blockProcedure.declarations.compile(false)»
+					«blockProcedure.commands.compile»
 				«ENDIF»	
 			}
 		'''
@@ -86,13 +133,14 @@ class PortugolGenerator extends AbstractGenerator {
 			«ENDFOR»
 		'''
 	}
-	
-	def compileAsParameter(Variable variable){
-		'''«FOR currVarName : variable.varDeclaration.vars»«IF variable.varDeclaration.vars.indexOf(currVarName) > 0», «ENDIF»«variable.type.compile» «currVarName.name»«ENDFOR»'''
+
+	def compileAsParameter(
+		EList<Variable> variables) {
+		'''«IF variables != null»«FOR variable: variables»«IF variables.indexOf(variable) > 0», «ENDIF»«FOR currVarName : variable.varDeclaration.vars»«IF variable.varDeclaration.vars.indexOf(currVarName) > 0», «ENDIF»«variable.type.compile» «currVarName.name»«ENDFOR»«ENDFOR»«ENDIF»'''
 	}
 
-	def compile(
-		Variable variable, boolean useModifier) {
+	def compile(Variable variable,
+		boolean useModifier) {
 		'''«IF useModifier»private static «ENDIF»«variable.type.compile»«FOR currVarName : variable.varDeclaration.vars»«IF variable.varDeclaration.vars.indexOf(currVarName) > 0»,«ENDIF» «currVarName.name»«ENDFOR»;'''
 	}
 

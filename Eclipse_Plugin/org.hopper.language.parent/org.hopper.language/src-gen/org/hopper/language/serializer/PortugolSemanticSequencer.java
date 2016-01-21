@@ -273,7 +273,13 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BlockFunction returns BlockFunction
 	 *
 	 * Constraint:
-	 *     (functionName=FunctionName paramList=Variable? returnType=VarType declarations=DeclarationsBlock? commands+=AbstractCommand+)
+	 *     (
+	 *         functionName=FunctionName 
+	 *         (paramList+=Variable paramList+=Variable*)? 
+	 *         returnType=VarType 
+	 *         declarations=DeclarationsBlock? 
+	 *         commands+=AbstractCommand+
+	 *     )
 	 */
 	protected void sequence_BlockFunction(ISerializationContext context, BlockFunction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -286,7 +292,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BlockProcedure returns BlockProcedure
 	 *
 	 * Constraint:
-	 *     (procedureName=ProcedureName paramList=Variable? declarations=DeclarationsBlock? commands+=AbstractCommand+)
+	 *     (procedureName=ProcedureName (paramList+=Variable paramList+=Variable*)? declarations=DeclarationsBlock? commands+=AbstractCommand+)
 	 */
 	protected void sequence_BlockProcedure(ISerializationContext context, BlockProcedure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

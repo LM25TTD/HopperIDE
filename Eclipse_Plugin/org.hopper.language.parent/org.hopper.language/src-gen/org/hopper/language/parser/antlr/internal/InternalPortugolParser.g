@@ -710,37 +710,64 @@ ruleBlockFunction returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_0());
-				}
-				lv_paramList_3_0=ruleVariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_0_0());
 					}
-					set(
-						$current,
-						"paramList",
-						lv_paramList_3_0,
-						"org.hopper.language.Portugol.Variable");
-					afterParserOrEnumRuleCall();
-				}
+					lv_paramList_3_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
+						}
+						add(
+							$current,
+							"paramList",
+							lv_paramList_3_0,
+							"org.hopper.language.Portugol.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
+			(
+				otherlv_4=Semicolon
+				{
+					newLeafNode(otherlv_4, grammarAccess.getBlockFunctionAccess().getSemicolonKeyword_3_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_1_1_0());
+						}
+						lv_paramList_5_0=ruleVariable
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
+							}
+							add(
+								$current,
+								"paramList",
+								lv_paramList_5_0,
+								"org.hopper.language.Portugol.Variable");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
 		)?
-		otherlv_4=RightParenthesis
+		otherlv_6=RightParenthesis
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBlockFunctionAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getBlockFunctionAccess().getRightParenthesisKeyword_4());
 		}
-		otherlv_5=Colon
+		otherlv_7=Colon
 		{
-			newLeafNode(otherlv_5, grammarAccess.getBlockFunctionAccess().getColonKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getBlockFunctionAccess().getColonKeyword_5());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getBlockFunctionAccess().getReturnTypeVarTypeParserRuleCall_6_0());
 				}
-				lv_returnType_6_0=ruleVarType
+				lv_returnType_8_0=ruleVarType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
@@ -748,7 +775,7 @@ ruleBlockFunction returns [EObject current=null]
 					set(
 						$current,
 						"returnType",
-						lv_returnType_6_0,
+						lv_returnType_8_0,
 						"org.hopper.language.Portugol.VarType");
 					afterParserOrEnumRuleCall();
 				}
@@ -759,7 +786,7 @@ ruleBlockFunction returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getBlockFunctionAccess().getDeclarationsDeclarationsBlockParserRuleCall_7_0());
 				}
-				lv_declarations_7_0=ruleDeclarationsBlock
+				lv_declarations_9_0=ruleDeclarationsBlock
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
@@ -767,22 +794,22 @@ ruleBlockFunction returns [EObject current=null]
 					set(
 						$current,
 						"declarations",
-						lv_declarations_7_0,
+						lv_declarations_9_0,
 						"org.hopper.language.Portugol.DeclarationsBlock");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_8=Inicio
+		otherlv_10=Inicio
 		{
-			newLeafNode(otherlv_8, grammarAccess.getBlockFunctionAccess().getInicioKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getBlockFunctionAccess().getInicioKeyword_8());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getBlockFunctionAccess().getCommandsAbstractCommandParserRuleCall_9_0());
 				}
-				lv_commands_9_0=ruleAbstractCommand
+				lv_commands_11_0=ruleAbstractCommand
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockFunctionRule());
@@ -790,15 +817,15 @@ ruleBlockFunction returns [EObject current=null]
 					add(
 						$current,
 						"commands",
-						lv_commands_9_0,
+						lv_commands_11_0,
 						"org.hopper.language.Portugol.AbstractCommand");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		otherlv_10=Fimfuncao
+		otherlv_12=Fimfuncao
 		{
-			newLeafNode(otherlv_10, grammarAccess.getBlockFunctionAccess().getFimfuncaoKeyword_10());
+			newLeafNode(otherlv_12, grammarAccess.getBlockFunctionAccess().getFimfuncaoKeyword_10());
 		}
 	)
 ;
@@ -848,33 +875,60 @@ ruleBlockProcedure returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_0());
-				}
-				lv_paramList_3_0=ruleVariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_0_0());
 					}
-					set(
-						$current,
-						"paramList",
-						lv_paramList_3_0,
-						"org.hopper.language.Portugol.Variable");
-					afterParserOrEnumRuleCall();
-				}
+					lv_paramList_3_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
+						}
+						add(
+							$current,
+							"paramList",
+							lv_paramList_3_0,
+							"org.hopper.language.Portugol.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
+			(
+				otherlv_4=Semicolon
+				{
+					newLeafNode(otherlv_4, grammarAccess.getBlockProcedureAccess().getSemicolonKeyword_3_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_1_1_0());
+						}
+						lv_paramList_5_0=ruleVariable
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
+							}
+							add(
+								$current,
+								"paramList",
+								lv_paramList_5_0,
+								"org.hopper.language.Portugol.Variable");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
 		)?
-		otherlv_4=RightParenthesis
+		otherlv_6=RightParenthesis
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBlockProcedureAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getBlockProcedureAccess().getRightParenthesisKeyword_4());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getBlockProcedureAccess().getDeclarationsDeclarationsBlockParserRuleCall_5_0());
 				}
-				lv_declarations_5_0=ruleDeclarationsBlock
+				lv_declarations_7_0=ruleDeclarationsBlock
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
@@ -882,22 +936,22 @@ ruleBlockProcedure returns [EObject current=null]
 					set(
 						$current,
 						"declarations",
-						lv_declarations_5_0,
+						lv_declarations_7_0,
 						"org.hopper.language.Portugol.DeclarationsBlock");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_6=Inicio
+		otherlv_8=Inicio
 		{
-			newLeafNode(otherlv_6, grammarAccess.getBlockProcedureAccess().getInicioKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getBlockProcedureAccess().getInicioKeyword_6());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getBlockProcedureAccess().getCommandsAbstractCommandParserRuleCall_7_0());
 				}
-				lv_commands_7_0=ruleAbstractCommand
+				lv_commands_9_0=ruleAbstractCommand
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
@@ -905,15 +959,15 @@ ruleBlockProcedure returns [EObject current=null]
 					add(
 						$current,
 						"commands",
-						lv_commands_7_0,
+						lv_commands_9_0,
 						"org.hopper.language.Portugol.AbstractCommand");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		otherlv_8=Fimprocedimento
+		otherlv_10=Fimprocedimento
 		{
-			newLeafNode(otherlv_8, grammarAccess.getBlockProcedureAccess().getFimprocedimentoKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getBlockProcedureAccess().getFimprocedimentoKeyword_8());
 		}
 	)
 ;

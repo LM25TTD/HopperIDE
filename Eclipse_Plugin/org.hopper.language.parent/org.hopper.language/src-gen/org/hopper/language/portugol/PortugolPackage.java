@@ -356,7 +356,7 @@ public interface PortugolPackage extends EPackage
   int BLOCK_SUB_PROGRAMS = 9;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference.
+   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -458,7 +458,7 @@ public interface PortugolPackage extends EPackage
   int BLOCK_FUNCTION = 12;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference.
+   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -522,7 +522,7 @@ public interface PortugolPackage extends EPackage
   int BLOCK_PROCEDURE = 13;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference.
+   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1789,10 +1789,10 @@ public interface PortugolPackage extends EPackage
   EClass getBlockSubPrograms();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BlockSubPrograms#getParamList <em>Param List</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.BlockSubPrograms#getParamList <em>Param List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Param List</em>'.
+   * @return the meta object for the containment reference list '<em>Param List</em>'.
    * @see org.hopper.language.portugol.BlockSubPrograms#getParamList()
    * @see #getBlockSubPrograms()
    * @generated
@@ -2824,7 +2824,7 @@ public interface PortugolPackage extends EPackage
     EClass BLOCK_SUB_PROGRAMS = eINSTANCE.getBlockSubPrograms();
 
     /**
-     * The meta object literal for the '<em><b>Param List</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Param List</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

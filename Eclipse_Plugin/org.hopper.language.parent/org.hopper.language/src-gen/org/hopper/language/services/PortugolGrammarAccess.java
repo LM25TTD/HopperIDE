@@ -354,8 +354,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFunctionNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFunctionNameFunctionNameParserRuleCall_1_0 = (RuleCall)cFunctionNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cParamListAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParamListVariableParserRuleCall_3_0 = (RuleCall)cParamListAssignment_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cParamListAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParamListVariableParserRuleCall_3_0_0 = (RuleCall)cParamListAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cParamListAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParamListVariableParserRuleCall_3_1_1_0 = (RuleCall)cParamListAssignment_3_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cReturnTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
@@ -368,15 +373,15 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFimfuncaoKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BlockFunction:
-		//	'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType
+		//	'funcao' functionName=FunctionName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')' ':' returnType=VarType
 		//	declarations=DeclarationsBlock?
 		//	'inicio'
 		//	commands+=AbstractCommand+
 		//	'fimfuncao';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType declarations=DeclarationsBlock?
-		//'inicio' commands+=AbstractCommand+ 'fimfuncao'
+		//'funcao' functionName=FunctionName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')' ':' returnType=VarType
+		//declarations=DeclarationsBlock? 'inicio' commands+=AbstractCommand+ 'fimfuncao'
 		public Group getGroup() { return cGroup; }
 		
 		//'funcao'
@@ -391,11 +396,26 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//paramList=Variable?
-		public Assignment getParamListAssignment_3() { return cParamListAssignment_3; }
+		//(paramList+=Variable (';' paramList+=Variable)*)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//paramList+=Variable
+		public Assignment getParamListAssignment_3_0() { return cParamListAssignment_3_0; }
 		
 		//Variable
-		public RuleCall getParamListVariableParserRuleCall_3_0() { return cParamListVariableParserRuleCall_3_0; }
+		public RuleCall getParamListVariableParserRuleCall_3_0_0() { return cParamListVariableParserRuleCall_3_0_0; }
+		
+		//(';' paramList+=Variable)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_3_1_0() { return cSemicolonKeyword_3_1_0; }
+		
+		//paramList+=Variable
+		public Assignment getParamListAssignment_3_1_1() { return cParamListAssignment_3_1_1; }
+		
+		//Variable
+		public RuleCall getParamListVariableParserRuleCall_3_1_1_0() { return cParamListVariableParserRuleCall_3_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -434,8 +454,13 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cProcedureNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cProcedureNameProcedureNameParserRuleCall_1_0 = (RuleCall)cProcedureNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cParamListAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParamListVariableParserRuleCall_3_0 = (RuleCall)cParamListAssignment_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cParamListAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cParamListVariableParserRuleCall_3_0_0 = (RuleCall)cParamListAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cParamListAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cParamListVariableParserRuleCall_3_1_1_0 = (RuleCall)cParamListAssignment_3_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDeclarationsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cDeclarationsDeclarationsBlockParserRuleCall_5_0 = (RuleCall)cDeclarationsAssignment_5.eContents().get(0);
@@ -445,15 +470,15 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFimprocedimentoKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//BlockProcedure:
-		//	'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')'
+		//	'procedimento' procedureName=ProcedureName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')'
 		//	declarations=DeclarationsBlock?
 		//	'inicio'
 		//	commands+=AbstractCommand+
 		//	'fimprocedimento';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')' declarations=DeclarationsBlock? 'inicio'
-		//commands+=AbstractCommand+ 'fimprocedimento'
+		//'procedimento' procedureName=ProcedureName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')'
+		//declarations=DeclarationsBlock? 'inicio' commands+=AbstractCommand+ 'fimprocedimento'
 		public Group getGroup() { return cGroup; }
 		
 		//'procedimento'
@@ -468,11 +493,26 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//paramList=Variable?
-		public Assignment getParamListAssignment_3() { return cParamListAssignment_3; }
+		//(paramList+=Variable (';' paramList+=Variable)*)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//paramList+=Variable
+		public Assignment getParamListAssignment_3_0() { return cParamListAssignment_3_0; }
 		
 		//Variable
-		public RuleCall getParamListVariableParserRuleCall_3_0() { return cParamListVariableParserRuleCall_3_0; }
+		public RuleCall getParamListVariableParserRuleCall_3_0_0() { return cParamListVariableParserRuleCall_3_0_0; }
+		
+		//(';' paramList+=Variable)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_3_1_0() { return cSemicolonKeyword_3_1_0; }
+		
+		//paramList+=Variable
+		public Assignment getParamListAssignment_3_1_1() { return cParamListAssignment_3_1_1; }
+		
+		//Variable
+		public RuleCall getParamListVariableParserRuleCall_3_1_1_0() { return cParamListVariableParserRuleCall_3_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -2293,7 +2333,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockFunction:
-	//	'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType
+	//	'funcao' functionName=FunctionName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')' ':' returnType=VarType
 	//	declarations=DeclarationsBlock?
 	//	'inicio'
 	//	commands+=AbstractCommand+
@@ -2307,7 +2347,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockProcedure:
-	//	'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')'
+	//	'procedimento' procedureName=ProcedureName '(' (paramList+=Variable (';' paramList+=Variable)*)? ')'
 	//	declarations=DeclarationsBlock?
 	//	'inicio'
 	//	commands+=AbstractCommand+
