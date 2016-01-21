@@ -726,7 +726,7 @@ ruleBlockFunction returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_4=RightParenthesis
 		{
 			newLeafNode(otherlv_4, grammarAccess.getBlockFunctionAccess().getRightParenthesisKeyword_4());
@@ -826,17 +826,17 @@ ruleBlockProcedure returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBlockProcedureAccess().getProcedureProcedureNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0());
 				}
-				lv_procedure_1_0=ruleProcedureName
+				lv_procedureName_1_0=ruleProcedureName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockProcedureRule());
 					}
 					set(
 						$current,
-						"procedure",
-						lv_procedure_1_0,
+						"procedureName",
+						lv_procedureName_1_0,
 						"org.hopper.language.Portugol.ProcedureName");
 					afterParserOrEnumRuleCall();
 				}
@@ -864,7 +864,7 @@ ruleBlockProcedure returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_4=RightParenthesis
 		{
 			newLeafNode(otherlv_4, grammarAccess.getBlockProcedureAccess().getRightParenthesisKeyword_4());

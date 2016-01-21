@@ -8587,7 +8587,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:2494:1: ( rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3 )
             // InternalPortugolParser.g:2495:2: rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_14);
             rule__BlockFunction__Group__2__Impl();
 
             state._fsp--;
@@ -8695,29 +8695,40 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__3__Impl"
-    // InternalPortugolParser.g:2529:1: rule__BlockFunction__Group__3__Impl : ( ( rule__BlockFunction__ParamListAssignment_3 ) ) ;
+    // InternalPortugolParser.g:2529:1: rule__BlockFunction__Group__3__Impl : ( ( rule__BlockFunction__ParamListAssignment_3 )? ) ;
     public final void rule__BlockFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2533:1: ( ( ( rule__BlockFunction__ParamListAssignment_3 ) ) )
-            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__ParamListAssignment_3 ) )
+            // InternalPortugolParser.g:2533:1: ( ( ( rule__BlockFunction__ParamListAssignment_3 )? ) )
+            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__ParamListAssignment_3 )? )
             {
-            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__ParamListAssignment_3 ) )
-            // InternalPortugolParser.g:2535:2: ( rule__BlockFunction__ParamListAssignment_3 )
+            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__ParamListAssignment_3 )? )
+            // InternalPortugolParser.g:2535:2: ( rule__BlockFunction__ParamListAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3()); 
             }
-            // InternalPortugolParser.g:2536:2: ( rule__BlockFunction__ParamListAssignment_3 )
-            // InternalPortugolParser.g:2536:3: rule__BlockFunction__ParamListAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__ParamListAssignment_3();
+            // InternalPortugolParser.g:2536:2: ( rule__BlockFunction__ParamListAssignment_3 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            state._fsp--;
-            if (state.failed) return ;
+            if ( (LA22_0==RULE_ID) ) {
+                alt22=1;
+            }
+            switch (alt22) {
+                case 1 :
+                    // InternalPortugolParser.g:2536:3: rule__BlockFunction__ParamListAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__BlockFunction__ParamListAssignment_3();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
 
             }
 
@@ -9047,13 +9058,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getBlockFunctionAccess().getDeclarationsAssignment_7()); 
             }
             // InternalPortugolParser.g:2644:2: ( rule__BlockFunction__DeclarationsAssignment_7 )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==Var) ) {
-                alt22=1;
+            if ( (LA23_0==Var) ) {
+                alt23=1;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // InternalPortugolParser.g:2644:3: rule__BlockFunction__DeclarationsAssignment_7
                     {
@@ -9252,17 +9263,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getBlockFunctionAccess().getCommandsAssignment_9()); 
             }
             // InternalPortugolParser.g:2704:3: ( rule__BlockFunction__CommandsAssignment_9 )*
-            loop23:
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA23_0==Interrompa||(LA23_0>=Enquanto && LA23_0<=Escreva)||LA23_0==Retorne||(LA23_0>=Maiusc && LA23_0<=Copia)||LA23_0==Raizq||(LA23_0>=Leia && LA23_0<=Para)||LA23_0==NOT||(LA23_0>=Pi && LA23_0<=Se)||LA23_0==LeftParenthesis||LA23_0==HyphenMinus||(LA23_0>=RULE_INT && LA23_0<=RULE_STRING)) ) {
-                    alt23=1;
+                if ( (LA24_0==Interrompa||(LA24_0>=Enquanto && LA24_0<=Escreva)||LA24_0==Retorne||(LA24_0>=Maiusc && LA24_0<=Copia)||LA24_0==Raizq||(LA24_0>=Leia && LA24_0<=Para)||LA24_0==NOT||(LA24_0>=Pi && LA24_0<=Se)||LA24_0==LeftParenthesis||LA24_0==HyphenMinus||(LA24_0>=RULE_INT && LA24_0<=RULE_STRING)) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
             	    // InternalPortugolParser.g:2704:4: rule__BlockFunction__CommandsAssignment_9
             	    {
@@ -9276,7 +9287,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -9499,26 +9510,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__1__Impl"
-    // InternalPortugolParser.g:2779:1: rule__BlockProcedure__Group__1__Impl : ( ( rule__BlockProcedure__ProcedureAssignment_1 ) ) ;
+    // InternalPortugolParser.g:2779:1: rule__BlockProcedure__Group__1__Impl : ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) ;
     public final void rule__BlockProcedure__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2783:1: ( ( ( rule__BlockProcedure__ProcedureAssignment_1 ) ) )
-            // InternalPortugolParser.g:2784:1: ( ( rule__BlockProcedure__ProcedureAssignment_1 ) )
+            // InternalPortugolParser.g:2783:1: ( ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) )
+            // InternalPortugolParser.g:2784:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
             {
-            // InternalPortugolParser.g:2784:1: ( ( rule__BlockProcedure__ProcedureAssignment_1 ) )
-            // InternalPortugolParser.g:2785:2: ( rule__BlockProcedure__ProcedureAssignment_1 )
+            // InternalPortugolParser.g:2784:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
+            // InternalPortugolParser.g:2785:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getProcedureAssignment_1()); 
+               before(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1()); 
             }
-            // InternalPortugolParser.g:2786:2: ( rule__BlockProcedure__ProcedureAssignment_1 )
-            // InternalPortugolParser.g:2786:3: rule__BlockProcedure__ProcedureAssignment_1
+            // InternalPortugolParser.g:2786:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
+            // InternalPortugolParser.g:2786:3: rule__BlockProcedure__ProcedureNameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__ProcedureAssignment_1();
+            rule__BlockProcedure__ProcedureNameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9526,7 +9537,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getProcedureAssignment_1()); 
+               after(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1()); 
             }
 
             }
@@ -9559,7 +9570,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:2798:1: ( rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3 )
             // InternalPortugolParser.g:2799:2: rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_14);
             rule__BlockProcedure__Group__2__Impl();
 
             state._fsp--;
@@ -9667,29 +9678,40 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__3__Impl"
-    // InternalPortugolParser.g:2833:1: rule__BlockProcedure__Group__3__Impl : ( ( rule__BlockProcedure__ParamListAssignment_3 ) ) ;
+    // InternalPortugolParser.g:2833:1: rule__BlockProcedure__Group__3__Impl : ( ( rule__BlockProcedure__ParamListAssignment_3 )? ) ;
     public final void rule__BlockProcedure__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2837:1: ( ( ( rule__BlockProcedure__ParamListAssignment_3 ) ) )
-            // InternalPortugolParser.g:2838:1: ( ( rule__BlockProcedure__ParamListAssignment_3 ) )
+            // InternalPortugolParser.g:2837:1: ( ( ( rule__BlockProcedure__ParamListAssignment_3 )? ) )
+            // InternalPortugolParser.g:2838:1: ( ( rule__BlockProcedure__ParamListAssignment_3 )? )
             {
-            // InternalPortugolParser.g:2838:1: ( ( rule__BlockProcedure__ParamListAssignment_3 ) )
-            // InternalPortugolParser.g:2839:2: ( rule__BlockProcedure__ParamListAssignment_3 )
+            // InternalPortugolParser.g:2838:1: ( ( rule__BlockProcedure__ParamListAssignment_3 )? )
+            // InternalPortugolParser.g:2839:2: ( rule__BlockProcedure__ParamListAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3()); 
             }
-            // InternalPortugolParser.g:2840:2: ( rule__BlockProcedure__ParamListAssignment_3 )
-            // InternalPortugolParser.g:2840:3: rule__BlockProcedure__ParamListAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockProcedure__ParamListAssignment_3();
+            // InternalPortugolParser.g:2840:2: ( rule__BlockProcedure__ParamListAssignment_3 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            state._fsp--;
-            if (state.failed) return ;
+            if ( (LA25_0==RULE_ID) ) {
+                alt25=1;
+            }
+            switch (alt25) {
+                case 1 :
+                    // InternalPortugolParser.g:2840:3: rule__BlockProcedure__ParamListAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__BlockProcedure__ParamListAssignment_3();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
 
             }
 
@@ -9851,13 +9873,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getBlockProcedureAccess().getDeclarationsAssignment_5()); 
             }
             // InternalPortugolParser.g:2894:2: ( rule__BlockProcedure__DeclarationsAssignment_5 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA24_0==Var) ) {
-                alt24=1;
+            if ( (LA26_0==Var) ) {
+                alt26=1;
             }
-            switch (alt24) {
+            switch (alt26) {
                 case 1 :
                     // InternalPortugolParser.g:2894:3: rule__BlockProcedure__DeclarationsAssignment_5
                     {
@@ -10056,17 +10078,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getBlockProcedureAccess().getCommandsAssignment_7()); 
             }
             // InternalPortugolParser.g:2954:3: ( rule__BlockProcedure__CommandsAssignment_7 )*
-            loop25:
+            loop27:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA25_0==Interrompa||(LA25_0>=Enquanto && LA25_0<=Escreva)||LA25_0==Retorne||(LA25_0>=Maiusc && LA25_0<=Copia)||LA25_0==Raizq||(LA25_0>=Leia && LA25_0<=Para)||LA25_0==NOT||(LA25_0>=Pi && LA25_0<=Se)||LA25_0==LeftParenthesis||LA25_0==HyphenMinus||(LA25_0>=RULE_INT && LA25_0<=RULE_STRING)) ) {
-                    alt25=1;
+                if ( (LA27_0==Interrompa||(LA27_0>=Enquanto && LA27_0<=Escreva)||LA27_0==Retorne||(LA27_0>=Maiusc && LA27_0<=Copia)||LA27_0==Raizq||(LA27_0>=Leia && LA27_0<=Para)||LA27_0==NOT||(LA27_0>=Pi && LA27_0<=Se)||LA27_0==LeftParenthesis||LA27_0==HyphenMinus||(LA27_0>=RULE_INT && LA27_0<=RULE_STRING)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt27) {
             	case 1 :
             	    // InternalPortugolParser.g:2954:4: rule__BlockProcedure__CommandsAssignment_7
             	    {
@@ -10080,7 +10102,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop27;
                 }
             } while (true);
 
@@ -10345,17 +10367,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getBlockCommandAccess().getCommandsAssignment_1()); 
             }
             // InternalPortugolParser.g:3042:3: ( rule__BlockCommand__CommandsAssignment_1 )*
-            loop26:
+            loop28:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA26_0==Interrompa||(LA26_0>=Enquanto && LA26_0<=Escreva)||LA26_0==Retorne||(LA26_0>=Maiusc && LA26_0<=Copia)||LA26_0==Raizq||(LA26_0>=Leia && LA26_0<=Para)||LA26_0==NOT||(LA26_0>=Pi && LA26_0<=Se)||LA26_0==LeftParenthesis||LA26_0==HyphenMinus||(LA26_0>=RULE_INT && LA26_0<=RULE_STRING)) ) {
-                    alt26=1;
+                if ( (LA28_0==Interrompa||(LA28_0>=Enquanto && LA28_0<=Escreva)||LA28_0==Retorne||(LA28_0>=Maiusc && LA28_0<=Copia)||LA28_0==Raizq||(LA28_0>=Leia && LA28_0<=Para)||LA28_0==NOT||(LA28_0>=Pi && LA28_0<=Se)||LA28_0==LeftParenthesis||LA28_0==HyphenMinus||(LA28_0>=RULE_INT && LA28_0<=RULE_STRING)) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt28) {
             	case 1 :
             	    // InternalPortugolParser.g:3042:4: rule__BlockCommand__CommandsAssignment_1
             	    {
@@ -10369,7 +10391,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop28;
                 }
             } while (true);
 
@@ -12002,17 +12024,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getIfStatementAccess().getCommandsAssignment_3()); 
             }
             // InternalPortugolParser.g:3589:3: ( rule__IfStatement__CommandsAssignment_3 )*
-            loop27:
+            loop29:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA27_0==Interrompa||(LA27_0>=Enquanto && LA27_0<=Escreva)||LA27_0==Retorne||(LA27_0>=Maiusc && LA27_0<=Copia)||LA27_0==Raizq||(LA27_0>=Leia && LA27_0<=Para)||LA27_0==NOT||(LA27_0>=Pi && LA27_0<=Se)||LA27_0==LeftParenthesis||LA27_0==HyphenMinus||(LA27_0>=RULE_INT && LA27_0<=RULE_STRING)) ) {
-                    alt27=1;
+                if ( (LA29_0==Interrompa||(LA29_0>=Enquanto && LA29_0<=Escreva)||LA29_0==Retorne||(LA29_0>=Maiusc && LA29_0<=Copia)||LA29_0==Raizq||(LA29_0>=Leia && LA29_0<=Para)||LA29_0==NOT||(LA29_0>=Pi && LA29_0<=Se)||LA29_0==LeftParenthesis||LA29_0==HyphenMinus||(LA29_0>=RULE_INT && LA29_0<=RULE_STRING)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt29) {
             	case 1 :
             	    // InternalPortugolParser.g:3589:4: rule__IfStatement__CommandsAssignment_3
             	    {
@@ -12026,7 +12048,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop29;
                 }
             } while (true);
 
@@ -12112,13 +12134,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getIfStatementAccess().getGroup_4()); 
             }
             // InternalPortugolParser.g:3617:2: ( rule__IfStatement__Group_4__0 )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA28_0==Senao) ) {
-                alt28=1;
+            if ( (LA30_0==Senao) ) {
+                alt30=1;
             }
-            switch (alt28) {
+            switch (alt30) {
                 case 1 :
                     // InternalPortugolParser.g:3617:3: rule__IfStatement__Group_4__0
                     {
@@ -12386,17 +12408,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getIfStatementAccess().getElseCommandsAssignment_4_1()); 
             }
             // InternalPortugolParser.g:3703:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )*
-            loop29:
+            loop31:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA29_0==Interrompa||(LA29_0>=Enquanto && LA29_0<=Escreva)||LA29_0==Retorne||(LA29_0>=Maiusc && LA29_0<=Copia)||LA29_0==Raizq||(LA29_0>=Leia && LA29_0<=Para)||LA29_0==NOT||(LA29_0>=Pi && LA29_0<=Se)||LA29_0==LeftParenthesis||LA29_0==HyphenMinus||(LA29_0>=RULE_INT && LA29_0<=RULE_STRING)) ) {
-                    alt29=1;
+                if ( (LA31_0==Interrompa||(LA31_0>=Enquanto && LA31_0<=Escreva)||LA31_0==Retorne||(LA31_0>=Maiusc && LA31_0<=Copia)||LA31_0==Raizq||(LA31_0>=Leia && LA31_0<=Para)||LA31_0==NOT||(LA31_0>=Pi && LA31_0<=Se)||LA31_0==LeftParenthesis||LA31_0==HyphenMinus||(LA31_0>=RULE_INT && LA31_0<=RULE_STRING)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt31) {
             	case 1 :
             	    // InternalPortugolParser.g:3703:4: rule__IfStatement__ElseCommandsAssignment_4_1
             	    {
@@ -12410,7 +12432,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop31;
                 }
             } while (true);
 
@@ -12690,17 +12712,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getSwitchCaseStatementAccess().getCaseListAssignment_2()); 
             }
             // InternalPortugolParser.g:3792:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )*
-            loop30:
+            loop32:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA30_0==Caso) ) {
-                    alt30=1;
+                if ( (LA32_0==Caso) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt32) {
             	case 1 :
             	    // InternalPortugolParser.g:3792:4: rule__SwitchCaseStatement__CaseListAssignment_2
             	    {
@@ -12714,7 +12736,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop32;
                 }
             } while (true);
 
@@ -12800,13 +12822,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getSwitchCaseStatementAccess().getOtherCaseAssignment_3()); 
             }
             // InternalPortugolParser.g:3820:2: ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA31_0==Outrocaso) ) {
-                alt31=1;
+            if ( (LA33_0==Outrocaso) ) {
+                alt33=1;
             }
-            switch (alt31) {
+            switch (alt33) {
                 case 1 :
                     // InternalPortugolParser.g:3820:3: rule__SwitchCaseStatement__OtherCaseAssignment_3
                     {
@@ -13242,17 +13264,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getCaseListAccess().getCommandsAssignment_3()); 
             }
             // InternalPortugolParser.g:3960:3: ( rule__CaseList__CommandsAssignment_3 )*
-            loop32:
+            loop34:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA32_0==Interrompa||(LA32_0>=Enquanto && LA32_0<=Escreva)||LA32_0==Retorne||(LA32_0>=Maiusc && LA32_0<=Copia)||LA32_0==Raizq||(LA32_0>=Leia && LA32_0<=Para)||LA32_0==NOT||(LA32_0>=Pi && LA32_0<=Se)||LA32_0==LeftParenthesis||LA32_0==HyphenMinus||(LA32_0>=RULE_INT && LA32_0<=RULE_STRING)) ) {
-                    alt32=1;
+                if ( (LA34_0==Interrompa||(LA34_0>=Enquanto && LA34_0<=Escreva)||LA34_0==Retorne||(LA34_0>=Maiusc && LA34_0<=Copia)||LA34_0==Raizq||(LA34_0>=Leia && LA34_0<=Para)||LA34_0==NOT||(LA34_0>=Pi && LA34_0<=Se)||LA34_0==LeftParenthesis||LA34_0==HyphenMinus||(LA34_0>=RULE_INT && LA34_0<=RULE_STRING)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt34) {
             	case 1 :
             	    // InternalPortugolParser.g:3960:4: rule__CaseList__CommandsAssignment_3
             	    {
@@ -13266,7 +13288,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop34;
                 }
             } while (true);
 
@@ -13531,17 +13553,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getOtherCaseAccess().getOtherCaseCommandsAssignment_2()); 
             }
             // InternalPortugolParser.g:4048:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )*
-            loop33:
+            loop35:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA33_0==Interrompa||(LA33_0>=Enquanto && LA33_0<=Escreva)||LA33_0==Retorne||(LA33_0>=Maiusc && LA33_0<=Copia)||LA33_0==Raizq||(LA33_0>=Leia && LA33_0<=Para)||LA33_0==NOT||(LA33_0>=Pi && LA33_0<=Se)||LA33_0==LeftParenthesis||LA33_0==HyphenMinus||(LA33_0>=RULE_INT && LA33_0<=RULE_STRING)) ) {
-                    alt33=1;
+                if ( (LA35_0==Interrompa||(LA35_0>=Enquanto && LA35_0<=Escreva)||LA35_0==Retorne||(LA35_0>=Maiusc && LA35_0<=Copia)||LA35_0==Raizq||(LA35_0>=Leia && LA35_0<=Para)||LA35_0==NOT||(LA35_0>=Pi && LA35_0<=Se)||LA35_0==LeftParenthesis||LA35_0==HyphenMinus||(LA35_0>=RULE_INT && LA35_0<=RULE_STRING)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt35) {
             	case 1 :
             	    // InternalPortugolParser.g:4048:4: rule__OtherCase__OtherCaseCommandsAssignment_2
             	    {
@@ -13555,7 +13577,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop35;
                 }
             } while (true);
 
@@ -14145,13 +14167,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getForStatementAccess().getGroup_6()); 
             }
             // InternalPortugolParser.g:4239:2: ( rule__ForStatement__Group_6__0 )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA34_0==Passo) ) {
-                alt34=1;
+            if ( (LA36_0==Passo) ) {
+                alt36=1;
             }
-            switch (alt34) {
+            switch (alt36) {
                 case 1 :
                     // InternalPortugolParser.g:4239:3: rule__ForStatement__Group_6__0
                     {
@@ -14350,17 +14372,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getForStatementAccess().getCommandsAssignment_8()); 
             }
             // InternalPortugolParser.g:4299:3: ( rule__ForStatement__CommandsAssignment_8 )*
-            loop35:
+            loop37:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA35_0==Interrompa||(LA35_0>=Enquanto && LA35_0<=Escreva)||LA35_0==Retorne||(LA35_0>=Maiusc && LA35_0<=Copia)||LA35_0==Raizq||(LA35_0>=Leia && LA35_0<=Para)||LA35_0==NOT||(LA35_0>=Pi && LA35_0<=Se)||LA35_0==LeftParenthesis||LA35_0==HyphenMinus||(LA35_0>=RULE_INT && LA35_0<=RULE_STRING)) ) {
-                    alt35=1;
+                if ( (LA37_0==Interrompa||(LA37_0>=Enquanto && LA37_0<=Escreva)||LA37_0==Retorne||(LA37_0>=Maiusc && LA37_0<=Copia)||LA37_0==Raizq||(LA37_0>=Leia && LA37_0<=Para)||LA37_0==NOT||(LA37_0>=Pi && LA37_0<=Se)||LA37_0==LeftParenthesis||LA37_0==HyphenMinus||(LA37_0>=RULE_INT && LA37_0<=RULE_STRING)) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt37) {
             	case 1 :
             	    // InternalPortugolParser.g:4299:4: rule__ForStatement__CommandsAssignment_8
             	    {
@@ -14374,7 +14396,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop37;
                 }
             } while (true);
 
@@ -14970,17 +14992,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getWhileStatementAccess().getCommandsAssignment_3()); 
             }
             // InternalPortugolParser.g:4495:3: ( rule__WhileStatement__CommandsAssignment_3 )*
-            loop36:
+            loop38:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( (LA36_0==Interrompa||(LA36_0>=Enquanto && LA36_0<=Escreva)||LA36_0==Retorne||(LA36_0>=Maiusc && LA36_0<=Copia)||LA36_0==Raizq||(LA36_0>=Leia && LA36_0<=Para)||LA36_0==NOT||(LA36_0>=Pi && LA36_0<=Se)||LA36_0==LeftParenthesis||LA36_0==HyphenMinus||(LA36_0>=RULE_INT && LA36_0<=RULE_STRING)) ) {
-                    alt36=1;
+                if ( (LA38_0==Interrompa||(LA38_0>=Enquanto && LA38_0<=Escreva)||LA38_0==Retorne||(LA38_0>=Maiusc && LA38_0<=Copia)||LA38_0==Raizq||(LA38_0>=Leia && LA38_0<=Para)||LA38_0==NOT||(LA38_0>=Pi && LA38_0<=Se)||LA38_0==LeftParenthesis||LA38_0==HyphenMinus||(LA38_0>=RULE_INT && LA38_0<=RULE_STRING)) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt38) {
             	case 1 :
             	    // InternalPortugolParser.g:4495:4: rule__WhileStatement__CommandsAssignment_3
             	    {
@@ -14994,7 +15016,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop38;
                 }
             } while (true);
 
@@ -15259,17 +15281,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getRepeatStatementAccess().getCommandsAssignment_1()); 
             }
             // InternalPortugolParser.g:4583:3: ( rule__RepeatStatement__CommandsAssignment_1 )*
-            loop37:
+            loop39:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA37_0==Interrompa||(LA37_0>=Enquanto && LA37_0<=Escreva)||LA37_0==Retorne||(LA37_0>=Maiusc && LA37_0<=Copia)||LA37_0==Raizq||(LA37_0>=Leia && LA37_0<=Para)||LA37_0==NOT||(LA37_0>=Pi && LA37_0<=Se)||LA37_0==LeftParenthesis||LA37_0==HyphenMinus||(LA37_0>=RULE_INT && LA37_0<=RULE_STRING)) ) {
-                    alt37=1;
+                if ( (LA39_0==Interrompa||(LA39_0>=Enquanto && LA39_0<=Escreva)||LA39_0==Retorne||(LA39_0>=Maiusc && LA39_0<=Copia)||LA39_0==Raizq||(LA39_0>=Leia && LA39_0<=Para)||LA39_0==NOT||(LA39_0>=Pi && LA39_0<=Se)||LA39_0==LeftParenthesis||LA39_0==HyphenMinus||(LA39_0>=RULE_INT && LA39_0<=RULE_STRING)) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt39) {
             	case 1 :
             	    // InternalPortugolParser.g:4583:4: rule__RepeatStatement__CommandsAssignment_1
             	    {
@@ -15283,7 +15305,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop39;
                 }
             } while (true);
 
@@ -15699,17 +15721,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getSubprogramParamAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:4718:2: ( rule__SubprogramParam__Group_1__0 )*
-            loop38:
+            loop40:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt40=2;
+                int LA40_0 = input.LA(1);
 
-                if ( (LA38_0==Comma) ) {
-                    alt38=1;
+                if ( (LA40_0==Comma) ) {
+                    alt40=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt40) {
             	case 1 :
             	    // InternalPortugolParser.g:4718:3: rule__SubprogramParam__Group_1__0
             	    {
@@ -15723,7 +15745,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop40;
                 }
             } while (true);
 
@@ -16082,7 +16104,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:4839:1: ( rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3 )
             // InternalPortugolParser.g:4840:2: rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_34);
             rule__ReadCommand__Group__2__Impl();
 
             state._fsp--;
@@ -16413,7 +16435,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:4947:1: ( rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3 )
             // InternalPortugolParser.g:4948:2: rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_34);
             rule__WriteCommand__Group__2__Impl();
 
             state._fsp--;
@@ -16705,13 +16727,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getWriteParamAccess().getPrecisionAssignment_1()); 
             }
             // InternalPortugolParser.g:5042:2: ( rule__WriteParam__PrecisionAssignment_1 )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA39_0==Colon) ) {
-                alt39=1;
+            if ( (LA41_0==Colon) ) {
+                alt41=1;
             }
-            switch (alt39) {
+            switch (alt41) {
                 case 1 :
                     // InternalPortugolParser.g:5042:3: rule__WriteParam__PrecisionAssignment_1
                     {
@@ -16760,7 +16782,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5055:1: ( rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1 )
             // InternalPortugolParser.g:5056:2: rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__OptDecimalPrecision__Group__0__Impl();
 
             state._fsp--;
@@ -16968,13 +16990,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getOptDecimalPrecisionAccess().getGroup_2()); 
             }
             // InternalPortugolParser.g:5123:2: ( rule__OptDecimalPrecision__Group_2__0 )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA40_0==Colon) ) {
-                alt40=1;
+            if ( (LA42_0==Colon) ) {
+                alt42=1;
             }
-            switch (alt40) {
+            switch (alt42) {
                 case 1 :
                     // InternalPortugolParser.g:5123:3: rule__OptDecimalPrecision__Group_2__0
                     {
@@ -17023,7 +17045,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5136:1: ( rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1 )
             // InternalPortugolParser.g:5137:2: rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__OptDecimalPrecision__Group_2__0__Impl();
 
             state._fsp--;
@@ -17186,7 +17208,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5190:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
             // InternalPortugolParser.g:5191:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             rule__Assignment__Group__0__Impl();
 
             state._fsp--;
@@ -17309,27 +17331,27 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getAssignmentAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:5231:2: ( rule__Assignment__Group_1__0 )*
-            loop41:
+            loop43:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( (LA41_0==LessThanSignHyphenMinus) ) {
-                    int LA41_2 = input.LA(2);
+                if ( (LA43_0==LessThanSignHyphenMinus) ) {
+                    int LA43_2 = input.LA(2);
 
-                    if ( (synpred61_InternalPortugolParser()) ) {
-                        alt41=1;
+                    if ( (synpred63_InternalPortugolParser()) ) {
+                        alt43=1;
                     }
 
 
                 }
 
 
-                switch (alt41) {
+                switch (alt43) {
             	case 1 :
             	    // InternalPortugolParser.g:5231:3: rule__Assignment__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_36);
+            	    pushFollow(FOLLOW_37);
             	    rule__Assignment__Group_1__0();
 
             	    state._fsp--;
@@ -17339,7 +17361,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop41;
+            	    break loop43;
                 }
             } while (true);
 
@@ -17634,7 +17656,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5325:1: ( rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1 )
             // InternalPortugolParser.g:5326:2: rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_36);
             rule__Assignment__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -17797,7 +17819,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5379:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
             // InternalPortugolParser.g:5380:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             rule__OrExpression__Group__0__Impl();
 
             state._fsp--;
@@ -17920,21 +17942,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:5420:2: ( rule__OrExpression__Group_1__0 )*
-            loop42:
+            loop44:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA42_0==OU) ) {
-                    alt42=1;
+                if ( (LA44_0==OU) ) {
+                    alt44=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt44) {
             	case 1 :
             	    // InternalPortugolParser.g:5420:3: rule__OrExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_39);
             	    rule__OrExpression__Group_1__0();
 
             	    state._fsp--;
@@ -17944,7 +17966,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop44;
                 }
             } while (true);
 
@@ -18239,7 +18261,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5514:1: ( rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:5515:2: rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_38);
             rule__OrExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -18402,7 +18424,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5568:1: ( rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1 )
             // InternalPortugolParser.g:5569:2: rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_40);
             rule__XorExpression__Group__0__Impl();
 
             state._fsp--;
@@ -18525,21 +18547,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getXorExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:5609:2: ( rule__XorExpression__Group_1__0 )*
-            loop43:
+            loop45:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt45=2;
+                int LA45_0 = input.LA(1);
 
-                if ( (LA43_0==XOU) ) {
-                    alt43=1;
+                if ( (LA45_0==XOU) ) {
+                    alt45=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt45) {
             	case 1 :
             	    // InternalPortugolParser.g:5609:3: rule__XorExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_40);
+            	    pushFollow(FOLLOW_41);
             	    rule__XorExpression__Group_1__0();
 
             	    state._fsp--;
@@ -18549,7 +18571,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop43;
+            	    break loop45;
                 }
             } while (true);
 
@@ -18844,7 +18866,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5703:1: ( rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:5704:2: rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_40);
             rule__XorExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -19007,7 +19029,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5757:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
             // InternalPortugolParser.g:5758:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__AndExpression__Group__0__Impl();
 
             state._fsp--;
@@ -19130,21 +19152,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:5798:2: ( rule__AndExpression__Group_1__0 )*
-            loop44:
+            loop46:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA44_0==Ampersand||LA44_0==E) ) {
-                    alt44=1;
+                if ( (LA46_0==Ampersand||LA46_0==E) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt44) {
+                switch (alt46) {
             	case 1 :
             	    // InternalPortugolParser.g:5798:3: rule__AndExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_43);
             	    rule__AndExpression__Group_1__0();
 
             	    state._fsp--;
@@ -19154,7 +19176,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop46;
                 }
             } while (true);
 
@@ -19449,7 +19471,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5892:1: ( rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:5893:2: rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__AndExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -19612,7 +19634,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:5946:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
             // InternalPortugolParser.g:5947:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_44);
             rule__Comparison__Group__0__Impl();
 
             state._fsp--;
@@ -19735,21 +19757,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getComparisonAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:5987:2: ( rule__Comparison__Group_1__0 )*
-            loop45:
+            loop47:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA45_0==LessThanSignGreaterThanSign||LA45_0==EqualsSign) ) {
-                    alt45=1;
+                if ( (LA47_0==LessThanSignGreaterThanSign||LA47_0==EqualsSign) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt47) {
             	case 1 :
             	    // InternalPortugolParser.g:5987:3: rule__Comparison__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_44);
+            	    pushFollow(FOLLOW_45);
             	    rule__Comparison__Group_1__0();
 
             	    state._fsp--;
@@ -19759,7 +19781,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop47;
                 }
             } while (true);
 
@@ -20054,7 +20076,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6081:1: ( rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1 )
             // InternalPortugolParser.g:6082:2: rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_44);
             rule__Comparison__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -20217,7 +20239,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6135:1: ( rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1 )
             // InternalPortugolParser.g:6136:2: rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_46);
             rule__EquExpression__Group__0__Impl();
 
             state._fsp--;
@@ -20340,21 +20362,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getEquExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:6176:2: ( rule__EquExpression__Group_1__0 )*
-            loop46:
+            loop48:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt48=2;
+                int LA48_0 = input.LA(1);
 
-                if ( (LA46_0==LessThanSignEqualsSign||LA46_0==GreaterThanSignEqualsSign||LA46_0==LessThanSign||LA46_0==GreaterThanSign) ) {
-                    alt46=1;
+                if ( (LA48_0==LessThanSignEqualsSign||LA48_0==GreaterThanSignEqualsSign||LA48_0==LessThanSign||LA48_0==GreaterThanSign) ) {
+                    alt48=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt48) {
             	case 1 :
             	    // InternalPortugolParser.g:6176:3: rule__EquExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_47);
             	    rule__EquExpression__Group_1__0();
 
             	    state._fsp--;
@@ -20364,7 +20386,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop48;
                 }
             } while (true);
 
@@ -20659,7 +20681,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6270:1: ( rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:6271:2: rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_46);
             rule__EquExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -20822,7 +20844,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6324:1: ( rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1 )
             // InternalPortugolParser.g:6325:2: rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_48);
             rule__AddExpression__Group__0__Impl();
 
             state._fsp--;
@@ -20945,21 +20967,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getAddExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:6365:2: ( rule__AddExpression__Group_1__0 )*
-            loop47:
+            loop49:
             do {
-                int alt47=2;
-                int LA47_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA47_0==PlusSign||LA47_0==HyphenMinus) ) {
-                    alt47=1;
+                if ( (LA49_0==PlusSign||LA49_0==HyphenMinus) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt47) {
+                switch (alt49) {
             	case 1 :
             	    // InternalPortugolParser.g:6365:3: rule__AddExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_49);
             	    rule__AddExpression__Group_1__0();
 
             	    state._fsp--;
@@ -20969,7 +20991,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop47;
+            	    break loop49;
                 }
             } while (true);
 
@@ -21264,7 +21286,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6459:1: ( rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:6460:2: rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_48);
             rule__AddExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -21427,7 +21449,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6513:1: ( rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1 )
             // InternalPortugolParser.g:6514:2: rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_50);
             rule__MultiplicativeExpression__Group__0__Impl();
 
             state._fsp--;
@@ -21550,21 +21572,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:6554:2: ( rule__MultiplicativeExpression__Group_1__0 )*
-            loop48:
+            loop50:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( (LA48_0==MOD||LA48_0==PercentSign||LA48_0==Asterisk||LA48_0==Solidus) ) {
-                    alt48=1;
+                if ( (LA50_0==MOD||LA50_0==PercentSign||LA50_0==Asterisk||LA50_0==Solidus) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt50) {
             	case 1 :
             	    // InternalPortugolParser.g:6554:3: rule__MultiplicativeExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_50);
+            	    pushFollow(FOLLOW_51);
             	    rule__MultiplicativeExpression__Group_1__0();
 
             	    state._fsp--;
@@ -21574,7 +21596,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop50;
                 }
             } while (true);
 
@@ -21869,7 +21891,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6648:1: ( rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:6649:2: rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_50);
             rule__MultiplicativeExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -22032,7 +22054,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6702:1: ( rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1 )
             // InternalPortugolParser.g:6703:2: rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_52);
             rule__PowerExpression__Group__0__Impl();
 
             state._fsp--;
@@ -22155,21 +22177,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                before(grammarAccess.getPowerExpressionAccess().getGroup_1()); 
             }
             // InternalPortugolParser.g:6743:2: ( rule__PowerExpression__Group_1__0 )*
-            loop49:
+            loop51:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt51=2;
+                int LA51_0 = input.LA(1);
 
-                if ( (LA49_0==CircumflexAccent) ) {
-                    alt49=1;
+                if ( (LA51_0==CircumflexAccent) ) {
+                    alt51=1;
                 }
 
 
-                switch (alt49) {
+                switch (alt51) {
             	case 1 :
             	    // InternalPortugolParser.g:6743:3: rule__PowerExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_52);
+            	    pushFollow(FOLLOW_53);
             	    rule__PowerExpression__Group_1__0();
 
             	    state._fsp--;
@@ -22179,7 +22201,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop51;
                 }
             } while (true);
 
@@ -22474,7 +22496,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6837:1: ( rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1 )
             // InternalPortugolParser.g:6838:2: rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_52);
             rule__PowerExpression__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -22637,7 +22659,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6891:1: ( rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1 )
             // InternalPortugolParser.g:6892:2: rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1
             {
-            pushFollow(FOLLOW_53);
+            pushFollow(FOLLOW_54);
             rule__UnaryExpression__Group_0__0__Impl();
 
             state._fsp--;
@@ -22968,7 +22990,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:6999:1: ( rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2 )
             // InternalPortugolParser.g:7000:2: rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_34);
             rule__PrimaryExpression__Group_4__1__Impl();
 
             state._fsp--;
@@ -23293,7 +23315,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:7107:1: ( rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3 )
             // InternalPortugolParser.g:7108:2: rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_34);
             rule__PreDefinedFunctionCall__Group__2__Impl();
 
             state._fsp--;
@@ -23624,7 +23646,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:7215:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
             // InternalPortugolParser.g:7216:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_34);
             rule__FunctionCall__Group__2__Impl();
 
             state._fsp--;
@@ -23787,7 +23809,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:7269:1: ( rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1 )
             // InternalPortugolParser.g:7270:2: rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1
             {
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_55);
             rule__Literal__Group_0__0__Impl();
 
             state._fsp--;
@@ -24930,9 +24952,9 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockFunction__CommandsAssignment_9"
 
 
-    // $ANTLR start "rule__BlockProcedure__ProcedureAssignment_1"
-    // InternalPortugolParser.g:7657:1: rule__BlockProcedure__ProcedureAssignment_1 : ( ruleProcedureName ) ;
-    public final void rule__BlockProcedure__ProcedureAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__BlockProcedure__ProcedureNameAssignment_1"
+    // InternalPortugolParser.g:7657:1: rule__BlockProcedure__ProcedureNameAssignment_1 : ( ruleProcedureName ) ;
+    public final void rule__BlockProcedure__ProcedureNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -24944,7 +24966,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:7663:3: ruleProcedureName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getProcedureProcedureNameParserRuleCall_1_0()); 
+               before(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleProcedureName();
@@ -24952,7 +24974,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getProcedureProcedureNameParserRuleCall_1_0()); 
+               after(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0()); 
             }
 
             }
@@ -24972,7 +24994,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__ProcedureAssignment_1"
+    // $ANTLR end "rule__BlockProcedure__ProcedureNameAssignment_1"
 
 
     // $ANTLR start "rule__BlockProcedure__ParamListAssignment_3"
@@ -27752,8 +27774,8 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     }
     // $ANTLR end "rule__StringExpression__LiteralStringAssignment"
 
-    // $ANTLR start synpred61_InternalPortugolParser
-    public final void synpred61_InternalPortugolParser_fragment() throws RecognitionException {   
+    // $ANTLR start synpred63_InternalPortugolParser
+    public final void synpred63_InternalPortugolParser_fragment() throws RecognitionException {   
         // InternalPortugolParser.g:5231:3: ( rule__Assignment__Group_1__0 )
         // InternalPortugolParser.g:5231:3: rule__Assignment__Group_1__0
         {
@@ -27765,15 +27787,15 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
         }
     }
-    // $ANTLR end synpred61_InternalPortugolParser
+    // $ANTLR end synpred63_InternalPortugolParser
 
     // Delegated rules
 
-    public final boolean synpred61_InternalPortugolParser() {
+    public final boolean synpred63_InternalPortugolParser() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred61_InternalPortugolParser_fragment(); // can never throw exception
+            synpred63_InternalPortugolParser_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -27800,7 +27822,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0200000000000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0200000000000002L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0040000000000000L,0x0000000000000020L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000040000800000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x042600988F278200L,0x0000000000000078L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000001000L});
@@ -27820,26 +27842,27 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0010000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0010000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x8000200000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x8000200000000002L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x4000500000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x4000500000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0500000000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0500000000000002L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0888004000000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0888004000000002L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0400008000000000L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000800000000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0010000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0010000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x8000200000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x8000200000000002L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x4000500000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x4000500000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0500000000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0500000000000002L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0888004000000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0888004000000002L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0400008000000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0002000000000000L});
 
 }

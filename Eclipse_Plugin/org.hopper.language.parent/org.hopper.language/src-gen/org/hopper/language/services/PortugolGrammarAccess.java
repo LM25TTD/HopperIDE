@@ -368,14 +368,14 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFimfuncaoKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//BlockFunction:
-		//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
+		//	'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType
 		//	declarations=DeclarationsBlock?
 		//	'inicio'
 		//	commands+=AbstractCommand+
 		//	'fimfuncao';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType declarations=DeclarationsBlock?
+		//'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType declarations=DeclarationsBlock?
 		//'inicio' commands+=AbstractCommand+ 'fimfuncao'
 		public Group getGroup() { return cGroup; }
 		
@@ -391,7 +391,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//paramList=Variable
+		//paramList=Variable?
 		public Assignment getParamListAssignment_3() { return cParamListAssignment_3; }
 		
 		//Variable
@@ -431,8 +431,8 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.BlockProcedure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cProcedimentoKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cProcedureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cProcedureProcedureNameParserRuleCall_1_0 = (RuleCall)cProcedureAssignment_1.eContents().get(0);
+		private final Assignment cProcedureNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cProcedureNameProcedureNameParserRuleCall_1_0 = (RuleCall)cProcedureNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cParamListAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cParamListVariableParserRuleCall_3_0 = (RuleCall)cParamListAssignment_3.eContents().get(0);
@@ -445,30 +445,30 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFimprocedimentoKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//BlockProcedure:
-		//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
+		//	'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')'
 		//	declarations=DeclarationsBlock?
 		//	'inicio'
 		//	commands+=AbstractCommand+
 		//	'fimprocedimento';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'procedimento' procedure=ProcedureName '(' paramList=Variable ')' declarations=DeclarationsBlock? 'inicio'
+		//'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')' declarations=DeclarationsBlock? 'inicio'
 		//commands+=AbstractCommand+ 'fimprocedimento'
 		public Group getGroup() { return cGroup; }
 		
 		//'procedimento'
 		public Keyword getProcedimentoKeyword_0() { return cProcedimentoKeyword_0; }
 		
-		//procedure=ProcedureName
-		public Assignment getProcedureAssignment_1() { return cProcedureAssignment_1; }
+		//procedureName=ProcedureName
+		public Assignment getProcedureNameAssignment_1() { return cProcedureNameAssignment_1; }
 		
 		//ProcedureName
-		public RuleCall getProcedureProcedureNameParserRuleCall_1_0() { return cProcedureProcedureNameParserRuleCall_1_0; }
+		public RuleCall getProcedureNameProcedureNameParserRuleCall_1_0() { return cProcedureNameProcedureNameParserRuleCall_1_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//paramList=Variable
+		//paramList=Variable?
 		public Assignment getParamListAssignment_3() { return cParamListAssignment_3; }
 		
 		//Variable
@@ -2293,7 +2293,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockFunction:
-	//	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
+	//	'funcao' functionName=FunctionName '(' paramList=Variable? ')' ':' returnType=VarType
 	//	declarations=DeclarationsBlock?
 	//	'inicio'
 	//	commands+=AbstractCommand+
@@ -2307,7 +2307,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BlockProcedure:
-	//	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
+	//	'procedimento' procedureName=ProcedureName '(' paramList=Variable? ')'
 	//	declarations=DeclarationsBlock?
 	//	'inicio'
 	//	commands+=AbstractCommand+

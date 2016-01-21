@@ -53,7 +53,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockFunction/returnType"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockProcedure">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockProcedure/procedure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockProcedure/procedureName"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockCommand">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockCommand/commands"/>

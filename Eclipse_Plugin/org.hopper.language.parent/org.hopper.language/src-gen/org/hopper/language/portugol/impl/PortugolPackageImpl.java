@@ -733,7 +733,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBlockProcedure_Procedure()
+  public EReference getBlockProcedure_ProcedureName()
   {
     return (EReference)blockProcedureEClass.getEStructuralFeatures().get(0);
   }
@@ -1455,7 +1455,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(blockFunctionEClass, BLOCK_FUNCTION__RETURN_TYPE);
 
     blockProcedureEClass = createEClass(BLOCK_PROCEDURE);
-    createEReference(blockProcedureEClass, BLOCK_PROCEDURE__PROCEDURE);
+    createEReference(blockProcedureEClass, BLOCK_PROCEDURE__PROCEDURE_NAME);
 
     blockCommandEClass = createEClass(BLOCK_COMMAND);
     createEReference(blockCommandEClass, BLOCK_COMMAND__COMMANDS);
@@ -1643,7 +1643,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getBlockFunction_ReturnType(), this.getVarType(), null, "returnType", null, 0, 1, BlockFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockProcedureEClass, BlockProcedure.class, "BlockProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBlockProcedure_Procedure(), this.getProcedureName(), null, "procedure", null, 0, 1, BlockProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBlockProcedure_ProcedureName(), this.getProcedureName(), null, "procedureName", null, 0, 1, BlockProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockCommandEClass, BlockCommand.class, "BlockCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBlockCommand_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, BlockCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

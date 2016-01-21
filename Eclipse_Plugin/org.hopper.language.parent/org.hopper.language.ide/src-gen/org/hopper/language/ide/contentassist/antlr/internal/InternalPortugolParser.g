@@ -2533,7 +2533,7 @@ rule__BlockFunction__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3()); }
-	(rule__BlockFunction__ParamListAssignment_3)
+	(rule__BlockFunction__ParamListAssignment_3)?
 	{ after(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3()); }
 )
 ;
@@ -2782,9 +2782,9 @@ rule__BlockProcedure__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBlockProcedureAccess().getProcedureAssignment_1()); }
-	(rule__BlockProcedure__ProcedureAssignment_1)
-	{ after(grammarAccess.getBlockProcedureAccess().getProcedureAssignment_1()); }
+	{ before(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1()); }
+	(rule__BlockProcedure__ProcedureNameAssignment_1)
+	{ after(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1()); }
 )
 ;
 finally {
@@ -2837,7 +2837,7 @@ rule__BlockProcedure__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3()); }
-	(rule__BlockProcedure__ParamListAssignment_3)
+	(rule__BlockProcedure__ParamListAssignment_3)?
 	{ after(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3()); }
 )
 ;
@@ -7654,15 +7654,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BlockProcedure__ProcedureAssignment_1
+rule__BlockProcedure__ProcedureNameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBlockProcedureAccess().getProcedureProcedureNameParserRuleCall_1_0()); }
+		{ before(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0()); }
 		ruleProcedureName
-		{ after(grammarAccess.getBlockProcedureAccess().getProcedureProcedureNameParserRuleCall_1_0()); }
+		{ after(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0()); }
 	)
 ;
 finally {

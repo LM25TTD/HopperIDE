@@ -149,7 +149,7 @@ public class PortugolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBlockFunctionAccess().getReturnTypeAssignment_6(), "rule__BlockFunction__ReturnTypeAssignment_6");
 					put(grammarAccess.getBlockFunctionAccess().getDeclarationsAssignment_7(), "rule__BlockFunction__DeclarationsAssignment_7");
 					put(grammarAccess.getBlockFunctionAccess().getCommandsAssignment_9(), "rule__BlockFunction__CommandsAssignment_9");
-					put(grammarAccess.getBlockProcedureAccess().getProcedureAssignment_1(), "rule__BlockProcedure__ProcedureAssignment_1");
+					put(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1(), "rule__BlockProcedure__ProcedureNameAssignment_1");
 					put(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3(), "rule__BlockProcedure__ParamListAssignment_3");
 					put(grammarAccess.getBlockProcedureAccess().getDeclarationsAssignment_5(), "rule__BlockProcedure__DeclarationsAssignment_5");
 					put(grammarAccess.getBlockProcedureAccess().getCommandsAssignment_7(), "rule__BlockProcedure__CommandsAssignment_7");

@@ -549,13 +549,13 @@ public interface PortugolPackage extends EPackage
   int BLOCK_PROCEDURE__COMMANDS = BLOCK_SUB_PROGRAMS__COMMANDS;
 
   /**
-   * The feature id for the '<em><b>Procedure</b></em>' containment reference.
+   * The feature id for the '<em><b>Procedure Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_PROCEDURE__PROCEDURE = BLOCK_SUB_PROGRAMS_FEATURE_COUNT + 0;
+  int BLOCK_PROCEDURE__PROCEDURE_NAME = BLOCK_SUB_PROGRAMS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Block Procedure</em>' class.
@@ -1906,15 +1906,15 @@ public interface PortugolPackage extends EPackage
   EClass getBlockProcedure();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BlockProcedure#getProcedure <em>Procedure</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BlockProcedure#getProcedureName <em>Procedure Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Procedure</em>'.
-   * @see org.hopper.language.portugol.BlockProcedure#getProcedure()
+   * @return the meta object for the containment reference '<em>Procedure Name</em>'.
+   * @see org.hopper.language.portugol.BlockProcedure#getProcedureName()
    * @see #getBlockProcedure()
    * @generated
    */
-  EReference getBlockProcedure_Procedure();
+  EReference getBlockProcedure_ProcedureName();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BlockCommand <em>Block Command</em>}'.
@@ -2920,12 +2920,12 @@ public interface PortugolPackage extends EPackage
     EClass BLOCK_PROCEDURE = eINSTANCE.getBlockProcedure();
 
     /**
-     * The meta object literal for the '<em><b>Procedure</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Procedure Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BLOCK_PROCEDURE__PROCEDURE = eINSTANCE.getBlockProcedure_Procedure();
+    EReference BLOCK_PROCEDURE__PROCEDURE_NAME = eINSTANCE.getBlockProcedure_ProcedureName();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BlockCommandImpl <em>Block Command</em>}' class.

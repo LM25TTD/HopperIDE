@@ -13,7 +13,7 @@ package org.hopper.language.portugol;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.BlockProcedure#getProcedure <em>Procedure</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.BlockProcedure#getProcedureName <em>Procedure Name</em>}</li>
  * </ul>
  *
  * @see org.hopper.language.portugol.PortugolPackage#getBlockProcedure()
@@ -23,29 +23,29 @@ package org.hopper.language.portugol;
 public interface BlockProcedure extends BlockSubPrograms
 {
   /**
-   * Returns the value of the '<em><b>Procedure</b></em>' containment reference.
+   * Returns the value of the '<em><b>Procedure Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Procedure</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Procedure Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Procedure</em>' containment reference.
-   * @see #setProcedure(ProcedureName)
-   * @see org.hopper.language.portugol.PortugolPackage#getBlockProcedure_Procedure()
+   * @return the value of the '<em>Procedure Name</em>' containment reference.
+   * @see #setProcedureName(ProcedureName)
+   * @see org.hopper.language.portugol.PortugolPackage#getBlockProcedure_ProcedureName()
    * @model containment="true"
    * @generated
    */
-  ProcedureName getProcedure();
+  ProcedureName getProcedureName();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.BlockProcedure#getProcedure <em>Procedure</em>}' containment reference.
+   * Sets the value of the '{@link org.hopper.language.portugol.BlockProcedure#getProcedureName <em>Procedure Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Procedure</em>' containment reference.
-   * @see #getProcedure()
+   * @param value the new value of the '<em>Procedure Name</em>' containment reference.
+   * @see #getProcedureName()
    * @generated
    */
-  void setProcedure(ProcedureName value);
+  void setProcedureName(ProcedureName value);
 
 } // BlockProcedure

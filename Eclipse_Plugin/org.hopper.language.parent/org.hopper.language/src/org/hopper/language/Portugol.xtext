@@ -44,14 +44,14 @@ FunctionName:
 	name=ID;
 
 BlockFunction:
-	'funcao' functionName=FunctionName '(' paramList=Variable ')' ':' returnType=VarType
+	'funcao' functionName=FunctionName '(' (paramList=Variable)? ')' ':' returnType=VarType
 	(declarations=DeclarationsBlock)?
 	'inicio'
 	(commands+=AbstractCommand)+
 	'fimfuncao';
 
 BlockProcedure:
-	'procedimento' procedure=ProcedureName '(' paramList=Variable ')'
+	'procedimento' procedureName=ProcedureName '(' (paramList=Variable)? ')'
 	(declarations=DeclarationsBlock)?
 	'inicio'
 	(commands+=AbstractCommand)+

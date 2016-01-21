@@ -23,7 +23,7 @@ import org.hopper.language.portugol.ProcedureName;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.BlockProcedureImpl#getProcedure <em>Procedure</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.BlockProcedureImpl#getProcedureName <em>Procedure Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import org.hopper.language.portugol.ProcedureName;
 public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockProcedure
 {
   /**
-   * The cached value of the '{@link #getProcedure() <em>Procedure</em>}' containment reference.
+   * The cached value of the '{@link #getProcedureName() <em>Procedure Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcedure()
+   * @see #getProcedureName()
    * @generated
    * @ordered
    */
-  protected ProcedureName procedure;
+  protected ProcedureName procedureName;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProcedureName getProcedure()
+  public ProcedureName getProcedureName()
   {
-    return procedure;
+    return procedureName;
   }
 
   /**
@@ -76,13 +76,13 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetProcedure(ProcedureName newProcedure, NotificationChain msgs)
+  public NotificationChain basicSetProcedureName(ProcedureName newProcedureName, NotificationChain msgs)
   {
-    ProcedureName oldProcedure = procedure;
-    procedure = newProcedure;
+    ProcedureName oldProcedureName = procedureName;
+    procedureName = newProcedureName;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_PROCEDURE__PROCEDURE, oldProcedure, newProcedure);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME, oldProcedureName, newProcedureName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +93,20 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProcedure(ProcedureName newProcedure)
+  public void setProcedureName(ProcedureName newProcedureName)
   {
-    if (newProcedure != procedure)
+    if (newProcedureName != procedureName)
     {
       NotificationChain msgs = null;
-      if (procedure != null)
-        msgs = ((InternalEObject)procedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_PROCEDURE__PROCEDURE, null, msgs);
-      if (newProcedure != null)
-        msgs = ((InternalEObject)newProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_PROCEDURE__PROCEDURE, null, msgs);
-      msgs = basicSetProcedure(newProcedure, msgs);
+      if (procedureName != null)
+        msgs = ((InternalEObject)procedureName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME, null, msgs);
+      if (newProcedureName != null)
+        msgs = ((InternalEObject)newProcedureName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME, null, msgs);
+      msgs = basicSetProcedureName(newProcedureName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_PROCEDURE__PROCEDURE, newProcedure, newProcedure));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME, newProcedureName, newProcedureName));
   }
 
   /**
@@ -119,8 +119,8 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE:
-        return basicSetProcedure(null, msgs);
+      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME:
+        return basicSetProcedureName(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +135,8 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE:
-        return getProcedure();
+      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME:
+        return getProcedureName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +151,8 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE:
-        setProcedure((ProcedureName)newValue);
+      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME:
+        setProcedureName((ProcedureName)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +168,8 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE:
-        setProcedure((ProcedureName)null);
+      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME:
+        setProcedureName((ProcedureName)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +185,8 @@ public class BlockProcedureImpl extends BlockSubProgramsImpl implements BlockPro
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE:
-        return procedure != null;
+      case PortugolPackage.BLOCK_PROCEDURE__PROCEDURE_NAME:
+        return procedureName != null;
     }
     return super.eIsSet(featureID);
   }

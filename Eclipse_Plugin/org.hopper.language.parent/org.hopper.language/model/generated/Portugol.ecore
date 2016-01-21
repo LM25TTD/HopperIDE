@@ -63,7 +63,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockProcedure" eSuperTypes="#//BlockSubPrograms">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="procedure" eType="#//ProcedureName"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="procedureName" eType="#//ProcedureName"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockCommand">

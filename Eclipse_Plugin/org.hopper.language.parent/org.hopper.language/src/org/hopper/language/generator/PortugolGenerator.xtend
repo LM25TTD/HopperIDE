@@ -7,6 +7,13 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.hopper.language.portugol.BlockFunction
+import org.hopper.language.portugol.BlockProcedure
+import org.hopper.language.portugol.DeclarationsBlock
+import org.hopper.language.portugol.Model
+import org.hopper.language.portugol.Subprograms
+import org.hopper.language.portugol.VarType
+import org.hopper.language.portugol.Variable
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +23,81 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class PortugolGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		for (e : resource.allContents.toIterable.filter(typeof(Model))) {
+			fsa.generateFile("generated/" + e.header.algorithmName + ".java", e.compile);
+		}
+	}
+
+	def compile(Model model) {
+		'''
+			package hopper;
+			
+			import java.lang.*;
+					
+			public class «model.header.algorithmName»{
+				«IF model.globalDeclarations != null»
+					«model.globalDeclarations.compile(true)»
+				«ENDIF»	
+				
+				«IF model.subprograms != null»
+					«model.subprograms.compile»
+				«ENDIF»		
+			}	
+		'''
+	}
+
+	def compile(Subprograms subprograms) {
+		'''
+			«FOR subprogram : subprograms.blockSubPrograms»
+				«IF subprogram instanceof BlockFunction»
+					«compile(subprogram as BlockFunction)»
+				«ELSEIF subprogram instanceof BlockProcedure»
+					«compile(subprogram as BlockProcedure)»
+				«ENDIF»
+				
+			«ENDFOR»
+		'''
+	}
+
+	def compile(BlockFunction blockFunction) {
+		'''
+			private static «blockFunction.returnType.compile» «blockFunction.functionName.name»(«blockFunction.paramList.compileAsParameter»){
+				«IF blockFunction.declarations != null»
+					«blockFunction.declarations.compile(false)»
+				«ENDIF»	
+			}
+		'''
+	}
+
+	def compile(BlockProcedure blockProcedure) {
+		'''
+			private static void «blockProcedure.procedureName.name»(«blockProcedure.paramList.compileAsParameter»){
+				«IF blockProcedure.declarations != null»
+					«blockProcedure.declarations.compile(false)»
+				«ENDIF»	
+			}
+		'''
+	}
+
+	def compile(DeclarationsBlock declBlock, boolean useModifier) {
+		'''
+			«FOR currVarDecl : declBlock.vars»
+				«compile(currVarDecl, useModifier)»
+			«ENDFOR»
+		'''
+	}
+	
+	def compileAsParameter(Variable variable){
+		'''«FOR currVarName : variable.varDeclaration.vars»«IF variable.varDeclaration.vars.indexOf(currVarName) > 0», «ENDIF»«variable.type.compile» «currVarName.name»«ENDFOR»'''
+	}
+
+	def compile(
+		Variable variable, boolean useModifier) {
+		'''«IF useModifier»private static «ENDIF»«variable.type.compile»«FOR currVarName : variable.varDeclaration.vars»«IF variable.varDeclaration.vars.indexOf(currVarName) > 0»,«ENDIF» «currVarName.name»«ENDFOR»;'''
+	}
+
+	def compile(
+		VarType varType) {
+		'''«IF varType.typeName.equalsIgnoreCase('inteiro')»int«ELSEIF varType.typeName.equalsIgnoreCase('real')»float«ELSEIF varType.typeName.equalsIgnoreCase('caracter') || varType.typeName.equalsIgnoreCase('caractere')»String«ENDIF»'''
 	}
 }
