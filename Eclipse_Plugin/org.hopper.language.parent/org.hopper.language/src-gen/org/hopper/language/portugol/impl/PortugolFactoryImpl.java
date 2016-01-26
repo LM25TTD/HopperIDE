@@ -79,6 +79,7 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.FUNCTION_NAME: return createFunctionName();
       case PortugolPackage.BLOCK_FUNCTION: return createBlockFunction();
       case PortugolPackage.BLOCK_PROCEDURE: return createBlockProcedure();
+      case PortugolPackage.SUBPROGRAM_PARAM_DECLARATION: return createSubprogramParamDeclaration();
       case PortugolPackage.BLOCK_COMMAND: return createBlockCommand();
       case PortugolPackage.ABSTRACT_COMMAND: return createAbstractCommand();
       case PortugolPackage.BREAK_STATEMENT: return createBreakStatement();
@@ -260,6 +261,17 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
   {
     BlockProcedureImpl blockProcedure = new BlockProcedureImpl();
     return blockProcedure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubprogramParamDeclaration createSubprogramParamDeclaration()
+  {
+    SubprogramParamDeclarationImpl subprogramParamDeclaration = new SubprogramParamDeclarationImpl();
+    return subprogramParamDeclaration;
   }
 
   /**

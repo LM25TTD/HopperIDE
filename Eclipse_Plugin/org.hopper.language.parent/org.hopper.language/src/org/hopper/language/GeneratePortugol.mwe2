@@ -42,12 +42,12 @@ Workflow {
 					ignoreCase = true
 				}
 			}
-			quickFixProvider = {
-				
-			}
-			
-			resourceFactoryFragment ={
-				
+			quickFixProvider = {}
+
+			resourceFactoryFragment = {}
+
+			generator = {
+				generateJavaMain = true
 			}
 		}
 	}

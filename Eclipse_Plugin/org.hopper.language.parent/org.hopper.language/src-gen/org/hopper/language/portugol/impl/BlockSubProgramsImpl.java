@@ -23,7 +23,7 @@ import org.hopper.language.portugol.AbstractCommand;
 import org.hopper.language.portugol.BlockSubPrograms;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.PortugolPackage;
-import org.hopper.language.portugol.Variable;
+import org.hopper.language.portugol.SubprogramParamDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ import org.hopper.language.portugol.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.BlockSubProgramsImpl#getParamList <em>Param List</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.BlockSubProgramsImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.BlockSubProgramsImpl#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.BlockSubProgramsImpl#getCommands <em>Commands</em>}</li>
  * </ul>
@@ -43,14 +43,14 @@ import org.hopper.language.portugol.Variable;
 public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implements BlockSubPrograms
 {
   /**
-   * The cached value of the '{@link #getParamList() <em>Param List</em>}' containment reference list.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParamList()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected EList<Variable> paramList;
+  protected SubprogramParamDeclaration params;
 
   /**
    * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference.
@@ -98,13 +98,47 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getParamList()
+  public SubprogramParamDeclaration getParams()
   {
-    if (paramList == null)
+    return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParams(SubprogramParamDeclaration newParams, NotificationChain msgs)
+  {
+    SubprogramParamDeclaration oldParams = params;
+    params = newParams;
+    if (eNotificationRequired())
     {
-      paramList = new EObjectContainmentEList<Variable>(Variable.class, this, PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS, oldParams, newParams);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return paramList;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParams(SubprogramParamDeclaration newParams)
+  {
+    if (newParams != params)
+    {
+      NotificationChain msgs = null;
+      if (params != null)
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS, null, msgs);
+      if (newParams != null)
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS, null, msgs);
+      msgs = basicSetParams(newParams, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS, newParams, newParams));
   }
 
   /**
@@ -179,8 +213,8 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST:
-        return ((InternalEList<?>)getParamList()).basicRemove(otherEnd, msgs);
+      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS:
+        return basicSetParams(null, msgs);
       case PortugolPackage.BLOCK_SUB_PROGRAMS__DECLARATIONS:
         return basicSetDeclarations(null, msgs);
       case PortugolPackage.BLOCK_SUB_PROGRAMS__COMMANDS:
@@ -199,8 +233,8 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST:
-        return getParamList();
+      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS:
+        return getParams();
       case PortugolPackage.BLOCK_SUB_PROGRAMS__DECLARATIONS:
         return getDeclarations();
       case PortugolPackage.BLOCK_SUB_PROGRAMS__COMMANDS:
@@ -220,9 +254,8 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST:
-        getParamList().clear();
-        getParamList().addAll((Collection<? extends Variable>)newValue);
+      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS:
+        setParams((SubprogramParamDeclaration)newValue);
         return;
       case PortugolPackage.BLOCK_SUB_PROGRAMS__DECLARATIONS:
         setDeclarations((DeclarationsBlock)newValue);
@@ -245,8 +278,8 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST:
-        getParamList().clear();
+      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS:
+        setParams((SubprogramParamDeclaration)null);
         return;
       case PortugolPackage.BLOCK_SUB_PROGRAMS__DECLARATIONS:
         setDeclarations((DeclarationsBlock)null);
@@ -268,8 +301,8 @@ public class BlockSubProgramsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAM_LIST:
-        return paramList != null && !paramList.isEmpty();
+      case PortugolPackage.BLOCK_SUB_PROGRAMS__PARAMS:
+        return params != null;
       case PortugolPackage.BLOCK_SUB_PROGRAMS__DECLARATIONS:
         return declarations != null;
       case PortugolPackage.BLOCK_SUB_PROGRAMS__COMMANDS:

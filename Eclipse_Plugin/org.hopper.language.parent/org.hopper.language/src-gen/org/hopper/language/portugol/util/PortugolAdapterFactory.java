@@ -146,6 +146,11 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createBlockProcedureAdapter();
       }
       @Override
+      public Adapter caseSubprogramParamDeclaration(SubprogramParamDeclaration object)
+      {
+        return createSubprogramParamDeclarationAdapter();
+      }
+      @Override
       public Adapter caseBlockCommand(BlockCommand object)
       {
         return createBlockCommandAdapter();
@@ -493,6 +498,21 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBlockProcedureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.SubprogramParamDeclaration <em>Subprogram Param Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.SubprogramParamDeclaration
+   * @generated
+   */
+  public Adapter createSubprogramParamDeclarationAdapter()
   {
     return null;
   }

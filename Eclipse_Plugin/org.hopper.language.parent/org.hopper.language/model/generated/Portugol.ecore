@@ -43,8 +43,8 @@
         eType="#//BlockSubPrograms" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockSubPrograms">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paramList" upperBound="-1"
-        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" eType="#//SubprogramParamDeclaration"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" eType="#//DeclarationsBlock"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
@@ -65,6 +65,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="BlockProcedure" eSuperTypes="#//BlockSubPrograms">
     <eStructuralFeatures xsi:type="ecore:EReference" name="procedureName" eType="#//ProcedureName"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubprogramParamDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramList" upperBound="-1"
+        eType="#//Variable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockCommand">
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"

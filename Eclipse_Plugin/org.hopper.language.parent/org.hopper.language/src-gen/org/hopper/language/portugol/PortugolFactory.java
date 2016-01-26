@@ -150,6 +150,15 @@ public interface PortugolFactory extends EFactory
   BlockProcedure createBlockProcedure();
 
   /**
+   * Returns a new object of class '<em>Subprogram Param Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subprogram Param Declaration</em>'.
+   * @generated
+   */
+  SubprogramParamDeclaration createSubprogramParamDeclaration();
+
+  /**
    * Returns a new object of class '<em>Block Command</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

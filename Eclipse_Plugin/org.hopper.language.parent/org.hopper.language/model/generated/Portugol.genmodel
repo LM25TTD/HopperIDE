@@ -38,7 +38,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Subprograms/blockSubPrograms"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockSubPrograms">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/paramList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockSubPrograms/commands"/>
     </genClasses>
@@ -54,6 +54,9 @@
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockProcedure">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockProcedure/procedureName"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//SubprogramParamDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//SubprogramParamDeclaration/paramList"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BlockCommand">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BlockCommand/commands"/>

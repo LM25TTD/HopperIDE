@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.BlockSubPrograms#getParamList <em>Param List</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.BlockSubPrograms#getParams <em>Params</em>}</li>
  *   <li>{@link org.hopper.language.portugol.BlockSubPrograms#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link org.hopper.language.portugol.BlockSubPrograms#getCommands <em>Commands</em>}</li>
  * </ul>
@@ -28,20 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface BlockSubPrograms extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Param List</b></em>' containment reference list.
-   * The list contents are of type {@link org.hopper.language.portugol.Variable}.
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Param List</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Param List</em>' containment reference list.
-   * @see org.hopper.language.portugol.PortugolPackage#getBlockSubPrograms_ParamList()
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(SubprogramParamDeclaration)
+   * @see org.hopper.language.portugol.PortugolPackage#getBlockSubPrograms_Params()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getParamList();
+  SubprogramParamDeclaration getParams();
+
+  /**
+   * Sets the value of the '{@link org.hopper.language.portugol.BlockSubPrograms#getParams <em>Params</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
+   * @generated
+   */
+  void setParams(SubprogramParamDeclaration value);
 
   /**
    * Returns the value of the '<em><b>Declarations</b></em>' containment reference.

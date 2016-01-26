@@ -40,6 +40,7 @@ import org.hopper.language.portugol.ReturnExpression;
 import org.hopper.language.portugol.ReturnStatement;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
+import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
 import org.hopper.language.portugol.SwitchCaseStatement;
 import org.hopper.language.portugol.UnaryExpression;
@@ -156,6 +157,13 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass blockProcedureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subprogramParamDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -623,7 +631,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBlockSubPrograms_ParamList()
+  public EReference getBlockSubPrograms_Params()
   {
     return (EReference)blockSubProgramsEClass.getEStructuralFeatures().get(0);
   }
@@ -736,6 +744,26 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
   public EReference getBlockProcedure_ProcedureName()
   {
     return (EReference)blockProcedureEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSubprogramParamDeclaration()
+  {
+    return subprogramParamDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubprogramParamDeclaration_ParamList()
+  {
+    return (EReference)subprogramParamDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1440,7 +1468,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     createEReference(subprogramsEClass, SUBPROGRAMS__BLOCK_SUB_PROGRAMS);
 
     blockSubProgramsEClass = createEClass(BLOCK_SUB_PROGRAMS);
-    createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__PARAM_LIST);
+    createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__PARAMS);
     createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__DECLARATIONS);
     createEReference(blockSubProgramsEClass, BLOCK_SUB_PROGRAMS__COMMANDS);
 
@@ -1456,6 +1484,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     blockProcedureEClass = createEClass(BLOCK_PROCEDURE);
     createEReference(blockProcedureEClass, BLOCK_PROCEDURE__PROCEDURE_NAME);
+
+    subprogramParamDeclarationEClass = createEClass(SUBPROGRAM_PARAM_DECLARATION);
+    createEReference(subprogramParamDeclarationEClass, SUBPROGRAM_PARAM_DECLARATION__PARAM_LIST);
 
     blockCommandEClass = createEClass(BLOCK_COMMAND);
     createEReference(blockCommandEClass, BLOCK_COMMAND__COMMANDS);
@@ -1628,7 +1659,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEReference(getSubprograms_BlockSubPrograms(), this.getBlockSubPrograms(), null, "blockSubPrograms", null, 0, -1, Subprograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockSubProgramsEClass, BlockSubPrograms.class, "BlockSubPrograms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBlockSubPrograms_ParamList(), this.getVariable(), null, "paramList", null, 0, -1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBlockSubPrograms_Params(), this.getSubprogramParamDeclaration(), null, "params", null, 0, 1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBlockSubPrograms_Declarations(), this.getDeclarationsBlock(), null, "declarations", null, 0, 1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBlockSubPrograms_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, BlockSubPrograms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1644,6 +1675,9 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     initEClass(blockProcedureEClass, BlockProcedure.class, "BlockProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBlockProcedure_ProcedureName(), this.getProcedureName(), null, "procedureName", null, 0, 1, BlockProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subprogramParamDeclarationEClass, SubprogramParamDeclaration.class, "SubprogramParamDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubprogramParamDeclaration_ParamList(), this.getVariable(), null, "paramList", null, 0, -1, SubprogramParamDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockCommandEClass, BlockCommand.class, "BlockCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBlockCommand_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, BlockCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

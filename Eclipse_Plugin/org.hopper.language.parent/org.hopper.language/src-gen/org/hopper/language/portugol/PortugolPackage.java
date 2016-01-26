@@ -356,13 +356,13 @@ public interface PortugolPackage extends EPackage
   int BLOCK_SUB_PROGRAMS = 9;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_SUB_PROGRAMS__PARAM_LIST = 0;
+  int BLOCK_SUB_PROGRAMS__PARAMS = 0;
 
   /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference.
@@ -458,13 +458,13 @@ public interface PortugolPackage extends EPackage
   int BLOCK_FUNCTION = 12;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_FUNCTION__PARAM_LIST = BLOCK_SUB_PROGRAMS__PARAM_LIST;
+  int BLOCK_FUNCTION__PARAMS = BLOCK_SUB_PROGRAMS__PARAMS;
 
   /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference.
@@ -522,13 +522,13 @@ public interface PortugolPackage extends EPackage
   int BLOCK_PROCEDURE = 13;
 
   /**
-   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_PROCEDURE__PARAM_LIST = BLOCK_SUB_PROGRAMS__PARAM_LIST;
+  int BLOCK_PROCEDURE__PARAMS = BLOCK_SUB_PROGRAMS__PARAMS;
 
   /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference.
@@ -567,6 +567,34 @@ public interface PortugolPackage extends EPackage
   int BLOCK_PROCEDURE_FEATURE_COUNT = BLOCK_SUB_PROGRAMS_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.SubprogramParamDeclarationImpl <em>Subprogram Param Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.SubprogramParamDeclarationImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParamDeclaration()
+   * @generated
+   */
+  int SUBPROGRAM_PARAM_DECLARATION = 14;
+
+  /**
+   * The feature id for the '<em><b>Param List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBPROGRAM_PARAM_DECLARATION__PARAM_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>Subprogram Param Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBPROGRAM_PARAM_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.BlockCommandImpl <em>Block Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -574,7 +602,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBlockCommand()
    * @generated
    */
-  int BLOCK_COMMAND = 14;
+  int BLOCK_COMMAND = 15;
 
   /**
    * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -602,7 +630,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getAbstractCommand()
    * @generated
    */
-  int ABSTRACT_COMMAND = 15;
+  int ABSTRACT_COMMAND = 16;
 
   /**
    * The number of structural features of the '<em>Abstract Command</em>' class.
@@ -621,7 +649,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBreakStatement()
    * @generated
    */
-  int BREAK_STATEMENT = 16;
+  int BREAK_STATEMENT = 17;
 
   /**
    * The number of structural features of the '<em>Break Statement</em>' class.
@@ -640,7 +668,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 17;
+  int RETURN_STATEMENT = 18;
 
   /**
    * The number of structural features of the '<em>Return Statement</em>' class.
@@ -659,7 +687,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 18;
+  int IF_STATEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -705,7 +733,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSwitchCaseStatement()
    * @generated
    */
-  int SWITCH_CASE_STATEMENT = 19;
+  int SWITCH_CASE_STATEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -751,7 +779,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getCaseList()
    * @generated
    */
-  int CASE_LIST = 20;
+  int CASE_LIST = 21;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -788,7 +816,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOtherCase()
    * @generated
    */
-  int OTHER_CASE = 21;
+  int OTHER_CASE = 22;
 
   /**
    * The feature id for the '<em><b>Other Case Commands</b></em>' containment reference list.
@@ -816,7 +844,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 22;
+  int FOR_STATEMENT = 23;
 
   /**
    * The feature id for the '<em><b>Operator Expr</b></em>' containment reference.
@@ -880,7 +908,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 23;
+  int WHILE_STATEMENT = 24;
 
   /**
    * The feature id for the '<em><b>While Expr</b></em>' containment reference.
@@ -917,7 +945,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getRepeatStatement()
    * @generated
    */
-  int REPEAT_STATEMENT = 24;
+  int REPEAT_STATEMENT = 25;
 
   /**
    * The feature id for the '<em><b>Commands</b></em>' containment reference list.
@@ -954,7 +982,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParam()
    * @generated
    */
-  int SUBPROGRAM_PARAM = 25;
+  int SUBPROGRAM_PARAM = 26;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -982,7 +1010,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReadCommand()
    * @generated
    */
-  int READ_COMMAND = 26;
+  int READ_COMMAND = 27;
 
   /**
    * The feature id for the '<em><b>Param List</b></em>' containment reference.
@@ -1010,7 +1038,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteCommand()
    * @generated
    */
-  int WRITE_COMMAND = 27;
+  int WRITE_COMMAND = 28;
 
   /**
    * The feature id for the '<em><b>Write Command</b></em>' attribute.
@@ -1047,7 +1075,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getWriteParam()
    * @generated
    */
-  int WRITE_PARAM = 28;
+  int WRITE_PARAM = 29;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference.
@@ -1084,7 +1112,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOptDecimalPrecision()
    * @generated
    */
-  int OPT_DECIMAL_PRECISION = 29;
+  int OPT_DECIMAL_PRECISION = 30;
 
   /**
    * The feature id for the '<em><b>First Precision</b></em>' attribute.
@@ -1121,7 +1149,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 30;
+  int EXPRESSION = 31;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1167,7 +1195,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
    * @generated
    */
-  int DECLARED_VAR = 31;
+  int DECLARED_VAR = 32;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1222,7 +1250,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 32;
+  int NUMERIC_LITERAL = 33;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1286,7 +1314,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
    * @generated
    */
-  int STRING_EXPRESSION = 33;
+  int STRING_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1341,7 +1369,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReturnExpression()
    * @generated
    */
-  int RETURN_EXPRESSION = 34;
+  int RETURN_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1369,7 +1397,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int BINARY_OPERATION = 35;
+  int BINARY_OPERATION = 36;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1442,7 +1470,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 36;
+  int UNARY_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1506,7 +1534,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 37;
+  int LITERAL = 38;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1789,15 +1817,15 @@ public interface PortugolPackage extends EPackage
   EClass getBlockSubPrograms();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.BlockSubPrograms#getParamList <em>Param List</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BlockSubPrograms#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Param List</em>'.
-   * @see org.hopper.language.portugol.BlockSubPrograms#getParamList()
+   * @return the meta object for the containment reference '<em>Params</em>'.
+   * @see org.hopper.language.portugol.BlockSubPrograms#getParams()
    * @see #getBlockSubPrograms()
    * @generated
    */
-  EReference getBlockSubPrograms_ParamList();
+  EReference getBlockSubPrograms_Params();
 
   /**
    * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BlockSubPrograms#getDeclarations <em>Declarations</em>}'.
@@ -1915,6 +1943,27 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EReference getBlockProcedure_ProcedureName();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.SubprogramParamDeclaration <em>Subprogram Param Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subprogram Param Declaration</em>'.
+   * @see org.hopper.language.portugol.SubprogramParamDeclaration
+   * @generated
+   */
+  EClass getSubprogramParamDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.hopper.language.portugol.SubprogramParamDeclaration#getParamList <em>Param List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Param List</em>'.
+   * @see org.hopper.language.portugol.SubprogramParamDeclaration#getParamList()
+   * @see #getSubprogramParamDeclaration()
+   * @generated
+   */
+  EReference getSubprogramParamDeclaration_ParamList();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BlockCommand <em>Block Command</em>}'.
@@ -2824,12 +2873,12 @@ public interface PortugolPackage extends EPackage
     EClass BLOCK_SUB_PROGRAMS = eINSTANCE.getBlockSubPrograms();
 
     /**
-     * The meta object literal for the '<em><b>Param List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BLOCK_SUB_PROGRAMS__PARAM_LIST = eINSTANCE.getBlockSubPrograms_ParamList();
+    EReference BLOCK_SUB_PROGRAMS__PARAMS = eINSTANCE.getBlockSubPrograms_Params();
 
     /**
      * The meta object literal for the '<em><b>Declarations</b></em>' containment reference feature.
@@ -2926,6 +2975,24 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EReference BLOCK_PROCEDURE__PROCEDURE_NAME = eINSTANCE.getBlockProcedure_ProcedureName();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.SubprogramParamDeclarationImpl <em>Subprogram Param Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.SubprogramParamDeclarationImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getSubprogramParamDeclaration()
+     * @generated
+     */
+    EClass SUBPROGRAM_PARAM_DECLARATION = eINSTANCE.getSubprogramParamDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Param List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBPROGRAM_PARAM_DECLARATION__PARAM_LIST = eINSTANCE.getSubprogramParamDeclaration_ParamList();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BlockCommandImpl <em>Block Command</em>}' class.

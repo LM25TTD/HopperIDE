@@ -40,6 +40,7 @@ import org.hopper.language.portugol.RepeatStatement;
 import org.hopper.language.portugol.ReturnExpression;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
+import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
 import org.hopper.language.portugol.SwitchCaseStatement;
 import org.hopper.language.portugol.UnaryExpression;
@@ -177,6 +178,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.SUBPROGRAM_PARAM:
 				sequence_SubprogramParam(context, (SubprogramParam) semanticObject); 
 				return; 
+			case PortugolPackage.SUBPROGRAM_PARAM_DECLARATION:
+				sequence_SubprogramParamDeclaration(context, (SubprogramParamDeclaration) semanticObject); 
+				return; 
 			case PortugolPackage.SUBPROGRAMS:
 				sequence_Subprograms(context, (Subprograms) semanticObject); 
 				return; 
@@ -273,13 +277,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BlockFunction returns BlockFunction
 	 *
 	 * Constraint:
-	 *     (
-	 *         functionName=FunctionName 
-	 *         (paramList+=Variable paramList+=Variable*)? 
-	 *         returnType=VarType 
-	 *         declarations=DeclarationsBlock? 
-	 *         commands+=AbstractCommand+
-	 *     )
+	 *     (functionName=FunctionName params=SubprogramParamDeclaration? returnType=VarType declarations=DeclarationsBlock? commands+=AbstractCommand+)
 	 */
 	protected void sequence_BlockFunction(ISerializationContext context, BlockFunction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -292,7 +290,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BlockProcedure returns BlockProcedure
 	 *
 	 * Constraint:
-	 *     (procedureName=ProcedureName (paramList+=Variable paramList+=Variable*)? declarations=DeclarationsBlock? commands+=AbstractCommand+)
+	 *     (procedureName=ProcedureName params=SubprogramParamDeclaration? declarations=DeclarationsBlock? commands+=AbstractCommand+)
 	 */
 	protected void sequence_BlockProcedure(ISerializationContext context, BlockProcedure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -758,6 +756,18 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringExpressionAccess().getLiteralStringSTRINGTerminalRuleCall_0(), semanticObject.getLiteralString());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SubprogramParamDeclaration returns SubprogramParamDeclaration
+	 *
+	 * Constraint:
+	 *     (paramList+=Variable paramList+=Variable*)
+	 */
+	protected void sequence_SubprogramParamDeclaration(ISerializationContext context, SubprogramParamDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

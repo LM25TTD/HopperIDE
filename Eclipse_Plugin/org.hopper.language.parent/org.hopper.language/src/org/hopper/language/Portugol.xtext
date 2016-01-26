@@ -44,18 +44,21 @@ FunctionName:
 	name=ID;
 
 BlockFunction:
-	'funcao' functionName=FunctionName '(' ((paramList+=Variable) (';' paramList+=Variable)*)? ')' ':' returnType=VarType
+	'funcao' functionName=FunctionName '(' (params=SubprogramParamDeclaration)? ')' ':' returnType=VarType
 	(declarations=DeclarationsBlock)?
 	'inicio'
 	(commands+=AbstractCommand)+
 	'fimfuncao';
 
 BlockProcedure:
-	'procedimento' procedureName=ProcedureName '(' ((paramList+=Variable) (';' paramList+=Variable)*)? ')'
+	'procedimento' procedureName=ProcedureName '(' (params=SubprogramParamDeclaration)? ')'
 	(declarations=DeclarationsBlock)?
 	'inicio'
 	(commands+=AbstractCommand)+
 	'fimprocedimento';
+
+SubprogramParamDeclaration:
+	((paramList+=Variable) (';' paramList+=Variable)*);
 
 BlockCommand:
 	'inicio'

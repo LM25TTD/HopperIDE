@@ -6,6 +6,18 @@ package org.hopper.language.ui.labeling
 import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import org.hopper.language.portugol.VarName
+import org.hopper.language.portugol.VarType
+import org.hopper.language.portugol.Variable
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
+import org.hopper.language.portugol.Model
+import org.hopper.language.portugol.DeclarationsBlock
+import org.hopper.language.portugol.BlockFunction
+import org.hopper.language.portugol.BlockProcedure
+import org.hopper.language.portugol.BlockCommand
+import org.hopper.language.portugol.Subprograms
+import org.hopper.language.portugol.SubprogramParamDeclaration
 
 /**
  * Provides labels for EObjects.
@@ -19,13 +31,57 @@ class PortugolLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def text(VarName varName) {
+		var name = varName.name
+		val variable = varName.getContainerOfType(typeof(Variable))
+
+		name += " : " + variable.type.representation
+	}
+
+	def image(VarName varName) {
+		'Attribute.gif'
+	}
+
+	def representation(VarType type) {
+		type.typeName
+	}
+
+	def text(Model model) {
+		'Algoritmo "' + model.header.algorithmName + '"'
+	}
+
+	def text(BlockFunction function) {
+		'Função "' + function.functionName.name + '", retorno do tipo: ' + function.returnType.representation
+	}
+
+	def text(BlockProcedure procedure) {
+		'Procedimento "' + procedure.procedureName.name + '"'
+	}
+
+	def text(BlockCommand mainBlock) {
+		'Bloco Principal'
+	}
+
+	def text(Subprograms subprograms) {
+		'Procedimentos e Funções'
+	}
+
+	def text(SubprogramParamDeclaration paramDeclaration) {
+		'Parâmetros'
+	}
+
+	def text(DeclarationsBlock declarationsBlock) {
+		var label = ""
+		val parent = declarationsBlock.eContainer;
+		if (parent != null) {
+			if (parent instanceof BlockFunction) {
+				label = "Variáveis da Função"
+			} else if (parent instanceof BlockProcedure) {
+				label = "Variáveis do Procedimento"
+			} else if (parent instanceof Model) {
+				label = "Variáveis Globais"
+			}
+			return label
+		}
+	}
 }

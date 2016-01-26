@@ -173,6 +173,13 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PortugolPackage.SUBPROGRAM_PARAM_DECLARATION:
+      {
+        SubprogramParamDeclaration subprogramParamDeclaration = (SubprogramParamDeclaration)theEObject;
+        T result = caseSubprogramParamDeclaration(subprogramParamDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PortugolPackage.BLOCK_COMMAND:
       {
         BlockCommand blockCommand = (BlockCommand)theEObject;
@@ -589,6 +596,22 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBlockProcedure(BlockProcedure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subprogram Param Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subprogram Param Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubprogramParamDeclaration(SubprogramParamDeclaration object)
   {
     return null;
   }

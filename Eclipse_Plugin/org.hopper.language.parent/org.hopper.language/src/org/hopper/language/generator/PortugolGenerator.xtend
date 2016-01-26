@@ -106,7 +106,7 @@ class PortugolGenerator extends AbstractGenerator {
 	def compile(
 		BlockFunction blockFunction) {
 		'''
-			private static «blockFunction.returnType.compile» «blockFunction.functionName.name»(«blockFunction.paramList.compileAsParameter»){
+			private static «blockFunction.returnType.compile» «blockFunction.functionName.name»(«IF blockFunction.params!=null»«blockFunction.params.paramList.compileAsParameter»«ENDIF»){
 				«IF blockFunction.declarations != null»
 					«blockFunction.declarations.compile(false)»
 					«blockFunction.commands.compile»
@@ -115,9 +115,10 @@ class PortugolGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def compile(BlockProcedure blockProcedure) {
+	def compile(
+		BlockProcedure blockProcedure) {
 		'''
-			private static void «blockProcedure.procedureName.name»(«blockProcedure.paramList.compileAsParameter»){
+			private static void «blockProcedure.procedureName.name»(«IF blockProcedure.params!=null»«blockProcedure.params.paramList.compileAsParameter»«ENDIF»){
 				«IF blockProcedure.declarations != null»
 					«blockProcedure.declarations.compile(false)»
 					«blockProcedure.commands.compile»

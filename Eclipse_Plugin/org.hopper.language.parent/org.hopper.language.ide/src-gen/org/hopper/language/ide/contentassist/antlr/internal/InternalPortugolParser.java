@@ -1442,12 +1442,97 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleBlockProcedure"
 
 
+    // $ANTLR start "entryRuleSubprogramParamDeclaration"
+    // InternalPortugolParser.g:476:1: entryRuleSubprogramParamDeclaration : ruleSubprogramParamDeclaration EOF ;
+    public final void entryRuleSubprogramParamDeclaration() throws RecognitionException {
+        try {
+            // InternalPortugolParser.g:477:1: ( ruleSubprogramParamDeclaration EOF )
+            // InternalPortugolParser.g:478:1: ruleSubprogramParamDeclaration EOF
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSubprogramParamDeclarationRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            ruleSubprogramParamDeclaration();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSubprogramParamDeclarationRule()); 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSubprogramParamDeclaration"
+
+
+    // $ANTLR start "ruleSubprogramParamDeclaration"
+    // InternalPortugolParser.g:485:1: ruleSubprogramParamDeclaration : ( ( rule__SubprogramParamDeclaration__Group__0 ) ) ;
+    public final void ruleSubprogramParamDeclaration() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPortugolParser.g:489:2: ( ( ( rule__SubprogramParamDeclaration__Group__0 ) ) )
+            // InternalPortugolParser.g:490:2: ( ( rule__SubprogramParamDeclaration__Group__0 ) )
+            {
+            // InternalPortugolParser.g:490:2: ( ( rule__SubprogramParamDeclaration__Group__0 ) )
+            // InternalPortugolParser.g:491:3: ( rule__SubprogramParamDeclaration__Group__0 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getGroup()); 
+            }
+            // InternalPortugolParser.g:492:3: ( rule__SubprogramParamDeclaration__Group__0 )
+            // InternalPortugolParser.g:492:4: rule__SubprogramParamDeclaration__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SubprogramParamDeclaration__Group__0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getGroup()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSubprogramParamDeclaration"
+
+
     // $ANTLR start "entryRuleBlockCommand"
-    // InternalPortugolParser.g:476:1: entryRuleBlockCommand : ruleBlockCommand EOF ;
+    // InternalPortugolParser.g:501:1: entryRuleBlockCommand : ruleBlockCommand EOF ;
     public final void entryRuleBlockCommand() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:477:1: ( ruleBlockCommand EOF )
-            // InternalPortugolParser.g:478:1: ruleBlockCommand EOF
+            // InternalPortugolParser.g:502:1: ( ruleBlockCommand EOF )
+            // InternalPortugolParser.g:503:1: ruleBlockCommand EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandRule()); 
@@ -1477,23 +1562,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleBlockCommand"
-    // InternalPortugolParser.g:485:1: ruleBlockCommand : ( ( rule__BlockCommand__Group__0 ) ) ;
+    // InternalPortugolParser.g:510:1: ruleBlockCommand : ( ( rule__BlockCommand__Group__0 ) ) ;
     public final void ruleBlockCommand() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:489:2: ( ( ( rule__BlockCommand__Group__0 ) ) )
-            // InternalPortugolParser.g:490:2: ( ( rule__BlockCommand__Group__0 ) )
+            // InternalPortugolParser.g:514:2: ( ( ( rule__BlockCommand__Group__0 ) ) )
+            // InternalPortugolParser.g:515:2: ( ( rule__BlockCommand__Group__0 ) )
             {
-            // InternalPortugolParser.g:490:2: ( ( rule__BlockCommand__Group__0 ) )
-            // InternalPortugolParser.g:491:3: ( rule__BlockCommand__Group__0 )
+            // InternalPortugolParser.g:515:2: ( ( rule__BlockCommand__Group__0 ) )
+            // InternalPortugolParser.g:516:3: ( rule__BlockCommand__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:492:3: ( rule__BlockCommand__Group__0 )
-            // InternalPortugolParser.g:492:4: rule__BlockCommand__Group__0
+            // InternalPortugolParser.g:517:3: ( rule__BlockCommand__Group__0 )
+            // InternalPortugolParser.g:517:4: rule__BlockCommand__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__BlockCommand__Group__0();
@@ -1528,11 +1613,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleAbstractCommand"
-    // InternalPortugolParser.g:501:1: entryRuleAbstractCommand : ruleAbstractCommand EOF ;
+    // InternalPortugolParser.g:526:1: entryRuleAbstractCommand : ruleAbstractCommand EOF ;
     public final void entryRuleAbstractCommand() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:502:1: ( ruleAbstractCommand EOF )
-            // InternalPortugolParser.g:503:1: ruleAbstractCommand EOF
+            // InternalPortugolParser.g:527:1: ( ruleAbstractCommand EOF )
+            // InternalPortugolParser.g:528:1: ruleAbstractCommand EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandRule()); 
@@ -1562,23 +1647,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleAbstractCommand"
-    // InternalPortugolParser.g:510:1: ruleAbstractCommand : ( ( rule__AbstractCommand__Alternatives ) ) ;
+    // InternalPortugolParser.g:535:1: ruleAbstractCommand : ( ( rule__AbstractCommand__Alternatives ) ) ;
     public final void ruleAbstractCommand() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:514:2: ( ( ( rule__AbstractCommand__Alternatives ) ) )
-            // InternalPortugolParser.g:515:2: ( ( rule__AbstractCommand__Alternatives ) )
+            // InternalPortugolParser.g:539:2: ( ( ( rule__AbstractCommand__Alternatives ) ) )
+            // InternalPortugolParser.g:540:2: ( ( rule__AbstractCommand__Alternatives ) )
             {
-            // InternalPortugolParser.g:515:2: ( ( rule__AbstractCommand__Alternatives ) )
-            // InternalPortugolParser.g:516:3: ( rule__AbstractCommand__Alternatives )
+            // InternalPortugolParser.g:540:2: ( ( rule__AbstractCommand__Alternatives ) )
+            // InternalPortugolParser.g:541:3: ( rule__AbstractCommand__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:517:3: ( rule__AbstractCommand__Alternatives )
-            // InternalPortugolParser.g:517:4: rule__AbstractCommand__Alternatives
+            // InternalPortugolParser.g:542:3: ( rule__AbstractCommand__Alternatives )
+            // InternalPortugolParser.g:542:4: rule__AbstractCommand__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Alternatives();
@@ -1613,11 +1698,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleBreakStatement"
-    // InternalPortugolParser.g:526:1: entryRuleBreakStatement : ruleBreakStatement EOF ;
+    // InternalPortugolParser.g:551:1: entryRuleBreakStatement : ruleBreakStatement EOF ;
     public final void entryRuleBreakStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:527:1: ( ruleBreakStatement EOF )
-            // InternalPortugolParser.g:528:1: ruleBreakStatement EOF
+            // InternalPortugolParser.g:552:1: ( ruleBreakStatement EOF )
+            // InternalPortugolParser.g:553:1: ruleBreakStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakStatementRule()); 
@@ -1647,23 +1732,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleBreakStatement"
-    // InternalPortugolParser.g:535:1: ruleBreakStatement : ( ( rule__BreakStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:560:1: ruleBreakStatement : ( ( rule__BreakStatement__Group__0 ) ) ;
     public final void ruleBreakStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:539:2: ( ( ( rule__BreakStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:540:2: ( ( rule__BreakStatement__Group__0 ) )
+            // InternalPortugolParser.g:564:2: ( ( ( rule__BreakStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:565:2: ( ( rule__BreakStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:540:2: ( ( rule__BreakStatement__Group__0 ) )
-            // InternalPortugolParser.g:541:3: ( rule__BreakStatement__Group__0 )
+            // InternalPortugolParser.g:565:2: ( ( rule__BreakStatement__Group__0 ) )
+            // InternalPortugolParser.g:566:3: ( rule__BreakStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:542:3: ( rule__BreakStatement__Group__0 )
-            // InternalPortugolParser.g:542:4: rule__BreakStatement__Group__0
+            // InternalPortugolParser.g:567:3: ( rule__BreakStatement__Group__0 )
+            // InternalPortugolParser.g:567:4: rule__BreakStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__BreakStatement__Group__0();
@@ -1698,11 +1783,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleReturnStatement"
-    // InternalPortugolParser.g:551:1: entryRuleReturnStatement : ruleReturnStatement EOF ;
+    // InternalPortugolParser.g:576:1: entryRuleReturnStatement : ruleReturnStatement EOF ;
     public final void entryRuleReturnStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:552:1: ( ruleReturnStatement EOF )
-            // InternalPortugolParser.g:553:1: ruleReturnStatement EOF
+            // InternalPortugolParser.g:577:1: ( ruleReturnStatement EOF )
+            // InternalPortugolParser.g:578:1: ruleReturnStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementRule()); 
@@ -1732,23 +1817,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleReturnStatement"
-    // InternalPortugolParser.g:560:1: ruleReturnStatement : ( ( rule__ReturnStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:585:1: ruleReturnStatement : ( ( rule__ReturnStatement__Group__0 ) ) ;
     public final void ruleReturnStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:564:2: ( ( ( rule__ReturnStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:565:2: ( ( rule__ReturnStatement__Group__0 ) )
+            // InternalPortugolParser.g:589:2: ( ( ( rule__ReturnStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:590:2: ( ( rule__ReturnStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:565:2: ( ( rule__ReturnStatement__Group__0 ) )
-            // InternalPortugolParser.g:566:3: ( rule__ReturnStatement__Group__0 )
+            // InternalPortugolParser.g:590:2: ( ( rule__ReturnStatement__Group__0 ) )
+            // InternalPortugolParser.g:591:3: ( rule__ReturnStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:567:3: ( rule__ReturnStatement__Group__0 )
-            // InternalPortugolParser.g:567:4: rule__ReturnStatement__Group__0
+            // InternalPortugolParser.g:592:3: ( rule__ReturnStatement__Group__0 )
+            // InternalPortugolParser.g:592:4: rule__ReturnStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ReturnStatement__Group__0();
@@ -1783,11 +1868,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleIfStatement"
-    // InternalPortugolParser.g:576:1: entryRuleIfStatement : ruleIfStatement EOF ;
+    // InternalPortugolParser.g:601:1: entryRuleIfStatement : ruleIfStatement EOF ;
     public final void entryRuleIfStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:577:1: ( ruleIfStatement EOF )
-            // InternalPortugolParser.g:578:1: ruleIfStatement EOF
+            // InternalPortugolParser.g:602:1: ( ruleIfStatement EOF )
+            // InternalPortugolParser.g:603:1: ruleIfStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementRule()); 
@@ -1817,23 +1902,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleIfStatement"
-    // InternalPortugolParser.g:585:1: ruleIfStatement : ( ( rule__IfStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:610:1: ruleIfStatement : ( ( rule__IfStatement__Group__0 ) ) ;
     public final void ruleIfStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:589:2: ( ( ( rule__IfStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:590:2: ( ( rule__IfStatement__Group__0 ) )
+            // InternalPortugolParser.g:614:2: ( ( ( rule__IfStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:615:2: ( ( rule__IfStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:590:2: ( ( rule__IfStatement__Group__0 ) )
-            // InternalPortugolParser.g:591:3: ( rule__IfStatement__Group__0 )
+            // InternalPortugolParser.g:615:2: ( ( rule__IfStatement__Group__0 ) )
+            // InternalPortugolParser.g:616:3: ( rule__IfStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:592:3: ( rule__IfStatement__Group__0 )
-            // InternalPortugolParser.g:592:4: rule__IfStatement__Group__0
+            // InternalPortugolParser.g:617:3: ( rule__IfStatement__Group__0 )
+            // InternalPortugolParser.g:617:4: rule__IfStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__IfStatement__Group__0();
@@ -1868,11 +1953,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleSwitchCaseStatement"
-    // InternalPortugolParser.g:601:1: entryRuleSwitchCaseStatement : ruleSwitchCaseStatement EOF ;
+    // InternalPortugolParser.g:626:1: entryRuleSwitchCaseStatement : ruleSwitchCaseStatement EOF ;
     public final void entryRuleSwitchCaseStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:602:1: ( ruleSwitchCaseStatement EOF )
-            // InternalPortugolParser.g:603:1: ruleSwitchCaseStatement EOF
+            // InternalPortugolParser.g:627:1: ( ruleSwitchCaseStatement EOF )
+            // InternalPortugolParser.g:628:1: ruleSwitchCaseStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementRule()); 
@@ -1902,23 +1987,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleSwitchCaseStatement"
-    // InternalPortugolParser.g:610:1: ruleSwitchCaseStatement : ( ( rule__SwitchCaseStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:635:1: ruleSwitchCaseStatement : ( ( rule__SwitchCaseStatement__Group__0 ) ) ;
     public final void ruleSwitchCaseStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:614:2: ( ( ( rule__SwitchCaseStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:615:2: ( ( rule__SwitchCaseStatement__Group__0 ) )
+            // InternalPortugolParser.g:639:2: ( ( ( rule__SwitchCaseStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:640:2: ( ( rule__SwitchCaseStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:615:2: ( ( rule__SwitchCaseStatement__Group__0 ) )
-            // InternalPortugolParser.g:616:3: ( rule__SwitchCaseStatement__Group__0 )
+            // InternalPortugolParser.g:640:2: ( ( rule__SwitchCaseStatement__Group__0 ) )
+            // InternalPortugolParser.g:641:3: ( rule__SwitchCaseStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:617:3: ( rule__SwitchCaseStatement__Group__0 )
-            // InternalPortugolParser.g:617:4: rule__SwitchCaseStatement__Group__0
+            // InternalPortugolParser.g:642:3: ( rule__SwitchCaseStatement__Group__0 )
+            // InternalPortugolParser.g:642:4: rule__SwitchCaseStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SwitchCaseStatement__Group__0();
@@ -1953,11 +2038,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleCaseList"
-    // InternalPortugolParser.g:626:1: entryRuleCaseList : ruleCaseList EOF ;
+    // InternalPortugolParser.g:651:1: entryRuleCaseList : ruleCaseList EOF ;
     public final void entryRuleCaseList() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:627:1: ( ruleCaseList EOF )
-            // InternalPortugolParser.g:628:1: ruleCaseList EOF
+            // InternalPortugolParser.g:652:1: ( ruleCaseList EOF )
+            // InternalPortugolParser.g:653:1: ruleCaseList EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListRule()); 
@@ -1987,23 +2072,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleCaseList"
-    // InternalPortugolParser.g:635:1: ruleCaseList : ( ( rule__CaseList__Group__0 ) ) ;
+    // InternalPortugolParser.g:660:1: ruleCaseList : ( ( rule__CaseList__Group__0 ) ) ;
     public final void ruleCaseList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:639:2: ( ( ( rule__CaseList__Group__0 ) ) )
-            // InternalPortugolParser.g:640:2: ( ( rule__CaseList__Group__0 ) )
+            // InternalPortugolParser.g:664:2: ( ( ( rule__CaseList__Group__0 ) ) )
+            // InternalPortugolParser.g:665:2: ( ( rule__CaseList__Group__0 ) )
             {
-            // InternalPortugolParser.g:640:2: ( ( rule__CaseList__Group__0 ) )
-            // InternalPortugolParser.g:641:3: ( rule__CaseList__Group__0 )
+            // InternalPortugolParser.g:665:2: ( ( rule__CaseList__Group__0 ) )
+            // InternalPortugolParser.g:666:3: ( rule__CaseList__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:642:3: ( rule__CaseList__Group__0 )
-            // InternalPortugolParser.g:642:4: rule__CaseList__Group__0
+            // InternalPortugolParser.g:667:3: ( rule__CaseList__Group__0 )
+            // InternalPortugolParser.g:667:4: rule__CaseList__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__CaseList__Group__0();
@@ -2038,11 +2123,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleOtherCase"
-    // InternalPortugolParser.g:651:1: entryRuleOtherCase : ruleOtherCase EOF ;
+    // InternalPortugolParser.g:676:1: entryRuleOtherCase : ruleOtherCase EOF ;
     public final void entryRuleOtherCase() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:652:1: ( ruleOtherCase EOF )
-            // InternalPortugolParser.g:653:1: ruleOtherCase EOF
+            // InternalPortugolParser.g:677:1: ( ruleOtherCase EOF )
+            // InternalPortugolParser.g:678:1: ruleOtherCase EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseRule()); 
@@ -2072,23 +2157,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleOtherCase"
-    // InternalPortugolParser.g:660:1: ruleOtherCase : ( ( rule__OtherCase__Group__0 ) ) ;
+    // InternalPortugolParser.g:685:1: ruleOtherCase : ( ( rule__OtherCase__Group__0 ) ) ;
     public final void ruleOtherCase() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:664:2: ( ( ( rule__OtherCase__Group__0 ) ) )
-            // InternalPortugolParser.g:665:2: ( ( rule__OtherCase__Group__0 ) )
+            // InternalPortugolParser.g:689:2: ( ( ( rule__OtherCase__Group__0 ) ) )
+            // InternalPortugolParser.g:690:2: ( ( rule__OtherCase__Group__0 ) )
             {
-            // InternalPortugolParser.g:665:2: ( ( rule__OtherCase__Group__0 ) )
-            // InternalPortugolParser.g:666:3: ( rule__OtherCase__Group__0 )
+            // InternalPortugolParser.g:690:2: ( ( rule__OtherCase__Group__0 ) )
+            // InternalPortugolParser.g:691:3: ( rule__OtherCase__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:667:3: ( rule__OtherCase__Group__0 )
-            // InternalPortugolParser.g:667:4: rule__OtherCase__Group__0
+            // InternalPortugolParser.g:692:3: ( rule__OtherCase__Group__0 )
+            // InternalPortugolParser.g:692:4: rule__OtherCase__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__OtherCase__Group__0();
@@ -2123,11 +2208,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleForStatement"
-    // InternalPortugolParser.g:676:1: entryRuleForStatement : ruleForStatement EOF ;
+    // InternalPortugolParser.g:701:1: entryRuleForStatement : ruleForStatement EOF ;
     public final void entryRuleForStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:677:1: ( ruleForStatement EOF )
-            // InternalPortugolParser.g:678:1: ruleForStatement EOF
+            // InternalPortugolParser.g:702:1: ( ruleForStatement EOF )
+            // InternalPortugolParser.g:703:1: ruleForStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementRule()); 
@@ -2157,23 +2242,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleForStatement"
-    // InternalPortugolParser.g:685:1: ruleForStatement : ( ( rule__ForStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:710:1: ruleForStatement : ( ( rule__ForStatement__Group__0 ) ) ;
     public final void ruleForStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:689:2: ( ( ( rule__ForStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:690:2: ( ( rule__ForStatement__Group__0 ) )
+            // InternalPortugolParser.g:714:2: ( ( ( rule__ForStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:715:2: ( ( rule__ForStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:690:2: ( ( rule__ForStatement__Group__0 ) )
-            // InternalPortugolParser.g:691:3: ( rule__ForStatement__Group__0 )
+            // InternalPortugolParser.g:715:2: ( ( rule__ForStatement__Group__0 ) )
+            // InternalPortugolParser.g:716:3: ( rule__ForStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:692:3: ( rule__ForStatement__Group__0 )
-            // InternalPortugolParser.g:692:4: rule__ForStatement__Group__0
+            // InternalPortugolParser.g:717:3: ( rule__ForStatement__Group__0 )
+            // InternalPortugolParser.g:717:4: rule__ForStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__Group__0();
@@ -2208,11 +2293,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleWhileStatement"
-    // InternalPortugolParser.g:701:1: entryRuleWhileStatement : ruleWhileStatement EOF ;
+    // InternalPortugolParser.g:726:1: entryRuleWhileStatement : ruleWhileStatement EOF ;
     public final void entryRuleWhileStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:702:1: ( ruleWhileStatement EOF )
-            // InternalPortugolParser.g:703:1: ruleWhileStatement EOF
+            // InternalPortugolParser.g:727:1: ( ruleWhileStatement EOF )
+            // InternalPortugolParser.g:728:1: ruleWhileStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementRule()); 
@@ -2242,23 +2327,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleWhileStatement"
-    // InternalPortugolParser.g:710:1: ruleWhileStatement : ( ( rule__WhileStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:735:1: ruleWhileStatement : ( ( rule__WhileStatement__Group__0 ) ) ;
     public final void ruleWhileStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:714:2: ( ( ( rule__WhileStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:715:2: ( ( rule__WhileStatement__Group__0 ) )
+            // InternalPortugolParser.g:739:2: ( ( ( rule__WhileStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:740:2: ( ( rule__WhileStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:715:2: ( ( rule__WhileStatement__Group__0 ) )
-            // InternalPortugolParser.g:716:3: ( rule__WhileStatement__Group__0 )
+            // InternalPortugolParser.g:740:2: ( ( rule__WhileStatement__Group__0 ) )
+            // InternalPortugolParser.g:741:3: ( rule__WhileStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:717:3: ( rule__WhileStatement__Group__0 )
-            // InternalPortugolParser.g:717:4: rule__WhileStatement__Group__0
+            // InternalPortugolParser.g:742:3: ( rule__WhileStatement__Group__0 )
+            // InternalPortugolParser.g:742:4: rule__WhileStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__WhileStatement__Group__0();
@@ -2293,11 +2378,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleRepeatStatement"
-    // InternalPortugolParser.g:726:1: entryRuleRepeatStatement : ruleRepeatStatement EOF ;
+    // InternalPortugolParser.g:751:1: entryRuleRepeatStatement : ruleRepeatStatement EOF ;
     public final void entryRuleRepeatStatement() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:727:1: ( ruleRepeatStatement EOF )
-            // InternalPortugolParser.g:728:1: ruleRepeatStatement EOF
+            // InternalPortugolParser.g:752:1: ( ruleRepeatStatement EOF )
+            // InternalPortugolParser.g:753:1: ruleRepeatStatement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementRule()); 
@@ -2327,23 +2412,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleRepeatStatement"
-    // InternalPortugolParser.g:735:1: ruleRepeatStatement : ( ( rule__RepeatStatement__Group__0 ) ) ;
+    // InternalPortugolParser.g:760:1: ruleRepeatStatement : ( ( rule__RepeatStatement__Group__0 ) ) ;
     public final void ruleRepeatStatement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:739:2: ( ( ( rule__RepeatStatement__Group__0 ) ) )
-            // InternalPortugolParser.g:740:2: ( ( rule__RepeatStatement__Group__0 ) )
+            // InternalPortugolParser.g:764:2: ( ( ( rule__RepeatStatement__Group__0 ) ) )
+            // InternalPortugolParser.g:765:2: ( ( rule__RepeatStatement__Group__0 ) )
             {
-            // InternalPortugolParser.g:740:2: ( ( rule__RepeatStatement__Group__0 ) )
-            // InternalPortugolParser.g:741:3: ( rule__RepeatStatement__Group__0 )
+            // InternalPortugolParser.g:765:2: ( ( rule__RepeatStatement__Group__0 ) )
+            // InternalPortugolParser.g:766:3: ( rule__RepeatStatement__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:742:3: ( rule__RepeatStatement__Group__0 )
-            // InternalPortugolParser.g:742:4: rule__RepeatStatement__Group__0
+            // InternalPortugolParser.g:767:3: ( rule__RepeatStatement__Group__0 )
+            // InternalPortugolParser.g:767:4: rule__RepeatStatement__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__RepeatStatement__Group__0();
@@ -2378,11 +2463,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleSubprogramParam"
-    // InternalPortugolParser.g:751:1: entryRuleSubprogramParam : ruleSubprogramParam EOF ;
+    // InternalPortugolParser.g:776:1: entryRuleSubprogramParam : ruleSubprogramParam EOF ;
     public final void entryRuleSubprogramParam() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:752:1: ( ruleSubprogramParam EOF )
-            // InternalPortugolParser.g:753:1: ruleSubprogramParam EOF
+            // InternalPortugolParser.g:777:1: ( ruleSubprogramParam EOF )
+            // InternalPortugolParser.g:778:1: ruleSubprogramParam EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamRule()); 
@@ -2412,23 +2497,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleSubprogramParam"
-    // InternalPortugolParser.g:760:1: ruleSubprogramParam : ( ( rule__SubprogramParam__Group__0 ) ) ;
+    // InternalPortugolParser.g:785:1: ruleSubprogramParam : ( ( rule__SubprogramParam__Group__0 ) ) ;
     public final void ruleSubprogramParam() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:764:2: ( ( ( rule__SubprogramParam__Group__0 ) ) )
-            // InternalPortugolParser.g:765:2: ( ( rule__SubprogramParam__Group__0 ) )
+            // InternalPortugolParser.g:789:2: ( ( ( rule__SubprogramParam__Group__0 ) ) )
+            // InternalPortugolParser.g:790:2: ( ( rule__SubprogramParam__Group__0 ) )
             {
-            // InternalPortugolParser.g:765:2: ( ( rule__SubprogramParam__Group__0 ) )
-            // InternalPortugolParser.g:766:3: ( rule__SubprogramParam__Group__0 )
+            // InternalPortugolParser.g:790:2: ( ( rule__SubprogramParam__Group__0 ) )
+            // InternalPortugolParser.g:791:3: ( rule__SubprogramParam__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:767:3: ( rule__SubprogramParam__Group__0 )
-            // InternalPortugolParser.g:767:4: rule__SubprogramParam__Group__0
+            // InternalPortugolParser.g:792:3: ( rule__SubprogramParam__Group__0 )
+            // InternalPortugolParser.g:792:4: rule__SubprogramParam__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__SubprogramParam__Group__0();
@@ -2463,11 +2548,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleReadCommand"
-    // InternalPortugolParser.g:776:1: entryRuleReadCommand : ruleReadCommand EOF ;
+    // InternalPortugolParser.g:801:1: entryRuleReadCommand : ruleReadCommand EOF ;
     public final void entryRuleReadCommand() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:777:1: ( ruleReadCommand EOF )
-            // InternalPortugolParser.g:778:1: ruleReadCommand EOF
+            // InternalPortugolParser.g:802:1: ( ruleReadCommand EOF )
+            // InternalPortugolParser.g:803:1: ruleReadCommand EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandRule()); 
@@ -2497,23 +2582,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleReadCommand"
-    // InternalPortugolParser.g:785:1: ruleReadCommand : ( ( rule__ReadCommand__Group__0 ) ) ;
+    // InternalPortugolParser.g:810:1: ruleReadCommand : ( ( rule__ReadCommand__Group__0 ) ) ;
     public final void ruleReadCommand() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:789:2: ( ( ( rule__ReadCommand__Group__0 ) ) )
-            // InternalPortugolParser.g:790:2: ( ( rule__ReadCommand__Group__0 ) )
+            // InternalPortugolParser.g:814:2: ( ( ( rule__ReadCommand__Group__0 ) ) )
+            // InternalPortugolParser.g:815:2: ( ( rule__ReadCommand__Group__0 ) )
             {
-            // InternalPortugolParser.g:790:2: ( ( rule__ReadCommand__Group__0 ) )
-            // InternalPortugolParser.g:791:3: ( rule__ReadCommand__Group__0 )
+            // InternalPortugolParser.g:815:2: ( ( rule__ReadCommand__Group__0 ) )
+            // InternalPortugolParser.g:816:3: ( rule__ReadCommand__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:792:3: ( rule__ReadCommand__Group__0 )
-            // InternalPortugolParser.g:792:4: rule__ReadCommand__Group__0
+            // InternalPortugolParser.g:817:3: ( rule__ReadCommand__Group__0 )
+            // InternalPortugolParser.g:817:4: rule__ReadCommand__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ReadCommand__Group__0();
@@ -2548,11 +2633,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleWriteCommand"
-    // InternalPortugolParser.g:801:1: entryRuleWriteCommand : ruleWriteCommand EOF ;
+    // InternalPortugolParser.g:826:1: entryRuleWriteCommand : ruleWriteCommand EOF ;
     public final void entryRuleWriteCommand() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:802:1: ( ruleWriteCommand EOF )
-            // InternalPortugolParser.g:803:1: ruleWriteCommand EOF
+            // InternalPortugolParser.g:827:1: ( ruleWriteCommand EOF )
+            // InternalPortugolParser.g:828:1: ruleWriteCommand EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandRule()); 
@@ -2582,23 +2667,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleWriteCommand"
-    // InternalPortugolParser.g:810:1: ruleWriteCommand : ( ( rule__WriteCommand__Group__0 ) ) ;
+    // InternalPortugolParser.g:835:1: ruleWriteCommand : ( ( rule__WriteCommand__Group__0 ) ) ;
     public final void ruleWriteCommand() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:814:2: ( ( ( rule__WriteCommand__Group__0 ) ) )
-            // InternalPortugolParser.g:815:2: ( ( rule__WriteCommand__Group__0 ) )
+            // InternalPortugolParser.g:839:2: ( ( ( rule__WriteCommand__Group__0 ) ) )
+            // InternalPortugolParser.g:840:2: ( ( rule__WriteCommand__Group__0 ) )
             {
-            // InternalPortugolParser.g:815:2: ( ( rule__WriteCommand__Group__0 ) )
-            // InternalPortugolParser.g:816:3: ( rule__WriteCommand__Group__0 )
+            // InternalPortugolParser.g:840:2: ( ( rule__WriteCommand__Group__0 ) )
+            // InternalPortugolParser.g:841:3: ( rule__WriteCommand__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:817:3: ( rule__WriteCommand__Group__0 )
-            // InternalPortugolParser.g:817:4: rule__WriteCommand__Group__0
+            // InternalPortugolParser.g:842:3: ( rule__WriteCommand__Group__0 )
+            // InternalPortugolParser.g:842:4: rule__WriteCommand__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__WriteCommand__Group__0();
@@ -2633,11 +2718,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleWriteParam"
-    // InternalPortugolParser.g:826:1: entryRuleWriteParam : ruleWriteParam EOF ;
+    // InternalPortugolParser.g:851:1: entryRuleWriteParam : ruleWriteParam EOF ;
     public final void entryRuleWriteParam() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:827:1: ( ruleWriteParam EOF )
-            // InternalPortugolParser.g:828:1: ruleWriteParam EOF
+            // InternalPortugolParser.g:852:1: ( ruleWriteParam EOF )
+            // InternalPortugolParser.g:853:1: ruleWriteParam EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamRule()); 
@@ -2667,23 +2752,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleWriteParam"
-    // InternalPortugolParser.g:835:1: ruleWriteParam : ( ( rule__WriteParam__Group__0 ) ) ;
+    // InternalPortugolParser.g:860:1: ruleWriteParam : ( ( rule__WriteParam__Group__0 ) ) ;
     public final void ruleWriteParam() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:839:2: ( ( ( rule__WriteParam__Group__0 ) ) )
-            // InternalPortugolParser.g:840:2: ( ( rule__WriteParam__Group__0 ) )
+            // InternalPortugolParser.g:864:2: ( ( ( rule__WriteParam__Group__0 ) ) )
+            // InternalPortugolParser.g:865:2: ( ( rule__WriteParam__Group__0 ) )
             {
-            // InternalPortugolParser.g:840:2: ( ( rule__WriteParam__Group__0 ) )
-            // InternalPortugolParser.g:841:3: ( rule__WriteParam__Group__0 )
+            // InternalPortugolParser.g:865:2: ( ( rule__WriteParam__Group__0 ) )
+            // InternalPortugolParser.g:866:3: ( rule__WriteParam__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:842:3: ( rule__WriteParam__Group__0 )
-            // InternalPortugolParser.g:842:4: rule__WriteParam__Group__0
+            // InternalPortugolParser.g:867:3: ( rule__WriteParam__Group__0 )
+            // InternalPortugolParser.g:867:4: rule__WriteParam__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__WriteParam__Group__0();
@@ -2718,11 +2803,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleOptDecimalPrecision"
-    // InternalPortugolParser.g:851:1: entryRuleOptDecimalPrecision : ruleOptDecimalPrecision EOF ;
+    // InternalPortugolParser.g:876:1: entryRuleOptDecimalPrecision : ruleOptDecimalPrecision EOF ;
     public final void entryRuleOptDecimalPrecision() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:852:1: ( ruleOptDecimalPrecision EOF )
-            // InternalPortugolParser.g:853:1: ruleOptDecimalPrecision EOF
+            // InternalPortugolParser.g:877:1: ( ruleOptDecimalPrecision EOF )
+            // InternalPortugolParser.g:878:1: ruleOptDecimalPrecision EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionRule()); 
@@ -2752,23 +2837,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleOptDecimalPrecision"
-    // InternalPortugolParser.g:860:1: ruleOptDecimalPrecision : ( ( rule__OptDecimalPrecision__Group__0 ) ) ;
+    // InternalPortugolParser.g:885:1: ruleOptDecimalPrecision : ( ( rule__OptDecimalPrecision__Group__0 ) ) ;
     public final void ruleOptDecimalPrecision() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:864:2: ( ( ( rule__OptDecimalPrecision__Group__0 ) ) )
-            // InternalPortugolParser.g:865:2: ( ( rule__OptDecimalPrecision__Group__0 ) )
+            // InternalPortugolParser.g:889:2: ( ( ( rule__OptDecimalPrecision__Group__0 ) ) )
+            // InternalPortugolParser.g:890:2: ( ( rule__OptDecimalPrecision__Group__0 ) )
             {
-            // InternalPortugolParser.g:865:2: ( ( rule__OptDecimalPrecision__Group__0 ) )
-            // InternalPortugolParser.g:866:3: ( rule__OptDecimalPrecision__Group__0 )
+            // InternalPortugolParser.g:890:2: ( ( rule__OptDecimalPrecision__Group__0 ) )
+            // InternalPortugolParser.g:891:3: ( rule__OptDecimalPrecision__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:867:3: ( rule__OptDecimalPrecision__Group__0 )
-            // InternalPortugolParser.g:867:4: rule__OptDecimalPrecision__Group__0
+            // InternalPortugolParser.g:892:3: ( rule__OptDecimalPrecision__Group__0 )
+            // InternalPortugolParser.g:892:4: rule__OptDecimalPrecision__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__OptDecimalPrecision__Group__0();
@@ -2803,11 +2888,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalPortugolParser.g:876:1: entryRuleExpression : ruleExpression EOF ;
+    // InternalPortugolParser.g:901:1: entryRuleExpression : ruleExpression EOF ;
     public final void entryRuleExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:877:1: ( ruleExpression EOF )
-            // InternalPortugolParser.g:878:1: ruleExpression EOF
+            // InternalPortugolParser.g:902:1: ( ruleExpression EOF )
+            // InternalPortugolParser.g:903:1: ruleExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExpressionRule()); 
@@ -2837,17 +2922,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleExpression"
-    // InternalPortugolParser.g:885:1: ruleExpression : ( ruleAssignment ) ;
+    // InternalPortugolParser.g:910:1: ruleExpression : ( ruleAssignment ) ;
     public final void ruleExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:889:2: ( ( ruleAssignment ) )
-            // InternalPortugolParser.g:890:2: ( ruleAssignment )
+            // InternalPortugolParser.g:914:2: ( ( ruleAssignment ) )
+            // InternalPortugolParser.g:915:2: ( ruleAssignment )
             {
-            // InternalPortugolParser.g:890:2: ( ruleAssignment )
-            // InternalPortugolParser.g:891:3: ruleAssignment
+            // InternalPortugolParser.g:915:2: ( ruleAssignment )
+            // InternalPortugolParser.g:916:3: ruleAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExpressionAccess().getAssignmentParserRuleCall()); 
@@ -2882,11 +2967,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleAssignment"
-    // InternalPortugolParser.g:901:1: entryRuleAssignment : ruleAssignment EOF ;
+    // InternalPortugolParser.g:926:1: entryRuleAssignment : ruleAssignment EOF ;
     public final void entryRuleAssignment() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:902:1: ( ruleAssignment EOF )
-            // InternalPortugolParser.g:903:1: ruleAssignment EOF
+            // InternalPortugolParser.g:927:1: ( ruleAssignment EOF )
+            // InternalPortugolParser.g:928:1: ruleAssignment EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentRule()); 
@@ -2916,23 +3001,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleAssignment"
-    // InternalPortugolParser.g:910:1: ruleAssignment : ( ( rule__Assignment__Group__0 ) ) ;
+    // InternalPortugolParser.g:935:1: ruleAssignment : ( ( rule__Assignment__Group__0 ) ) ;
     public final void ruleAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:914:2: ( ( ( rule__Assignment__Group__0 ) ) )
-            // InternalPortugolParser.g:915:2: ( ( rule__Assignment__Group__0 ) )
+            // InternalPortugolParser.g:939:2: ( ( ( rule__Assignment__Group__0 ) ) )
+            // InternalPortugolParser.g:940:2: ( ( rule__Assignment__Group__0 ) )
             {
-            // InternalPortugolParser.g:915:2: ( ( rule__Assignment__Group__0 ) )
-            // InternalPortugolParser.g:916:3: ( rule__Assignment__Group__0 )
+            // InternalPortugolParser.g:940:2: ( ( rule__Assignment__Group__0 ) )
+            // InternalPortugolParser.g:941:3: ( rule__Assignment__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:917:3: ( rule__Assignment__Group__0 )
-            // InternalPortugolParser.g:917:4: rule__Assignment__Group__0
+            // InternalPortugolParser.g:942:3: ( rule__Assignment__Group__0 )
+            // InternalPortugolParser.g:942:4: rule__Assignment__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group__0();
@@ -2967,11 +3052,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleOrExpression"
-    // InternalPortugolParser.g:926:1: entryRuleOrExpression : ruleOrExpression EOF ;
+    // InternalPortugolParser.g:951:1: entryRuleOrExpression : ruleOrExpression EOF ;
     public final void entryRuleOrExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:927:1: ( ruleOrExpression EOF )
-            // InternalPortugolParser.g:928:1: ruleOrExpression EOF
+            // InternalPortugolParser.g:952:1: ( ruleOrExpression EOF )
+            // InternalPortugolParser.g:953:1: ruleOrExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionRule()); 
@@ -3001,23 +3086,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleOrExpression"
-    // InternalPortugolParser.g:935:1: ruleOrExpression : ( ( rule__OrExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:960:1: ruleOrExpression : ( ( rule__OrExpression__Group__0 ) ) ;
     public final void ruleOrExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:939:2: ( ( ( rule__OrExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:940:2: ( ( rule__OrExpression__Group__0 ) )
+            // InternalPortugolParser.g:964:2: ( ( ( rule__OrExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:965:2: ( ( rule__OrExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:940:2: ( ( rule__OrExpression__Group__0 ) )
-            // InternalPortugolParser.g:941:3: ( rule__OrExpression__Group__0 )
+            // InternalPortugolParser.g:965:2: ( ( rule__OrExpression__Group__0 ) )
+            // InternalPortugolParser.g:966:3: ( rule__OrExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:942:3: ( rule__OrExpression__Group__0 )
-            // InternalPortugolParser.g:942:4: rule__OrExpression__Group__0
+            // InternalPortugolParser.g:967:3: ( rule__OrExpression__Group__0 )
+            // InternalPortugolParser.g:967:4: rule__OrExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group__0();
@@ -3052,11 +3137,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleXorExpression"
-    // InternalPortugolParser.g:951:1: entryRuleXorExpression : ruleXorExpression EOF ;
+    // InternalPortugolParser.g:976:1: entryRuleXorExpression : ruleXorExpression EOF ;
     public final void entryRuleXorExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:952:1: ( ruleXorExpression EOF )
-            // InternalPortugolParser.g:953:1: ruleXorExpression EOF
+            // InternalPortugolParser.g:977:1: ( ruleXorExpression EOF )
+            // InternalPortugolParser.g:978:1: ruleXorExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionRule()); 
@@ -3086,23 +3171,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleXorExpression"
-    // InternalPortugolParser.g:960:1: ruleXorExpression : ( ( rule__XorExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:985:1: ruleXorExpression : ( ( rule__XorExpression__Group__0 ) ) ;
     public final void ruleXorExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:964:2: ( ( ( rule__XorExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:965:2: ( ( rule__XorExpression__Group__0 ) )
+            // InternalPortugolParser.g:989:2: ( ( ( rule__XorExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:990:2: ( ( rule__XorExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:965:2: ( ( rule__XorExpression__Group__0 ) )
-            // InternalPortugolParser.g:966:3: ( rule__XorExpression__Group__0 )
+            // InternalPortugolParser.g:990:2: ( ( rule__XorExpression__Group__0 ) )
+            // InternalPortugolParser.g:991:3: ( rule__XorExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:967:3: ( rule__XorExpression__Group__0 )
-            // InternalPortugolParser.g:967:4: rule__XorExpression__Group__0
+            // InternalPortugolParser.g:992:3: ( rule__XorExpression__Group__0 )
+            // InternalPortugolParser.g:992:4: rule__XorExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group__0();
@@ -3137,11 +3222,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleAndExpression"
-    // InternalPortugolParser.g:976:1: entryRuleAndExpression : ruleAndExpression EOF ;
+    // InternalPortugolParser.g:1001:1: entryRuleAndExpression : ruleAndExpression EOF ;
     public final void entryRuleAndExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:977:1: ( ruleAndExpression EOF )
-            // InternalPortugolParser.g:978:1: ruleAndExpression EOF
+            // InternalPortugolParser.g:1002:1: ( ruleAndExpression EOF )
+            // InternalPortugolParser.g:1003:1: ruleAndExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionRule()); 
@@ -3171,23 +3256,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleAndExpression"
-    // InternalPortugolParser.g:985:1: ruleAndExpression : ( ( rule__AndExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:1010:1: ruleAndExpression : ( ( rule__AndExpression__Group__0 ) ) ;
     public final void ruleAndExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:989:2: ( ( ( rule__AndExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:990:2: ( ( rule__AndExpression__Group__0 ) )
+            // InternalPortugolParser.g:1014:2: ( ( ( rule__AndExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:1015:2: ( ( rule__AndExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:990:2: ( ( rule__AndExpression__Group__0 ) )
-            // InternalPortugolParser.g:991:3: ( rule__AndExpression__Group__0 )
+            // InternalPortugolParser.g:1015:2: ( ( rule__AndExpression__Group__0 ) )
+            // InternalPortugolParser.g:1016:3: ( rule__AndExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:992:3: ( rule__AndExpression__Group__0 )
-            // InternalPortugolParser.g:992:4: rule__AndExpression__Group__0
+            // InternalPortugolParser.g:1017:3: ( rule__AndExpression__Group__0 )
+            // InternalPortugolParser.g:1017:4: rule__AndExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group__0();
@@ -3222,11 +3307,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleComparison"
-    // InternalPortugolParser.g:1001:1: entryRuleComparison : ruleComparison EOF ;
+    // InternalPortugolParser.g:1026:1: entryRuleComparison : ruleComparison EOF ;
     public final void entryRuleComparison() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1002:1: ( ruleComparison EOF )
-            // InternalPortugolParser.g:1003:1: ruleComparison EOF
+            // InternalPortugolParser.g:1027:1: ( ruleComparison EOF )
+            // InternalPortugolParser.g:1028:1: ruleComparison EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonRule()); 
@@ -3256,23 +3341,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleComparison"
-    // InternalPortugolParser.g:1010:1: ruleComparison : ( ( rule__Comparison__Group__0 ) ) ;
+    // InternalPortugolParser.g:1035:1: ruleComparison : ( ( rule__Comparison__Group__0 ) ) ;
     public final void ruleComparison() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1014:2: ( ( ( rule__Comparison__Group__0 ) ) )
-            // InternalPortugolParser.g:1015:2: ( ( rule__Comparison__Group__0 ) )
+            // InternalPortugolParser.g:1039:2: ( ( ( rule__Comparison__Group__0 ) ) )
+            // InternalPortugolParser.g:1040:2: ( ( rule__Comparison__Group__0 ) )
             {
-            // InternalPortugolParser.g:1015:2: ( ( rule__Comparison__Group__0 ) )
-            // InternalPortugolParser.g:1016:3: ( rule__Comparison__Group__0 )
+            // InternalPortugolParser.g:1040:2: ( ( rule__Comparison__Group__0 ) )
+            // InternalPortugolParser.g:1041:3: ( rule__Comparison__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1017:3: ( rule__Comparison__Group__0 )
-            // InternalPortugolParser.g:1017:4: rule__Comparison__Group__0
+            // InternalPortugolParser.g:1042:3: ( rule__Comparison__Group__0 )
+            // InternalPortugolParser.g:1042:4: rule__Comparison__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group__0();
@@ -3307,11 +3392,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleEquExpression"
-    // InternalPortugolParser.g:1026:1: entryRuleEquExpression : ruleEquExpression EOF ;
+    // InternalPortugolParser.g:1051:1: entryRuleEquExpression : ruleEquExpression EOF ;
     public final void entryRuleEquExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1027:1: ( ruleEquExpression EOF )
-            // InternalPortugolParser.g:1028:1: ruleEquExpression EOF
+            // InternalPortugolParser.g:1052:1: ( ruleEquExpression EOF )
+            // InternalPortugolParser.g:1053:1: ruleEquExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionRule()); 
@@ -3341,23 +3426,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleEquExpression"
-    // InternalPortugolParser.g:1035:1: ruleEquExpression : ( ( rule__EquExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:1060:1: ruleEquExpression : ( ( rule__EquExpression__Group__0 ) ) ;
     public final void ruleEquExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1039:2: ( ( ( rule__EquExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:1040:2: ( ( rule__EquExpression__Group__0 ) )
+            // InternalPortugolParser.g:1064:2: ( ( ( rule__EquExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:1065:2: ( ( rule__EquExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:1040:2: ( ( rule__EquExpression__Group__0 ) )
-            // InternalPortugolParser.g:1041:3: ( rule__EquExpression__Group__0 )
+            // InternalPortugolParser.g:1065:2: ( ( rule__EquExpression__Group__0 ) )
+            // InternalPortugolParser.g:1066:3: ( rule__EquExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1042:3: ( rule__EquExpression__Group__0 )
-            // InternalPortugolParser.g:1042:4: rule__EquExpression__Group__0
+            // InternalPortugolParser.g:1067:3: ( rule__EquExpression__Group__0 )
+            // InternalPortugolParser.g:1067:4: rule__EquExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group__0();
@@ -3392,11 +3477,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleAddExpression"
-    // InternalPortugolParser.g:1051:1: entryRuleAddExpression : ruleAddExpression EOF ;
+    // InternalPortugolParser.g:1076:1: entryRuleAddExpression : ruleAddExpression EOF ;
     public final void entryRuleAddExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1052:1: ( ruleAddExpression EOF )
-            // InternalPortugolParser.g:1053:1: ruleAddExpression EOF
+            // InternalPortugolParser.g:1077:1: ( ruleAddExpression EOF )
+            // InternalPortugolParser.g:1078:1: ruleAddExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionRule()); 
@@ -3426,23 +3511,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleAddExpression"
-    // InternalPortugolParser.g:1060:1: ruleAddExpression : ( ( rule__AddExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:1085:1: ruleAddExpression : ( ( rule__AddExpression__Group__0 ) ) ;
     public final void ruleAddExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1064:2: ( ( ( rule__AddExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:1065:2: ( ( rule__AddExpression__Group__0 ) )
+            // InternalPortugolParser.g:1089:2: ( ( ( rule__AddExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:1090:2: ( ( rule__AddExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:1065:2: ( ( rule__AddExpression__Group__0 ) )
-            // InternalPortugolParser.g:1066:3: ( rule__AddExpression__Group__0 )
+            // InternalPortugolParser.g:1090:2: ( ( rule__AddExpression__Group__0 ) )
+            // InternalPortugolParser.g:1091:3: ( rule__AddExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1067:3: ( rule__AddExpression__Group__0 )
-            // InternalPortugolParser.g:1067:4: rule__AddExpression__Group__0
+            // InternalPortugolParser.g:1092:3: ( rule__AddExpression__Group__0 )
+            // InternalPortugolParser.g:1092:4: rule__AddExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group__0();
@@ -3477,11 +3562,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleMultiplicativeExpression"
-    // InternalPortugolParser.g:1076:1: entryRuleMultiplicativeExpression : ruleMultiplicativeExpression EOF ;
+    // InternalPortugolParser.g:1101:1: entryRuleMultiplicativeExpression : ruleMultiplicativeExpression EOF ;
     public final void entryRuleMultiplicativeExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1077:1: ( ruleMultiplicativeExpression EOF )
-            // InternalPortugolParser.g:1078:1: ruleMultiplicativeExpression EOF
+            // InternalPortugolParser.g:1102:1: ( ruleMultiplicativeExpression EOF )
+            // InternalPortugolParser.g:1103:1: ruleMultiplicativeExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionRule()); 
@@ -3511,23 +3596,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleMultiplicativeExpression"
-    // InternalPortugolParser.g:1085:1: ruleMultiplicativeExpression : ( ( rule__MultiplicativeExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:1110:1: ruleMultiplicativeExpression : ( ( rule__MultiplicativeExpression__Group__0 ) ) ;
     public final void ruleMultiplicativeExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1089:2: ( ( ( rule__MultiplicativeExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:1090:2: ( ( rule__MultiplicativeExpression__Group__0 ) )
+            // InternalPortugolParser.g:1114:2: ( ( ( rule__MultiplicativeExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:1115:2: ( ( rule__MultiplicativeExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:1090:2: ( ( rule__MultiplicativeExpression__Group__0 ) )
-            // InternalPortugolParser.g:1091:3: ( rule__MultiplicativeExpression__Group__0 )
+            // InternalPortugolParser.g:1115:2: ( ( rule__MultiplicativeExpression__Group__0 ) )
+            // InternalPortugolParser.g:1116:3: ( rule__MultiplicativeExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1092:3: ( rule__MultiplicativeExpression__Group__0 )
-            // InternalPortugolParser.g:1092:4: rule__MultiplicativeExpression__Group__0
+            // InternalPortugolParser.g:1117:3: ( rule__MultiplicativeExpression__Group__0 )
+            // InternalPortugolParser.g:1117:4: rule__MultiplicativeExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group__0();
@@ -3562,11 +3647,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRulePowerExpression"
-    // InternalPortugolParser.g:1101:1: entryRulePowerExpression : rulePowerExpression EOF ;
+    // InternalPortugolParser.g:1126:1: entryRulePowerExpression : rulePowerExpression EOF ;
     public final void entryRulePowerExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1102:1: ( rulePowerExpression EOF )
-            // InternalPortugolParser.g:1103:1: rulePowerExpression EOF
+            // InternalPortugolParser.g:1127:1: ( rulePowerExpression EOF )
+            // InternalPortugolParser.g:1128:1: rulePowerExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionRule()); 
@@ -3596,23 +3681,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rulePowerExpression"
-    // InternalPortugolParser.g:1110:1: rulePowerExpression : ( ( rule__PowerExpression__Group__0 ) ) ;
+    // InternalPortugolParser.g:1135:1: rulePowerExpression : ( ( rule__PowerExpression__Group__0 ) ) ;
     public final void rulePowerExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1114:2: ( ( ( rule__PowerExpression__Group__0 ) ) )
-            // InternalPortugolParser.g:1115:2: ( ( rule__PowerExpression__Group__0 ) )
+            // InternalPortugolParser.g:1139:2: ( ( ( rule__PowerExpression__Group__0 ) ) )
+            // InternalPortugolParser.g:1140:2: ( ( rule__PowerExpression__Group__0 ) )
             {
-            // InternalPortugolParser.g:1115:2: ( ( rule__PowerExpression__Group__0 ) )
-            // InternalPortugolParser.g:1116:3: ( rule__PowerExpression__Group__0 )
+            // InternalPortugolParser.g:1140:2: ( ( rule__PowerExpression__Group__0 ) )
+            // InternalPortugolParser.g:1141:3: ( rule__PowerExpression__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1117:3: ( rule__PowerExpression__Group__0 )
-            // InternalPortugolParser.g:1117:4: rule__PowerExpression__Group__0
+            // InternalPortugolParser.g:1142:3: ( rule__PowerExpression__Group__0 )
+            // InternalPortugolParser.g:1142:4: rule__PowerExpression__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group__0();
@@ -3647,11 +3732,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleUnaryExpression"
-    // InternalPortugolParser.g:1126:1: entryRuleUnaryExpression : ruleUnaryExpression EOF ;
+    // InternalPortugolParser.g:1151:1: entryRuleUnaryExpression : ruleUnaryExpression EOF ;
     public final void entryRuleUnaryExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1127:1: ( ruleUnaryExpression EOF )
-            // InternalPortugolParser.g:1128:1: ruleUnaryExpression EOF
+            // InternalPortugolParser.g:1152:1: ( ruleUnaryExpression EOF )
+            // InternalPortugolParser.g:1153:1: ruleUnaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionRule()); 
@@ -3681,23 +3766,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleUnaryExpression"
-    // InternalPortugolParser.g:1135:1: ruleUnaryExpression : ( ( rule__UnaryExpression__Alternatives ) ) ;
+    // InternalPortugolParser.g:1160:1: ruleUnaryExpression : ( ( rule__UnaryExpression__Alternatives ) ) ;
     public final void ruleUnaryExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1139:2: ( ( ( rule__UnaryExpression__Alternatives ) ) )
-            // InternalPortugolParser.g:1140:2: ( ( rule__UnaryExpression__Alternatives ) )
+            // InternalPortugolParser.g:1164:2: ( ( ( rule__UnaryExpression__Alternatives ) ) )
+            // InternalPortugolParser.g:1165:2: ( ( rule__UnaryExpression__Alternatives ) )
             {
-            // InternalPortugolParser.g:1140:2: ( ( rule__UnaryExpression__Alternatives ) )
-            // InternalPortugolParser.g:1141:3: ( rule__UnaryExpression__Alternatives )
+            // InternalPortugolParser.g:1165:2: ( ( rule__UnaryExpression__Alternatives ) )
+            // InternalPortugolParser.g:1166:3: ( rule__UnaryExpression__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:1142:3: ( rule__UnaryExpression__Alternatives )
-            // InternalPortugolParser.g:1142:4: rule__UnaryExpression__Alternatives
+            // InternalPortugolParser.g:1167:3: ( rule__UnaryExpression__Alternatives )
+            // InternalPortugolParser.g:1167:4: rule__UnaryExpression__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__Alternatives();
@@ -3732,11 +3817,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRulePrimaryExpression"
-    // InternalPortugolParser.g:1151:1: entryRulePrimaryExpression : rulePrimaryExpression EOF ;
+    // InternalPortugolParser.g:1176:1: entryRulePrimaryExpression : rulePrimaryExpression EOF ;
     public final void entryRulePrimaryExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1152:1: ( rulePrimaryExpression EOF )
-            // InternalPortugolParser.g:1153:1: rulePrimaryExpression EOF
+            // InternalPortugolParser.g:1177:1: ( rulePrimaryExpression EOF )
+            // InternalPortugolParser.g:1178:1: rulePrimaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryExpressionRule()); 
@@ -3766,23 +3851,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rulePrimaryExpression"
-    // InternalPortugolParser.g:1160:1: rulePrimaryExpression : ( ( rule__PrimaryExpression__Alternatives ) ) ;
+    // InternalPortugolParser.g:1185:1: rulePrimaryExpression : ( ( rule__PrimaryExpression__Alternatives ) ) ;
     public final void rulePrimaryExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1164:2: ( ( ( rule__PrimaryExpression__Alternatives ) ) )
-            // InternalPortugolParser.g:1165:2: ( ( rule__PrimaryExpression__Alternatives ) )
+            // InternalPortugolParser.g:1189:2: ( ( ( rule__PrimaryExpression__Alternatives ) ) )
+            // InternalPortugolParser.g:1190:2: ( ( rule__PrimaryExpression__Alternatives ) )
             {
-            // InternalPortugolParser.g:1165:2: ( ( rule__PrimaryExpression__Alternatives ) )
-            // InternalPortugolParser.g:1166:3: ( rule__PrimaryExpression__Alternatives )
+            // InternalPortugolParser.g:1190:2: ( ( rule__PrimaryExpression__Alternatives ) )
+            // InternalPortugolParser.g:1191:3: ( rule__PrimaryExpression__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryExpressionAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:1167:3: ( rule__PrimaryExpression__Alternatives )
-            // InternalPortugolParser.g:1167:4: rule__PrimaryExpression__Alternatives
+            // InternalPortugolParser.g:1192:3: ( rule__PrimaryExpression__Alternatives )
+            // InternalPortugolParser.g:1192:4: rule__PrimaryExpression__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__PrimaryExpression__Alternatives();
@@ -3817,11 +3902,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRulePreDefinedFunctionCall"
-    // InternalPortugolParser.g:1176:1: entryRulePreDefinedFunctionCall : rulePreDefinedFunctionCall EOF ;
+    // InternalPortugolParser.g:1201:1: entryRulePreDefinedFunctionCall : rulePreDefinedFunctionCall EOF ;
     public final void entryRulePreDefinedFunctionCall() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1177:1: ( rulePreDefinedFunctionCall EOF )
-            // InternalPortugolParser.g:1178:1: rulePreDefinedFunctionCall EOF
+            // InternalPortugolParser.g:1202:1: ( rulePreDefinedFunctionCall EOF )
+            // InternalPortugolParser.g:1203:1: rulePreDefinedFunctionCall EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallRule()); 
@@ -3851,23 +3936,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rulePreDefinedFunctionCall"
-    // InternalPortugolParser.g:1185:1: rulePreDefinedFunctionCall : ( ( rule__PreDefinedFunctionCall__Group__0 ) ) ;
+    // InternalPortugolParser.g:1210:1: rulePreDefinedFunctionCall : ( ( rule__PreDefinedFunctionCall__Group__0 ) ) ;
     public final void rulePreDefinedFunctionCall() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1189:2: ( ( ( rule__PreDefinedFunctionCall__Group__0 ) ) )
-            // InternalPortugolParser.g:1190:2: ( ( rule__PreDefinedFunctionCall__Group__0 ) )
+            // InternalPortugolParser.g:1214:2: ( ( ( rule__PreDefinedFunctionCall__Group__0 ) ) )
+            // InternalPortugolParser.g:1215:2: ( ( rule__PreDefinedFunctionCall__Group__0 ) )
             {
-            // InternalPortugolParser.g:1190:2: ( ( rule__PreDefinedFunctionCall__Group__0 ) )
-            // InternalPortugolParser.g:1191:3: ( rule__PreDefinedFunctionCall__Group__0 )
+            // InternalPortugolParser.g:1215:2: ( ( rule__PreDefinedFunctionCall__Group__0 ) )
+            // InternalPortugolParser.g:1216:3: ( rule__PreDefinedFunctionCall__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1192:3: ( rule__PreDefinedFunctionCall__Group__0 )
-            // InternalPortugolParser.g:1192:4: rule__PreDefinedFunctionCall__Group__0
+            // InternalPortugolParser.g:1217:3: ( rule__PreDefinedFunctionCall__Group__0 )
+            // InternalPortugolParser.g:1217:4: rule__PreDefinedFunctionCall__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__PreDefinedFunctionCall__Group__0();
@@ -3902,11 +3987,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // InternalPortugolParser.g:1201:1: entryRuleFunctionCall : ruleFunctionCall EOF ;
+    // InternalPortugolParser.g:1226:1: entryRuleFunctionCall : ruleFunctionCall EOF ;
     public final void entryRuleFunctionCall() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1202:1: ( ruleFunctionCall EOF )
-            // InternalPortugolParser.g:1203:1: ruleFunctionCall EOF
+            // InternalPortugolParser.g:1227:1: ( ruleFunctionCall EOF )
+            // InternalPortugolParser.g:1228:1: ruleFunctionCall EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallRule()); 
@@ -3936,23 +4021,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleFunctionCall"
-    // InternalPortugolParser.g:1210:1: ruleFunctionCall : ( ( rule__FunctionCall__Group__0 ) ) ;
+    // InternalPortugolParser.g:1235:1: ruleFunctionCall : ( ( rule__FunctionCall__Group__0 ) ) ;
     public final void ruleFunctionCall() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1214:2: ( ( ( rule__FunctionCall__Group__0 ) ) )
-            // InternalPortugolParser.g:1215:2: ( ( rule__FunctionCall__Group__0 ) )
+            // InternalPortugolParser.g:1239:2: ( ( ( rule__FunctionCall__Group__0 ) ) )
+            // InternalPortugolParser.g:1240:2: ( ( rule__FunctionCall__Group__0 ) )
             {
-            // InternalPortugolParser.g:1215:2: ( ( rule__FunctionCall__Group__0 ) )
-            // InternalPortugolParser.g:1216:3: ( rule__FunctionCall__Group__0 )
+            // InternalPortugolParser.g:1240:2: ( ( rule__FunctionCall__Group__0 ) )
+            // InternalPortugolParser.g:1241:3: ( rule__FunctionCall__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getGroup()); 
             }
-            // InternalPortugolParser.g:1217:3: ( rule__FunctionCall__Group__0 )
-            // InternalPortugolParser.g:1217:4: rule__FunctionCall__Group__0
+            // InternalPortugolParser.g:1242:3: ( rule__FunctionCall__Group__0 )
+            // InternalPortugolParser.g:1242:4: rule__FunctionCall__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__Group__0();
@@ -3987,11 +4072,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRulePredefineFunctions"
-    // InternalPortugolParser.g:1226:1: entryRulePredefineFunctions : rulePredefineFunctions EOF ;
+    // InternalPortugolParser.g:1251:1: entryRulePredefineFunctions : rulePredefineFunctions EOF ;
     public final void entryRulePredefineFunctions() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1227:1: ( rulePredefineFunctions EOF )
-            // InternalPortugolParser.g:1228:1: rulePredefineFunctions EOF
+            // InternalPortugolParser.g:1252:1: ( rulePredefineFunctions EOF )
+            // InternalPortugolParser.g:1253:1: rulePredefineFunctions EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPredefineFunctionsRule()); 
@@ -4021,23 +4106,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rulePredefineFunctions"
-    // InternalPortugolParser.g:1235:1: rulePredefineFunctions : ( ( rule__PredefineFunctions__Alternatives ) ) ;
+    // InternalPortugolParser.g:1260:1: rulePredefineFunctions : ( ( rule__PredefineFunctions__Alternatives ) ) ;
     public final void rulePredefineFunctions() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1239:2: ( ( ( rule__PredefineFunctions__Alternatives ) ) )
-            // InternalPortugolParser.g:1240:2: ( ( rule__PredefineFunctions__Alternatives ) )
+            // InternalPortugolParser.g:1264:2: ( ( ( rule__PredefineFunctions__Alternatives ) ) )
+            // InternalPortugolParser.g:1265:2: ( ( rule__PredefineFunctions__Alternatives ) )
             {
-            // InternalPortugolParser.g:1240:2: ( ( rule__PredefineFunctions__Alternatives ) )
-            // InternalPortugolParser.g:1241:3: ( rule__PredefineFunctions__Alternatives )
+            // InternalPortugolParser.g:1265:2: ( ( rule__PredefineFunctions__Alternatives ) )
+            // InternalPortugolParser.g:1266:3: ( rule__PredefineFunctions__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPredefineFunctionsAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:1242:3: ( rule__PredefineFunctions__Alternatives )
-            // InternalPortugolParser.g:1242:4: rule__PredefineFunctions__Alternatives
+            // InternalPortugolParser.g:1267:3: ( rule__PredefineFunctions__Alternatives )
+            // InternalPortugolParser.g:1267:4: rule__PredefineFunctions__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__PredefineFunctions__Alternatives();
@@ -4072,11 +4157,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleLiteral"
-    // InternalPortugolParser.g:1251:1: entryRuleLiteral : ruleLiteral EOF ;
+    // InternalPortugolParser.g:1276:1: entryRuleLiteral : ruleLiteral EOF ;
     public final void entryRuleLiteral() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1252:1: ( ruleLiteral EOF )
-            // InternalPortugolParser.g:1253:1: ruleLiteral EOF
+            // InternalPortugolParser.g:1277:1: ( ruleLiteral EOF )
+            // InternalPortugolParser.g:1278:1: ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLiteralRule()); 
@@ -4106,23 +4191,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleLiteral"
-    // InternalPortugolParser.g:1260:1: ruleLiteral : ( ( rule__Literal__Alternatives ) ) ;
+    // InternalPortugolParser.g:1285:1: ruleLiteral : ( ( rule__Literal__Alternatives ) ) ;
     public final void ruleLiteral() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1264:2: ( ( ( rule__Literal__Alternatives ) ) )
-            // InternalPortugolParser.g:1265:2: ( ( rule__Literal__Alternatives ) )
+            // InternalPortugolParser.g:1289:2: ( ( ( rule__Literal__Alternatives ) ) )
+            // InternalPortugolParser.g:1290:2: ( ( rule__Literal__Alternatives ) )
             {
-            // InternalPortugolParser.g:1265:2: ( ( rule__Literal__Alternatives ) )
-            // InternalPortugolParser.g:1266:3: ( rule__Literal__Alternatives )
+            // InternalPortugolParser.g:1290:2: ( ( rule__Literal__Alternatives ) )
+            // InternalPortugolParser.g:1291:3: ( rule__Literal__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLiteralAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:1267:3: ( rule__Literal__Alternatives )
-            // InternalPortugolParser.g:1267:4: rule__Literal__Alternatives
+            // InternalPortugolParser.g:1292:3: ( rule__Literal__Alternatives )
+            // InternalPortugolParser.g:1292:4: rule__Literal__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Literal__Alternatives();
@@ -4157,11 +4242,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleDeclaredVar"
-    // InternalPortugolParser.g:1276:1: entryRuleDeclaredVar : ruleDeclaredVar EOF ;
+    // InternalPortugolParser.g:1301:1: entryRuleDeclaredVar : ruleDeclaredVar EOF ;
     public final void entryRuleDeclaredVar() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1277:1: ( ruleDeclaredVar EOF )
-            // InternalPortugolParser.g:1278:1: ruleDeclaredVar EOF
+            // InternalPortugolParser.g:1302:1: ( ruleDeclaredVar EOF )
+            // InternalPortugolParser.g:1303:1: ruleDeclaredVar EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarRule()); 
@@ -4191,23 +4276,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleDeclaredVar"
-    // InternalPortugolParser.g:1285:1: ruleDeclaredVar : ( ( rule__DeclaredVar__VarNameAssignment ) ) ;
+    // InternalPortugolParser.g:1310:1: ruleDeclaredVar : ( ( rule__DeclaredVar__VarNameAssignment ) ) ;
     public final void ruleDeclaredVar() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1289:2: ( ( ( rule__DeclaredVar__VarNameAssignment ) ) )
-            // InternalPortugolParser.g:1290:2: ( ( rule__DeclaredVar__VarNameAssignment ) )
+            // InternalPortugolParser.g:1314:2: ( ( ( rule__DeclaredVar__VarNameAssignment ) ) )
+            // InternalPortugolParser.g:1315:2: ( ( rule__DeclaredVar__VarNameAssignment ) )
             {
-            // InternalPortugolParser.g:1290:2: ( ( rule__DeclaredVar__VarNameAssignment ) )
-            // InternalPortugolParser.g:1291:3: ( rule__DeclaredVar__VarNameAssignment )
+            // InternalPortugolParser.g:1315:2: ( ( rule__DeclaredVar__VarNameAssignment ) )
+            // InternalPortugolParser.g:1316:3: ( rule__DeclaredVar__VarNameAssignment )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarAccess().getVarNameAssignment()); 
             }
-            // InternalPortugolParser.g:1292:3: ( rule__DeclaredVar__VarNameAssignment )
-            // InternalPortugolParser.g:1292:4: rule__DeclaredVar__VarNameAssignment
+            // InternalPortugolParser.g:1317:3: ( rule__DeclaredVar__VarNameAssignment )
+            // InternalPortugolParser.g:1317:4: rule__DeclaredVar__VarNameAssignment
             {
             pushFollow(FOLLOW_2);
             rule__DeclaredVar__VarNameAssignment();
@@ -4242,11 +4327,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleNumericLiteral"
-    // InternalPortugolParser.g:1301:1: entryRuleNumericLiteral : ruleNumericLiteral EOF ;
+    // InternalPortugolParser.g:1326:1: entryRuleNumericLiteral : ruleNumericLiteral EOF ;
     public final void entryRuleNumericLiteral() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1302:1: ( ruleNumericLiteral EOF )
-            // InternalPortugolParser.g:1303:1: ruleNumericLiteral EOF
+            // InternalPortugolParser.g:1327:1: ( ruleNumericLiteral EOF )
+            // InternalPortugolParser.g:1328:1: ruleNumericLiteral EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNumericLiteralRule()); 
@@ -4276,23 +4361,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleNumericLiteral"
-    // InternalPortugolParser.g:1310:1: ruleNumericLiteral : ( ( rule__NumericLiteral__Alternatives ) ) ;
+    // InternalPortugolParser.g:1335:1: ruleNumericLiteral : ( ( rule__NumericLiteral__Alternatives ) ) ;
     public final void ruleNumericLiteral() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1314:2: ( ( ( rule__NumericLiteral__Alternatives ) ) )
-            // InternalPortugolParser.g:1315:2: ( ( rule__NumericLiteral__Alternatives ) )
+            // InternalPortugolParser.g:1339:2: ( ( ( rule__NumericLiteral__Alternatives ) ) )
+            // InternalPortugolParser.g:1340:2: ( ( rule__NumericLiteral__Alternatives ) )
             {
-            // InternalPortugolParser.g:1315:2: ( ( rule__NumericLiteral__Alternatives ) )
-            // InternalPortugolParser.g:1316:3: ( rule__NumericLiteral__Alternatives )
+            // InternalPortugolParser.g:1340:2: ( ( rule__NumericLiteral__Alternatives ) )
+            // InternalPortugolParser.g:1341:3: ( rule__NumericLiteral__Alternatives )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNumericLiteralAccess().getAlternatives()); 
             }
-            // InternalPortugolParser.g:1317:3: ( rule__NumericLiteral__Alternatives )
-            // InternalPortugolParser.g:1317:4: rule__NumericLiteral__Alternatives
+            // InternalPortugolParser.g:1342:3: ( rule__NumericLiteral__Alternatives )
+            // InternalPortugolParser.g:1342:4: rule__NumericLiteral__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__NumericLiteral__Alternatives();
@@ -4327,11 +4412,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleStringExpression"
-    // InternalPortugolParser.g:1326:1: entryRuleStringExpression : ruleStringExpression EOF ;
+    // InternalPortugolParser.g:1351:1: entryRuleStringExpression : ruleStringExpression EOF ;
     public final void entryRuleStringExpression() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1327:1: ( ruleStringExpression EOF )
-            // InternalPortugolParser.g:1328:1: ruleStringExpression EOF
+            // InternalPortugolParser.g:1352:1: ( ruleStringExpression EOF )
+            // InternalPortugolParser.g:1353:1: ruleStringExpression EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStringExpressionRule()); 
@@ -4361,23 +4446,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleStringExpression"
-    // InternalPortugolParser.g:1335:1: ruleStringExpression : ( ( rule__StringExpression__LiteralStringAssignment ) ) ;
+    // InternalPortugolParser.g:1360:1: ruleStringExpression : ( ( rule__StringExpression__LiteralStringAssignment ) ) ;
     public final void ruleStringExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1339:2: ( ( ( rule__StringExpression__LiteralStringAssignment ) ) )
-            // InternalPortugolParser.g:1340:2: ( ( rule__StringExpression__LiteralStringAssignment ) )
+            // InternalPortugolParser.g:1364:2: ( ( ( rule__StringExpression__LiteralStringAssignment ) ) )
+            // InternalPortugolParser.g:1365:2: ( ( rule__StringExpression__LiteralStringAssignment ) )
             {
-            // InternalPortugolParser.g:1340:2: ( ( rule__StringExpression__LiteralStringAssignment ) )
-            // InternalPortugolParser.g:1341:3: ( rule__StringExpression__LiteralStringAssignment )
+            // InternalPortugolParser.g:1365:2: ( ( rule__StringExpression__LiteralStringAssignment ) )
+            // InternalPortugolParser.g:1366:3: ( rule__StringExpression__LiteralStringAssignment )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStringExpressionAccess().getLiteralStringAssignment()); 
             }
-            // InternalPortugolParser.g:1342:3: ( rule__StringExpression__LiteralStringAssignment )
-            // InternalPortugolParser.g:1342:4: rule__StringExpression__LiteralStringAssignment
+            // InternalPortugolParser.g:1367:3: ( rule__StringExpression__LiteralStringAssignment )
+            // InternalPortugolParser.g:1367:4: rule__StringExpression__LiteralStringAssignment
             {
             pushFollow(FOLLOW_2);
             rule__StringExpression__LiteralStringAssignment();
@@ -4412,11 +4497,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRulePiLiteral"
-    // InternalPortugolParser.g:1351:1: entryRulePiLiteral : rulePiLiteral EOF ;
+    // InternalPortugolParser.g:1376:1: entryRulePiLiteral : rulePiLiteral EOF ;
     public final void entryRulePiLiteral() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1352:1: ( rulePiLiteral EOF )
-            // InternalPortugolParser.g:1353:1: rulePiLiteral EOF
+            // InternalPortugolParser.g:1377:1: ( rulePiLiteral EOF )
+            // InternalPortugolParser.g:1378:1: rulePiLiteral EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPiLiteralRule()); 
@@ -4446,17 +4531,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rulePiLiteral"
-    // InternalPortugolParser.g:1360:1: rulePiLiteral : ( Pi ) ;
+    // InternalPortugolParser.g:1385:1: rulePiLiteral : ( Pi ) ;
     public final void rulePiLiteral() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1364:2: ( ( Pi ) )
-            // InternalPortugolParser.g:1365:2: ( Pi )
+            // InternalPortugolParser.g:1389:2: ( ( Pi ) )
+            // InternalPortugolParser.g:1390:2: ( Pi )
             {
-            // InternalPortugolParser.g:1365:2: ( Pi )
-            // InternalPortugolParser.g:1366:3: Pi
+            // InternalPortugolParser.g:1390:2: ( Pi )
+            // InternalPortugolParser.g:1391:3: Pi
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPiLiteralAccess().getPiKeyword()); 
@@ -4487,11 +4572,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleEND_COMMAND"
-    // InternalPortugolParser.g:1376:1: entryRuleEND_COMMAND : ruleEND_COMMAND EOF ;
+    // InternalPortugolParser.g:1401:1: entryRuleEND_COMMAND : ruleEND_COMMAND EOF ;
     public final void entryRuleEND_COMMAND() throws RecognitionException {
         try {
-            // InternalPortugolParser.g:1377:1: ( ruleEND_COMMAND EOF )
-            // InternalPortugolParser.g:1378:1: ruleEND_COMMAND EOF
+            // InternalPortugolParser.g:1402:1: ( ruleEND_COMMAND EOF )
+            // InternalPortugolParser.g:1403:1: ruleEND_COMMAND EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEND_COMMANDRule()); 
@@ -4521,17 +4606,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleEND_COMMAND"
-    // InternalPortugolParser.g:1385:1: ruleEND_COMMAND : ( Semicolon ) ;
+    // InternalPortugolParser.g:1410:1: ruleEND_COMMAND : ( Semicolon ) ;
     public final void ruleEND_COMMAND() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1389:2: ( ( Semicolon ) )
-            // InternalPortugolParser.g:1390:2: ( Semicolon )
+            // InternalPortugolParser.g:1414:2: ( ( Semicolon ) )
+            // InternalPortugolParser.g:1415:2: ( Semicolon )
             {
-            // InternalPortugolParser.g:1390:2: ( Semicolon )
-            // InternalPortugolParser.g:1391:3: Semicolon
+            // InternalPortugolParser.g:1415:2: ( Semicolon )
+            // InternalPortugolParser.g:1416:3: Semicolon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEND_COMMANDAccess().getSemicolonKeyword()); 
@@ -4562,13 +4647,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarType__TypeNameAlternatives_0"
-    // InternalPortugolParser.g:1400:1: rule__VarType__TypeNameAlternatives_0 : ( ( Real ) | ( Inteiro ) | ( Caractere ) | ( Caracter ) );
+    // InternalPortugolParser.g:1425:1: rule__VarType__TypeNameAlternatives_0 : ( ( Real ) | ( Inteiro ) | ( Caractere ) | ( Caracter ) );
     public final void rule__VarType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1404:1: ( ( Real ) | ( Inteiro ) | ( Caractere ) | ( Caracter ) )
+            // InternalPortugolParser.g:1429:1: ( ( Real ) | ( Inteiro ) | ( Caractere ) | ( Caracter ) )
             int alt2=4;
             switch ( input.LA(1) ) {
             case Real:
@@ -4601,10 +4686,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt2) {
                 case 1 :
-                    // InternalPortugolParser.g:1405:2: ( Real )
+                    // InternalPortugolParser.g:1430:2: ( Real )
                     {
-                    // InternalPortugolParser.g:1405:2: ( Real )
-                    // InternalPortugolParser.g:1406:3: Real
+                    // InternalPortugolParser.g:1430:2: ( Real )
+                    // InternalPortugolParser.g:1431:3: Real
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVarTypeAccess().getTypeNameRealKeyword_0_0()); 
@@ -4620,10 +4705,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1411:2: ( Inteiro )
+                    // InternalPortugolParser.g:1436:2: ( Inteiro )
                     {
-                    // InternalPortugolParser.g:1411:2: ( Inteiro )
-                    // InternalPortugolParser.g:1412:3: Inteiro
+                    // InternalPortugolParser.g:1436:2: ( Inteiro )
+                    // InternalPortugolParser.g:1437:3: Inteiro
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVarTypeAccess().getTypeNameInteiroKeyword_0_1()); 
@@ -4639,10 +4724,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1417:2: ( Caractere )
+                    // InternalPortugolParser.g:1442:2: ( Caractere )
                     {
-                    // InternalPortugolParser.g:1417:2: ( Caractere )
-                    // InternalPortugolParser.g:1418:3: Caractere
+                    // InternalPortugolParser.g:1442:2: ( Caractere )
+                    // InternalPortugolParser.g:1443:3: Caractere
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVarTypeAccess().getTypeNameCaractereKeyword_0_2()); 
@@ -4658,10 +4743,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1423:2: ( Caracter )
+                    // InternalPortugolParser.g:1448:2: ( Caracter )
                     {
-                    // InternalPortugolParser.g:1423:2: ( Caracter )
-                    // InternalPortugolParser.g:1424:3: Caracter
+                    // InternalPortugolParser.g:1448:2: ( Caracter )
+                    // InternalPortugolParser.g:1449:3: Caracter
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getVarTypeAccess().getTypeNameCaracterKeyword_0_3()); 
@@ -4694,13 +4779,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockSubPrograms__Alternatives"
-    // InternalPortugolParser.g:1433:1: rule__BlockSubPrograms__Alternatives : ( ( ruleBlockFunction ) | ( ruleBlockProcedure ) );
+    // InternalPortugolParser.g:1458:1: rule__BlockSubPrograms__Alternatives : ( ( ruleBlockFunction ) | ( ruleBlockProcedure ) );
     public final void rule__BlockSubPrograms__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1437:1: ( ( ruleBlockFunction ) | ( ruleBlockProcedure ) )
+            // InternalPortugolParser.g:1462:1: ( ( ruleBlockFunction ) | ( ruleBlockProcedure ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -4719,10 +4804,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt3) {
                 case 1 :
-                    // InternalPortugolParser.g:1438:2: ( ruleBlockFunction )
+                    // InternalPortugolParser.g:1463:2: ( ruleBlockFunction )
                     {
-                    // InternalPortugolParser.g:1438:2: ( ruleBlockFunction )
-                    // InternalPortugolParser.g:1439:3: ruleBlockFunction
+                    // InternalPortugolParser.g:1463:2: ( ruleBlockFunction )
+                    // InternalPortugolParser.g:1464:3: ruleBlockFunction
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBlockSubProgramsAccess().getBlockFunctionParserRuleCall_0()); 
@@ -4742,10 +4827,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1444:2: ( ruleBlockProcedure )
+                    // InternalPortugolParser.g:1469:2: ( ruleBlockProcedure )
                     {
-                    // InternalPortugolParser.g:1444:2: ( ruleBlockProcedure )
-                    // InternalPortugolParser.g:1445:3: ruleBlockProcedure
+                    // InternalPortugolParser.g:1469:2: ( ruleBlockProcedure )
+                    // InternalPortugolParser.g:1470:3: ruleBlockProcedure
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getBlockSubProgramsAccess().getBlockProcedureParserRuleCall_1()); 
@@ -4782,13 +4867,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Alternatives"
-    // InternalPortugolParser.g:1454:1: rule__AbstractCommand__Alternatives : ( ( ( rule__AbstractCommand__Group_0__0 ) ) | ( ( rule__AbstractCommand__Group_1__0 ) ) | ( ( rule__AbstractCommand__Group_2__0 ) ) | ( ruleIfStatement ) | ( ruleSwitchCaseStatement ) | ( ruleForStatement ) | ( ruleRepeatStatement ) | ( ruleWhileStatement ) | ( ( rule__AbstractCommand__Group_8__0 ) ) | ( ( rule__AbstractCommand__Group_9__0 ) ) );
+    // InternalPortugolParser.g:1479:1: rule__AbstractCommand__Alternatives : ( ( ( rule__AbstractCommand__Group_0__0 ) ) | ( ( rule__AbstractCommand__Group_1__0 ) ) | ( ( rule__AbstractCommand__Group_2__0 ) ) | ( ruleIfStatement ) | ( ruleSwitchCaseStatement ) | ( ruleForStatement ) | ( ruleRepeatStatement ) | ( ruleWhileStatement ) | ( ( rule__AbstractCommand__Group_8__0 ) ) | ( ( rule__AbstractCommand__Group_9__0 ) ) );
     public final void rule__AbstractCommand__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1458:1: ( ( ( rule__AbstractCommand__Group_0__0 ) ) | ( ( rule__AbstractCommand__Group_1__0 ) ) | ( ( rule__AbstractCommand__Group_2__0 ) ) | ( ruleIfStatement ) | ( ruleSwitchCaseStatement ) | ( ruleForStatement ) | ( ruleRepeatStatement ) | ( ruleWhileStatement ) | ( ( rule__AbstractCommand__Group_8__0 ) ) | ( ( rule__AbstractCommand__Group_9__0 ) ) )
+            // InternalPortugolParser.g:1483:1: ( ( ( rule__AbstractCommand__Group_0__0 ) ) | ( ( rule__AbstractCommand__Group_1__0 ) ) | ( ( rule__AbstractCommand__Group_2__0 ) ) | ( ruleIfStatement ) | ( ruleSwitchCaseStatement ) | ( ruleForStatement ) | ( ruleRepeatStatement ) | ( ruleWhileStatement ) | ( ( rule__AbstractCommand__Group_8__0 ) ) | ( ( rule__AbstractCommand__Group_9__0 ) ) )
             int alt4=10;
             switch ( input.LA(1) ) {
             case Leia:
@@ -4863,16 +4948,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt4) {
                 case 1 :
-                    // InternalPortugolParser.g:1459:2: ( ( rule__AbstractCommand__Group_0__0 ) )
+                    // InternalPortugolParser.g:1484:2: ( ( rule__AbstractCommand__Group_0__0 ) )
                     {
-                    // InternalPortugolParser.g:1459:2: ( ( rule__AbstractCommand__Group_0__0 ) )
-                    // InternalPortugolParser.g:1460:3: ( rule__AbstractCommand__Group_0__0 )
+                    // InternalPortugolParser.g:1484:2: ( ( rule__AbstractCommand__Group_0__0 ) )
+                    // InternalPortugolParser.g:1485:3: ( rule__AbstractCommand__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getGroup_0()); 
                     }
-                    // InternalPortugolParser.g:1461:3: ( rule__AbstractCommand__Group_0__0 )
-                    // InternalPortugolParser.g:1461:4: rule__AbstractCommand__Group_0__0
+                    // InternalPortugolParser.g:1486:3: ( rule__AbstractCommand__Group_0__0 )
+                    // InternalPortugolParser.g:1486:4: rule__AbstractCommand__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AbstractCommand__Group_0__0();
@@ -4892,16 +4977,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1465:2: ( ( rule__AbstractCommand__Group_1__0 ) )
+                    // InternalPortugolParser.g:1490:2: ( ( rule__AbstractCommand__Group_1__0 ) )
                     {
-                    // InternalPortugolParser.g:1465:2: ( ( rule__AbstractCommand__Group_1__0 ) )
-                    // InternalPortugolParser.g:1466:3: ( rule__AbstractCommand__Group_1__0 )
+                    // InternalPortugolParser.g:1490:2: ( ( rule__AbstractCommand__Group_1__0 ) )
+                    // InternalPortugolParser.g:1491:3: ( rule__AbstractCommand__Group_1__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getGroup_1()); 
                     }
-                    // InternalPortugolParser.g:1467:3: ( rule__AbstractCommand__Group_1__0 )
-                    // InternalPortugolParser.g:1467:4: rule__AbstractCommand__Group_1__0
+                    // InternalPortugolParser.g:1492:3: ( rule__AbstractCommand__Group_1__0 )
+                    // InternalPortugolParser.g:1492:4: rule__AbstractCommand__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AbstractCommand__Group_1__0();
@@ -4921,16 +5006,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1471:2: ( ( rule__AbstractCommand__Group_2__0 ) )
+                    // InternalPortugolParser.g:1496:2: ( ( rule__AbstractCommand__Group_2__0 ) )
                     {
-                    // InternalPortugolParser.g:1471:2: ( ( rule__AbstractCommand__Group_2__0 ) )
-                    // InternalPortugolParser.g:1472:3: ( rule__AbstractCommand__Group_2__0 )
+                    // InternalPortugolParser.g:1496:2: ( ( rule__AbstractCommand__Group_2__0 ) )
+                    // InternalPortugolParser.g:1497:3: ( rule__AbstractCommand__Group_2__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getGroup_2()); 
                     }
-                    // InternalPortugolParser.g:1473:3: ( rule__AbstractCommand__Group_2__0 )
-                    // InternalPortugolParser.g:1473:4: rule__AbstractCommand__Group_2__0
+                    // InternalPortugolParser.g:1498:3: ( rule__AbstractCommand__Group_2__0 )
+                    // InternalPortugolParser.g:1498:4: rule__AbstractCommand__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AbstractCommand__Group_2__0();
@@ -4950,10 +5035,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1477:2: ( ruleIfStatement )
+                    // InternalPortugolParser.g:1502:2: ( ruleIfStatement )
                     {
-                    // InternalPortugolParser.g:1477:2: ( ruleIfStatement )
-                    // InternalPortugolParser.g:1478:3: ruleIfStatement
+                    // InternalPortugolParser.g:1502:2: ( ruleIfStatement )
+                    // InternalPortugolParser.g:1503:3: ruleIfStatement
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getIfStatementParserRuleCall_3()); 
@@ -4973,10 +5058,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // InternalPortugolParser.g:1483:2: ( ruleSwitchCaseStatement )
+                    // InternalPortugolParser.g:1508:2: ( ruleSwitchCaseStatement )
                     {
-                    // InternalPortugolParser.g:1483:2: ( ruleSwitchCaseStatement )
-                    // InternalPortugolParser.g:1484:3: ruleSwitchCaseStatement
+                    // InternalPortugolParser.g:1508:2: ( ruleSwitchCaseStatement )
+                    // InternalPortugolParser.g:1509:3: ruleSwitchCaseStatement
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getSwitchCaseStatementParserRuleCall_4()); 
@@ -4996,10 +5081,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // InternalPortugolParser.g:1489:2: ( ruleForStatement )
+                    // InternalPortugolParser.g:1514:2: ( ruleForStatement )
                     {
-                    // InternalPortugolParser.g:1489:2: ( ruleForStatement )
-                    // InternalPortugolParser.g:1490:3: ruleForStatement
+                    // InternalPortugolParser.g:1514:2: ( ruleForStatement )
+                    // InternalPortugolParser.g:1515:3: ruleForStatement
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getForStatementParserRuleCall_5()); 
@@ -5019,10 +5104,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 7 :
-                    // InternalPortugolParser.g:1495:2: ( ruleRepeatStatement )
+                    // InternalPortugolParser.g:1520:2: ( ruleRepeatStatement )
                     {
-                    // InternalPortugolParser.g:1495:2: ( ruleRepeatStatement )
-                    // InternalPortugolParser.g:1496:3: ruleRepeatStatement
+                    // InternalPortugolParser.g:1520:2: ( ruleRepeatStatement )
+                    // InternalPortugolParser.g:1521:3: ruleRepeatStatement
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getRepeatStatementParserRuleCall_6()); 
@@ -5042,10 +5127,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 8 :
-                    // InternalPortugolParser.g:1501:2: ( ruleWhileStatement )
+                    // InternalPortugolParser.g:1526:2: ( ruleWhileStatement )
                     {
-                    // InternalPortugolParser.g:1501:2: ( ruleWhileStatement )
-                    // InternalPortugolParser.g:1502:3: ruleWhileStatement
+                    // InternalPortugolParser.g:1526:2: ( ruleWhileStatement )
+                    // InternalPortugolParser.g:1527:3: ruleWhileStatement
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getWhileStatementParserRuleCall_7()); 
@@ -5065,16 +5150,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 9 :
-                    // InternalPortugolParser.g:1507:2: ( ( rule__AbstractCommand__Group_8__0 ) )
+                    // InternalPortugolParser.g:1532:2: ( ( rule__AbstractCommand__Group_8__0 ) )
                     {
-                    // InternalPortugolParser.g:1507:2: ( ( rule__AbstractCommand__Group_8__0 ) )
-                    // InternalPortugolParser.g:1508:3: ( rule__AbstractCommand__Group_8__0 )
+                    // InternalPortugolParser.g:1532:2: ( ( rule__AbstractCommand__Group_8__0 ) )
+                    // InternalPortugolParser.g:1533:3: ( rule__AbstractCommand__Group_8__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getGroup_8()); 
                     }
-                    // InternalPortugolParser.g:1509:3: ( rule__AbstractCommand__Group_8__0 )
-                    // InternalPortugolParser.g:1509:4: rule__AbstractCommand__Group_8__0
+                    // InternalPortugolParser.g:1534:3: ( rule__AbstractCommand__Group_8__0 )
+                    // InternalPortugolParser.g:1534:4: rule__AbstractCommand__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AbstractCommand__Group_8__0();
@@ -5094,16 +5179,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 10 :
-                    // InternalPortugolParser.g:1513:2: ( ( rule__AbstractCommand__Group_9__0 ) )
+                    // InternalPortugolParser.g:1538:2: ( ( rule__AbstractCommand__Group_9__0 ) )
                     {
-                    // InternalPortugolParser.g:1513:2: ( ( rule__AbstractCommand__Group_9__0 ) )
-                    // InternalPortugolParser.g:1514:3: ( rule__AbstractCommand__Group_9__0 )
+                    // InternalPortugolParser.g:1538:2: ( ( rule__AbstractCommand__Group_9__0 ) )
+                    // InternalPortugolParser.g:1539:3: ( rule__AbstractCommand__Group_9__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAbstractCommandAccess().getGroup_9()); 
                     }
-                    // InternalPortugolParser.g:1515:3: ( rule__AbstractCommand__Group_9__0 )
-                    // InternalPortugolParser.g:1515:4: rule__AbstractCommand__Group_9__0
+                    // InternalPortugolParser.g:1540:3: ( rule__AbstractCommand__Group_9__0 )
+                    // InternalPortugolParser.g:1540:4: rule__AbstractCommand__Group_9__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AbstractCommand__Group_9__0();
@@ -5140,13 +5225,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__WriteCommandAlternatives_0_0"
-    // InternalPortugolParser.g:1523:1: rule__WriteCommand__WriteCommandAlternatives_0_0 : ( ( Escreva ) | ( Escreval ) );
+    // InternalPortugolParser.g:1548:1: rule__WriteCommand__WriteCommandAlternatives_0_0 : ( ( Escreva ) | ( Escreval ) );
     public final void rule__WriteCommand__WriteCommandAlternatives_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1527:1: ( ( Escreva ) | ( Escreval ) )
+            // InternalPortugolParser.g:1552:1: ( ( Escreva ) | ( Escreval ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -5165,10 +5250,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt5) {
                 case 1 :
-                    // InternalPortugolParser.g:1528:2: ( Escreva )
+                    // InternalPortugolParser.g:1553:2: ( Escreva )
                     {
-                    // InternalPortugolParser.g:1528:2: ( Escreva )
-                    // InternalPortugolParser.g:1529:3: Escreva
+                    // InternalPortugolParser.g:1553:2: ( Escreva )
+                    // InternalPortugolParser.g:1554:3: Escreva
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getWriteCommandAccess().getWriteCommandEscrevaKeyword_0_0_0()); 
@@ -5184,10 +5269,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1534:2: ( Escreval )
+                    // InternalPortugolParser.g:1559:2: ( Escreval )
                     {
-                    // InternalPortugolParser.g:1534:2: ( Escreval )
-                    // InternalPortugolParser.g:1535:3: Escreval
+                    // InternalPortugolParser.g:1559:2: ( Escreval )
+                    // InternalPortugolParser.g:1560:3: Escreval
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getWriteCommandAccess().getWriteCommandEscrevalKeyword_0_0_1()); 
@@ -5220,13 +5305,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__OpAlternatives_1_0_0_1_0"
-    // InternalPortugolParser.g:1544:1: rule__AndExpression__OpAlternatives_1_0_0_1_0 : ( ( Ampersand ) | ( E ) );
+    // InternalPortugolParser.g:1569:1: rule__AndExpression__OpAlternatives_1_0_0_1_0 : ( ( Ampersand ) | ( E ) );
     public final void rule__AndExpression__OpAlternatives_1_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1548:1: ( ( Ampersand ) | ( E ) )
+            // InternalPortugolParser.g:1573:1: ( ( Ampersand ) | ( E ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -5245,10 +5330,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt6) {
                 case 1 :
-                    // InternalPortugolParser.g:1549:2: ( Ampersand )
+                    // InternalPortugolParser.g:1574:2: ( Ampersand )
                     {
-                    // InternalPortugolParser.g:1549:2: ( Ampersand )
-                    // InternalPortugolParser.g:1550:3: Ampersand
+                    // InternalPortugolParser.g:1574:2: ( Ampersand )
+                    // InternalPortugolParser.g:1575:3: Ampersand
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAndExpressionAccess().getOpAmpersandKeyword_1_0_0_1_0_0()); 
@@ -5264,10 +5349,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1555:2: ( E )
+                    // InternalPortugolParser.g:1580:2: ( E )
                     {
-                    // InternalPortugolParser.g:1555:2: ( E )
-                    // InternalPortugolParser.g:1556:3: E
+                    // InternalPortugolParser.g:1580:2: ( E )
+                    // InternalPortugolParser.g:1581:3: E
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAndExpressionAccess().getOpEKeyword_1_0_0_1_0_1()); 
@@ -5300,13 +5385,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__OpAlternatives_1_0_0_1_0"
-    // InternalPortugolParser.g:1565:1: rule__Comparison__OpAlternatives_1_0_0_1_0 : ( ( EqualsSign ) | ( LessThanSignGreaterThanSign ) );
+    // InternalPortugolParser.g:1590:1: rule__Comparison__OpAlternatives_1_0_0_1_0 : ( ( EqualsSign ) | ( LessThanSignGreaterThanSign ) );
     public final void rule__Comparison__OpAlternatives_1_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1569:1: ( ( EqualsSign ) | ( LessThanSignGreaterThanSign ) )
+            // InternalPortugolParser.g:1594:1: ( ( EqualsSign ) | ( LessThanSignGreaterThanSign ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -5325,10 +5410,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt7) {
                 case 1 :
-                    // InternalPortugolParser.g:1570:2: ( EqualsSign )
+                    // InternalPortugolParser.g:1595:2: ( EqualsSign )
                     {
-                    // InternalPortugolParser.g:1570:2: ( EqualsSign )
-                    // InternalPortugolParser.g:1571:3: EqualsSign
+                    // InternalPortugolParser.g:1595:2: ( EqualsSign )
+                    // InternalPortugolParser.g:1596:3: EqualsSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonAccess().getOpEqualsSignKeyword_1_0_0_1_0_0()); 
@@ -5344,10 +5429,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1576:2: ( LessThanSignGreaterThanSign )
+                    // InternalPortugolParser.g:1601:2: ( LessThanSignGreaterThanSign )
                     {
-                    // InternalPortugolParser.g:1576:2: ( LessThanSignGreaterThanSign )
-                    // InternalPortugolParser.g:1577:3: LessThanSignGreaterThanSign
+                    // InternalPortugolParser.g:1601:2: ( LessThanSignGreaterThanSign )
+                    // InternalPortugolParser.g:1602:3: LessThanSignGreaterThanSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getComparisonAccess().getOpLessThanSignGreaterThanSignKeyword_1_0_0_1_0_1()); 
@@ -5380,13 +5465,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__OpAlternatives_1_0_0_1_0"
-    // InternalPortugolParser.g:1586:1: rule__EquExpression__OpAlternatives_1_0_0_1_0 : ( ( LessThanSign ) | ( GreaterThanSign ) | ( LessThanSignEqualsSign ) | ( GreaterThanSignEqualsSign ) );
+    // InternalPortugolParser.g:1611:1: rule__EquExpression__OpAlternatives_1_0_0_1_0 : ( ( LessThanSign ) | ( GreaterThanSign ) | ( LessThanSignEqualsSign ) | ( GreaterThanSignEqualsSign ) );
     public final void rule__EquExpression__OpAlternatives_1_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1590:1: ( ( LessThanSign ) | ( GreaterThanSign ) | ( LessThanSignEqualsSign ) | ( GreaterThanSignEqualsSign ) )
+            // InternalPortugolParser.g:1615:1: ( ( LessThanSign ) | ( GreaterThanSign ) | ( LessThanSignEqualsSign ) | ( GreaterThanSignEqualsSign ) )
             int alt8=4;
             switch ( input.LA(1) ) {
             case LessThanSign:
@@ -5419,10 +5504,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt8) {
                 case 1 :
-                    // InternalPortugolParser.g:1591:2: ( LessThanSign )
+                    // InternalPortugolParser.g:1616:2: ( LessThanSign )
                     {
-                    // InternalPortugolParser.g:1591:2: ( LessThanSign )
-                    // InternalPortugolParser.g:1592:3: LessThanSign
+                    // InternalPortugolParser.g:1616:2: ( LessThanSign )
+                    // InternalPortugolParser.g:1617:3: LessThanSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getEquExpressionAccess().getOpLessThanSignKeyword_1_0_0_1_0_0()); 
@@ -5438,10 +5523,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1597:2: ( GreaterThanSign )
+                    // InternalPortugolParser.g:1622:2: ( GreaterThanSign )
                     {
-                    // InternalPortugolParser.g:1597:2: ( GreaterThanSign )
-                    // InternalPortugolParser.g:1598:3: GreaterThanSign
+                    // InternalPortugolParser.g:1622:2: ( GreaterThanSign )
+                    // InternalPortugolParser.g:1623:3: GreaterThanSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getEquExpressionAccess().getOpGreaterThanSignKeyword_1_0_0_1_0_1()); 
@@ -5457,10 +5542,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1603:2: ( LessThanSignEqualsSign )
+                    // InternalPortugolParser.g:1628:2: ( LessThanSignEqualsSign )
                     {
-                    // InternalPortugolParser.g:1603:2: ( LessThanSignEqualsSign )
-                    // InternalPortugolParser.g:1604:3: LessThanSignEqualsSign
+                    // InternalPortugolParser.g:1628:2: ( LessThanSignEqualsSign )
+                    // InternalPortugolParser.g:1629:3: LessThanSignEqualsSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getEquExpressionAccess().getOpLessThanSignEqualsSignKeyword_1_0_0_1_0_2()); 
@@ -5476,10 +5561,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1609:2: ( GreaterThanSignEqualsSign )
+                    // InternalPortugolParser.g:1634:2: ( GreaterThanSignEqualsSign )
                     {
-                    // InternalPortugolParser.g:1609:2: ( GreaterThanSignEqualsSign )
-                    // InternalPortugolParser.g:1610:3: GreaterThanSignEqualsSign
+                    // InternalPortugolParser.g:1634:2: ( GreaterThanSignEqualsSign )
+                    // InternalPortugolParser.g:1635:3: GreaterThanSignEqualsSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getEquExpressionAccess().getOpGreaterThanSignEqualsSignKeyword_1_0_0_1_0_3()); 
@@ -5512,13 +5597,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__OpAlternatives_1_0_0_1_0"
-    // InternalPortugolParser.g:1619:1: rule__AddExpression__OpAlternatives_1_0_0_1_0 : ( ( PlusSign ) | ( HyphenMinus ) );
+    // InternalPortugolParser.g:1644:1: rule__AddExpression__OpAlternatives_1_0_0_1_0 : ( ( PlusSign ) | ( HyphenMinus ) );
     public final void rule__AddExpression__OpAlternatives_1_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1623:1: ( ( PlusSign ) | ( HyphenMinus ) )
+            // InternalPortugolParser.g:1648:1: ( ( PlusSign ) | ( HyphenMinus ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -5537,10 +5622,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt9) {
                 case 1 :
-                    // InternalPortugolParser.g:1624:2: ( PlusSign )
+                    // InternalPortugolParser.g:1649:2: ( PlusSign )
                     {
-                    // InternalPortugolParser.g:1624:2: ( PlusSign )
-                    // InternalPortugolParser.g:1625:3: PlusSign
+                    // InternalPortugolParser.g:1649:2: ( PlusSign )
+                    // InternalPortugolParser.g:1650:3: PlusSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAddExpressionAccess().getOpPlusSignKeyword_1_0_0_1_0_0()); 
@@ -5556,10 +5641,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1630:2: ( HyphenMinus )
+                    // InternalPortugolParser.g:1655:2: ( HyphenMinus )
                     {
-                    // InternalPortugolParser.g:1630:2: ( HyphenMinus )
-                    // InternalPortugolParser.g:1631:3: HyphenMinus
+                    // InternalPortugolParser.g:1655:2: ( HyphenMinus )
+                    // InternalPortugolParser.g:1656:3: HyphenMinus
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getAddExpressionAccess().getOpHyphenMinusKeyword_1_0_0_1_0_1()); 
@@ -5592,13 +5677,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0"
-    // InternalPortugolParser.g:1640:1: rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 : ( ( Asterisk ) | ( Solidus ) | ( MOD ) | ( PercentSign ) );
+    // InternalPortugolParser.g:1665:1: rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 : ( ( Asterisk ) | ( Solidus ) | ( MOD ) | ( PercentSign ) );
     public final void rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1644:1: ( ( Asterisk ) | ( Solidus ) | ( MOD ) | ( PercentSign ) )
+            // InternalPortugolParser.g:1669:1: ( ( Asterisk ) | ( Solidus ) | ( MOD ) | ( PercentSign ) )
             int alt10=4;
             switch ( input.LA(1) ) {
             case Asterisk:
@@ -5631,10 +5716,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt10) {
                 case 1 :
-                    // InternalPortugolParser.g:1645:2: ( Asterisk )
+                    // InternalPortugolParser.g:1670:2: ( Asterisk )
                     {
-                    // InternalPortugolParser.g:1645:2: ( Asterisk )
-                    // InternalPortugolParser.g:1646:3: Asterisk
+                    // InternalPortugolParser.g:1670:2: ( Asterisk )
+                    // InternalPortugolParser.g:1671:3: Asterisk
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicativeExpressionAccess().getOpAsteriskKeyword_1_0_0_1_0_0()); 
@@ -5650,10 +5735,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1651:2: ( Solidus )
+                    // InternalPortugolParser.g:1676:2: ( Solidus )
                     {
-                    // InternalPortugolParser.g:1651:2: ( Solidus )
-                    // InternalPortugolParser.g:1652:3: Solidus
+                    // InternalPortugolParser.g:1676:2: ( Solidus )
+                    // InternalPortugolParser.g:1677:3: Solidus
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicativeExpressionAccess().getOpSolidusKeyword_1_0_0_1_0_1()); 
@@ -5669,10 +5754,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1657:2: ( MOD )
+                    // InternalPortugolParser.g:1682:2: ( MOD )
                     {
-                    // InternalPortugolParser.g:1657:2: ( MOD )
-                    // InternalPortugolParser.g:1658:3: MOD
+                    // InternalPortugolParser.g:1682:2: ( MOD )
+                    // InternalPortugolParser.g:1683:3: MOD
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicativeExpressionAccess().getOpMODKeyword_1_0_0_1_0_2()); 
@@ -5688,10 +5773,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1663:2: ( PercentSign )
+                    // InternalPortugolParser.g:1688:2: ( PercentSign )
                     {
-                    // InternalPortugolParser.g:1663:2: ( PercentSign )
-                    // InternalPortugolParser.g:1664:3: PercentSign
+                    // InternalPortugolParser.g:1688:2: ( PercentSign )
+                    // InternalPortugolParser.g:1689:3: PercentSign
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicativeExpressionAccess().getOpPercentSignKeyword_1_0_0_1_0_3()); 
@@ -5724,13 +5809,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Alternatives"
-    // InternalPortugolParser.g:1673:1: rule__UnaryExpression__Alternatives : ( ( ( rule__UnaryExpression__Group_0__0 ) ) | ( rulePrimaryExpression ) );
+    // InternalPortugolParser.g:1698:1: rule__UnaryExpression__Alternatives : ( ( ( rule__UnaryExpression__Group_0__0 ) ) | ( rulePrimaryExpression ) );
     public final void rule__UnaryExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1677:1: ( ( ( rule__UnaryExpression__Group_0__0 ) ) | ( rulePrimaryExpression ) )
+            // InternalPortugolParser.g:1702:1: ( ( ( rule__UnaryExpression__Group_0__0 ) ) | ( rulePrimaryExpression ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -5749,16 +5834,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt11) {
                 case 1 :
-                    // InternalPortugolParser.g:1678:2: ( ( rule__UnaryExpression__Group_0__0 ) )
+                    // InternalPortugolParser.g:1703:2: ( ( rule__UnaryExpression__Group_0__0 ) )
                     {
-                    // InternalPortugolParser.g:1678:2: ( ( rule__UnaryExpression__Group_0__0 ) )
-                    // InternalPortugolParser.g:1679:3: ( rule__UnaryExpression__Group_0__0 )
+                    // InternalPortugolParser.g:1703:2: ( ( rule__UnaryExpression__Group_0__0 ) )
+                    // InternalPortugolParser.g:1704:3: ( rule__UnaryExpression__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getUnaryExpressionAccess().getGroup_0()); 
                     }
-                    // InternalPortugolParser.g:1680:3: ( rule__UnaryExpression__Group_0__0 )
-                    // InternalPortugolParser.g:1680:4: rule__UnaryExpression__Group_0__0
+                    // InternalPortugolParser.g:1705:3: ( rule__UnaryExpression__Group_0__0 )
+                    // InternalPortugolParser.g:1705:4: rule__UnaryExpression__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__UnaryExpression__Group_0__0();
@@ -5778,10 +5863,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1684:2: ( rulePrimaryExpression )
+                    // InternalPortugolParser.g:1709:2: ( rulePrimaryExpression )
                     {
-                    // InternalPortugolParser.g:1684:2: ( rulePrimaryExpression )
-                    // InternalPortugolParser.g:1685:3: rulePrimaryExpression
+                    // InternalPortugolParser.g:1709:2: ( rulePrimaryExpression )
+                    // InternalPortugolParser.g:1710:3: rulePrimaryExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getUnaryExpressionAccess().getPrimaryExpressionParserRuleCall_1()); 
@@ -5818,13 +5903,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__OpAlternatives_0_1_0"
-    // InternalPortugolParser.g:1694:1: rule__UnaryExpression__OpAlternatives_0_1_0 : ( ( NOT ) | ( HyphenMinus ) );
+    // InternalPortugolParser.g:1719:1: rule__UnaryExpression__OpAlternatives_0_1_0 : ( ( NOT ) | ( HyphenMinus ) );
     public final void rule__UnaryExpression__OpAlternatives_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1698:1: ( ( NOT ) | ( HyphenMinus ) )
+            // InternalPortugolParser.g:1723:1: ( ( NOT ) | ( HyphenMinus ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -5843,10 +5928,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt12) {
                 case 1 :
-                    // InternalPortugolParser.g:1699:2: ( NOT )
+                    // InternalPortugolParser.g:1724:2: ( NOT )
                     {
-                    // InternalPortugolParser.g:1699:2: ( NOT )
-                    // InternalPortugolParser.g:1700:3: NOT
+                    // InternalPortugolParser.g:1724:2: ( NOT )
+                    // InternalPortugolParser.g:1725:3: NOT
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getUnaryExpressionAccess().getOpNOTKeyword_0_1_0_0()); 
@@ -5862,10 +5947,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1705:2: ( HyphenMinus )
+                    // InternalPortugolParser.g:1730:2: ( HyphenMinus )
                     {
-                    // InternalPortugolParser.g:1705:2: ( HyphenMinus )
-                    // InternalPortugolParser.g:1706:3: HyphenMinus
+                    // InternalPortugolParser.g:1730:2: ( HyphenMinus )
+                    // InternalPortugolParser.g:1731:3: HyphenMinus
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getUnaryExpressionAccess().getOpHyphenMinusKeyword_0_1_0_1()); 
@@ -5898,13 +5983,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Alternatives"
-    // InternalPortugolParser.g:1715:1: rule__PrimaryExpression__Alternatives : ( ( ruleLiteral ) | ( rulePreDefinedFunctionCall ) | ( ruleFunctionCall ) | ( ruleDeclaredVar ) | ( ( rule__PrimaryExpression__Group_4__0 ) ) );
+    // InternalPortugolParser.g:1740:1: rule__PrimaryExpression__Alternatives : ( ( ruleLiteral ) | ( rulePreDefinedFunctionCall ) | ( ruleFunctionCall ) | ( ruleDeclaredVar ) | ( ( rule__PrimaryExpression__Group_4__0 ) ) );
     public final void rule__PrimaryExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1719:1: ( ( ruleLiteral ) | ( rulePreDefinedFunctionCall ) | ( ruleFunctionCall ) | ( ruleDeclaredVar ) | ( ( rule__PrimaryExpression__Group_4__0 ) ) )
+            // InternalPortugolParser.g:1744:1: ( ( ruleLiteral ) | ( rulePreDefinedFunctionCall ) | ( ruleFunctionCall ) | ( ruleDeclaredVar ) | ( ( rule__PrimaryExpression__Group_4__0 ) ) )
             int alt13=5;
             switch ( input.LA(1) ) {
             case Pi:
@@ -5927,11 +6012,11 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                 {
                 int LA13_3 = input.LA(2);
 
-                if ( (LA13_3==LeftParenthesis) ) {
-                    alt13=3;
-                }
-                else if ( (LA13_3==EOF||LA13_3==Entao||LA13_3==Passo||LA13_3==Faca||LA13_3==MOD||(LA13_3>=XOU && LA13_3<=Ate)||(LA13_3>=LessThanSignHyphenMinus && LA13_3<=De)||(LA13_3>=PercentSign && LA13_3<=Ampersand)||(LA13_3>=RightParenthesis && LA13_3<=CircumflexAccent)) ) {
+                if ( (LA13_3==EOF||LA13_3==Entao||LA13_3==Passo||LA13_3==Faca||LA13_3==MOD||(LA13_3>=XOU && LA13_3<=Ate)||(LA13_3>=LessThanSignHyphenMinus && LA13_3<=De)||(LA13_3>=PercentSign && LA13_3<=Ampersand)||(LA13_3>=RightParenthesis && LA13_3<=CircumflexAccent)) ) {
                     alt13=4;
+                }
+                else if ( (LA13_3==LeftParenthesis) ) {
+                    alt13=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -5957,10 +6042,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt13) {
                 case 1 :
-                    // InternalPortugolParser.g:1720:2: ( ruleLiteral )
+                    // InternalPortugolParser.g:1745:2: ( ruleLiteral )
                     {
-                    // InternalPortugolParser.g:1720:2: ( ruleLiteral )
-                    // InternalPortugolParser.g:1721:3: ruleLiteral
+                    // InternalPortugolParser.g:1745:2: ( ruleLiteral )
+                    // InternalPortugolParser.g:1746:3: ruleLiteral
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPrimaryExpressionAccess().getLiteralParserRuleCall_0()); 
@@ -5980,10 +6065,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1726:2: ( rulePreDefinedFunctionCall )
+                    // InternalPortugolParser.g:1751:2: ( rulePreDefinedFunctionCall )
                     {
-                    // InternalPortugolParser.g:1726:2: ( rulePreDefinedFunctionCall )
-                    // InternalPortugolParser.g:1727:3: rulePreDefinedFunctionCall
+                    // InternalPortugolParser.g:1751:2: ( rulePreDefinedFunctionCall )
+                    // InternalPortugolParser.g:1752:3: rulePreDefinedFunctionCall
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPrimaryExpressionAccess().getPreDefinedFunctionCallParserRuleCall_1()); 
@@ -6003,10 +6088,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1732:2: ( ruleFunctionCall )
+                    // InternalPortugolParser.g:1757:2: ( ruleFunctionCall )
                     {
-                    // InternalPortugolParser.g:1732:2: ( ruleFunctionCall )
-                    // InternalPortugolParser.g:1733:3: ruleFunctionCall
+                    // InternalPortugolParser.g:1757:2: ( ruleFunctionCall )
+                    // InternalPortugolParser.g:1758:3: ruleFunctionCall
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPrimaryExpressionAccess().getFunctionCallParserRuleCall_2()); 
@@ -6026,10 +6111,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1738:2: ( ruleDeclaredVar )
+                    // InternalPortugolParser.g:1763:2: ( ruleDeclaredVar )
                     {
-                    // InternalPortugolParser.g:1738:2: ( ruleDeclaredVar )
-                    // InternalPortugolParser.g:1739:3: ruleDeclaredVar
+                    // InternalPortugolParser.g:1763:2: ( ruleDeclaredVar )
+                    // InternalPortugolParser.g:1764:3: ruleDeclaredVar
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPrimaryExpressionAccess().getDeclaredVarParserRuleCall_3()); 
@@ -6049,16 +6134,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // InternalPortugolParser.g:1744:2: ( ( rule__PrimaryExpression__Group_4__0 ) )
+                    // InternalPortugolParser.g:1769:2: ( ( rule__PrimaryExpression__Group_4__0 ) )
                     {
-                    // InternalPortugolParser.g:1744:2: ( ( rule__PrimaryExpression__Group_4__0 ) )
-                    // InternalPortugolParser.g:1745:3: ( rule__PrimaryExpression__Group_4__0 )
+                    // InternalPortugolParser.g:1769:2: ( ( rule__PrimaryExpression__Group_4__0 ) )
+                    // InternalPortugolParser.g:1770:3: ( rule__PrimaryExpression__Group_4__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPrimaryExpressionAccess().getGroup_4()); 
                     }
-                    // InternalPortugolParser.g:1746:3: ( rule__PrimaryExpression__Group_4__0 )
-                    // InternalPortugolParser.g:1746:4: rule__PrimaryExpression__Group_4__0
+                    // InternalPortugolParser.g:1771:3: ( rule__PrimaryExpression__Group_4__0 )
+                    // InternalPortugolParser.g:1771:4: rule__PrimaryExpression__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__PrimaryExpression__Group_4__0();
@@ -6095,13 +6180,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PredefineFunctions__Alternatives"
-    // InternalPortugolParser.g:1754:1: rule__PredefineFunctions__Alternatives : ( ( Maiusc ) | ( Compr ) | ( Raizq ) | ( Copia ) );
+    // InternalPortugolParser.g:1779:1: rule__PredefineFunctions__Alternatives : ( ( Maiusc ) | ( Compr ) | ( Raizq ) | ( Copia ) );
     public final void rule__PredefineFunctions__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1758:1: ( ( Maiusc ) | ( Compr ) | ( Raizq ) | ( Copia ) )
+            // InternalPortugolParser.g:1783:1: ( ( Maiusc ) | ( Compr ) | ( Raizq ) | ( Copia ) )
             int alt14=4;
             switch ( input.LA(1) ) {
             case Maiusc:
@@ -6134,10 +6219,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt14) {
                 case 1 :
-                    // InternalPortugolParser.g:1759:2: ( Maiusc )
+                    // InternalPortugolParser.g:1784:2: ( Maiusc )
                     {
-                    // InternalPortugolParser.g:1759:2: ( Maiusc )
-                    // InternalPortugolParser.g:1760:3: Maiusc
+                    // InternalPortugolParser.g:1784:2: ( Maiusc )
+                    // InternalPortugolParser.g:1785:3: Maiusc
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPredefineFunctionsAccess().getMaiuscKeyword_0()); 
@@ -6153,10 +6238,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1765:2: ( Compr )
+                    // InternalPortugolParser.g:1790:2: ( Compr )
                     {
-                    // InternalPortugolParser.g:1765:2: ( Compr )
-                    // InternalPortugolParser.g:1766:3: Compr
+                    // InternalPortugolParser.g:1790:2: ( Compr )
+                    // InternalPortugolParser.g:1791:3: Compr
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPredefineFunctionsAccess().getComprKeyword_1()); 
@@ -6172,10 +6257,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1771:2: ( Raizq )
+                    // InternalPortugolParser.g:1796:2: ( Raizq )
                     {
-                    // InternalPortugolParser.g:1771:2: ( Raizq )
-                    // InternalPortugolParser.g:1772:3: Raizq
+                    // InternalPortugolParser.g:1796:2: ( Raizq )
+                    // InternalPortugolParser.g:1797:3: Raizq
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPredefineFunctionsAccess().getRaizqKeyword_2()); 
@@ -6191,10 +6276,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalPortugolParser.g:1777:2: ( Copia )
+                    // InternalPortugolParser.g:1802:2: ( Copia )
                     {
-                    // InternalPortugolParser.g:1777:2: ( Copia )
-                    // InternalPortugolParser.g:1778:3: Copia
+                    // InternalPortugolParser.g:1802:2: ( Copia )
+                    // InternalPortugolParser.g:1803:3: Copia
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getPredefineFunctionsAccess().getCopiaKeyword_3()); 
@@ -6227,13 +6312,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Literal__Alternatives"
-    // InternalPortugolParser.g:1787:1: rule__Literal__Alternatives : ( ( ( rule__Literal__Group_0__0 ) ) | ( ruleNumericLiteral ) | ( ruleStringExpression ) );
+    // InternalPortugolParser.g:1812:1: rule__Literal__Alternatives : ( ( ( rule__Literal__Group_0__0 ) ) | ( ruleNumericLiteral ) | ( ruleStringExpression ) );
     public final void rule__Literal__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1791:1: ( ( ( rule__Literal__Group_0__0 ) ) | ( ruleNumericLiteral ) | ( ruleStringExpression ) )
+            // InternalPortugolParser.g:1816:1: ( ( ( rule__Literal__Group_0__0 ) ) | ( ruleNumericLiteral ) | ( ruleStringExpression ) )
             int alt15=3;
             switch ( input.LA(1) ) {
             case Pi:
@@ -6262,16 +6347,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             switch (alt15) {
                 case 1 :
-                    // InternalPortugolParser.g:1792:2: ( ( rule__Literal__Group_0__0 ) )
+                    // InternalPortugolParser.g:1817:2: ( ( rule__Literal__Group_0__0 ) )
                     {
-                    // InternalPortugolParser.g:1792:2: ( ( rule__Literal__Group_0__0 ) )
-                    // InternalPortugolParser.g:1793:3: ( rule__Literal__Group_0__0 )
+                    // InternalPortugolParser.g:1817:2: ( ( rule__Literal__Group_0__0 ) )
+                    // InternalPortugolParser.g:1818:3: ( rule__Literal__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getLiteralAccess().getGroup_0()); 
                     }
-                    // InternalPortugolParser.g:1794:3: ( rule__Literal__Group_0__0 )
-                    // InternalPortugolParser.g:1794:4: rule__Literal__Group_0__0
+                    // InternalPortugolParser.g:1819:3: ( rule__Literal__Group_0__0 )
+                    // InternalPortugolParser.g:1819:4: rule__Literal__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Literal__Group_0__0();
@@ -6291,10 +6376,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1798:2: ( ruleNumericLiteral )
+                    // InternalPortugolParser.g:1823:2: ( ruleNumericLiteral )
                     {
-                    // InternalPortugolParser.g:1798:2: ( ruleNumericLiteral )
-                    // InternalPortugolParser.g:1799:3: ruleNumericLiteral
+                    // InternalPortugolParser.g:1823:2: ( ruleNumericLiteral )
+                    // InternalPortugolParser.g:1824:3: ruleNumericLiteral
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getLiteralAccess().getNumericLiteralParserRuleCall_1()); 
@@ -6314,10 +6399,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalPortugolParser.g:1804:2: ( ruleStringExpression )
+                    // InternalPortugolParser.g:1829:2: ( ruleStringExpression )
                     {
-                    // InternalPortugolParser.g:1804:2: ( ruleStringExpression )
-                    // InternalPortugolParser.g:1805:3: ruleStringExpression
+                    // InternalPortugolParser.g:1829:2: ( ruleStringExpression )
+                    // InternalPortugolParser.g:1830:3: ruleStringExpression
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getLiteralAccess().getStringExpressionParserRuleCall_2()); 
@@ -6354,13 +6439,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumericLiteral__Alternatives"
-    // InternalPortugolParser.g:1814:1: rule__NumericLiteral__Alternatives : ( ( ( rule__NumericLiteral__IntValueAssignment_0 ) ) | ( ( rule__NumericLiteral__FloatValueAssignment_1 ) ) );
+    // InternalPortugolParser.g:1839:1: rule__NumericLiteral__Alternatives : ( ( ( rule__NumericLiteral__IntValueAssignment_0 ) ) | ( ( rule__NumericLiteral__FloatValueAssignment_1 ) ) );
     public final void rule__NumericLiteral__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1818:1: ( ( ( rule__NumericLiteral__IntValueAssignment_0 ) ) | ( ( rule__NumericLiteral__FloatValueAssignment_1 ) ) )
+            // InternalPortugolParser.g:1843:1: ( ( ( rule__NumericLiteral__IntValueAssignment_0 ) ) | ( ( rule__NumericLiteral__FloatValueAssignment_1 ) ) )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -6379,16 +6464,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt16) {
                 case 1 :
-                    // InternalPortugolParser.g:1819:2: ( ( rule__NumericLiteral__IntValueAssignment_0 ) )
+                    // InternalPortugolParser.g:1844:2: ( ( rule__NumericLiteral__IntValueAssignment_0 ) )
                     {
-                    // InternalPortugolParser.g:1819:2: ( ( rule__NumericLiteral__IntValueAssignment_0 ) )
-                    // InternalPortugolParser.g:1820:3: ( rule__NumericLiteral__IntValueAssignment_0 )
+                    // InternalPortugolParser.g:1844:2: ( ( rule__NumericLiteral__IntValueAssignment_0 ) )
+                    // InternalPortugolParser.g:1845:3: ( rule__NumericLiteral__IntValueAssignment_0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getNumericLiteralAccess().getIntValueAssignment_0()); 
                     }
-                    // InternalPortugolParser.g:1821:3: ( rule__NumericLiteral__IntValueAssignment_0 )
-                    // InternalPortugolParser.g:1821:4: rule__NumericLiteral__IntValueAssignment_0
+                    // InternalPortugolParser.g:1846:3: ( rule__NumericLiteral__IntValueAssignment_0 )
+                    // InternalPortugolParser.g:1846:4: rule__NumericLiteral__IntValueAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumericLiteral__IntValueAssignment_0();
@@ -6408,16 +6493,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalPortugolParser.g:1825:2: ( ( rule__NumericLiteral__FloatValueAssignment_1 ) )
+                    // InternalPortugolParser.g:1850:2: ( ( rule__NumericLiteral__FloatValueAssignment_1 ) )
                     {
-                    // InternalPortugolParser.g:1825:2: ( ( rule__NumericLiteral__FloatValueAssignment_1 ) )
-                    // InternalPortugolParser.g:1826:3: ( rule__NumericLiteral__FloatValueAssignment_1 )
+                    // InternalPortugolParser.g:1850:2: ( ( rule__NumericLiteral__FloatValueAssignment_1 ) )
+                    // InternalPortugolParser.g:1851:3: ( rule__NumericLiteral__FloatValueAssignment_1 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getNumericLiteralAccess().getFloatValueAssignment_1()); 
                     }
-                    // InternalPortugolParser.g:1827:3: ( rule__NumericLiteral__FloatValueAssignment_1 )
-                    // InternalPortugolParser.g:1827:4: rule__NumericLiteral__FloatValueAssignment_1
+                    // InternalPortugolParser.g:1852:3: ( rule__NumericLiteral__FloatValueAssignment_1 )
+                    // InternalPortugolParser.g:1852:4: rule__NumericLiteral__FloatValueAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumericLiteral__FloatValueAssignment_1();
@@ -6454,14 +6539,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalPortugolParser.g:1835:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalPortugolParser.g:1860:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1839:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalPortugolParser.g:1840:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalPortugolParser.g:1864:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalPortugolParser.g:1865:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Model__Group__0__Impl();
@@ -6492,23 +6577,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalPortugolParser.g:1847:1: rule__Model__Group__0__Impl : ( ( rule__Model__HeaderAssignment_0 ) ) ;
+    // InternalPortugolParser.g:1872:1: rule__Model__Group__0__Impl : ( ( rule__Model__HeaderAssignment_0 ) ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1851:1: ( ( ( rule__Model__HeaderAssignment_0 ) ) )
-            // InternalPortugolParser.g:1852:1: ( ( rule__Model__HeaderAssignment_0 ) )
+            // InternalPortugolParser.g:1876:1: ( ( ( rule__Model__HeaderAssignment_0 ) ) )
+            // InternalPortugolParser.g:1877:1: ( ( rule__Model__HeaderAssignment_0 ) )
             {
-            // InternalPortugolParser.g:1852:1: ( ( rule__Model__HeaderAssignment_0 ) )
-            // InternalPortugolParser.g:1853:2: ( rule__Model__HeaderAssignment_0 )
+            // InternalPortugolParser.g:1877:1: ( ( rule__Model__HeaderAssignment_0 ) )
+            // InternalPortugolParser.g:1878:2: ( rule__Model__HeaderAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getHeaderAssignment_0()); 
             }
-            // InternalPortugolParser.g:1854:2: ( rule__Model__HeaderAssignment_0 )
-            // InternalPortugolParser.g:1854:3: rule__Model__HeaderAssignment_0
+            // InternalPortugolParser.g:1879:2: ( rule__Model__HeaderAssignment_0 )
+            // InternalPortugolParser.g:1879:3: rule__Model__HeaderAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Model__HeaderAssignment_0();
@@ -6543,14 +6628,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalPortugolParser.g:1862:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // InternalPortugolParser.g:1887:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1866:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // InternalPortugolParser.g:1867:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // InternalPortugolParser.g:1891:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalPortugolParser.g:1892:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Model__Group__1__Impl();
@@ -6581,22 +6666,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalPortugolParser.g:1874:1: rule__Model__Group__1__Impl : ( ( rule__Model__GlobalDeclarationsAssignment_1 )? ) ;
+    // InternalPortugolParser.g:1899:1: rule__Model__Group__1__Impl : ( ( rule__Model__GlobalDeclarationsAssignment_1 )? ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1878:1: ( ( ( rule__Model__GlobalDeclarationsAssignment_1 )? ) )
-            // InternalPortugolParser.g:1879:1: ( ( rule__Model__GlobalDeclarationsAssignment_1 )? )
+            // InternalPortugolParser.g:1903:1: ( ( ( rule__Model__GlobalDeclarationsAssignment_1 )? ) )
+            // InternalPortugolParser.g:1904:1: ( ( rule__Model__GlobalDeclarationsAssignment_1 )? )
             {
-            // InternalPortugolParser.g:1879:1: ( ( rule__Model__GlobalDeclarationsAssignment_1 )? )
-            // InternalPortugolParser.g:1880:2: ( rule__Model__GlobalDeclarationsAssignment_1 )?
+            // InternalPortugolParser.g:1904:1: ( ( rule__Model__GlobalDeclarationsAssignment_1 )? )
+            // InternalPortugolParser.g:1905:2: ( rule__Model__GlobalDeclarationsAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getGlobalDeclarationsAssignment_1()); 
             }
-            // InternalPortugolParser.g:1881:2: ( rule__Model__GlobalDeclarationsAssignment_1 )?
+            // InternalPortugolParser.g:1906:2: ( rule__Model__GlobalDeclarationsAssignment_1 )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -6605,7 +6690,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt17) {
                 case 1 :
-                    // InternalPortugolParser.g:1881:3: rule__Model__GlobalDeclarationsAssignment_1
+                    // InternalPortugolParser.g:1906:3: rule__Model__GlobalDeclarationsAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Model__GlobalDeclarationsAssignment_1();
@@ -6643,14 +6728,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // InternalPortugolParser.g:1889:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
+    // InternalPortugolParser.g:1914:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1893:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
-            // InternalPortugolParser.g:1894:2: rule__Model__Group__2__Impl rule__Model__Group__3
+            // InternalPortugolParser.g:1918:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
+            // InternalPortugolParser.g:1919:2: rule__Model__Group__2__Impl rule__Model__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Model__Group__2__Impl();
@@ -6681,22 +6766,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // InternalPortugolParser.g:1901:1: rule__Model__Group__2__Impl : ( ( rule__Model__SubprogramsAssignment_2 )? ) ;
+    // InternalPortugolParser.g:1926:1: rule__Model__Group__2__Impl : ( ( rule__Model__SubprogramsAssignment_2 )? ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1905:1: ( ( ( rule__Model__SubprogramsAssignment_2 )? ) )
-            // InternalPortugolParser.g:1906:1: ( ( rule__Model__SubprogramsAssignment_2 )? )
+            // InternalPortugolParser.g:1930:1: ( ( ( rule__Model__SubprogramsAssignment_2 )? ) )
+            // InternalPortugolParser.g:1931:1: ( ( rule__Model__SubprogramsAssignment_2 )? )
             {
-            // InternalPortugolParser.g:1906:1: ( ( rule__Model__SubprogramsAssignment_2 )? )
-            // InternalPortugolParser.g:1907:2: ( rule__Model__SubprogramsAssignment_2 )?
+            // InternalPortugolParser.g:1931:1: ( ( rule__Model__SubprogramsAssignment_2 )? )
+            // InternalPortugolParser.g:1932:2: ( rule__Model__SubprogramsAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getSubprogramsAssignment_2()); 
             }
-            // InternalPortugolParser.g:1908:2: ( rule__Model__SubprogramsAssignment_2 )?
+            // InternalPortugolParser.g:1933:2: ( rule__Model__SubprogramsAssignment_2 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -6705,7 +6790,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt18) {
                 case 1 :
-                    // InternalPortugolParser.g:1908:3: rule__Model__SubprogramsAssignment_2
+                    // InternalPortugolParser.g:1933:3: rule__Model__SubprogramsAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Model__SubprogramsAssignment_2();
@@ -6743,14 +6828,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__3"
-    // InternalPortugolParser.g:1916:1: rule__Model__Group__3 : rule__Model__Group__3__Impl ;
+    // InternalPortugolParser.g:1941:1: rule__Model__Group__3 : rule__Model__Group__3__Impl ;
     public final void rule__Model__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1920:1: ( rule__Model__Group__3__Impl )
-            // InternalPortugolParser.g:1921:2: rule__Model__Group__3__Impl
+            // InternalPortugolParser.g:1945:1: ( rule__Model__Group__3__Impl )
+            // InternalPortugolParser.g:1946:2: rule__Model__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__3__Impl();
@@ -6776,23 +6861,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__3__Impl"
-    // InternalPortugolParser.g:1927:1: rule__Model__Group__3__Impl : ( ( rule__Model__CommandsAssignment_3 ) ) ;
+    // InternalPortugolParser.g:1952:1: rule__Model__Group__3__Impl : ( ( rule__Model__CommandsAssignment_3 ) ) ;
     public final void rule__Model__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1931:1: ( ( ( rule__Model__CommandsAssignment_3 ) ) )
-            // InternalPortugolParser.g:1932:1: ( ( rule__Model__CommandsAssignment_3 ) )
+            // InternalPortugolParser.g:1956:1: ( ( ( rule__Model__CommandsAssignment_3 ) ) )
+            // InternalPortugolParser.g:1957:1: ( ( rule__Model__CommandsAssignment_3 ) )
             {
-            // InternalPortugolParser.g:1932:1: ( ( rule__Model__CommandsAssignment_3 ) )
-            // InternalPortugolParser.g:1933:2: ( rule__Model__CommandsAssignment_3 )
+            // InternalPortugolParser.g:1957:1: ( ( rule__Model__CommandsAssignment_3 ) )
+            // InternalPortugolParser.g:1958:2: ( rule__Model__CommandsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:1934:2: ( rule__Model__CommandsAssignment_3 )
-            // InternalPortugolParser.g:1934:3: rule__Model__CommandsAssignment_3
+            // InternalPortugolParser.g:1959:2: ( rule__Model__CommandsAssignment_3 )
+            // InternalPortugolParser.g:1959:3: rule__Model__CommandsAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Model__CommandsAssignment_3();
@@ -6827,14 +6912,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__0"
-    // InternalPortugolParser.g:1943:1: rule__HeaderBlock__Group__0 : rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1 ;
+    // InternalPortugolParser.g:1968:1: rule__HeaderBlock__Group__0 : rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1 ;
     public final void rule__HeaderBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1947:1: ( rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1 )
-            // InternalPortugolParser.g:1948:2: rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1
+            // InternalPortugolParser.g:1972:1: ( rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1 )
+            // InternalPortugolParser.g:1973:2: rule__HeaderBlock__Group__0__Impl rule__HeaderBlock__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__HeaderBlock__Group__0__Impl();
@@ -6865,17 +6950,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__0__Impl"
-    // InternalPortugolParser.g:1955:1: rule__HeaderBlock__Group__0__Impl : ( Algoritmo ) ;
+    // InternalPortugolParser.g:1980:1: rule__HeaderBlock__Group__0__Impl : ( Algoritmo ) ;
     public final void rule__HeaderBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1959:1: ( ( Algoritmo ) )
-            // InternalPortugolParser.g:1960:1: ( Algoritmo )
+            // InternalPortugolParser.g:1984:1: ( ( Algoritmo ) )
+            // InternalPortugolParser.g:1985:1: ( Algoritmo )
             {
-            // InternalPortugolParser.g:1960:1: ( Algoritmo )
-            // InternalPortugolParser.g:1961:2: Algoritmo
+            // InternalPortugolParser.g:1985:1: ( Algoritmo )
+            // InternalPortugolParser.g:1986:2: Algoritmo
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getHeaderBlockAccess().getAlgoritmoKeyword_0()); 
@@ -6906,14 +6991,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__1"
-    // InternalPortugolParser.g:1970:1: rule__HeaderBlock__Group__1 : rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2 ;
+    // InternalPortugolParser.g:1995:1: rule__HeaderBlock__Group__1 : rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2 ;
     public final void rule__HeaderBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1974:1: ( rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2 )
-            // InternalPortugolParser.g:1975:2: rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2
+            // InternalPortugolParser.g:1999:1: ( rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2 )
+            // InternalPortugolParser.g:2000:2: rule__HeaderBlock__Group__1__Impl rule__HeaderBlock__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__HeaderBlock__Group__1__Impl();
@@ -6944,23 +7029,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__1__Impl"
-    // InternalPortugolParser.g:1982:1: rule__HeaderBlock__Group__1__Impl : ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) ) ;
+    // InternalPortugolParser.g:2007:1: rule__HeaderBlock__Group__1__Impl : ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) ) ;
     public final void rule__HeaderBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:1986:1: ( ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) ) )
-            // InternalPortugolParser.g:1987:1: ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) )
+            // InternalPortugolParser.g:2011:1: ( ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) ) )
+            // InternalPortugolParser.g:2012:1: ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) )
             {
-            // InternalPortugolParser.g:1987:1: ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) )
-            // InternalPortugolParser.g:1988:2: ( rule__HeaderBlock__AlgorithmNameAssignment_1 )
+            // InternalPortugolParser.g:2012:1: ( ( rule__HeaderBlock__AlgorithmNameAssignment_1 ) )
+            // InternalPortugolParser.g:2013:2: ( rule__HeaderBlock__AlgorithmNameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getHeaderBlockAccess().getAlgorithmNameAssignment_1()); 
             }
-            // InternalPortugolParser.g:1989:2: ( rule__HeaderBlock__AlgorithmNameAssignment_1 )
-            // InternalPortugolParser.g:1989:3: rule__HeaderBlock__AlgorithmNameAssignment_1
+            // InternalPortugolParser.g:2014:2: ( rule__HeaderBlock__AlgorithmNameAssignment_1 )
+            // InternalPortugolParser.g:2014:3: rule__HeaderBlock__AlgorithmNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__HeaderBlock__AlgorithmNameAssignment_1();
@@ -6995,14 +7080,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__2"
-    // InternalPortugolParser.g:1997:1: rule__HeaderBlock__Group__2 : rule__HeaderBlock__Group__2__Impl ;
+    // InternalPortugolParser.g:2022:1: rule__HeaderBlock__Group__2 : rule__HeaderBlock__Group__2__Impl ;
     public final void rule__HeaderBlock__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2001:1: ( rule__HeaderBlock__Group__2__Impl )
-            // InternalPortugolParser.g:2002:2: rule__HeaderBlock__Group__2__Impl
+            // InternalPortugolParser.g:2026:1: ( rule__HeaderBlock__Group__2__Impl )
+            // InternalPortugolParser.g:2027:2: rule__HeaderBlock__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__HeaderBlock__Group__2__Impl();
@@ -7028,17 +7113,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__Group__2__Impl"
-    // InternalPortugolParser.g:2008:1: rule__HeaderBlock__Group__2__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:2033:1: rule__HeaderBlock__Group__2__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__HeaderBlock__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2012:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:2013:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:2037:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:2038:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:2013:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:2014:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:2038:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:2039:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getHeaderBlockAccess().getEND_COMMANDParserRuleCall_2()); 
@@ -7073,14 +7158,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group__0"
-    // InternalPortugolParser.g:2024:1: rule__DeclarationsBlock__Group__0 : rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1 ;
+    // InternalPortugolParser.g:2049:1: rule__DeclarationsBlock__Group__0 : rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1 ;
     public final void rule__DeclarationsBlock__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2028:1: ( rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1 )
-            // InternalPortugolParser.g:2029:2: rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1
+            // InternalPortugolParser.g:2053:1: ( rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1 )
+            // InternalPortugolParser.g:2054:2: rule__DeclarationsBlock__Group__0__Impl rule__DeclarationsBlock__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__DeclarationsBlock__Group__0__Impl();
@@ -7111,17 +7196,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group__0__Impl"
-    // InternalPortugolParser.g:2036:1: rule__DeclarationsBlock__Group__0__Impl : ( Var ) ;
+    // InternalPortugolParser.g:2061:1: rule__DeclarationsBlock__Group__0__Impl : ( Var ) ;
     public final void rule__DeclarationsBlock__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2040:1: ( ( Var ) )
-            // InternalPortugolParser.g:2041:1: ( Var )
+            // InternalPortugolParser.g:2065:1: ( ( Var ) )
+            // InternalPortugolParser.g:2066:1: ( Var )
             {
-            // InternalPortugolParser.g:2041:1: ( Var )
-            // InternalPortugolParser.g:2042:2: Var
+            // InternalPortugolParser.g:2066:1: ( Var )
+            // InternalPortugolParser.g:2067:2: Var
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getVarKeyword_0()); 
@@ -7152,14 +7237,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group__1"
-    // InternalPortugolParser.g:2051:1: rule__DeclarationsBlock__Group__1 : rule__DeclarationsBlock__Group__1__Impl ;
+    // InternalPortugolParser.g:2076:1: rule__DeclarationsBlock__Group__1 : rule__DeclarationsBlock__Group__1__Impl ;
     public final void rule__DeclarationsBlock__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2055:1: ( rule__DeclarationsBlock__Group__1__Impl )
-            // InternalPortugolParser.g:2056:2: rule__DeclarationsBlock__Group__1__Impl
+            // InternalPortugolParser.g:2080:1: ( rule__DeclarationsBlock__Group__1__Impl )
+            // InternalPortugolParser.g:2081:2: rule__DeclarationsBlock__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DeclarationsBlock__Group__1__Impl();
@@ -7185,26 +7270,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group__1__Impl"
-    // InternalPortugolParser.g:2062:1: rule__DeclarationsBlock__Group__1__Impl : ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) ) ;
+    // InternalPortugolParser.g:2087:1: rule__DeclarationsBlock__Group__1__Impl : ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) ) ;
     public final void rule__DeclarationsBlock__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2066:1: ( ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) ) )
-            // InternalPortugolParser.g:2067:1: ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) )
+            // InternalPortugolParser.g:2091:1: ( ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) ) )
+            // InternalPortugolParser.g:2092:1: ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) )
             {
-            // InternalPortugolParser.g:2067:1: ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) )
-            // InternalPortugolParser.g:2068:2: ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* )
+            // InternalPortugolParser.g:2092:1: ( ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* ) )
+            // InternalPortugolParser.g:2093:2: ( ( rule__DeclarationsBlock__Group_1__0 ) ) ( ( rule__DeclarationsBlock__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:2068:2: ( ( rule__DeclarationsBlock__Group_1__0 ) )
-            // InternalPortugolParser.g:2069:3: ( rule__DeclarationsBlock__Group_1__0 )
+            // InternalPortugolParser.g:2093:2: ( ( rule__DeclarationsBlock__Group_1__0 ) )
+            // InternalPortugolParser.g:2094:3: ( rule__DeclarationsBlock__Group_1__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:2070:3: ( rule__DeclarationsBlock__Group_1__0 )
-            // InternalPortugolParser.g:2070:4: rule__DeclarationsBlock__Group_1__0
+            // InternalPortugolParser.g:2095:3: ( rule__DeclarationsBlock__Group_1__0 )
+            // InternalPortugolParser.g:2095:4: rule__DeclarationsBlock__Group_1__0
             {
             pushFollow(FOLLOW_8);
             rule__DeclarationsBlock__Group_1__0();
@@ -7220,13 +7305,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:2073:2: ( ( rule__DeclarationsBlock__Group_1__0 )* )
-            // InternalPortugolParser.g:2074:3: ( rule__DeclarationsBlock__Group_1__0 )*
+            // InternalPortugolParser.g:2098:2: ( ( rule__DeclarationsBlock__Group_1__0 )* )
+            // InternalPortugolParser.g:2099:3: ( rule__DeclarationsBlock__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:2075:3: ( rule__DeclarationsBlock__Group_1__0 )*
+            // InternalPortugolParser.g:2100:3: ( rule__DeclarationsBlock__Group_1__0 )*
             loop19:
             do {
                 int alt19=2;
@@ -7239,7 +7324,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalPortugolParser.g:2075:4: rule__DeclarationsBlock__Group_1__0
+            	    // InternalPortugolParser.g:2100:4: rule__DeclarationsBlock__Group_1__0
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__DeclarationsBlock__Group_1__0();
@@ -7283,14 +7368,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group_1__0"
-    // InternalPortugolParser.g:2085:1: rule__DeclarationsBlock__Group_1__0 : rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1 ;
+    // InternalPortugolParser.g:2110:1: rule__DeclarationsBlock__Group_1__0 : rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1 ;
     public final void rule__DeclarationsBlock__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2089:1: ( rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1 )
-            // InternalPortugolParser.g:2090:2: rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1
+            // InternalPortugolParser.g:2114:1: ( rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1 )
+            // InternalPortugolParser.g:2115:2: rule__DeclarationsBlock__Group_1__0__Impl rule__DeclarationsBlock__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__DeclarationsBlock__Group_1__0__Impl();
@@ -7321,23 +7406,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group_1__0__Impl"
-    // InternalPortugolParser.g:2097:1: rule__DeclarationsBlock__Group_1__0__Impl : ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) ) ;
+    // InternalPortugolParser.g:2122:1: rule__DeclarationsBlock__Group_1__0__Impl : ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) ) ;
     public final void rule__DeclarationsBlock__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2101:1: ( ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) ) )
-            // InternalPortugolParser.g:2102:1: ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) )
+            // InternalPortugolParser.g:2126:1: ( ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) ) )
+            // InternalPortugolParser.g:2127:1: ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) )
             {
-            // InternalPortugolParser.g:2102:1: ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) )
-            // InternalPortugolParser.g:2103:2: ( rule__DeclarationsBlock__VarsAssignment_1_0 )
+            // InternalPortugolParser.g:2127:1: ( ( rule__DeclarationsBlock__VarsAssignment_1_0 ) )
+            // InternalPortugolParser.g:2128:2: ( rule__DeclarationsBlock__VarsAssignment_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getVarsAssignment_1_0()); 
             }
-            // InternalPortugolParser.g:2104:2: ( rule__DeclarationsBlock__VarsAssignment_1_0 )
-            // InternalPortugolParser.g:2104:3: rule__DeclarationsBlock__VarsAssignment_1_0
+            // InternalPortugolParser.g:2129:2: ( rule__DeclarationsBlock__VarsAssignment_1_0 )
+            // InternalPortugolParser.g:2129:3: rule__DeclarationsBlock__VarsAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__DeclarationsBlock__VarsAssignment_1_0();
@@ -7372,14 +7457,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group_1__1"
-    // InternalPortugolParser.g:2112:1: rule__DeclarationsBlock__Group_1__1 : rule__DeclarationsBlock__Group_1__1__Impl ;
+    // InternalPortugolParser.g:2137:1: rule__DeclarationsBlock__Group_1__1 : rule__DeclarationsBlock__Group_1__1__Impl ;
     public final void rule__DeclarationsBlock__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2116:1: ( rule__DeclarationsBlock__Group_1__1__Impl )
-            // InternalPortugolParser.g:2117:2: rule__DeclarationsBlock__Group_1__1__Impl
+            // InternalPortugolParser.g:2141:1: ( rule__DeclarationsBlock__Group_1__1__Impl )
+            // InternalPortugolParser.g:2142:2: rule__DeclarationsBlock__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DeclarationsBlock__Group_1__1__Impl();
@@ -7405,17 +7490,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__Group_1__1__Impl"
-    // InternalPortugolParser.g:2123:1: rule__DeclarationsBlock__Group_1__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:2148:1: rule__DeclarationsBlock__Group_1__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__DeclarationsBlock__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2127:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:2128:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:2152:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:2153:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:2128:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:2129:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:2153:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:2154:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getEND_COMMANDParserRuleCall_1_1()); 
@@ -7450,14 +7535,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__0"
-    // InternalPortugolParser.g:2139:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
+    // InternalPortugolParser.g:2164:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
     public final void rule__Variable__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2143:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
-            // InternalPortugolParser.g:2144:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
+            // InternalPortugolParser.g:2168:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
+            // InternalPortugolParser.g:2169:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__Variable__Group__0__Impl();
@@ -7488,23 +7573,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__0__Impl"
-    // InternalPortugolParser.g:2151:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__VarDeclarationAssignment_0 ) ) ;
+    // InternalPortugolParser.g:2176:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__VarDeclarationAssignment_0 ) ) ;
     public final void rule__Variable__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2155:1: ( ( ( rule__Variable__VarDeclarationAssignment_0 ) ) )
-            // InternalPortugolParser.g:2156:1: ( ( rule__Variable__VarDeclarationAssignment_0 ) )
+            // InternalPortugolParser.g:2180:1: ( ( ( rule__Variable__VarDeclarationAssignment_0 ) ) )
+            // InternalPortugolParser.g:2181:1: ( ( rule__Variable__VarDeclarationAssignment_0 ) )
             {
-            // InternalPortugolParser.g:2156:1: ( ( rule__Variable__VarDeclarationAssignment_0 ) )
-            // InternalPortugolParser.g:2157:2: ( rule__Variable__VarDeclarationAssignment_0 )
+            // InternalPortugolParser.g:2181:1: ( ( rule__Variable__VarDeclarationAssignment_0 ) )
+            // InternalPortugolParser.g:2182:2: ( rule__Variable__VarDeclarationAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getVarDeclarationAssignment_0()); 
             }
-            // InternalPortugolParser.g:2158:2: ( rule__Variable__VarDeclarationAssignment_0 )
-            // InternalPortugolParser.g:2158:3: rule__Variable__VarDeclarationAssignment_0
+            // InternalPortugolParser.g:2183:2: ( rule__Variable__VarDeclarationAssignment_0 )
+            // InternalPortugolParser.g:2183:3: rule__Variable__VarDeclarationAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Variable__VarDeclarationAssignment_0();
@@ -7539,14 +7624,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__1"
-    // InternalPortugolParser.g:2166:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
+    // InternalPortugolParser.g:2191:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
     public final void rule__Variable__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2170:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
-            // InternalPortugolParser.g:2171:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
+            // InternalPortugolParser.g:2195:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
+            // InternalPortugolParser.g:2196:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__Variable__Group__1__Impl();
@@ -7577,17 +7662,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__1__Impl"
-    // InternalPortugolParser.g:2178:1: rule__Variable__Group__1__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:2203:1: rule__Variable__Group__1__Impl : ( Colon ) ;
     public final void rule__Variable__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2182:1: ( ( Colon ) )
-            // InternalPortugolParser.g:2183:1: ( Colon )
+            // InternalPortugolParser.g:2207:1: ( ( Colon ) )
+            // InternalPortugolParser.g:2208:1: ( Colon )
             {
-            // InternalPortugolParser.g:2183:1: ( Colon )
-            // InternalPortugolParser.g:2184:2: Colon
+            // InternalPortugolParser.g:2208:1: ( Colon )
+            // InternalPortugolParser.g:2209:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getColonKeyword_1()); 
@@ -7618,14 +7703,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__2"
-    // InternalPortugolParser.g:2193:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl ;
+    // InternalPortugolParser.g:2218:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl ;
     public final void rule__Variable__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2197:1: ( rule__Variable__Group__2__Impl )
-            // InternalPortugolParser.g:2198:2: rule__Variable__Group__2__Impl
+            // InternalPortugolParser.g:2222:1: ( rule__Variable__Group__2__Impl )
+            // InternalPortugolParser.g:2223:2: rule__Variable__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Variable__Group__2__Impl();
@@ -7651,23 +7736,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__Group__2__Impl"
-    // InternalPortugolParser.g:2204:1: rule__Variable__Group__2__Impl : ( ( rule__Variable__TypeAssignment_2 ) ) ;
+    // InternalPortugolParser.g:2229:1: rule__Variable__Group__2__Impl : ( ( rule__Variable__TypeAssignment_2 ) ) ;
     public final void rule__Variable__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2208:1: ( ( ( rule__Variable__TypeAssignment_2 ) ) )
-            // InternalPortugolParser.g:2209:1: ( ( rule__Variable__TypeAssignment_2 ) )
+            // InternalPortugolParser.g:2233:1: ( ( ( rule__Variable__TypeAssignment_2 ) ) )
+            // InternalPortugolParser.g:2234:1: ( ( rule__Variable__TypeAssignment_2 ) )
             {
-            // InternalPortugolParser.g:2209:1: ( ( rule__Variable__TypeAssignment_2 ) )
-            // InternalPortugolParser.g:2210:2: ( rule__Variable__TypeAssignment_2 )
+            // InternalPortugolParser.g:2234:1: ( ( rule__Variable__TypeAssignment_2 ) )
+            // InternalPortugolParser.g:2235:2: ( rule__Variable__TypeAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getTypeAssignment_2()); 
             }
-            // InternalPortugolParser.g:2211:2: ( rule__Variable__TypeAssignment_2 )
-            // InternalPortugolParser.g:2211:3: rule__Variable__TypeAssignment_2
+            // InternalPortugolParser.g:2236:2: ( rule__Variable__TypeAssignment_2 )
+            // InternalPortugolParser.g:2236:3: rule__Variable__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Variable__TypeAssignment_2();
@@ -7702,14 +7787,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group__0"
-    // InternalPortugolParser.g:2220:1: rule__VarDeclaration__Group__0 : rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1 ;
+    // InternalPortugolParser.g:2245:1: rule__VarDeclaration__Group__0 : rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1 ;
     public final void rule__VarDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2224:1: ( rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1 )
-            // InternalPortugolParser.g:2225:2: rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1
+            // InternalPortugolParser.g:2249:1: ( rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1 )
+            // InternalPortugolParser.g:2250:2: rule__VarDeclaration__Group__0__Impl rule__VarDeclaration__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__VarDeclaration__Group__0__Impl();
@@ -7740,23 +7825,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group__0__Impl"
-    // InternalPortugolParser.g:2232:1: rule__VarDeclaration__Group__0__Impl : ( ( rule__VarDeclaration__VarsAssignment_0 ) ) ;
+    // InternalPortugolParser.g:2257:1: rule__VarDeclaration__Group__0__Impl : ( ( rule__VarDeclaration__VarsAssignment_0 ) ) ;
     public final void rule__VarDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2236:1: ( ( ( rule__VarDeclaration__VarsAssignment_0 ) ) )
-            // InternalPortugolParser.g:2237:1: ( ( rule__VarDeclaration__VarsAssignment_0 ) )
+            // InternalPortugolParser.g:2261:1: ( ( ( rule__VarDeclaration__VarsAssignment_0 ) ) )
+            // InternalPortugolParser.g:2262:1: ( ( rule__VarDeclaration__VarsAssignment_0 ) )
             {
-            // InternalPortugolParser.g:2237:1: ( ( rule__VarDeclaration__VarsAssignment_0 ) )
-            // InternalPortugolParser.g:2238:2: ( rule__VarDeclaration__VarsAssignment_0 )
+            // InternalPortugolParser.g:2262:1: ( ( rule__VarDeclaration__VarsAssignment_0 ) )
+            // InternalPortugolParser.g:2263:2: ( rule__VarDeclaration__VarsAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getVarsAssignment_0()); 
             }
-            // InternalPortugolParser.g:2239:2: ( rule__VarDeclaration__VarsAssignment_0 )
-            // InternalPortugolParser.g:2239:3: rule__VarDeclaration__VarsAssignment_0
+            // InternalPortugolParser.g:2264:2: ( rule__VarDeclaration__VarsAssignment_0 )
+            // InternalPortugolParser.g:2264:3: rule__VarDeclaration__VarsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__VarDeclaration__VarsAssignment_0();
@@ -7791,14 +7876,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group__1"
-    // InternalPortugolParser.g:2247:1: rule__VarDeclaration__Group__1 : rule__VarDeclaration__Group__1__Impl ;
+    // InternalPortugolParser.g:2272:1: rule__VarDeclaration__Group__1 : rule__VarDeclaration__Group__1__Impl ;
     public final void rule__VarDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2251:1: ( rule__VarDeclaration__Group__1__Impl )
-            // InternalPortugolParser.g:2252:2: rule__VarDeclaration__Group__1__Impl
+            // InternalPortugolParser.g:2276:1: ( rule__VarDeclaration__Group__1__Impl )
+            // InternalPortugolParser.g:2277:2: rule__VarDeclaration__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VarDeclaration__Group__1__Impl();
@@ -7824,22 +7909,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group__1__Impl"
-    // InternalPortugolParser.g:2258:1: rule__VarDeclaration__Group__1__Impl : ( ( rule__VarDeclaration__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:2283:1: rule__VarDeclaration__Group__1__Impl : ( ( rule__VarDeclaration__Group_1__0 )* ) ;
     public final void rule__VarDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2262:1: ( ( ( rule__VarDeclaration__Group_1__0 )* ) )
-            // InternalPortugolParser.g:2263:1: ( ( rule__VarDeclaration__Group_1__0 )* )
+            // InternalPortugolParser.g:2287:1: ( ( ( rule__VarDeclaration__Group_1__0 )* ) )
+            // InternalPortugolParser.g:2288:1: ( ( rule__VarDeclaration__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:2263:1: ( ( rule__VarDeclaration__Group_1__0 )* )
-            // InternalPortugolParser.g:2264:2: ( rule__VarDeclaration__Group_1__0 )*
+            // InternalPortugolParser.g:2288:1: ( ( rule__VarDeclaration__Group_1__0 )* )
+            // InternalPortugolParser.g:2289:2: ( rule__VarDeclaration__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:2265:2: ( rule__VarDeclaration__Group_1__0 )*
+            // InternalPortugolParser.g:2290:2: ( rule__VarDeclaration__Group_1__0 )*
             loop20:
             do {
                 int alt20=2;
@@ -7852,7 +7937,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalPortugolParser.g:2265:3: rule__VarDeclaration__Group_1__0
+            	    // InternalPortugolParser.g:2290:3: rule__VarDeclaration__Group_1__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__VarDeclaration__Group_1__0();
@@ -7893,14 +7978,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group_1__0"
-    // InternalPortugolParser.g:2274:1: rule__VarDeclaration__Group_1__0 : rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1 ;
+    // InternalPortugolParser.g:2299:1: rule__VarDeclaration__Group_1__0 : rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1 ;
     public final void rule__VarDeclaration__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2278:1: ( rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1 )
-            // InternalPortugolParser.g:2279:2: rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1
+            // InternalPortugolParser.g:2303:1: ( rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1 )
+            // InternalPortugolParser.g:2304:2: rule__VarDeclaration__Group_1__0__Impl rule__VarDeclaration__Group_1__1
             {
             pushFollow(FOLLOW_7);
             rule__VarDeclaration__Group_1__0__Impl();
@@ -7931,17 +8016,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group_1__0__Impl"
-    // InternalPortugolParser.g:2286:1: rule__VarDeclaration__Group_1__0__Impl : ( Comma ) ;
+    // InternalPortugolParser.g:2311:1: rule__VarDeclaration__Group_1__0__Impl : ( Comma ) ;
     public final void rule__VarDeclaration__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2290:1: ( ( Comma ) )
-            // InternalPortugolParser.g:2291:1: ( Comma )
+            // InternalPortugolParser.g:2315:1: ( ( Comma ) )
+            // InternalPortugolParser.g:2316:1: ( Comma )
             {
-            // InternalPortugolParser.g:2291:1: ( Comma )
-            // InternalPortugolParser.g:2292:2: Comma
+            // InternalPortugolParser.g:2316:1: ( Comma )
+            // InternalPortugolParser.g:2317:2: Comma
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getCommaKeyword_1_0()); 
@@ -7972,14 +8057,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group_1__1"
-    // InternalPortugolParser.g:2301:1: rule__VarDeclaration__Group_1__1 : rule__VarDeclaration__Group_1__1__Impl ;
+    // InternalPortugolParser.g:2326:1: rule__VarDeclaration__Group_1__1 : rule__VarDeclaration__Group_1__1__Impl ;
     public final void rule__VarDeclaration__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2305:1: ( rule__VarDeclaration__Group_1__1__Impl )
-            // InternalPortugolParser.g:2306:2: rule__VarDeclaration__Group_1__1__Impl
+            // InternalPortugolParser.g:2330:1: ( rule__VarDeclaration__Group_1__1__Impl )
+            // InternalPortugolParser.g:2331:2: rule__VarDeclaration__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VarDeclaration__Group_1__1__Impl();
@@ -8005,23 +8090,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__Group_1__1__Impl"
-    // InternalPortugolParser.g:2312:1: rule__VarDeclaration__Group_1__1__Impl : ( ( rule__VarDeclaration__VarsAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:2337:1: rule__VarDeclaration__Group_1__1__Impl : ( ( rule__VarDeclaration__VarsAssignment_1_1 ) ) ;
     public final void rule__VarDeclaration__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2316:1: ( ( ( rule__VarDeclaration__VarsAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:2317:1: ( ( rule__VarDeclaration__VarsAssignment_1_1 ) )
+            // InternalPortugolParser.g:2341:1: ( ( ( rule__VarDeclaration__VarsAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:2342:1: ( ( rule__VarDeclaration__VarsAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:2317:1: ( ( rule__VarDeclaration__VarsAssignment_1_1 ) )
-            // InternalPortugolParser.g:2318:2: ( rule__VarDeclaration__VarsAssignment_1_1 )
+            // InternalPortugolParser.g:2342:1: ( ( rule__VarDeclaration__VarsAssignment_1_1 ) )
+            // InternalPortugolParser.g:2343:2: ( rule__VarDeclaration__VarsAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getVarsAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:2319:2: ( rule__VarDeclaration__VarsAssignment_1_1 )
-            // InternalPortugolParser.g:2319:3: rule__VarDeclaration__VarsAssignment_1_1
+            // InternalPortugolParser.g:2344:2: ( rule__VarDeclaration__VarsAssignment_1_1 )
+            // InternalPortugolParser.g:2344:3: rule__VarDeclaration__VarsAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__VarDeclaration__VarsAssignment_1_1();
@@ -8056,14 +8141,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group__0"
-    // InternalPortugolParser.g:2328:1: rule__DeclaredVarList__Group__0 : rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1 ;
+    // InternalPortugolParser.g:2353:1: rule__DeclaredVarList__Group__0 : rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1 ;
     public final void rule__DeclaredVarList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2332:1: ( rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1 )
-            // InternalPortugolParser.g:2333:2: rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1
+            // InternalPortugolParser.g:2357:1: ( rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1 )
+            // InternalPortugolParser.g:2358:2: rule__DeclaredVarList__Group__0__Impl rule__DeclaredVarList__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__DeclaredVarList__Group__0__Impl();
@@ -8094,23 +8179,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group__0__Impl"
-    // InternalPortugolParser.g:2340:1: rule__DeclaredVarList__Group__0__Impl : ( ( rule__DeclaredVarList__VarsAssignment_0 ) ) ;
+    // InternalPortugolParser.g:2365:1: rule__DeclaredVarList__Group__0__Impl : ( ( rule__DeclaredVarList__VarsAssignment_0 ) ) ;
     public final void rule__DeclaredVarList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2344:1: ( ( ( rule__DeclaredVarList__VarsAssignment_0 ) ) )
-            // InternalPortugolParser.g:2345:1: ( ( rule__DeclaredVarList__VarsAssignment_0 ) )
+            // InternalPortugolParser.g:2369:1: ( ( ( rule__DeclaredVarList__VarsAssignment_0 ) ) )
+            // InternalPortugolParser.g:2370:1: ( ( rule__DeclaredVarList__VarsAssignment_0 ) )
             {
-            // InternalPortugolParser.g:2345:1: ( ( rule__DeclaredVarList__VarsAssignment_0 ) )
-            // InternalPortugolParser.g:2346:2: ( rule__DeclaredVarList__VarsAssignment_0 )
+            // InternalPortugolParser.g:2370:1: ( ( rule__DeclaredVarList__VarsAssignment_0 ) )
+            // InternalPortugolParser.g:2371:2: ( rule__DeclaredVarList__VarsAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsAssignment_0()); 
             }
-            // InternalPortugolParser.g:2347:2: ( rule__DeclaredVarList__VarsAssignment_0 )
-            // InternalPortugolParser.g:2347:3: rule__DeclaredVarList__VarsAssignment_0
+            // InternalPortugolParser.g:2372:2: ( rule__DeclaredVarList__VarsAssignment_0 )
+            // InternalPortugolParser.g:2372:3: rule__DeclaredVarList__VarsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__DeclaredVarList__VarsAssignment_0();
@@ -8145,14 +8230,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group__1"
-    // InternalPortugolParser.g:2355:1: rule__DeclaredVarList__Group__1 : rule__DeclaredVarList__Group__1__Impl ;
+    // InternalPortugolParser.g:2380:1: rule__DeclaredVarList__Group__1 : rule__DeclaredVarList__Group__1__Impl ;
     public final void rule__DeclaredVarList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2359:1: ( rule__DeclaredVarList__Group__1__Impl )
-            // InternalPortugolParser.g:2360:2: rule__DeclaredVarList__Group__1__Impl
+            // InternalPortugolParser.g:2384:1: ( rule__DeclaredVarList__Group__1__Impl )
+            // InternalPortugolParser.g:2385:2: rule__DeclaredVarList__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DeclaredVarList__Group__1__Impl();
@@ -8178,22 +8263,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group__1__Impl"
-    // InternalPortugolParser.g:2366:1: rule__DeclaredVarList__Group__1__Impl : ( ( rule__DeclaredVarList__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:2391:1: rule__DeclaredVarList__Group__1__Impl : ( ( rule__DeclaredVarList__Group_1__0 )* ) ;
     public final void rule__DeclaredVarList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2370:1: ( ( ( rule__DeclaredVarList__Group_1__0 )* ) )
-            // InternalPortugolParser.g:2371:1: ( ( rule__DeclaredVarList__Group_1__0 )* )
+            // InternalPortugolParser.g:2395:1: ( ( ( rule__DeclaredVarList__Group_1__0 )* ) )
+            // InternalPortugolParser.g:2396:1: ( ( rule__DeclaredVarList__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:2371:1: ( ( rule__DeclaredVarList__Group_1__0 )* )
-            // InternalPortugolParser.g:2372:2: ( rule__DeclaredVarList__Group_1__0 )*
+            // InternalPortugolParser.g:2396:1: ( ( rule__DeclaredVarList__Group_1__0 )* )
+            // InternalPortugolParser.g:2397:2: ( rule__DeclaredVarList__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:2373:2: ( rule__DeclaredVarList__Group_1__0 )*
+            // InternalPortugolParser.g:2398:2: ( rule__DeclaredVarList__Group_1__0 )*
             loop21:
             do {
                 int alt21=2;
@@ -8206,7 +8291,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalPortugolParser.g:2373:3: rule__DeclaredVarList__Group_1__0
+            	    // InternalPortugolParser.g:2398:3: rule__DeclaredVarList__Group_1__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__DeclaredVarList__Group_1__0();
@@ -8247,14 +8332,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group_1__0"
-    // InternalPortugolParser.g:2382:1: rule__DeclaredVarList__Group_1__0 : rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1 ;
+    // InternalPortugolParser.g:2407:1: rule__DeclaredVarList__Group_1__0 : rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1 ;
     public final void rule__DeclaredVarList__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2386:1: ( rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1 )
-            // InternalPortugolParser.g:2387:2: rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1
+            // InternalPortugolParser.g:2411:1: ( rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1 )
+            // InternalPortugolParser.g:2412:2: rule__DeclaredVarList__Group_1__0__Impl rule__DeclaredVarList__Group_1__1
             {
             pushFollow(FOLLOW_7);
             rule__DeclaredVarList__Group_1__0__Impl();
@@ -8285,17 +8370,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group_1__0__Impl"
-    // InternalPortugolParser.g:2394:1: rule__DeclaredVarList__Group_1__0__Impl : ( Comma ) ;
+    // InternalPortugolParser.g:2419:1: rule__DeclaredVarList__Group_1__0__Impl : ( Comma ) ;
     public final void rule__DeclaredVarList__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2398:1: ( ( Comma ) )
-            // InternalPortugolParser.g:2399:1: ( Comma )
+            // InternalPortugolParser.g:2423:1: ( ( Comma ) )
+            // InternalPortugolParser.g:2424:1: ( Comma )
             {
-            // InternalPortugolParser.g:2399:1: ( Comma )
-            // InternalPortugolParser.g:2400:2: Comma
+            // InternalPortugolParser.g:2424:1: ( Comma )
+            // InternalPortugolParser.g:2425:2: Comma
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getCommaKeyword_1_0()); 
@@ -8326,14 +8411,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group_1__1"
-    // InternalPortugolParser.g:2409:1: rule__DeclaredVarList__Group_1__1 : rule__DeclaredVarList__Group_1__1__Impl ;
+    // InternalPortugolParser.g:2434:1: rule__DeclaredVarList__Group_1__1 : rule__DeclaredVarList__Group_1__1__Impl ;
     public final void rule__DeclaredVarList__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2413:1: ( rule__DeclaredVarList__Group_1__1__Impl )
-            // InternalPortugolParser.g:2414:2: rule__DeclaredVarList__Group_1__1__Impl
+            // InternalPortugolParser.g:2438:1: ( rule__DeclaredVarList__Group_1__1__Impl )
+            // InternalPortugolParser.g:2439:2: rule__DeclaredVarList__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DeclaredVarList__Group_1__1__Impl();
@@ -8359,23 +8444,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__Group_1__1__Impl"
-    // InternalPortugolParser.g:2420:1: rule__DeclaredVarList__Group_1__1__Impl : ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:2445:1: rule__DeclaredVarList__Group_1__1__Impl : ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) ) ;
     public final void rule__DeclaredVarList__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2424:1: ( ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:2425:1: ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) )
+            // InternalPortugolParser.g:2449:1: ( ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:2450:1: ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:2425:1: ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) )
-            // InternalPortugolParser.g:2426:2: ( rule__DeclaredVarList__VarsAssignment_1_1 )
+            // InternalPortugolParser.g:2450:1: ( ( rule__DeclaredVarList__VarsAssignment_1_1 ) )
+            // InternalPortugolParser.g:2451:2: ( rule__DeclaredVarList__VarsAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:2427:2: ( rule__DeclaredVarList__VarsAssignment_1_1 )
-            // InternalPortugolParser.g:2427:3: rule__DeclaredVarList__VarsAssignment_1_1
+            // InternalPortugolParser.g:2452:2: ( rule__DeclaredVarList__VarsAssignment_1_1 )
+            // InternalPortugolParser.g:2452:3: rule__DeclaredVarList__VarsAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__DeclaredVarList__VarsAssignment_1_1();
@@ -8410,14 +8495,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__0"
-    // InternalPortugolParser.g:2436:1: rule__BlockFunction__Group__0 : rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1 ;
+    // InternalPortugolParser.g:2461:1: rule__BlockFunction__Group__0 : rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1 ;
     public final void rule__BlockFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2440:1: ( rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1 )
-            // InternalPortugolParser.g:2441:2: rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1
+            // InternalPortugolParser.g:2465:1: ( rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1 )
+            // InternalPortugolParser.g:2466:2: rule__BlockFunction__Group__0__Impl rule__BlockFunction__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__BlockFunction__Group__0__Impl();
@@ -8448,17 +8533,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__0__Impl"
-    // InternalPortugolParser.g:2448:1: rule__BlockFunction__Group__0__Impl : ( Funcao ) ;
+    // InternalPortugolParser.g:2473:1: rule__BlockFunction__Group__0__Impl : ( Funcao ) ;
     public final void rule__BlockFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2452:1: ( ( Funcao ) )
-            // InternalPortugolParser.g:2453:1: ( Funcao )
+            // InternalPortugolParser.g:2477:1: ( ( Funcao ) )
+            // InternalPortugolParser.g:2478:1: ( Funcao )
             {
-            // InternalPortugolParser.g:2453:1: ( Funcao )
-            // InternalPortugolParser.g:2454:2: Funcao
+            // InternalPortugolParser.g:2478:1: ( Funcao )
+            // InternalPortugolParser.g:2479:2: Funcao
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getFuncaoKeyword_0()); 
@@ -8489,14 +8574,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__1"
-    // InternalPortugolParser.g:2463:1: rule__BlockFunction__Group__1 : rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2 ;
+    // InternalPortugolParser.g:2488:1: rule__BlockFunction__Group__1 : rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2 ;
     public final void rule__BlockFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2467:1: ( rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2 )
-            // InternalPortugolParser.g:2468:2: rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2
+            // InternalPortugolParser.g:2492:1: ( rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2 )
+            // InternalPortugolParser.g:2493:2: rule__BlockFunction__Group__1__Impl rule__BlockFunction__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__BlockFunction__Group__1__Impl();
@@ -8527,23 +8612,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__1__Impl"
-    // InternalPortugolParser.g:2475:1: rule__BlockFunction__Group__1__Impl : ( ( rule__BlockFunction__FunctionNameAssignment_1 ) ) ;
+    // InternalPortugolParser.g:2500:1: rule__BlockFunction__Group__1__Impl : ( ( rule__BlockFunction__FunctionNameAssignment_1 ) ) ;
     public final void rule__BlockFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2479:1: ( ( ( rule__BlockFunction__FunctionNameAssignment_1 ) ) )
-            // InternalPortugolParser.g:2480:1: ( ( rule__BlockFunction__FunctionNameAssignment_1 ) )
+            // InternalPortugolParser.g:2504:1: ( ( ( rule__BlockFunction__FunctionNameAssignment_1 ) ) )
+            // InternalPortugolParser.g:2505:1: ( ( rule__BlockFunction__FunctionNameAssignment_1 ) )
             {
-            // InternalPortugolParser.g:2480:1: ( ( rule__BlockFunction__FunctionNameAssignment_1 ) )
-            // InternalPortugolParser.g:2481:2: ( rule__BlockFunction__FunctionNameAssignment_1 )
+            // InternalPortugolParser.g:2505:1: ( ( rule__BlockFunction__FunctionNameAssignment_1 ) )
+            // InternalPortugolParser.g:2506:2: ( rule__BlockFunction__FunctionNameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getFunctionNameAssignment_1()); 
             }
-            // InternalPortugolParser.g:2482:2: ( rule__BlockFunction__FunctionNameAssignment_1 )
-            // InternalPortugolParser.g:2482:3: rule__BlockFunction__FunctionNameAssignment_1
+            // InternalPortugolParser.g:2507:2: ( rule__BlockFunction__FunctionNameAssignment_1 )
+            // InternalPortugolParser.g:2507:3: rule__BlockFunction__FunctionNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__BlockFunction__FunctionNameAssignment_1();
@@ -8578,14 +8663,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__2"
-    // InternalPortugolParser.g:2490:1: rule__BlockFunction__Group__2 : rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3 ;
+    // InternalPortugolParser.g:2515:1: rule__BlockFunction__Group__2 : rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3 ;
     public final void rule__BlockFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2494:1: ( rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3 )
-            // InternalPortugolParser.g:2495:2: rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3
+            // InternalPortugolParser.g:2519:1: ( rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3 )
+            // InternalPortugolParser.g:2520:2: rule__BlockFunction__Group__2__Impl rule__BlockFunction__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__BlockFunction__Group__2__Impl();
@@ -8616,17 +8701,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__2__Impl"
-    // InternalPortugolParser.g:2502:1: rule__BlockFunction__Group__2__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:2527:1: rule__BlockFunction__Group__2__Impl : ( LeftParenthesis ) ;
     public final void rule__BlockFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2506:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:2507:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:2531:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:2532:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:2507:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:2508:2: LeftParenthesis
+            // InternalPortugolParser.g:2532:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:2533:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getLeftParenthesisKeyword_2()); 
@@ -8657,14 +8742,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__3"
-    // InternalPortugolParser.g:2517:1: rule__BlockFunction__Group__3 : rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4 ;
+    // InternalPortugolParser.g:2542:1: rule__BlockFunction__Group__3 : rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4 ;
     public final void rule__BlockFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2521:1: ( rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4 )
-            // InternalPortugolParser.g:2522:2: rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4
+            // InternalPortugolParser.g:2546:1: ( rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4 )
+            // InternalPortugolParser.g:2547:2: rule__BlockFunction__Group__3__Impl rule__BlockFunction__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__BlockFunction__Group__3__Impl();
@@ -8695,22 +8780,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__3__Impl"
-    // InternalPortugolParser.g:2529:1: rule__BlockFunction__Group__3__Impl : ( ( rule__BlockFunction__Group_3__0 )? ) ;
+    // InternalPortugolParser.g:2554:1: rule__BlockFunction__Group__3__Impl : ( ( rule__BlockFunction__ParamsAssignment_3 )? ) ;
     public final void rule__BlockFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2533:1: ( ( ( rule__BlockFunction__Group_3__0 )? ) )
-            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__Group_3__0 )? )
+            // InternalPortugolParser.g:2558:1: ( ( ( rule__BlockFunction__ParamsAssignment_3 )? ) )
+            // InternalPortugolParser.g:2559:1: ( ( rule__BlockFunction__ParamsAssignment_3 )? )
             {
-            // InternalPortugolParser.g:2534:1: ( ( rule__BlockFunction__Group_3__0 )? )
-            // InternalPortugolParser.g:2535:2: ( rule__BlockFunction__Group_3__0 )?
+            // InternalPortugolParser.g:2559:1: ( ( rule__BlockFunction__ParamsAssignment_3 )? )
+            // InternalPortugolParser.g:2560:2: ( rule__BlockFunction__ParamsAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getGroup_3()); 
+               before(grammarAccess.getBlockFunctionAccess().getParamsAssignment_3()); 
             }
-            // InternalPortugolParser.g:2536:2: ( rule__BlockFunction__Group_3__0 )?
+            // InternalPortugolParser.g:2561:2: ( rule__BlockFunction__ParamsAssignment_3 )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -8719,10 +8804,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt22) {
                 case 1 :
-                    // InternalPortugolParser.g:2536:3: rule__BlockFunction__Group_3__0
+                    // InternalPortugolParser.g:2561:3: rule__BlockFunction__ParamsAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__BlockFunction__Group_3__0();
+                    rule__BlockFunction__ParamsAssignment_3();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -8733,7 +8818,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getGroup_3()); 
+               after(grammarAccess.getBlockFunctionAccess().getParamsAssignment_3()); 
             }
 
             }
@@ -8757,14 +8842,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__4"
-    // InternalPortugolParser.g:2544:1: rule__BlockFunction__Group__4 : rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5 ;
+    // InternalPortugolParser.g:2569:1: rule__BlockFunction__Group__4 : rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5 ;
     public final void rule__BlockFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2548:1: ( rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5 )
-            // InternalPortugolParser.g:2549:2: rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5
+            // InternalPortugolParser.g:2573:1: ( rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5 )
+            // InternalPortugolParser.g:2574:2: rule__BlockFunction__Group__4__Impl rule__BlockFunction__Group__5
             {
             pushFollow(FOLLOW_9);
             rule__BlockFunction__Group__4__Impl();
@@ -8795,17 +8880,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__4__Impl"
-    // InternalPortugolParser.g:2556:1: rule__BlockFunction__Group__4__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:2581:1: rule__BlockFunction__Group__4__Impl : ( RightParenthesis ) ;
     public final void rule__BlockFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2560:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:2561:1: ( RightParenthesis )
+            // InternalPortugolParser.g:2585:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:2586:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:2561:1: ( RightParenthesis )
-            // InternalPortugolParser.g:2562:2: RightParenthesis
+            // InternalPortugolParser.g:2586:1: ( RightParenthesis )
+            // InternalPortugolParser.g:2587:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getRightParenthesisKeyword_4()); 
@@ -8836,14 +8921,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__5"
-    // InternalPortugolParser.g:2571:1: rule__BlockFunction__Group__5 : rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6 ;
+    // InternalPortugolParser.g:2596:1: rule__BlockFunction__Group__5 : rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6 ;
     public final void rule__BlockFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2575:1: ( rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6 )
-            // InternalPortugolParser.g:2576:2: rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6
+            // InternalPortugolParser.g:2600:1: ( rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6 )
+            // InternalPortugolParser.g:2601:2: rule__BlockFunction__Group__5__Impl rule__BlockFunction__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__BlockFunction__Group__5__Impl();
@@ -8874,17 +8959,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__5__Impl"
-    // InternalPortugolParser.g:2583:1: rule__BlockFunction__Group__5__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:2608:1: rule__BlockFunction__Group__5__Impl : ( Colon ) ;
     public final void rule__BlockFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2587:1: ( ( Colon ) )
-            // InternalPortugolParser.g:2588:1: ( Colon )
+            // InternalPortugolParser.g:2612:1: ( ( Colon ) )
+            // InternalPortugolParser.g:2613:1: ( Colon )
             {
-            // InternalPortugolParser.g:2588:1: ( Colon )
-            // InternalPortugolParser.g:2589:2: Colon
+            // InternalPortugolParser.g:2613:1: ( Colon )
+            // InternalPortugolParser.g:2614:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getColonKeyword_5()); 
@@ -8915,14 +9000,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__6"
-    // InternalPortugolParser.g:2598:1: rule__BlockFunction__Group__6 : rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7 ;
+    // InternalPortugolParser.g:2623:1: rule__BlockFunction__Group__6 : rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7 ;
     public final void rule__BlockFunction__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2602:1: ( rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7 )
-            // InternalPortugolParser.g:2603:2: rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7
+            // InternalPortugolParser.g:2627:1: ( rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7 )
+            // InternalPortugolParser.g:2628:2: rule__BlockFunction__Group__6__Impl rule__BlockFunction__Group__7
             {
             pushFollow(FOLLOW_15);
             rule__BlockFunction__Group__6__Impl();
@@ -8953,23 +9038,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__6__Impl"
-    // InternalPortugolParser.g:2610:1: rule__BlockFunction__Group__6__Impl : ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) ) ;
+    // InternalPortugolParser.g:2635:1: rule__BlockFunction__Group__6__Impl : ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) ) ;
     public final void rule__BlockFunction__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2614:1: ( ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) ) )
-            // InternalPortugolParser.g:2615:1: ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) )
+            // InternalPortugolParser.g:2639:1: ( ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) ) )
+            // InternalPortugolParser.g:2640:1: ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) )
             {
-            // InternalPortugolParser.g:2615:1: ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) )
-            // InternalPortugolParser.g:2616:2: ( rule__BlockFunction__ReturnTypeAssignment_6 )
+            // InternalPortugolParser.g:2640:1: ( ( rule__BlockFunction__ReturnTypeAssignment_6 ) )
+            // InternalPortugolParser.g:2641:2: ( rule__BlockFunction__ReturnTypeAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getReturnTypeAssignment_6()); 
             }
-            // InternalPortugolParser.g:2617:2: ( rule__BlockFunction__ReturnTypeAssignment_6 )
-            // InternalPortugolParser.g:2617:3: rule__BlockFunction__ReturnTypeAssignment_6
+            // InternalPortugolParser.g:2642:2: ( rule__BlockFunction__ReturnTypeAssignment_6 )
+            // InternalPortugolParser.g:2642:3: rule__BlockFunction__ReturnTypeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__BlockFunction__ReturnTypeAssignment_6();
@@ -9004,14 +9089,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__7"
-    // InternalPortugolParser.g:2625:1: rule__BlockFunction__Group__7 : rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8 ;
+    // InternalPortugolParser.g:2650:1: rule__BlockFunction__Group__7 : rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8 ;
     public final void rule__BlockFunction__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2629:1: ( rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8 )
-            // InternalPortugolParser.g:2630:2: rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8
+            // InternalPortugolParser.g:2654:1: ( rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8 )
+            // InternalPortugolParser.g:2655:2: rule__BlockFunction__Group__7__Impl rule__BlockFunction__Group__8
             {
             pushFollow(FOLLOW_15);
             rule__BlockFunction__Group__7__Impl();
@@ -9042,22 +9127,22 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__7__Impl"
-    // InternalPortugolParser.g:2637:1: rule__BlockFunction__Group__7__Impl : ( ( rule__BlockFunction__DeclarationsAssignment_7 )? ) ;
+    // InternalPortugolParser.g:2662:1: rule__BlockFunction__Group__7__Impl : ( ( rule__BlockFunction__DeclarationsAssignment_7 )? ) ;
     public final void rule__BlockFunction__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2641:1: ( ( ( rule__BlockFunction__DeclarationsAssignment_7 )? ) )
-            // InternalPortugolParser.g:2642:1: ( ( rule__BlockFunction__DeclarationsAssignment_7 )? )
+            // InternalPortugolParser.g:2666:1: ( ( ( rule__BlockFunction__DeclarationsAssignment_7 )? ) )
+            // InternalPortugolParser.g:2667:1: ( ( rule__BlockFunction__DeclarationsAssignment_7 )? )
             {
-            // InternalPortugolParser.g:2642:1: ( ( rule__BlockFunction__DeclarationsAssignment_7 )? )
-            // InternalPortugolParser.g:2643:2: ( rule__BlockFunction__DeclarationsAssignment_7 )?
+            // InternalPortugolParser.g:2667:1: ( ( rule__BlockFunction__DeclarationsAssignment_7 )? )
+            // InternalPortugolParser.g:2668:2: ( rule__BlockFunction__DeclarationsAssignment_7 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getDeclarationsAssignment_7()); 
             }
-            // InternalPortugolParser.g:2644:2: ( rule__BlockFunction__DeclarationsAssignment_7 )?
+            // InternalPortugolParser.g:2669:2: ( rule__BlockFunction__DeclarationsAssignment_7 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -9066,7 +9151,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
             switch (alt23) {
                 case 1 :
-                    // InternalPortugolParser.g:2644:3: rule__BlockFunction__DeclarationsAssignment_7
+                    // InternalPortugolParser.g:2669:3: rule__BlockFunction__DeclarationsAssignment_7
                     {
                     pushFollow(FOLLOW_2);
                     rule__BlockFunction__DeclarationsAssignment_7();
@@ -9104,14 +9189,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__8"
-    // InternalPortugolParser.g:2652:1: rule__BlockFunction__Group__8 : rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9 ;
+    // InternalPortugolParser.g:2677:1: rule__BlockFunction__Group__8 : rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9 ;
     public final void rule__BlockFunction__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2656:1: ( rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9 )
-            // InternalPortugolParser.g:2657:2: rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9
+            // InternalPortugolParser.g:2681:1: ( rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9 )
+            // InternalPortugolParser.g:2682:2: rule__BlockFunction__Group__8__Impl rule__BlockFunction__Group__9
             {
             pushFollow(FOLLOW_16);
             rule__BlockFunction__Group__8__Impl();
@@ -9142,17 +9227,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__8__Impl"
-    // InternalPortugolParser.g:2664:1: rule__BlockFunction__Group__8__Impl : ( Inicio ) ;
+    // InternalPortugolParser.g:2689:1: rule__BlockFunction__Group__8__Impl : ( Inicio ) ;
     public final void rule__BlockFunction__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2668:1: ( ( Inicio ) )
-            // InternalPortugolParser.g:2669:1: ( Inicio )
+            // InternalPortugolParser.g:2693:1: ( ( Inicio ) )
+            // InternalPortugolParser.g:2694:1: ( Inicio )
             {
-            // InternalPortugolParser.g:2669:1: ( Inicio )
-            // InternalPortugolParser.g:2670:2: Inicio
+            // InternalPortugolParser.g:2694:1: ( Inicio )
+            // InternalPortugolParser.g:2695:2: Inicio
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getInicioKeyword_8()); 
@@ -9183,14 +9268,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__9"
-    // InternalPortugolParser.g:2679:1: rule__BlockFunction__Group__9 : rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10 ;
+    // InternalPortugolParser.g:2704:1: rule__BlockFunction__Group__9 : rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10 ;
     public final void rule__BlockFunction__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2683:1: ( rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10 )
-            // InternalPortugolParser.g:2684:2: rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10
+            // InternalPortugolParser.g:2708:1: ( rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10 )
+            // InternalPortugolParser.g:2709:2: rule__BlockFunction__Group__9__Impl rule__BlockFunction__Group__10
             {
             pushFollow(FOLLOW_17);
             rule__BlockFunction__Group__9__Impl();
@@ -9221,26 +9306,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__9__Impl"
-    // InternalPortugolParser.g:2691:1: rule__BlockFunction__Group__9__Impl : ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) ) ;
+    // InternalPortugolParser.g:2716:1: rule__BlockFunction__Group__9__Impl : ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) ) ;
     public final void rule__BlockFunction__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2695:1: ( ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) ) )
-            // InternalPortugolParser.g:2696:1: ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) )
+            // InternalPortugolParser.g:2720:1: ( ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) ) )
+            // InternalPortugolParser.g:2721:1: ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) )
             {
-            // InternalPortugolParser.g:2696:1: ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) )
-            // InternalPortugolParser.g:2697:2: ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* )
+            // InternalPortugolParser.g:2721:1: ( ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* ) )
+            // InternalPortugolParser.g:2722:2: ( ( rule__BlockFunction__CommandsAssignment_9 ) ) ( ( rule__BlockFunction__CommandsAssignment_9 )* )
             {
-            // InternalPortugolParser.g:2697:2: ( ( rule__BlockFunction__CommandsAssignment_9 ) )
-            // InternalPortugolParser.g:2698:3: ( rule__BlockFunction__CommandsAssignment_9 )
+            // InternalPortugolParser.g:2722:2: ( ( rule__BlockFunction__CommandsAssignment_9 ) )
+            // InternalPortugolParser.g:2723:3: ( rule__BlockFunction__CommandsAssignment_9 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getCommandsAssignment_9()); 
             }
-            // InternalPortugolParser.g:2699:3: ( rule__BlockFunction__CommandsAssignment_9 )
-            // InternalPortugolParser.g:2699:4: rule__BlockFunction__CommandsAssignment_9
+            // InternalPortugolParser.g:2724:3: ( rule__BlockFunction__CommandsAssignment_9 )
+            // InternalPortugolParser.g:2724:4: rule__BlockFunction__CommandsAssignment_9
             {
             pushFollow(FOLLOW_18);
             rule__BlockFunction__CommandsAssignment_9();
@@ -9256,13 +9341,13 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:2702:2: ( ( rule__BlockFunction__CommandsAssignment_9 )* )
-            // InternalPortugolParser.g:2703:3: ( rule__BlockFunction__CommandsAssignment_9 )*
+            // InternalPortugolParser.g:2727:2: ( ( rule__BlockFunction__CommandsAssignment_9 )* )
+            // InternalPortugolParser.g:2728:3: ( rule__BlockFunction__CommandsAssignment_9 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getCommandsAssignment_9()); 
             }
-            // InternalPortugolParser.g:2704:3: ( rule__BlockFunction__CommandsAssignment_9 )*
+            // InternalPortugolParser.g:2729:3: ( rule__BlockFunction__CommandsAssignment_9 )*
             loop24:
             do {
                 int alt24=2;
@@ -9275,7 +9360,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
                 switch (alt24) {
             	case 1 :
-            	    // InternalPortugolParser.g:2704:4: rule__BlockFunction__CommandsAssignment_9
+            	    // InternalPortugolParser.g:2729:4: rule__BlockFunction__CommandsAssignment_9
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__BlockFunction__CommandsAssignment_9();
@@ -9319,14 +9404,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__10"
-    // InternalPortugolParser.g:2713:1: rule__BlockFunction__Group__10 : rule__BlockFunction__Group__10__Impl ;
+    // InternalPortugolParser.g:2738:1: rule__BlockFunction__Group__10 : rule__BlockFunction__Group__10__Impl ;
     public final void rule__BlockFunction__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2717:1: ( rule__BlockFunction__Group__10__Impl )
-            // InternalPortugolParser.g:2718:2: rule__BlockFunction__Group__10__Impl
+            // InternalPortugolParser.g:2742:1: ( rule__BlockFunction__Group__10__Impl )
+            // InternalPortugolParser.g:2743:2: rule__BlockFunction__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BlockFunction__Group__10__Impl();
@@ -9352,17 +9437,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__Group__10__Impl"
-    // InternalPortugolParser.g:2724:1: rule__BlockFunction__Group__10__Impl : ( Fimfuncao ) ;
+    // InternalPortugolParser.g:2749:1: rule__BlockFunction__Group__10__Impl : ( Fimfuncao ) ;
     public final void rule__BlockFunction__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2728:1: ( ( Fimfuncao ) )
-            // InternalPortugolParser.g:2729:1: ( Fimfuncao )
+            // InternalPortugolParser.g:2753:1: ( ( Fimfuncao ) )
+            // InternalPortugolParser.g:2754:1: ( Fimfuncao )
             {
-            // InternalPortugolParser.g:2729:1: ( Fimfuncao )
-            // InternalPortugolParser.g:2730:2: Fimfuncao
+            // InternalPortugolParser.g:2754:1: ( Fimfuncao )
+            // InternalPortugolParser.g:2755:2: Fimfuncao
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getFimfuncaoKeyword_10()); 
@@ -9392,369 +9477,15 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockFunction__Group__10__Impl"
 
 
-    // $ANTLR start "rule__BlockFunction__Group_3__0"
-    // InternalPortugolParser.g:2740:1: rule__BlockFunction__Group_3__0 : rule__BlockFunction__Group_3__0__Impl rule__BlockFunction__Group_3__1 ;
-    public final void rule__BlockFunction__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2744:1: ( rule__BlockFunction__Group_3__0__Impl rule__BlockFunction__Group_3__1 )
-            // InternalPortugolParser.g:2745:2: rule__BlockFunction__Group_3__0__Impl rule__BlockFunction__Group_3__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__BlockFunction__Group_3__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__Group_3__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3__0"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3__0__Impl"
-    // InternalPortugolParser.g:2752:1: rule__BlockFunction__Group_3__0__Impl : ( ( rule__BlockFunction__ParamListAssignment_3_0 ) ) ;
-    public final void rule__BlockFunction__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2756:1: ( ( ( rule__BlockFunction__ParamListAssignment_3_0 ) ) )
-            // InternalPortugolParser.g:2757:1: ( ( rule__BlockFunction__ParamListAssignment_3_0 ) )
-            {
-            // InternalPortugolParser.g:2757:1: ( ( rule__BlockFunction__ParamListAssignment_3_0 ) )
-            // InternalPortugolParser.g:2758:2: ( rule__BlockFunction__ParamListAssignment_3_0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_0()); 
-            }
-            // InternalPortugolParser.g:2759:2: ( rule__BlockFunction__ParamListAssignment_3_0 )
-            // InternalPortugolParser.g:2759:3: rule__BlockFunction__ParamListAssignment_3_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__ParamListAssignment_3_0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3__1"
-    // InternalPortugolParser.g:2767:1: rule__BlockFunction__Group_3__1 : rule__BlockFunction__Group_3__1__Impl ;
-    public final void rule__BlockFunction__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2771:1: ( rule__BlockFunction__Group_3__1__Impl )
-            // InternalPortugolParser.g:2772:2: rule__BlockFunction__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__Group_3__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3__1"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3__1__Impl"
-    // InternalPortugolParser.g:2778:1: rule__BlockFunction__Group_3__1__Impl : ( ( rule__BlockFunction__Group_3_1__0 )* ) ;
-    public final void rule__BlockFunction__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2782:1: ( ( ( rule__BlockFunction__Group_3_1__0 )* ) )
-            // InternalPortugolParser.g:2783:1: ( ( rule__BlockFunction__Group_3_1__0 )* )
-            {
-            // InternalPortugolParser.g:2783:1: ( ( rule__BlockFunction__Group_3_1__0 )* )
-            // InternalPortugolParser.g:2784:2: ( rule__BlockFunction__Group_3_1__0 )*
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getGroup_3_1()); 
-            }
-            // InternalPortugolParser.g:2785:2: ( rule__BlockFunction__Group_3_1__0 )*
-            loop25:
-            do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
-
-                if ( (LA25_0==Semicolon) ) {
-                    alt25=1;
-                }
-
-
-                switch (alt25) {
-            	case 1 :
-            	    // InternalPortugolParser.g:2785:3: rule__BlockFunction__Group_3_1__0
-            	    {
-            	    pushFollow(FOLLOW_19);
-            	    rule__BlockFunction__Group_3_1__0();
-
-            	    state._fsp--;
-            	    if (state.failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop25;
-                }
-            } while (true);
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getGroup_3_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3__1__Impl"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3_1__0"
-    // InternalPortugolParser.g:2794:1: rule__BlockFunction__Group_3_1__0 : rule__BlockFunction__Group_3_1__0__Impl rule__BlockFunction__Group_3_1__1 ;
-    public final void rule__BlockFunction__Group_3_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2798:1: ( rule__BlockFunction__Group_3_1__0__Impl rule__BlockFunction__Group_3_1__1 )
-            // InternalPortugolParser.g:2799:2: rule__BlockFunction__Group_3_1__0__Impl rule__BlockFunction__Group_3_1__1
-            {
-            pushFollow(FOLLOW_7);
-            rule__BlockFunction__Group_3_1__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__Group_3_1__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3_1__0"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3_1__0__Impl"
-    // InternalPortugolParser.g:2806:1: rule__BlockFunction__Group_3_1__0__Impl : ( Semicolon ) ;
-    public final void rule__BlockFunction__Group_3_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2810:1: ( ( Semicolon ) )
-            // InternalPortugolParser.g:2811:1: ( Semicolon )
-            {
-            // InternalPortugolParser.g:2811:1: ( Semicolon )
-            // InternalPortugolParser.g:2812:2: Semicolon
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getSemicolonKeyword_3_1_0()); 
-            }
-            match(input,Semicolon,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getSemicolonKeyword_3_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3_1__0__Impl"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3_1__1"
-    // InternalPortugolParser.g:2821:1: rule__BlockFunction__Group_3_1__1 : rule__BlockFunction__Group_3_1__1__Impl ;
-    public final void rule__BlockFunction__Group_3_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2825:1: ( rule__BlockFunction__Group_3_1__1__Impl )
-            // InternalPortugolParser.g:2826:2: rule__BlockFunction__Group_3_1__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__Group_3_1__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3_1__1"
-
-
-    // $ANTLR start "rule__BlockFunction__Group_3_1__1__Impl"
-    // InternalPortugolParser.g:2832:1: rule__BlockFunction__Group_3_1__1__Impl : ( ( rule__BlockFunction__ParamListAssignment_3_1_1 ) ) ;
-    public final void rule__BlockFunction__Group_3_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:2836:1: ( ( ( rule__BlockFunction__ParamListAssignment_3_1_1 ) ) )
-            // InternalPortugolParser.g:2837:1: ( ( rule__BlockFunction__ParamListAssignment_3_1_1 ) )
-            {
-            // InternalPortugolParser.g:2837:1: ( ( rule__BlockFunction__ParamListAssignment_3_1_1 ) )
-            // InternalPortugolParser.g:2838:2: ( rule__BlockFunction__ParamListAssignment_3_1_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_1_1()); 
-            }
-            // InternalPortugolParser.g:2839:2: ( rule__BlockFunction__ParamListAssignment_3_1_1 )
-            // InternalPortugolParser.g:2839:3: rule__BlockFunction__ParamListAssignment_3_1_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__BlockFunction__ParamListAssignment_3_1_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getParamListAssignment_3_1_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__Group_3_1__1__Impl"
-
-
     // $ANTLR start "rule__BlockProcedure__Group__0"
-    // InternalPortugolParser.g:2848:1: rule__BlockProcedure__Group__0 : rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1 ;
+    // InternalPortugolParser.g:2765:1: rule__BlockProcedure__Group__0 : rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1 ;
     public final void rule__BlockProcedure__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2852:1: ( rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1 )
-            // InternalPortugolParser.g:2853:2: rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1
+            // InternalPortugolParser.g:2769:1: ( rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1 )
+            // InternalPortugolParser.g:2770:2: rule__BlockProcedure__Group__0__Impl rule__BlockProcedure__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__BlockProcedure__Group__0__Impl();
@@ -9785,17 +9516,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__0__Impl"
-    // InternalPortugolParser.g:2860:1: rule__BlockProcedure__Group__0__Impl : ( Procedimento ) ;
+    // InternalPortugolParser.g:2777:1: rule__BlockProcedure__Group__0__Impl : ( Procedimento ) ;
     public final void rule__BlockProcedure__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2864:1: ( ( Procedimento ) )
-            // InternalPortugolParser.g:2865:1: ( Procedimento )
+            // InternalPortugolParser.g:2781:1: ( ( Procedimento ) )
+            // InternalPortugolParser.g:2782:1: ( Procedimento )
             {
-            // InternalPortugolParser.g:2865:1: ( Procedimento )
-            // InternalPortugolParser.g:2866:2: Procedimento
+            // InternalPortugolParser.g:2782:1: ( Procedimento )
+            // InternalPortugolParser.g:2783:2: Procedimento
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getProcedimentoKeyword_0()); 
@@ -9826,14 +9557,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__1"
-    // InternalPortugolParser.g:2875:1: rule__BlockProcedure__Group__1 : rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2 ;
+    // InternalPortugolParser.g:2792:1: rule__BlockProcedure__Group__1 : rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2 ;
     public final void rule__BlockProcedure__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2879:1: ( rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2 )
-            // InternalPortugolParser.g:2880:2: rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2
+            // InternalPortugolParser.g:2796:1: ( rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2 )
+            // InternalPortugolParser.g:2797:2: rule__BlockProcedure__Group__1__Impl rule__BlockProcedure__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__BlockProcedure__Group__1__Impl();
@@ -9864,23 +9595,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__1__Impl"
-    // InternalPortugolParser.g:2887:1: rule__BlockProcedure__Group__1__Impl : ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) ;
+    // InternalPortugolParser.g:2804:1: rule__BlockProcedure__Group__1__Impl : ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) ;
     public final void rule__BlockProcedure__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2891:1: ( ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) )
-            // InternalPortugolParser.g:2892:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
+            // InternalPortugolParser.g:2808:1: ( ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) ) )
+            // InternalPortugolParser.g:2809:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
             {
-            // InternalPortugolParser.g:2892:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
-            // InternalPortugolParser.g:2893:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
+            // InternalPortugolParser.g:2809:1: ( ( rule__BlockProcedure__ProcedureNameAssignment_1 ) )
+            // InternalPortugolParser.g:2810:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getProcedureNameAssignment_1()); 
             }
-            // InternalPortugolParser.g:2894:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
-            // InternalPortugolParser.g:2894:3: rule__BlockProcedure__ProcedureNameAssignment_1
+            // InternalPortugolParser.g:2811:2: ( rule__BlockProcedure__ProcedureNameAssignment_1 )
+            // InternalPortugolParser.g:2811:3: rule__BlockProcedure__ProcedureNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__BlockProcedure__ProcedureNameAssignment_1();
@@ -9915,14 +9646,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__2"
-    // InternalPortugolParser.g:2902:1: rule__BlockProcedure__Group__2 : rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3 ;
+    // InternalPortugolParser.g:2819:1: rule__BlockProcedure__Group__2 : rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3 ;
     public final void rule__BlockProcedure__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2906:1: ( rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3 )
-            // InternalPortugolParser.g:2907:2: rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3
+            // InternalPortugolParser.g:2823:1: ( rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3 )
+            // InternalPortugolParser.g:2824:2: rule__BlockProcedure__Group__2__Impl rule__BlockProcedure__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__BlockProcedure__Group__2__Impl();
@@ -9953,17 +9684,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__2__Impl"
-    // InternalPortugolParser.g:2914:1: rule__BlockProcedure__Group__2__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:2831:1: rule__BlockProcedure__Group__2__Impl : ( LeftParenthesis ) ;
     public final void rule__BlockProcedure__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2918:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:2919:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:2835:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:2836:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:2919:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:2920:2: LeftParenthesis
+            // InternalPortugolParser.g:2836:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:2837:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getLeftParenthesisKeyword_2()); 
@@ -9994,14 +9725,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__3"
-    // InternalPortugolParser.g:2929:1: rule__BlockProcedure__Group__3 : rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4 ;
+    // InternalPortugolParser.g:2846:1: rule__BlockProcedure__Group__3 : rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4 ;
     public final void rule__BlockProcedure__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2933:1: ( rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4 )
-            // InternalPortugolParser.g:2934:2: rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4
+            // InternalPortugolParser.g:2850:1: ( rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4 )
+            // InternalPortugolParser.g:2851:2: rule__BlockProcedure__Group__3__Impl rule__BlockProcedure__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__BlockProcedure__Group__3__Impl();
@@ -10032,34 +9763,34 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__3__Impl"
-    // InternalPortugolParser.g:2941:1: rule__BlockProcedure__Group__3__Impl : ( ( rule__BlockProcedure__Group_3__0 )? ) ;
+    // InternalPortugolParser.g:2858:1: rule__BlockProcedure__Group__3__Impl : ( ( rule__BlockProcedure__ParamsAssignment_3 )? ) ;
     public final void rule__BlockProcedure__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2945:1: ( ( ( rule__BlockProcedure__Group_3__0 )? ) )
-            // InternalPortugolParser.g:2946:1: ( ( rule__BlockProcedure__Group_3__0 )? )
+            // InternalPortugolParser.g:2862:1: ( ( ( rule__BlockProcedure__ParamsAssignment_3 )? ) )
+            // InternalPortugolParser.g:2863:1: ( ( rule__BlockProcedure__ParamsAssignment_3 )? )
             {
-            // InternalPortugolParser.g:2946:1: ( ( rule__BlockProcedure__Group_3__0 )? )
-            // InternalPortugolParser.g:2947:2: ( rule__BlockProcedure__Group_3__0 )?
+            // InternalPortugolParser.g:2863:1: ( ( rule__BlockProcedure__ParamsAssignment_3 )? )
+            // InternalPortugolParser.g:2864:2: ( rule__BlockProcedure__ParamsAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getGroup_3()); 
+               before(grammarAccess.getBlockProcedureAccess().getParamsAssignment_3()); 
             }
-            // InternalPortugolParser.g:2948:2: ( rule__BlockProcedure__Group_3__0 )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalPortugolParser.g:2865:2: ( rule__BlockProcedure__ParamsAssignment_3 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_ID) ) {
-                alt26=1;
+            if ( (LA25_0==RULE_ID) ) {
+                alt25=1;
             }
-            switch (alt26) {
+            switch (alt25) {
                 case 1 :
-                    // InternalPortugolParser.g:2948:3: rule__BlockProcedure__Group_3__0
+                    // InternalPortugolParser.g:2865:3: rule__BlockProcedure__ParamsAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__BlockProcedure__Group_3__0();
+                    rule__BlockProcedure__ParamsAssignment_3();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -10070,7 +9801,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getGroup_3()); 
+               after(grammarAccess.getBlockProcedureAccess().getParamsAssignment_3()); 
             }
 
             }
@@ -10094,14 +9825,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__4"
-    // InternalPortugolParser.g:2956:1: rule__BlockProcedure__Group__4 : rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5 ;
+    // InternalPortugolParser.g:2873:1: rule__BlockProcedure__Group__4 : rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5 ;
     public final void rule__BlockProcedure__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2960:1: ( rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5 )
-            // InternalPortugolParser.g:2961:2: rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5
+            // InternalPortugolParser.g:2877:1: ( rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5 )
+            // InternalPortugolParser.g:2878:2: rule__BlockProcedure__Group__4__Impl rule__BlockProcedure__Group__5
             {
             pushFollow(FOLLOW_15);
             rule__BlockProcedure__Group__4__Impl();
@@ -10132,17 +9863,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__4__Impl"
-    // InternalPortugolParser.g:2968:1: rule__BlockProcedure__Group__4__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:2885:1: rule__BlockProcedure__Group__4__Impl : ( RightParenthesis ) ;
     public final void rule__BlockProcedure__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2972:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:2973:1: ( RightParenthesis )
+            // InternalPortugolParser.g:2889:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:2890:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:2973:1: ( RightParenthesis )
-            // InternalPortugolParser.g:2974:2: RightParenthesis
+            // InternalPortugolParser.g:2890:1: ( RightParenthesis )
+            // InternalPortugolParser.g:2891:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getRightParenthesisKeyword_4()); 
@@ -10173,14 +9904,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__5"
-    // InternalPortugolParser.g:2983:1: rule__BlockProcedure__Group__5 : rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6 ;
+    // InternalPortugolParser.g:2900:1: rule__BlockProcedure__Group__5 : rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6 ;
     public final void rule__BlockProcedure__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2987:1: ( rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6 )
-            // InternalPortugolParser.g:2988:2: rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6
+            // InternalPortugolParser.g:2904:1: ( rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6 )
+            // InternalPortugolParser.g:2905:2: rule__BlockProcedure__Group__5__Impl rule__BlockProcedure__Group__6
             {
             pushFollow(FOLLOW_15);
             rule__BlockProcedure__Group__5__Impl();
@@ -10211,31 +9942,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__5__Impl"
-    // InternalPortugolParser.g:2995:1: rule__BlockProcedure__Group__5__Impl : ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? ) ;
+    // InternalPortugolParser.g:2912:1: rule__BlockProcedure__Group__5__Impl : ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? ) ;
     public final void rule__BlockProcedure__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:2999:1: ( ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? ) )
-            // InternalPortugolParser.g:3000:1: ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? )
+            // InternalPortugolParser.g:2916:1: ( ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? ) )
+            // InternalPortugolParser.g:2917:1: ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? )
             {
-            // InternalPortugolParser.g:3000:1: ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? )
-            // InternalPortugolParser.g:3001:2: ( rule__BlockProcedure__DeclarationsAssignment_5 )?
+            // InternalPortugolParser.g:2917:1: ( ( rule__BlockProcedure__DeclarationsAssignment_5 )? )
+            // InternalPortugolParser.g:2918:2: ( rule__BlockProcedure__DeclarationsAssignment_5 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getDeclarationsAssignment_5()); 
             }
-            // InternalPortugolParser.g:3002:2: ( rule__BlockProcedure__DeclarationsAssignment_5 )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalPortugolParser.g:2919:2: ( rule__BlockProcedure__DeclarationsAssignment_5 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA27_0==Var) ) {
-                alt27=1;
+            if ( (LA26_0==Var) ) {
+                alt26=1;
             }
-            switch (alt27) {
+            switch (alt26) {
                 case 1 :
-                    // InternalPortugolParser.g:3002:3: rule__BlockProcedure__DeclarationsAssignment_5
+                    // InternalPortugolParser.g:2919:3: rule__BlockProcedure__DeclarationsAssignment_5
                     {
                     pushFollow(FOLLOW_2);
                     rule__BlockProcedure__DeclarationsAssignment_5();
@@ -10273,14 +10004,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__6"
-    // InternalPortugolParser.g:3010:1: rule__BlockProcedure__Group__6 : rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7 ;
+    // InternalPortugolParser.g:2927:1: rule__BlockProcedure__Group__6 : rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7 ;
     public final void rule__BlockProcedure__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3014:1: ( rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7 )
-            // InternalPortugolParser.g:3015:2: rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7
+            // InternalPortugolParser.g:2931:1: ( rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7 )
+            // InternalPortugolParser.g:2932:2: rule__BlockProcedure__Group__6__Impl rule__BlockProcedure__Group__7
             {
             pushFollow(FOLLOW_16);
             rule__BlockProcedure__Group__6__Impl();
@@ -10311,17 +10042,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__6__Impl"
-    // InternalPortugolParser.g:3022:1: rule__BlockProcedure__Group__6__Impl : ( Inicio ) ;
+    // InternalPortugolParser.g:2939:1: rule__BlockProcedure__Group__6__Impl : ( Inicio ) ;
     public final void rule__BlockProcedure__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3026:1: ( ( Inicio ) )
-            // InternalPortugolParser.g:3027:1: ( Inicio )
+            // InternalPortugolParser.g:2943:1: ( ( Inicio ) )
+            // InternalPortugolParser.g:2944:1: ( Inicio )
             {
-            // InternalPortugolParser.g:3027:1: ( Inicio )
-            // InternalPortugolParser.g:3028:2: Inicio
+            // InternalPortugolParser.g:2944:1: ( Inicio )
+            // InternalPortugolParser.g:2945:2: Inicio
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getInicioKeyword_6()); 
@@ -10352,16 +10083,16 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__7"
-    // InternalPortugolParser.g:3037:1: rule__BlockProcedure__Group__7 : rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8 ;
+    // InternalPortugolParser.g:2954:1: rule__BlockProcedure__Group__7 : rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8 ;
     public final void rule__BlockProcedure__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3041:1: ( rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8 )
-            // InternalPortugolParser.g:3042:2: rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8
+            // InternalPortugolParser.g:2958:1: ( rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8 )
+            // InternalPortugolParser.g:2959:2: rule__BlockProcedure__Group__7__Impl rule__BlockProcedure__Group__8
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__BlockProcedure__Group__7__Impl();
 
             state._fsp--;
@@ -10390,26 +10121,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__7__Impl"
-    // InternalPortugolParser.g:3049:1: rule__BlockProcedure__Group__7__Impl : ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) ) ;
+    // InternalPortugolParser.g:2966:1: rule__BlockProcedure__Group__7__Impl : ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) ) ;
     public final void rule__BlockProcedure__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3053:1: ( ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) ) )
-            // InternalPortugolParser.g:3054:1: ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) )
+            // InternalPortugolParser.g:2970:1: ( ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) ) )
+            // InternalPortugolParser.g:2971:1: ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) )
             {
-            // InternalPortugolParser.g:3054:1: ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) )
-            // InternalPortugolParser.g:3055:2: ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* )
+            // InternalPortugolParser.g:2971:1: ( ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* ) )
+            // InternalPortugolParser.g:2972:2: ( ( rule__BlockProcedure__CommandsAssignment_7 ) ) ( ( rule__BlockProcedure__CommandsAssignment_7 )* )
             {
-            // InternalPortugolParser.g:3055:2: ( ( rule__BlockProcedure__CommandsAssignment_7 ) )
-            // InternalPortugolParser.g:3056:3: ( rule__BlockProcedure__CommandsAssignment_7 )
+            // InternalPortugolParser.g:2972:2: ( ( rule__BlockProcedure__CommandsAssignment_7 ) )
+            // InternalPortugolParser.g:2973:3: ( rule__BlockProcedure__CommandsAssignment_7 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getCommandsAssignment_7()); 
             }
-            // InternalPortugolParser.g:3057:3: ( rule__BlockProcedure__CommandsAssignment_7 )
-            // InternalPortugolParser.g:3057:4: rule__BlockProcedure__CommandsAssignment_7
+            // InternalPortugolParser.g:2974:3: ( rule__BlockProcedure__CommandsAssignment_7 )
+            // InternalPortugolParser.g:2974:4: rule__BlockProcedure__CommandsAssignment_7
             {
             pushFollow(FOLLOW_18);
             rule__BlockProcedure__CommandsAssignment_7();
@@ -10425,26 +10156,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:3060:2: ( ( rule__BlockProcedure__CommandsAssignment_7 )* )
-            // InternalPortugolParser.g:3061:3: ( rule__BlockProcedure__CommandsAssignment_7 )*
+            // InternalPortugolParser.g:2977:2: ( ( rule__BlockProcedure__CommandsAssignment_7 )* )
+            // InternalPortugolParser.g:2978:3: ( rule__BlockProcedure__CommandsAssignment_7 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getCommandsAssignment_7()); 
             }
-            // InternalPortugolParser.g:3062:3: ( rule__BlockProcedure__CommandsAssignment_7 )*
-            loop28:
+            // InternalPortugolParser.g:2979:3: ( rule__BlockProcedure__CommandsAssignment_7 )*
+            loop27:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA28_0==Interrompa||(LA28_0>=Enquanto && LA28_0<=Escreva)||LA28_0==Retorne||(LA28_0>=Maiusc && LA28_0<=Copia)||LA28_0==Raizq||(LA28_0>=Leia && LA28_0<=Para)||LA28_0==NOT||(LA28_0>=Pi && LA28_0<=Se)||LA28_0==LeftParenthesis||LA28_0==HyphenMinus||(LA28_0>=RULE_INT && LA28_0<=RULE_STRING)) ) {
-                    alt28=1;
+                if ( (LA27_0==Interrompa||(LA27_0>=Enquanto && LA27_0<=Escreva)||LA27_0==Retorne||(LA27_0>=Maiusc && LA27_0<=Copia)||LA27_0==Raizq||(LA27_0>=Leia && LA27_0<=Para)||LA27_0==NOT||(LA27_0>=Pi && LA27_0<=Se)||LA27_0==LeftParenthesis||LA27_0==HyphenMinus||(LA27_0>=RULE_INT && LA27_0<=RULE_STRING)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalPortugolParser.g:3062:4: rule__BlockProcedure__CommandsAssignment_7
+            	    // InternalPortugolParser.g:2979:4: rule__BlockProcedure__CommandsAssignment_7
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__BlockProcedure__CommandsAssignment_7();
@@ -10456,7 +10187,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop27;
                 }
             } while (true);
 
@@ -10488,14 +10219,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__8"
-    // InternalPortugolParser.g:3071:1: rule__BlockProcedure__Group__8 : rule__BlockProcedure__Group__8__Impl ;
+    // InternalPortugolParser.g:2988:1: rule__BlockProcedure__Group__8 : rule__BlockProcedure__Group__8__Impl ;
     public final void rule__BlockProcedure__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3075:1: ( rule__BlockProcedure__Group__8__Impl )
-            // InternalPortugolParser.g:3076:2: rule__BlockProcedure__Group__8__Impl
+            // InternalPortugolParser.g:2992:1: ( rule__BlockProcedure__Group__8__Impl )
+            // InternalPortugolParser.g:2993:2: rule__BlockProcedure__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BlockProcedure__Group__8__Impl();
@@ -10521,17 +10252,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__Group__8__Impl"
-    // InternalPortugolParser.g:3082:1: rule__BlockProcedure__Group__8__Impl : ( Fimprocedimento ) ;
+    // InternalPortugolParser.g:2999:1: rule__BlockProcedure__Group__8__Impl : ( Fimprocedimento ) ;
     public final void rule__BlockProcedure__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3086:1: ( ( Fimprocedimento ) )
-            // InternalPortugolParser.g:3087:1: ( Fimprocedimento )
+            // InternalPortugolParser.g:3003:1: ( ( Fimprocedimento ) )
+            // InternalPortugolParser.g:3004:1: ( Fimprocedimento )
             {
-            // InternalPortugolParser.g:3087:1: ( Fimprocedimento )
-            // InternalPortugolParser.g:3088:2: Fimprocedimento
+            // InternalPortugolParser.g:3004:1: ( Fimprocedimento )
+            // InternalPortugolParser.g:3005:2: Fimprocedimento
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getFimprocedimentoKeyword_8()); 
@@ -10561,23 +10292,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockProcedure__Group__8__Impl"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3__0"
-    // InternalPortugolParser.g:3098:1: rule__BlockProcedure__Group_3__0 : rule__BlockProcedure__Group_3__0__Impl rule__BlockProcedure__Group_3__1 ;
-    public final void rule__BlockProcedure__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group__0"
+    // InternalPortugolParser.g:3015:1: rule__SubprogramParamDeclaration__Group__0 : rule__SubprogramParamDeclaration__Group__0__Impl rule__SubprogramParamDeclaration__Group__1 ;
+    public final void rule__SubprogramParamDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3102:1: ( rule__BlockProcedure__Group_3__0__Impl rule__BlockProcedure__Group_3__1 )
-            // InternalPortugolParser.g:3103:2: rule__BlockProcedure__Group_3__0__Impl rule__BlockProcedure__Group_3__1
+            // InternalPortugolParser.g:3019:1: ( rule__SubprogramParamDeclaration__Group__0__Impl rule__SubprogramParamDeclaration__Group__1 )
+            // InternalPortugolParser.g:3020:2: rule__SubprogramParamDeclaration__Group__0__Impl rule__SubprogramParamDeclaration__Group__1
             {
             pushFollow(FOLLOW_6);
-            rule__BlockProcedure__Group_3__0__Impl();
+            rule__SubprogramParamDeclaration__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__Group_3__1();
+            rule__SubprogramParamDeclaration__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10596,30 +10327,30 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3__0"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group__0"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3__0__Impl"
-    // InternalPortugolParser.g:3110:1: rule__BlockProcedure__Group_3__0__Impl : ( ( rule__BlockProcedure__ParamListAssignment_3_0 ) ) ;
-    public final void rule__BlockProcedure__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group__0__Impl"
+    // InternalPortugolParser.g:3027:1: rule__SubprogramParamDeclaration__Group__0__Impl : ( ( rule__SubprogramParamDeclaration__ParamListAssignment_0 ) ) ;
+    public final void rule__SubprogramParamDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3114:1: ( ( ( rule__BlockProcedure__ParamListAssignment_3_0 ) ) )
-            // InternalPortugolParser.g:3115:1: ( ( rule__BlockProcedure__ParamListAssignment_3_0 ) )
+            // InternalPortugolParser.g:3031:1: ( ( ( rule__SubprogramParamDeclaration__ParamListAssignment_0 ) ) )
+            // InternalPortugolParser.g:3032:1: ( ( rule__SubprogramParamDeclaration__ParamListAssignment_0 ) )
             {
-            // InternalPortugolParser.g:3115:1: ( ( rule__BlockProcedure__ParamListAssignment_3_0 ) )
-            // InternalPortugolParser.g:3116:2: ( rule__BlockProcedure__ParamListAssignment_3_0 )
+            // InternalPortugolParser.g:3032:1: ( ( rule__SubprogramParamDeclaration__ParamListAssignment_0 ) )
+            // InternalPortugolParser.g:3033:2: ( rule__SubprogramParamDeclaration__ParamListAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_0()); 
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getParamListAssignment_0()); 
             }
-            // InternalPortugolParser.g:3117:2: ( rule__BlockProcedure__ParamListAssignment_3_0 )
-            // InternalPortugolParser.g:3117:3: rule__BlockProcedure__ParamListAssignment_3_0
+            // InternalPortugolParser.g:3034:2: ( rule__SubprogramParamDeclaration__ParamListAssignment_0 )
+            // InternalPortugolParser.g:3034:3: rule__SubprogramParamDeclaration__ParamListAssignment_0
             {
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__ParamListAssignment_3_0();
+            rule__SubprogramParamDeclaration__ParamListAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10627,7 +10358,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_0()); 
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getParamListAssignment_0()); 
             }
 
             }
@@ -10647,21 +10378,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3__0__Impl"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group__0__Impl"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3__1"
-    // InternalPortugolParser.g:3125:1: rule__BlockProcedure__Group_3__1 : rule__BlockProcedure__Group_3__1__Impl ;
-    public final void rule__BlockProcedure__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group__1"
+    // InternalPortugolParser.g:3042:1: rule__SubprogramParamDeclaration__Group__1 : rule__SubprogramParamDeclaration__Group__1__Impl ;
+    public final void rule__SubprogramParamDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3129:1: ( rule__BlockProcedure__Group_3__1__Impl )
-            // InternalPortugolParser.g:3130:2: rule__BlockProcedure__Group_3__1__Impl
+            // InternalPortugolParser.g:3046:1: ( rule__SubprogramParamDeclaration__Group__1__Impl )
+            // InternalPortugolParser.g:3047:2: rule__SubprogramParamDeclaration__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__Group_3__1__Impl();
+            rule__SubprogramParamDeclaration__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10680,42 +10411,42 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3__1"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group__1"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3__1__Impl"
-    // InternalPortugolParser.g:3136:1: rule__BlockProcedure__Group_3__1__Impl : ( ( rule__BlockProcedure__Group_3_1__0 )* ) ;
-    public final void rule__BlockProcedure__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group__1__Impl"
+    // InternalPortugolParser.g:3053:1: rule__SubprogramParamDeclaration__Group__1__Impl : ( ( rule__SubprogramParamDeclaration__Group_1__0 )* ) ;
+    public final void rule__SubprogramParamDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3140:1: ( ( ( rule__BlockProcedure__Group_3_1__0 )* ) )
-            // InternalPortugolParser.g:3141:1: ( ( rule__BlockProcedure__Group_3_1__0 )* )
+            // InternalPortugolParser.g:3057:1: ( ( ( rule__SubprogramParamDeclaration__Group_1__0 )* ) )
+            // InternalPortugolParser.g:3058:1: ( ( rule__SubprogramParamDeclaration__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:3141:1: ( ( rule__BlockProcedure__Group_3_1__0 )* )
-            // InternalPortugolParser.g:3142:2: ( rule__BlockProcedure__Group_3_1__0 )*
+            // InternalPortugolParser.g:3058:1: ( ( rule__SubprogramParamDeclaration__Group_1__0 )* )
+            // InternalPortugolParser.g:3059:2: ( rule__SubprogramParamDeclaration__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getGroup_3_1()); 
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:3143:2: ( rule__BlockProcedure__Group_3_1__0 )*
-            loop29:
+            // InternalPortugolParser.g:3060:2: ( rule__SubprogramParamDeclaration__Group_1__0 )*
+            loop28:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA29_0==Semicolon) ) {
-                    alt29=1;
+                if ( (LA28_0==Semicolon) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt28) {
             	case 1 :
-            	    // InternalPortugolParser.g:3143:3: rule__BlockProcedure__Group_3_1__0
+            	    // InternalPortugolParser.g:3060:3: rule__SubprogramParamDeclaration__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_19);
-            	    rule__BlockProcedure__Group_3_1__0();
+            	    pushFollow(FOLLOW_20);
+            	    rule__SubprogramParamDeclaration__Group_1__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -10724,12 +10455,12 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop28;
                 }
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getGroup_3_1()); 
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getGroup_1()); 
             }
 
             }
@@ -10749,26 +10480,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3__1__Impl"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group__1__Impl"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3_1__0"
-    // InternalPortugolParser.g:3152:1: rule__BlockProcedure__Group_3_1__0 : rule__BlockProcedure__Group_3_1__0__Impl rule__BlockProcedure__Group_3_1__1 ;
-    public final void rule__BlockProcedure__Group_3_1__0() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group_1__0"
+    // InternalPortugolParser.g:3069:1: rule__SubprogramParamDeclaration__Group_1__0 : rule__SubprogramParamDeclaration__Group_1__0__Impl rule__SubprogramParamDeclaration__Group_1__1 ;
+    public final void rule__SubprogramParamDeclaration__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3156:1: ( rule__BlockProcedure__Group_3_1__0__Impl rule__BlockProcedure__Group_3_1__1 )
-            // InternalPortugolParser.g:3157:2: rule__BlockProcedure__Group_3_1__0__Impl rule__BlockProcedure__Group_3_1__1
+            // InternalPortugolParser.g:3073:1: ( rule__SubprogramParamDeclaration__Group_1__0__Impl rule__SubprogramParamDeclaration__Group_1__1 )
+            // InternalPortugolParser.g:3074:2: rule__SubprogramParamDeclaration__Group_1__0__Impl rule__SubprogramParamDeclaration__Group_1__1
             {
             pushFollow(FOLLOW_7);
-            rule__BlockProcedure__Group_3_1__0__Impl();
+            rule__SubprogramParamDeclaration__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__Group_3_1__1();
+            rule__SubprogramParamDeclaration__Group_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10787,28 +10518,28 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3_1__0"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group_1__0"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3_1__0__Impl"
-    // InternalPortugolParser.g:3164:1: rule__BlockProcedure__Group_3_1__0__Impl : ( Semicolon ) ;
-    public final void rule__BlockProcedure__Group_3_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group_1__0__Impl"
+    // InternalPortugolParser.g:3081:1: rule__SubprogramParamDeclaration__Group_1__0__Impl : ( Semicolon ) ;
+    public final void rule__SubprogramParamDeclaration__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3168:1: ( ( Semicolon ) )
-            // InternalPortugolParser.g:3169:1: ( Semicolon )
+            // InternalPortugolParser.g:3085:1: ( ( Semicolon ) )
+            // InternalPortugolParser.g:3086:1: ( Semicolon )
             {
-            // InternalPortugolParser.g:3169:1: ( Semicolon )
-            // InternalPortugolParser.g:3170:2: Semicolon
+            // InternalPortugolParser.g:3086:1: ( Semicolon )
+            // InternalPortugolParser.g:3087:2: Semicolon
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getSemicolonKeyword_3_1_0()); 
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getSemicolonKeyword_1_0()); 
             }
             match(input,Semicolon,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getSemicolonKeyword_3_1_0()); 
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getSemicolonKeyword_1_0()); 
             }
 
             }
@@ -10828,21 +10559,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3_1__0__Impl"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3_1__1"
-    // InternalPortugolParser.g:3179:1: rule__BlockProcedure__Group_3_1__1 : rule__BlockProcedure__Group_3_1__1__Impl ;
-    public final void rule__BlockProcedure__Group_3_1__1() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group_1__1"
+    // InternalPortugolParser.g:3096:1: rule__SubprogramParamDeclaration__Group_1__1 : rule__SubprogramParamDeclaration__Group_1__1__Impl ;
+    public final void rule__SubprogramParamDeclaration__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3183:1: ( rule__BlockProcedure__Group_3_1__1__Impl )
-            // InternalPortugolParser.g:3184:2: rule__BlockProcedure__Group_3_1__1__Impl
+            // InternalPortugolParser.g:3100:1: ( rule__SubprogramParamDeclaration__Group_1__1__Impl )
+            // InternalPortugolParser.g:3101:2: rule__SubprogramParamDeclaration__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__Group_3_1__1__Impl();
+            rule__SubprogramParamDeclaration__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10861,30 +10592,30 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3_1__1"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group_1__1"
 
 
-    // $ANTLR start "rule__BlockProcedure__Group_3_1__1__Impl"
-    // InternalPortugolParser.g:3190:1: rule__BlockProcedure__Group_3_1__1__Impl : ( ( rule__BlockProcedure__ParamListAssignment_3_1_1 ) ) ;
-    public final void rule__BlockProcedure__Group_3_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SubprogramParamDeclaration__Group_1__1__Impl"
+    // InternalPortugolParser.g:3107:1: rule__SubprogramParamDeclaration__Group_1__1__Impl : ( ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 ) ) ;
+    public final void rule__SubprogramParamDeclaration__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3194:1: ( ( ( rule__BlockProcedure__ParamListAssignment_3_1_1 ) ) )
-            // InternalPortugolParser.g:3195:1: ( ( rule__BlockProcedure__ParamListAssignment_3_1_1 ) )
+            // InternalPortugolParser.g:3111:1: ( ( ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:3112:1: ( ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:3195:1: ( ( rule__BlockProcedure__ParamListAssignment_3_1_1 ) )
-            // InternalPortugolParser.g:3196:2: ( rule__BlockProcedure__ParamListAssignment_3_1_1 )
+            // InternalPortugolParser.g:3112:1: ( ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 ) )
+            // InternalPortugolParser.g:3113:2: ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_1_1()); 
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getParamListAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:3197:2: ( rule__BlockProcedure__ParamListAssignment_3_1_1 )
-            // InternalPortugolParser.g:3197:3: rule__BlockProcedure__ParamListAssignment_3_1_1
+            // InternalPortugolParser.g:3114:2: ( rule__SubprogramParamDeclaration__ParamListAssignment_1_1 )
+            // InternalPortugolParser.g:3114:3: rule__SubprogramParamDeclaration__ParamListAssignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__BlockProcedure__ParamListAssignment_3_1_1();
+            rule__SubprogramParamDeclaration__ParamListAssignment_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10892,7 +10623,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getParamListAssignment_3_1_1()); 
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getParamListAssignment_1_1()); 
             }
 
             }
@@ -10912,18 +10643,18 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__Group_3_1__1__Impl"
+    // $ANTLR end "rule__SubprogramParamDeclaration__Group_1__1__Impl"
 
 
     // $ANTLR start "rule__BlockCommand__Group__0"
-    // InternalPortugolParser.g:3206:1: rule__BlockCommand__Group__0 : rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1 ;
+    // InternalPortugolParser.g:3123:1: rule__BlockCommand__Group__0 : rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1 ;
     public final void rule__BlockCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3210:1: ( rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1 )
-            // InternalPortugolParser.g:3211:2: rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1
+            // InternalPortugolParser.g:3127:1: ( rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1 )
+            // InternalPortugolParser.g:3128:2: rule__BlockCommand__Group__0__Impl rule__BlockCommand__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__BlockCommand__Group__0__Impl();
@@ -10954,17 +10685,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockCommand__Group__0__Impl"
-    // InternalPortugolParser.g:3218:1: rule__BlockCommand__Group__0__Impl : ( Inicio ) ;
+    // InternalPortugolParser.g:3135:1: rule__BlockCommand__Group__0__Impl : ( Inicio ) ;
     public final void rule__BlockCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3222:1: ( ( Inicio ) )
-            // InternalPortugolParser.g:3223:1: ( Inicio )
+            // InternalPortugolParser.g:3139:1: ( ( Inicio ) )
+            // InternalPortugolParser.g:3140:1: ( Inicio )
             {
-            // InternalPortugolParser.g:3223:1: ( Inicio )
-            // InternalPortugolParser.g:3224:2: Inicio
+            // InternalPortugolParser.g:3140:1: ( Inicio )
+            // InternalPortugolParser.g:3141:2: Inicio
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getInicioKeyword_0()); 
@@ -10995,14 +10726,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockCommand__Group__1"
-    // InternalPortugolParser.g:3233:1: rule__BlockCommand__Group__1 : rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2 ;
+    // InternalPortugolParser.g:3150:1: rule__BlockCommand__Group__1 : rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2 ;
     public final void rule__BlockCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3237:1: ( rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2 )
-            // InternalPortugolParser.g:3238:2: rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2
+            // InternalPortugolParser.g:3154:1: ( rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2 )
+            // InternalPortugolParser.g:3155:2: rule__BlockCommand__Group__1__Impl rule__BlockCommand__Group__2
             {
             pushFollow(FOLLOW_21);
             rule__BlockCommand__Group__1__Impl();
@@ -11033,26 +10764,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockCommand__Group__1__Impl"
-    // InternalPortugolParser.g:3245:1: rule__BlockCommand__Group__1__Impl : ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) ) ;
+    // InternalPortugolParser.g:3162:1: rule__BlockCommand__Group__1__Impl : ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) ) ;
     public final void rule__BlockCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3249:1: ( ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) ) )
-            // InternalPortugolParser.g:3250:1: ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) )
+            // InternalPortugolParser.g:3166:1: ( ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) ) )
+            // InternalPortugolParser.g:3167:1: ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) )
             {
-            // InternalPortugolParser.g:3250:1: ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) )
-            // InternalPortugolParser.g:3251:2: ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* )
+            // InternalPortugolParser.g:3167:1: ( ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* ) )
+            // InternalPortugolParser.g:3168:2: ( ( rule__BlockCommand__CommandsAssignment_1 ) ) ( ( rule__BlockCommand__CommandsAssignment_1 )* )
             {
-            // InternalPortugolParser.g:3251:2: ( ( rule__BlockCommand__CommandsAssignment_1 ) )
-            // InternalPortugolParser.g:3252:3: ( rule__BlockCommand__CommandsAssignment_1 )
+            // InternalPortugolParser.g:3168:2: ( ( rule__BlockCommand__CommandsAssignment_1 ) )
+            // InternalPortugolParser.g:3169:3: ( rule__BlockCommand__CommandsAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getCommandsAssignment_1()); 
             }
-            // InternalPortugolParser.g:3253:3: ( rule__BlockCommand__CommandsAssignment_1 )
-            // InternalPortugolParser.g:3253:4: rule__BlockCommand__CommandsAssignment_1
+            // InternalPortugolParser.g:3170:3: ( rule__BlockCommand__CommandsAssignment_1 )
+            // InternalPortugolParser.g:3170:4: rule__BlockCommand__CommandsAssignment_1
             {
             pushFollow(FOLLOW_18);
             rule__BlockCommand__CommandsAssignment_1();
@@ -11068,26 +10799,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:3256:2: ( ( rule__BlockCommand__CommandsAssignment_1 )* )
-            // InternalPortugolParser.g:3257:3: ( rule__BlockCommand__CommandsAssignment_1 )*
+            // InternalPortugolParser.g:3173:2: ( ( rule__BlockCommand__CommandsAssignment_1 )* )
+            // InternalPortugolParser.g:3174:3: ( rule__BlockCommand__CommandsAssignment_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getCommandsAssignment_1()); 
             }
-            // InternalPortugolParser.g:3258:3: ( rule__BlockCommand__CommandsAssignment_1 )*
-            loop30:
+            // InternalPortugolParser.g:3175:3: ( rule__BlockCommand__CommandsAssignment_1 )*
+            loop29:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA30_0==Interrompa||(LA30_0>=Enquanto && LA30_0<=Escreva)||LA30_0==Retorne||(LA30_0>=Maiusc && LA30_0<=Copia)||LA30_0==Raizq||(LA30_0>=Leia && LA30_0<=Para)||LA30_0==NOT||(LA30_0>=Pi && LA30_0<=Se)||LA30_0==LeftParenthesis||LA30_0==HyphenMinus||(LA30_0>=RULE_INT && LA30_0<=RULE_STRING)) ) {
-                    alt30=1;
+                if ( (LA29_0==Interrompa||(LA29_0>=Enquanto && LA29_0<=Escreva)||LA29_0==Retorne||(LA29_0>=Maiusc && LA29_0<=Copia)||LA29_0==Raizq||(LA29_0>=Leia && LA29_0<=Para)||LA29_0==NOT||(LA29_0>=Pi && LA29_0<=Se)||LA29_0==LeftParenthesis||LA29_0==HyphenMinus||(LA29_0>=RULE_INT && LA29_0<=RULE_STRING)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalPortugolParser.g:3258:4: rule__BlockCommand__CommandsAssignment_1
+            	    // InternalPortugolParser.g:3175:4: rule__BlockCommand__CommandsAssignment_1
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__BlockCommand__CommandsAssignment_1();
@@ -11099,7 +10830,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop29;
                 }
             } while (true);
 
@@ -11131,14 +10862,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockCommand__Group__2"
-    // InternalPortugolParser.g:3267:1: rule__BlockCommand__Group__2 : rule__BlockCommand__Group__2__Impl ;
+    // InternalPortugolParser.g:3184:1: rule__BlockCommand__Group__2 : rule__BlockCommand__Group__2__Impl ;
     public final void rule__BlockCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3271:1: ( rule__BlockCommand__Group__2__Impl )
-            // InternalPortugolParser.g:3272:2: rule__BlockCommand__Group__2__Impl
+            // InternalPortugolParser.g:3188:1: ( rule__BlockCommand__Group__2__Impl )
+            // InternalPortugolParser.g:3189:2: rule__BlockCommand__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BlockCommand__Group__2__Impl();
@@ -11164,17 +10895,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockCommand__Group__2__Impl"
-    // InternalPortugolParser.g:3278:1: rule__BlockCommand__Group__2__Impl : ( Fimalgoritmo ) ;
+    // InternalPortugolParser.g:3195:1: rule__BlockCommand__Group__2__Impl : ( Fimalgoritmo ) ;
     public final void rule__BlockCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3282:1: ( ( Fimalgoritmo ) )
-            // InternalPortugolParser.g:3283:1: ( Fimalgoritmo )
+            // InternalPortugolParser.g:3199:1: ( ( Fimalgoritmo ) )
+            // InternalPortugolParser.g:3200:1: ( Fimalgoritmo )
             {
-            // InternalPortugolParser.g:3283:1: ( Fimalgoritmo )
-            // InternalPortugolParser.g:3284:2: Fimalgoritmo
+            // InternalPortugolParser.g:3200:1: ( Fimalgoritmo )
+            // InternalPortugolParser.g:3201:2: Fimalgoritmo
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getFimalgoritmoKeyword_2()); 
@@ -11205,14 +10936,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_0__0"
-    // InternalPortugolParser.g:3294:1: rule__AbstractCommand__Group_0__0 : rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1 ;
+    // InternalPortugolParser.g:3211:1: rule__AbstractCommand__Group_0__0 : rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1 ;
     public final void rule__AbstractCommand__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3298:1: ( rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1 )
-            // InternalPortugolParser.g:3299:2: rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1
+            // InternalPortugolParser.g:3215:1: ( rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1 )
+            // InternalPortugolParser.g:3216:2: rule__AbstractCommand__Group_0__0__Impl rule__AbstractCommand__Group_0__1
             {
             pushFollow(FOLLOW_6);
             rule__AbstractCommand__Group_0__0__Impl();
@@ -11243,17 +10974,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_0__0__Impl"
-    // InternalPortugolParser.g:3306:1: rule__AbstractCommand__Group_0__0__Impl : ( ruleReadCommand ) ;
+    // InternalPortugolParser.g:3223:1: rule__AbstractCommand__Group_0__0__Impl : ( ruleReadCommand ) ;
     public final void rule__AbstractCommand__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3310:1: ( ( ruleReadCommand ) )
-            // InternalPortugolParser.g:3311:1: ( ruleReadCommand )
+            // InternalPortugolParser.g:3227:1: ( ( ruleReadCommand ) )
+            // InternalPortugolParser.g:3228:1: ( ruleReadCommand )
             {
-            // InternalPortugolParser.g:3311:1: ( ruleReadCommand )
-            // InternalPortugolParser.g:3312:2: ruleReadCommand
+            // InternalPortugolParser.g:3228:1: ( ruleReadCommand )
+            // InternalPortugolParser.g:3229:2: ruleReadCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getReadCommandParserRuleCall_0_0()); 
@@ -11288,14 +11019,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_0__1"
-    // InternalPortugolParser.g:3321:1: rule__AbstractCommand__Group_0__1 : rule__AbstractCommand__Group_0__1__Impl ;
+    // InternalPortugolParser.g:3238:1: rule__AbstractCommand__Group_0__1 : rule__AbstractCommand__Group_0__1__Impl ;
     public final void rule__AbstractCommand__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3325:1: ( rule__AbstractCommand__Group_0__1__Impl )
-            // InternalPortugolParser.g:3326:2: rule__AbstractCommand__Group_0__1__Impl
+            // InternalPortugolParser.g:3242:1: ( rule__AbstractCommand__Group_0__1__Impl )
+            // InternalPortugolParser.g:3243:2: rule__AbstractCommand__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Group_0__1__Impl();
@@ -11321,17 +11052,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_0__1__Impl"
-    // InternalPortugolParser.g:3332:1: rule__AbstractCommand__Group_0__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:3249:1: rule__AbstractCommand__Group_0__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__AbstractCommand__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3336:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:3337:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3253:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:3254:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:3337:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:3338:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:3254:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3255:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getEND_COMMANDParserRuleCall_0_1()); 
@@ -11366,14 +11097,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_1__0"
-    // InternalPortugolParser.g:3348:1: rule__AbstractCommand__Group_1__0 : rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1 ;
+    // InternalPortugolParser.g:3265:1: rule__AbstractCommand__Group_1__0 : rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1 ;
     public final void rule__AbstractCommand__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3352:1: ( rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1 )
-            // InternalPortugolParser.g:3353:2: rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1
+            // InternalPortugolParser.g:3269:1: ( rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1 )
+            // InternalPortugolParser.g:3270:2: rule__AbstractCommand__Group_1__0__Impl rule__AbstractCommand__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__AbstractCommand__Group_1__0__Impl();
@@ -11404,17 +11135,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_1__0__Impl"
-    // InternalPortugolParser.g:3360:1: rule__AbstractCommand__Group_1__0__Impl : ( ruleWriteCommand ) ;
+    // InternalPortugolParser.g:3277:1: rule__AbstractCommand__Group_1__0__Impl : ( ruleWriteCommand ) ;
     public final void rule__AbstractCommand__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3364:1: ( ( ruleWriteCommand ) )
-            // InternalPortugolParser.g:3365:1: ( ruleWriteCommand )
+            // InternalPortugolParser.g:3281:1: ( ( ruleWriteCommand ) )
+            // InternalPortugolParser.g:3282:1: ( ruleWriteCommand )
             {
-            // InternalPortugolParser.g:3365:1: ( ruleWriteCommand )
-            // InternalPortugolParser.g:3366:2: ruleWriteCommand
+            // InternalPortugolParser.g:3282:1: ( ruleWriteCommand )
+            // InternalPortugolParser.g:3283:2: ruleWriteCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getWriteCommandParserRuleCall_1_0()); 
@@ -11449,14 +11180,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_1__1"
-    // InternalPortugolParser.g:3375:1: rule__AbstractCommand__Group_1__1 : rule__AbstractCommand__Group_1__1__Impl ;
+    // InternalPortugolParser.g:3292:1: rule__AbstractCommand__Group_1__1 : rule__AbstractCommand__Group_1__1__Impl ;
     public final void rule__AbstractCommand__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3379:1: ( rule__AbstractCommand__Group_1__1__Impl )
-            // InternalPortugolParser.g:3380:2: rule__AbstractCommand__Group_1__1__Impl
+            // InternalPortugolParser.g:3296:1: ( rule__AbstractCommand__Group_1__1__Impl )
+            // InternalPortugolParser.g:3297:2: rule__AbstractCommand__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Group_1__1__Impl();
@@ -11482,17 +11213,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_1__1__Impl"
-    // InternalPortugolParser.g:3386:1: rule__AbstractCommand__Group_1__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:3303:1: rule__AbstractCommand__Group_1__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__AbstractCommand__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3390:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:3391:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3307:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:3308:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:3391:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:3392:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:3308:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3309:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getEND_COMMANDParserRuleCall_1_1()); 
@@ -11527,14 +11258,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_2__0"
-    // InternalPortugolParser.g:3402:1: rule__AbstractCommand__Group_2__0 : rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1 ;
+    // InternalPortugolParser.g:3319:1: rule__AbstractCommand__Group_2__0 : rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1 ;
     public final void rule__AbstractCommand__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3406:1: ( rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1 )
-            // InternalPortugolParser.g:3407:2: rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1
+            // InternalPortugolParser.g:3323:1: ( rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1 )
+            // InternalPortugolParser.g:3324:2: rule__AbstractCommand__Group_2__0__Impl rule__AbstractCommand__Group_2__1
             {
             pushFollow(FOLLOW_6);
             rule__AbstractCommand__Group_2__0__Impl();
@@ -11565,17 +11296,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_2__0__Impl"
-    // InternalPortugolParser.g:3414:1: rule__AbstractCommand__Group_2__0__Impl : ( ruleExpression ) ;
+    // InternalPortugolParser.g:3331:1: rule__AbstractCommand__Group_2__0__Impl : ( ruleExpression ) ;
     public final void rule__AbstractCommand__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3418:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:3419:1: ( ruleExpression )
+            // InternalPortugolParser.g:3335:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:3336:1: ( ruleExpression )
             {
-            // InternalPortugolParser.g:3419:1: ( ruleExpression )
-            // InternalPortugolParser.g:3420:2: ruleExpression
+            // InternalPortugolParser.g:3336:1: ( ruleExpression )
+            // InternalPortugolParser.g:3337:2: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getExpressionParserRuleCall_2_0()); 
@@ -11610,14 +11341,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_2__1"
-    // InternalPortugolParser.g:3429:1: rule__AbstractCommand__Group_2__1 : rule__AbstractCommand__Group_2__1__Impl ;
+    // InternalPortugolParser.g:3346:1: rule__AbstractCommand__Group_2__1 : rule__AbstractCommand__Group_2__1__Impl ;
     public final void rule__AbstractCommand__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3433:1: ( rule__AbstractCommand__Group_2__1__Impl )
-            // InternalPortugolParser.g:3434:2: rule__AbstractCommand__Group_2__1__Impl
+            // InternalPortugolParser.g:3350:1: ( rule__AbstractCommand__Group_2__1__Impl )
+            // InternalPortugolParser.g:3351:2: rule__AbstractCommand__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Group_2__1__Impl();
@@ -11643,17 +11374,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_2__1__Impl"
-    // InternalPortugolParser.g:3440:1: rule__AbstractCommand__Group_2__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:3357:1: rule__AbstractCommand__Group_2__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__AbstractCommand__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3444:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:3445:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3361:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:3362:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:3445:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:3446:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:3362:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3363:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getEND_COMMANDParserRuleCall_2_1()); 
@@ -11688,14 +11419,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_8__0"
-    // InternalPortugolParser.g:3456:1: rule__AbstractCommand__Group_8__0 : rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1 ;
+    // InternalPortugolParser.g:3373:1: rule__AbstractCommand__Group_8__0 : rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1 ;
     public final void rule__AbstractCommand__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3460:1: ( rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1 )
-            // InternalPortugolParser.g:3461:2: rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1
+            // InternalPortugolParser.g:3377:1: ( rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1 )
+            // InternalPortugolParser.g:3378:2: rule__AbstractCommand__Group_8__0__Impl rule__AbstractCommand__Group_8__1
             {
             pushFollow(FOLLOW_6);
             rule__AbstractCommand__Group_8__0__Impl();
@@ -11726,17 +11457,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_8__0__Impl"
-    // InternalPortugolParser.g:3468:1: rule__AbstractCommand__Group_8__0__Impl : ( ruleBreakStatement ) ;
+    // InternalPortugolParser.g:3385:1: rule__AbstractCommand__Group_8__0__Impl : ( ruleBreakStatement ) ;
     public final void rule__AbstractCommand__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3472:1: ( ( ruleBreakStatement ) )
-            // InternalPortugolParser.g:3473:1: ( ruleBreakStatement )
+            // InternalPortugolParser.g:3389:1: ( ( ruleBreakStatement ) )
+            // InternalPortugolParser.g:3390:1: ( ruleBreakStatement )
             {
-            // InternalPortugolParser.g:3473:1: ( ruleBreakStatement )
-            // InternalPortugolParser.g:3474:2: ruleBreakStatement
+            // InternalPortugolParser.g:3390:1: ( ruleBreakStatement )
+            // InternalPortugolParser.g:3391:2: ruleBreakStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getBreakStatementParserRuleCall_8_0()); 
@@ -11771,14 +11502,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_8__1"
-    // InternalPortugolParser.g:3483:1: rule__AbstractCommand__Group_8__1 : rule__AbstractCommand__Group_8__1__Impl ;
+    // InternalPortugolParser.g:3400:1: rule__AbstractCommand__Group_8__1 : rule__AbstractCommand__Group_8__1__Impl ;
     public final void rule__AbstractCommand__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3487:1: ( rule__AbstractCommand__Group_8__1__Impl )
-            // InternalPortugolParser.g:3488:2: rule__AbstractCommand__Group_8__1__Impl
+            // InternalPortugolParser.g:3404:1: ( rule__AbstractCommand__Group_8__1__Impl )
+            // InternalPortugolParser.g:3405:2: rule__AbstractCommand__Group_8__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Group_8__1__Impl();
@@ -11804,17 +11535,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_8__1__Impl"
-    // InternalPortugolParser.g:3494:1: rule__AbstractCommand__Group_8__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:3411:1: rule__AbstractCommand__Group_8__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__AbstractCommand__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3498:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:3499:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3415:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:3416:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:3499:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:3500:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:3416:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3417:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getEND_COMMANDParserRuleCall_8_1()); 
@@ -11849,14 +11580,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_9__0"
-    // InternalPortugolParser.g:3510:1: rule__AbstractCommand__Group_9__0 : rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1 ;
+    // InternalPortugolParser.g:3427:1: rule__AbstractCommand__Group_9__0 : rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1 ;
     public final void rule__AbstractCommand__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3514:1: ( rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1 )
-            // InternalPortugolParser.g:3515:2: rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1
+            // InternalPortugolParser.g:3431:1: ( rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1 )
+            // InternalPortugolParser.g:3432:2: rule__AbstractCommand__Group_9__0__Impl rule__AbstractCommand__Group_9__1
             {
             pushFollow(FOLLOW_6);
             rule__AbstractCommand__Group_9__0__Impl();
@@ -11887,17 +11618,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_9__0__Impl"
-    // InternalPortugolParser.g:3522:1: rule__AbstractCommand__Group_9__0__Impl : ( ruleReturnStatement ) ;
+    // InternalPortugolParser.g:3439:1: rule__AbstractCommand__Group_9__0__Impl : ( ruleReturnStatement ) ;
     public final void rule__AbstractCommand__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3526:1: ( ( ruleReturnStatement ) )
-            // InternalPortugolParser.g:3527:1: ( ruleReturnStatement )
+            // InternalPortugolParser.g:3443:1: ( ( ruleReturnStatement ) )
+            // InternalPortugolParser.g:3444:1: ( ruleReturnStatement )
             {
-            // InternalPortugolParser.g:3527:1: ( ruleReturnStatement )
-            // InternalPortugolParser.g:3528:2: ruleReturnStatement
+            // InternalPortugolParser.g:3444:1: ( ruleReturnStatement )
+            // InternalPortugolParser.g:3445:2: ruleReturnStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getReturnStatementParserRuleCall_9_0()); 
@@ -11932,14 +11663,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_9__1"
-    // InternalPortugolParser.g:3537:1: rule__AbstractCommand__Group_9__1 : rule__AbstractCommand__Group_9__1__Impl ;
+    // InternalPortugolParser.g:3454:1: rule__AbstractCommand__Group_9__1 : rule__AbstractCommand__Group_9__1__Impl ;
     public final void rule__AbstractCommand__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3541:1: ( rule__AbstractCommand__Group_9__1__Impl )
-            // InternalPortugolParser.g:3542:2: rule__AbstractCommand__Group_9__1__Impl
+            // InternalPortugolParser.g:3458:1: ( rule__AbstractCommand__Group_9__1__Impl )
+            // InternalPortugolParser.g:3459:2: rule__AbstractCommand__Group_9__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AbstractCommand__Group_9__1__Impl();
@@ -11965,17 +11696,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractCommand__Group_9__1__Impl"
-    // InternalPortugolParser.g:3548:1: rule__AbstractCommand__Group_9__1__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:3465:1: rule__AbstractCommand__Group_9__1__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__AbstractCommand__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3552:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:3553:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3469:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:3470:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:3553:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:3554:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:3470:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:3471:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAbstractCommandAccess().getEND_COMMANDParserRuleCall_9_1()); 
@@ -12010,14 +11741,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BreakStatement__Group__0"
-    // InternalPortugolParser.g:3564:1: rule__BreakStatement__Group__0 : rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1 ;
+    // InternalPortugolParser.g:3481:1: rule__BreakStatement__Group__0 : rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1 ;
     public final void rule__BreakStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3568:1: ( rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1 )
-            // InternalPortugolParser.g:3569:2: rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1
+            // InternalPortugolParser.g:3485:1: ( rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1 )
+            // InternalPortugolParser.g:3486:2: rule__BreakStatement__Group__0__Impl rule__BreakStatement__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__BreakStatement__Group__0__Impl();
@@ -12048,23 +11779,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BreakStatement__Group__0__Impl"
-    // InternalPortugolParser.g:3576:1: rule__BreakStatement__Group__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:3493:1: rule__BreakStatement__Group__0__Impl : ( () ) ;
     public final void rule__BreakStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3580:1: ( ( () ) )
-            // InternalPortugolParser.g:3581:1: ( () )
+            // InternalPortugolParser.g:3497:1: ( ( () ) )
+            // InternalPortugolParser.g:3498:1: ( () )
             {
-            // InternalPortugolParser.g:3581:1: ( () )
-            // InternalPortugolParser.g:3582:2: ()
+            // InternalPortugolParser.g:3498:1: ( () )
+            // InternalPortugolParser.g:3499:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakStatementAccess().getBreakStatementAction_0()); 
             }
-            // InternalPortugolParser.g:3583:2: ()
-            // InternalPortugolParser.g:3583:3: 
+            // InternalPortugolParser.g:3500:2: ()
+            // InternalPortugolParser.g:3500:3: 
             {
             }
 
@@ -12089,14 +11820,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BreakStatement__Group__1"
-    // InternalPortugolParser.g:3591:1: rule__BreakStatement__Group__1 : rule__BreakStatement__Group__1__Impl ;
+    // InternalPortugolParser.g:3508:1: rule__BreakStatement__Group__1 : rule__BreakStatement__Group__1__Impl ;
     public final void rule__BreakStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3595:1: ( rule__BreakStatement__Group__1__Impl )
-            // InternalPortugolParser.g:3596:2: rule__BreakStatement__Group__1__Impl
+            // InternalPortugolParser.g:3512:1: ( rule__BreakStatement__Group__1__Impl )
+            // InternalPortugolParser.g:3513:2: rule__BreakStatement__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BreakStatement__Group__1__Impl();
@@ -12122,17 +11853,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BreakStatement__Group__1__Impl"
-    // InternalPortugolParser.g:3602:1: rule__BreakStatement__Group__1__Impl : ( Interrompa ) ;
+    // InternalPortugolParser.g:3519:1: rule__BreakStatement__Group__1__Impl : ( Interrompa ) ;
     public final void rule__BreakStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3606:1: ( ( Interrompa ) )
-            // InternalPortugolParser.g:3607:1: ( Interrompa )
+            // InternalPortugolParser.g:3523:1: ( ( Interrompa ) )
+            // InternalPortugolParser.g:3524:1: ( Interrompa )
             {
-            // InternalPortugolParser.g:3607:1: ( Interrompa )
-            // InternalPortugolParser.g:3608:2: Interrompa
+            // InternalPortugolParser.g:3524:1: ( Interrompa )
+            // InternalPortugolParser.g:3525:2: Interrompa
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakStatementAccess().getInterrompaKeyword_1()); 
@@ -12163,14 +11894,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__0"
-    // InternalPortugolParser.g:3618:1: rule__ReturnStatement__Group__0 : rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1 ;
+    // InternalPortugolParser.g:3535:1: rule__ReturnStatement__Group__0 : rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1 ;
     public final void rule__ReturnStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3622:1: ( rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1 )
-            // InternalPortugolParser.g:3623:2: rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1
+            // InternalPortugolParser.g:3539:1: ( rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1 )
+            // InternalPortugolParser.g:3540:2: rule__ReturnStatement__Group__0__Impl rule__ReturnStatement__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__ReturnStatement__Group__0__Impl();
@@ -12201,23 +11932,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__0__Impl"
-    // InternalPortugolParser.g:3630:1: rule__ReturnStatement__Group__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:3547:1: rule__ReturnStatement__Group__0__Impl : ( () ) ;
     public final void rule__ReturnStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3634:1: ( ( () ) )
-            // InternalPortugolParser.g:3635:1: ( () )
+            // InternalPortugolParser.g:3551:1: ( ( () ) )
+            // InternalPortugolParser.g:3552:1: ( () )
             {
-            // InternalPortugolParser.g:3635:1: ( () )
-            // InternalPortugolParser.g:3636:2: ()
+            // InternalPortugolParser.g:3552:1: ( () )
+            // InternalPortugolParser.g:3553:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0()); 
             }
-            // InternalPortugolParser.g:3637:2: ()
-            // InternalPortugolParser.g:3637:3: 
+            // InternalPortugolParser.g:3554:2: ()
+            // InternalPortugolParser.g:3554:3: 
             {
             }
 
@@ -12242,14 +11973,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__1"
-    // InternalPortugolParser.g:3645:1: rule__ReturnStatement__Group__1 : rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2 ;
+    // InternalPortugolParser.g:3562:1: rule__ReturnStatement__Group__1 : rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2 ;
     public final void rule__ReturnStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3649:1: ( rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2 )
-            // InternalPortugolParser.g:3650:2: rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2
+            // InternalPortugolParser.g:3566:1: ( rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2 )
+            // InternalPortugolParser.g:3567:2: rule__ReturnStatement__Group__1__Impl rule__ReturnStatement__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__ReturnStatement__Group__1__Impl();
@@ -12280,17 +12011,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__1__Impl"
-    // InternalPortugolParser.g:3657:1: rule__ReturnStatement__Group__1__Impl : ( Retorne ) ;
+    // InternalPortugolParser.g:3574:1: rule__ReturnStatement__Group__1__Impl : ( Retorne ) ;
     public final void rule__ReturnStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3661:1: ( ( Retorne ) )
-            // InternalPortugolParser.g:3662:1: ( Retorne )
+            // InternalPortugolParser.g:3578:1: ( ( Retorne ) )
+            // InternalPortugolParser.g:3579:1: ( Retorne )
             {
-            // InternalPortugolParser.g:3662:1: ( Retorne )
-            // InternalPortugolParser.g:3663:2: Retorne
+            // InternalPortugolParser.g:3579:1: ( Retorne )
+            // InternalPortugolParser.g:3580:2: Retorne
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementAccess().getRetorneKeyword_1()); 
@@ -12321,14 +12052,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__2"
-    // InternalPortugolParser.g:3672:1: rule__ReturnStatement__Group__2 : rule__ReturnStatement__Group__2__Impl ;
+    // InternalPortugolParser.g:3589:1: rule__ReturnStatement__Group__2 : rule__ReturnStatement__Group__2__Impl ;
     public final void rule__ReturnStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3676:1: ( rule__ReturnStatement__Group__2__Impl )
-            // InternalPortugolParser.g:3677:2: rule__ReturnStatement__Group__2__Impl
+            // InternalPortugolParser.g:3593:1: ( rule__ReturnStatement__Group__2__Impl )
+            // InternalPortugolParser.g:3594:2: rule__ReturnStatement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ReturnStatement__Group__2__Impl();
@@ -12354,23 +12085,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__Group__2__Impl"
-    // InternalPortugolParser.g:3683:1: rule__ReturnStatement__Group__2__Impl : ( ( rule__ReturnStatement__ExprAssignment_2 ) ) ;
+    // InternalPortugolParser.g:3600:1: rule__ReturnStatement__Group__2__Impl : ( ( rule__ReturnStatement__ExprAssignment_2 ) ) ;
     public final void rule__ReturnStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3687:1: ( ( ( rule__ReturnStatement__ExprAssignment_2 ) ) )
-            // InternalPortugolParser.g:3688:1: ( ( rule__ReturnStatement__ExprAssignment_2 ) )
+            // InternalPortugolParser.g:3604:1: ( ( ( rule__ReturnStatement__ExprAssignment_2 ) ) )
+            // InternalPortugolParser.g:3605:1: ( ( rule__ReturnStatement__ExprAssignment_2 ) )
             {
-            // InternalPortugolParser.g:3688:1: ( ( rule__ReturnStatement__ExprAssignment_2 ) )
-            // InternalPortugolParser.g:3689:2: ( rule__ReturnStatement__ExprAssignment_2 )
+            // InternalPortugolParser.g:3605:1: ( ( rule__ReturnStatement__ExprAssignment_2 ) )
+            // InternalPortugolParser.g:3606:2: ( rule__ReturnStatement__ExprAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementAccess().getExprAssignment_2()); 
             }
-            // InternalPortugolParser.g:3690:2: ( rule__ReturnStatement__ExprAssignment_2 )
-            // InternalPortugolParser.g:3690:3: rule__ReturnStatement__ExprAssignment_2
+            // InternalPortugolParser.g:3607:2: ( rule__ReturnStatement__ExprAssignment_2 )
+            // InternalPortugolParser.g:3607:3: rule__ReturnStatement__ExprAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ReturnStatement__ExprAssignment_2();
@@ -12405,14 +12136,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__0"
-    // InternalPortugolParser.g:3699:1: rule__IfStatement__Group__0 : rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1 ;
+    // InternalPortugolParser.g:3616:1: rule__IfStatement__Group__0 : rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1 ;
     public final void rule__IfStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3703:1: ( rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1 )
-            // InternalPortugolParser.g:3704:2: rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1
+            // InternalPortugolParser.g:3620:1: ( rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1 )
+            // InternalPortugolParser.g:3621:2: rule__IfStatement__Group__0__Impl rule__IfStatement__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__IfStatement__Group__0__Impl();
@@ -12443,17 +12174,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__0__Impl"
-    // InternalPortugolParser.g:3711:1: rule__IfStatement__Group__0__Impl : ( Se ) ;
+    // InternalPortugolParser.g:3628:1: rule__IfStatement__Group__0__Impl : ( Se ) ;
     public final void rule__IfStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3715:1: ( ( Se ) )
-            // InternalPortugolParser.g:3716:1: ( Se )
+            // InternalPortugolParser.g:3632:1: ( ( Se ) )
+            // InternalPortugolParser.g:3633:1: ( Se )
             {
-            // InternalPortugolParser.g:3716:1: ( Se )
-            // InternalPortugolParser.g:3717:2: Se
+            // InternalPortugolParser.g:3633:1: ( Se )
+            // InternalPortugolParser.g:3634:2: Se
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getSeKeyword_0()); 
@@ -12484,14 +12215,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__1"
-    // InternalPortugolParser.g:3726:1: rule__IfStatement__Group__1 : rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2 ;
+    // InternalPortugolParser.g:3643:1: rule__IfStatement__Group__1 : rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2 ;
     public final void rule__IfStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3730:1: ( rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2 )
-            // InternalPortugolParser.g:3731:2: rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2
+            // InternalPortugolParser.g:3647:1: ( rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2 )
+            // InternalPortugolParser.g:3648:2: rule__IfStatement__Group__1__Impl rule__IfStatement__Group__2
             {
             pushFollow(FOLLOW_24);
             rule__IfStatement__Group__1__Impl();
@@ -12522,23 +12253,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__1__Impl"
-    // InternalPortugolParser.g:3738:1: rule__IfStatement__Group__1__Impl : ( ( rule__IfStatement__ExprAssignment_1 ) ) ;
+    // InternalPortugolParser.g:3655:1: rule__IfStatement__Group__1__Impl : ( ( rule__IfStatement__ExprAssignment_1 ) ) ;
     public final void rule__IfStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3742:1: ( ( ( rule__IfStatement__ExprAssignment_1 ) ) )
-            // InternalPortugolParser.g:3743:1: ( ( rule__IfStatement__ExprAssignment_1 ) )
+            // InternalPortugolParser.g:3659:1: ( ( ( rule__IfStatement__ExprAssignment_1 ) ) )
+            // InternalPortugolParser.g:3660:1: ( ( rule__IfStatement__ExprAssignment_1 ) )
             {
-            // InternalPortugolParser.g:3743:1: ( ( rule__IfStatement__ExprAssignment_1 ) )
-            // InternalPortugolParser.g:3744:2: ( rule__IfStatement__ExprAssignment_1 )
+            // InternalPortugolParser.g:3660:1: ( ( rule__IfStatement__ExprAssignment_1 ) )
+            // InternalPortugolParser.g:3661:2: ( rule__IfStatement__ExprAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getExprAssignment_1()); 
             }
-            // InternalPortugolParser.g:3745:2: ( rule__IfStatement__ExprAssignment_1 )
-            // InternalPortugolParser.g:3745:3: rule__IfStatement__ExprAssignment_1
+            // InternalPortugolParser.g:3662:2: ( rule__IfStatement__ExprAssignment_1 )
+            // InternalPortugolParser.g:3662:3: rule__IfStatement__ExprAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__IfStatement__ExprAssignment_1();
@@ -12573,14 +12304,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__2"
-    // InternalPortugolParser.g:3753:1: rule__IfStatement__Group__2 : rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3 ;
+    // InternalPortugolParser.g:3670:1: rule__IfStatement__Group__2 : rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3 ;
     public final void rule__IfStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3757:1: ( rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3 )
-            // InternalPortugolParser.g:3758:2: rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3
+            // InternalPortugolParser.g:3674:1: ( rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3 )
+            // InternalPortugolParser.g:3675:2: rule__IfStatement__Group__2__Impl rule__IfStatement__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__IfStatement__Group__2__Impl();
@@ -12611,17 +12342,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__2__Impl"
-    // InternalPortugolParser.g:3765:1: rule__IfStatement__Group__2__Impl : ( Entao ) ;
+    // InternalPortugolParser.g:3682:1: rule__IfStatement__Group__2__Impl : ( Entao ) ;
     public final void rule__IfStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3769:1: ( ( Entao ) )
-            // InternalPortugolParser.g:3770:1: ( Entao )
+            // InternalPortugolParser.g:3686:1: ( ( Entao ) )
+            // InternalPortugolParser.g:3687:1: ( Entao )
             {
-            // InternalPortugolParser.g:3770:1: ( Entao )
-            // InternalPortugolParser.g:3771:2: Entao
+            // InternalPortugolParser.g:3687:1: ( Entao )
+            // InternalPortugolParser.g:3688:2: Entao
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getEntaoKeyword_2()); 
@@ -12652,14 +12383,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__3"
-    // InternalPortugolParser.g:3780:1: rule__IfStatement__Group__3 : rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4 ;
+    // InternalPortugolParser.g:3697:1: rule__IfStatement__Group__3 : rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4 ;
     public final void rule__IfStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3784:1: ( rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4 )
-            // InternalPortugolParser.g:3785:2: rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4
+            // InternalPortugolParser.g:3701:1: ( rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4 )
+            // InternalPortugolParser.g:3702:2: rule__IfStatement__Group__3__Impl rule__IfStatement__Group__4
             {
             pushFollow(FOLLOW_25);
             rule__IfStatement__Group__3__Impl();
@@ -12690,26 +12421,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__3__Impl"
-    // InternalPortugolParser.g:3792:1: rule__IfStatement__Group__3__Impl : ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) ) ;
+    // InternalPortugolParser.g:3709:1: rule__IfStatement__Group__3__Impl : ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) ) ;
     public final void rule__IfStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3796:1: ( ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) ) )
-            // InternalPortugolParser.g:3797:1: ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:3713:1: ( ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) ) )
+            // InternalPortugolParser.g:3714:1: ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) )
             {
-            // InternalPortugolParser.g:3797:1: ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) )
-            // InternalPortugolParser.g:3798:2: ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:3714:1: ( ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:3715:2: ( ( rule__IfStatement__CommandsAssignment_3 ) ) ( ( rule__IfStatement__CommandsAssignment_3 )* )
             {
-            // InternalPortugolParser.g:3798:2: ( ( rule__IfStatement__CommandsAssignment_3 ) )
-            // InternalPortugolParser.g:3799:3: ( rule__IfStatement__CommandsAssignment_3 )
+            // InternalPortugolParser.g:3715:2: ( ( rule__IfStatement__CommandsAssignment_3 ) )
+            // InternalPortugolParser.g:3716:3: ( rule__IfStatement__CommandsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:3800:3: ( rule__IfStatement__CommandsAssignment_3 )
-            // InternalPortugolParser.g:3800:4: rule__IfStatement__CommandsAssignment_3
+            // InternalPortugolParser.g:3717:3: ( rule__IfStatement__CommandsAssignment_3 )
+            // InternalPortugolParser.g:3717:4: rule__IfStatement__CommandsAssignment_3
             {
             pushFollow(FOLLOW_18);
             rule__IfStatement__CommandsAssignment_3();
@@ -12725,26 +12456,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:3803:2: ( ( rule__IfStatement__CommandsAssignment_3 )* )
-            // InternalPortugolParser.g:3804:3: ( rule__IfStatement__CommandsAssignment_3 )*
+            // InternalPortugolParser.g:3720:2: ( ( rule__IfStatement__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:3721:3: ( rule__IfStatement__CommandsAssignment_3 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:3805:3: ( rule__IfStatement__CommandsAssignment_3 )*
-            loop31:
+            // InternalPortugolParser.g:3722:3: ( rule__IfStatement__CommandsAssignment_3 )*
+            loop30:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA31_0==Interrompa||(LA31_0>=Enquanto && LA31_0<=Escreva)||LA31_0==Retorne||(LA31_0>=Maiusc && LA31_0<=Copia)||LA31_0==Raizq||(LA31_0>=Leia && LA31_0<=Para)||LA31_0==NOT||(LA31_0>=Pi && LA31_0<=Se)||LA31_0==LeftParenthesis||LA31_0==HyphenMinus||(LA31_0>=RULE_INT && LA31_0<=RULE_STRING)) ) {
-                    alt31=1;
+                if ( (LA30_0==Interrompa||(LA30_0>=Enquanto && LA30_0<=Escreva)||LA30_0==Retorne||(LA30_0>=Maiusc && LA30_0<=Copia)||LA30_0==Raizq||(LA30_0>=Leia && LA30_0<=Para)||LA30_0==NOT||(LA30_0>=Pi && LA30_0<=Se)||LA30_0==LeftParenthesis||LA30_0==HyphenMinus||(LA30_0>=RULE_INT && LA30_0<=RULE_STRING)) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt30) {
             	case 1 :
-            	    // InternalPortugolParser.g:3805:4: rule__IfStatement__CommandsAssignment_3
+            	    // InternalPortugolParser.g:3722:4: rule__IfStatement__CommandsAssignment_3
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__IfStatement__CommandsAssignment_3();
@@ -12756,7 +12487,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop30;
                 }
             } while (true);
 
@@ -12788,14 +12519,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__4"
-    // InternalPortugolParser.g:3814:1: rule__IfStatement__Group__4 : rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5 ;
+    // InternalPortugolParser.g:3731:1: rule__IfStatement__Group__4 : rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5 ;
     public final void rule__IfStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3818:1: ( rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5 )
-            // InternalPortugolParser.g:3819:2: rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5
+            // InternalPortugolParser.g:3735:1: ( rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5 )
+            // InternalPortugolParser.g:3736:2: rule__IfStatement__Group__4__Impl rule__IfStatement__Group__5
             {
             pushFollow(FOLLOW_25);
             rule__IfStatement__Group__4__Impl();
@@ -12826,31 +12557,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__4__Impl"
-    // InternalPortugolParser.g:3826:1: rule__IfStatement__Group__4__Impl : ( ( rule__IfStatement__Group_4__0 )? ) ;
+    // InternalPortugolParser.g:3743:1: rule__IfStatement__Group__4__Impl : ( ( rule__IfStatement__Group_4__0 )? ) ;
     public final void rule__IfStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3830:1: ( ( ( rule__IfStatement__Group_4__0 )? ) )
-            // InternalPortugolParser.g:3831:1: ( ( rule__IfStatement__Group_4__0 )? )
+            // InternalPortugolParser.g:3747:1: ( ( ( rule__IfStatement__Group_4__0 )? ) )
+            // InternalPortugolParser.g:3748:1: ( ( rule__IfStatement__Group_4__0 )? )
             {
-            // InternalPortugolParser.g:3831:1: ( ( rule__IfStatement__Group_4__0 )? )
-            // InternalPortugolParser.g:3832:2: ( rule__IfStatement__Group_4__0 )?
+            // InternalPortugolParser.g:3748:1: ( ( rule__IfStatement__Group_4__0 )? )
+            // InternalPortugolParser.g:3749:2: ( rule__IfStatement__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getGroup_4()); 
             }
-            // InternalPortugolParser.g:3833:2: ( rule__IfStatement__Group_4__0 )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalPortugolParser.g:3750:2: ( rule__IfStatement__Group_4__0 )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA32_0==Senao) ) {
-                alt32=1;
+            if ( (LA31_0==Senao) ) {
+                alt31=1;
             }
-            switch (alt32) {
+            switch (alt31) {
                 case 1 :
-                    // InternalPortugolParser.g:3833:3: rule__IfStatement__Group_4__0
+                    // InternalPortugolParser.g:3750:3: rule__IfStatement__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IfStatement__Group_4__0();
@@ -12888,14 +12619,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__5"
-    // InternalPortugolParser.g:3841:1: rule__IfStatement__Group__5 : rule__IfStatement__Group__5__Impl ;
+    // InternalPortugolParser.g:3758:1: rule__IfStatement__Group__5 : rule__IfStatement__Group__5__Impl ;
     public final void rule__IfStatement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3845:1: ( rule__IfStatement__Group__5__Impl )
-            // InternalPortugolParser.g:3846:2: rule__IfStatement__Group__5__Impl
+            // InternalPortugolParser.g:3762:1: ( rule__IfStatement__Group__5__Impl )
+            // InternalPortugolParser.g:3763:2: rule__IfStatement__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IfStatement__Group__5__Impl();
@@ -12921,17 +12652,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group__5__Impl"
-    // InternalPortugolParser.g:3852:1: rule__IfStatement__Group__5__Impl : ( Fimse ) ;
+    // InternalPortugolParser.g:3769:1: rule__IfStatement__Group__5__Impl : ( Fimse ) ;
     public final void rule__IfStatement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3856:1: ( ( Fimse ) )
-            // InternalPortugolParser.g:3857:1: ( Fimse )
+            // InternalPortugolParser.g:3773:1: ( ( Fimse ) )
+            // InternalPortugolParser.g:3774:1: ( Fimse )
             {
-            // InternalPortugolParser.g:3857:1: ( Fimse )
-            // InternalPortugolParser.g:3858:2: Fimse
+            // InternalPortugolParser.g:3774:1: ( Fimse )
+            // InternalPortugolParser.g:3775:2: Fimse
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getFimseKeyword_5()); 
@@ -12962,14 +12693,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group_4__0"
-    // InternalPortugolParser.g:3868:1: rule__IfStatement__Group_4__0 : rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1 ;
+    // InternalPortugolParser.g:3785:1: rule__IfStatement__Group_4__0 : rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1 ;
     public final void rule__IfStatement__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3872:1: ( rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1 )
-            // InternalPortugolParser.g:3873:2: rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1
+            // InternalPortugolParser.g:3789:1: ( rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1 )
+            // InternalPortugolParser.g:3790:2: rule__IfStatement__Group_4__0__Impl rule__IfStatement__Group_4__1
             {
             pushFollow(FOLLOW_16);
             rule__IfStatement__Group_4__0__Impl();
@@ -13000,17 +12731,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group_4__0__Impl"
-    // InternalPortugolParser.g:3880:1: rule__IfStatement__Group_4__0__Impl : ( Senao ) ;
+    // InternalPortugolParser.g:3797:1: rule__IfStatement__Group_4__0__Impl : ( Senao ) ;
     public final void rule__IfStatement__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3884:1: ( ( Senao ) )
-            // InternalPortugolParser.g:3885:1: ( Senao )
+            // InternalPortugolParser.g:3801:1: ( ( Senao ) )
+            // InternalPortugolParser.g:3802:1: ( Senao )
             {
-            // InternalPortugolParser.g:3885:1: ( Senao )
-            // InternalPortugolParser.g:3886:2: Senao
+            // InternalPortugolParser.g:3802:1: ( Senao )
+            // InternalPortugolParser.g:3803:2: Senao
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getSenaoKeyword_4_0()); 
@@ -13041,14 +12772,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group_4__1"
-    // InternalPortugolParser.g:3895:1: rule__IfStatement__Group_4__1 : rule__IfStatement__Group_4__1__Impl ;
+    // InternalPortugolParser.g:3812:1: rule__IfStatement__Group_4__1 : rule__IfStatement__Group_4__1__Impl ;
     public final void rule__IfStatement__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3899:1: ( rule__IfStatement__Group_4__1__Impl )
-            // InternalPortugolParser.g:3900:2: rule__IfStatement__Group_4__1__Impl
+            // InternalPortugolParser.g:3816:1: ( rule__IfStatement__Group_4__1__Impl )
+            // InternalPortugolParser.g:3817:2: rule__IfStatement__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IfStatement__Group_4__1__Impl();
@@ -13074,26 +12805,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__Group_4__1__Impl"
-    // InternalPortugolParser.g:3906:1: rule__IfStatement__Group_4__1__Impl : ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) ) ;
+    // InternalPortugolParser.g:3823:1: rule__IfStatement__Group_4__1__Impl : ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) ) ;
     public final void rule__IfStatement__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3910:1: ( ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) ) )
-            // InternalPortugolParser.g:3911:1: ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) )
+            // InternalPortugolParser.g:3827:1: ( ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) ) )
+            // InternalPortugolParser.g:3828:1: ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) )
             {
-            // InternalPortugolParser.g:3911:1: ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) )
-            // InternalPortugolParser.g:3912:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* )
+            // InternalPortugolParser.g:3828:1: ( ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* ) )
+            // InternalPortugolParser.g:3829:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) ) ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* )
             {
-            // InternalPortugolParser.g:3912:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) )
-            // InternalPortugolParser.g:3913:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )
+            // InternalPortugolParser.g:3829:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 ) )
+            // InternalPortugolParser.g:3830:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseCommandsAssignment_4_1()); 
             }
-            // InternalPortugolParser.g:3914:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )
-            // InternalPortugolParser.g:3914:4: rule__IfStatement__ElseCommandsAssignment_4_1
+            // InternalPortugolParser.g:3831:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )
+            // InternalPortugolParser.g:3831:4: rule__IfStatement__ElseCommandsAssignment_4_1
             {
             pushFollow(FOLLOW_18);
             rule__IfStatement__ElseCommandsAssignment_4_1();
@@ -13109,26 +12840,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:3917:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* )
-            // InternalPortugolParser.g:3918:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )*
+            // InternalPortugolParser.g:3834:2: ( ( rule__IfStatement__ElseCommandsAssignment_4_1 )* )
+            // InternalPortugolParser.g:3835:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseCommandsAssignment_4_1()); 
             }
-            // InternalPortugolParser.g:3919:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )*
-            loop33:
+            // InternalPortugolParser.g:3836:3: ( rule__IfStatement__ElseCommandsAssignment_4_1 )*
+            loop32:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA33_0==Interrompa||(LA33_0>=Enquanto && LA33_0<=Escreva)||LA33_0==Retorne||(LA33_0>=Maiusc && LA33_0<=Copia)||LA33_0==Raizq||(LA33_0>=Leia && LA33_0<=Para)||LA33_0==NOT||(LA33_0>=Pi && LA33_0<=Se)||LA33_0==LeftParenthesis||LA33_0==HyphenMinus||(LA33_0>=RULE_INT && LA33_0<=RULE_STRING)) ) {
-                    alt33=1;
+                if ( (LA32_0==Interrompa||(LA32_0>=Enquanto && LA32_0<=Escreva)||LA32_0==Retorne||(LA32_0>=Maiusc && LA32_0<=Copia)||LA32_0==Raizq||(LA32_0>=Leia && LA32_0<=Para)||LA32_0==NOT||(LA32_0>=Pi && LA32_0<=Se)||LA32_0==LeftParenthesis||LA32_0==HyphenMinus||(LA32_0>=RULE_INT && LA32_0<=RULE_STRING)) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalPortugolParser.g:3919:4: rule__IfStatement__ElseCommandsAssignment_4_1
+            	    // InternalPortugolParser.g:3836:4: rule__IfStatement__ElseCommandsAssignment_4_1
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__IfStatement__ElseCommandsAssignment_4_1();
@@ -13140,7 +12871,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop32;
                 }
             } while (true);
 
@@ -13172,14 +12903,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__0"
-    // InternalPortugolParser.g:3929:1: rule__SwitchCaseStatement__Group__0 : rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1 ;
+    // InternalPortugolParser.g:3846:1: rule__SwitchCaseStatement__Group__0 : rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1 ;
     public final void rule__SwitchCaseStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3933:1: ( rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1 )
-            // InternalPortugolParser.g:3934:2: rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1
+            // InternalPortugolParser.g:3850:1: ( rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1 )
+            // InternalPortugolParser.g:3851:2: rule__SwitchCaseStatement__Group__0__Impl rule__SwitchCaseStatement__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__SwitchCaseStatement__Group__0__Impl();
@@ -13210,17 +12941,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__0__Impl"
-    // InternalPortugolParser.g:3941:1: rule__SwitchCaseStatement__Group__0__Impl : ( Escolha ) ;
+    // InternalPortugolParser.g:3858:1: rule__SwitchCaseStatement__Group__0__Impl : ( Escolha ) ;
     public final void rule__SwitchCaseStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3945:1: ( ( Escolha ) )
-            // InternalPortugolParser.g:3946:1: ( Escolha )
+            // InternalPortugolParser.g:3862:1: ( ( Escolha ) )
+            // InternalPortugolParser.g:3863:1: ( Escolha )
             {
-            // InternalPortugolParser.g:3946:1: ( Escolha )
-            // InternalPortugolParser.g:3947:2: Escolha
+            // InternalPortugolParser.g:3863:1: ( Escolha )
+            // InternalPortugolParser.g:3864:2: Escolha
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getEscolhaKeyword_0()); 
@@ -13251,14 +12982,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__1"
-    // InternalPortugolParser.g:3956:1: rule__SwitchCaseStatement__Group__1 : rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2 ;
+    // InternalPortugolParser.g:3873:1: rule__SwitchCaseStatement__Group__1 : rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2 ;
     public final void rule__SwitchCaseStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3960:1: ( rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2 )
-            // InternalPortugolParser.g:3961:2: rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2
+            // InternalPortugolParser.g:3877:1: ( rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2 )
+            // InternalPortugolParser.g:3878:2: rule__SwitchCaseStatement__Group__1__Impl rule__SwitchCaseStatement__Group__2
             {
             pushFollow(FOLLOW_26);
             rule__SwitchCaseStatement__Group__1__Impl();
@@ -13289,23 +13020,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__1__Impl"
-    // InternalPortugolParser.g:3968:1: rule__SwitchCaseStatement__Group__1__Impl : ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) ) ;
+    // InternalPortugolParser.g:3885:1: rule__SwitchCaseStatement__Group__1__Impl : ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) ) ;
     public final void rule__SwitchCaseStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3972:1: ( ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) ) )
-            // InternalPortugolParser.g:3973:1: ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) )
+            // InternalPortugolParser.g:3889:1: ( ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) ) )
+            // InternalPortugolParser.g:3890:1: ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) )
             {
-            // InternalPortugolParser.g:3973:1: ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) )
-            // InternalPortugolParser.g:3974:2: ( rule__SwitchCaseStatement__VariableAssignment_1 )
+            // InternalPortugolParser.g:3890:1: ( ( rule__SwitchCaseStatement__VariableAssignment_1 ) )
+            // InternalPortugolParser.g:3891:2: ( rule__SwitchCaseStatement__VariableAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getVariableAssignment_1()); 
             }
-            // InternalPortugolParser.g:3975:2: ( rule__SwitchCaseStatement__VariableAssignment_1 )
-            // InternalPortugolParser.g:3975:3: rule__SwitchCaseStatement__VariableAssignment_1
+            // InternalPortugolParser.g:3892:2: ( rule__SwitchCaseStatement__VariableAssignment_1 )
+            // InternalPortugolParser.g:3892:3: rule__SwitchCaseStatement__VariableAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SwitchCaseStatement__VariableAssignment_1();
@@ -13340,14 +13071,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__2"
-    // InternalPortugolParser.g:3983:1: rule__SwitchCaseStatement__Group__2 : rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3 ;
+    // InternalPortugolParser.g:3900:1: rule__SwitchCaseStatement__Group__2 : rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3 ;
     public final void rule__SwitchCaseStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3987:1: ( rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3 )
-            // InternalPortugolParser.g:3988:2: rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3
+            // InternalPortugolParser.g:3904:1: ( rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3 )
+            // InternalPortugolParser.g:3905:2: rule__SwitchCaseStatement__Group__2__Impl rule__SwitchCaseStatement__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__SwitchCaseStatement__Group__2__Impl();
@@ -13378,26 +13109,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__2__Impl"
-    // InternalPortugolParser.g:3995:1: rule__SwitchCaseStatement__Group__2__Impl : ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) ) ;
+    // InternalPortugolParser.g:3912:1: rule__SwitchCaseStatement__Group__2__Impl : ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) ) ;
     public final void rule__SwitchCaseStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:3999:1: ( ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) ) )
-            // InternalPortugolParser.g:4000:1: ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) )
+            // InternalPortugolParser.g:3916:1: ( ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) ) )
+            // InternalPortugolParser.g:3917:1: ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) )
             {
-            // InternalPortugolParser.g:4000:1: ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) )
-            // InternalPortugolParser.g:4001:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* )
+            // InternalPortugolParser.g:3917:1: ( ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* ) )
+            // InternalPortugolParser.g:3918:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) ) ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* )
             {
-            // InternalPortugolParser.g:4001:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) )
-            // InternalPortugolParser.g:4002:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )
+            // InternalPortugolParser.g:3918:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 ) )
+            // InternalPortugolParser.g:3919:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getCaseListAssignment_2()); 
             }
-            // InternalPortugolParser.g:4003:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )
-            // InternalPortugolParser.g:4003:4: rule__SwitchCaseStatement__CaseListAssignment_2
+            // InternalPortugolParser.g:3920:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )
+            // InternalPortugolParser.g:3920:4: rule__SwitchCaseStatement__CaseListAssignment_2
             {
             pushFollow(FOLLOW_28);
             rule__SwitchCaseStatement__CaseListAssignment_2();
@@ -13413,26 +13144,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4006:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* )
-            // InternalPortugolParser.g:4007:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )*
+            // InternalPortugolParser.g:3923:2: ( ( rule__SwitchCaseStatement__CaseListAssignment_2 )* )
+            // InternalPortugolParser.g:3924:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getCaseListAssignment_2()); 
             }
-            // InternalPortugolParser.g:4008:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )*
-            loop34:
+            // InternalPortugolParser.g:3925:3: ( rule__SwitchCaseStatement__CaseListAssignment_2 )*
+            loop33:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA34_0==Caso) ) {
-                    alt34=1;
+                if ( (LA33_0==Caso) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalPortugolParser.g:4008:4: rule__SwitchCaseStatement__CaseListAssignment_2
+            	    // InternalPortugolParser.g:3925:4: rule__SwitchCaseStatement__CaseListAssignment_2
             	    {
             	    pushFollow(FOLLOW_28);
             	    rule__SwitchCaseStatement__CaseListAssignment_2();
@@ -13444,7 +13175,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop33;
                 }
             } while (true);
 
@@ -13476,14 +13207,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__3"
-    // InternalPortugolParser.g:4017:1: rule__SwitchCaseStatement__Group__3 : rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4 ;
+    // InternalPortugolParser.g:3934:1: rule__SwitchCaseStatement__Group__3 : rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4 ;
     public final void rule__SwitchCaseStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4021:1: ( rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4 )
-            // InternalPortugolParser.g:4022:2: rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4
+            // InternalPortugolParser.g:3938:1: ( rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4 )
+            // InternalPortugolParser.g:3939:2: rule__SwitchCaseStatement__Group__3__Impl rule__SwitchCaseStatement__Group__4
             {
             pushFollow(FOLLOW_27);
             rule__SwitchCaseStatement__Group__3__Impl();
@@ -13514,31 +13245,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__3__Impl"
-    // InternalPortugolParser.g:4029:1: rule__SwitchCaseStatement__Group__3__Impl : ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? ) ;
+    // InternalPortugolParser.g:3946:1: rule__SwitchCaseStatement__Group__3__Impl : ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? ) ;
     public final void rule__SwitchCaseStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4033:1: ( ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? ) )
-            // InternalPortugolParser.g:4034:1: ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? )
+            // InternalPortugolParser.g:3950:1: ( ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? ) )
+            // InternalPortugolParser.g:3951:1: ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? )
             {
-            // InternalPortugolParser.g:4034:1: ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? )
-            // InternalPortugolParser.g:4035:2: ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )?
+            // InternalPortugolParser.g:3951:1: ( ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )? )
+            // InternalPortugolParser.g:3952:2: ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getOtherCaseAssignment_3()); 
             }
-            // InternalPortugolParser.g:4036:2: ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalPortugolParser.g:3953:2: ( rule__SwitchCaseStatement__OtherCaseAssignment_3 )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA35_0==Outrocaso) ) {
-                alt35=1;
+            if ( (LA34_0==Outrocaso) ) {
+                alt34=1;
             }
-            switch (alt35) {
+            switch (alt34) {
                 case 1 :
-                    // InternalPortugolParser.g:4036:3: rule__SwitchCaseStatement__OtherCaseAssignment_3
+                    // InternalPortugolParser.g:3953:3: rule__SwitchCaseStatement__OtherCaseAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__SwitchCaseStatement__OtherCaseAssignment_3();
@@ -13576,14 +13307,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__4"
-    // InternalPortugolParser.g:4044:1: rule__SwitchCaseStatement__Group__4 : rule__SwitchCaseStatement__Group__4__Impl ;
+    // InternalPortugolParser.g:3961:1: rule__SwitchCaseStatement__Group__4 : rule__SwitchCaseStatement__Group__4__Impl ;
     public final void rule__SwitchCaseStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4048:1: ( rule__SwitchCaseStatement__Group__4__Impl )
-            // InternalPortugolParser.g:4049:2: rule__SwitchCaseStatement__Group__4__Impl
+            // InternalPortugolParser.g:3965:1: ( rule__SwitchCaseStatement__Group__4__Impl )
+            // InternalPortugolParser.g:3966:2: rule__SwitchCaseStatement__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SwitchCaseStatement__Group__4__Impl();
@@ -13609,17 +13340,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__Group__4__Impl"
-    // InternalPortugolParser.g:4055:1: rule__SwitchCaseStatement__Group__4__Impl : ( Fimescolha ) ;
+    // InternalPortugolParser.g:3972:1: rule__SwitchCaseStatement__Group__4__Impl : ( Fimescolha ) ;
     public final void rule__SwitchCaseStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4059:1: ( ( Fimescolha ) )
-            // InternalPortugolParser.g:4060:1: ( Fimescolha )
+            // InternalPortugolParser.g:3976:1: ( ( Fimescolha ) )
+            // InternalPortugolParser.g:3977:1: ( Fimescolha )
             {
-            // InternalPortugolParser.g:4060:1: ( Fimescolha )
-            // InternalPortugolParser.g:4061:2: Fimescolha
+            // InternalPortugolParser.g:3977:1: ( Fimescolha )
+            // InternalPortugolParser.g:3978:2: Fimescolha
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getFimescolhaKeyword_4()); 
@@ -13650,14 +13381,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__0"
-    // InternalPortugolParser.g:4071:1: rule__CaseList__Group__0 : rule__CaseList__Group__0__Impl rule__CaseList__Group__1 ;
+    // InternalPortugolParser.g:3988:1: rule__CaseList__Group__0 : rule__CaseList__Group__0__Impl rule__CaseList__Group__1 ;
     public final void rule__CaseList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4075:1: ( rule__CaseList__Group__0__Impl rule__CaseList__Group__1 )
-            // InternalPortugolParser.g:4076:2: rule__CaseList__Group__0__Impl rule__CaseList__Group__1
+            // InternalPortugolParser.g:3992:1: ( rule__CaseList__Group__0__Impl rule__CaseList__Group__1 )
+            // InternalPortugolParser.g:3993:2: rule__CaseList__Group__0__Impl rule__CaseList__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__CaseList__Group__0__Impl();
@@ -13688,17 +13419,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__0__Impl"
-    // InternalPortugolParser.g:4083:1: rule__CaseList__Group__0__Impl : ( Caso ) ;
+    // InternalPortugolParser.g:4000:1: rule__CaseList__Group__0__Impl : ( Caso ) ;
     public final void rule__CaseList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4087:1: ( ( Caso ) )
-            // InternalPortugolParser.g:4088:1: ( Caso )
+            // InternalPortugolParser.g:4004:1: ( ( Caso ) )
+            // InternalPortugolParser.g:4005:1: ( Caso )
             {
-            // InternalPortugolParser.g:4088:1: ( Caso )
-            // InternalPortugolParser.g:4089:2: Caso
+            // InternalPortugolParser.g:4005:1: ( Caso )
+            // InternalPortugolParser.g:4006:2: Caso
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getCasoKeyword_0()); 
@@ -13729,14 +13460,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__1"
-    // InternalPortugolParser.g:4098:1: rule__CaseList__Group__1 : rule__CaseList__Group__1__Impl rule__CaseList__Group__2 ;
+    // InternalPortugolParser.g:4015:1: rule__CaseList__Group__1 : rule__CaseList__Group__1__Impl rule__CaseList__Group__2 ;
     public final void rule__CaseList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4102:1: ( rule__CaseList__Group__1__Impl rule__CaseList__Group__2 )
-            // InternalPortugolParser.g:4103:2: rule__CaseList__Group__1__Impl rule__CaseList__Group__2
+            // InternalPortugolParser.g:4019:1: ( rule__CaseList__Group__1__Impl rule__CaseList__Group__2 )
+            // InternalPortugolParser.g:4020:2: rule__CaseList__Group__1__Impl rule__CaseList__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__CaseList__Group__1__Impl();
@@ -13767,23 +13498,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__1__Impl"
-    // InternalPortugolParser.g:4110:1: rule__CaseList__Group__1__Impl : ( ( rule__CaseList__ExprAssignment_1 ) ) ;
+    // InternalPortugolParser.g:4027:1: rule__CaseList__Group__1__Impl : ( ( rule__CaseList__ExprAssignment_1 ) ) ;
     public final void rule__CaseList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4114:1: ( ( ( rule__CaseList__ExprAssignment_1 ) ) )
-            // InternalPortugolParser.g:4115:1: ( ( rule__CaseList__ExprAssignment_1 ) )
+            // InternalPortugolParser.g:4031:1: ( ( ( rule__CaseList__ExprAssignment_1 ) ) )
+            // InternalPortugolParser.g:4032:1: ( ( rule__CaseList__ExprAssignment_1 ) )
             {
-            // InternalPortugolParser.g:4115:1: ( ( rule__CaseList__ExprAssignment_1 ) )
-            // InternalPortugolParser.g:4116:2: ( rule__CaseList__ExprAssignment_1 )
+            // InternalPortugolParser.g:4032:1: ( ( rule__CaseList__ExprAssignment_1 ) )
+            // InternalPortugolParser.g:4033:2: ( rule__CaseList__ExprAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getExprAssignment_1()); 
             }
-            // InternalPortugolParser.g:4117:2: ( rule__CaseList__ExprAssignment_1 )
-            // InternalPortugolParser.g:4117:3: rule__CaseList__ExprAssignment_1
+            // InternalPortugolParser.g:4034:2: ( rule__CaseList__ExprAssignment_1 )
+            // InternalPortugolParser.g:4034:3: rule__CaseList__ExprAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CaseList__ExprAssignment_1();
@@ -13818,14 +13549,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__2"
-    // InternalPortugolParser.g:4125:1: rule__CaseList__Group__2 : rule__CaseList__Group__2__Impl rule__CaseList__Group__3 ;
+    // InternalPortugolParser.g:4042:1: rule__CaseList__Group__2 : rule__CaseList__Group__2__Impl rule__CaseList__Group__3 ;
     public final void rule__CaseList__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4129:1: ( rule__CaseList__Group__2__Impl rule__CaseList__Group__3 )
-            // InternalPortugolParser.g:4130:2: rule__CaseList__Group__2__Impl rule__CaseList__Group__3
+            // InternalPortugolParser.g:4046:1: ( rule__CaseList__Group__2__Impl rule__CaseList__Group__3 )
+            // InternalPortugolParser.g:4047:2: rule__CaseList__Group__2__Impl rule__CaseList__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__CaseList__Group__2__Impl();
@@ -13856,17 +13587,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__2__Impl"
-    // InternalPortugolParser.g:4137:1: rule__CaseList__Group__2__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:4054:1: rule__CaseList__Group__2__Impl : ( Colon ) ;
     public final void rule__CaseList__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4141:1: ( ( Colon ) )
-            // InternalPortugolParser.g:4142:1: ( Colon )
+            // InternalPortugolParser.g:4058:1: ( ( Colon ) )
+            // InternalPortugolParser.g:4059:1: ( Colon )
             {
-            // InternalPortugolParser.g:4142:1: ( Colon )
-            // InternalPortugolParser.g:4143:2: Colon
+            // InternalPortugolParser.g:4059:1: ( Colon )
+            // InternalPortugolParser.g:4060:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getColonKeyword_2()); 
@@ -13897,14 +13628,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__3"
-    // InternalPortugolParser.g:4152:1: rule__CaseList__Group__3 : rule__CaseList__Group__3__Impl ;
+    // InternalPortugolParser.g:4069:1: rule__CaseList__Group__3 : rule__CaseList__Group__3__Impl ;
     public final void rule__CaseList__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4156:1: ( rule__CaseList__Group__3__Impl )
-            // InternalPortugolParser.g:4157:2: rule__CaseList__Group__3__Impl
+            // InternalPortugolParser.g:4073:1: ( rule__CaseList__Group__3__Impl )
+            // InternalPortugolParser.g:4074:2: rule__CaseList__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CaseList__Group__3__Impl();
@@ -13930,26 +13661,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__Group__3__Impl"
-    // InternalPortugolParser.g:4163:1: rule__CaseList__Group__3__Impl : ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) ) ;
+    // InternalPortugolParser.g:4080:1: rule__CaseList__Group__3__Impl : ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) ) ;
     public final void rule__CaseList__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4167:1: ( ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) ) )
-            // InternalPortugolParser.g:4168:1: ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:4084:1: ( ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) ) )
+            // InternalPortugolParser.g:4085:1: ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) )
             {
-            // InternalPortugolParser.g:4168:1: ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) )
-            // InternalPortugolParser.g:4169:2: ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:4085:1: ( ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:4086:2: ( ( rule__CaseList__CommandsAssignment_3 ) ) ( ( rule__CaseList__CommandsAssignment_3 )* )
             {
-            // InternalPortugolParser.g:4169:2: ( ( rule__CaseList__CommandsAssignment_3 ) )
-            // InternalPortugolParser.g:4170:3: ( rule__CaseList__CommandsAssignment_3 )
+            // InternalPortugolParser.g:4086:2: ( ( rule__CaseList__CommandsAssignment_3 ) )
+            // InternalPortugolParser.g:4087:3: ( rule__CaseList__CommandsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:4171:3: ( rule__CaseList__CommandsAssignment_3 )
-            // InternalPortugolParser.g:4171:4: rule__CaseList__CommandsAssignment_3
+            // InternalPortugolParser.g:4088:3: ( rule__CaseList__CommandsAssignment_3 )
+            // InternalPortugolParser.g:4088:4: rule__CaseList__CommandsAssignment_3
             {
             pushFollow(FOLLOW_18);
             rule__CaseList__CommandsAssignment_3();
@@ -13965,26 +13696,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4174:2: ( ( rule__CaseList__CommandsAssignment_3 )* )
-            // InternalPortugolParser.g:4175:3: ( rule__CaseList__CommandsAssignment_3 )*
+            // InternalPortugolParser.g:4091:2: ( ( rule__CaseList__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:4092:3: ( rule__CaseList__CommandsAssignment_3 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:4176:3: ( rule__CaseList__CommandsAssignment_3 )*
-            loop36:
+            // InternalPortugolParser.g:4093:3: ( rule__CaseList__CommandsAssignment_3 )*
+            loop35:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA36_0==Interrompa||(LA36_0>=Enquanto && LA36_0<=Escreva)||LA36_0==Retorne||(LA36_0>=Maiusc && LA36_0<=Copia)||LA36_0==Raizq||(LA36_0>=Leia && LA36_0<=Para)||LA36_0==NOT||(LA36_0>=Pi && LA36_0<=Se)||LA36_0==LeftParenthesis||LA36_0==HyphenMinus||(LA36_0>=RULE_INT && LA36_0<=RULE_STRING)) ) {
-                    alt36=1;
+                if ( (LA35_0==Interrompa||(LA35_0>=Enquanto && LA35_0<=Escreva)||LA35_0==Retorne||(LA35_0>=Maiusc && LA35_0<=Copia)||LA35_0==Raizq||(LA35_0>=Leia && LA35_0<=Para)||LA35_0==NOT||(LA35_0>=Pi && LA35_0<=Se)||LA35_0==LeftParenthesis||LA35_0==HyphenMinus||(LA35_0>=RULE_INT && LA35_0<=RULE_STRING)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt35) {
             	case 1 :
-            	    // InternalPortugolParser.g:4176:4: rule__CaseList__CommandsAssignment_3
+            	    // InternalPortugolParser.g:4093:4: rule__CaseList__CommandsAssignment_3
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__CaseList__CommandsAssignment_3();
@@ -13996,7 +13727,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop35;
                 }
             } while (true);
 
@@ -14028,14 +13759,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__0"
-    // InternalPortugolParser.g:4186:1: rule__OtherCase__Group__0 : rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1 ;
+    // InternalPortugolParser.g:4103:1: rule__OtherCase__Group__0 : rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1 ;
     public final void rule__OtherCase__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4190:1: ( rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1 )
-            // InternalPortugolParser.g:4191:2: rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1
+            // InternalPortugolParser.g:4107:1: ( rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1 )
+            // InternalPortugolParser.g:4108:2: rule__OtherCase__Group__0__Impl rule__OtherCase__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__OtherCase__Group__0__Impl();
@@ -14066,17 +13797,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__0__Impl"
-    // InternalPortugolParser.g:4198:1: rule__OtherCase__Group__0__Impl : ( Outrocaso ) ;
+    // InternalPortugolParser.g:4115:1: rule__OtherCase__Group__0__Impl : ( Outrocaso ) ;
     public final void rule__OtherCase__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4202:1: ( ( Outrocaso ) )
-            // InternalPortugolParser.g:4203:1: ( Outrocaso )
+            // InternalPortugolParser.g:4119:1: ( ( Outrocaso ) )
+            // InternalPortugolParser.g:4120:1: ( Outrocaso )
             {
-            // InternalPortugolParser.g:4203:1: ( Outrocaso )
-            // InternalPortugolParser.g:4204:2: Outrocaso
+            // InternalPortugolParser.g:4120:1: ( Outrocaso )
+            // InternalPortugolParser.g:4121:2: Outrocaso
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getOutrocasoKeyword_0()); 
@@ -14107,14 +13838,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__1"
-    // InternalPortugolParser.g:4213:1: rule__OtherCase__Group__1 : rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2 ;
+    // InternalPortugolParser.g:4130:1: rule__OtherCase__Group__1 : rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2 ;
     public final void rule__OtherCase__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4217:1: ( rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2 )
-            // InternalPortugolParser.g:4218:2: rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2
+            // InternalPortugolParser.g:4134:1: ( rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2 )
+            // InternalPortugolParser.g:4135:2: rule__OtherCase__Group__1__Impl rule__OtherCase__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__OtherCase__Group__1__Impl();
@@ -14145,17 +13876,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__1__Impl"
-    // InternalPortugolParser.g:4225:1: rule__OtherCase__Group__1__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:4142:1: rule__OtherCase__Group__1__Impl : ( Colon ) ;
     public final void rule__OtherCase__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4229:1: ( ( Colon ) )
-            // InternalPortugolParser.g:4230:1: ( Colon )
+            // InternalPortugolParser.g:4146:1: ( ( Colon ) )
+            // InternalPortugolParser.g:4147:1: ( Colon )
             {
-            // InternalPortugolParser.g:4230:1: ( Colon )
-            // InternalPortugolParser.g:4231:2: Colon
+            // InternalPortugolParser.g:4147:1: ( Colon )
+            // InternalPortugolParser.g:4148:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getColonKeyword_1()); 
@@ -14186,14 +13917,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__2"
-    // InternalPortugolParser.g:4240:1: rule__OtherCase__Group__2 : rule__OtherCase__Group__2__Impl ;
+    // InternalPortugolParser.g:4157:1: rule__OtherCase__Group__2 : rule__OtherCase__Group__2__Impl ;
     public final void rule__OtherCase__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4244:1: ( rule__OtherCase__Group__2__Impl )
-            // InternalPortugolParser.g:4245:2: rule__OtherCase__Group__2__Impl
+            // InternalPortugolParser.g:4161:1: ( rule__OtherCase__Group__2__Impl )
+            // InternalPortugolParser.g:4162:2: rule__OtherCase__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OtherCase__Group__2__Impl();
@@ -14219,26 +13950,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__Group__2__Impl"
-    // InternalPortugolParser.g:4251:1: rule__OtherCase__Group__2__Impl : ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) ) ;
+    // InternalPortugolParser.g:4168:1: rule__OtherCase__Group__2__Impl : ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) ) ;
     public final void rule__OtherCase__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4255:1: ( ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) ) )
-            // InternalPortugolParser.g:4256:1: ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) )
+            // InternalPortugolParser.g:4172:1: ( ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) ) )
+            // InternalPortugolParser.g:4173:1: ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) )
             {
-            // InternalPortugolParser.g:4256:1: ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) )
-            // InternalPortugolParser.g:4257:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* )
+            // InternalPortugolParser.g:4173:1: ( ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* ) )
+            // InternalPortugolParser.g:4174:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) ) ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* )
             {
-            // InternalPortugolParser.g:4257:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) )
-            // InternalPortugolParser.g:4258:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )
+            // InternalPortugolParser.g:4174:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 ) )
+            // InternalPortugolParser.g:4175:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getOtherCaseCommandsAssignment_2()); 
             }
-            // InternalPortugolParser.g:4259:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )
-            // InternalPortugolParser.g:4259:4: rule__OtherCase__OtherCaseCommandsAssignment_2
+            // InternalPortugolParser.g:4176:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )
+            // InternalPortugolParser.g:4176:4: rule__OtherCase__OtherCaseCommandsAssignment_2
             {
             pushFollow(FOLLOW_18);
             rule__OtherCase__OtherCaseCommandsAssignment_2();
@@ -14254,26 +13985,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4262:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* )
-            // InternalPortugolParser.g:4263:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )*
+            // InternalPortugolParser.g:4179:2: ( ( rule__OtherCase__OtherCaseCommandsAssignment_2 )* )
+            // InternalPortugolParser.g:4180:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getOtherCaseCommandsAssignment_2()); 
             }
-            // InternalPortugolParser.g:4264:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )*
-            loop37:
+            // InternalPortugolParser.g:4181:3: ( rule__OtherCase__OtherCaseCommandsAssignment_2 )*
+            loop36:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA37_0==Interrompa||(LA37_0>=Enquanto && LA37_0<=Escreva)||LA37_0==Retorne||(LA37_0>=Maiusc && LA37_0<=Copia)||LA37_0==Raizq||(LA37_0>=Leia && LA37_0<=Para)||LA37_0==NOT||(LA37_0>=Pi && LA37_0<=Se)||LA37_0==LeftParenthesis||LA37_0==HyphenMinus||(LA37_0>=RULE_INT && LA37_0<=RULE_STRING)) ) {
-                    alt37=1;
+                if ( (LA36_0==Interrompa||(LA36_0>=Enquanto && LA36_0<=Escreva)||LA36_0==Retorne||(LA36_0>=Maiusc && LA36_0<=Copia)||LA36_0==Raizq||(LA36_0>=Leia && LA36_0<=Para)||LA36_0==NOT||(LA36_0>=Pi && LA36_0<=Se)||LA36_0==LeftParenthesis||LA36_0==HyphenMinus||(LA36_0>=RULE_INT && LA36_0<=RULE_STRING)) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt36) {
             	case 1 :
-            	    // InternalPortugolParser.g:4264:4: rule__OtherCase__OtherCaseCommandsAssignment_2
+            	    // InternalPortugolParser.g:4181:4: rule__OtherCase__OtherCaseCommandsAssignment_2
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__OtherCase__OtherCaseCommandsAssignment_2();
@@ -14285,7 +14016,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop36;
                 }
             } while (true);
 
@@ -14317,14 +14048,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__0"
-    // InternalPortugolParser.g:4274:1: rule__ForStatement__Group__0 : rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1 ;
+    // InternalPortugolParser.g:4191:1: rule__ForStatement__Group__0 : rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1 ;
     public final void rule__ForStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4278:1: ( rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1 )
-            // InternalPortugolParser.g:4279:2: rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1
+            // InternalPortugolParser.g:4195:1: ( rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1 )
+            // InternalPortugolParser.g:4196:2: rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__ForStatement__Group__0__Impl();
@@ -14355,17 +14086,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__0__Impl"
-    // InternalPortugolParser.g:4286:1: rule__ForStatement__Group__0__Impl : ( Para ) ;
+    // InternalPortugolParser.g:4203:1: rule__ForStatement__Group__0__Impl : ( Para ) ;
     public final void rule__ForStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4290:1: ( ( Para ) )
-            // InternalPortugolParser.g:4291:1: ( Para )
+            // InternalPortugolParser.g:4207:1: ( ( Para ) )
+            // InternalPortugolParser.g:4208:1: ( Para )
             {
-            // InternalPortugolParser.g:4291:1: ( Para )
-            // InternalPortugolParser.g:4292:2: Para
+            // InternalPortugolParser.g:4208:1: ( Para )
+            // InternalPortugolParser.g:4209:2: Para
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getParaKeyword_0()); 
@@ -14396,14 +14127,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__1"
-    // InternalPortugolParser.g:4301:1: rule__ForStatement__Group__1 : rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2 ;
+    // InternalPortugolParser.g:4218:1: rule__ForStatement__Group__1 : rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2 ;
     public final void rule__ForStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4305:1: ( rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2 )
-            // InternalPortugolParser.g:4306:2: rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2
+            // InternalPortugolParser.g:4222:1: ( rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2 )
+            // InternalPortugolParser.g:4223:2: rule__ForStatement__Group__1__Impl rule__ForStatement__Group__2
             {
             pushFollow(FOLLOW_29);
             rule__ForStatement__Group__1__Impl();
@@ -14434,23 +14165,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__1__Impl"
-    // InternalPortugolParser.g:4313:1: rule__ForStatement__Group__1__Impl : ( ( rule__ForStatement__OperatorExprAssignment_1 ) ) ;
+    // InternalPortugolParser.g:4230:1: rule__ForStatement__Group__1__Impl : ( ( rule__ForStatement__OperatorExprAssignment_1 ) ) ;
     public final void rule__ForStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4317:1: ( ( ( rule__ForStatement__OperatorExprAssignment_1 ) ) )
-            // InternalPortugolParser.g:4318:1: ( ( rule__ForStatement__OperatorExprAssignment_1 ) )
+            // InternalPortugolParser.g:4234:1: ( ( ( rule__ForStatement__OperatorExprAssignment_1 ) ) )
+            // InternalPortugolParser.g:4235:1: ( ( rule__ForStatement__OperatorExprAssignment_1 ) )
             {
-            // InternalPortugolParser.g:4318:1: ( ( rule__ForStatement__OperatorExprAssignment_1 ) )
-            // InternalPortugolParser.g:4319:2: ( rule__ForStatement__OperatorExprAssignment_1 )
+            // InternalPortugolParser.g:4235:1: ( ( rule__ForStatement__OperatorExprAssignment_1 ) )
+            // InternalPortugolParser.g:4236:2: ( rule__ForStatement__OperatorExprAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getOperatorExprAssignment_1()); 
             }
-            // InternalPortugolParser.g:4320:2: ( rule__ForStatement__OperatorExprAssignment_1 )
-            // InternalPortugolParser.g:4320:3: rule__ForStatement__OperatorExprAssignment_1
+            // InternalPortugolParser.g:4237:2: ( rule__ForStatement__OperatorExprAssignment_1 )
+            // InternalPortugolParser.g:4237:3: rule__ForStatement__OperatorExprAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__OperatorExprAssignment_1();
@@ -14485,14 +14216,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__2"
-    // InternalPortugolParser.g:4328:1: rule__ForStatement__Group__2 : rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3 ;
+    // InternalPortugolParser.g:4245:1: rule__ForStatement__Group__2 : rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3 ;
     public final void rule__ForStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4332:1: ( rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3 )
-            // InternalPortugolParser.g:4333:2: rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3
+            // InternalPortugolParser.g:4249:1: ( rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3 )
+            // InternalPortugolParser.g:4250:2: rule__ForStatement__Group__2__Impl rule__ForStatement__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__ForStatement__Group__2__Impl();
@@ -14523,17 +14254,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__2__Impl"
-    // InternalPortugolParser.g:4340:1: rule__ForStatement__Group__2__Impl : ( De ) ;
+    // InternalPortugolParser.g:4257:1: rule__ForStatement__Group__2__Impl : ( De ) ;
     public final void rule__ForStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4344:1: ( ( De ) )
-            // InternalPortugolParser.g:4345:1: ( De )
+            // InternalPortugolParser.g:4261:1: ( ( De ) )
+            // InternalPortugolParser.g:4262:1: ( De )
             {
-            // InternalPortugolParser.g:4345:1: ( De )
-            // InternalPortugolParser.g:4346:2: De
+            // InternalPortugolParser.g:4262:1: ( De )
+            // InternalPortugolParser.g:4263:2: De
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getDeKeyword_2()); 
@@ -14564,14 +14295,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__3"
-    // InternalPortugolParser.g:4355:1: rule__ForStatement__Group__3 : rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4 ;
+    // InternalPortugolParser.g:4272:1: rule__ForStatement__Group__3 : rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4 ;
     public final void rule__ForStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4359:1: ( rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4 )
-            // InternalPortugolParser.g:4360:2: rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4
+            // InternalPortugolParser.g:4276:1: ( rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4 )
+            // InternalPortugolParser.g:4277:2: rule__ForStatement__Group__3__Impl rule__ForStatement__Group__4
             {
             pushFollow(FOLLOW_30);
             rule__ForStatement__Group__3__Impl();
@@ -14602,23 +14333,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__3__Impl"
-    // InternalPortugolParser.g:4367:1: rule__ForStatement__Group__3__Impl : ( ( rule__ForStatement__StartExprAssignment_3 ) ) ;
+    // InternalPortugolParser.g:4284:1: rule__ForStatement__Group__3__Impl : ( ( rule__ForStatement__StartExprAssignment_3 ) ) ;
     public final void rule__ForStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4371:1: ( ( ( rule__ForStatement__StartExprAssignment_3 ) ) )
-            // InternalPortugolParser.g:4372:1: ( ( rule__ForStatement__StartExprAssignment_3 ) )
+            // InternalPortugolParser.g:4288:1: ( ( ( rule__ForStatement__StartExprAssignment_3 ) ) )
+            // InternalPortugolParser.g:4289:1: ( ( rule__ForStatement__StartExprAssignment_3 ) )
             {
-            // InternalPortugolParser.g:4372:1: ( ( rule__ForStatement__StartExprAssignment_3 ) )
-            // InternalPortugolParser.g:4373:2: ( rule__ForStatement__StartExprAssignment_3 )
+            // InternalPortugolParser.g:4289:1: ( ( rule__ForStatement__StartExprAssignment_3 ) )
+            // InternalPortugolParser.g:4290:2: ( rule__ForStatement__StartExprAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getStartExprAssignment_3()); 
             }
-            // InternalPortugolParser.g:4374:2: ( rule__ForStatement__StartExprAssignment_3 )
-            // InternalPortugolParser.g:4374:3: rule__ForStatement__StartExprAssignment_3
+            // InternalPortugolParser.g:4291:2: ( rule__ForStatement__StartExprAssignment_3 )
+            // InternalPortugolParser.g:4291:3: rule__ForStatement__StartExprAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__StartExprAssignment_3();
@@ -14653,14 +14384,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__4"
-    // InternalPortugolParser.g:4382:1: rule__ForStatement__Group__4 : rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5 ;
+    // InternalPortugolParser.g:4299:1: rule__ForStatement__Group__4 : rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5 ;
     public final void rule__ForStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4386:1: ( rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5 )
-            // InternalPortugolParser.g:4387:2: rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5
+            // InternalPortugolParser.g:4303:1: ( rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5 )
+            // InternalPortugolParser.g:4304:2: rule__ForStatement__Group__4__Impl rule__ForStatement__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__ForStatement__Group__4__Impl();
@@ -14691,17 +14422,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__4__Impl"
-    // InternalPortugolParser.g:4394:1: rule__ForStatement__Group__4__Impl : ( Ate ) ;
+    // InternalPortugolParser.g:4311:1: rule__ForStatement__Group__4__Impl : ( Ate ) ;
     public final void rule__ForStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4398:1: ( ( Ate ) )
-            // InternalPortugolParser.g:4399:1: ( Ate )
+            // InternalPortugolParser.g:4315:1: ( ( Ate ) )
+            // InternalPortugolParser.g:4316:1: ( Ate )
             {
-            // InternalPortugolParser.g:4399:1: ( Ate )
-            // InternalPortugolParser.g:4400:2: Ate
+            // InternalPortugolParser.g:4316:1: ( Ate )
+            // InternalPortugolParser.g:4317:2: Ate
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getAteKeyword_4()); 
@@ -14732,14 +14463,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__5"
-    // InternalPortugolParser.g:4409:1: rule__ForStatement__Group__5 : rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6 ;
+    // InternalPortugolParser.g:4326:1: rule__ForStatement__Group__5 : rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6 ;
     public final void rule__ForStatement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4413:1: ( rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6 )
-            // InternalPortugolParser.g:4414:2: rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6
+            // InternalPortugolParser.g:4330:1: ( rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6 )
+            // InternalPortugolParser.g:4331:2: rule__ForStatement__Group__5__Impl rule__ForStatement__Group__6
             {
             pushFollow(FOLLOW_31);
             rule__ForStatement__Group__5__Impl();
@@ -14770,23 +14501,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__5__Impl"
-    // InternalPortugolParser.g:4421:1: rule__ForStatement__Group__5__Impl : ( ( rule__ForStatement__EndExprAssignment_5 ) ) ;
+    // InternalPortugolParser.g:4338:1: rule__ForStatement__Group__5__Impl : ( ( rule__ForStatement__EndExprAssignment_5 ) ) ;
     public final void rule__ForStatement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4425:1: ( ( ( rule__ForStatement__EndExprAssignment_5 ) ) )
-            // InternalPortugolParser.g:4426:1: ( ( rule__ForStatement__EndExprAssignment_5 ) )
+            // InternalPortugolParser.g:4342:1: ( ( ( rule__ForStatement__EndExprAssignment_5 ) ) )
+            // InternalPortugolParser.g:4343:1: ( ( rule__ForStatement__EndExprAssignment_5 ) )
             {
-            // InternalPortugolParser.g:4426:1: ( ( rule__ForStatement__EndExprAssignment_5 ) )
-            // InternalPortugolParser.g:4427:2: ( rule__ForStatement__EndExprAssignment_5 )
+            // InternalPortugolParser.g:4343:1: ( ( rule__ForStatement__EndExprAssignment_5 ) )
+            // InternalPortugolParser.g:4344:2: ( rule__ForStatement__EndExprAssignment_5 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getEndExprAssignment_5()); 
             }
-            // InternalPortugolParser.g:4428:2: ( rule__ForStatement__EndExprAssignment_5 )
-            // InternalPortugolParser.g:4428:3: rule__ForStatement__EndExprAssignment_5
+            // InternalPortugolParser.g:4345:2: ( rule__ForStatement__EndExprAssignment_5 )
+            // InternalPortugolParser.g:4345:3: rule__ForStatement__EndExprAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__EndExprAssignment_5();
@@ -14821,14 +14552,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__6"
-    // InternalPortugolParser.g:4436:1: rule__ForStatement__Group__6 : rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7 ;
+    // InternalPortugolParser.g:4353:1: rule__ForStatement__Group__6 : rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7 ;
     public final void rule__ForStatement__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4440:1: ( rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7 )
-            // InternalPortugolParser.g:4441:2: rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7
+            // InternalPortugolParser.g:4357:1: ( rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7 )
+            // InternalPortugolParser.g:4358:2: rule__ForStatement__Group__6__Impl rule__ForStatement__Group__7
             {
             pushFollow(FOLLOW_31);
             rule__ForStatement__Group__6__Impl();
@@ -14859,31 +14590,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__6__Impl"
-    // InternalPortugolParser.g:4448:1: rule__ForStatement__Group__6__Impl : ( ( rule__ForStatement__Group_6__0 )? ) ;
+    // InternalPortugolParser.g:4365:1: rule__ForStatement__Group__6__Impl : ( ( rule__ForStatement__Group_6__0 )? ) ;
     public final void rule__ForStatement__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4452:1: ( ( ( rule__ForStatement__Group_6__0 )? ) )
-            // InternalPortugolParser.g:4453:1: ( ( rule__ForStatement__Group_6__0 )? )
+            // InternalPortugolParser.g:4369:1: ( ( ( rule__ForStatement__Group_6__0 )? ) )
+            // InternalPortugolParser.g:4370:1: ( ( rule__ForStatement__Group_6__0 )? )
             {
-            // InternalPortugolParser.g:4453:1: ( ( rule__ForStatement__Group_6__0 )? )
-            // InternalPortugolParser.g:4454:2: ( rule__ForStatement__Group_6__0 )?
+            // InternalPortugolParser.g:4370:1: ( ( rule__ForStatement__Group_6__0 )? )
+            // InternalPortugolParser.g:4371:2: ( rule__ForStatement__Group_6__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getGroup_6()); 
             }
-            // InternalPortugolParser.g:4455:2: ( rule__ForStatement__Group_6__0 )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalPortugolParser.g:4372:2: ( rule__ForStatement__Group_6__0 )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA38_0==Passo) ) {
-                alt38=1;
+            if ( (LA37_0==Passo) ) {
+                alt37=1;
             }
-            switch (alt38) {
+            switch (alt37) {
                 case 1 :
-                    // InternalPortugolParser.g:4455:3: rule__ForStatement__Group_6__0
+                    // InternalPortugolParser.g:4372:3: rule__ForStatement__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ForStatement__Group_6__0();
@@ -14921,14 +14652,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__7"
-    // InternalPortugolParser.g:4463:1: rule__ForStatement__Group__7 : rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8 ;
+    // InternalPortugolParser.g:4380:1: rule__ForStatement__Group__7 : rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8 ;
     public final void rule__ForStatement__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4467:1: ( rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8 )
-            // InternalPortugolParser.g:4468:2: rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8
+            // InternalPortugolParser.g:4384:1: ( rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8 )
+            // InternalPortugolParser.g:4385:2: rule__ForStatement__Group__7__Impl rule__ForStatement__Group__8
             {
             pushFollow(FOLLOW_16);
             rule__ForStatement__Group__7__Impl();
@@ -14959,17 +14690,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__7__Impl"
-    // InternalPortugolParser.g:4475:1: rule__ForStatement__Group__7__Impl : ( Faca ) ;
+    // InternalPortugolParser.g:4392:1: rule__ForStatement__Group__7__Impl : ( Faca ) ;
     public final void rule__ForStatement__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4479:1: ( ( Faca ) )
-            // InternalPortugolParser.g:4480:1: ( Faca )
+            // InternalPortugolParser.g:4396:1: ( ( Faca ) )
+            // InternalPortugolParser.g:4397:1: ( Faca )
             {
-            // InternalPortugolParser.g:4480:1: ( Faca )
-            // InternalPortugolParser.g:4481:2: Faca
+            // InternalPortugolParser.g:4397:1: ( Faca )
+            // InternalPortugolParser.g:4398:2: Faca
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getFacaKeyword_7()); 
@@ -15000,14 +14731,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__8"
-    // InternalPortugolParser.g:4490:1: rule__ForStatement__Group__8 : rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9 ;
+    // InternalPortugolParser.g:4407:1: rule__ForStatement__Group__8 : rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9 ;
     public final void rule__ForStatement__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4494:1: ( rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9 )
-            // InternalPortugolParser.g:4495:2: rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9
+            // InternalPortugolParser.g:4411:1: ( rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9 )
+            // InternalPortugolParser.g:4412:2: rule__ForStatement__Group__8__Impl rule__ForStatement__Group__9
             {
             pushFollow(FOLLOW_32);
             rule__ForStatement__Group__8__Impl();
@@ -15038,26 +14769,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__8__Impl"
-    // InternalPortugolParser.g:4502:1: rule__ForStatement__Group__8__Impl : ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) ) ;
+    // InternalPortugolParser.g:4419:1: rule__ForStatement__Group__8__Impl : ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) ) ;
     public final void rule__ForStatement__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4506:1: ( ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) ) )
-            // InternalPortugolParser.g:4507:1: ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) )
+            // InternalPortugolParser.g:4423:1: ( ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) ) )
+            // InternalPortugolParser.g:4424:1: ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) )
             {
-            // InternalPortugolParser.g:4507:1: ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) )
-            // InternalPortugolParser.g:4508:2: ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* )
+            // InternalPortugolParser.g:4424:1: ( ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* ) )
+            // InternalPortugolParser.g:4425:2: ( ( rule__ForStatement__CommandsAssignment_8 ) ) ( ( rule__ForStatement__CommandsAssignment_8 )* )
             {
-            // InternalPortugolParser.g:4508:2: ( ( rule__ForStatement__CommandsAssignment_8 ) )
-            // InternalPortugolParser.g:4509:3: ( rule__ForStatement__CommandsAssignment_8 )
+            // InternalPortugolParser.g:4425:2: ( ( rule__ForStatement__CommandsAssignment_8 ) )
+            // InternalPortugolParser.g:4426:3: ( rule__ForStatement__CommandsAssignment_8 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getCommandsAssignment_8()); 
             }
-            // InternalPortugolParser.g:4510:3: ( rule__ForStatement__CommandsAssignment_8 )
-            // InternalPortugolParser.g:4510:4: rule__ForStatement__CommandsAssignment_8
+            // InternalPortugolParser.g:4427:3: ( rule__ForStatement__CommandsAssignment_8 )
+            // InternalPortugolParser.g:4427:4: rule__ForStatement__CommandsAssignment_8
             {
             pushFollow(FOLLOW_18);
             rule__ForStatement__CommandsAssignment_8();
@@ -15073,26 +14804,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4513:2: ( ( rule__ForStatement__CommandsAssignment_8 )* )
-            // InternalPortugolParser.g:4514:3: ( rule__ForStatement__CommandsAssignment_8 )*
+            // InternalPortugolParser.g:4430:2: ( ( rule__ForStatement__CommandsAssignment_8 )* )
+            // InternalPortugolParser.g:4431:3: ( rule__ForStatement__CommandsAssignment_8 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getCommandsAssignment_8()); 
             }
-            // InternalPortugolParser.g:4515:3: ( rule__ForStatement__CommandsAssignment_8 )*
-            loop39:
+            // InternalPortugolParser.g:4432:3: ( rule__ForStatement__CommandsAssignment_8 )*
+            loop38:
             do {
-                int alt39=2;
-                int LA39_0 = input.LA(1);
+                int alt38=2;
+                int LA38_0 = input.LA(1);
 
-                if ( (LA39_0==Interrompa||(LA39_0>=Enquanto && LA39_0<=Escreva)||LA39_0==Retorne||(LA39_0>=Maiusc && LA39_0<=Copia)||LA39_0==Raizq||(LA39_0>=Leia && LA39_0<=Para)||LA39_0==NOT||(LA39_0>=Pi && LA39_0<=Se)||LA39_0==LeftParenthesis||LA39_0==HyphenMinus||(LA39_0>=RULE_INT && LA39_0<=RULE_STRING)) ) {
-                    alt39=1;
+                if ( (LA38_0==Interrompa||(LA38_0>=Enquanto && LA38_0<=Escreva)||LA38_0==Retorne||(LA38_0>=Maiusc && LA38_0<=Copia)||LA38_0==Raizq||(LA38_0>=Leia && LA38_0<=Para)||LA38_0==NOT||(LA38_0>=Pi && LA38_0<=Se)||LA38_0==LeftParenthesis||LA38_0==HyphenMinus||(LA38_0>=RULE_INT && LA38_0<=RULE_STRING)) ) {
+                    alt38=1;
                 }
 
 
-                switch (alt39) {
+                switch (alt38) {
             	case 1 :
-            	    // InternalPortugolParser.g:4515:4: rule__ForStatement__CommandsAssignment_8
+            	    // InternalPortugolParser.g:4432:4: rule__ForStatement__CommandsAssignment_8
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__ForStatement__CommandsAssignment_8();
@@ -15104,7 +14835,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop39;
+            	    break loop38;
                 }
             } while (true);
 
@@ -15136,14 +14867,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__9"
-    // InternalPortugolParser.g:4524:1: rule__ForStatement__Group__9 : rule__ForStatement__Group__9__Impl ;
+    // InternalPortugolParser.g:4441:1: rule__ForStatement__Group__9 : rule__ForStatement__Group__9__Impl ;
     public final void rule__ForStatement__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4528:1: ( rule__ForStatement__Group__9__Impl )
-            // InternalPortugolParser.g:4529:2: rule__ForStatement__Group__9__Impl
+            // InternalPortugolParser.g:4445:1: ( rule__ForStatement__Group__9__Impl )
+            // InternalPortugolParser.g:4446:2: rule__ForStatement__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__Group__9__Impl();
@@ -15169,17 +14900,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group__9__Impl"
-    // InternalPortugolParser.g:4535:1: rule__ForStatement__Group__9__Impl : ( Fimpara ) ;
+    // InternalPortugolParser.g:4452:1: rule__ForStatement__Group__9__Impl : ( Fimpara ) ;
     public final void rule__ForStatement__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4539:1: ( ( Fimpara ) )
-            // InternalPortugolParser.g:4540:1: ( Fimpara )
+            // InternalPortugolParser.g:4456:1: ( ( Fimpara ) )
+            // InternalPortugolParser.g:4457:1: ( Fimpara )
             {
-            // InternalPortugolParser.g:4540:1: ( Fimpara )
-            // InternalPortugolParser.g:4541:2: Fimpara
+            // InternalPortugolParser.g:4457:1: ( Fimpara )
+            // InternalPortugolParser.g:4458:2: Fimpara
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getFimparaKeyword_9()); 
@@ -15210,14 +14941,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group_6__0"
-    // InternalPortugolParser.g:4551:1: rule__ForStatement__Group_6__0 : rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1 ;
+    // InternalPortugolParser.g:4468:1: rule__ForStatement__Group_6__0 : rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1 ;
     public final void rule__ForStatement__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4555:1: ( rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1 )
-            // InternalPortugolParser.g:4556:2: rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1
+            // InternalPortugolParser.g:4472:1: ( rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1 )
+            // InternalPortugolParser.g:4473:2: rule__ForStatement__Group_6__0__Impl rule__ForStatement__Group_6__1
             {
             pushFollow(FOLLOW_23);
             rule__ForStatement__Group_6__0__Impl();
@@ -15248,17 +14979,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group_6__0__Impl"
-    // InternalPortugolParser.g:4563:1: rule__ForStatement__Group_6__0__Impl : ( Passo ) ;
+    // InternalPortugolParser.g:4480:1: rule__ForStatement__Group_6__0__Impl : ( Passo ) ;
     public final void rule__ForStatement__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4567:1: ( ( Passo ) )
-            // InternalPortugolParser.g:4568:1: ( Passo )
+            // InternalPortugolParser.g:4484:1: ( ( Passo ) )
+            // InternalPortugolParser.g:4485:1: ( Passo )
             {
-            // InternalPortugolParser.g:4568:1: ( Passo )
-            // InternalPortugolParser.g:4569:2: Passo
+            // InternalPortugolParser.g:4485:1: ( Passo )
+            // InternalPortugolParser.g:4486:2: Passo
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getPassoKeyword_6_0()); 
@@ -15289,14 +15020,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group_6__1"
-    // InternalPortugolParser.g:4578:1: rule__ForStatement__Group_6__1 : rule__ForStatement__Group_6__1__Impl ;
+    // InternalPortugolParser.g:4495:1: rule__ForStatement__Group_6__1 : rule__ForStatement__Group_6__1__Impl ;
     public final void rule__ForStatement__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4582:1: ( rule__ForStatement__Group_6__1__Impl )
-            // InternalPortugolParser.g:4583:2: rule__ForStatement__Group_6__1__Impl
+            // InternalPortugolParser.g:4499:1: ( rule__ForStatement__Group_6__1__Impl )
+            // InternalPortugolParser.g:4500:2: rule__ForStatement__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__Group_6__1__Impl();
@@ -15322,23 +15053,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__Group_6__1__Impl"
-    // InternalPortugolParser.g:4589:1: rule__ForStatement__Group_6__1__Impl : ( ( rule__ForStatement__StepExpeAssignment_6_1 ) ) ;
+    // InternalPortugolParser.g:4506:1: rule__ForStatement__Group_6__1__Impl : ( ( rule__ForStatement__StepExpeAssignment_6_1 ) ) ;
     public final void rule__ForStatement__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4593:1: ( ( ( rule__ForStatement__StepExpeAssignment_6_1 ) ) )
-            // InternalPortugolParser.g:4594:1: ( ( rule__ForStatement__StepExpeAssignment_6_1 ) )
+            // InternalPortugolParser.g:4510:1: ( ( ( rule__ForStatement__StepExpeAssignment_6_1 ) ) )
+            // InternalPortugolParser.g:4511:1: ( ( rule__ForStatement__StepExpeAssignment_6_1 ) )
             {
-            // InternalPortugolParser.g:4594:1: ( ( rule__ForStatement__StepExpeAssignment_6_1 ) )
-            // InternalPortugolParser.g:4595:2: ( rule__ForStatement__StepExpeAssignment_6_1 )
+            // InternalPortugolParser.g:4511:1: ( ( rule__ForStatement__StepExpeAssignment_6_1 ) )
+            // InternalPortugolParser.g:4512:2: ( rule__ForStatement__StepExpeAssignment_6_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getStepExpeAssignment_6_1()); 
             }
-            // InternalPortugolParser.g:4596:2: ( rule__ForStatement__StepExpeAssignment_6_1 )
-            // InternalPortugolParser.g:4596:3: rule__ForStatement__StepExpeAssignment_6_1
+            // InternalPortugolParser.g:4513:2: ( rule__ForStatement__StepExpeAssignment_6_1 )
+            // InternalPortugolParser.g:4513:3: rule__ForStatement__StepExpeAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__ForStatement__StepExpeAssignment_6_1();
@@ -15373,14 +15104,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__0"
-    // InternalPortugolParser.g:4605:1: rule__WhileStatement__Group__0 : rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1 ;
+    // InternalPortugolParser.g:4522:1: rule__WhileStatement__Group__0 : rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1 ;
     public final void rule__WhileStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4609:1: ( rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1 )
-            // InternalPortugolParser.g:4610:2: rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1
+            // InternalPortugolParser.g:4526:1: ( rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1 )
+            // InternalPortugolParser.g:4527:2: rule__WhileStatement__Group__0__Impl rule__WhileStatement__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__WhileStatement__Group__0__Impl();
@@ -15411,17 +15142,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__0__Impl"
-    // InternalPortugolParser.g:4617:1: rule__WhileStatement__Group__0__Impl : ( Enquanto ) ;
+    // InternalPortugolParser.g:4534:1: rule__WhileStatement__Group__0__Impl : ( Enquanto ) ;
     public final void rule__WhileStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4621:1: ( ( Enquanto ) )
-            // InternalPortugolParser.g:4622:1: ( Enquanto )
+            // InternalPortugolParser.g:4538:1: ( ( Enquanto ) )
+            // InternalPortugolParser.g:4539:1: ( Enquanto )
             {
-            // InternalPortugolParser.g:4622:1: ( Enquanto )
-            // InternalPortugolParser.g:4623:2: Enquanto
+            // InternalPortugolParser.g:4539:1: ( Enquanto )
+            // InternalPortugolParser.g:4540:2: Enquanto
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getEnquantoKeyword_0()); 
@@ -15452,14 +15183,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__1"
-    // InternalPortugolParser.g:4632:1: rule__WhileStatement__Group__1 : rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2 ;
+    // InternalPortugolParser.g:4549:1: rule__WhileStatement__Group__1 : rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2 ;
     public final void rule__WhileStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4636:1: ( rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2 )
-            // InternalPortugolParser.g:4637:2: rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2
+            // InternalPortugolParser.g:4553:1: ( rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2 )
+            // InternalPortugolParser.g:4554:2: rule__WhileStatement__Group__1__Impl rule__WhileStatement__Group__2
             {
             pushFollow(FOLLOW_33);
             rule__WhileStatement__Group__1__Impl();
@@ -15490,23 +15221,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__1__Impl"
-    // InternalPortugolParser.g:4644:1: rule__WhileStatement__Group__1__Impl : ( ( rule__WhileStatement__WhileExprAssignment_1 ) ) ;
+    // InternalPortugolParser.g:4561:1: rule__WhileStatement__Group__1__Impl : ( ( rule__WhileStatement__WhileExprAssignment_1 ) ) ;
     public final void rule__WhileStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4648:1: ( ( ( rule__WhileStatement__WhileExprAssignment_1 ) ) )
-            // InternalPortugolParser.g:4649:1: ( ( rule__WhileStatement__WhileExprAssignment_1 ) )
+            // InternalPortugolParser.g:4565:1: ( ( ( rule__WhileStatement__WhileExprAssignment_1 ) ) )
+            // InternalPortugolParser.g:4566:1: ( ( rule__WhileStatement__WhileExprAssignment_1 ) )
             {
-            // InternalPortugolParser.g:4649:1: ( ( rule__WhileStatement__WhileExprAssignment_1 ) )
-            // InternalPortugolParser.g:4650:2: ( rule__WhileStatement__WhileExprAssignment_1 )
+            // InternalPortugolParser.g:4566:1: ( ( rule__WhileStatement__WhileExprAssignment_1 ) )
+            // InternalPortugolParser.g:4567:2: ( rule__WhileStatement__WhileExprAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getWhileExprAssignment_1()); 
             }
-            // InternalPortugolParser.g:4651:2: ( rule__WhileStatement__WhileExprAssignment_1 )
-            // InternalPortugolParser.g:4651:3: rule__WhileStatement__WhileExprAssignment_1
+            // InternalPortugolParser.g:4568:2: ( rule__WhileStatement__WhileExprAssignment_1 )
+            // InternalPortugolParser.g:4568:3: rule__WhileStatement__WhileExprAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__WhileStatement__WhileExprAssignment_1();
@@ -15541,14 +15272,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__2"
-    // InternalPortugolParser.g:4659:1: rule__WhileStatement__Group__2 : rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3 ;
+    // InternalPortugolParser.g:4576:1: rule__WhileStatement__Group__2 : rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3 ;
     public final void rule__WhileStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4663:1: ( rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3 )
-            // InternalPortugolParser.g:4664:2: rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3
+            // InternalPortugolParser.g:4580:1: ( rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3 )
+            // InternalPortugolParser.g:4581:2: rule__WhileStatement__Group__2__Impl rule__WhileStatement__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__WhileStatement__Group__2__Impl();
@@ -15579,17 +15310,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__2__Impl"
-    // InternalPortugolParser.g:4671:1: rule__WhileStatement__Group__2__Impl : ( Faca ) ;
+    // InternalPortugolParser.g:4588:1: rule__WhileStatement__Group__2__Impl : ( Faca ) ;
     public final void rule__WhileStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4675:1: ( ( Faca ) )
-            // InternalPortugolParser.g:4676:1: ( Faca )
+            // InternalPortugolParser.g:4592:1: ( ( Faca ) )
+            // InternalPortugolParser.g:4593:1: ( Faca )
             {
-            // InternalPortugolParser.g:4676:1: ( Faca )
-            // InternalPortugolParser.g:4677:2: Faca
+            // InternalPortugolParser.g:4593:1: ( Faca )
+            // InternalPortugolParser.g:4594:2: Faca
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getFacaKeyword_2()); 
@@ -15620,14 +15351,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__3"
-    // InternalPortugolParser.g:4686:1: rule__WhileStatement__Group__3 : rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4 ;
+    // InternalPortugolParser.g:4603:1: rule__WhileStatement__Group__3 : rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4 ;
     public final void rule__WhileStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4690:1: ( rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4 )
-            // InternalPortugolParser.g:4691:2: rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4
+            // InternalPortugolParser.g:4607:1: ( rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4 )
+            // InternalPortugolParser.g:4608:2: rule__WhileStatement__Group__3__Impl rule__WhileStatement__Group__4
             {
             pushFollow(FOLLOW_34);
             rule__WhileStatement__Group__3__Impl();
@@ -15658,26 +15389,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__3__Impl"
-    // InternalPortugolParser.g:4698:1: rule__WhileStatement__Group__3__Impl : ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) ) ;
+    // InternalPortugolParser.g:4615:1: rule__WhileStatement__Group__3__Impl : ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) ) ;
     public final void rule__WhileStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4702:1: ( ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) ) )
-            // InternalPortugolParser.g:4703:1: ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:4619:1: ( ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) ) )
+            // InternalPortugolParser.g:4620:1: ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) )
             {
-            // InternalPortugolParser.g:4703:1: ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) )
-            // InternalPortugolParser.g:4704:2: ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:4620:1: ( ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* ) )
+            // InternalPortugolParser.g:4621:2: ( ( rule__WhileStatement__CommandsAssignment_3 ) ) ( ( rule__WhileStatement__CommandsAssignment_3 )* )
             {
-            // InternalPortugolParser.g:4704:2: ( ( rule__WhileStatement__CommandsAssignment_3 ) )
-            // InternalPortugolParser.g:4705:3: ( rule__WhileStatement__CommandsAssignment_3 )
+            // InternalPortugolParser.g:4621:2: ( ( rule__WhileStatement__CommandsAssignment_3 ) )
+            // InternalPortugolParser.g:4622:3: ( rule__WhileStatement__CommandsAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:4706:3: ( rule__WhileStatement__CommandsAssignment_3 )
-            // InternalPortugolParser.g:4706:4: rule__WhileStatement__CommandsAssignment_3
+            // InternalPortugolParser.g:4623:3: ( rule__WhileStatement__CommandsAssignment_3 )
+            // InternalPortugolParser.g:4623:4: rule__WhileStatement__CommandsAssignment_3
             {
             pushFollow(FOLLOW_18);
             rule__WhileStatement__CommandsAssignment_3();
@@ -15693,26 +15424,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4709:2: ( ( rule__WhileStatement__CommandsAssignment_3 )* )
-            // InternalPortugolParser.g:4710:3: ( rule__WhileStatement__CommandsAssignment_3 )*
+            // InternalPortugolParser.g:4626:2: ( ( rule__WhileStatement__CommandsAssignment_3 )* )
+            // InternalPortugolParser.g:4627:3: ( rule__WhileStatement__CommandsAssignment_3 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getCommandsAssignment_3()); 
             }
-            // InternalPortugolParser.g:4711:3: ( rule__WhileStatement__CommandsAssignment_3 )*
-            loop40:
+            // InternalPortugolParser.g:4628:3: ( rule__WhileStatement__CommandsAssignment_3 )*
+            loop39:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA40_0==Interrompa||(LA40_0>=Enquanto && LA40_0<=Escreva)||LA40_0==Retorne||(LA40_0>=Maiusc && LA40_0<=Copia)||LA40_0==Raizq||(LA40_0>=Leia && LA40_0<=Para)||LA40_0==NOT||(LA40_0>=Pi && LA40_0<=Se)||LA40_0==LeftParenthesis||LA40_0==HyphenMinus||(LA40_0>=RULE_INT && LA40_0<=RULE_STRING)) ) {
-                    alt40=1;
+                if ( (LA39_0==Interrompa||(LA39_0>=Enquanto && LA39_0<=Escreva)||LA39_0==Retorne||(LA39_0>=Maiusc && LA39_0<=Copia)||LA39_0==Raizq||(LA39_0>=Leia && LA39_0<=Para)||LA39_0==NOT||(LA39_0>=Pi && LA39_0<=Se)||LA39_0==LeftParenthesis||LA39_0==HyphenMinus||(LA39_0>=RULE_INT && LA39_0<=RULE_STRING)) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt39) {
             	case 1 :
-            	    // InternalPortugolParser.g:4711:4: rule__WhileStatement__CommandsAssignment_3
+            	    // InternalPortugolParser.g:4628:4: rule__WhileStatement__CommandsAssignment_3
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__WhileStatement__CommandsAssignment_3();
@@ -15724,7 +15455,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop39;
                 }
             } while (true);
 
@@ -15756,14 +15487,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__4"
-    // InternalPortugolParser.g:4720:1: rule__WhileStatement__Group__4 : rule__WhileStatement__Group__4__Impl ;
+    // InternalPortugolParser.g:4637:1: rule__WhileStatement__Group__4 : rule__WhileStatement__Group__4__Impl ;
     public final void rule__WhileStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4724:1: ( rule__WhileStatement__Group__4__Impl )
-            // InternalPortugolParser.g:4725:2: rule__WhileStatement__Group__4__Impl
+            // InternalPortugolParser.g:4641:1: ( rule__WhileStatement__Group__4__Impl )
+            // InternalPortugolParser.g:4642:2: rule__WhileStatement__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WhileStatement__Group__4__Impl();
@@ -15789,17 +15520,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__Group__4__Impl"
-    // InternalPortugolParser.g:4731:1: rule__WhileStatement__Group__4__Impl : ( Fimenquanto ) ;
+    // InternalPortugolParser.g:4648:1: rule__WhileStatement__Group__4__Impl : ( Fimenquanto ) ;
     public final void rule__WhileStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4735:1: ( ( Fimenquanto ) )
-            // InternalPortugolParser.g:4736:1: ( Fimenquanto )
+            // InternalPortugolParser.g:4652:1: ( ( Fimenquanto ) )
+            // InternalPortugolParser.g:4653:1: ( Fimenquanto )
             {
-            // InternalPortugolParser.g:4736:1: ( Fimenquanto )
-            // InternalPortugolParser.g:4737:2: Fimenquanto
+            // InternalPortugolParser.g:4653:1: ( Fimenquanto )
+            // InternalPortugolParser.g:4654:2: Fimenquanto
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getFimenquantoKeyword_4()); 
@@ -15830,14 +15561,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__0"
-    // InternalPortugolParser.g:4747:1: rule__RepeatStatement__Group__0 : rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1 ;
+    // InternalPortugolParser.g:4664:1: rule__RepeatStatement__Group__0 : rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1 ;
     public final void rule__RepeatStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4751:1: ( rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1 )
-            // InternalPortugolParser.g:4752:2: rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1
+            // InternalPortugolParser.g:4668:1: ( rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1 )
+            // InternalPortugolParser.g:4669:2: rule__RepeatStatement__Group__0__Impl rule__RepeatStatement__Group__1
             {
             pushFollow(FOLLOW_16);
             rule__RepeatStatement__Group__0__Impl();
@@ -15868,17 +15599,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__0__Impl"
-    // InternalPortugolParser.g:4759:1: rule__RepeatStatement__Group__0__Impl : ( Repita ) ;
+    // InternalPortugolParser.g:4676:1: rule__RepeatStatement__Group__0__Impl : ( Repita ) ;
     public final void rule__RepeatStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4763:1: ( ( Repita ) )
-            // InternalPortugolParser.g:4764:1: ( Repita )
+            // InternalPortugolParser.g:4680:1: ( ( Repita ) )
+            // InternalPortugolParser.g:4681:1: ( Repita )
             {
-            // InternalPortugolParser.g:4764:1: ( Repita )
-            // InternalPortugolParser.g:4765:2: Repita
+            // InternalPortugolParser.g:4681:1: ( Repita )
+            // InternalPortugolParser.g:4682:2: Repita
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getRepitaKeyword_0()); 
@@ -15909,14 +15640,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__1"
-    // InternalPortugolParser.g:4774:1: rule__RepeatStatement__Group__1 : rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2 ;
+    // InternalPortugolParser.g:4691:1: rule__RepeatStatement__Group__1 : rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2 ;
     public final void rule__RepeatStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4778:1: ( rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2 )
-            // InternalPortugolParser.g:4779:2: rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2
+            // InternalPortugolParser.g:4695:1: ( rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2 )
+            // InternalPortugolParser.g:4696:2: rule__RepeatStatement__Group__1__Impl rule__RepeatStatement__Group__2
             {
             pushFollow(FOLLOW_30);
             rule__RepeatStatement__Group__1__Impl();
@@ -15947,26 +15678,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__1__Impl"
-    // InternalPortugolParser.g:4786:1: rule__RepeatStatement__Group__1__Impl : ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) ) ;
+    // InternalPortugolParser.g:4703:1: rule__RepeatStatement__Group__1__Impl : ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) ) ;
     public final void rule__RepeatStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4790:1: ( ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) ) )
-            // InternalPortugolParser.g:4791:1: ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) )
+            // InternalPortugolParser.g:4707:1: ( ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) ) )
+            // InternalPortugolParser.g:4708:1: ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) )
             {
-            // InternalPortugolParser.g:4791:1: ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) )
-            // InternalPortugolParser.g:4792:2: ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* )
+            // InternalPortugolParser.g:4708:1: ( ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* ) )
+            // InternalPortugolParser.g:4709:2: ( ( rule__RepeatStatement__CommandsAssignment_1 ) ) ( ( rule__RepeatStatement__CommandsAssignment_1 )* )
             {
-            // InternalPortugolParser.g:4792:2: ( ( rule__RepeatStatement__CommandsAssignment_1 ) )
-            // InternalPortugolParser.g:4793:3: ( rule__RepeatStatement__CommandsAssignment_1 )
+            // InternalPortugolParser.g:4709:2: ( ( rule__RepeatStatement__CommandsAssignment_1 ) )
+            // InternalPortugolParser.g:4710:3: ( rule__RepeatStatement__CommandsAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getCommandsAssignment_1()); 
             }
-            // InternalPortugolParser.g:4794:3: ( rule__RepeatStatement__CommandsAssignment_1 )
-            // InternalPortugolParser.g:4794:4: rule__RepeatStatement__CommandsAssignment_1
+            // InternalPortugolParser.g:4711:3: ( rule__RepeatStatement__CommandsAssignment_1 )
+            // InternalPortugolParser.g:4711:4: rule__RepeatStatement__CommandsAssignment_1
             {
             pushFollow(FOLLOW_18);
             rule__RepeatStatement__CommandsAssignment_1();
@@ -15982,26 +15713,26 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
             }
 
-            // InternalPortugolParser.g:4797:2: ( ( rule__RepeatStatement__CommandsAssignment_1 )* )
-            // InternalPortugolParser.g:4798:3: ( rule__RepeatStatement__CommandsAssignment_1 )*
+            // InternalPortugolParser.g:4714:2: ( ( rule__RepeatStatement__CommandsAssignment_1 )* )
+            // InternalPortugolParser.g:4715:3: ( rule__RepeatStatement__CommandsAssignment_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getCommandsAssignment_1()); 
             }
-            // InternalPortugolParser.g:4799:3: ( rule__RepeatStatement__CommandsAssignment_1 )*
-            loop41:
+            // InternalPortugolParser.g:4716:3: ( rule__RepeatStatement__CommandsAssignment_1 )*
+            loop40:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt40=2;
+                int LA40_0 = input.LA(1);
 
-                if ( (LA41_0==Interrompa||(LA41_0>=Enquanto && LA41_0<=Escreva)||LA41_0==Retorne||(LA41_0>=Maiusc && LA41_0<=Copia)||LA41_0==Raizq||(LA41_0>=Leia && LA41_0<=Para)||LA41_0==NOT||(LA41_0>=Pi && LA41_0<=Se)||LA41_0==LeftParenthesis||LA41_0==HyphenMinus||(LA41_0>=RULE_INT && LA41_0<=RULE_STRING)) ) {
-                    alt41=1;
+                if ( (LA40_0==Interrompa||(LA40_0>=Enquanto && LA40_0<=Escreva)||LA40_0==Retorne||(LA40_0>=Maiusc && LA40_0<=Copia)||LA40_0==Raizq||(LA40_0>=Leia && LA40_0<=Para)||LA40_0==NOT||(LA40_0>=Pi && LA40_0<=Se)||LA40_0==LeftParenthesis||LA40_0==HyphenMinus||(LA40_0>=RULE_INT && LA40_0<=RULE_STRING)) ) {
+                    alt40=1;
                 }
 
 
-                switch (alt41) {
+                switch (alt40) {
             	case 1 :
-            	    // InternalPortugolParser.g:4799:4: rule__RepeatStatement__CommandsAssignment_1
+            	    // InternalPortugolParser.g:4716:4: rule__RepeatStatement__CommandsAssignment_1
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__RepeatStatement__CommandsAssignment_1();
@@ -16013,7 +15744,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop41;
+            	    break loop40;
                 }
             } while (true);
 
@@ -16045,14 +15776,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__2"
-    // InternalPortugolParser.g:4808:1: rule__RepeatStatement__Group__2 : rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3 ;
+    // InternalPortugolParser.g:4725:1: rule__RepeatStatement__Group__2 : rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3 ;
     public final void rule__RepeatStatement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4812:1: ( rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3 )
-            // InternalPortugolParser.g:4813:2: rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3
+            // InternalPortugolParser.g:4729:1: ( rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3 )
+            // InternalPortugolParser.g:4730:2: rule__RepeatStatement__Group__2__Impl rule__RepeatStatement__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__RepeatStatement__Group__2__Impl();
@@ -16083,17 +15814,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__2__Impl"
-    // InternalPortugolParser.g:4820:1: rule__RepeatStatement__Group__2__Impl : ( Ate ) ;
+    // InternalPortugolParser.g:4737:1: rule__RepeatStatement__Group__2__Impl : ( Ate ) ;
     public final void rule__RepeatStatement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4824:1: ( ( Ate ) )
-            // InternalPortugolParser.g:4825:1: ( Ate )
+            // InternalPortugolParser.g:4741:1: ( ( Ate ) )
+            // InternalPortugolParser.g:4742:1: ( Ate )
             {
-            // InternalPortugolParser.g:4825:1: ( Ate )
-            // InternalPortugolParser.g:4826:2: Ate
+            // InternalPortugolParser.g:4742:1: ( Ate )
+            // InternalPortugolParser.g:4743:2: Ate
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getAteKeyword_2()); 
@@ -16124,14 +15855,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__3"
-    // InternalPortugolParser.g:4835:1: rule__RepeatStatement__Group__3 : rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4 ;
+    // InternalPortugolParser.g:4752:1: rule__RepeatStatement__Group__3 : rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4 ;
     public final void rule__RepeatStatement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4839:1: ( rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4 )
-            // InternalPortugolParser.g:4840:2: rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4
+            // InternalPortugolParser.g:4756:1: ( rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4 )
+            // InternalPortugolParser.g:4757:2: rule__RepeatStatement__Group__3__Impl rule__RepeatStatement__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__RepeatStatement__Group__3__Impl();
@@ -16162,23 +15893,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__3__Impl"
-    // InternalPortugolParser.g:4847:1: rule__RepeatStatement__Group__3__Impl : ( ( rule__RepeatStatement__UntilExprAssignment_3 ) ) ;
+    // InternalPortugolParser.g:4764:1: rule__RepeatStatement__Group__3__Impl : ( ( rule__RepeatStatement__UntilExprAssignment_3 ) ) ;
     public final void rule__RepeatStatement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4851:1: ( ( ( rule__RepeatStatement__UntilExprAssignment_3 ) ) )
-            // InternalPortugolParser.g:4852:1: ( ( rule__RepeatStatement__UntilExprAssignment_3 ) )
+            // InternalPortugolParser.g:4768:1: ( ( ( rule__RepeatStatement__UntilExprAssignment_3 ) ) )
+            // InternalPortugolParser.g:4769:1: ( ( rule__RepeatStatement__UntilExprAssignment_3 ) )
             {
-            // InternalPortugolParser.g:4852:1: ( ( rule__RepeatStatement__UntilExprAssignment_3 ) )
-            // InternalPortugolParser.g:4853:2: ( rule__RepeatStatement__UntilExprAssignment_3 )
+            // InternalPortugolParser.g:4769:1: ( ( rule__RepeatStatement__UntilExprAssignment_3 ) )
+            // InternalPortugolParser.g:4770:2: ( rule__RepeatStatement__UntilExprAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getUntilExprAssignment_3()); 
             }
-            // InternalPortugolParser.g:4854:2: ( rule__RepeatStatement__UntilExprAssignment_3 )
-            // InternalPortugolParser.g:4854:3: rule__RepeatStatement__UntilExprAssignment_3
+            // InternalPortugolParser.g:4771:2: ( rule__RepeatStatement__UntilExprAssignment_3 )
+            // InternalPortugolParser.g:4771:3: rule__RepeatStatement__UntilExprAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__RepeatStatement__UntilExprAssignment_3();
@@ -16213,14 +15944,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__4"
-    // InternalPortugolParser.g:4862:1: rule__RepeatStatement__Group__4 : rule__RepeatStatement__Group__4__Impl ;
+    // InternalPortugolParser.g:4779:1: rule__RepeatStatement__Group__4 : rule__RepeatStatement__Group__4__Impl ;
     public final void rule__RepeatStatement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4866:1: ( rule__RepeatStatement__Group__4__Impl )
-            // InternalPortugolParser.g:4867:2: rule__RepeatStatement__Group__4__Impl
+            // InternalPortugolParser.g:4783:1: ( rule__RepeatStatement__Group__4__Impl )
+            // InternalPortugolParser.g:4784:2: rule__RepeatStatement__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RepeatStatement__Group__4__Impl();
@@ -16246,17 +15977,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__Group__4__Impl"
-    // InternalPortugolParser.g:4873:1: rule__RepeatStatement__Group__4__Impl : ( ruleEND_COMMAND ) ;
+    // InternalPortugolParser.g:4790:1: rule__RepeatStatement__Group__4__Impl : ( ruleEND_COMMAND ) ;
     public final void rule__RepeatStatement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4877:1: ( ( ruleEND_COMMAND ) )
-            // InternalPortugolParser.g:4878:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:4794:1: ( ( ruleEND_COMMAND ) )
+            // InternalPortugolParser.g:4795:1: ( ruleEND_COMMAND )
             {
-            // InternalPortugolParser.g:4878:1: ( ruleEND_COMMAND )
-            // InternalPortugolParser.g:4879:2: ruleEND_COMMAND
+            // InternalPortugolParser.g:4795:1: ( ruleEND_COMMAND )
+            // InternalPortugolParser.g:4796:2: ruleEND_COMMAND
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getEND_COMMANDParserRuleCall_4()); 
@@ -16291,14 +16022,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group__0"
-    // InternalPortugolParser.g:4889:1: rule__SubprogramParam__Group__0 : rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1 ;
+    // InternalPortugolParser.g:4806:1: rule__SubprogramParam__Group__0 : rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1 ;
     public final void rule__SubprogramParam__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4893:1: ( rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1 )
-            // InternalPortugolParser.g:4894:2: rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1
+            // InternalPortugolParser.g:4810:1: ( rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1 )
+            // InternalPortugolParser.g:4811:2: rule__SubprogramParam__Group__0__Impl rule__SubprogramParam__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__SubprogramParam__Group__0__Impl();
@@ -16329,23 +16060,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group__0__Impl"
-    // InternalPortugolParser.g:4901:1: rule__SubprogramParam__Group__0__Impl : ( ( rule__SubprogramParam__ExpressionAssignment_0 ) ) ;
+    // InternalPortugolParser.g:4818:1: rule__SubprogramParam__Group__0__Impl : ( ( rule__SubprogramParam__ExpressionAssignment_0 ) ) ;
     public final void rule__SubprogramParam__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4905:1: ( ( ( rule__SubprogramParam__ExpressionAssignment_0 ) ) )
-            // InternalPortugolParser.g:4906:1: ( ( rule__SubprogramParam__ExpressionAssignment_0 ) )
+            // InternalPortugolParser.g:4822:1: ( ( ( rule__SubprogramParam__ExpressionAssignment_0 ) ) )
+            // InternalPortugolParser.g:4823:1: ( ( rule__SubprogramParam__ExpressionAssignment_0 ) )
             {
-            // InternalPortugolParser.g:4906:1: ( ( rule__SubprogramParam__ExpressionAssignment_0 ) )
-            // InternalPortugolParser.g:4907:2: ( rule__SubprogramParam__ExpressionAssignment_0 )
+            // InternalPortugolParser.g:4823:1: ( ( rule__SubprogramParam__ExpressionAssignment_0 ) )
+            // InternalPortugolParser.g:4824:2: ( rule__SubprogramParam__ExpressionAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getExpressionAssignment_0()); 
             }
-            // InternalPortugolParser.g:4908:2: ( rule__SubprogramParam__ExpressionAssignment_0 )
-            // InternalPortugolParser.g:4908:3: rule__SubprogramParam__ExpressionAssignment_0
+            // InternalPortugolParser.g:4825:2: ( rule__SubprogramParam__ExpressionAssignment_0 )
+            // InternalPortugolParser.g:4825:3: rule__SubprogramParam__ExpressionAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__SubprogramParam__ExpressionAssignment_0();
@@ -16380,14 +16111,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group__1"
-    // InternalPortugolParser.g:4916:1: rule__SubprogramParam__Group__1 : rule__SubprogramParam__Group__1__Impl ;
+    // InternalPortugolParser.g:4833:1: rule__SubprogramParam__Group__1 : rule__SubprogramParam__Group__1__Impl ;
     public final void rule__SubprogramParam__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4920:1: ( rule__SubprogramParam__Group__1__Impl )
-            // InternalPortugolParser.g:4921:2: rule__SubprogramParam__Group__1__Impl
+            // InternalPortugolParser.g:4837:1: ( rule__SubprogramParam__Group__1__Impl )
+            // InternalPortugolParser.g:4838:2: rule__SubprogramParam__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SubprogramParam__Group__1__Impl();
@@ -16413,35 +16144,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group__1__Impl"
-    // InternalPortugolParser.g:4927:1: rule__SubprogramParam__Group__1__Impl : ( ( rule__SubprogramParam__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:4844:1: rule__SubprogramParam__Group__1__Impl : ( ( rule__SubprogramParam__Group_1__0 )* ) ;
     public final void rule__SubprogramParam__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4931:1: ( ( ( rule__SubprogramParam__Group_1__0 )* ) )
-            // InternalPortugolParser.g:4932:1: ( ( rule__SubprogramParam__Group_1__0 )* )
+            // InternalPortugolParser.g:4848:1: ( ( ( rule__SubprogramParam__Group_1__0 )* ) )
+            // InternalPortugolParser.g:4849:1: ( ( rule__SubprogramParam__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:4932:1: ( ( rule__SubprogramParam__Group_1__0 )* )
-            // InternalPortugolParser.g:4933:2: ( rule__SubprogramParam__Group_1__0 )*
+            // InternalPortugolParser.g:4849:1: ( ( rule__SubprogramParam__Group_1__0 )* )
+            // InternalPortugolParser.g:4850:2: ( rule__SubprogramParam__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:4934:2: ( rule__SubprogramParam__Group_1__0 )*
-            loop42:
+            // InternalPortugolParser.g:4851:2: ( rule__SubprogramParam__Group_1__0 )*
+            loop41:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt41=2;
+                int LA41_0 = input.LA(1);
 
-                if ( (LA42_0==Comma) ) {
-                    alt42=1;
+                if ( (LA41_0==Comma) ) {
+                    alt41=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt41) {
             	case 1 :
-            	    // InternalPortugolParser.g:4934:3: rule__SubprogramParam__Group_1__0
+            	    // InternalPortugolParser.g:4851:3: rule__SubprogramParam__Group_1__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__SubprogramParam__Group_1__0();
@@ -16453,7 +16184,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop41;
                 }
             } while (true);
 
@@ -16482,14 +16213,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group_1__0"
-    // InternalPortugolParser.g:4943:1: rule__SubprogramParam__Group_1__0 : rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1 ;
+    // InternalPortugolParser.g:4860:1: rule__SubprogramParam__Group_1__0 : rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1 ;
     public final void rule__SubprogramParam__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4947:1: ( rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1 )
-            // InternalPortugolParser.g:4948:2: rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1
+            // InternalPortugolParser.g:4864:1: ( rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1 )
+            // InternalPortugolParser.g:4865:2: rule__SubprogramParam__Group_1__0__Impl rule__SubprogramParam__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__SubprogramParam__Group_1__0__Impl();
@@ -16520,17 +16251,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group_1__0__Impl"
-    // InternalPortugolParser.g:4955:1: rule__SubprogramParam__Group_1__0__Impl : ( Comma ) ;
+    // InternalPortugolParser.g:4872:1: rule__SubprogramParam__Group_1__0__Impl : ( Comma ) ;
     public final void rule__SubprogramParam__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4959:1: ( ( Comma ) )
-            // InternalPortugolParser.g:4960:1: ( Comma )
+            // InternalPortugolParser.g:4876:1: ( ( Comma ) )
+            // InternalPortugolParser.g:4877:1: ( Comma )
             {
-            // InternalPortugolParser.g:4960:1: ( Comma )
-            // InternalPortugolParser.g:4961:2: Comma
+            // InternalPortugolParser.g:4877:1: ( Comma )
+            // InternalPortugolParser.g:4878:2: Comma
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getCommaKeyword_1_0()); 
@@ -16561,14 +16292,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group_1__1"
-    // InternalPortugolParser.g:4970:1: rule__SubprogramParam__Group_1__1 : rule__SubprogramParam__Group_1__1__Impl ;
+    // InternalPortugolParser.g:4887:1: rule__SubprogramParam__Group_1__1 : rule__SubprogramParam__Group_1__1__Impl ;
     public final void rule__SubprogramParam__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4974:1: ( rule__SubprogramParam__Group_1__1__Impl )
-            // InternalPortugolParser.g:4975:2: rule__SubprogramParam__Group_1__1__Impl
+            // InternalPortugolParser.g:4891:1: ( rule__SubprogramParam__Group_1__1__Impl )
+            // InternalPortugolParser.g:4892:2: rule__SubprogramParam__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SubprogramParam__Group_1__1__Impl();
@@ -16594,23 +16325,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__Group_1__1__Impl"
-    // InternalPortugolParser.g:4981:1: rule__SubprogramParam__Group_1__1__Impl : ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:4898:1: rule__SubprogramParam__Group_1__1__Impl : ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) ) ;
     public final void rule__SubprogramParam__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:4985:1: ( ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:4986:1: ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) )
+            // InternalPortugolParser.g:4902:1: ( ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:4903:1: ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:4986:1: ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) )
-            // InternalPortugolParser.g:4987:2: ( rule__SubprogramParam__ExpressionAssignment_1_1 )
+            // InternalPortugolParser.g:4903:1: ( ( rule__SubprogramParam__ExpressionAssignment_1_1 ) )
+            // InternalPortugolParser.g:4904:2: ( rule__SubprogramParam__ExpressionAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getExpressionAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:4988:2: ( rule__SubprogramParam__ExpressionAssignment_1_1 )
-            // InternalPortugolParser.g:4988:3: rule__SubprogramParam__ExpressionAssignment_1_1
+            // InternalPortugolParser.g:4905:2: ( rule__SubprogramParam__ExpressionAssignment_1_1 )
+            // InternalPortugolParser.g:4905:3: rule__SubprogramParam__ExpressionAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__SubprogramParam__ExpressionAssignment_1_1();
@@ -16645,14 +16376,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__0"
-    // InternalPortugolParser.g:4997:1: rule__ReadCommand__Group__0 : rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1 ;
+    // InternalPortugolParser.g:4914:1: rule__ReadCommand__Group__0 : rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1 ;
     public final void rule__ReadCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5001:1: ( rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1 )
-            // InternalPortugolParser.g:5002:2: rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1
+            // InternalPortugolParser.g:4918:1: ( rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1 )
+            // InternalPortugolParser.g:4919:2: rule__ReadCommand__Group__0__Impl rule__ReadCommand__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__ReadCommand__Group__0__Impl();
@@ -16683,17 +16414,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__0__Impl"
-    // InternalPortugolParser.g:5009:1: rule__ReadCommand__Group__0__Impl : ( Leia ) ;
+    // InternalPortugolParser.g:4926:1: rule__ReadCommand__Group__0__Impl : ( Leia ) ;
     public final void rule__ReadCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5013:1: ( ( Leia ) )
-            // InternalPortugolParser.g:5014:1: ( Leia )
+            // InternalPortugolParser.g:4930:1: ( ( Leia ) )
+            // InternalPortugolParser.g:4931:1: ( Leia )
             {
-            // InternalPortugolParser.g:5014:1: ( Leia )
-            // InternalPortugolParser.g:5015:2: Leia
+            // InternalPortugolParser.g:4931:1: ( Leia )
+            // InternalPortugolParser.g:4932:2: Leia
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getLeiaKeyword_0()); 
@@ -16724,14 +16455,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__1"
-    // InternalPortugolParser.g:5024:1: rule__ReadCommand__Group__1 : rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2 ;
+    // InternalPortugolParser.g:4941:1: rule__ReadCommand__Group__1 : rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2 ;
     public final void rule__ReadCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5028:1: ( rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2 )
-            // InternalPortugolParser.g:5029:2: rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2
+            // InternalPortugolParser.g:4945:1: ( rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2 )
+            // InternalPortugolParser.g:4946:2: rule__ReadCommand__Group__1__Impl rule__ReadCommand__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__ReadCommand__Group__1__Impl();
@@ -16762,17 +16493,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__1__Impl"
-    // InternalPortugolParser.g:5036:1: rule__ReadCommand__Group__1__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:4953:1: rule__ReadCommand__Group__1__Impl : ( LeftParenthesis ) ;
     public final void rule__ReadCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5040:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:5041:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:4957:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:4958:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:5041:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:5042:2: LeftParenthesis
+            // InternalPortugolParser.g:4958:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:4959:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getLeftParenthesisKeyword_1()); 
@@ -16803,14 +16534,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__2"
-    // InternalPortugolParser.g:5051:1: rule__ReadCommand__Group__2 : rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3 ;
+    // InternalPortugolParser.g:4968:1: rule__ReadCommand__Group__2 : rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3 ;
     public final void rule__ReadCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5055:1: ( rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3 )
-            // InternalPortugolParser.g:5056:2: rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3
+            // InternalPortugolParser.g:4972:1: ( rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3 )
+            // InternalPortugolParser.g:4973:2: rule__ReadCommand__Group__2__Impl rule__ReadCommand__Group__3
             {
             pushFollow(FOLLOW_35);
             rule__ReadCommand__Group__2__Impl();
@@ -16841,23 +16572,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__2__Impl"
-    // InternalPortugolParser.g:5063:1: rule__ReadCommand__Group__2__Impl : ( ( rule__ReadCommand__ParamListAssignment_2 ) ) ;
+    // InternalPortugolParser.g:4980:1: rule__ReadCommand__Group__2__Impl : ( ( rule__ReadCommand__ParamListAssignment_2 ) ) ;
     public final void rule__ReadCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5067:1: ( ( ( rule__ReadCommand__ParamListAssignment_2 ) ) )
-            // InternalPortugolParser.g:5068:1: ( ( rule__ReadCommand__ParamListAssignment_2 ) )
+            // InternalPortugolParser.g:4984:1: ( ( ( rule__ReadCommand__ParamListAssignment_2 ) ) )
+            // InternalPortugolParser.g:4985:1: ( ( rule__ReadCommand__ParamListAssignment_2 ) )
             {
-            // InternalPortugolParser.g:5068:1: ( ( rule__ReadCommand__ParamListAssignment_2 ) )
-            // InternalPortugolParser.g:5069:2: ( rule__ReadCommand__ParamListAssignment_2 )
+            // InternalPortugolParser.g:4985:1: ( ( rule__ReadCommand__ParamListAssignment_2 ) )
+            // InternalPortugolParser.g:4986:2: ( rule__ReadCommand__ParamListAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getParamListAssignment_2()); 
             }
-            // InternalPortugolParser.g:5070:2: ( rule__ReadCommand__ParamListAssignment_2 )
-            // InternalPortugolParser.g:5070:3: rule__ReadCommand__ParamListAssignment_2
+            // InternalPortugolParser.g:4987:2: ( rule__ReadCommand__ParamListAssignment_2 )
+            // InternalPortugolParser.g:4987:3: rule__ReadCommand__ParamListAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ReadCommand__ParamListAssignment_2();
@@ -16892,14 +16623,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__3"
-    // InternalPortugolParser.g:5078:1: rule__ReadCommand__Group__3 : rule__ReadCommand__Group__3__Impl ;
+    // InternalPortugolParser.g:4995:1: rule__ReadCommand__Group__3 : rule__ReadCommand__Group__3__Impl ;
     public final void rule__ReadCommand__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5082:1: ( rule__ReadCommand__Group__3__Impl )
-            // InternalPortugolParser.g:5083:2: rule__ReadCommand__Group__3__Impl
+            // InternalPortugolParser.g:4999:1: ( rule__ReadCommand__Group__3__Impl )
+            // InternalPortugolParser.g:5000:2: rule__ReadCommand__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ReadCommand__Group__3__Impl();
@@ -16925,17 +16656,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__Group__3__Impl"
-    // InternalPortugolParser.g:5089:1: rule__ReadCommand__Group__3__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:5006:1: rule__ReadCommand__Group__3__Impl : ( RightParenthesis ) ;
     public final void rule__ReadCommand__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5093:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:5094:1: ( RightParenthesis )
+            // InternalPortugolParser.g:5010:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:5011:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:5094:1: ( RightParenthesis )
-            // InternalPortugolParser.g:5095:2: RightParenthesis
+            // InternalPortugolParser.g:5011:1: ( RightParenthesis )
+            // InternalPortugolParser.g:5012:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getRightParenthesisKeyword_3()); 
@@ -16966,14 +16697,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__0"
-    // InternalPortugolParser.g:5105:1: rule__WriteCommand__Group__0 : rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1 ;
+    // InternalPortugolParser.g:5022:1: rule__WriteCommand__Group__0 : rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1 ;
     public final void rule__WriteCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5109:1: ( rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1 )
-            // InternalPortugolParser.g:5110:2: rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1
+            // InternalPortugolParser.g:5026:1: ( rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1 )
+            // InternalPortugolParser.g:5027:2: rule__WriteCommand__Group__0__Impl rule__WriteCommand__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__WriteCommand__Group__0__Impl();
@@ -17004,23 +16735,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__0__Impl"
-    // InternalPortugolParser.g:5117:1: rule__WriteCommand__Group__0__Impl : ( ( rule__WriteCommand__WriteCommandAssignment_0 ) ) ;
+    // InternalPortugolParser.g:5034:1: rule__WriteCommand__Group__0__Impl : ( ( rule__WriteCommand__WriteCommandAssignment_0 ) ) ;
     public final void rule__WriteCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5121:1: ( ( ( rule__WriteCommand__WriteCommandAssignment_0 ) ) )
-            // InternalPortugolParser.g:5122:1: ( ( rule__WriteCommand__WriteCommandAssignment_0 ) )
+            // InternalPortugolParser.g:5038:1: ( ( ( rule__WriteCommand__WriteCommandAssignment_0 ) ) )
+            // InternalPortugolParser.g:5039:1: ( ( rule__WriteCommand__WriteCommandAssignment_0 ) )
             {
-            // InternalPortugolParser.g:5122:1: ( ( rule__WriteCommand__WriteCommandAssignment_0 ) )
-            // InternalPortugolParser.g:5123:2: ( rule__WriteCommand__WriteCommandAssignment_0 )
+            // InternalPortugolParser.g:5039:1: ( ( rule__WriteCommand__WriteCommandAssignment_0 ) )
+            // InternalPortugolParser.g:5040:2: ( rule__WriteCommand__WriteCommandAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getWriteCommandAssignment_0()); 
             }
-            // InternalPortugolParser.g:5124:2: ( rule__WriteCommand__WriteCommandAssignment_0 )
-            // InternalPortugolParser.g:5124:3: rule__WriteCommand__WriteCommandAssignment_0
+            // InternalPortugolParser.g:5041:2: ( rule__WriteCommand__WriteCommandAssignment_0 )
+            // InternalPortugolParser.g:5041:3: rule__WriteCommand__WriteCommandAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__WriteCommand__WriteCommandAssignment_0();
@@ -17055,14 +16786,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__1"
-    // InternalPortugolParser.g:5132:1: rule__WriteCommand__Group__1 : rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2 ;
+    // InternalPortugolParser.g:5049:1: rule__WriteCommand__Group__1 : rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2 ;
     public final void rule__WriteCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5136:1: ( rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2 )
-            // InternalPortugolParser.g:5137:2: rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2
+            // InternalPortugolParser.g:5053:1: ( rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2 )
+            // InternalPortugolParser.g:5054:2: rule__WriteCommand__Group__1__Impl rule__WriteCommand__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__WriteCommand__Group__1__Impl();
@@ -17093,17 +16824,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__1__Impl"
-    // InternalPortugolParser.g:5144:1: rule__WriteCommand__Group__1__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:5061:1: rule__WriteCommand__Group__1__Impl : ( LeftParenthesis ) ;
     public final void rule__WriteCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5148:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:5149:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:5065:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:5066:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:5149:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:5150:2: LeftParenthesis
+            // InternalPortugolParser.g:5066:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:5067:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getLeftParenthesisKeyword_1()); 
@@ -17134,14 +16865,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__2"
-    // InternalPortugolParser.g:5159:1: rule__WriteCommand__Group__2 : rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3 ;
+    // InternalPortugolParser.g:5076:1: rule__WriteCommand__Group__2 : rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3 ;
     public final void rule__WriteCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5163:1: ( rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3 )
-            // InternalPortugolParser.g:5164:2: rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3
+            // InternalPortugolParser.g:5080:1: ( rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3 )
+            // InternalPortugolParser.g:5081:2: rule__WriteCommand__Group__2__Impl rule__WriteCommand__Group__3
             {
             pushFollow(FOLLOW_35);
             rule__WriteCommand__Group__2__Impl();
@@ -17172,23 +16903,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__2__Impl"
-    // InternalPortugolParser.g:5171:1: rule__WriteCommand__Group__2__Impl : ( ( rule__WriteCommand__WriteParamAssignment_2 ) ) ;
+    // InternalPortugolParser.g:5088:1: rule__WriteCommand__Group__2__Impl : ( ( rule__WriteCommand__WriteParamAssignment_2 ) ) ;
     public final void rule__WriteCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5175:1: ( ( ( rule__WriteCommand__WriteParamAssignment_2 ) ) )
-            // InternalPortugolParser.g:5176:1: ( ( rule__WriteCommand__WriteParamAssignment_2 ) )
+            // InternalPortugolParser.g:5092:1: ( ( ( rule__WriteCommand__WriteParamAssignment_2 ) ) )
+            // InternalPortugolParser.g:5093:1: ( ( rule__WriteCommand__WriteParamAssignment_2 ) )
             {
-            // InternalPortugolParser.g:5176:1: ( ( rule__WriteCommand__WriteParamAssignment_2 ) )
-            // InternalPortugolParser.g:5177:2: ( rule__WriteCommand__WriteParamAssignment_2 )
+            // InternalPortugolParser.g:5093:1: ( ( rule__WriteCommand__WriteParamAssignment_2 ) )
+            // InternalPortugolParser.g:5094:2: ( rule__WriteCommand__WriteParamAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getWriteParamAssignment_2()); 
             }
-            // InternalPortugolParser.g:5178:2: ( rule__WriteCommand__WriteParamAssignment_2 )
-            // InternalPortugolParser.g:5178:3: rule__WriteCommand__WriteParamAssignment_2
+            // InternalPortugolParser.g:5095:2: ( rule__WriteCommand__WriteParamAssignment_2 )
+            // InternalPortugolParser.g:5095:3: rule__WriteCommand__WriteParamAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__WriteCommand__WriteParamAssignment_2();
@@ -17223,14 +16954,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__3"
-    // InternalPortugolParser.g:5186:1: rule__WriteCommand__Group__3 : rule__WriteCommand__Group__3__Impl ;
+    // InternalPortugolParser.g:5103:1: rule__WriteCommand__Group__3 : rule__WriteCommand__Group__3__Impl ;
     public final void rule__WriteCommand__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5190:1: ( rule__WriteCommand__Group__3__Impl )
-            // InternalPortugolParser.g:5191:2: rule__WriteCommand__Group__3__Impl
+            // InternalPortugolParser.g:5107:1: ( rule__WriteCommand__Group__3__Impl )
+            // InternalPortugolParser.g:5108:2: rule__WriteCommand__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WriteCommand__Group__3__Impl();
@@ -17256,17 +16987,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__Group__3__Impl"
-    // InternalPortugolParser.g:5197:1: rule__WriteCommand__Group__3__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:5114:1: rule__WriteCommand__Group__3__Impl : ( RightParenthesis ) ;
     public final void rule__WriteCommand__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5201:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:5202:1: ( RightParenthesis )
+            // InternalPortugolParser.g:5118:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:5119:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:5202:1: ( RightParenthesis )
-            // InternalPortugolParser.g:5203:2: RightParenthesis
+            // InternalPortugolParser.g:5119:1: ( RightParenthesis )
+            // InternalPortugolParser.g:5120:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getRightParenthesisKeyword_3()); 
@@ -17297,14 +17028,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__Group__0"
-    // InternalPortugolParser.g:5213:1: rule__WriteParam__Group__0 : rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1 ;
+    // InternalPortugolParser.g:5130:1: rule__WriteParam__Group__0 : rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1 ;
     public final void rule__WriteParam__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5217:1: ( rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1 )
-            // InternalPortugolParser.g:5218:2: rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1
+            // InternalPortugolParser.g:5134:1: ( rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1 )
+            // InternalPortugolParser.g:5135:2: rule__WriteParam__Group__0__Impl rule__WriteParam__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__WriteParam__Group__0__Impl();
@@ -17335,23 +17066,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__Group__0__Impl"
-    // InternalPortugolParser.g:5225:1: rule__WriteParam__Group__0__Impl : ( ( rule__WriteParam__ParamsAssignment_0 ) ) ;
+    // InternalPortugolParser.g:5142:1: rule__WriteParam__Group__0__Impl : ( ( rule__WriteParam__ParamsAssignment_0 ) ) ;
     public final void rule__WriteParam__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5229:1: ( ( ( rule__WriteParam__ParamsAssignment_0 ) ) )
-            // InternalPortugolParser.g:5230:1: ( ( rule__WriteParam__ParamsAssignment_0 ) )
+            // InternalPortugolParser.g:5146:1: ( ( ( rule__WriteParam__ParamsAssignment_0 ) ) )
+            // InternalPortugolParser.g:5147:1: ( ( rule__WriteParam__ParamsAssignment_0 ) )
             {
-            // InternalPortugolParser.g:5230:1: ( ( rule__WriteParam__ParamsAssignment_0 ) )
-            // InternalPortugolParser.g:5231:2: ( rule__WriteParam__ParamsAssignment_0 )
+            // InternalPortugolParser.g:5147:1: ( ( rule__WriteParam__ParamsAssignment_0 ) )
+            // InternalPortugolParser.g:5148:2: ( rule__WriteParam__ParamsAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamAccess().getParamsAssignment_0()); 
             }
-            // InternalPortugolParser.g:5232:2: ( rule__WriteParam__ParamsAssignment_0 )
-            // InternalPortugolParser.g:5232:3: rule__WriteParam__ParamsAssignment_0
+            // InternalPortugolParser.g:5149:2: ( rule__WriteParam__ParamsAssignment_0 )
+            // InternalPortugolParser.g:5149:3: rule__WriteParam__ParamsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__WriteParam__ParamsAssignment_0();
@@ -17386,14 +17117,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__Group__1"
-    // InternalPortugolParser.g:5240:1: rule__WriteParam__Group__1 : rule__WriteParam__Group__1__Impl ;
+    // InternalPortugolParser.g:5157:1: rule__WriteParam__Group__1 : rule__WriteParam__Group__1__Impl ;
     public final void rule__WriteParam__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5244:1: ( rule__WriteParam__Group__1__Impl )
-            // InternalPortugolParser.g:5245:2: rule__WriteParam__Group__1__Impl
+            // InternalPortugolParser.g:5161:1: ( rule__WriteParam__Group__1__Impl )
+            // InternalPortugolParser.g:5162:2: rule__WriteParam__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WriteParam__Group__1__Impl();
@@ -17419,31 +17150,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__Group__1__Impl"
-    // InternalPortugolParser.g:5251:1: rule__WriteParam__Group__1__Impl : ( ( rule__WriteParam__PrecisionAssignment_1 )? ) ;
+    // InternalPortugolParser.g:5168:1: rule__WriteParam__Group__1__Impl : ( ( rule__WriteParam__PrecisionAssignment_1 )? ) ;
     public final void rule__WriteParam__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5255:1: ( ( ( rule__WriteParam__PrecisionAssignment_1 )? ) )
-            // InternalPortugolParser.g:5256:1: ( ( rule__WriteParam__PrecisionAssignment_1 )? )
+            // InternalPortugolParser.g:5172:1: ( ( ( rule__WriteParam__PrecisionAssignment_1 )? ) )
+            // InternalPortugolParser.g:5173:1: ( ( rule__WriteParam__PrecisionAssignment_1 )? )
             {
-            // InternalPortugolParser.g:5256:1: ( ( rule__WriteParam__PrecisionAssignment_1 )? )
-            // InternalPortugolParser.g:5257:2: ( rule__WriteParam__PrecisionAssignment_1 )?
+            // InternalPortugolParser.g:5173:1: ( ( rule__WriteParam__PrecisionAssignment_1 )? )
+            // InternalPortugolParser.g:5174:2: ( rule__WriteParam__PrecisionAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamAccess().getPrecisionAssignment_1()); 
             }
-            // InternalPortugolParser.g:5258:2: ( rule__WriteParam__PrecisionAssignment_1 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalPortugolParser.g:5175:2: ( rule__WriteParam__PrecisionAssignment_1 )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA43_0==Colon) ) {
-                alt43=1;
+            if ( (LA42_0==Colon) ) {
+                alt42=1;
             }
-            switch (alt43) {
+            switch (alt42) {
                 case 1 :
-                    // InternalPortugolParser.g:5258:3: rule__WriteParam__PrecisionAssignment_1
+                    // InternalPortugolParser.g:5175:3: rule__WriteParam__PrecisionAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__WriteParam__PrecisionAssignment_1();
@@ -17481,14 +17212,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__0"
-    // InternalPortugolParser.g:5267:1: rule__OptDecimalPrecision__Group__0 : rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1 ;
+    // InternalPortugolParser.g:5184:1: rule__OptDecimalPrecision__Group__0 : rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1 ;
     public final void rule__OptDecimalPrecision__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5271:1: ( rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1 )
-            // InternalPortugolParser.g:5272:2: rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1
+            // InternalPortugolParser.g:5188:1: ( rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1 )
+            // InternalPortugolParser.g:5189:2: rule__OptDecimalPrecision__Group__0__Impl rule__OptDecimalPrecision__Group__1
             {
             pushFollow(FOLLOW_36);
             rule__OptDecimalPrecision__Group__0__Impl();
@@ -17519,17 +17250,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__0__Impl"
-    // InternalPortugolParser.g:5279:1: rule__OptDecimalPrecision__Group__0__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:5196:1: rule__OptDecimalPrecision__Group__0__Impl : ( Colon ) ;
     public final void rule__OptDecimalPrecision__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5283:1: ( ( Colon ) )
-            // InternalPortugolParser.g:5284:1: ( Colon )
+            // InternalPortugolParser.g:5200:1: ( ( Colon ) )
+            // InternalPortugolParser.g:5201:1: ( Colon )
             {
-            // InternalPortugolParser.g:5284:1: ( Colon )
-            // InternalPortugolParser.g:5285:2: Colon
+            // InternalPortugolParser.g:5201:1: ( Colon )
+            // InternalPortugolParser.g:5202:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_0()); 
@@ -17560,14 +17291,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__1"
-    // InternalPortugolParser.g:5294:1: rule__OptDecimalPrecision__Group__1 : rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2 ;
+    // InternalPortugolParser.g:5211:1: rule__OptDecimalPrecision__Group__1 : rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2 ;
     public final void rule__OptDecimalPrecision__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5298:1: ( rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2 )
-            // InternalPortugolParser.g:5299:2: rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2
+            // InternalPortugolParser.g:5215:1: ( rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2 )
+            // InternalPortugolParser.g:5216:2: rule__OptDecimalPrecision__Group__1__Impl rule__OptDecimalPrecision__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__OptDecimalPrecision__Group__1__Impl();
@@ -17598,23 +17329,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__1__Impl"
-    // InternalPortugolParser.g:5306:1: rule__OptDecimalPrecision__Group__1__Impl : ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) ) ;
+    // InternalPortugolParser.g:5223:1: rule__OptDecimalPrecision__Group__1__Impl : ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) ) ;
     public final void rule__OptDecimalPrecision__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5310:1: ( ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) ) )
-            // InternalPortugolParser.g:5311:1: ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) )
+            // InternalPortugolParser.g:5227:1: ( ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) ) )
+            // InternalPortugolParser.g:5228:1: ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) )
             {
-            // InternalPortugolParser.g:5311:1: ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) )
-            // InternalPortugolParser.g:5312:2: ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 )
+            // InternalPortugolParser.g:5228:1: ( ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 ) )
+            // InternalPortugolParser.g:5229:2: ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getFirstPrecisionAssignment_1()); 
             }
-            // InternalPortugolParser.g:5313:2: ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 )
-            // InternalPortugolParser.g:5313:3: rule__OptDecimalPrecision__FirstPrecisionAssignment_1
+            // InternalPortugolParser.g:5230:2: ( rule__OptDecimalPrecision__FirstPrecisionAssignment_1 )
+            // InternalPortugolParser.g:5230:3: rule__OptDecimalPrecision__FirstPrecisionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__OptDecimalPrecision__FirstPrecisionAssignment_1();
@@ -17649,14 +17380,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__2"
-    // InternalPortugolParser.g:5321:1: rule__OptDecimalPrecision__Group__2 : rule__OptDecimalPrecision__Group__2__Impl ;
+    // InternalPortugolParser.g:5238:1: rule__OptDecimalPrecision__Group__2 : rule__OptDecimalPrecision__Group__2__Impl ;
     public final void rule__OptDecimalPrecision__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5325:1: ( rule__OptDecimalPrecision__Group__2__Impl )
-            // InternalPortugolParser.g:5326:2: rule__OptDecimalPrecision__Group__2__Impl
+            // InternalPortugolParser.g:5242:1: ( rule__OptDecimalPrecision__Group__2__Impl )
+            // InternalPortugolParser.g:5243:2: rule__OptDecimalPrecision__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OptDecimalPrecision__Group__2__Impl();
@@ -17682,31 +17413,31 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group__2__Impl"
-    // InternalPortugolParser.g:5332:1: rule__OptDecimalPrecision__Group__2__Impl : ( ( rule__OptDecimalPrecision__Group_2__0 )? ) ;
+    // InternalPortugolParser.g:5249:1: rule__OptDecimalPrecision__Group__2__Impl : ( ( rule__OptDecimalPrecision__Group_2__0 )? ) ;
     public final void rule__OptDecimalPrecision__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5336:1: ( ( ( rule__OptDecimalPrecision__Group_2__0 )? ) )
-            // InternalPortugolParser.g:5337:1: ( ( rule__OptDecimalPrecision__Group_2__0 )? )
+            // InternalPortugolParser.g:5253:1: ( ( ( rule__OptDecimalPrecision__Group_2__0 )? ) )
+            // InternalPortugolParser.g:5254:1: ( ( rule__OptDecimalPrecision__Group_2__0 )? )
             {
-            // InternalPortugolParser.g:5337:1: ( ( rule__OptDecimalPrecision__Group_2__0 )? )
-            // InternalPortugolParser.g:5338:2: ( rule__OptDecimalPrecision__Group_2__0 )?
+            // InternalPortugolParser.g:5254:1: ( ( rule__OptDecimalPrecision__Group_2__0 )? )
+            // InternalPortugolParser.g:5255:2: ( rule__OptDecimalPrecision__Group_2__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getGroup_2()); 
             }
-            // InternalPortugolParser.g:5339:2: ( rule__OptDecimalPrecision__Group_2__0 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalPortugolParser.g:5256:2: ( rule__OptDecimalPrecision__Group_2__0 )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA44_0==Colon) ) {
-                alt44=1;
+            if ( (LA43_0==Colon) ) {
+                alt43=1;
             }
-            switch (alt44) {
+            switch (alt43) {
                 case 1 :
-                    // InternalPortugolParser.g:5339:3: rule__OptDecimalPrecision__Group_2__0
+                    // InternalPortugolParser.g:5256:3: rule__OptDecimalPrecision__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__OptDecimalPrecision__Group_2__0();
@@ -17744,14 +17475,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group_2__0"
-    // InternalPortugolParser.g:5348:1: rule__OptDecimalPrecision__Group_2__0 : rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1 ;
+    // InternalPortugolParser.g:5265:1: rule__OptDecimalPrecision__Group_2__0 : rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1 ;
     public final void rule__OptDecimalPrecision__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5352:1: ( rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1 )
-            // InternalPortugolParser.g:5353:2: rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1
+            // InternalPortugolParser.g:5269:1: ( rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1 )
+            // InternalPortugolParser.g:5270:2: rule__OptDecimalPrecision__Group_2__0__Impl rule__OptDecimalPrecision__Group_2__1
             {
             pushFollow(FOLLOW_36);
             rule__OptDecimalPrecision__Group_2__0__Impl();
@@ -17782,17 +17513,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group_2__0__Impl"
-    // InternalPortugolParser.g:5360:1: rule__OptDecimalPrecision__Group_2__0__Impl : ( Colon ) ;
+    // InternalPortugolParser.g:5277:1: rule__OptDecimalPrecision__Group_2__0__Impl : ( Colon ) ;
     public final void rule__OptDecimalPrecision__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5364:1: ( ( Colon ) )
-            // InternalPortugolParser.g:5365:1: ( Colon )
+            // InternalPortugolParser.g:5281:1: ( ( Colon ) )
+            // InternalPortugolParser.g:5282:1: ( Colon )
             {
-            // InternalPortugolParser.g:5365:1: ( Colon )
-            // InternalPortugolParser.g:5366:2: Colon
+            // InternalPortugolParser.g:5282:1: ( Colon )
+            // InternalPortugolParser.g:5283:2: Colon
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getColonKeyword_2_0()); 
@@ -17823,14 +17554,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group_2__1"
-    // InternalPortugolParser.g:5375:1: rule__OptDecimalPrecision__Group_2__1 : rule__OptDecimalPrecision__Group_2__1__Impl ;
+    // InternalPortugolParser.g:5292:1: rule__OptDecimalPrecision__Group_2__1 : rule__OptDecimalPrecision__Group_2__1__Impl ;
     public final void rule__OptDecimalPrecision__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5379:1: ( rule__OptDecimalPrecision__Group_2__1__Impl )
-            // InternalPortugolParser.g:5380:2: rule__OptDecimalPrecision__Group_2__1__Impl
+            // InternalPortugolParser.g:5296:1: ( rule__OptDecimalPrecision__Group_2__1__Impl )
+            // InternalPortugolParser.g:5297:2: rule__OptDecimalPrecision__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OptDecimalPrecision__Group_2__1__Impl();
@@ -17856,23 +17587,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__Group_2__1__Impl"
-    // InternalPortugolParser.g:5386:1: rule__OptDecimalPrecision__Group_2__1__Impl : ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) ) ;
+    // InternalPortugolParser.g:5303:1: rule__OptDecimalPrecision__Group_2__1__Impl : ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) ) ;
     public final void rule__OptDecimalPrecision__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5390:1: ( ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) ) )
-            // InternalPortugolParser.g:5391:1: ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) )
+            // InternalPortugolParser.g:5307:1: ( ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) ) )
+            // InternalPortugolParser.g:5308:1: ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) )
             {
-            // InternalPortugolParser.g:5391:1: ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) )
-            // InternalPortugolParser.g:5392:2: ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 )
+            // InternalPortugolParser.g:5308:1: ( ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 ) )
+            // InternalPortugolParser.g:5309:2: ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getSecondPrecisionAssignment_2_1()); 
             }
-            // InternalPortugolParser.g:5393:2: ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 )
-            // InternalPortugolParser.g:5393:3: rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1
+            // InternalPortugolParser.g:5310:2: ( rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 )
+            // InternalPortugolParser.g:5310:3: rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1();
@@ -17907,14 +17638,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__0"
-    // InternalPortugolParser.g:5402:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
+    // InternalPortugolParser.g:5319:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
     public final void rule__Assignment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5406:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
-            // InternalPortugolParser.g:5407:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
+            // InternalPortugolParser.g:5323:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
+            // InternalPortugolParser.g:5324:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
             {
             pushFollow(FOLLOW_37);
             rule__Assignment__Group__0__Impl();
@@ -17945,17 +17676,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__0__Impl"
-    // InternalPortugolParser.g:5414:1: rule__Assignment__Group__0__Impl : ( ruleOrExpression ) ;
+    // InternalPortugolParser.g:5331:1: rule__Assignment__Group__0__Impl : ( ruleOrExpression ) ;
     public final void rule__Assignment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5418:1: ( ( ruleOrExpression ) )
-            // InternalPortugolParser.g:5419:1: ( ruleOrExpression )
+            // InternalPortugolParser.g:5335:1: ( ( ruleOrExpression ) )
+            // InternalPortugolParser.g:5336:1: ( ruleOrExpression )
             {
-            // InternalPortugolParser.g:5419:1: ( ruleOrExpression )
-            // InternalPortugolParser.g:5420:2: ruleOrExpression
+            // InternalPortugolParser.g:5336:1: ( ruleOrExpression )
+            // InternalPortugolParser.g:5337:2: ruleOrExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOrExpressionParserRuleCall_0()); 
@@ -17990,14 +17721,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__1"
-    // InternalPortugolParser.g:5429:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl ;
+    // InternalPortugolParser.g:5346:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl ;
     public final void rule__Assignment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5433:1: ( rule__Assignment__Group__1__Impl )
-            // InternalPortugolParser.g:5434:2: rule__Assignment__Group__1__Impl
+            // InternalPortugolParser.g:5350:1: ( rule__Assignment__Group__1__Impl )
+            // InternalPortugolParser.g:5351:2: rule__Assignment__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group__1__Impl();
@@ -18023,41 +17754,41 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__1__Impl"
-    // InternalPortugolParser.g:5440:1: rule__Assignment__Group__1__Impl : ( ( rule__Assignment__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:5357:1: rule__Assignment__Group__1__Impl : ( ( rule__Assignment__Group_1__0 )* ) ;
     public final void rule__Assignment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5444:1: ( ( ( rule__Assignment__Group_1__0 )* ) )
-            // InternalPortugolParser.g:5445:1: ( ( rule__Assignment__Group_1__0 )* )
+            // InternalPortugolParser.g:5361:1: ( ( ( rule__Assignment__Group_1__0 )* ) )
+            // InternalPortugolParser.g:5362:1: ( ( rule__Assignment__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:5445:1: ( ( rule__Assignment__Group_1__0 )* )
-            // InternalPortugolParser.g:5446:2: ( rule__Assignment__Group_1__0 )*
+            // InternalPortugolParser.g:5362:1: ( ( rule__Assignment__Group_1__0 )* )
+            // InternalPortugolParser.g:5363:2: ( rule__Assignment__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:5447:2: ( rule__Assignment__Group_1__0 )*
-            loop45:
+            // InternalPortugolParser.g:5364:2: ( rule__Assignment__Group_1__0 )*
+            loop44:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt44=2;
+                int LA44_0 = input.LA(1);
 
-                if ( (LA45_0==LessThanSignHyphenMinus) ) {
-                    int LA45_2 = input.LA(2);
+                if ( (LA44_0==LessThanSignHyphenMinus) ) {
+                    int LA44_2 = input.LA(2);
 
-                    if ( (synpred65_InternalPortugolParser()) ) {
-                        alt45=1;
+                    if ( (synpred64_InternalPortugolParser()) ) {
+                        alt44=1;
                     }
 
 
                 }
 
 
-                switch (alt45) {
+                switch (alt44) {
             	case 1 :
-            	    // InternalPortugolParser.g:5447:3: rule__Assignment__Group_1__0
+            	    // InternalPortugolParser.g:5364:3: rule__Assignment__Group_1__0
             	    {
             	    pushFollow(FOLLOW_38);
             	    rule__Assignment__Group_1__0();
@@ -18069,7 +17800,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop44;
                 }
             } while (true);
 
@@ -18098,14 +17829,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1__0"
-    // InternalPortugolParser.g:5456:1: rule__Assignment__Group_1__0 : rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 ;
+    // InternalPortugolParser.g:5373:1: rule__Assignment__Group_1__0 : rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 ;
     public final void rule__Assignment__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5460:1: ( rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 )
-            // InternalPortugolParser.g:5461:2: rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1
+            // InternalPortugolParser.g:5377:1: ( rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1 )
+            // InternalPortugolParser.g:5378:2: rule__Assignment__Group_1__0__Impl rule__Assignment__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__Assignment__Group_1__0__Impl();
@@ -18136,23 +17867,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1__0__Impl"
-    // InternalPortugolParser.g:5468:1: rule__Assignment__Group_1__0__Impl : ( ( rule__Assignment__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:5385:1: rule__Assignment__Group_1__0__Impl : ( ( rule__Assignment__Group_1_0__0 ) ) ;
     public final void rule__Assignment__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5472:1: ( ( ( rule__Assignment__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:5473:1: ( ( rule__Assignment__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5389:1: ( ( ( rule__Assignment__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:5390:1: ( ( rule__Assignment__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:5473:1: ( ( rule__Assignment__Group_1_0__0 ) )
-            // InternalPortugolParser.g:5474:2: ( rule__Assignment__Group_1_0__0 )
+            // InternalPortugolParser.g:5390:1: ( ( rule__Assignment__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5391:2: ( rule__Assignment__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:5475:2: ( rule__Assignment__Group_1_0__0 )
-            // InternalPortugolParser.g:5475:3: rule__Assignment__Group_1_0__0
+            // InternalPortugolParser.g:5392:2: ( rule__Assignment__Group_1_0__0 )
+            // InternalPortugolParser.g:5392:3: rule__Assignment__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group_1_0__0();
@@ -18187,14 +17918,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1__1"
-    // InternalPortugolParser.g:5483:1: rule__Assignment__Group_1__1 : rule__Assignment__Group_1__1__Impl ;
+    // InternalPortugolParser.g:5400:1: rule__Assignment__Group_1__1 : rule__Assignment__Group_1__1__Impl ;
     public final void rule__Assignment__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5487:1: ( rule__Assignment__Group_1__1__Impl )
-            // InternalPortugolParser.g:5488:2: rule__Assignment__Group_1__1__Impl
+            // InternalPortugolParser.g:5404:1: ( rule__Assignment__Group_1__1__Impl )
+            // InternalPortugolParser.g:5405:2: rule__Assignment__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group_1__1__Impl();
@@ -18220,23 +17951,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1__1__Impl"
-    // InternalPortugolParser.g:5494:1: rule__Assignment__Group_1__1__Impl : ( ( rule__Assignment__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:5411:1: rule__Assignment__Group_1__1__Impl : ( ( rule__Assignment__RightAssignment_1_1 ) ) ;
     public final void rule__Assignment__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5498:1: ( ( ( rule__Assignment__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:5499:1: ( ( rule__Assignment__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5415:1: ( ( ( rule__Assignment__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:5416:1: ( ( rule__Assignment__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:5499:1: ( ( rule__Assignment__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:5500:2: ( rule__Assignment__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5416:1: ( ( rule__Assignment__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5417:2: ( rule__Assignment__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:5501:2: ( rule__Assignment__RightAssignment_1_1 )
-            // InternalPortugolParser.g:5501:3: rule__Assignment__RightAssignment_1_1
+            // InternalPortugolParser.g:5418:2: ( rule__Assignment__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5418:3: rule__Assignment__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__RightAssignment_1_1();
@@ -18271,14 +18002,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0__0"
-    // InternalPortugolParser.g:5510:1: rule__Assignment__Group_1_0__0 : rule__Assignment__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:5427:1: rule__Assignment__Group_1_0__0 : rule__Assignment__Group_1_0__0__Impl ;
     public final void rule__Assignment__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5514:1: ( rule__Assignment__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:5515:2: rule__Assignment__Group_1_0__0__Impl
+            // InternalPortugolParser.g:5431:1: ( rule__Assignment__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:5432:2: rule__Assignment__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group_1_0__0__Impl();
@@ -18304,23 +18035,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:5521:1: rule__Assignment__Group_1_0__0__Impl : ( ( rule__Assignment__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:5438:1: rule__Assignment__Group_1_0__0__Impl : ( ( rule__Assignment__Group_1_0_0__0 ) ) ;
     public final void rule__Assignment__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5525:1: ( ( ( rule__Assignment__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:5526:1: ( ( rule__Assignment__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5442:1: ( ( ( rule__Assignment__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:5443:1: ( ( rule__Assignment__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:5526:1: ( ( rule__Assignment__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:5527:2: ( rule__Assignment__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5443:1: ( ( rule__Assignment__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5444:2: ( rule__Assignment__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:5528:2: ( rule__Assignment__Group_1_0_0__0 )
-            // InternalPortugolParser.g:5528:3: rule__Assignment__Group_1_0_0__0
+            // InternalPortugolParser.g:5445:2: ( rule__Assignment__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5445:3: rule__Assignment__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group_1_0_0__0();
@@ -18355,14 +18086,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0_0__0"
-    // InternalPortugolParser.g:5537:1: rule__Assignment__Group_1_0_0__0 : rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:5454:1: rule__Assignment__Group_1_0_0__0 : rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1 ;
     public final void rule__Assignment__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5541:1: ( rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1 )
-            // InternalPortugolParser.g:5542:2: rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1
+            // InternalPortugolParser.g:5458:1: ( rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1 )
+            // InternalPortugolParser.g:5459:2: rule__Assignment__Group_1_0_0__0__Impl rule__Assignment__Group_1_0_0__1
             {
             pushFollow(FOLLOW_37);
             rule__Assignment__Group_1_0_0__0__Impl();
@@ -18393,23 +18124,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:5549:1: rule__Assignment__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:5466:1: rule__Assignment__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Assignment__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5553:1: ( ( () ) )
-            // InternalPortugolParser.g:5554:1: ( () )
+            // InternalPortugolParser.g:5470:1: ( ( () ) )
+            // InternalPortugolParser.g:5471:1: ( () )
             {
-            // InternalPortugolParser.g:5554:1: ( () )
-            // InternalPortugolParser.g:5555:2: ()
+            // InternalPortugolParser.g:5471:1: ( () )
+            // InternalPortugolParser.g:5472:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:5556:2: ()
-            // InternalPortugolParser.g:5556:3: 
+            // InternalPortugolParser.g:5473:2: ()
+            // InternalPortugolParser.g:5473:3: 
             {
             }
 
@@ -18434,14 +18165,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0_0__1"
-    // InternalPortugolParser.g:5564:1: rule__Assignment__Group_1_0_0__1 : rule__Assignment__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:5481:1: rule__Assignment__Group_1_0_0__1 : rule__Assignment__Group_1_0_0__1__Impl ;
     public final void rule__Assignment__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5568:1: ( rule__Assignment__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:5569:2: rule__Assignment__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:5485:1: ( rule__Assignment__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:5486:2: rule__Assignment__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group_1_0_0__1__Impl();
@@ -18467,23 +18198,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:5575:1: rule__Assignment__Group_1_0_0__1__Impl : ( ( rule__Assignment__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:5492:1: rule__Assignment__Group_1_0_0__1__Impl : ( ( rule__Assignment__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__Assignment__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5579:1: ( ( ( rule__Assignment__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:5580:1: ( ( rule__Assignment__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5496:1: ( ( ( rule__Assignment__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:5497:1: ( ( rule__Assignment__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:5580:1: ( ( rule__Assignment__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:5581:2: ( rule__Assignment__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5497:1: ( ( rule__Assignment__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5498:2: ( rule__Assignment__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:5582:2: ( rule__Assignment__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:5582:3: rule__Assignment__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:5499:2: ( rule__Assignment__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5499:3: rule__Assignment__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__OpAssignment_1_0_0_1();
@@ -18518,14 +18249,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__0"
-    // InternalPortugolParser.g:5591:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
+    // InternalPortugolParser.g:5508:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
     public final void rule__OrExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5595:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // InternalPortugolParser.g:5596:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
+            // InternalPortugolParser.g:5512:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
+            // InternalPortugolParser.g:5513:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
             pushFollow(FOLLOW_39);
             rule__OrExpression__Group__0__Impl();
@@ -18556,17 +18287,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // InternalPortugolParser.g:5603:1: rule__OrExpression__Group__0__Impl : ( ruleXorExpression ) ;
+    // InternalPortugolParser.g:5520:1: rule__OrExpression__Group__0__Impl : ( ruleXorExpression ) ;
     public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5607:1: ( ( ruleXorExpression ) )
-            // InternalPortugolParser.g:5608:1: ( ruleXorExpression )
+            // InternalPortugolParser.g:5524:1: ( ( ruleXorExpression ) )
+            // InternalPortugolParser.g:5525:1: ( ruleXorExpression )
             {
-            // InternalPortugolParser.g:5608:1: ( ruleXorExpression )
-            // InternalPortugolParser.g:5609:2: ruleXorExpression
+            // InternalPortugolParser.g:5525:1: ( ruleXorExpression )
+            // InternalPortugolParser.g:5526:2: ruleXorExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getXorExpressionParserRuleCall_0()); 
@@ -18601,14 +18332,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__1"
-    // InternalPortugolParser.g:5618:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:5535:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
     public final void rule__OrExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5622:1: ( rule__OrExpression__Group__1__Impl )
-            // InternalPortugolParser.g:5623:2: rule__OrExpression__Group__1__Impl
+            // InternalPortugolParser.g:5539:1: ( rule__OrExpression__Group__1__Impl )
+            // InternalPortugolParser.g:5540:2: rule__OrExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group__1__Impl();
@@ -18634,35 +18365,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // InternalPortugolParser.g:5629:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:5546:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
     public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5633:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:5634:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5550:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:5551:1: ( ( rule__OrExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:5634:1: ( ( rule__OrExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:5635:2: ( rule__OrExpression__Group_1__0 )*
+            // InternalPortugolParser.g:5551:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5552:2: ( rule__OrExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:5636:2: ( rule__OrExpression__Group_1__0 )*
-            loop46:
+            // InternalPortugolParser.g:5553:2: ( rule__OrExpression__Group_1__0 )*
+            loop45:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt45=2;
+                int LA45_0 = input.LA(1);
 
-                if ( (LA46_0==OU) ) {
-                    alt46=1;
+                if ( (LA45_0==OU) ) {
+                    alt45=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt45) {
             	case 1 :
-            	    // InternalPortugolParser.g:5636:3: rule__OrExpression__Group_1__0
+            	    // InternalPortugolParser.g:5553:3: rule__OrExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_40);
             	    rule__OrExpression__Group_1__0();
@@ -18674,7 +18405,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop45;
                 }
             } while (true);
 
@@ -18703,14 +18434,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0"
-    // InternalPortugolParser.g:5645:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
+    // InternalPortugolParser.g:5562:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
     public final void rule__OrExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5649:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // InternalPortugolParser.g:5650:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // InternalPortugolParser.g:5566:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
+            // InternalPortugolParser.g:5567:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__OrExpression__Group_1__0__Impl();
@@ -18741,23 +18472,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:5657:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:5574:1: rule__OrExpression__Group_1__0__Impl : ( ( rule__OrExpression__Group_1_0__0 ) ) ;
     public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5661:1: ( ( ( rule__OrExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:5662:1: ( ( rule__OrExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5578:1: ( ( ( rule__OrExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:5579:1: ( ( rule__OrExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:5662:1: ( ( rule__OrExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:5663:2: ( rule__OrExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5579:1: ( ( rule__OrExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5580:2: ( rule__OrExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:5664:2: ( rule__OrExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:5664:3: rule__OrExpression__Group_1_0__0
+            // InternalPortugolParser.g:5581:2: ( rule__OrExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5581:3: rule__OrExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1_0__0();
@@ -18792,14 +18523,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1"
-    // InternalPortugolParser.g:5672:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:5589:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl ;
     public final void rule__OrExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5676:1: ( rule__OrExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:5677:2: rule__OrExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:5593:1: ( rule__OrExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:5594:2: rule__OrExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1__1__Impl();
@@ -18825,23 +18556,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:5683:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:5600:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__RightAssignment_1_1 ) ) ;
     public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5687:1: ( ( ( rule__OrExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:5688:1: ( ( rule__OrExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5604:1: ( ( ( rule__OrExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:5605:1: ( ( rule__OrExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:5688:1: ( ( rule__OrExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:5689:2: ( rule__OrExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5605:1: ( ( rule__OrExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5606:2: ( rule__OrExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:5690:2: ( rule__OrExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:5690:3: rule__OrExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:5607:2: ( rule__OrExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5607:3: rule__OrExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__RightAssignment_1_1();
@@ -18876,14 +18607,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0__0"
-    // InternalPortugolParser.g:5699:1: rule__OrExpression__Group_1_0__0 : rule__OrExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:5616:1: rule__OrExpression__Group_1_0__0 : rule__OrExpression__Group_1_0__0__Impl ;
     public final void rule__OrExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5703:1: ( rule__OrExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:5704:2: rule__OrExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:5620:1: ( rule__OrExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:5621:2: rule__OrExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1_0__0__Impl();
@@ -18909,23 +18640,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:5710:1: rule__OrExpression__Group_1_0__0__Impl : ( ( rule__OrExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:5627:1: rule__OrExpression__Group_1_0__0__Impl : ( ( rule__OrExpression__Group_1_0_0__0 ) ) ;
     public final void rule__OrExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5714:1: ( ( ( rule__OrExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:5715:1: ( ( rule__OrExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5631:1: ( ( ( rule__OrExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:5632:1: ( ( rule__OrExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:5715:1: ( ( rule__OrExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:5716:2: ( rule__OrExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5632:1: ( ( rule__OrExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5633:2: ( rule__OrExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:5717:2: ( rule__OrExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:5717:3: rule__OrExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:5634:2: ( rule__OrExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5634:3: rule__OrExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1_0_0__0();
@@ -18960,14 +18691,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:5726:1: rule__OrExpression__Group_1_0_0__0 : rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:5643:1: rule__OrExpression__Group_1_0_0__0 : rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1 ;
     public final void rule__OrExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5730:1: ( rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:5731:2: rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:5647:1: ( rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:5648:2: rule__OrExpression__Group_1_0_0__0__Impl rule__OrExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_39);
             rule__OrExpression__Group_1_0_0__0__Impl();
@@ -18998,23 +18729,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:5738:1: rule__OrExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:5655:1: rule__OrExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__OrExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5742:1: ( ( () ) )
-            // InternalPortugolParser.g:5743:1: ( () )
+            // InternalPortugolParser.g:5659:1: ( ( () ) )
+            // InternalPortugolParser.g:5660:1: ( () )
             {
-            // InternalPortugolParser.g:5743:1: ( () )
-            // InternalPortugolParser.g:5744:2: ()
+            // InternalPortugolParser.g:5660:1: ( () )
+            // InternalPortugolParser.g:5661:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:5745:2: ()
-            // InternalPortugolParser.g:5745:3: 
+            // InternalPortugolParser.g:5662:2: ()
+            // InternalPortugolParser.g:5662:3: 
             {
             }
 
@@ -19039,14 +18770,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:5753:1: rule__OrExpression__Group_1_0_0__1 : rule__OrExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:5670:1: rule__OrExpression__Group_1_0_0__1 : rule__OrExpression__Group_1_0_0__1__Impl ;
     public final void rule__OrExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5757:1: ( rule__OrExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:5758:2: rule__OrExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:5674:1: ( rule__OrExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:5675:2: rule__OrExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1_0_0__1__Impl();
@@ -19072,23 +18803,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:5764:1: rule__OrExpression__Group_1_0_0__1__Impl : ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:5681:1: rule__OrExpression__Group_1_0_0__1__Impl : ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__OrExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5768:1: ( ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:5769:1: ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5685:1: ( ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:5686:1: ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:5769:1: ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:5770:2: ( rule__OrExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5686:1: ( ( rule__OrExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5687:2: ( rule__OrExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:5771:2: ( rule__OrExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:5771:3: rule__OrExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:5688:2: ( rule__OrExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5688:3: rule__OrExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__OpAssignment_1_0_0_1();
@@ -19123,14 +18854,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group__0"
-    // InternalPortugolParser.g:5780:1: rule__XorExpression__Group__0 : rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1 ;
+    // InternalPortugolParser.g:5697:1: rule__XorExpression__Group__0 : rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1 ;
     public final void rule__XorExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5784:1: ( rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1 )
-            // InternalPortugolParser.g:5785:2: rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1
+            // InternalPortugolParser.g:5701:1: ( rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1 )
+            // InternalPortugolParser.g:5702:2: rule__XorExpression__Group__0__Impl rule__XorExpression__Group__1
             {
             pushFollow(FOLLOW_41);
             rule__XorExpression__Group__0__Impl();
@@ -19161,17 +18892,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group__0__Impl"
-    // InternalPortugolParser.g:5792:1: rule__XorExpression__Group__0__Impl : ( ruleAndExpression ) ;
+    // InternalPortugolParser.g:5709:1: rule__XorExpression__Group__0__Impl : ( ruleAndExpression ) ;
     public final void rule__XorExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5796:1: ( ( ruleAndExpression ) )
-            // InternalPortugolParser.g:5797:1: ( ruleAndExpression )
+            // InternalPortugolParser.g:5713:1: ( ( ruleAndExpression ) )
+            // InternalPortugolParser.g:5714:1: ( ruleAndExpression )
             {
-            // InternalPortugolParser.g:5797:1: ( ruleAndExpression )
-            // InternalPortugolParser.g:5798:2: ruleAndExpression
+            // InternalPortugolParser.g:5714:1: ( ruleAndExpression )
+            // InternalPortugolParser.g:5715:2: ruleAndExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getAndExpressionParserRuleCall_0()); 
@@ -19206,14 +18937,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group__1"
-    // InternalPortugolParser.g:5807:1: rule__XorExpression__Group__1 : rule__XorExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:5724:1: rule__XorExpression__Group__1 : rule__XorExpression__Group__1__Impl ;
     public final void rule__XorExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5811:1: ( rule__XorExpression__Group__1__Impl )
-            // InternalPortugolParser.g:5812:2: rule__XorExpression__Group__1__Impl
+            // InternalPortugolParser.g:5728:1: ( rule__XorExpression__Group__1__Impl )
+            // InternalPortugolParser.g:5729:2: rule__XorExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group__1__Impl();
@@ -19239,35 +18970,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group__1__Impl"
-    // InternalPortugolParser.g:5818:1: rule__XorExpression__Group__1__Impl : ( ( rule__XorExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:5735:1: rule__XorExpression__Group__1__Impl : ( ( rule__XorExpression__Group_1__0 )* ) ;
     public final void rule__XorExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5822:1: ( ( ( rule__XorExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:5823:1: ( ( rule__XorExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5739:1: ( ( ( rule__XorExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:5740:1: ( ( rule__XorExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:5823:1: ( ( rule__XorExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:5824:2: ( rule__XorExpression__Group_1__0 )*
+            // InternalPortugolParser.g:5740:1: ( ( rule__XorExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5741:2: ( rule__XorExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:5825:2: ( rule__XorExpression__Group_1__0 )*
-            loop47:
+            // InternalPortugolParser.g:5742:2: ( rule__XorExpression__Group_1__0 )*
+            loop46:
             do {
-                int alt47=2;
-                int LA47_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA47_0==XOU) ) {
-                    alt47=1;
+                if ( (LA46_0==XOU) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt47) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalPortugolParser.g:5825:3: rule__XorExpression__Group_1__0
+            	    // InternalPortugolParser.g:5742:3: rule__XorExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_42);
             	    rule__XorExpression__Group_1__0();
@@ -19279,7 +19010,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop47;
+            	    break loop46;
                 }
             } while (true);
 
@@ -19308,14 +19039,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1__0"
-    // InternalPortugolParser.g:5834:1: rule__XorExpression__Group_1__0 : rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1 ;
+    // InternalPortugolParser.g:5751:1: rule__XorExpression__Group_1__0 : rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1 ;
     public final void rule__XorExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5838:1: ( rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1 )
-            // InternalPortugolParser.g:5839:2: rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1
+            // InternalPortugolParser.g:5755:1: ( rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1 )
+            // InternalPortugolParser.g:5756:2: rule__XorExpression__Group_1__0__Impl rule__XorExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__XorExpression__Group_1__0__Impl();
@@ -19346,23 +19077,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:5846:1: rule__XorExpression__Group_1__0__Impl : ( ( rule__XorExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:5763:1: rule__XorExpression__Group_1__0__Impl : ( ( rule__XorExpression__Group_1_0__0 ) ) ;
     public final void rule__XorExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5850:1: ( ( ( rule__XorExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:5851:1: ( ( rule__XorExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5767:1: ( ( ( rule__XorExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:5768:1: ( ( rule__XorExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:5851:1: ( ( rule__XorExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:5852:2: ( rule__XorExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5768:1: ( ( rule__XorExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5769:2: ( rule__XorExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:5853:2: ( rule__XorExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:5853:3: rule__XorExpression__Group_1_0__0
+            // InternalPortugolParser.g:5770:2: ( rule__XorExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5770:3: rule__XorExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group_1_0__0();
@@ -19397,14 +19128,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1__1"
-    // InternalPortugolParser.g:5861:1: rule__XorExpression__Group_1__1 : rule__XorExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:5778:1: rule__XorExpression__Group_1__1 : rule__XorExpression__Group_1__1__Impl ;
     public final void rule__XorExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5865:1: ( rule__XorExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:5866:2: rule__XorExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:5782:1: ( rule__XorExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:5783:2: rule__XorExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group_1__1__Impl();
@@ -19430,23 +19161,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:5872:1: rule__XorExpression__Group_1__1__Impl : ( ( rule__XorExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:5789:1: rule__XorExpression__Group_1__1__Impl : ( ( rule__XorExpression__RightAssignment_1_1 ) ) ;
     public final void rule__XorExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5876:1: ( ( ( rule__XorExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:5877:1: ( ( rule__XorExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5793:1: ( ( ( rule__XorExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:5794:1: ( ( rule__XorExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:5877:1: ( ( rule__XorExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:5878:2: ( rule__XorExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5794:1: ( ( rule__XorExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5795:2: ( rule__XorExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:5879:2: ( rule__XorExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:5879:3: rule__XorExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:5796:2: ( rule__XorExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5796:3: rule__XorExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__RightAssignment_1_1();
@@ -19481,14 +19212,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0__0"
-    // InternalPortugolParser.g:5888:1: rule__XorExpression__Group_1_0__0 : rule__XorExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:5805:1: rule__XorExpression__Group_1_0__0 : rule__XorExpression__Group_1_0__0__Impl ;
     public final void rule__XorExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5892:1: ( rule__XorExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:5893:2: rule__XorExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:5809:1: ( rule__XorExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:5810:2: rule__XorExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group_1_0__0__Impl();
@@ -19514,23 +19245,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:5899:1: rule__XorExpression__Group_1_0__0__Impl : ( ( rule__XorExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:5816:1: rule__XorExpression__Group_1_0__0__Impl : ( ( rule__XorExpression__Group_1_0_0__0 ) ) ;
     public final void rule__XorExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5903:1: ( ( ( rule__XorExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:5904:1: ( ( rule__XorExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5820:1: ( ( ( rule__XorExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:5821:1: ( ( rule__XorExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:5904:1: ( ( rule__XorExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:5905:2: ( rule__XorExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5821:1: ( ( rule__XorExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:5822:2: ( rule__XorExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:5906:2: ( rule__XorExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:5906:3: rule__XorExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:5823:2: ( rule__XorExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:5823:3: rule__XorExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group_1_0_0__0();
@@ -19565,14 +19296,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:5915:1: rule__XorExpression__Group_1_0_0__0 : rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:5832:1: rule__XorExpression__Group_1_0_0__0 : rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1 ;
     public final void rule__XorExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5919:1: ( rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:5920:2: rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:5836:1: ( rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:5837:2: rule__XorExpression__Group_1_0_0__0__Impl rule__XorExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_41);
             rule__XorExpression__Group_1_0_0__0__Impl();
@@ -19603,23 +19334,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:5927:1: rule__XorExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:5844:1: rule__XorExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__XorExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5931:1: ( ( () ) )
-            // InternalPortugolParser.g:5932:1: ( () )
+            // InternalPortugolParser.g:5848:1: ( ( () ) )
+            // InternalPortugolParser.g:5849:1: ( () )
             {
-            // InternalPortugolParser.g:5932:1: ( () )
-            // InternalPortugolParser.g:5933:2: ()
+            // InternalPortugolParser.g:5849:1: ( () )
+            // InternalPortugolParser.g:5850:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:5934:2: ()
-            // InternalPortugolParser.g:5934:3: 
+            // InternalPortugolParser.g:5851:2: ()
+            // InternalPortugolParser.g:5851:3: 
             {
             }
 
@@ -19644,14 +19375,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:5942:1: rule__XorExpression__Group_1_0_0__1 : rule__XorExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:5859:1: rule__XorExpression__Group_1_0_0__1 : rule__XorExpression__Group_1_0_0__1__Impl ;
     public final void rule__XorExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5946:1: ( rule__XorExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:5947:2: rule__XorExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:5863:1: ( rule__XorExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:5864:2: rule__XorExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__Group_1_0_0__1__Impl();
@@ -19677,23 +19408,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:5953:1: rule__XorExpression__Group_1_0_0__1__Impl : ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:5870:1: rule__XorExpression__Group_1_0_0__1__Impl : ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__XorExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5957:1: ( ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:5958:1: ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5874:1: ( ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:5875:1: ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:5958:1: ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:5959:2: ( rule__XorExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5875:1: ( ( rule__XorExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:5876:2: ( rule__XorExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:5960:2: ( rule__XorExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:5960:3: rule__XorExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:5877:2: ( rule__XorExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:5877:3: rule__XorExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__XorExpression__OpAssignment_1_0_0_1();
@@ -19728,14 +19459,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__0"
-    // InternalPortugolParser.g:5969:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
+    // InternalPortugolParser.g:5886:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
     public final void rule__AndExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5973:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
-            // InternalPortugolParser.g:5974:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
+            // InternalPortugolParser.g:5890:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
+            // InternalPortugolParser.g:5891:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
             pushFollow(FOLLOW_43);
             rule__AndExpression__Group__0__Impl();
@@ -19766,17 +19497,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__0__Impl"
-    // InternalPortugolParser.g:5981:1: rule__AndExpression__Group__0__Impl : ( ruleComparison ) ;
+    // InternalPortugolParser.g:5898:1: rule__AndExpression__Group__0__Impl : ( ruleComparison ) ;
     public final void rule__AndExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:5985:1: ( ( ruleComparison ) )
-            // InternalPortugolParser.g:5986:1: ( ruleComparison )
+            // InternalPortugolParser.g:5902:1: ( ( ruleComparison ) )
+            // InternalPortugolParser.g:5903:1: ( ruleComparison )
             {
-            // InternalPortugolParser.g:5986:1: ( ruleComparison )
-            // InternalPortugolParser.g:5987:2: ruleComparison
+            // InternalPortugolParser.g:5903:1: ( ruleComparison )
+            // InternalPortugolParser.g:5904:2: ruleComparison
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0()); 
@@ -19811,14 +19542,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__1"
-    // InternalPortugolParser.g:5996:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:5913:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
     public final void rule__AndExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6000:1: ( rule__AndExpression__Group__1__Impl )
-            // InternalPortugolParser.g:6001:2: rule__AndExpression__Group__1__Impl
+            // InternalPortugolParser.g:5917:1: ( rule__AndExpression__Group__1__Impl )
+            // InternalPortugolParser.g:5918:2: rule__AndExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group__1__Impl();
@@ -19844,35 +19575,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__1__Impl"
-    // InternalPortugolParser.g:6007:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:5924:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
     public final void rule__AndExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6011:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6012:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5928:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:5929:1: ( ( rule__AndExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6012:1: ( ( rule__AndExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:6013:2: ( rule__AndExpression__Group_1__0 )*
+            // InternalPortugolParser.g:5929:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:5930:2: ( rule__AndExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6014:2: ( rule__AndExpression__Group_1__0 )*
-            loop48:
+            // InternalPortugolParser.g:5931:2: ( rule__AndExpression__Group_1__0 )*
+            loop47:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA48_0==Ampersand||LA48_0==E) ) {
-                    alt48=1;
+                if ( (LA47_0==Ampersand||LA47_0==E) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalPortugolParser.g:6014:3: rule__AndExpression__Group_1__0
+            	    // InternalPortugolParser.g:5931:3: rule__AndExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_44);
             	    rule__AndExpression__Group_1__0();
@@ -19884,7 +19615,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop47;
                 }
             } while (true);
 
@@ -19913,14 +19644,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0"
-    // InternalPortugolParser.g:6023:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
+    // InternalPortugolParser.g:5940:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
     public final void rule__AndExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6027:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
-            // InternalPortugolParser.g:6028:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
+            // InternalPortugolParser.g:5944:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
+            // InternalPortugolParser.g:5945:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__AndExpression__Group_1__0__Impl();
@@ -19951,23 +19682,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:6035:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:5952:1: rule__AndExpression__Group_1__0__Impl : ( ( rule__AndExpression__Group_1_0__0 ) ) ;
     public final void rule__AndExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6039:1: ( ( ( rule__AndExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6040:1: ( ( rule__AndExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5956:1: ( ( ( rule__AndExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:5957:1: ( ( rule__AndExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6040:1: ( ( rule__AndExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6041:2: ( rule__AndExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5957:1: ( ( rule__AndExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:5958:2: ( rule__AndExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6042:2: ( rule__AndExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:6042:3: rule__AndExpression__Group_1_0__0
+            // InternalPortugolParser.g:5959:2: ( rule__AndExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:5959:3: rule__AndExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1_0__0();
@@ -20002,14 +19733,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1"
-    // InternalPortugolParser.g:6050:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:5967:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl ;
     public final void rule__AndExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6054:1: ( rule__AndExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:6055:2: rule__AndExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:5971:1: ( rule__AndExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:5972:2: rule__AndExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1__1__Impl();
@@ -20035,23 +19766,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:6061:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:5978:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__RightAssignment_1_1 ) ) ;
     public final void rule__AndExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6065:1: ( ( ( rule__AndExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:6066:1: ( ( rule__AndExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5982:1: ( ( ( rule__AndExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:5983:1: ( ( rule__AndExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:6066:1: ( ( rule__AndExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:6067:2: ( rule__AndExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5983:1: ( ( rule__AndExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:5984:2: ( rule__AndExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:6068:2: ( rule__AndExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:6068:3: rule__AndExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:5985:2: ( rule__AndExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:5985:3: rule__AndExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__RightAssignment_1_1();
@@ -20086,14 +19817,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0__0"
-    // InternalPortugolParser.g:6077:1: rule__AndExpression__Group_1_0__0 : rule__AndExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:5994:1: rule__AndExpression__Group_1_0__0 : rule__AndExpression__Group_1_0__0__Impl ;
     public final void rule__AndExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6081:1: ( rule__AndExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:6082:2: rule__AndExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:5998:1: ( rule__AndExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:5999:2: rule__AndExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1_0__0__Impl();
@@ -20119,23 +19850,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:6088:1: rule__AndExpression__Group_1_0__0__Impl : ( ( rule__AndExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6005:1: rule__AndExpression__Group_1_0__0__Impl : ( ( rule__AndExpression__Group_1_0_0__0 ) ) ;
     public final void rule__AndExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6092:1: ( ( ( rule__AndExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:6093:1: ( ( rule__AndExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6009:1: ( ( ( rule__AndExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6010:1: ( ( rule__AndExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:6093:1: ( ( rule__AndExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:6094:2: ( rule__AndExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6010:1: ( ( rule__AndExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6011:2: ( rule__AndExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:6095:2: ( rule__AndExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:6095:3: rule__AndExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:6012:2: ( rule__AndExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6012:3: rule__AndExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1_0_0__0();
@@ -20170,14 +19901,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:6104:1: rule__AndExpression__Group_1_0_0__0 : rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6021:1: rule__AndExpression__Group_1_0_0__0 : rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1 ;
     public final void rule__AndExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6108:1: ( rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:6109:2: rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:6025:1: ( rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6026:2: rule__AndExpression__Group_1_0_0__0__Impl rule__AndExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_43);
             rule__AndExpression__Group_1_0_0__0__Impl();
@@ -20208,23 +19939,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:6116:1: rule__AndExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6033:1: rule__AndExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__AndExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6120:1: ( ( () ) )
-            // InternalPortugolParser.g:6121:1: ( () )
+            // InternalPortugolParser.g:6037:1: ( ( () ) )
+            // InternalPortugolParser.g:6038:1: ( () )
             {
-            // InternalPortugolParser.g:6121:1: ( () )
-            // InternalPortugolParser.g:6122:2: ()
+            // InternalPortugolParser.g:6038:1: ( () )
+            // InternalPortugolParser.g:6039:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:6123:2: ()
-            // InternalPortugolParser.g:6123:3: 
+            // InternalPortugolParser.g:6040:2: ()
+            // InternalPortugolParser.g:6040:3: 
             {
             }
 
@@ -20249,14 +19980,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:6131:1: rule__AndExpression__Group_1_0_0__1 : rule__AndExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6048:1: rule__AndExpression__Group_1_0_0__1 : rule__AndExpression__Group_1_0_0__1__Impl ;
     public final void rule__AndExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6135:1: ( rule__AndExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:6136:2: rule__AndExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6052:1: ( rule__AndExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6053:2: rule__AndExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1_0_0__1__Impl();
@@ -20282,23 +20013,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:6142:1: rule__AndExpression__Group_1_0_0__1__Impl : ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:6059:1: rule__AndExpression__Group_1_0_0__1__Impl : ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__AndExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6146:1: ( ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:6147:1: ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6063:1: ( ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:6064:1: ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:6147:1: ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:6148:2: ( rule__AndExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6064:1: ( ( rule__AndExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6065:2: ( rule__AndExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:6149:2: ( rule__AndExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:6149:3: rule__AndExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:6066:2: ( rule__AndExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6066:3: rule__AndExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__OpAssignment_1_0_0_1();
@@ -20333,14 +20064,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__0"
-    // InternalPortugolParser.g:6158:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
+    // InternalPortugolParser.g:6075:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
     public final void rule__Comparison__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6162:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
-            // InternalPortugolParser.g:6163:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
+            // InternalPortugolParser.g:6079:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
+            // InternalPortugolParser.g:6080:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
             pushFollow(FOLLOW_45);
             rule__Comparison__Group__0__Impl();
@@ -20371,17 +20102,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__0__Impl"
-    // InternalPortugolParser.g:6170:1: rule__Comparison__Group__0__Impl : ( ruleEquExpression ) ;
+    // InternalPortugolParser.g:6087:1: rule__Comparison__Group__0__Impl : ( ruleEquExpression ) ;
     public final void rule__Comparison__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6174:1: ( ( ruleEquExpression ) )
-            // InternalPortugolParser.g:6175:1: ( ruleEquExpression )
+            // InternalPortugolParser.g:6091:1: ( ( ruleEquExpression ) )
+            // InternalPortugolParser.g:6092:1: ( ruleEquExpression )
             {
-            // InternalPortugolParser.g:6175:1: ( ruleEquExpression )
-            // InternalPortugolParser.g:6176:2: ruleEquExpression
+            // InternalPortugolParser.g:6092:1: ( ruleEquExpression )
+            // InternalPortugolParser.g:6093:2: ruleEquExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getEquExpressionParserRuleCall_0()); 
@@ -20416,14 +20147,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__1"
-    // InternalPortugolParser.g:6185:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
+    // InternalPortugolParser.g:6102:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
     public final void rule__Comparison__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6189:1: ( rule__Comparison__Group__1__Impl )
-            // InternalPortugolParser.g:6190:2: rule__Comparison__Group__1__Impl
+            // InternalPortugolParser.g:6106:1: ( rule__Comparison__Group__1__Impl )
+            // InternalPortugolParser.g:6107:2: rule__Comparison__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group__1__Impl();
@@ -20449,35 +20180,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__1__Impl"
-    // InternalPortugolParser.g:6196:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:6113:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
     public final void rule__Comparison__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6200:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6201:1: ( ( rule__Comparison__Group_1__0 )* )
+            // InternalPortugolParser.g:6117:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
+            // InternalPortugolParser.g:6118:1: ( ( rule__Comparison__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6201:1: ( ( rule__Comparison__Group_1__0 )* )
-            // InternalPortugolParser.g:6202:2: ( rule__Comparison__Group_1__0 )*
+            // InternalPortugolParser.g:6118:1: ( ( rule__Comparison__Group_1__0 )* )
+            // InternalPortugolParser.g:6119:2: ( rule__Comparison__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6203:2: ( rule__Comparison__Group_1__0 )*
-            loop49:
+            // InternalPortugolParser.g:6120:2: ( rule__Comparison__Group_1__0 )*
+            loop48:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt48=2;
+                int LA48_0 = input.LA(1);
 
-                if ( (LA49_0==LessThanSignGreaterThanSign||LA49_0==EqualsSign) ) {
-                    alt49=1;
+                if ( (LA48_0==LessThanSignGreaterThanSign||LA48_0==EqualsSign) ) {
+                    alt48=1;
                 }
 
 
-                switch (alt49) {
+                switch (alt48) {
             	case 1 :
-            	    // InternalPortugolParser.g:6203:3: rule__Comparison__Group_1__0
+            	    // InternalPortugolParser.g:6120:3: rule__Comparison__Group_1__0
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__Comparison__Group_1__0();
@@ -20489,7 +20220,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop48;
                 }
             } while (true);
 
@@ -20518,14 +20249,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__0"
-    // InternalPortugolParser.g:6212:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
+    // InternalPortugolParser.g:6129:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
     public final void rule__Comparison__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6216:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
-            // InternalPortugolParser.g:6217:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
+            // InternalPortugolParser.g:6133:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
+            // InternalPortugolParser.g:6134:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__Comparison__Group_1__0__Impl();
@@ -20556,23 +20287,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__0__Impl"
-    // InternalPortugolParser.g:6224:1: rule__Comparison__Group_1__0__Impl : ( ( rule__Comparison__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:6141:1: rule__Comparison__Group_1__0__Impl : ( ( rule__Comparison__Group_1_0__0 ) ) ;
     public final void rule__Comparison__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6228:1: ( ( ( rule__Comparison__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6229:1: ( ( rule__Comparison__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6145:1: ( ( ( rule__Comparison__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:6146:1: ( ( rule__Comparison__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6229:1: ( ( rule__Comparison__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6230:2: ( rule__Comparison__Group_1_0__0 )
+            // InternalPortugolParser.g:6146:1: ( ( rule__Comparison__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6147:2: ( rule__Comparison__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6231:2: ( rule__Comparison__Group_1_0__0 )
-            // InternalPortugolParser.g:6231:3: rule__Comparison__Group_1_0__0
+            // InternalPortugolParser.g:6148:2: ( rule__Comparison__Group_1_0__0 )
+            // InternalPortugolParser.g:6148:3: rule__Comparison__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1_0__0();
@@ -20607,14 +20338,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__1"
-    // InternalPortugolParser.g:6239:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl ;
+    // InternalPortugolParser.g:6156:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl ;
     public final void rule__Comparison__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6243:1: ( rule__Comparison__Group_1__1__Impl )
-            // InternalPortugolParser.g:6244:2: rule__Comparison__Group_1__1__Impl
+            // InternalPortugolParser.g:6160:1: ( rule__Comparison__Group_1__1__Impl )
+            // InternalPortugolParser.g:6161:2: rule__Comparison__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1__1__Impl();
@@ -20640,23 +20371,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__1__Impl"
-    // InternalPortugolParser.g:6250:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:6167:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__RightAssignment_1_1 ) ) ;
     public final void rule__Comparison__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6254:1: ( ( ( rule__Comparison__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:6255:1: ( ( rule__Comparison__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6171:1: ( ( ( rule__Comparison__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:6172:1: ( ( rule__Comparison__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:6255:1: ( ( rule__Comparison__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:6256:2: ( rule__Comparison__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6172:1: ( ( rule__Comparison__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6173:2: ( rule__Comparison__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:6257:2: ( rule__Comparison__RightAssignment_1_1 )
-            // InternalPortugolParser.g:6257:3: rule__Comparison__RightAssignment_1_1
+            // InternalPortugolParser.g:6174:2: ( rule__Comparison__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6174:3: rule__Comparison__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__RightAssignment_1_1();
@@ -20691,14 +20422,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0__0"
-    // InternalPortugolParser.g:6266:1: rule__Comparison__Group_1_0__0 : rule__Comparison__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:6183:1: rule__Comparison__Group_1_0__0 : rule__Comparison__Group_1_0__0__Impl ;
     public final void rule__Comparison__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6270:1: ( rule__Comparison__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:6271:2: rule__Comparison__Group_1_0__0__Impl
+            // InternalPortugolParser.g:6187:1: ( rule__Comparison__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:6188:2: rule__Comparison__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1_0__0__Impl();
@@ -20724,23 +20455,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:6277:1: rule__Comparison__Group_1_0__0__Impl : ( ( rule__Comparison__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6194:1: rule__Comparison__Group_1_0__0__Impl : ( ( rule__Comparison__Group_1_0_0__0 ) ) ;
     public final void rule__Comparison__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6281:1: ( ( ( rule__Comparison__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:6282:1: ( ( rule__Comparison__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6198:1: ( ( ( rule__Comparison__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6199:1: ( ( rule__Comparison__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:6282:1: ( ( rule__Comparison__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:6283:2: ( rule__Comparison__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6199:1: ( ( rule__Comparison__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6200:2: ( rule__Comparison__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:6284:2: ( rule__Comparison__Group_1_0_0__0 )
-            // InternalPortugolParser.g:6284:3: rule__Comparison__Group_1_0_0__0
+            // InternalPortugolParser.g:6201:2: ( rule__Comparison__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6201:3: rule__Comparison__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1_0_0__0();
@@ -20775,14 +20506,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0_0__0"
-    // InternalPortugolParser.g:6293:1: rule__Comparison__Group_1_0_0__0 : rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6210:1: rule__Comparison__Group_1_0_0__0 : rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1 ;
     public final void rule__Comparison__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6297:1: ( rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1 )
-            // InternalPortugolParser.g:6298:2: rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1
+            // InternalPortugolParser.g:6214:1: ( rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6215:2: rule__Comparison__Group_1_0_0__0__Impl rule__Comparison__Group_1_0_0__1
             {
             pushFollow(FOLLOW_45);
             rule__Comparison__Group_1_0_0__0__Impl();
@@ -20813,23 +20544,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:6305:1: rule__Comparison__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6222:1: rule__Comparison__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Comparison__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6309:1: ( ( () ) )
-            // InternalPortugolParser.g:6310:1: ( () )
+            // InternalPortugolParser.g:6226:1: ( ( () ) )
+            // InternalPortugolParser.g:6227:1: ( () )
             {
-            // InternalPortugolParser.g:6310:1: ( () )
-            // InternalPortugolParser.g:6311:2: ()
+            // InternalPortugolParser.g:6227:1: ( () )
+            // InternalPortugolParser.g:6228:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:6312:2: ()
-            // InternalPortugolParser.g:6312:3: 
+            // InternalPortugolParser.g:6229:2: ()
+            // InternalPortugolParser.g:6229:3: 
             {
             }
 
@@ -20854,14 +20585,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0_0__1"
-    // InternalPortugolParser.g:6320:1: rule__Comparison__Group_1_0_0__1 : rule__Comparison__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6237:1: rule__Comparison__Group_1_0_0__1 : rule__Comparison__Group_1_0_0__1__Impl ;
     public final void rule__Comparison__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6324:1: ( rule__Comparison__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:6325:2: rule__Comparison__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6241:1: ( rule__Comparison__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6242:2: rule__Comparison__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1_0_0__1__Impl();
@@ -20887,23 +20618,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:6331:1: rule__Comparison__Group_1_0_0__1__Impl : ( ( rule__Comparison__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:6248:1: rule__Comparison__Group_1_0_0__1__Impl : ( ( rule__Comparison__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__Comparison__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6335:1: ( ( ( rule__Comparison__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:6336:1: ( ( rule__Comparison__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6252:1: ( ( ( rule__Comparison__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:6253:1: ( ( rule__Comparison__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:6336:1: ( ( rule__Comparison__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:6337:2: ( rule__Comparison__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6253:1: ( ( rule__Comparison__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6254:2: ( rule__Comparison__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:6338:2: ( rule__Comparison__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:6338:3: rule__Comparison__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:6255:2: ( rule__Comparison__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6255:3: rule__Comparison__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__OpAssignment_1_0_0_1();
@@ -20938,14 +20669,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group__0"
-    // InternalPortugolParser.g:6347:1: rule__EquExpression__Group__0 : rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1 ;
+    // InternalPortugolParser.g:6264:1: rule__EquExpression__Group__0 : rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1 ;
     public final void rule__EquExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6351:1: ( rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1 )
-            // InternalPortugolParser.g:6352:2: rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1
+            // InternalPortugolParser.g:6268:1: ( rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1 )
+            // InternalPortugolParser.g:6269:2: rule__EquExpression__Group__0__Impl rule__EquExpression__Group__1
             {
             pushFollow(FOLLOW_47);
             rule__EquExpression__Group__0__Impl();
@@ -20976,17 +20707,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group__0__Impl"
-    // InternalPortugolParser.g:6359:1: rule__EquExpression__Group__0__Impl : ( ruleAddExpression ) ;
+    // InternalPortugolParser.g:6276:1: rule__EquExpression__Group__0__Impl : ( ruleAddExpression ) ;
     public final void rule__EquExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6363:1: ( ( ruleAddExpression ) )
-            // InternalPortugolParser.g:6364:1: ( ruleAddExpression )
+            // InternalPortugolParser.g:6280:1: ( ( ruleAddExpression ) )
+            // InternalPortugolParser.g:6281:1: ( ruleAddExpression )
             {
-            // InternalPortugolParser.g:6364:1: ( ruleAddExpression )
-            // InternalPortugolParser.g:6365:2: ruleAddExpression
+            // InternalPortugolParser.g:6281:1: ( ruleAddExpression )
+            // InternalPortugolParser.g:6282:2: ruleAddExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getAddExpressionParserRuleCall_0()); 
@@ -21021,14 +20752,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group__1"
-    // InternalPortugolParser.g:6374:1: rule__EquExpression__Group__1 : rule__EquExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:6291:1: rule__EquExpression__Group__1 : rule__EquExpression__Group__1__Impl ;
     public final void rule__EquExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6378:1: ( rule__EquExpression__Group__1__Impl )
-            // InternalPortugolParser.g:6379:2: rule__EquExpression__Group__1__Impl
+            // InternalPortugolParser.g:6295:1: ( rule__EquExpression__Group__1__Impl )
+            // InternalPortugolParser.g:6296:2: rule__EquExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group__1__Impl();
@@ -21054,35 +20785,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group__1__Impl"
-    // InternalPortugolParser.g:6385:1: rule__EquExpression__Group__1__Impl : ( ( rule__EquExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:6302:1: rule__EquExpression__Group__1__Impl : ( ( rule__EquExpression__Group_1__0 )* ) ;
     public final void rule__EquExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6389:1: ( ( ( rule__EquExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6390:1: ( ( rule__EquExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6306:1: ( ( ( rule__EquExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:6307:1: ( ( rule__EquExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6390:1: ( ( rule__EquExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:6391:2: ( rule__EquExpression__Group_1__0 )*
+            // InternalPortugolParser.g:6307:1: ( ( rule__EquExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6308:2: ( rule__EquExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6392:2: ( rule__EquExpression__Group_1__0 )*
-            loop50:
+            // InternalPortugolParser.g:6309:2: ( rule__EquExpression__Group_1__0 )*
+            loop49:
             do {
-                int alt50=2;
-                int LA50_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA50_0==LessThanSignEqualsSign||LA50_0==GreaterThanSignEqualsSign||LA50_0==LessThanSign||LA50_0==GreaterThanSign) ) {
-                    alt50=1;
+                if ( (LA49_0==LessThanSignEqualsSign||LA49_0==GreaterThanSignEqualsSign||LA49_0==LessThanSign||LA49_0==GreaterThanSign) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt50) {
+                switch (alt49) {
             	case 1 :
-            	    // InternalPortugolParser.g:6392:3: rule__EquExpression__Group_1__0
+            	    // InternalPortugolParser.g:6309:3: rule__EquExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_48);
             	    rule__EquExpression__Group_1__0();
@@ -21094,7 +20825,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop50;
+            	    break loop49;
                 }
             } while (true);
 
@@ -21123,14 +20854,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1__0"
-    // InternalPortugolParser.g:6401:1: rule__EquExpression__Group_1__0 : rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1 ;
+    // InternalPortugolParser.g:6318:1: rule__EquExpression__Group_1__0 : rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1 ;
     public final void rule__EquExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6405:1: ( rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1 )
-            // InternalPortugolParser.g:6406:2: rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1
+            // InternalPortugolParser.g:6322:1: ( rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1 )
+            // InternalPortugolParser.g:6323:2: rule__EquExpression__Group_1__0__Impl rule__EquExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__EquExpression__Group_1__0__Impl();
@@ -21161,23 +20892,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:6413:1: rule__EquExpression__Group_1__0__Impl : ( ( rule__EquExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:6330:1: rule__EquExpression__Group_1__0__Impl : ( ( rule__EquExpression__Group_1_0__0 ) ) ;
     public final void rule__EquExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6417:1: ( ( ( rule__EquExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6418:1: ( ( rule__EquExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6334:1: ( ( ( rule__EquExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:6335:1: ( ( rule__EquExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6418:1: ( ( rule__EquExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6419:2: ( rule__EquExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6335:1: ( ( rule__EquExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6336:2: ( rule__EquExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6420:2: ( rule__EquExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:6420:3: rule__EquExpression__Group_1_0__0
+            // InternalPortugolParser.g:6337:2: ( rule__EquExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6337:3: rule__EquExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group_1_0__0();
@@ -21212,14 +20943,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1__1"
-    // InternalPortugolParser.g:6428:1: rule__EquExpression__Group_1__1 : rule__EquExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:6345:1: rule__EquExpression__Group_1__1 : rule__EquExpression__Group_1__1__Impl ;
     public final void rule__EquExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6432:1: ( rule__EquExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:6433:2: rule__EquExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:6349:1: ( rule__EquExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:6350:2: rule__EquExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group_1__1__Impl();
@@ -21245,23 +20976,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:6439:1: rule__EquExpression__Group_1__1__Impl : ( ( rule__EquExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:6356:1: rule__EquExpression__Group_1__1__Impl : ( ( rule__EquExpression__RightAssignment_1_1 ) ) ;
     public final void rule__EquExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6443:1: ( ( ( rule__EquExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:6444:1: ( ( rule__EquExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6360:1: ( ( ( rule__EquExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:6361:1: ( ( rule__EquExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:6444:1: ( ( rule__EquExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:6445:2: ( rule__EquExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6361:1: ( ( rule__EquExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6362:2: ( rule__EquExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:6446:2: ( rule__EquExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:6446:3: rule__EquExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:6363:2: ( rule__EquExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6363:3: rule__EquExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__RightAssignment_1_1();
@@ -21296,14 +21027,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0__0"
-    // InternalPortugolParser.g:6455:1: rule__EquExpression__Group_1_0__0 : rule__EquExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:6372:1: rule__EquExpression__Group_1_0__0 : rule__EquExpression__Group_1_0__0__Impl ;
     public final void rule__EquExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6459:1: ( rule__EquExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:6460:2: rule__EquExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:6376:1: ( rule__EquExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:6377:2: rule__EquExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group_1_0__0__Impl();
@@ -21329,23 +21060,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:6466:1: rule__EquExpression__Group_1_0__0__Impl : ( ( rule__EquExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6383:1: rule__EquExpression__Group_1_0__0__Impl : ( ( rule__EquExpression__Group_1_0_0__0 ) ) ;
     public final void rule__EquExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6470:1: ( ( ( rule__EquExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:6471:1: ( ( rule__EquExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6387:1: ( ( ( rule__EquExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6388:1: ( ( rule__EquExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:6471:1: ( ( rule__EquExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:6472:2: ( rule__EquExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6388:1: ( ( rule__EquExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6389:2: ( rule__EquExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:6473:2: ( rule__EquExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:6473:3: rule__EquExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:6390:2: ( rule__EquExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6390:3: rule__EquExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group_1_0_0__0();
@@ -21380,14 +21111,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:6482:1: rule__EquExpression__Group_1_0_0__0 : rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6399:1: rule__EquExpression__Group_1_0_0__0 : rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1 ;
     public final void rule__EquExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6486:1: ( rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:6487:2: rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:6403:1: ( rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6404:2: rule__EquExpression__Group_1_0_0__0__Impl rule__EquExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_47);
             rule__EquExpression__Group_1_0_0__0__Impl();
@@ -21418,23 +21149,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:6494:1: rule__EquExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6411:1: rule__EquExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__EquExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6498:1: ( ( () ) )
-            // InternalPortugolParser.g:6499:1: ( () )
+            // InternalPortugolParser.g:6415:1: ( ( () ) )
+            // InternalPortugolParser.g:6416:1: ( () )
             {
-            // InternalPortugolParser.g:6499:1: ( () )
-            // InternalPortugolParser.g:6500:2: ()
+            // InternalPortugolParser.g:6416:1: ( () )
+            // InternalPortugolParser.g:6417:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:6501:2: ()
-            // InternalPortugolParser.g:6501:3: 
+            // InternalPortugolParser.g:6418:2: ()
+            // InternalPortugolParser.g:6418:3: 
             {
             }
 
@@ -21459,14 +21190,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:6509:1: rule__EquExpression__Group_1_0_0__1 : rule__EquExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6426:1: rule__EquExpression__Group_1_0_0__1 : rule__EquExpression__Group_1_0_0__1__Impl ;
     public final void rule__EquExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6513:1: ( rule__EquExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:6514:2: rule__EquExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6430:1: ( rule__EquExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6431:2: rule__EquExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__Group_1_0_0__1__Impl();
@@ -21492,23 +21223,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:6520:1: rule__EquExpression__Group_1_0_0__1__Impl : ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:6437:1: rule__EquExpression__Group_1_0_0__1__Impl : ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__EquExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6524:1: ( ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:6525:1: ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6441:1: ( ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:6442:1: ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:6525:1: ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:6526:2: ( rule__EquExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6442:1: ( ( rule__EquExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6443:2: ( rule__EquExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:6527:2: ( rule__EquExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:6527:3: rule__EquExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:6444:2: ( rule__EquExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6444:3: rule__EquExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__OpAssignment_1_0_0_1();
@@ -21543,14 +21274,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group__0"
-    // InternalPortugolParser.g:6536:1: rule__AddExpression__Group__0 : rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1 ;
+    // InternalPortugolParser.g:6453:1: rule__AddExpression__Group__0 : rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1 ;
     public final void rule__AddExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6540:1: ( rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1 )
-            // InternalPortugolParser.g:6541:2: rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1
+            // InternalPortugolParser.g:6457:1: ( rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1 )
+            // InternalPortugolParser.g:6458:2: rule__AddExpression__Group__0__Impl rule__AddExpression__Group__1
             {
             pushFollow(FOLLOW_49);
             rule__AddExpression__Group__0__Impl();
@@ -21581,17 +21312,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group__0__Impl"
-    // InternalPortugolParser.g:6548:1: rule__AddExpression__Group__0__Impl : ( ruleMultiplicativeExpression ) ;
+    // InternalPortugolParser.g:6465:1: rule__AddExpression__Group__0__Impl : ( ruleMultiplicativeExpression ) ;
     public final void rule__AddExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6552:1: ( ( ruleMultiplicativeExpression ) )
-            // InternalPortugolParser.g:6553:1: ( ruleMultiplicativeExpression )
+            // InternalPortugolParser.g:6469:1: ( ( ruleMultiplicativeExpression ) )
+            // InternalPortugolParser.g:6470:1: ( ruleMultiplicativeExpression )
             {
-            // InternalPortugolParser.g:6553:1: ( ruleMultiplicativeExpression )
-            // InternalPortugolParser.g:6554:2: ruleMultiplicativeExpression
+            // InternalPortugolParser.g:6470:1: ( ruleMultiplicativeExpression )
+            // InternalPortugolParser.g:6471:2: ruleMultiplicativeExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getMultiplicativeExpressionParserRuleCall_0()); 
@@ -21626,14 +21357,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group__1"
-    // InternalPortugolParser.g:6563:1: rule__AddExpression__Group__1 : rule__AddExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:6480:1: rule__AddExpression__Group__1 : rule__AddExpression__Group__1__Impl ;
     public final void rule__AddExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6567:1: ( rule__AddExpression__Group__1__Impl )
-            // InternalPortugolParser.g:6568:2: rule__AddExpression__Group__1__Impl
+            // InternalPortugolParser.g:6484:1: ( rule__AddExpression__Group__1__Impl )
+            // InternalPortugolParser.g:6485:2: rule__AddExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group__1__Impl();
@@ -21659,35 +21390,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group__1__Impl"
-    // InternalPortugolParser.g:6574:1: rule__AddExpression__Group__1__Impl : ( ( rule__AddExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:6491:1: rule__AddExpression__Group__1__Impl : ( ( rule__AddExpression__Group_1__0 )* ) ;
     public final void rule__AddExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6578:1: ( ( ( rule__AddExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6579:1: ( ( rule__AddExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6495:1: ( ( ( rule__AddExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:6496:1: ( ( rule__AddExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6579:1: ( ( rule__AddExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:6580:2: ( rule__AddExpression__Group_1__0 )*
+            // InternalPortugolParser.g:6496:1: ( ( rule__AddExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6497:2: ( rule__AddExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6581:2: ( rule__AddExpression__Group_1__0 )*
-            loop51:
+            // InternalPortugolParser.g:6498:2: ( rule__AddExpression__Group_1__0 )*
+            loop50:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( (LA51_0==PlusSign||LA51_0==HyphenMinus) ) {
-                    alt51=1;
+                if ( (LA50_0==PlusSign||LA50_0==HyphenMinus) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt50) {
             	case 1 :
-            	    // InternalPortugolParser.g:6581:3: rule__AddExpression__Group_1__0
+            	    // InternalPortugolParser.g:6498:3: rule__AddExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_50);
             	    rule__AddExpression__Group_1__0();
@@ -21699,7 +21430,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop50;
                 }
             } while (true);
 
@@ -21728,14 +21459,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1__0"
-    // InternalPortugolParser.g:6590:1: rule__AddExpression__Group_1__0 : rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1 ;
+    // InternalPortugolParser.g:6507:1: rule__AddExpression__Group_1__0 : rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1 ;
     public final void rule__AddExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6594:1: ( rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1 )
-            // InternalPortugolParser.g:6595:2: rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1
+            // InternalPortugolParser.g:6511:1: ( rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1 )
+            // InternalPortugolParser.g:6512:2: rule__AddExpression__Group_1__0__Impl rule__AddExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__AddExpression__Group_1__0__Impl();
@@ -21766,23 +21497,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:6602:1: rule__AddExpression__Group_1__0__Impl : ( ( rule__AddExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:6519:1: rule__AddExpression__Group_1__0__Impl : ( ( rule__AddExpression__Group_1_0__0 ) ) ;
     public final void rule__AddExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6606:1: ( ( ( rule__AddExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6607:1: ( ( rule__AddExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6523:1: ( ( ( rule__AddExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:6524:1: ( ( rule__AddExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6607:1: ( ( rule__AddExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6608:2: ( rule__AddExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6524:1: ( ( rule__AddExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6525:2: ( rule__AddExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6609:2: ( rule__AddExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:6609:3: rule__AddExpression__Group_1_0__0
+            // InternalPortugolParser.g:6526:2: ( rule__AddExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6526:3: rule__AddExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group_1_0__0();
@@ -21817,14 +21548,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1__1"
-    // InternalPortugolParser.g:6617:1: rule__AddExpression__Group_1__1 : rule__AddExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:6534:1: rule__AddExpression__Group_1__1 : rule__AddExpression__Group_1__1__Impl ;
     public final void rule__AddExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6621:1: ( rule__AddExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:6622:2: rule__AddExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:6538:1: ( rule__AddExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:6539:2: rule__AddExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group_1__1__Impl();
@@ -21850,23 +21581,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:6628:1: rule__AddExpression__Group_1__1__Impl : ( ( rule__AddExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:6545:1: rule__AddExpression__Group_1__1__Impl : ( ( rule__AddExpression__RightAssignment_1_1 ) ) ;
     public final void rule__AddExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6632:1: ( ( ( rule__AddExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:6633:1: ( ( rule__AddExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6549:1: ( ( ( rule__AddExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:6550:1: ( ( rule__AddExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:6633:1: ( ( rule__AddExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:6634:2: ( rule__AddExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6550:1: ( ( rule__AddExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6551:2: ( rule__AddExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:6635:2: ( rule__AddExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:6635:3: rule__AddExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:6552:2: ( rule__AddExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6552:3: rule__AddExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__RightAssignment_1_1();
@@ -21901,14 +21632,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0__0"
-    // InternalPortugolParser.g:6644:1: rule__AddExpression__Group_1_0__0 : rule__AddExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:6561:1: rule__AddExpression__Group_1_0__0 : rule__AddExpression__Group_1_0__0__Impl ;
     public final void rule__AddExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6648:1: ( rule__AddExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:6649:2: rule__AddExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:6565:1: ( rule__AddExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:6566:2: rule__AddExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group_1_0__0__Impl();
@@ -21934,23 +21665,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:6655:1: rule__AddExpression__Group_1_0__0__Impl : ( ( rule__AddExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6572:1: rule__AddExpression__Group_1_0__0__Impl : ( ( rule__AddExpression__Group_1_0_0__0 ) ) ;
     public final void rule__AddExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6659:1: ( ( ( rule__AddExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:6660:1: ( ( rule__AddExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6576:1: ( ( ( rule__AddExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6577:1: ( ( rule__AddExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:6660:1: ( ( rule__AddExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:6661:2: ( rule__AddExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6577:1: ( ( rule__AddExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6578:2: ( rule__AddExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:6662:2: ( rule__AddExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:6662:3: rule__AddExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:6579:2: ( rule__AddExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6579:3: rule__AddExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group_1_0_0__0();
@@ -21985,14 +21716,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:6671:1: rule__AddExpression__Group_1_0_0__0 : rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6588:1: rule__AddExpression__Group_1_0_0__0 : rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1 ;
     public final void rule__AddExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6675:1: ( rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:6676:2: rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:6592:1: ( rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6593:2: rule__AddExpression__Group_1_0_0__0__Impl rule__AddExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_49);
             rule__AddExpression__Group_1_0_0__0__Impl();
@@ -22023,23 +21754,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:6683:1: rule__AddExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6600:1: rule__AddExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__AddExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6687:1: ( ( () ) )
-            // InternalPortugolParser.g:6688:1: ( () )
+            // InternalPortugolParser.g:6604:1: ( ( () ) )
+            // InternalPortugolParser.g:6605:1: ( () )
             {
-            // InternalPortugolParser.g:6688:1: ( () )
-            // InternalPortugolParser.g:6689:2: ()
+            // InternalPortugolParser.g:6605:1: ( () )
+            // InternalPortugolParser.g:6606:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:6690:2: ()
-            // InternalPortugolParser.g:6690:3: 
+            // InternalPortugolParser.g:6607:2: ()
+            // InternalPortugolParser.g:6607:3: 
             {
             }
 
@@ -22064,14 +21795,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:6698:1: rule__AddExpression__Group_1_0_0__1 : rule__AddExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6615:1: rule__AddExpression__Group_1_0_0__1 : rule__AddExpression__Group_1_0_0__1__Impl ;
     public final void rule__AddExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6702:1: ( rule__AddExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:6703:2: rule__AddExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6619:1: ( rule__AddExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6620:2: rule__AddExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__Group_1_0_0__1__Impl();
@@ -22097,23 +21828,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:6709:1: rule__AddExpression__Group_1_0_0__1__Impl : ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:6626:1: rule__AddExpression__Group_1_0_0__1__Impl : ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__AddExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6713:1: ( ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:6714:1: ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6630:1: ( ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:6631:1: ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:6714:1: ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:6715:2: ( rule__AddExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6631:1: ( ( rule__AddExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6632:2: ( rule__AddExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:6716:2: ( rule__AddExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:6716:3: rule__AddExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:6633:2: ( rule__AddExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6633:3: rule__AddExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__OpAssignment_1_0_0_1();
@@ -22148,14 +21879,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group__0"
-    // InternalPortugolParser.g:6725:1: rule__MultiplicativeExpression__Group__0 : rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1 ;
+    // InternalPortugolParser.g:6642:1: rule__MultiplicativeExpression__Group__0 : rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1 ;
     public final void rule__MultiplicativeExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6729:1: ( rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1 )
-            // InternalPortugolParser.g:6730:2: rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1
+            // InternalPortugolParser.g:6646:1: ( rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1 )
+            // InternalPortugolParser.g:6647:2: rule__MultiplicativeExpression__Group__0__Impl rule__MultiplicativeExpression__Group__1
             {
             pushFollow(FOLLOW_51);
             rule__MultiplicativeExpression__Group__0__Impl();
@@ -22186,17 +21917,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group__0__Impl"
-    // InternalPortugolParser.g:6737:1: rule__MultiplicativeExpression__Group__0__Impl : ( rulePowerExpression ) ;
+    // InternalPortugolParser.g:6654:1: rule__MultiplicativeExpression__Group__0__Impl : ( rulePowerExpression ) ;
     public final void rule__MultiplicativeExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6741:1: ( ( rulePowerExpression ) )
-            // InternalPortugolParser.g:6742:1: ( rulePowerExpression )
+            // InternalPortugolParser.g:6658:1: ( ( rulePowerExpression ) )
+            // InternalPortugolParser.g:6659:1: ( rulePowerExpression )
             {
-            // InternalPortugolParser.g:6742:1: ( rulePowerExpression )
-            // InternalPortugolParser.g:6743:2: rulePowerExpression
+            // InternalPortugolParser.g:6659:1: ( rulePowerExpression )
+            // InternalPortugolParser.g:6660:2: rulePowerExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getPowerExpressionParserRuleCall_0()); 
@@ -22231,14 +21962,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group__1"
-    // InternalPortugolParser.g:6752:1: rule__MultiplicativeExpression__Group__1 : rule__MultiplicativeExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:6669:1: rule__MultiplicativeExpression__Group__1 : rule__MultiplicativeExpression__Group__1__Impl ;
     public final void rule__MultiplicativeExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6756:1: ( rule__MultiplicativeExpression__Group__1__Impl )
-            // InternalPortugolParser.g:6757:2: rule__MultiplicativeExpression__Group__1__Impl
+            // InternalPortugolParser.g:6673:1: ( rule__MultiplicativeExpression__Group__1__Impl )
+            // InternalPortugolParser.g:6674:2: rule__MultiplicativeExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group__1__Impl();
@@ -22264,35 +21995,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group__1__Impl"
-    // InternalPortugolParser.g:6763:1: rule__MultiplicativeExpression__Group__1__Impl : ( ( rule__MultiplicativeExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:6680:1: rule__MultiplicativeExpression__Group__1__Impl : ( ( rule__MultiplicativeExpression__Group_1__0 )* ) ;
     public final void rule__MultiplicativeExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6767:1: ( ( ( rule__MultiplicativeExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6768:1: ( ( rule__MultiplicativeExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6684:1: ( ( ( rule__MultiplicativeExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:6685:1: ( ( rule__MultiplicativeExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6768:1: ( ( rule__MultiplicativeExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:6769:2: ( rule__MultiplicativeExpression__Group_1__0 )*
+            // InternalPortugolParser.g:6685:1: ( ( rule__MultiplicativeExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6686:2: ( rule__MultiplicativeExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6770:2: ( rule__MultiplicativeExpression__Group_1__0 )*
-            loop52:
+            // InternalPortugolParser.g:6687:2: ( rule__MultiplicativeExpression__Group_1__0 )*
+            loop51:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt51=2;
+                int LA51_0 = input.LA(1);
 
-                if ( (LA52_0==MOD||LA52_0==PercentSign||LA52_0==Asterisk||LA52_0==Solidus) ) {
-                    alt52=1;
+                if ( (LA51_0==MOD||LA51_0==PercentSign||LA51_0==Asterisk||LA51_0==Solidus) ) {
+                    alt51=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt51) {
             	case 1 :
-            	    // InternalPortugolParser.g:6770:3: rule__MultiplicativeExpression__Group_1__0
+            	    // InternalPortugolParser.g:6687:3: rule__MultiplicativeExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_52);
             	    rule__MultiplicativeExpression__Group_1__0();
@@ -22304,7 +22035,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop51;
                 }
             } while (true);
 
@@ -22333,14 +22064,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1__0"
-    // InternalPortugolParser.g:6779:1: rule__MultiplicativeExpression__Group_1__0 : rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1 ;
+    // InternalPortugolParser.g:6696:1: rule__MultiplicativeExpression__Group_1__0 : rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1 ;
     public final void rule__MultiplicativeExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6783:1: ( rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1 )
-            // InternalPortugolParser.g:6784:2: rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1
+            // InternalPortugolParser.g:6700:1: ( rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1 )
+            // InternalPortugolParser.g:6701:2: rule__MultiplicativeExpression__Group_1__0__Impl rule__MultiplicativeExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__MultiplicativeExpression__Group_1__0__Impl();
@@ -22371,23 +22102,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:6791:1: rule__MultiplicativeExpression__Group_1__0__Impl : ( ( rule__MultiplicativeExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:6708:1: rule__MultiplicativeExpression__Group_1__0__Impl : ( ( rule__MultiplicativeExpression__Group_1_0__0 ) ) ;
     public final void rule__MultiplicativeExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6795:1: ( ( ( rule__MultiplicativeExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6796:1: ( ( rule__MultiplicativeExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6712:1: ( ( ( rule__MultiplicativeExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:6713:1: ( ( rule__MultiplicativeExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6796:1: ( ( rule__MultiplicativeExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6797:2: ( rule__MultiplicativeExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6713:1: ( ( rule__MultiplicativeExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6714:2: ( rule__MultiplicativeExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6798:2: ( rule__MultiplicativeExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:6798:3: rule__MultiplicativeExpression__Group_1_0__0
+            // InternalPortugolParser.g:6715:2: ( rule__MultiplicativeExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6715:3: rule__MultiplicativeExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group_1_0__0();
@@ -22422,14 +22153,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1__1"
-    // InternalPortugolParser.g:6806:1: rule__MultiplicativeExpression__Group_1__1 : rule__MultiplicativeExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:6723:1: rule__MultiplicativeExpression__Group_1__1 : rule__MultiplicativeExpression__Group_1__1__Impl ;
     public final void rule__MultiplicativeExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6810:1: ( rule__MultiplicativeExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:6811:2: rule__MultiplicativeExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:6727:1: ( rule__MultiplicativeExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:6728:2: rule__MultiplicativeExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group_1__1__Impl();
@@ -22455,23 +22186,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:6817:1: rule__MultiplicativeExpression__Group_1__1__Impl : ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:6734:1: rule__MultiplicativeExpression__Group_1__1__Impl : ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) ) ;
     public final void rule__MultiplicativeExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6821:1: ( ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:6822:1: ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6738:1: ( ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:6739:1: ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:6822:1: ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:6823:2: ( rule__MultiplicativeExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6739:1: ( ( rule__MultiplicativeExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6740:2: ( rule__MultiplicativeExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:6824:2: ( rule__MultiplicativeExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:6824:3: rule__MultiplicativeExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:6741:2: ( rule__MultiplicativeExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6741:3: rule__MultiplicativeExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__RightAssignment_1_1();
@@ -22506,14 +22237,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0__0"
-    // InternalPortugolParser.g:6833:1: rule__MultiplicativeExpression__Group_1_0__0 : rule__MultiplicativeExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:6750:1: rule__MultiplicativeExpression__Group_1_0__0 : rule__MultiplicativeExpression__Group_1_0__0__Impl ;
     public final void rule__MultiplicativeExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6837:1: ( rule__MultiplicativeExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:6838:2: rule__MultiplicativeExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:6754:1: ( rule__MultiplicativeExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:6755:2: rule__MultiplicativeExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group_1_0__0__Impl();
@@ -22539,23 +22270,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:6844:1: rule__MultiplicativeExpression__Group_1_0__0__Impl : ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6761:1: rule__MultiplicativeExpression__Group_1_0__0__Impl : ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) ) ;
     public final void rule__MultiplicativeExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6848:1: ( ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:6849:1: ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6765:1: ( ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6766:1: ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:6849:1: ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:6850:2: ( rule__MultiplicativeExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6766:1: ( ( rule__MultiplicativeExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6767:2: ( rule__MultiplicativeExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:6851:2: ( rule__MultiplicativeExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:6851:3: rule__MultiplicativeExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:6768:2: ( rule__MultiplicativeExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6768:3: rule__MultiplicativeExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group_1_0_0__0();
@@ -22590,14 +22321,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:6860:1: rule__MultiplicativeExpression__Group_1_0_0__0 : rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6777:1: rule__MultiplicativeExpression__Group_1_0_0__0 : rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1 ;
     public final void rule__MultiplicativeExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6864:1: ( rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:6865:2: rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:6781:1: ( rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6782:2: rule__MultiplicativeExpression__Group_1_0_0__0__Impl rule__MultiplicativeExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_51);
             rule__MultiplicativeExpression__Group_1_0_0__0__Impl();
@@ -22628,23 +22359,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:6872:1: rule__MultiplicativeExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6789:1: rule__MultiplicativeExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__MultiplicativeExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6876:1: ( ( () ) )
-            // InternalPortugolParser.g:6877:1: ( () )
+            // InternalPortugolParser.g:6793:1: ( ( () ) )
+            // InternalPortugolParser.g:6794:1: ( () )
             {
-            // InternalPortugolParser.g:6877:1: ( () )
-            // InternalPortugolParser.g:6878:2: ()
+            // InternalPortugolParser.g:6794:1: ( () )
+            // InternalPortugolParser.g:6795:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:6879:2: ()
-            // InternalPortugolParser.g:6879:3: 
+            // InternalPortugolParser.g:6796:2: ()
+            // InternalPortugolParser.g:6796:3: 
             {
             }
 
@@ -22669,14 +22400,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:6887:1: rule__MultiplicativeExpression__Group_1_0_0__1 : rule__MultiplicativeExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6804:1: rule__MultiplicativeExpression__Group_1_0_0__1 : rule__MultiplicativeExpression__Group_1_0_0__1__Impl ;
     public final void rule__MultiplicativeExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6891:1: ( rule__MultiplicativeExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:6892:2: rule__MultiplicativeExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6808:1: ( rule__MultiplicativeExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6809:2: rule__MultiplicativeExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__Group_1_0_0__1__Impl();
@@ -22702,23 +22433,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:6898:1: rule__MultiplicativeExpression__Group_1_0_0__1__Impl : ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:6815:1: rule__MultiplicativeExpression__Group_1_0_0__1__Impl : ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__MultiplicativeExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6902:1: ( ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:6903:1: ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6819:1: ( ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:6820:1: ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:6903:1: ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:6904:2: ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6820:1: ( ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:6821:2: ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:6905:2: ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:6905:3: rule__MultiplicativeExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:6822:2: ( rule__MultiplicativeExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:6822:3: rule__MultiplicativeExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__OpAssignment_1_0_0_1();
@@ -22753,14 +22484,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group__0"
-    // InternalPortugolParser.g:6914:1: rule__PowerExpression__Group__0 : rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1 ;
+    // InternalPortugolParser.g:6831:1: rule__PowerExpression__Group__0 : rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1 ;
     public final void rule__PowerExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6918:1: ( rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1 )
-            // InternalPortugolParser.g:6919:2: rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1
+            // InternalPortugolParser.g:6835:1: ( rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1 )
+            // InternalPortugolParser.g:6836:2: rule__PowerExpression__Group__0__Impl rule__PowerExpression__Group__1
             {
             pushFollow(FOLLOW_53);
             rule__PowerExpression__Group__0__Impl();
@@ -22791,17 +22522,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group__0__Impl"
-    // InternalPortugolParser.g:6926:1: rule__PowerExpression__Group__0__Impl : ( ruleUnaryExpression ) ;
+    // InternalPortugolParser.g:6843:1: rule__PowerExpression__Group__0__Impl : ( ruleUnaryExpression ) ;
     public final void rule__PowerExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6930:1: ( ( ruleUnaryExpression ) )
-            // InternalPortugolParser.g:6931:1: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:6847:1: ( ( ruleUnaryExpression ) )
+            // InternalPortugolParser.g:6848:1: ( ruleUnaryExpression )
             {
-            // InternalPortugolParser.g:6931:1: ( ruleUnaryExpression )
-            // InternalPortugolParser.g:6932:2: ruleUnaryExpression
+            // InternalPortugolParser.g:6848:1: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:6849:2: ruleUnaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getUnaryExpressionParserRuleCall_0()); 
@@ -22836,14 +22567,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group__1"
-    // InternalPortugolParser.g:6941:1: rule__PowerExpression__Group__1 : rule__PowerExpression__Group__1__Impl ;
+    // InternalPortugolParser.g:6858:1: rule__PowerExpression__Group__1 : rule__PowerExpression__Group__1__Impl ;
     public final void rule__PowerExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6945:1: ( rule__PowerExpression__Group__1__Impl )
-            // InternalPortugolParser.g:6946:2: rule__PowerExpression__Group__1__Impl
+            // InternalPortugolParser.g:6862:1: ( rule__PowerExpression__Group__1__Impl )
+            // InternalPortugolParser.g:6863:2: rule__PowerExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group__1__Impl();
@@ -22869,35 +22600,35 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group__1__Impl"
-    // InternalPortugolParser.g:6952:1: rule__PowerExpression__Group__1__Impl : ( ( rule__PowerExpression__Group_1__0 )* ) ;
+    // InternalPortugolParser.g:6869:1: rule__PowerExpression__Group__1__Impl : ( ( rule__PowerExpression__Group_1__0 )* ) ;
     public final void rule__PowerExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6956:1: ( ( ( rule__PowerExpression__Group_1__0 )* ) )
-            // InternalPortugolParser.g:6957:1: ( ( rule__PowerExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6873:1: ( ( ( rule__PowerExpression__Group_1__0 )* ) )
+            // InternalPortugolParser.g:6874:1: ( ( rule__PowerExpression__Group_1__0 )* )
             {
-            // InternalPortugolParser.g:6957:1: ( ( rule__PowerExpression__Group_1__0 )* )
-            // InternalPortugolParser.g:6958:2: ( rule__PowerExpression__Group_1__0 )*
+            // InternalPortugolParser.g:6874:1: ( ( rule__PowerExpression__Group_1__0 )* )
+            // InternalPortugolParser.g:6875:2: ( rule__PowerExpression__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getGroup_1()); 
             }
-            // InternalPortugolParser.g:6959:2: ( rule__PowerExpression__Group_1__0 )*
-            loop53:
+            // InternalPortugolParser.g:6876:2: ( rule__PowerExpression__Group_1__0 )*
+            loop52:
             do {
-                int alt53=2;
-                int LA53_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( (LA53_0==CircumflexAccent) ) {
-                    alt53=1;
+                if ( (LA52_0==CircumflexAccent) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt53) {
+                switch (alt52) {
             	case 1 :
-            	    // InternalPortugolParser.g:6959:3: rule__PowerExpression__Group_1__0
+            	    // InternalPortugolParser.g:6876:3: rule__PowerExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_54);
             	    rule__PowerExpression__Group_1__0();
@@ -22909,7 +22640,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop53;
+            	    break loop52;
                 }
             } while (true);
 
@@ -22938,14 +22669,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1__0"
-    // InternalPortugolParser.g:6968:1: rule__PowerExpression__Group_1__0 : rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1 ;
+    // InternalPortugolParser.g:6885:1: rule__PowerExpression__Group_1__0 : rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1 ;
     public final void rule__PowerExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6972:1: ( rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1 )
-            // InternalPortugolParser.g:6973:2: rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1
+            // InternalPortugolParser.g:6889:1: ( rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1 )
+            // InternalPortugolParser.g:6890:2: rule__PowerExpression__Group_1__0__Impl rule__PowerExpression__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__PowerExpression__Group_1__0__Impl();
@@ -22976,23 +22707,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1__0__Impl"
-    // InternalPortugolParser.g:6980:1: rule__PowerExpression__Group_1__0__Impl : ( ( rule__PowerExpression__Group_1_0__0 ) ) ;
+    // InternalPortugolParser.g:6897:1: rule__PowerExpression__Group_1__0__Impl : ( ( rule__PowerExpression__Group_1_0__0 ) ) ;
     public final void rule__PowerExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6984:1: ( ( ( rule__PowerExpression__Group_1_0__0 ) ) )
-            // InternalPortugolParser.g:6985:1: ( ( rule__PowerExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6901:1: ( ( ( rule__PowerExpression__Group_1_0__0 ) ) )
+            // InternalPortugolParser.g:6902:1: ( ( rule__PowerExpression__Group_1_0__0 ) )
             {
-            // InternalPortugolParser.g:6985:1: ( ( rule__PowerExpression__Group_1_0__0 ) )
-            // InternalPortugolParser.g:6986:2: ( rule__PowerExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6902:1: ( ( rule__PowerExpression__Group_1_0__0 ) )
+            // InternalPortugolParser.g:6903:2: ( rule__PowerExpression__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getGroup_1_0()); 
             }
-            // InternalPortugolParser.g:6987:2: ( rule__PowerExpression__Group_1_0__0 )
-            // InternalPortugolParser.g:6987:3: rule__PowerExpression__Group_1_0__0
+            // InternalPortugolParser.g:6904:2: ( rule__PowerExpression__Group_1_0__0 )
+            // InternalPortugolParser.g:6904:3: rule__PowerExpression__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group_1_0__0();
@@ -23027,14 +22758,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1__1"
-    // InternalPortugolParser.g:6995:1: rule__PowerExpression__Group_1__1 : rule__PowerExpression__Group_1__1__Impl ;
+    // InternalPortugolParser.g:6912:1: rule__PowerExpression__Group_1__1 : rule__PowerExpression__Group_1__1__Impl ;
     public final void rule__PowerExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:6999:1: ( rule__PowerExpression__Group_1__1__Impl )
-            // InternalPortugolParser.g:7000:2: rule__PowerExpression__Group_1__1__Impl
+            // InternalPortugolParser.g:6916:1: ( rule__PowerExpression__Group_1__1__Impl )
+            // InternalPortugolParser.g:6917:2: rule__PowerExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group_1__1__Impl();
@@ -23060,23 +22791,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1__1__Impl"
-    // InternalPortugolParser.g:7006:1: rule__PowerExpression__Group_1__1__Impl : ( ( rule__PowerExpression__RightAssignment_1_1 ) ) ;
+    // InternalPortugolParser.g:6923:1: rule__PowerExpression__Group_1__1__Impl : ( ( rule__PowerExpression__RightAssignment_1_1 ) ) ;
     public final void rule__PowerExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7010:1: ( ( ( rule__PowerExpression__RightAssignment_1_1 ) ) )
-            // InternalPortugolParser.g:7011:1: ( ( rule__PowerExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6927:1: ( ( ( rule__PowerExpression__RightAssignment_1_1 ) ) )
+            // InternalPortugolParser.g:6928:1: ( ( rule__PowerExpression__RightAssignment_1_1 ) )
             {
-            // InternalPortugolParser.g:7011:1: ( ( rule__PowerExpression__RightAssignment_1_1 ) )
-            // InternalPortugolParser.g:7012:2: ( rule__PowerExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6928:1: ( ( rule__PowerExpression__RightAssignment_1_1 ) )
+            // InternalPortugolParser.g:6929:2: ( rule__PowerExpression__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getRightAssignment_1_1()); 
             }
-            // InternalPortugolParser.g:7013:2: ( rule__PowerExpression__RightAssignment_1_1 )
-            // InternalPortugolParser.g:7013:3: rule__PowerExpression__RightAssignment_1_1
+            // InternalPortugolParser.g:6930:2: ( rule__PowerExpression__RightAssignment_1_1 )
+            // InternalPortugolParser.g:6930:3: rule__PowerExpression__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__RightAssignment_1_1();
@@ -23111,14 +22842,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0__0"
-    // InternalPortugolParser.g:7022:1: rule__PowerExpression__Group_1_0__0 : rule__PowerExpression__Group_1_0__0__Impl ;
+    // InternalPortugolParser.g:6939:1: rule__PowerExpression__Group_1_0__0 : rule__PowerExpression__Group_1_0__0__Impl ;
     public final void rule__PowerExpression__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7026:1: ( rule__PowerExpression__Group_1_0__0__Impl )
-            // InternalPortugolParser.g:7027:2: rule__PowerExpression__Group_1_0__0__Impl
+            // InternalPortugolParser.g:6943:1: ( rule__PowerExpression__Group_1_0__0__Impl )
+            // InternalPortugolParser.g:6944:2: rule__PowerExpression__Group_1_0__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group_1_0__0__Impl();
@@ -23144,23 +22875,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0__0__Impl"
-    // InternalPortugolParser.g:7033:1: rule__PowerExpression__Group_1_0__0__Impl : ( ( rule__PowerExpression__Group_1_0_0__0 ) ) ;
+    // InternalPortugolParser.g:6950:1: rule__PowerExpression__Group_1_0__0__Impl : ( ( rule__PowerExpression__Group_1_0_0__0 ) ) ;
     public final void rule__PowerExpression__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7037:1: ( ( ( rule__PowerExpression__Group_1_0_0__0 ) ) )
-            // InternalPortugolParser.g:7038:1: ( ( rule__PowerExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6954:1: ( ( ( rule__PowerExpression__Group_1_0_0__0 ) ) )
+            // InternalPortugolParser.g:6955:1: ( ( rule__PowerExpression__Group_1_0_0__0 ) )
             {
-            // InternalPortugolParser.g:7038:1: ( ( rule__PowerExpression__Group_1_0_0__0 ) )
-            // InternalPortugolParser.g:7039:2: ( rule__PowerExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6955:1: ( ( rule__PowerExpression__Group_1_0_0__0 ) )
+            // InternalPortugolParser.g:6956:2: ( rule__PowerExpression__Group_1_0_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getGroup_1_0_0()); 
             }
-            // InternalPortugolParser.g:7040:2: ( rule__PowerExpression__Group_1_0_0__0 )
-            // InternalPortugolParser.g:7040:3: rule__PowerExpression__Group_1_0_0__0
+            // InternalPortugolParser.g:6957:2: ( rule__PowerExpression__Group_1_0_0__0 )
+            // InternalPortugolParser.g:6957:3: rule__PowerExpression__Group_1_0_0__0
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group_1_0_0__0();
@@ -23195,14 +22926,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0_0__0"
-    // InternalPortugolParser.g:7049:1: rule__PowerExpression__Group_1_0_0__0 : rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1 ;
+    // InternalPortugolParser.g:6966:1: rule__PowerExpression__Group_1_0_0__0 : rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1 ;
     public final void rule__PowerExpression__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7053:1: ( rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1 )
-            // InternalPortugolParser.g:7054:2: rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1
+            // InternalPortugolParser.g:6970:1: ( rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1 )
+            // InternalPortugolParser.g:6971:2: rule__PowerExpression__Group_1_0_0__0__Impl rule__PowerExpression__Group_1_0_0__1
             {
             pushFollow(FOLLOW_53);
             rule__PowerExpression__Group_1_0_0__0__Impl();
@@ -23233,23 +22964,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0_0__0__Impl"
-    // InternalPortugolParser.g:7061:1: rule__PowerExpression__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:6978:1: rule__PowerExpression__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__PowerExpression__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7065:1: ( ( () ) )
-            // InternalPortugolParser.g:7066:1: ( () )
+            // InternalPortugolParser.g:6982:1: ( ( () ) )
+            // InternalPortugolParser.g:6983:1: ( () )
             {
-            // InternalPortugolParser.g:7066:1: ( () )
-            // InternalPortugolParser.g:7067:2: ()
+            // InternalPortugolParser.g:6983:1: ( () )
+            // InternalPortugolParser.g:6984:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()); 
             }
-            // InternalPortugolParser.g:7068:2: ()
-            // InternalPortugolParser.g:7068:3: 
+            // InternalPortugolParser.g:6985:2: ()
+            // InternalPortugolParser.g:6985:3: 
             {
             }
 
@@ -23274,14 +23005,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0_0__1"
-    // InternalPortugolParser.g:7076:1: rule__PowerExpression__Group_1_0_0__1 : rule__PowerExpression__Group_1_0_0__1__Impl ;
+    // InternalPortugolParser.g:6993:1: rule__PowerExpression__Group_1_0_0__1 : rule__PowerExpression__Group_1_0_0__1__Impl ;
     public final void rule__PowerExpression__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7080:1: ( rule__PowerExpression__Group_1_0_0__1__Impl )
-            // InternalPortugolParser.g:7081:2: rule__PowerExpression__Group_1_0_0__1__Impl
+            // InternalPortugolParser.g:6997:1: ( rule__PowerExpression__Group_1_0_0__1__Impl )
+            // InternalPortugolParser.g:6998:2: rule__PowerExpression__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__Group_1_0_0__1__Impl();
@@ -23307,23 +23038,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__Group_1_0_0__1__Impl"
-    // InternalPortugolParser.g:7087:1: rule__PowerExpression__Group_1_0_0__1__Impl : ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) ) ;
+    // InternalPortugolParser.g:7004:1: rule__PowerExpression__Group_1_0_0__1__Impl : ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__PowerExpression__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7091:1: ( ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) ) )
-            // InternalPortugolParser.g:7092:1: ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:7008:1: ( ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) ) )
+            // InternalPortugolParser.g:7009:1: ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) )
             {
-            // InternalPortugolParser.g:7092:1: ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) )
-            // InternalPortugolParser.g:7093:2: ( rule__PowerExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:7009:1: ( ( rule__PowerExpression__OpAssignment_1_0_0_1 ) )
+            // InternalPortugolParser.g:7010:2: ( rule__PowerExpression__OpAssignment_1_0_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getOpAssignment_1_0_0_1()); 
             }
-            // InternalPortugolParser.g:7094:2: ( rule__PowerExpression__OpAssignment_1_0_0_1 )
-            // InternalPortugolParser.g:7094:3: rule__PowerExpression__OpAssignment_1_0_0_1
+            // InternalPortugolParser.g:7011:2: ( rule__PowerExpression__OpAssignment_1_0_0_1 )
+            // InternalPortugolParser.g:7011:3: rule__PowerExpression__OpAssignment_1_0_0_1
             {
             pushFollow(FOLLOW_2);
             rule__PowerExpression__OpAssignment_1_0_0_1();
@@ -23358,14 +23089,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__0"
-    // InternalPortugolParser.g:7103:1: rule__UnaryExpression__Group_0__0 : rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1 ;
+    // InternalPortugolParser.g:7020:1: rule__UnaryExpression__Group_0__0 : rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1 ;
     public final void rule__UnaryExpression__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7107:1: ( rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1 )
-            // InternalPortugolParser.g:7108:2: rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1
+            // InternalPortugolParser.g:7024:1: ( rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1 )
+            // InternalPortugolParser.g:7025:2: rule__UnaryExpression__Group_0__0__Impl rule__UnaryExpression__Group_0__1
             {
             pushFollow(FOLLOW_55);
             rule__UnaryExpression__Group_0__0__Impl();
@@ -23396,23 +23127,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__0__Impl"
-    // InternalPortugolParser.g:7115:1: rule__UnaryExpression__Group_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:7032:1: rule__UnaryExpression__Group_0__0__Impl : ( () ) ;
     public final void rule__UnaryExpression__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7119:1: ( ( () ) )
-            // InternalPortugolParser.g:7120:1: ( () )
+            // InternalPortugolParser.g:7036:1: ( ( () ) )
+            // InternalPortugolParser.g:7037:1: ( () )
             {
-            // InternalPortugolParser.g:7120:1: ( () )
-            // InternalPortugolParser.g:7121:2: ()
+            // InternalPortugolParser.g:7037:1: ( () )
+            // InternalPortugolParser.g:7038:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getUnaryExpressionAction_0_0()); 
             }
-            // InternalPortugolParser.g:7122:2: ()
-            // InternalPortugolParser.g:7122:3: 
+            // InternalPortugolParser.g:7039:2: ()
+            // InternalPortugolParser.g:7039:3: 
             {
             }
 
@@ -23437,14 +23168,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__1"
-    // InternalPortugolParser.g:7130:1: rule__UnaryExpression__Group_0__1 : rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2 ;
+    // InternalPortugolParser.g:7047:1: rule__UnaryExpression__Group_0__1 : rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2 ;
     public final void rule__UnaryExpression__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7134:1: ( rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2 )
-            // InternalPortugolParser.g:7135:2: rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2
+            // InternalPortugolParser.g:7051:1: ( rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2 )
+            // InternalPortugolParser.g:7052:2: rule__UnaryExpression__Group_0__1__Impl rule__UnaryExpression__Group_0__2
             {
             pushFollow(FOLLOW_23);
             rule__UnaryExpression__Group_0__1__Impl();
@@ -23475,23 +23206,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__1__Impl"
-    // InternalPortugolParser.g:7142:1: rule__UnaryExpression__Group_0__1__Impl : ( ( rule__UnaryExpression__OpAssignment_0_1 ) ) ;
+    // InternalPortugolParser.g:7059:1: rule__UnaryExpression__Group_0__1__Impl : ( ( rule__UnaryExpression__OpAssignment_0_1 ) ) ;
     public final void rule__UnaryExpression__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7146:1: ( ( ( rule__UnaryExpression__OpAssignment_0_1 ) ) )
-            // InternalPortugolParser.g:7147:1: ( ( rule__UnaryExpression__OpAssignment_0_1 ) )
+            // InternalPortugolParser.g:7063:1: ( ( ( rule__UnaryExpression__OpAssignment_0_1 ) ) )
+            // InternalPortugolParser.g:7064:1: ( ( rule__UnaryExpression__OpAssignment_0_1 ) )
             {
-            // InternalPortugolParser.g:7147:1: ( ( rule__UnaryExpression__OpAssignment_0_1 ) )
-            // InternalPortugolParser.g:7148:2: ( rule__UnaryExpression__OpAssignment_0_1 )
+            // InternalPortugolParser.g:7064:1: ( ( rule__UnaryExpression__OpAssignment_0_1 ) )
+            // InternalPortugolParser.g:7065:2: ( rule__UnaryExpression__OpAssignment_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getOpAssignment_0_1()); 
             }
-            // InternalPortugolParser.g:7149:2: ( rule__UnaryExpression__OpAssignment_0_1 )
-            // InternalPortugolParser.g:7149:3: rule__UnaryExpression__OpAssignment_0_1
+            // InternalPortugolParser.g:7066:2: ( rule__UnaryExpression__OpAssignment_0_1 )
+            // InternalPortugolParser.g:7066:3: rule__UnaryExpression__OpAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__OpAssignment_0_1();
@@ -23526,14 +23257,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__2"
-    // InternalPortugolParser.g:7157:1: rule__UnaryExpression__Group_0__2 : rule__UnaryExpression__Group_0__2__Impl ;
+    // InternalPortugolParser.g:7074:1: rule__UnaryExpression__Group_0__2 : rule__UnaryExpression__Group_0__2__Impl ;
     public final void rule__UnaryExpression__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7161:1: ( rule__UnaryExpression__Group_0__2__Impl )
-            // InternalPortugolParser.g:7162:2: rule__UnaryExpression__Group_0__2__Impl
+            // InternalPortugolParser.g:7078:1: ( rule__UnaryExpression__Group_0__2__Impl )
+            // InternalPortugolParser.g:7079:2: rule__UnaryExpression__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__Group_0__2__Impl();
@@ -23559,23 +23290,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__Group_0__2__Impl"
-    // InternalPortugolParser.g:7168:1: rule__UnaryExpression__Group_0__2__Impl : ( ( rule__UnaryExpression__OperandAssignment_0_2 ) ) ;
+    // InternalPortugolParser.g:7085:1: rule__UnaryExpression__Group_0__2__Impl : ( ( rule__UnaryExpression__OperandAssignment_0_2 ) ) ;
     public final void rule__UnaryExpression__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7172:1: ( ( ( rule__UnaryExpression__OperandAssignment_0_2 ) ) )
-            // InternalPortugolParser.g:7173:1: ( ( rule__UnaryExpression__OperandAssignment_0_2 ) )
+            // InternalPortugolParser.g:7089:1: ( ( ( rule__UnaryExpression__OperandAssignment_0_2 ) ) )
+            // InternalPortugolParser.g:7090:1: ( ( rule__UnaryExpression__OperandAssignment_0_2 ) )
             {
-            // InternalPortugolParser.g:7173:1: ( ( rule__UnaryExpression__OperandAssignment_0_2 ) )
-            // InternalPortugolParser.g:7174:2: ( rule__UnaryExpression__OperandAssignment_0_2 )
+            // InternalPortugolParser.g:7090:1: ( ( rule__UnaryExpression__OperandAssignment_0_2 ) )
+            // InternalPortugolParser.g:7091:2: ( rule__UnaryExpression__OperandAssignment_0_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_0_2()); 
             }
-            // InternalPortugolParser.g:7175:2: ( rule__UnaryExpression__OperandAssignment_0_2 )
-            // InternalPortugolParser.g:7175:3: rule__UnaryExpression__OperandAssignment_0_2
+            // InternalPortugolParser.g:7092:2: ( rule__UnaryExpression__OperandAssignment_0_2 )
+            // InternalPortugolParser.g:7092:3: rule__UnaryExpression__OperandAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__OperandAssignment_0_2();
@@ -23610,14 +23341,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__0"
-    // InternalPortugolParser.g:7184:1: rule__PrimaryExpression__Group_4__0 : rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1 ;
+    // InternalPortugolParser.g:7101:1: rule__PrimaryExpression__Group_4__0 : rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1 ;
     public final void rule__PrimaryExpression__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7188:1: ( rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1 )
-            // InternalPortugolParser.g:7189:2: rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1
+            // InternalPortugolParser.g:7105:1: ( rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1 )
+            // InternalPortugolParser.g:7106:2: rule__PrimaryExpression__Group_4__0__Impl rule__PrimaryExpression__Group_4__1
             {
             pushFollow(FOLLOW_23);
             rule__PrimaryExpression__Group_4__0__Impl();
@@ -23648,17 +23379,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__0__Impl"
-    // InternalPortugolParser.g:7196:1: rule__PrimaryExpression__Group_4__0__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:7113:1: rule__PrimaryExpression__Group_4__0__Impl : ( LeftParenthesis ) ;
     public final void rule__PrimaryExpression__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7200:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:7201:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7117:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:7118:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:7201:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:7202:2: LeftParenthesis
+            // InternalPortugolParser.g:7118:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7119:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_4_0()); 
@@ -23689,14 +23420,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__1"
-    // InternalPortugolParser.g:7211:1: rule__PrimaryExpression__Group_4__1 : rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2 ;
+    // InternalPortugolParser.g:7128:1: rule__PrimaryExpression__Group_4__1 : rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2 ;
     public final void rule__PrimaryExpression__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7215:1: ( rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2 )
-            // InternalPortugolParser.g:7216:2: rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2
+            // InternalPortugolParser.g:7132:1: ( rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2 )
+            // InternalPortugolParser.g:7133:2: rule__PrimaryExpression__Group_4__1__Impl rule__PrimaryExpression__Group_4__2
             {
             pushFollow(FOLLOW_35);
             rule__PrimaryExpression__Group_4__1__Impl();
@@ -23727,17 +23458,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__1__Impl"
-    // InternalPortugolParser.g:7223:1: rule__PrimaryExpression__Group_4__1__Impl : ( ruleExpression ) ;
+    // InternalPortugolParser.g:7140:1: rule__PrimaryExpression__Group_4__1__Impl : ( ruleExpression ) ;
     public final void rule__PrimaryExpression__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7227:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:7228:1: ( ruleExpression )
+            // InternalPortugolParser.g:7144:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:7145:1: ( ruleExpression )
             {
-            // InternalPortugolParser.g:7228:1: ( ruleExpression )
-            // InternalPortugolParser.g:7229:2: ruleExpression
+            // InternalPortugolParser.g:7145:1: ( ruleExpression )
+            // InternalPortugolParser.g:7146:2: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryExpressionAccess().getExpressionParserRuleCall_4_1()); 
@@ -23772,14 +23503,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__2"
-    // InternalPortugolParser.g:7238:1: rule__PrimaryExpression__Group_4__2 : rule__PrimaryExpression__Group_4__2__Impl ;
+    // InternalPortugolParser.g:7155:1: rule__PrimaryExpression__Group_4__2 : rule__PrimaryExpression__Group_4__2__Impl ;
     public final void rule__PrimaryExpression__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7242:1: ( rule__PrimaryExpression__Group_4__2__Impl )
-            // InternalPortugolParser.g:7243:2: rule__PrimaryExpression__Group_4__2__Impl
+            // InternalPortugolParser.g:7159:1: ( rule__PrimaryExpression__Group_4__2__Impl )
+            // InternalPortugolParser.g:7160:2: rule__PrimaryExpression__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PrimaryExpression__Group_4__2__Impl();
@@ -23805,17 +23536,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_4__2__Impl"
-    // InternalPortugolParser.g:7249:1: rule__PrimaryExpression__Group_4__2__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:7166:1: rule__PrimaryExpression__Group_4__2__Impl : ( RightParenthesis ) ;
     public final void rule__PrimaryExpression__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7253:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:7254:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7170:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:7171:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:7254:1: ( RightParenthesis )
-            // InternalPortugolParser.g:7255:2: RightParenthesis
+            // InternalPortugolParser.g:7171:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7172:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_4_2()); 
@@ -23846,14 +23577,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__0"
-    // InternalPortugolParser.g:7265:1: rule__PreDefinedFunctionCall__Group__0 : rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1 ;
+    // InternalPortugolParser.g:7182:1: rule__PreDefinedFunctionCall__Group__0 : rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1 ;
     public final void rule__PreDefinedFunctionCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7269:1: ( rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1 )
-            // InternalPortugolParser.g:7270:2: rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1
+            // InternalPortugolParser.g:7186:1: ( rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1 )
+            // InternalPortugolParser.g:7187:2: rule__PreDefinedFunctionCall__Group__0__Impl rule__PreDefinedFunctionCall__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__PreDefinedFunctionCall__Group__0__Impl();
@@ -23884,23 +23615,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__0__Impl"
-    // InternalPortugolParser.g:7277:1: rule__PreDefinedFunctionCall__Group__0__Impl : ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) ) ;
+    // InternalPortugolParser.g:7194:1: rule__PreDefinedFunctionCall__Group__0__Impl : ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) ) ;
     public final void rule__PreDefinedFunctionCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7281:1: ( ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) ) )
-            // InternalPortugolParser.g:7282:1: ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) )
+            // InternalPortugolParser.g:7198:1: ( ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) ) )
+            // InternalPortugolParser.g:7199:1: ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) )
             {
-            // InternalPortugolParser.g:7282:1: ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) )
-            // InternalPortugolParser.g:7283:2: ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 )
+            // InternalPortugolParser.g:7199:1: ( ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 ) )
+            // InternalPortugolParser.g:7200:2: ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getPreDefFunctionNameAssignment_0()); 
             }
-            // InternalPortugolParser.g:7284:2: ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 )
-            // InternalPortugolParser.g:7284:3: rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0
+            // InternalPortugolParser.g:7201:2: ( rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 )
+            // InternalPortugolParser.g:7201:3: rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0();
@@ -23935,14 +23666,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__1"
-    // InternalPortugolParser.g:7292:1: rule__PreDefinedFunctionCall__Group__1 : rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2 ;
+    // InternalPortugolParser.g:7209:1: rule__PreDefinedFunctionCall__Group__1 : rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2 ;
     public final void rule__PreDefinedFunctionCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7296:1: ( rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2 )
-            // InternalPortugolParser.g:7297:2: rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2
+            // InternalPortugolParser.g:7213:1: ( rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2 )
+            // InternalPortugolParser.g:7214:2: rule__PreDefinedFunctionCall__Group__1__Impl rule__PreDefinedFunctionCall__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__PreDefinedFunctionCall__Group__1__Impl();
@@ -23973,17 +23704,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__1__Impl"
-    // InternalPortugolParser.g:7304:1: rule__PreDefinedFunctionCall__Group__1__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:7221:1: rule__PreDefinedFunctionCall__Group__1__Impl : ( LeftParenthesis ) ;
     public final void rule__PreDefinedFunctionCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7308:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:7309:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7225:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:7226:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:7309:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:7310:2: LeftParenthesis
+            // InternalPortugolParser.g:7226:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7227:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getLeftParenthesisKeyword_1()); 
@@ -24014,14 +23745,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__2"
-    // InternalPortugolParser.g:7319:1: rule__PreDefinedFunctionCall__Group__2 : rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3 ;
+    // InternalPortugolParser.g:7236:1: rule__PreDefinedFunctionCall__Group__2 : rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3 ;
     public final void rule__PreDefinedFunctionCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7323:1: ( rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3 )
-            // InternalPortugolParser.g:7324:2: rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3
+            // InternalPortugolParser.g:7240:1: ( rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3 )
+            // InternalPortugolParser.g:7241:2: rule__PreDefinedFunctionCall__Group__2__Impl rule__PreDefinedFunctionCall__Group__3
             {
             pushFollow(FOLLOW_35);
             rule__PreDefinedFunctionCall__Group__2__Impl();
@@ -24052,23 +23783,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__2__Impl"
-    // InternalPortugolParser.g:7331:1: rule__PreDefinedFunctionCall__Group__2__Impl : ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) ) ;
+    // InternalPortugolParser.g:7248:1: rule__PreDefinedFunctionCall__Group__2__Impl : ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) ) ;
     public final void rule__PreDefinedFunctionCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7335:1: ( ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) ) )
-            // InternalPortugolParser.g:7336:1: ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) )
+            // InternalPortugolParser.g:7252:1: ( ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) ) )
+            // InternalPortugolParser.g:7253:1: ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) )
             {
-            // InternalPortugolParser.g:7336:1: ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) )
-            // InternalPortugolParser.g:7337:2: ( rule__PreDefinedFunctionCall__ParamAssignment_2 )
+            // InternalPortugolParser.g:7253:1: ( ( rule__PreDefinedFunctionCall__ParamAssignment_2 ) )
+            // InternalPortugolParser.g:7254:2: ( rule__PreDefinedFunctionCall__ParamAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getParamAssignment_2()); 
             }
-            // InternalPortugolParser.g:7338:2: ( rule__PreDefinedFunctionCall__ParamAssignment_2 )
-            // InternalPortugolParser.g:7338:3: rule__PreDefinedFunctionCall__ParamAssignment_2
+            // InternalPortugolParser.g:7255:2: ( rule__PreDefinedFunctionCall__ParamAssignment_2 )
+            // InternalPortugolParser.g:7255:3: rule__PreDefinedFunctionCall__ParamAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__PreDefinedFunctionCall__ParamAssignment_2();
@@ -24103,14 +23834,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__3"
-    // InternalPortugolParser.g:7346:1: rule__PreDefinedFunctionCall__Group__3 : rule__PreDefinedFunctionCall__Group__3__Impl ;
+    // InternalPortugolParser.g:7263:1: rule__PreDefinedFunctionCall__Group__3 : rule__PreDefinedFunctionCall__Group__3__Impl ;
     public final void rule__PreDefinedFunctionCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7350:1: ( rule__PreDefinedFunctionCall__Group__3__Impl )
-            // InternalPortugolParser.g:7351:2: rule__PreDefinedFunctionCall__Group__3__Impl
+            // InternalPortugolParser.g:7267:1: ( rule__PreDefinedFunctionCall__Group__3__Impl )
+            // InternalPortugolParser.g:7268:2: rule__PreDefinedFunctionCall__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PreDefinedFunctionCall__Group__3__Impl();
@@ -24136,17 +23867,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__Group__3__Impl"
-    // InternalPortugolParser.g:7357:1: rule__PreDefinedFunctionCall__Group__3__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:7274:1: rule__PreDefinedFunctionCall__Group__3__Impl : ( RightParenthesis ) ;
     public final void rule__PreDefinedFunctionCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7361:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:7362:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7278:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:7279:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:7362:1: ( RightParenthesis )
-            // InternalPortugolParser.g:7363:2: RightParenthesis
+            // InternalPortugolParser.g:7279:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7280:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getRightParenthesisKeyword_3()); 
@@ -24177,14 +23908,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__0"
-    // InternalPortugolParser.g:7373:1: rule__FunctionCall__Group__0 : rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 ;
+    // InternalPortugolParser.g:7290:1: rule__FunctionCall__Group__0 : rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 ;
     public final void rule__FunctionCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7377:1: ( rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 )
-            // InternalPortugolParser.g:7378:2: rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1
+            // InternalPortugolParser.g:7294:1: ( rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 )
+            // InternalPortugolParser.g:7295:2: rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__FunctionCall__Group__0__Impl();
@@ -24215,23 +23946,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__0__Impl"
-    // InternalPortugolParser.g:7385:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__FbNameAssignment_0 ) ) ;
+    // InternalPortugolParser.g:7302:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__FbNameAssignment_0 ) ) ;
     public final void rule__FunctionCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7389:1: ( ( ( rule__FunctionCall__FbNameAssignment_0 ) ) )
-            // InternalPortugolParser.g:7390:1: ( ( rule__FunctionCall__FbNameAssignment_0 ) )
+            // InternalPortugolParser.g:7306:1: ( ( ( rule__FunctionCall__FbNameAssignment_0 ) ) )
+            // InternalPortugolParser.g:7307:1: ( ( rule__FunctionCall__FbNameAssignment_0 ) )
             {
-            // InternalPortugolParser.g:7390:1: ( ( rule__FunctionCall__FbNameAssignment_0 ) )
-            // InternalPortugolParser.g:7391:2: ( rule__FunctionCall__FbNameAssignment_0 )
+            // InternalPortugolParser.g:7307:1: ( ( rule__FunctionCall__FbNameAssignment_0 ) )
+            // InternalPortugolParser.g:7308:2: ( rule__FunctionCall__FbNameAssignment_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getFbNameAssignment_0()); 
             }
-            // InternalPortugolParser.g:7392:2: ( rule__FunctionCall__FbNameAssignment_0 )
-            // InternalPortugolParser.g:7392:3: rule__FunctionCall__FbNameAssignment_0
+            // InternalPortugolParser.g:7309:2: ( rule__FunctionCall__FbNameAssignment_0 )
+            // InternalPortugolParser.g:7309:3: rule__FunctionCall__FbNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__FbNameAssignment_0();
@@ -24266,14 +23997,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__1"
-    // InternalPortugolParser.g:7400:1: rule__FunctionCall__Group__1 : rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 ;
+    // InternalPortugolParser.g:7317:1: rule__FunctionCall__Group__1 : rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 ;
     public final void rule__FunctionCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7404:1: ( rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 )
-            // InternalPortugolParser.g:7405:2: rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2
+            // InternalPortugolParser.g:7321:1: ( rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 )
+            // InternalPortugolParser.g:7322:2: rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__FunctionCall__Group__1__Impl();
@@ -24304,17 +24035,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__1__Impl"
-    // InternalPortugolParser.g:7412:1: rule__FunctionCall__Group__1__Impl : ( LeftParenthesis ) ;
+    // InternalPortugolParser.g:7329:1: rule__FunctionCall__Group__1__Impl : ( LeftParenthesis ) ;
     public final void rule__FunctionCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7416:1: ( ( LeftParenthesis ) )
-            // InternalPortugolParser.g:7417:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7333:1: ( ( LeftParenthesis ) )
+            // InternalPortugolParser.g:7334:1: ( LeftParenthesis )
             {
-            // InternalPortugolParser.g:7417:1: ( LeftParenthesis )
-            // InternalPortugolParser.g:7418:2: LeftParenthesis
+            // InternalPortugolParser.g:7334:1: ( LeftParenthesis )
+            // InternalPortugolParser.g:7335:2: LeftParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1()); 
@@ -24345,14 +24076,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__2"
-    // InternalPortugolParser.g:7427:1: rule__FunctionCall__Group__2 : rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 ;
+    // InternalPortugolParser.g:7344:1: rule__FunctionCall__Group__2 : rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 ;
     public final void rule__FunctionCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7431:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
-            // InternalPortugolParser.g:7432:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
+            // InternalPortugolParser.g:7348:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
+            // InternalPortugolParser.g:7349:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
             {
             pushFollow(FOLLOW_35);
             rule__FunctionCall__Group__2__Impl();
@@ -24383,23 +24114,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__2__Impl"
-    // InternalPortugolParser.g:7439:1: rule__FunctionCall__Group__2__Impl : ( ( rule__FunctionCall__ParamAssignment_2 ) ) ;
+    // InternalPortugolParser.g:7356:1: rule__FunctionCall__Group__2__Impl : ( ( rule__FunctionCall__ParamAssignment_2 ) ) ;
     public final void rule__FunctionCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7443:1: ( ( ( rule__FunctionCall__ParamAssignment_2 ) ) )
-            // InternalPortugolParser.g:7444:1: ( ( rule__FunctionCall__ParamAssignment_2 ) )
+            // InternalPortugolParser.g:7360:1: ( ( ( rule__FunctionCall__ParamAssignment_2 ) ) )
+            // InternalPortugolParser.g:7361:1: ( ( rule__FunctionCall__ParamAssignment_2 ) )
             {
-            // InternalPortugolParser.g:7444:1: ( ( rule__FunctionCall__ParamAssignment_2 ) )
-            // InternalPortugolParser.g:7445:2: ( rule__FunctionCall__ParamAssignment_2 )
+            // InternalPortugolParser.g:7361:1: ( ( rule__FunctionCall__ParamAssignment_2 ) )
+            // InternalPortugolParser.g:7362:2: ( rule__FunctionCall__ParamAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getParamAssignment_2()); 
             }
-            // InternalPortugolParser.g:7446:2: ( rule__FunctionCall__ParamAssignment_2 )
-            // InternalPortugolParser.g:7446:3: rule__FunctionCall__ParamAssignment_2
+            // InternalPortugolParser.g:7363:2: ( rule__FunctionCall__ParamAssignment_2 )
+            // InternalPortugolParser.g:7363:3: rule__FunctionCall__ParamAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__ParamAssignment_2();
@@ -24434,14 +24165,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__3"
-    // InternalPortugolParser.g:7454:1: rule__FunctionCall__Group__3 : rule__FunctionCall__Group__3__Impl ;
+    // InternalPortugolParser.g:7371:1: rule__FunctionCall__Group__3 : rule__FunctionCall__Group__3__Impl ;
     public final void rule__FunctionCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7458:1: ( rule__FunctionCall__Group__3__Impl )
-            // InternalPortugolParser.g:7459:2: rule__FunctionCall__Group__3__Impl
+            // InternalPortugolParser.g:7375:1: ( rule__FunctionCall__Group__3__Impl )
+            // InternalPortugolParser.g:7376:2: rule__FunctionCall__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__Group__3__Impl();
@@ -24467,17 +24198,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__Group__3__Impl"
-    // InternalPortugolParser.g:7465:1: rule__FunctionCall__Group__3__Impl : ( RightParenthesis ) ;
+    // InternalPortugolParser.g:7382:1: rule__FunctionCall__Group__3__Impl : ( RightParenthesis ) ;
     public final void rule__FunctionCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7469:1: ( ( RightParenthesis ) )
-            // InternalPortugolParser.g:7470:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7386:1: ( ( RightParenthesis ) )
+            // InternalPortugolParser.g:7387:1: ( RightParenthesis )
             {
-            // InternalPortugolParser.g:7470:1: ( RightParenthesis )
-            // InternalPortugolParser.g:7471:2: RightParenthesis
+            // InternalPortugolParser.g:7387:1: ( RightParenthesis )
+            // InternalPortugolParser.g:7388:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_3()); 
@@ -24508,14 +24239,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Literal__Group_0__0"
-    // InternalPortugolParser.g:7481:1: rule__Literal__Group_0__0 : rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1 ;
+    // InternalPortugolParser.g:7398:1: rule__Literal__Group_0__0 : rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1 ;
     public final void rule__Literal__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7485:1: ( rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1 )
-            // InternalPortugolParser.g:7486:2: rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1
+            // InternalPortugolParser.g:7402:1: ( rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1 )
+            // InternalPortugolParser.g:7403:2: rule__Literal__Group_0__0__Impl rule__Literal__Group_0__1
             {
             pushFollow(FOLLOW_56);
             rule__Literal__Group_0__0__Impl();
@@ -24546,23 +24277,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Literal__Group_0__0__Impl"
-    // InternalPortugolParser.g:7493:1: rule__Literal__Group_0__0__Impl : ( () ) ;
+    // InternalPortugolParser.g:7410:1: rule__Literal__Group_0__0__Impl : ( () ) ;
     public final void rule__Literal__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7497:1: ( ( () ) )
-            // InternalPortugolParser.g:7498:1: ( () )
+            // InternalPortugolParser.g:7414:1: ( ( () ) )
+            // InternalPortugolParser.g:7415:1: ( () )
             {
-            // InternalPortugolParser.g:7498:1: ( () )
-            // InternalPortugolParser.g:7499:2: ()
+            // InternalPortugolParser.g:7415:1: ( () )
+            // InternalPortugolParser.g:7416:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLiteralAccess().getLiteralAction_0_0()); 
             }
-            // InternalPortugolParser.g:7500:2: ()
-            // InternalPortugolParser.g:7500:3: 
+            // InternalPortugolParser.g:7417:2: ()
+            // InternalPortugolParser.g:7417:3: 
             {
             }
 
@@ -24587,14 +24318,14 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Literal__Group_0__1"
-    // InternalPortugolParser.g:7508:1: rule__Literal__Group_0__1 : rule__Literal__Group_0__1__Impl ;
+    // InternalPortugolParser.g:7425:1: rule__Literal__Group_0__1 : rule__Literal__Group_0__1__Impl ;
     public final void rule__Literal__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7512:1: ( rule__Literal__Group_0__1__Impl )
-            // InternalPortugolParser.g:7513:2: rule__Literal__Group_0__1__Impl
+            // InternalPortugolParser.g:7429:1: ( rule__Literal__Group_0__1__Impl )
+            // InternalPortugolParser.g:7430:2: rule__Literal__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Literal__Group_0__1__Impl();
@@ -24620,17 +24351,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Literal__Group_0__1__Impl"
-    // InternalPortugolParser.g:7519:1: rule__Literal__Group_0__1__Impl : ( rulePiLiteral ) ;
+    // InternalPortugolParser.g:7436:1: rule__Literal__Group_0__1__Impl : ( rulePiLiteral ) ;
     public final void rule__Literal__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7523:1: ( ( rulePiLiteral ) )
-            // InternalPortugolParser.g:7524:1: ( rulePiLiteral )
+            // InternalPortugolParser.g:7440:1: ( ( rulePiLiteral ) )
+            // InternalPortugolParser.g:7441:1: ( rulePiLiteral )
             {
-            // InternalPortugolParser.g:7524:1: ( rulePiLiteral )
-            // InternalPortugolParser.g:7525:2: rulePiLiteral
+            // InternalPortugolParser.g:7441:1: ( rulePiLiteral )
+            // InternalPortugolParser.g:7442:2: rulePiLiteral
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLiteralAccess().getPiLiteralParserRuleCall_0_1()); 
@@ -24665,17 +24396,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__HeaderAssignment_0"
-    // InternalPortugolParser.g:7535:1: rule__Model__HeaderAssignment_0 : ( ruleHeaderBlock ) ;
+    // InternalPortugolParser.g:7452:1: rule__Model__HeaderAssignment_0 : ( ruleHeaderBlock ) ;
     public final void rule__Model__HeaderAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7539:1: ( ( ruleHeaderBlock ) )
-            // InternalPortugolParser.g:7540:2: ( ruleHeaderBlock )
+            // InternalPortugolParser.g:7456:1: ( ( ruleHeaderBlock ) )
+            // InternalPortugolParser.g:7457:2: ( ruleHeaderBlock )
             {
-            // InternalPortugolParser.g:7540:2: ( ruleHeaderBlock )
-            // InternalPortugolParser.g:7541:3: ruleHeaderBlock
+            // InternalPortugolParser.g:7457:2: ( ruleHeaderBlock )
+            // InternalPortugolParser.g:7458:3: ruleHeaderBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getHeaderHeaderBlockParserRuleCall_0_0()); 
@@ -24710,17 +24441,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__GlobalDeclarationsAssignment_1"
-    // InternalPortugolParser.g:7550:1: rule__Model__GlobalDeclarationsAssignment_1 : ( ruleDeclarationsBlock ) ;
+    // InternalPortugolParser.g:7467:1: rule__Model__GlobalDeclarationsAssignment_1 : ( ruleDeclarationsBlock ) ;
     public final void rule__Model__GlobalDeclarationsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7554:1: ( ( ruleDeclarationsBlock ) )
-            // InternalPortugolParser.g:7555:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7471:1: ( ( ruleDeclarationsBlock ) )
+            // InternalPortugolParser.g:7472:2: ( ruleDeclarationsBlock )
             {
-            // InternalPortugolParser.g:7555:2: ( ruleDeclarationsBlock )
-            // InternalPortugolParser.g:7556:3: ruleDeclarationsBlock
+            // InternalPortugolParser.g:7472:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7473:3: ruleDeclarationsBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getGlobalDeclarationsDeclarationsBlockParserRuleCall_1_0()); 
@@ -24755,17 +24486,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__SubprogramsAssignment_2"
-    // InternalPortugolParser.g:7565:1: rule__Model__SubprogramsAssignment_2 : ( ruleSubprograms ) ;
+    // InternalPortugolParser.g:7482:1: rule__Model__SubprogramsAssignment_2 : ( ruleSubprograms ) ;
     public final void rule__Model__SubprogramsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7569:1: ( ( ruleSubprograms ) )
-            // InternalPortugolParser.g:7570:2: ( ruleSubprograms )
+            // InternalPortugolParser.g:7486:1: ( ( ruleSubprograms ) )
+            // InternalPortugolParser.g:7487:2: ( ruleSubprograms )
             {
-            // InternalPortugolParser.g:7570:2: ( ruleSubprograms )
-            // InternalPortugolParser.g:7571:3: ruleSubprograms
+            // InternalPortugolParser.g:7487:2: ( ruleSubprograms )
+            // InternalPortugolParser.g:7488:3: ruleSubprograms
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getSubprogramsSubprogramsParserRuleCall_2_0()); 
@@ -24800,17 +24531,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__CommandsAssignment_3"
-    // InternalPortugolParser.g:7580:1: rule__Model__CommandsAssignment_3 : ( ruleBlockCommand ) ;
+    // InternalPortugolParser.g:7497:1: rule__Model__CommandsAssignment_3 : ( ruleBlockCommand ) ;
     public final void rule__Model__CommandsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7584:1: ( ( ruleBlockCommand ) )
-            // InternalPortugolParser.g:7585:2: ( ruleBlockCommand )
+            // InternalPortugolParser.g:7501:1: ( ( ruleBlockCommand ) )
+            // InternalPortugolParser.g:7502:2: ( ruleBlockCommand )
             {
-            // InternalPortugolParser.g:7585:2: ( ruleBlockCommand )
-            // InternalPortugolParser.g:7586:3: ruleBlockCommand
+            // InternalPortugolParser.g:7502:2: ( ruleBlockCommand )
+            // InternalPortugolParser.g:7503:3: ruleBlockCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getCommandsBlockCommandParserRuleCall_3_0()); 
@@ -24845,17 +24576,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__HeaderBlock__AlgorithmNameAssignment_1"
-    // InternalPortugolParser.g:7595:1: rule__HeaderBlock__AlgorithmNameAssignment_1 : ( RULE_STRING ) ;
+    // InternalPortugolParser.g:7512:1: rule__HeaderBlock__AlgorithmNameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__HeaderBlock__AlgorithmNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7599:1: ( ( RULE_STRING ) )
-            // InternalPortugolParser.g:7600:2: ( RULE_STRING )
+            // InternalPortugolParser.g:7516:1: ( ( RULE_STRING ) )
+            // InternalPortugolParser.g:7517:2: ( RULE_STRING )
             {
-            // InternalPortugolParser.g:7600:2: ( RULE_STRING )
-            // InternalPortugolParser.g:7601:3: RULE_STRING
+            // InternalPortugolParser.g:7517:2: ( RULE_STRING )
+            // InternalPortugolParser.g:7518:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getHeaderBlockAccess().getAlgorithmNameSTRINGTerminalRuleCall_1_0()); 
@@ -24886,17 +24617,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclarationsBlock__VarsAssignment_1_0"
-    // InternalPortugolParser.g:7610:1: rule__DeclarationsBlock__VarsAssignment_1_0 : ( ruleVariable ) ;
+    // InternalPortugolParser.g:7527:1: rule__DeclarationsBlock__VarsAssignment_1_0 : ( ruleVariable ) ;
     public final void rule__DeclarationsBlock__VarsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7614:1: ( ( ruleVariable ) )
-            // InternalPortugolParser.g:7615:2: ( ruleVariable )
+            // InternalPortugolParser.g:7531:1: ( ( ruleVariable ) )
+            // InternalPortugolParser.g:7532:2: ( ruleVariable )
             {
-            // InternalPortugolParser.g:7615:2: ( ruleVariable )
-            // InternalPortugolParser.g:7616:3: ruleVariable
+            // InternalPortugolParser.g:7532:2: ( ruleVariable )
+            // InternalPortugolParser.g:7533:3: ruleVariable
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationsBlockAccess().getVarsVariableParserRuleCall_1_0_0()); 
@@ -24931,17 +24662,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__VarDeclarationAssignment_0"
-    // InternalPortugolParser.g:7625:1: rule__Variable__VarDeclarationAssignment_0 : ( ruleVarDeclaration ) ;
+    // InternalPortugolParser.g:7542:1: rule__Variable__VarDeclarationAssignment_0 : ( ruleVarDeclaration ) ;
     public final void rule__Variable__VarDeclarationAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7629:1: ( ( ruleVarDeclaration ) )
-            // InternalPortugolParser.g:7630:2: ( ruleVarDeclaration )
+            // InternalPortugolParser.g:7546:1: ( ( ruleVarDeclaration ) )
+            // InternalPortugolParser.g:7547:2: ( ruleVarDeclaration )
             {
-            // InternalPortugolParser.g:7630:2: ( ruleVarDeclaration )
-            // InternalPortugolParser.g:7631:3: ruleVarDeclaration
+            // InternalPortugolParser.g:7547:2: ( ruleVarDeclaration )
+            // InternalPortugolParser.g:7548:3: ruleVarDeclaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getVarDeclarationVarDeclarationParserRuleCall_0_0()); 
@@ -24976,17 +24707,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Variable__TypeAssignment_2"
-    // InternalPortugolParser.g:7640:1: rule__Variable__TypeAssignment_2 : ( ruleVarType ) ;
+    // InternalPortugolParser.g:7557:1: rule__Variable__TypeAssignment_2 : ( ruleVarType ) ;
     public final void rule__Variable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7644:1: ( ( ruleVarType ) )
-            // InternalPortugolParser.g:7645:2: ( ruleVarType )
+            // InternalPortugolParser.g:7561:1: ( ( ruleVarType ) )
+            // InternalPortugolParser.g:7562:2: ( ruleVarType )
             {
-            // InternalPortugolParser.g:7645:2: ( ruleVarType )
-            // InternalPortugolParser.g:7646:3: ruleVarType
+            // InternalPortugolParser.g:7562:2: ( ruleVarType )
+            // InternalPortugolParser.g:7563:3: ruleVarType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getTypeVarTypeParserRuleCall_2_0()); 
@@ -25021,17 +24752,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__VarsAssignment_0"
-    // InternalPortugolParser.g:7655:1: rule__VarDeclaration__VarsAssignment_0 : ( ruleVarName ) ;
+    // InternalPortugolParser.g:7572:1: rule__VarDeclaration__VarsAssignment_0 : ( ruleVarName ) ;
     public final void rule__VarDeclaration__VarsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7659:1: ( ( ruleVarName ) )
-            // InternalPortugolParser.g:7660:2: ( ruleVarName )
+            // InternalPortugolParser.g:7576:1: ( ( ruleVarName ) )
+            // InternalPortugolParser.g:7577:2: ( ruleVarName )
             {
-            // InternalPortugolParser.g:7660:2: ( ruleVarName )
-            // InternalPortugolParser.g:7661:3: ruleVarName
+            // InternalPortugolParser.g:7577:2: ( ruleVarName )
+            // InternalPortugolParser.g:7578:3: ruleVarName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getVarsVarNameParserRuleCall_0_0()); 
@@ -25066,17 +24797,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarDeclaration__VarsAssignment_1_1"
-    // InternalPortugolParser.g:7670:1: rule__VarDeclaration__VarsAssignment_1_1 : ( ruleVarName ) ;
+    // InternalPortugolParser.g:7587:1: rule__VarDeclaration__VarsAssignment_1_1 : ( ruleVarName ) ;
     public final void rule__VarDeclaration__VarsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7674:1: ( ( ruleVarName ) )
-            // InternalPortugolParser.g:7675:2: ( ruleVarName )
+            // InternalPortugolParser.g:7591:1: ( ( ruleVarName ) )
+            // InternalPortugolParser.g:7592:2: ( ruleVarName )
             {
-            // InternalPortugolParser.g:7675:2: ( ruleVarName )
-            // InternalPortugolParser.g:7676:3: ruleVarName
+            // InternalPortugolParser.g:7592:2: ( ruleVarName )
+            // InternalPortugolParser.g:7593:3: ruleVarName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarDeclarationAccess().getVarsVarNameParserRuleCall_1_1_0()); 
@@ -25111,23 +24842,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__VarsAssignment_0"
-    // InternalPortugolParser.g:7685:1: rule__DeclaredVarList__VarsAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalPortugolParser.g:7602:1: rule__DeclaredVarList__VarsAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__DeclaredVarList__VarsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7689:1: ( ( ( RULE_ID ) ) )
-            // InternalPortugolParser.g:7690:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7606:1: ( ( ( RULE_ID ) ) )
+            // InternalPortugolParser.g:7607:2: ( ( RULE_ID ) )
             {
-            // InternalPortugolParser.g:7690:2: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:7691:3: ( RULE_ID )
+            // InternalPortugolParser.g:7607:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7608:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsVarNameCrossReference_0_0()); 
             }
-            // InternalPortugolParser.g:7692:3: ( RULE_ID )
-            // InternalPortugolParser.g:7693:4: RULE_ID
+            // InternalPortugolParser.g:7609:3: ( RULE_ID )
+            // InternalPortugolParser.g:7610:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsVarNameIDTerminalRuleCall_0_0_1()); 
@@ -25164,23 +24895,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVarList__VarsAssignment_1_1"
-    // InternalPortugolParser.g:7704:1: rule__DeclaredVarList__VarsAssignment_1_1 : ( ( RULE_ID ) ) ;
+    // InternalPortugolParser.g:7621:1: rule__DeclaredVarList__VarsAssignment_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__DeclaredVarList__VarsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7708:1: ( ( ( RULE_ID ) ) )
-            // InternalPortugolParser.g:7709:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7625:1: ( ( ( RULE_ID ) ) )
+            // InternalPortugolParser.g:7626:2: ( ( RULE_ID ) )
             {
-            // InternalPortugolParser.g:7709:2: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:7710:3: ( RULE_ID )
+            // InternalPortugolParser.g:7626:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7627:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsVarNameCrossReference_1_1_0()); 
             }
-            // InternalPortugolParser.g:7711:3: ( RULE_ID )
-            // InternalPortugolParser.g:7712:4: RULE_ID
+            // InternalPortugolParser.g:7628:3: ( RULE_ID )
+            // InternalPortugolParser.g:7629:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarListAccess().getVarsVarNameIDTerminalRuleCall_1_1_0_1()); 
@@ -25217,17 +24948,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarName__NameAssignment"
-    // InternalPortugolParser.g:7723:1: rule__VarName__NameAssignment : ( RULE_ID ) ;
+    // InternalPortugolParser.g:7640:1: rule__VarName__NameAssignment : ( RULE_ID ) ;
     public final void rule__VarName__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7727:1: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:7728:2: ( RULE_ID )
+            // InternalPortugolParser.g:7644:1: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7645:2: ( RULE_ID )
             {
-            // InternalPortugolParser.g:7728:2: ( RULE_ID )
-            // InternalPortugolParser.g:7729:3: RULE_ID
+            // InternalPortugolParser.g:7645:2: ( RULE_ID )
+            // InternalPortugolParser.g:7646:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarNameAccess().getNameIDTerminalRuleCall_0()); 
@@ -25258,23 +24989,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VarType__TypeNameAssignment"
-    // InternalPortugolParser.g:7738:1: rule__VarType__TypeNameAssignment : ( ( rule__VarType__TypeNameAlternatives_0 ) ) ;
+    // InternalPortugolParser.g:7655:1: rule__VarType__TypeNameAssignment : ( ( rule__VarType__TypeNameAlternatives_0 ) ) ;
     public final void rule__VarType__TypeNameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7742:1: ( ( ( rule__VarType__TypeNameAlternatives_0 ) ) )
-            // InternalPortugolParser.g:7743:2: ( ( rule__VarType__TypeNameAlternatives_0 ) )
+            // InternalPortugolParser.g:7659:1: ( ( ( rule__VarType__TypeNameAlternatives_0 ) ) )
+            // InternalPortugolParser.g:7660:2: ( ( rule__VarType__TypeNameAlternatives_0 ) )
             {
-            // InternalPortugolParser.g:7743:2: ( ( rule__VarType__TypeNameAlternatives_0 ) )
-            // InternalPortugolParser.g:7744:3: ( rule__VarType__TypeNameAlternatives_0 )
+            // InternalPortugolParser.g:7660:2: ( ( rule__VarType__TypeNameAlternatives_0 ) )
+            // InternalPortugolParser.g:7661:3: ( rule__VarType__TypeNameAlternatives_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVarTypeAccess().getTypeNameAlternatives_0()); 
             }
-            // InternalPortugolParser.g:7745:3: ( rule__VarType__TypeNameAlternatives_0 )
-            // InternalPortugolParser.g:7745:4: rule__VarType__TypeNameAlternatives_0
+            // InternalPortugolParser.g:7662:3: ( rule__VarType__TypeNameAlternatives_0 )
+            // InternalPortugolParser.g:7662:4: rule__VarType__TypeNameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__VarType__TypeNameAlternatives_0();
@@ -25309,17 +25040,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Subprograms__BlockSubProgramsAssignment"
-    // InternalPortugolParser.g:7753:1: rule__Subprograms__BlockSubProgramsAssignment : ( ruleBlockSubPrograms ) ;
+    // InternalPortugolParser.g:7670:1: rule__Subprograms__BlockSubProgramsAssignment : ( ruleBlockSubPrograms ) ;
     public final void rule__Subprograms__BlockSubProgramsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7757:1: ( ( ruleBlockSubPrograms ) )
-            // InternalPortugolParser.g:7758:2: ( ruleBlockSubPrograms )
+            // InternalPortugolParser.g:7674:1: ( ( ruleBlockSubPrograms ) )
+            // InternalPortugolParser.g:7675:2: ( ruleBlockSubPrograms )
             {
-            // InternalPortugolParser.g:7758:2: ( ruleBlockSubPrograms )
-            // InternalPortugolParser.g:7759:3: ruleBlockSubPrograms
+            // InternalPortugolParser.g:7675:2: ( ruleBlockSubPrograms )
+            // InternalPortugolParser.g:7676:3: ruleBlockSubPrograms
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramsAccess().getBlockSubProgramsBlockSubProgramsParserRuleCall_0()); 
@@ -25354,17 +25085,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ProcedureName__NameAssignment"
-    // InternalPortugolParser.g:7768:1: rule__ProcedureName__NameAssignment : ( RULE_ID ) ;
+    // InternalPortugolParser.g:7685:1: rule__ProcedureName__NameAssignment : ( RULE_ID ) ;
     public final void rule__ProcedureName__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7772:1: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:7773:2: ( RULE_ID )
+            // InternalPortugolParser.g:7689:1: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7690:2: ( RULE_ID )
             {
-            // InternalPortugolParser.g:7773:2: ( RULE_ID )
-            // InternalPortugolParser.g:7774:3: RULE_ID
+            // InternalPortugolParser.g:7690:2: ( RULE_ID )
+            // InternalPortugolParser.g:7691:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProcedureNameAccess().getNameIDTerminalRuleCall_0()); 
@@ -25395,17 +25126,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionName__NameAssignment"
-    // InternalPortugolParser.g:7783:1: rule__FunctionName__NameAssignment : ( RULE_ID ) ;
+    // InternalPortugolParser.g:7700:1: rule__FunctionName__NameAssignment : ( RULE_ID ) ;
     public final void rule__FunctionName__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7787:1: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:7788:2: ( RULE_ID )
+            // InternalPortugolParser.g:7704:1: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7705:2: ( RULE_ID )
             {
-            // InternalPortugolParser.g:7788:2: ( RULE_ID )
-            // InternalPortugolParser.g:7789:3: RULE_ID
+            // InternalPortugolParser.g:7705:2: ( RULE_ID )
+            // InternalPortugolParser.g:7706:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionNameAccess().getNameIDTerminalRuleCall_0()); 
@@ -25436,17 +25167,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__FunctionNameAssignment_1"
-    // InternalPortugolParser.g:7798:1: rule__BlockFunction__FunctionNameAssignment_1 : ( ruleFunctionName ) ;
+    // InternalPortugolParser.g:7715:1: rule__BlockFunction__FunctionNameAssignment_1 : ( ruleFunctionName ) ;
     public final void rule__BlockFunction__FunctionNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7802:1: ( ( ruleFunctionName ) )
-            // InternalPortugolParser.g:7803:2: ( ruleFunctionName )
+            // InternalPortugolParser.g:7719:1: ( ( ruleFunctionName ) )
+            // InternalPortugolParser.g:7720:2: ( ruleFunctionName )
             {
-            // InternalPortugolParser.g:7803:2: ( ruleFunctionName )
-            // InternalPortugolParser.g:7804:3: ruleFunctionName
+            // InternalPortugolParser.g:7720:2: ( ruleFunctionName )
+            // InternalPortugolParser.g:7721:3: ruleFunctionName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getFunctionNameFunctionNameParserRuleCall_1_0()); 
@@ -25480,29 +25211,29 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockFunction__FunctionNameAssignment_1"
 
 
-    // $ANTLR start "rule__BlockFunction__ParamListAssignment_3_0"
-    // InternalPortugolParser.g:7813:1: rule__BlockFunction__ParamListAssignment_3_0 : ( ruleVariable ) ;
-    public final void rule__BlockFunction__ParamListAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__BlockFunction__ParamsAssignment_3"
+    // InternalPortugolParser.g:7730:1: rule__BlockFunction__ParamsAssignment_3 : ( ruleSubprogramParamDeclaration ) ;
+    public final void rule__BlockFunction__ParamsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7817:1: ( ( ruleVariable ) )
-            // InternalPortugolParser.g:7818:2: ( ruleVariable )
+            // InternalPortugolParser.g:7734:1: ( ( ruleSubprogramParamDeclaration ) )
+            // InternalPortugolParser.g:7735:2: ( ruleSubprogramParamDeclaration )
             {
-            // InternalPortugolParser.g:7818:2: ( ruleVariable )
-            // InternalPortugolParser.g:7819:3: ruleVariable
+            // InternalPortugolParser.g:7735:2: ( ruleSubprogramParamDeclaration )
+            // InternalPortugolParser.g:7736:3: ruleSubprogramParamDeclaration
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_0_0()); 
+               before(grammarAccess.getBlockFunctionAccess().getParamsSubprogramParamDeclarationParserRuleCall_3_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleVariable();
+            ruleSubprogramParamDeclaration();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_0_0()); 
+               after(grammarAccess.getBlockFunctionAccess().getParamsSubprogramParamDeclarationParserRuleCall_3_0()); 
             }
 
             }
@@ -25522,66 +25253,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockFunction__ParamListAssignment_3_0"
-
-
-    // $ANTLR start "rule__BlockFunction__ParamListAssignment_3_1_1"
-    // InternalPortugolParser.g:7828:1: rule__BlockFunction__ParamListAssignment_3_1_1 : ( ruleVariable ) ;
-    public final void rule__BlockFunction__ParamListAssignment_3_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:7832:1: ( ( ruleVariable ) )
-            // InternalPortugolParser.g:7833:2: ( ruleVariable )
-            {
-            // InternalPortugolParser.g:7833:2: ( ruleVariable )
-            // InternalPortugolParser.g:7834:3: ruleVariable
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_1_1_0()); 
-            }
-            pushFollow(FOLLOW_2);
-            ruleVariable();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockFunctionAccess().getParamListVariableParserRuleCall_3_1_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockFunction__ParamListAssignment_3_1_1"
+    // $ANTLR end "rule__BlockFunction__ParamsAssignment_3"
 
 
     // $ANTLR start "rule__BlockFunction__ReturnTypeAssignment_6"
-    // InternalPortugolParser.g:7843:1: rule__BlockFunction__ReturnTypeAssignment_6 : ( ruleVarType ) ;
+    // InternalPortugolParser.g:7745:1: rule__BlockFunction__ReturnTypeAssignment_6 : ( ruleVarType ) ;
     public final void rule__BlockFunction__ReturnTypeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7847:1: ( ( ruleVarType ) )
-            // InternalPortugolParser.g:7848:2: ( ruleVarType )
+            // InternalPortugolParser.g:7749:1: ( ( ruleVarType ) )
+            // InternalPortugolParser.g:7750:2: ( ruleVarType )
             {
-            // InternalPortugolParser.g:7848:2: ( ruleVarType )
-            // InternalPortugolParser.g:7849:3: ruleVarType
+            // InternalPortugolParser.g:7750:2: ( ruleVarType )
+            // InternalPortugolParser.g:7751:3: ruleVarType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getReturnTypeVarTypeParserRuleCall_6_0()); 
@@ -25616,17 +25302,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__DeclarationsAssignment_7"
-    // InternalPortugolParser.g:7858:1: rule__BlockFunction__DeclarationsAssignment_7 : ( ruleDeclarationsBlock ) ;
+    // InternalPortugolParser.g:7760:1: rule__BlockFunction__DeclarationsAssignment_7 : ( ruleDeclarationsBlock ) ;
     public final void rule__BlockFunction__DeclarationsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7862:1: ( ( ruleDeclarationsBlock ) )
-            // InternalPortugolParser.g:7863:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7764:1: ( ( ruleDeclarationsBlock ) )
+            // InternalPortugolParser.g:7765:2: ( ruleDeclarationsBlock )
             {
-            // InternalPortugolParser.g:7863:2: ( ruleDeclarationsBlock )
-            // InternalPortugolParser.g:7864:3: ruleDeclarationsBlock
+            // InternalPortugolParser.g:7765:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7766:3: ruleDeclarationsBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getDeclarationsDeclarationsBlockParserRuleCall_7_0()); 
@@ -25661,17 +25347,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockFunction__CommandsAssignment_9"
-    // InternalPortugolParser.g:7873:1: rule__BlockFunction__CommandsAssignment_9 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:7775:1: rule__BlockFunction__CommandsAssignment_9 : ( ruleAbstractCommand ) ;
     public final void rule__BlockFunction__CommandsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7877:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:7878:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7779:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:7780:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:7878:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:7879:3: ruleAbstractCommand
+            // InternalPortugolParser.g:7780:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7781:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockFunctionAccess().getCommandsAbstractCommandParserRuleCall_9_0()); 
@@ -25706,17 +25392,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__ProcedureNameAssignment_1"
-    // InternalPortugolParser.g:7888:1: rule__BlockProcedure__ProcedureNameAssignment_1 : ( ruleProcedureName ) ;
+    // InternalPortugolParser.g:7790:1: rule__BlockProcedure__ProcedureNameAssignment_1 : ( ruleProcedureName ) ;
     public final void rule__BlockProcedure__ProcedureNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7892:1: ( ( ruleProcedureName ) )
-            // InternalPortugolParser.g:7893:2: ( ruleProcedureName )
+            // InternalPortugolParser.g:7794:1: ( ( ruleProcedureName ) )
+            // InternalPortugolParser.g:7795:2: ( ruleProcedureName )
             {
-            // InternalPortugolParser.g:7893:2: ( ruleProcedureName )
-            // InternalPortugolParser.g:7894:3: ruleProcedureName
+            // InternalPortugolParser.g:7795:2: ( ruleProcedureName )
+            // InternalPortugolParser.g:7796:3: ruleProcedureName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getProcedureNameProcedureNameParserRuleCall_1_0()); 
@@ -25750,29 +25436,29 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockProcedure__ProcedureNameAssignment_1"
 
 
-    // $ANTLR start "rule__BlockProcedure__ParamListAssignment_3_0"
-    // InternalPortugolParser.g:7903:1: rule__BlockProcedure__ParamListAssignment_3_0 : ( ruleVariable ) ;
-    public final void rule__BlockProcedure__ParamListAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__BlockProcedure__ParamsAssignment_3"
+    // InternalPortugolParser.g:7805:1: rule__BlockProcedure__ParamsAssignment_3 : ( ruleSubprogramParamDeclaration ) ;
+    public final void rule__BlockProcedure__ParamsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7907:1: ( ( ruleVariable ) )
-            // InternalPortugolParser.g:7908:2: ( ruleVariable )
+            // InternalPortugolParser.g:7809:1: ( ( ruleSubprogramParamDeclaration ) )
+            // InternalPortugolParser.g:7810:2: ( ruleSubprogramParamDeclaration )
             {
-            // InternalPortugolParser.g:7908:2: ( ruleVariable )
-            // InternalPortugolParser.g:7909:3: ruleVariable
+            // InternalPortugolParser.g:7810:2: ( ruleSubprogramParamDeclaration )
+            // InternalPortugolParser.g:7811:3: ruleSubprogramParamDeclaration
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_0_0()); 
+               before(grammarAccess.getBlockProcedureAccess().getParamsSubprogramParamDeclarationParserRuleCall_3_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleVariable();
+            ruleSubprogramParamDeclaration();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_0_0()); 
+               after(grammarAccess.getBlockProcedureAccess().getParamsSubprogramParamDeclarationParserRuleCall_3_0()); 
             }
 
             }
@@ -25792,66 +25478,21 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__BlockProcedure__ParamListAssignment_3_0"
-
-
-    // $ANTLR start "rule__BlockProcedure__ParamListAssignment_3_1_1"
-    // InternalPortugolParser.g:7918:1: rule__BlockProcedure__ParamListAssignment_3_1_1 : ( ruleVariable ) ;
-    public final void rule__BlockProcedure__ParamListAssignment_3_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalPortugolParser.g:7922:1: ( ( ruleVariable ) )
-            // InternalPortugolParser.g:7923:2: ( ruleVariable )
-            {
-            // InternalPortugolParser.g:7923:2: ( ruleVariable )
-            // InternalPortugolParser.g:7924:3: ruleVariable
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_1_1_0()); 
-            }
-            pushFollow(FOLLOW_2);
-            ruleVariable();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getBlockProcedureAccess().getParamListVariableParserRuleCall_3_1_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlockProcedure__ParamListAssignment_3_1_1"
+    // $ANTLR end "rule__BlockProcedure__ParamsAssignment_3"
 
 
     // $ANTLR start "rule__BlockProcedure__DeclarationsAssignment_5"
-    // InternalPortugolParser.g:7933:1: rule__BlockProcedure__DeclarationsAssignment_5 : ( ruleDeclarationsBlock ) ;
+    // InternalPortugolParser.g:7820:1: rule__BlockProcedure__DeclarationsAssignment_5 : ( ruleDeclarationsBlock ) ;
     public final void rule__BlockProcedure__DeclarationsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7937:1: ( ( ruleDeclarationsBlock ) )
-            // InternalPortugolParser.g:7938:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7824:1: ( ( ruleDeclarationsBlock ) )
+            // InternalPortugolParser.g:7825:2: ( ruleDeclarationsBlock )
             {
-            // InternalPortugolParser.g:7938:2: ( ruleDeclarationsBlock )
-            // InternalPortugolParser.g:7939:3: ruleDeclarationsBlock
+            // InternalPortugolParser.g:7825:2: ( ruleDeclarationsBlock )
+            // InternalPortugolParser.g:7826:3: ruleDeclarationsBlock
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getDeclarationsDeclarationsBlockParserRuleCall_5_0()); 
@@ -25886,17 +25527,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BlockProcedure__CommandsAssignment_7"
-    // InternalPortugolParser.g:7948:1: rule__BlockProcedure__CommandsAssignment_7 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:7835:1: rule__BlockProcedure__CommandsAssignment_7 : ( ruleAbstractCommand ) ;
     public final void rule__BlockProcedure__CommandsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7952:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:7953:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7839:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:7840:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:7953:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:7954:3: ruleAbstractCommand
+            // InternalPortugolParser.g:7840:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7841:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockProcedureAccess().getCommandsAbstractCommandParserRuleCall_7_0()); 
@@ -25930,18 +25571,108 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__BlockProcedure__CommandsAssignment_7"
 
 
+    // $ANTLR start "rule__SubprogramParamDeclaration__ParamListAssignment_0"
+    // InternalPortugolParser.g:7850:1: rule__SubprogramParamDeclaration__ParamListAssignment_0 : ( ruleVariable ) ;
+    public final void rule__SubprogramParamDeclaration__ParamListAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPortugolParser.g:7854:1: ( ( ruleVariable ) )
+            // InternalPortugolParser.g:7855:2: ( ruleVariable )
+            {
+            // InternalPortugolParser.g:7855:2: ( ruleVariable )
+            // InternalPortugolParser.g:7856:3: ruleVariable
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getParamListVariableParserRuleCall_0_0()); 
+            }
+            pushFollow(FOLLOW_2);
+            ruleVariable();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getParamListVariableParserRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubprogramParamDeclaration__ParamListAssignment_0"
+
+
+    // $ANTLR start "rule__SubprogramParamDeclaration__ParamListAssignment_1_1"
+    // InternalPortugolParser.g:7865:1: rule__SubprogramParamDeclaration__ParamListAssignment_1_1 : ( ruleVariable ) ;
+    public final void rule__SubprogramParamDeclaration__ParamListAssignment_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalPortugolParser.g:7869:1: ( ( ruleVariable ) )
+            // InternalPortugolParser.g:7870:2: ( ruleVariable )
+            {
+            // InternalPortugolParser.g:7870:2: ( ruleVariable )
+            // InternalPortugolParser.g:7871:3: ruleVariable
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSubprogramParamDeclarationAccess().getParamListVariableParserRuleCall_1_1_0()); 
+            }
+            pushFollow(FOLLOW_2);
+            ruleVariable();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSubprogramParamDeclarationAccess().getParamListVariableParserRuleCall_1_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubprogramParamDeclaration__ParamListAssignment_1_1"
+
+
     // $ANTLR start "rule__BlockCommand__CommandsAssignment_1"
-    // InternalPortugolParser.g:7963:1: rule__BlockCommand__CommandsAssignment_1 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:7880:1: rule__BlockCommand__CommandsAssignment_1 : ( ruleAbstractCommand ) ;
     public final void rule__BlockCommand__CommandsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7967:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:7968:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7884:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:7885:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:7968:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:7969:3: ruleAbstractCommand
+            // InternalPortugolParser.g:7885:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7886:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBlockCommandAccess().getCommandsAbstractCommandParserRuleCall_1_0()); 
@@ -25976,17 +25707,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReturnStatement__ExprAssignment_2"
-    // InternalPortugolParser.g:7978:1: rule__ReturnStatement__ExprAssignment_2 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:7895:1: rule__ReturnStatement__ExprAssignment_2 : ( ruleExpression ) ;
     public final void rule__ReturnStatement__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7982:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:7983:2: ( ruleExpression )
+            // InternalPortugolParser.g:7899:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:7900:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:7983:2: ( ruleExpression )
-            // InternalPortugolParser.g:7984:3: ruleExpression
+            // InternalPortugolParser.g:7900:2: ( ruleExpression )
+            // InternalPortugolParser.g:7901:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReturnStatementAccess().getExprExpressionParserRuleCall_2_0()); 
@@ -26021,17 +25752,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__ExprAssignment_1"
-    // InternalPortugolParser.g:7993:1: rule__IfStatement__ExprAssignment_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:7910:1: rule__IfStatement__ExprAssignment_1 : ( ruleExpression ) ;
     public final void rule__IfStatement__ExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:7997:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:7998:2: ( ruleExpression )
+            // InternalPortugolParser.g:7914:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:7915:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:7998:2: ( ruleExpression )
-            // InternalPortugolParser.g:7999:3: ruleExpression
+            // InternalPortugolParser.g:7915:2: ( ruleExpression )
+            // InternalPortugolParser.g:7916:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getExprExpressionParserRuleCall_1_0()); 
@@ -26066,17 +25797,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__CommandsAssignment_3"
-    // InternalPortugolParser.g:8008:1: rule__IfStatement__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:7925:1: rule__IfStatement__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
     public final void rule__IfStatement__CommandsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8012:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8013:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7929:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:7930:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8013:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8014:3: ruleAbstractCommand
+            // InternalPortugolParser.g:7930:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7931:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getCommandsAbstractCommandParserRuleCall_3_0()); 
@@ -26111,17 +25842,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IfStatement__ElseCommandsAssignment_4_1"
-    // InternalPortugolParser.g:8023:1: rule__IfStatement__ElseCommandsAssignment_4_1 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:7940:1: rule__IfStatement__ElseCommandsAssignment_4_1 : ( ruleAbstractCommand ) ;
     public final void rule__IfStatement__ElseCommandsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8027:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8028:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7944:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:7945:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8028:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8029:3: ruleAbstractCommand
+            // InternalPortugolParser.g:7945:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:7946:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseCommandsAbstractCommandParserRuleCall_4_1_0()); 
@@ -26156,23 +25887,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__VariableAssignment_1"
-    // InternalPortugolParser.g:8038:1: rule__SwitchCaseStatement__VariableAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalPortugolParser.g:7955:1: rule__SwitchCaseStatement__VariableAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__SwitchCaseStatement__VariableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8042:1: ( ( ( RULE_ID ) ) )
-            // InternalPortugolParser.g:8043:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7959:1: ( ( ( RULE_ID ) ) )
+            // InternalPortugolParser.g:7960:2: ( ( RULE_ID ) )
             {
-            // InternalPortugolParser.g:8043:2: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:8044:3: ( RULE_ID )
+            // InternalPortugolParser.g:7960:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:7961:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getVariableVarNameCrossReference_1_0()); 
             }
-            // InternalPortugolParser.g:8045:3: ( RULE_ID )
-            // InternalPortugolParser.g:8046:4: RULE_ID
+            // InternalPortugolParser.g:7962:3: ( RULE_ID )
+            // InternalPortugolParser.g:7963:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getVariableVarNameIDTerminalRuleCall_1_0_1()); 
@@ -26209,17 +25940,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__CaseListAssignment_2"
-    // InternalPortugolParser.g:8057:1: rule__SwitchCaseStatement__CaseListAssignment_2 : ( ruleCaseList ) ;
+    // InternalPortugolParser.g:7974:1: rule__SwitchCaseStatement__CaseListAssignment_2 : ( ruleCaseList ) ;
     public final void rule__SwitchCaseStatement__CaseListAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8061:1: ( ( ruleCaseList ) )
-            // InternalPortugolParser.g:8062:2: ( ruleCaseList )
+            // InternalPortugolParser.g:7978:1: ( ( ruleCaseList ) )
+            // InternalPortugolParser.g:7979:2: ( ruleCaseList )
             {
-            // InternalPortugolParser.g:8062:2: ( ruleCaseList )
-            // InternalPortugolParser.g:8063:3: ruleCaseList
+            // InternalPortugolParser.g:7979:2: ( ruleCaseList )
+            // InternalPortugolParser.g:7980:3: ruleCaseList
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getCaseListCaseListParserRuleCall_2_0()); 
@@ -26254,17 +25985,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SwitchCaseStatement__OtherCaseAssignment_3"
-    // InternalPortugolParser.g:8072:1: rule__SwitchCaseStatement__OtherCaseAssignment_3 : ( ruleOtherCase ) ;
+    // InternalPortugolParser.g:7989:1: rule__SwitchCaseStatement__OtherCaseAssignment_3 : ( ruleOtherCase ) ;
     public final void rule__SwitchCaseStatement__OtherCaseAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8076:1: ( ( ruleOtherCase ) )
-            // InternalPortugolParser.g:8077:2: ( ruleOtherCase )
+            // InternalPortugolParser.g:7993:1: ( ( ruleOtherCase ) )
+            // InternalPortugolParser.g:7994:2: ( ruleOtherCase )
             {
-            // InternalPortugolParser.g:8077:2: ( ruleOtherCase )
-            // InternalPortugolParser.g:8078:3: ruleOtherCase
+            // InternalPortugolParser.g:7994:2: ( ruleOtherCase )
+            // InternalPortugolParser.g:7995:3: ruleOtherCase
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSwitchCaseStatementAccess().getOtherCaseOtherCaseParserRuleCall_3_0()); 
@@ -26299,17 +26030,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__ExprAssignment_1"
-    // InternalPortugolParser.g:8087:1: rule__CaseList__ExprAssignment_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8004:1: rule__CaseList__ExprAssignment_1 : ( ruleExpression ) ;
     public final void rule__CaseList__ExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8091:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8092:2: ( ruleExpression )
+            // InternalPortugolParser.g:8008:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8009:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8092:2: ( ruleExpression )
-            // InternalPortugolParser.g:8093:3: ruleExpression
+            // InternalPortugolParser.g:8009:2: ( ruleExpression )
+            // InternalPortugolParser.g:8010:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getExprExpressionParserRuleCall_1_0()); 
@@ -26344,17 +26075,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CaseList__CommandsAssignment_3"
-    // InternalPortugolParser.g:8102:1: rule__CaseList__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:8019:1: rule__CaseList__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
     public final void rule__CaseList__CommandsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8106:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8107:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8023:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:8024:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8107:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8108:3: ruleAbstractCommand
+            // InternalPortugolParser.g:8024:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8025:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCaseListAccess().getCommandsAbstractCommandParserRuleCall_3_0()); 
@@ -26389,17 +26120,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OtherCase__OtherCaseCommandsAssignment_2"
-    // InternalPortugolParser.g:8117:1: rule__OtherCase__OtherCaseCommandsAssignment_2 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:8034:1: rule__OtherCase__OtherCaseCommandsAssignment_2 : ( ruleAbstractCommand ) ;
     public final void rule__OtherCase__OtherCaseCommandsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8121:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8122:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8038:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:8039:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8122:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8123:3: ruleAbstractCommand
+            // InternalPortugolParser.g:8039:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8040:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOtherCaseAccess().getOtherCaseCommandsAbstractCommandParserRuleCall_2_0()); 
@@ -26434,17 +26165,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__OperatorExprAssignment_1"
-    // InternalPortugolParser.g:8132:1: rule__ForStatement__OperatorExprAssignment_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8049:1: rule__ForStatement__OperatorExprAssignment_1 : ( ruleExpression ) ;
     public final void rule__ForStatement__OperatorExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8136:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8137:2: ( ruleExpression )
+            // InternalPortugolParser.g:8053:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8054:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8137:2: ( ruleExpression )
-            // InternalPortugolParser.g:8138:3: ruleExpression
+            // InternalPortugolParser.g:8054:2: ( ruleExpression )
+            // InternalPortugolParser.g:8055:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0()); 
@@ -26479,17 +26210,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__StartExprAssignment_3"
-    // InternalPortugolParser.g:8147:1: rule__ForStatement__StartExprAssignment_3 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8064:1: rule__ForStatement__StartExprAssignment_3 : ( ruleExpression ) ;
     public final void rule__ForStatement__StartExprAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8151:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8152:2: ( ruleExpression )
+            // InternalPortugolParser.g:8068:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8069:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8152:2: ( ruleExpression )
-            // InternalPortugolParser.g:8153:3: ruleExpression
+            // InternalPortugolParser.g:8069:2: ( ruleExpression )
+            // InternalPortugolParser.g:8070:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getStartExprExpressionParserRuleCall_3_0()); 
@@ -26524,17 +26255,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__EndExprAssignment_5"
-    // InternalPortugolParser.g:8162:1: rule__ForStatement__EndExprAssignment_5 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8079:1: rule__ForStatement__EndExprAssignment_5 : ( ruleExpression ) ;
     public final void rule__ForStatement__EndExprAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8166:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8167:2: ( ruleExpression )
+            // InternalPortugolParser.g:8083:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8084:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8167:2: ( ruleExpression )
-            // InternalPortugolParser.g:8168:3: ruleExpression
+            // InternalPortugolParser.g:8084:2: ( ruleExpression )
+            // InternalPortugolParser.g:8085:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getEndExprExpressionParserRuleCall_5_0()); 
@@ -26569,17 +26300,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__StepExpeAssignment_6_1"
-    // InternalPortugolParser.g:8177:1: rule__ForStatement__StepExpeAssignment_6_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8094:1: rule__ForStatement__StepExpeAssignment_6_1 : ( ruleExpression ) ;
     public final void rule__ForStatement__StepExpeAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8181:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8182:2: ( ruleExpression )
+            // InternalPortugolParser.g:8098:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8099:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8182:2: ( ruleExpression )
-            // InternalPortugolParser.g:8183:3: ruleExpression
+            // InternalPortugolParser.g:8099:2: ( ruleExpression )
+            // InternalPortugolParser.g:8100:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getStepExpeExpressionParserRuleCall_6_1_0()); 
@@ -26614,17 +26345,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__CommandsAssignment_8"
-    // InternalPortugolParser.g:8192:1: rule__ForStatement__CommandsAssignment_8 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:8109:1: rule__ForStatement__CommandsAssignment_8 : ( ruleAbstractCommand ) ;
     public final void rule__ForStatement__CommandsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8196:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8197:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8113:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:8114:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8197:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8198:3: ruleAbstractCommand
+            // InternalPortugolParser.g:8114:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8115:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getCommandsAbstractCommandParserRuleCall_8_0()); 
@@ -26659,17 +26390,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__WhileExprAssignment_1"
-    // InternalPortugolParser.g:8207:1: rule__WhileStatement__WhileExprAssignment_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8124:1: rule__WhileStatement__WhileExprAssignment_1 : ( ruleExpression ) ;
     public final void rule__WhileStatement__WhileExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8211:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8212:2: ( ruleExpression )
+            // InternalPortugolParser.g:8128:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8129:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8212:2: ( ruleExpression )
-            // InternalPortugolParser.g:8213:3: ruleExpression
+            // InternalPortugolParser.g:8129:2: ( ruleExpression )
+            // InternalPortugolParser.g:8130:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getWhileExprExpressionParserRuleCall_1_0()); 
@@ -26704,17 +26435,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WhileStatement__CommandsAssignment_3"
-    // InternalPortugolParser.g:8222:1: rule__WhileStatement__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:8139:1: rule__WhileStatement__CommandsAssignment_3 : ( ruleAbstractCommand ) ;
     public final void rule__WhileStatement__CommandsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8226:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8227:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8143:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:8144:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8227:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8228:3: ruleAbstractCommand
+            // InternalPortugolParser.g:8144:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8145:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getCommandsAbstractCommandParserRuleCall_3_0()); 
@@ -26749,17 +26480,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__CommandsAssignment_1"
-    // InternalPortugolParser.g:8237:1: rule__RepeatStatement__CommandsAssignment_1 : ( ruleAbstractCommand ) ;
+    // InternalPortugolParser.g:8154:1: rule__RepeatStatement__CommandsAssignment_1 : ( ruleAbstractCommand ) ;
     public final void rule__RepeatStatement__CommandsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8241:1: ( ( ruleAbstractCommand ) )
-            // InternalPortugolParser.g:8242:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8158:1: ( ( ruleAbstractCommand ) )
+            // InternalPortugolParser.g:8159:2: ( ruleAbstractCommand )
             {
-            // InternalPortugolParser.g:8242:2: ( ruleAbstractCommand )
-            // InternalPortugolParser.g:8243:3: ruleAbstractCommand
+            // InternalPortugolParser.g:8159:2: ( ruleAbstractCommand )
+            // InternalPortugolParser.g:8160:3: ruleAbstractCommand
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getCommandsAbstractCommandParserRuleCall_1_0()); 
@@ -26794,17 +26525,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__RepeatStatement__UntilExprAssignment_3"
-    // InternalPortugolParser.g:8252:1: rule__RepeatStatement__UntilExprAssignment_3 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8169:1: rule__RepeatStatement__UntilExprAssignment_3 : ( ruleExpression ) ;
     public final void rule__RepeatStatement__UntilExprAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8256:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8257:2: ( ruleExpression )
+            // InternalPortugolParser.g:8173:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8174:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8257:2: ( ruleExpression )
-            // InternalPortugolParser.g:8258:3: ruleExpression
+            // InternalPortugolParser.g:8174:2: ( ruleExpression )
+            // InternalPortugolParser.g:8175:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRepeatStatementAccess().getUntilExprExpressionParserRuleCall_3_0()); 
@@ -26839,17 +26570,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__ExpressionAssignment_0"
-    // InternalPortugolParser.g:8267:1: rule__SubprogramParam__ExpressionAssignment_0 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8184:1: rule__SubprogramParam__ExpressionAssignment_0 : ( ruleExpression ) ;
     public final void rule__SubprogramParam__ExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8271:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8272:2: ( ruleExpression )
+            // InternalPortugolParser.g:8188:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8189:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8272:2: ( ruleExpression )
-            // InternalPortugolParser.g:8273:3: ruleExpression
+            // InternalPortugolParser.g:8189:2: ( ruleExpression )
+            // InternalPortugolParser.g:8190:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getExpressionExpressionParserRuleCall_0_0()); 
@@ -26884,17 +26615,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SubprogramParam__ExpressionAssignment_1_1"
-    // InternalPortugolParser.g:8282:1: rule__SubprogramParam__ExpressionAssignment_1_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8199:1: rule__SubprogramParam__ExpressionAssignment_1_1 : ( ruleExpression ) ;
     public final void rule__SubprogramParam__ExpressionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8286:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8287:2: ( ruleExpression )
+            // InternalPortugolParser.g:8203:1: ( ( ruleExpression ) )
+            // InternalPortugolParser.g:8204:2: ( ruleExpression )
             {
-            // InternalPortugolParser.g:8287:2: ( ruleExpression )
-            // InternalPortugolParser.g:8288:3: ruleExpression
+            // InternalPortugolParser.g:8204:2: ( ruleExpression )
+            // InternalPortugolParser.g:8205:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSubprogramParamAccess().getExpressionExpressionParserRuleCall_1_1_0()); 
@@ -26929,17 +26660,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ReadCommand__ParamListAssignment_2"
-    // InternalPortugolParser.g:8297:1: rule__ReadCommand__ParamListAssignment_2 : ( ruleDeclaredVarList ) ;
+    // InternalPortugolParser.g:8214:1: rule__ReadCommand__ParamListAssignment_2 : ( ruleDeclaredVarList ) ;
     public final void rule__ReadCommand__ParamListAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8301:1: ( ( ruleDeclaredVarList ) )
-            // InternalPortugolParser.g:8302:2: ( ruleDeclaredVarList )
+            // InternalPortugolParser.g:8218:1: ( ( ruleDeclaredVarList ) )
+            // InternalPortugolParser.g:8219:2: ( ruleDeclaredVarList )
             {
-            // InternalPortugolParser.g:8302:2: ( ruleDeclaredVarList )
-            // InternalPortugolParser.g:8303:3: ruleDeclaredVarList
+            // InternalPortugolParser.g:8219:2: ( ruleDeclaredVarList )
+            // InternalPortugolParser.g:8220:3: ruleDeclaredVarList
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getReadCommandAccess().getParamListDeclaredVarListParserRuleCall_2_0()); 
@@ -26974,23 +26705,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__WriteCommandAssignment_0"
-    // InternalPortugolParser.g:8312:1: rule__WriteCommand__WriteCommandAssignment_0 : ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) ) ;
+    // InternalPortugolParser.g:8229:1: rule__WriteCommand__WriteCommandAssignment_0 : ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) ) ;
     public final void rule__WriteCommand__WriteCommandAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8316:1: ( ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) ) )
-            // InternalPortugolParser.g:8317:2: ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) )
+            // InternalPortugolParser.g:8233:1: ( ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) ) )
+            // InternalPortugolParser.g:8234:2: ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) )
             {
-            // InternalPortugolParser.g:8317:2: ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) )
-            // InternalPortugolParser.g:8318:3: ( rule__WriteCommand__WriteCommandAlternatives_0_0 )
+            // InternalPortugolParser.g:8234:2: ( ( rule__WriteCommand__WriteCommandAlternatives_0_0 ) )
+            // InternalPortugolParser.g:8235:3: ( rule__WriteCommand__WriteCommandAlternatives_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getWriteCommandAlternatives_0_0()); 
             }
-            // InternalPortugolParser.g:8319:3: ( rule__WriteCommand__WriteCommandAlternatives_0_0 )
-            // InternalPortugolParser.g:8319:4: rule__WriteCommand__WriteCommandAlternatives_0_0
+            // InternalPortugolParser.g:8236:3: ( rule__WriteCommand__WriteCommandAlternatives_0_0 )
+            // InternalPortugolParser.g:8236:4: rule__WriteCommand__WriteCommandAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__WriteCommand__WriteCommandAlternatives_0_0();
@@ -27025,17 +26756,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteCommand__WriteParamAssignment_2"
-    // InternalPortugolParser.g:8327:1: rule__WriteCommand__WriteParamAssignment_2 : ( ruleWriteParam ) ;
+    // InternalPortugolParser.g:8244:1: rule__WriteCommand__WriteParamAssignment_2 : ( ruleWriteParam ) ;
     public final void rule__WriteCommand__WriteParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8331:1: ( ( ruleWriteParam ) )
-            // InternalPortugolParser.g:8332:2: ( ruleWriteParam )
+            // InternalPortugolParser.g:8248:1: ( ( ruleWriteParam ) )
+            // InternalPortugolParser.g:8249:2: ( ruleWriteParam )
             {
-            // InternalPortugolParser.g:8332:2: ( ruleWriteParam )
-            // InternalPortugolParser.g:8333:3: ruleWriteParam
+            // InternalPortugolParser.g:8249:2: ( ruleWriteParam )
+            // InternalPortugolParser.g:8250:3: ruleWriteParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteCommandAccess().getWriteParamWriteParamParserRuleCall_2_0()); 
@@ -27070,17 +26801,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__ParamsAssignment_0"
-    // InternalPortugolParser.g:8342:1: rule__WriteParam__ParamsAssignment_0 : ( ruleSubprogramParam ) ;
+    // InternalPortugolParser.g:8259:1: rule__WriteParam__ParamsAssignment_0 : ( ruleSubprogramParam ) ;
     public final void rule__WriteParam__ParamsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8346:1: ( ( ruleSubprogramParam ) )
-            // InternalPortugolParser.g:8347:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8263:1: ( ( ruleSubprogramParam ) )
+            // InternalPortugolParser.g:8264:2: ( ruleSubprogramParam )
             {
-            // InternalPortugolParser.g:8347:2: ( ruleSubprogramParam )
-            // InternalPortugolParser.g:8348:3: ruleSubprogramParam
+            // InternalPortugolParser.g:8264:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8265:3: ruleSubprogramParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamAccess().getParamsSubprogramParamParserRuleCall_0_0()); 
@@ -27115,17 +26846,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__WriteParam__PrecisionAssignment_1"
-    // InternalPortugolParser.g:8357:1: rule__WriteParam__PrecisionAssignment_1 : ( ruleOptDecimalPrecision ) ;
+    // InternalPortugolParser.g:8274:1: rule__WriteParam__PrecisionAssignment_1 : ( ruleOptDecimalPrecision ) ;
     public final void rule__WriteParam__PrecisionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8361:1: ( ( ruleOptDecimalPrecision ) )
-            // InternalPortugolParser.g:8362:2: ( ruleOptDecimalPrecision )
+            // InternalPortugolParser.g:8278:1: ( ( ruleOptDecimalPrecision ) )
+            // InternalPortugolParser.g:8279:2: ( ruleOptDecimalPrecision )
             {
-            // InternalPortugolParser.g:8362:2: ( ruleOptDecimalPrecision )
-            // InternalPortugolParser.g:8363:3: ruleOptDecimalPrecision
+            // InternalPortugolParser.g:8279:2: ( ruleOptDecimalPrecision )
+            // InternalPortugolParser.g:8280:3: ruleOptDecimalPrecision
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWriteParamAccess().getPrecisionOptDecimalPrecisionParserRuleCall_1_0()); 
@@ -27160,17 +26891,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__FirstPrecisionAssignment_1"
-    // InternalPortugolParser.g:8372:1: rule__OptDecimalPrecision__FirstPrecisionAssignment_1 : ( RULE_INT ) ;
+    // InternalPortugolParser.g:8289:1: rule__OptDecimalPrecision__FirstPrecisionAssignment_1 : ( RULE_INT ) ;
     public final void rule__OptDecimalPrecision__FirstPrecisionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8376:1: ( ( RULE_INT ) )
-            // InternalPortugolParser.g:8377:2: ( RULE_INT )
+            // InternalPortugolParser.g:8293:1: ( ( RULE_INT ) )
+            // InternalPortugolParser.g:8294:2: ( RULE_INT )
             {
-            // InternalPortugolParser.g:8377:2: ( RULE_INT )
-            // InternalPortugolParser.g:8378:3: RULE_INT
+            // InternalPortugolParser.g:8294:2: ( RULE_INT )
+            // InternalPortugolParser.g:8295:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getFirstPrecisionINTTerminalRuleCall_1_0()); 
@@ -27201,17 +26932,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1"
-    // InternalPortugolParser.g:8387:1: rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 : ( RULE_INT ) ;
+    // InternalPortugolParser.g:8304:1: rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__OptDecimalPrecision__SecondPrecisionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8391:1: ( ( RULE_INT ) )
-            // InternalPortugolParser.g:8392:2: ( RULE_INT )
+            // InternalPortugolParser.g:8308:1: ( ( RULE_INT ) )
+            // InternalPortugolParser.g:8309:2: ( RULE_INT )
             {
-            // InternalPortugolParser.g:8392:2: ( RULE_INT )
-            // InternalPortugolParser.g:8393:3: RULE_INT
+            // InternalPortugolParser.g:8309:2: ( RULE_INT )
+            // InternalPortugolParser.g:8310:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOptDecimalPrecisionAccess().getSecondPrecisionINTTerminalRuleCall_2_1_0()); 
@@ -27242,23 +26973,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8402:1: rule__Assignment__OpAssignment_1_0_0_1 : ( ( LessThanSignHyphenMinus ) ) ;
+    // InternalPortugolParser.g:8319:1: rule__Assignment__OpAssignment_1_0_0_1 : ( ( LessThanSignHyphenMinus ) ) ;
     public final void rule__Assignment__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8406:1: ( ( ( LessThanSignHyphenMinus ) ) )
-            // InternalPortugolParser.g:8407:2: ( ( LessThanSignHyphenMinus ) )
+            // InternalPortugolParser.g:8323:1: ( ( ( LessThanSignHyphenMinus ) ) )
+            // InternalPortugolParser.g:8324:2: ( ( LessThanSignHyphenMinus ) )
             {
-            // InternalPortugolParser.g:8407:2: ( ( LessThanSignHyphenMinus ) )
-            // InternalPortugolParser.g:8408:3: ( LessThanSignHyphenMinus )
+            // InternalPortugolParser.g:8324:2: ( ( LessThanSignHyphenMinus ) )
+            // InternalPortugolParser.g:8325:3: ( LessThanSignHyphenMinus )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOpLessThanSignHyphenMinusKeyword_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8409:3: ( LessThanSignHyphenMinus )
-            // InternalPortugolParser.g:8410:4: LessThanSignHyphenMinus
+            // InternalPortugolParser.g:8326:3: ( LessThanSignHyphenMinus )
+            // InternalPortugolParser.g:8327:4: LessThanSignHyphenMinus
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getOpLessThanSignHyphenMinusKeyword_1_0_0_1_0()); 
@@ -27295,17 +27026,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__RightAssignment_1_1"
-    // InternalPortugolParser.g:8421:1: rule__Assignment__RightAssignment_1_1 : ( ruleAssignment ) ;
+    // InternalPortugolParser.g:8338:1: rule__Assignment__RightAssignment_1_1 : ( ruleAssignment ) ;
     public final void rule__Assignment__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8425:1: ( ( ruleAssignment ) )
-            // InternalPortugolParser.g:8426:2: ( ruleAssignment )
+            // InternalPortugolParser.g:8342:1: ( ( ruleAssignment ) )
+            // InternalPortugolParser.g:8343:2: ( ruleAssignment )
             {
-            // InternalPortugolParser.g:8426:2: ( ruleAssignment )
-            // InternalPortugolParser.g:8427:3: ruleAssignment
+            // InternalPortugolParser.g:8343:2: ( ruleAssignment )
+            // InternalPortugolParser.g:8344:3: ruleAssignment
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAssignmentAccess().getRightAssignmentParserRuleCall_1_1_0()); 
@@ -27340,23 +27071,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8436:1: rule__OrExpression__OpAssignment_1_0_0_1 : ( ( OU ) ) ;
+    // InternalPortugolParser.g:8353:1: rule__OrExpression__OpAssignment_1_0_0_1 : ( ( OU ) ) ;
     public final void rule__OrExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8440:1: ( ( ( OU ) ) )
-            // InternalPortugolParser.g:8441:2: ( ( OU ) )
+            // InternalPortugolParser.g:8357:1: ( ( ( OU ) ) )
+            // InternalPortugolParser.g:8358:2: ( ( OU ) )
             {
-            // InternalPortugolParser.g:8441:2: ( ( OU ) )
-            // InternalPortugolParser.g:8442:3: ( OU )
+            // InternalPortugolParser.g:8358:2: ( ( OU ) )
+            // InternalPortugolParser.g:8359:3: ( OU )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getOpOUKeyword_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8443:3: ( OU )
-            // InternalPortugolParser.g:8444:4: OU
+            // InternalPortugolParser.g:8360:3: ( OU )
+            // InternalPortugolParser.g:8361:4: OU
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getOpOUKeyword_1_0_0_1_0()); 
@@ -27393,17 +27124,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8455:1: rule__OrExpression__RightAssignment_1_1 : ( ruleXorExpression ) ;
+    // InternalPortugolParser.g:8372:1: rule__OrExpression__RightAssignment_1_1 : ( ruleXorExpression ) ;
     public final void rule__OrExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8459:1: ( ( ruleXorExpression ) )
-            // InternalPortugolParser.g:8460:2: ( ruleXorExpression )
+            // InternalPortugolParser.g:8376:1: ( ( ruleXorExpression ) )
+            // InternalPortugolParser.g:8377:2: ( ruleXorExpression )
             {
-            // InternalPortugolParser.g:8460:2: ( ruleXorExpression )
-            // InternalPortugolParser.g:8461:3: ruleXorExpression
+            // InternalPortugolParser.g:8377:2: ( ruleXorExpression )
+            // InternalPortugolParser.g:8378:3: ruleXorExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOrExpressionAccess().getRightXorExpressionParserRuleCall_1_1_0()); 
@@ -27438,23 +27169,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8470:1: rule__XorExpression__OpAssignment_1_0_0_1 : ( ( XOU ) ) ;
+    // InternalPortugolParser.g:8387:1: rule__XorExpression__OpAssignment_1_0_0_1 : ( ( XOU ) ) ;
     public final void rule__XorExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8474:1: ( ( ( XOU ) ) )
-            // InternalPortugolParser.g:8475:2: ( ( XOU ) )
+            // InternalPortugolParser.g:8391:1: ( ( ( XOU ) ) )
+            // InternalPortugolParser.g:8392:2: ( ( XOU ) )
             {
-            // InternalPortugolParser.g:8475:2: ( ( XOU ) )
-            // InternalPortugolParser.g:8476:3: ( XOU )
+            // InternalPortugolParser.g:8392:2: ( ( XOU ) )
+            // InternalPortugolParser.g:8393:3: ( XOU )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getOpXOUKeyword_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8477:3: ( XOU )
-            // InternalPortugolParser.g:8478:4: XOU
+            // InternalPortugolParser.g:8394:3: ( XOU )
+            // InternalPortugolParser.g:8395:4: XOU
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getOpXOUKeyword_1_0_0_1_0()); 
@@ -27491,17 +27222,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__XorExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8489:1: rule__XorExpression__RightAssignment_1_1 : ( ruleAndExpression ) ;
+    // InternalPortugolParser.g:8406:1: rule__XorExpression__RightAssignment_1_1 : ( ruleAndExpression ) ;
     public final void rule__XorExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8493:1: ( ( ruleAndExpression ) )
-            // InternalPortugolParser.g:8494:2: ( ruleAndExpression )
+            // InternalPortugolParser.g:8410:1: ( ( ruleAndExpression ) )
+            // InternalPortugolParser.g:8411:2: ( ruleAndExpression )
             {
-            // InternalPortugolParser.g:8494:2: ( ruleAndExpression )
-            // InternalPortugolParser.g:8495:3: ruleAndExpression
+            // InternalPortugolParser.g:8411:2: ( ruleAndExpression )
+            // InternalPortugolParser.g:8412:3: ruleAndExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXorExpressionAccess().getRightAndExpressionParserRuleCall_1_1_0()); 
@@ -27536,23 +27267,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8504:1: rule__AndExpression__OpAssignment_1_0_0_1 : ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8421:1: rule__AndExpression__OpAssignment_1_0_0_1 : ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) ) ;
     public final void rule__AndExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8508:1: ( ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) ) )
-            // InternalPortugolParser.g:8509:2: ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8425:1: ( ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) ) )
+            // InternalPortugolParser.g:8426:2: ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8509:2: ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) )
-            // InternalPortugolParser.g:8510:3: ( rule__AndExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8426:2: ( ( rule__AndExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8427:3: ( rule__AndExpression__OpAlternatives_1_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getOpAlternatives_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8511:3: ( rule__AndExpression__OpAlternatives_1_0_0_1_0 )
-            // InternalPortugolParser.g:8511:4: rule__AndExpression__OpAlternatives_1_0_0_1_0
+            // InternalPortugolParser.g:8428:3: ( rule__AndExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8428:4: rule__AndExpression__OpAlternatives_1_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__OpAlternatives_1_0_0_1_0();
@@ -27587,17 +27318,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8519:1: rule__AndExpression__RightAssignment_1_1 : ( ruleComparison ) ;
+    // InternalPortugolParser.g:8436:1: rule__AndExpression__RightAssignment_1_1 : ( ruleComparison ) ;
     public final void rule__AndExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8523:1: ( ( ruleComparison ) )
-            // InternalPortugolParser.g:8524:2: ( ruleComparison )
+            // InternalPortugolParser.g:8440:1: ( ( ruleComparison ) )
+            // InternalPortugolParser.g:8441:2: ( ruleComparison )
             {
-            // InternalPortugolParser.g:8524:2: ( ruleComparison )
-            // InternalPortugolParser.g:8525:3: ruleComparison
+            // InternalPortugolParser.g:8441:2: ( ruleComparison )
+            // InternalPortugolParser.g:8442:3: ruleComparison
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_1_0()); 
@@ -27632,23 +27363,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8534:1: rule__Comparison__OpAssignment_1_0_0_1 : ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8451:1: rule__Comparison__OpAssignment_1_0_0_1 : ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) ) ;
     public final void rule__Comparison__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8538:1: ( ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) ) )
-            // InternalPortugolParser.g:8539:2: ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8455:1: ( ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) ) )
+            // InternalPortugolParser.g:8456:2: ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8539:2: ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) )
-            // InternalPortugolParser.g:8540:3: ( rule__Comparison__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8456:2: ( ( rule__Comparison__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8457:3: ( rule__Comparison__OpAlternatives_1_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getOpAlternatives_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8541:3: ( rule__Comparison__OpAlternatives_1_0_0_1_0 )
-            // InternalPortugolParser.g:8541:4: rule__Comparison__OpAlternatives_1_0_0_1_0
+            // InternalPortugolParser.g:8458:3: ( rule__Comparison__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8458:4: rule__Comparison__OpAlternatives_1_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__OpAlternatives_1_0_0_1_0();
@@ -27683,17 +27414,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__RightAssignment_1_1"
-    // InternalPortugolParser.g:8549:1: rule__Comparison__RightAssignment_1_1 : ( ruleEquExpression ) ;
+    // InternalPortugolParser.g:8466:1: rule__Comparison__RightAssignment_1_1 : ( ruleEquExpression ) ;
     public final void rule__Comparison__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8553:1: ( ( ruleEquExpression ) )
-            // InternalPortugolParser.g:8554:2: ( ruleEquExpression )
+            // InternalPortugolParser.g:8470:1: ( ( ruleEquExpression ) )
+            // InternalPortugolParser.g:8471:2: ( ruleEquExpression )
             {
-            // InternalPortugolParser.g:8554:2: ( ruleEquExpression )
-            // InternalPortugolParser.g:8555:3: ruleEquExpression
+            // InternalPortugolParser.g:8471:2: ( ruleEquExpression )
+            // InternalPortugolParser.g:8472:3: ruleEquExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComparisonAccess().getRightEquExpressionParserRuleCall_1_1_0()); 
@@ -27728,23 +27459,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8564:1: rule__EquExpression__OpAssignment_1_0_0_1 : ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8481:1: rule__EquExpression__OpAssignment_1_0_0_1 : ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) ) ;
     public final void rule__EquExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8568:1: ( ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) ) )
-            // InternalPortugolParser.g:8569:2: ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8485:1: ( ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) ) )
+            // InternalPortugolParser.g:8486:2: ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8569:2: ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) )
-            // InternalPortugolParser.g:8570:3: ( rule__EquExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8486:2: ( ( rule__EquExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8487:3: ( rule__EquExpression__OpAlternatives_1_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getOpAlternatives_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8571:3: ( rule__EquExpression__OpAlternatives_1_0_0_1_0 )
-            // InternalPortugolParser.g:8571:4: rule__EquExpression__OpAlternatives_1_0_0_1_0
+            // InternalPortugolParser.g:8488:3: ( rule__EquExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8488:4: rule__EquExpression__OpAlternatives_1_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__EquExpression__OpAlternatives_1_0_0_1_0();
@@ -27779,17 +27510,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EquExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8579:1: rule__EquExpression__RightAssignment_1_1 : ( ruleAddExpression ) ;
+    // InternalPortugolParser.g:8496:1: rule__EquExpression__RightAssignment_1_1 : ( ruleAddExpression ) ;
     public final void rule__EquExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8583:1: ( ( ruleAddExpression ) )
-            // InternalPortugolParser.g:8584:2: ( ruleAddExpression )
+            // InternalPortugolParser.g:8500:1: ( ( ruleAddExpression ) )
+            // InternalPortugolParser.g:8501:2: ( ruleAddExpression )
             {
-            // InternalPortugolParser.g:8584:2: ( ruleAddExpression )
-            // InternalPortugolParser.g:8585:3: ruleAddExpression
+            // InternalPortugolParser.g:8501:2: ( ruleAddExpression )
+            // InternalPortugolParser.g:8502:3: ruleAddExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquExpressionAccess().getRightAddExpressionParserRuleCall_1_1_0()); 
@@ -27824,23 +27555,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8594:1: rule__AddExpression__OpAssignment_1_0_0_1 : ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8511:1: rule__AddExpression__OpAssignment_1_0_0_1 : ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) ) ;
     public final void rule__AddExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8598:1: ( ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) ) )
-            // InternalPortugolParser.g:8599:2: ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8515:1: ( ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) ) )
+            // InternalPortugolParser.g:8516:2: ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8599:2: ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) )
-            // InternalPortugolParser.g:8600:3: ( rule__AddExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8516:2: ( ( rule__AddExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8517:3: ( rule__AddExpression__OpAlternatives_1_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getOpAlternatives_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8601:3: ( rule__AddExpression__OpAlternatives_1_0_0_1_0 )
-            // InternalPortugolParser.g:8601:4: rule__AddExpression__OpAlternatives_1_0_0_1_0
+            // InternalPortugolParser.g:8518:3: ( rule__AddExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8518:4: rule__AddExpression__OpAlternatives_1_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__AddExpression__OpAlternatives_1_0_0_1_0();
@@ -27875,17 +27606,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AddExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8609:1: rule__AddExpression__RightAssignment_1_1 : ( ruleMultiplicativeExpression ) ;
+    // InternalPortugolParser.g:8526:1: rule__AddExpression__RightAssignment_1_1 : ( ruleMultiplicativeExpression ) ;
     public final void rule__AddExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8613:1: ( ( ruleMultiplicativeExpression ) )
-            // InternalPortugolParser.g:8614:2: ( ruleMultiplicativeExpression )
+            // InternalPortugolParser.g:8530:1: ( ( ruleMultiplicativeExpression ) )
+            // InternalPortugolParser.g:8531:2: ( ruleMultiplicativeExpression )
             {
-            // InternalPortugolParser.g:8614:2: ( ruleMultiplicativeExpression )
-            // InternalPortugolParser.g:8615:3: ruleMultiplicativeExpression
+            // InternalPortugolParser.g:8531:2: ( ruleMultiplicativeExpression )
+            // InternalPortugolParser.g:8532:3: ruleMultiplicativeExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAddExpressionAccess().getRightMultiplicativeExpressionParserRuleCall_1_1_0()); 
@@ -27920,23 +27651,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8624:1: rule__MultiplicativeExpression__OpAssignment_1_0_0_1 : ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8541:1: rule__MultiplicativeExpression__OpAssignment_1_0_0_1 : ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) ) ;
     public final void rule__MultiplicativeExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8628:1: ( ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) ) )
-            // InternalPortugolParser.g:8629:2: ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8545:1: ( ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) ) )
+            // InternalPortugolParser.g:8546:2: ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8629:2: ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) )
-            // InternalPortugolParser.g:8630:3: ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8546:2: ( ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 ) )
+            // InternalPortugolParser.g:8547:3: ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getOpAlternatives_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8631:3: ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 )
-            // InternalPortugolParser.g:8631:4: rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0
+            // InternalPortugolParser.g:8548:3: ( rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0 )
+            // InternalPortugolParser.g:8548:4: rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicativeExpression__OpAlternatives_1_0_0_1_0();
@@ -27971,17 +27702,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MultiplicativeExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8639:1: rule__MultiplicativeExpression__RightAssignment_1_1 : ( rulePowerExpression ) ;
+    // InternalPortugolParser.g:8556:1: rule__MultiplicativeExpression__RightAssignment_1_1 : ( rulePowerExpression ) ;
     public final void rule__MultiplicativeExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8643:1: ( ( rulePowerExpression ) )
-            // InternalPortugolParser.g:8644:2: ( rulePowerExpression )
+            // InternalPortugolParser.g:8560:1: ( ( rulePowerExpression ) )
+            // InternalPortugolParser.g:8561:2: ( rulePowerExpression )
             {
-            // InternalPortugolParser.g:8644:2: ( rulePowerExpression )
-            // InternalPortugolParser.g:8645:3: rulePowerExpression
+            // InternalPortugolParser.g:8561:2: ( rulePowerExpression )
+            // InternalPortugolParser.g:8562:3: rulePowerExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicativeExpressionAccess().getRightPowerExpressionParserRuleCall_1_1_0()); 
@@ -28016,23 +27747,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__OpAssignment_1_0_0_1"
-    // InternalPortugolParser.g:8654:1: rule__PowerExpression__OpAssignment_1_0_0_1 : ( ( CircumflexAccent ) ) ;
+    // InternalPortugolParser.g:8571:1: rule__PowerExpression__OpAssignment_1_0_0_1 : ( ( CircumflexAccent ) ) ;
     public final void rule__PowerExpression__OpAssignment_1_0_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8658:1: ( ( ( CircumflexAccent ) ) )
-            // InternalPortugolParser.g:8659:2: ( ( CircumflexAccent ) )
+            // InternalPortugolParser.g:8575:1: ( ( ( CircumflexAccent ) ) )
+            // InternalPortugolParser.g:8576:2: ( ( CircumflexAccent ) )
             {
-            // InternalPortugolParser.g:8659:2: ( ( CircumflexAccent ) )
-            // InternalPortugolParser.g:8660:3: ( CircumflexAccent )
+            // InternalPortugolParser.g:8576:2: ( ( CircumflexAccent ) )
+            // InternalPortugolParser.g:8577:3: ( CircumflexAccent )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getOpCircumflexAccentKeyword_1_0_0_1_0()); 
             }
-            // InternalPortugolParser.g:8661:3: ( CircumflexAccent )
-            // InternalPortugolParser.g:8662:4: CircumflexAccent
+            // InternalPortugolParser.g:8578:3: ( CircumflexAccent )
+            // InternalPortugolParser.g:8579:4: CircumflexAccent
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getOpCircumflexAccentKeyword_1_0_0_1_0()); 
@@ -28069,17 +27800,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PowerExpression__RightAssignment_1_1"
-    // InternalPortugolParser.g:8673:1: rule__PowerExpression__RightAssignment_1_1 : ( ruleUnaryExpression ) ;
+    // InternalPortugolParser.g:8590:1: rule__PowerExpression__RightAssignment_1_1 : ( ruleUnaryExpression ) ;
     public final void rule__PowerExpression__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8677:1: ( ( ruleUnaryExpression ) )
-            // InternalPortugolParser.g:8678:2: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:8594:1: ( ( ruleUnaryExpression ) )
+            // InternalPortugolParser.g:8595:2: ( ruleUnaryExpression )
             {
-            // InternalPortugolParser.g:8678:2: ( ruleUnaryExpression )
-            // InternalPortugolParser.g:8679:3: ruleUnaryExpression
+            // InternalPortugolParser.g:8595:2: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:8596:3: ruleUnaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPowerExpressionAccess().getRightUnaryExpressionParserRuleCall_1_1_0()); 
@@ -28114,23 +27845,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__OpAssignment_0_1"
-    // InternalPortugolParser.g:8688:1: rule__UnaryExpression__OpAssignment_0_1 : ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) ) ;
+    // InternalPortugolParser.g:8605:1: rule__UnaryExpression__OpAssignment_0_1 : ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) ) ;
     public final void rule__UnaryExpression__OpAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8692:1: ( ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) ) )
-            // InternalPortugolParser.g:8693:2: ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) )
+            // InternalPortugolParser.g:8609:1: ( ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) ) )
+            // InternalPortugolParser.g:8610:2: ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) )
             {
-            // InternalPortugolParser.g:8693:2: ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) )
-            // InternalPortugolParser.g:8694:3: ( rule__UnaryExpression__OpAlternatives_0_1_0 )
+            // InternalPortugolParser.g:8610:2: ( ( rule__UnaryExpression__OpAlternatives_0_1_0 ) )
+            // InternalPortugolParser.g:8611:3: ( rule__UnaryExpression__OpAlternatives_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getOpAlternatives_0_1_0()); 
             }
-            // InternalPortugolParser.g:8695:3: ( rule__UnaryExpression__OpAlternatives_0_1_0 )
-            // InternalPortugolParser.g:8695:4: rule__UnaryExpression__OpAlternatives_0_1_0
+            // InternalPortugolParser.g:8612:3: ( rule__UnaryExpression__OpAlternatives_0_1_0 )
+            // InternalPortugolParser.g:8612:4: rule__UnaryExpression__OpAlternatives_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__OpAlternatives_0_1_0();
@@ -28165,17 +27896,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__UnaryExpression__OperandAssignment_0_2"
-    // InternalPortugolParser.g:8703:1: rule__UnaryExpression__OperandAssignment_0_2 : ( ruleUnaryExpression ) ;
+    // InternalPortugolParser.g:8620:1: rule__UnaryExpression__OperandAssignment_0_2 : ( ruleUnaryExpression ) ;
     public final void rule__UnaryExpression__OperandAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8707:1: ( ( ruleUnaryExpression ) )
-            // InternalPortugolParser.g:8708:2: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:8624:1: ( ( ruleUnaryExpression ) )
+            // InternalPortugolParser.g:8625:2: ( ruleUnaryExpression )
             {
-            // InternalPortugolParser.g:8708:2: ( ruleUnaryExpression )
-            // InternalPortugolParser.g:8709:3: ruleUnaryExpression
+            // InternalPortugolParser.g:8625:2: ( ruleUnaryExpression )
+            // InternalPortugolParser.g:8626:3: ruleUnaryExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getUnaryExpressionAccess().getOperandUnaryExpressionParserRuleCall_0_2_0()); 
@@ -28210,17 +27941,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0"
-    // InternalPortugolParser.g:8718:1: rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 : ( rulePredefineFunctions ) ;
+    // InternalPortugolParser.g:8635:1: rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0 : ( rulePredefineFunctions ) ;
     public final void rule__PreDefinedFunctionCall__PreDefFunctionNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8722:1: ( ( rulePredefineFunctions ) )
-            // InternalPortugolParser.g:8723:2: ( rulePredefineFunctions )
+            // InternalPortugolParser.g:8639:1: ( ( rulePredefineFunctions ) )
+            // InternalPortugolParser.g:8640:2: ( rulePredefineFunctions )
             {
-            // InternalPortugolParser.g:8723:2: ( rulePredefineFunctions )
-            // InternalPortugolParser.g:8724:3: rulePredefineFunctions
+            // InternalPortugolParser.g:8640:2: ( rulePredefineFunctions )
+            // InternalPortugolParser.g:8641:3: rulePredefineFunctions
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getPreDefFunctionNamePredefineFunctionsParserRuleCall_0_0()); 
@@ -28255,17 +27986,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PreDefinedFunctionCall__ParamAssignment_2"
-    // InternalPortugolParser.g:8733:1: rule__PreDefinedFunctionCall__ParamAssignment_2 : ( ruleSubprogramParam ) ;
+    // InternalPortugolParser.g:8650:1: rule__PreDefinedFunctionCall__ParamAssignment_2 : ( ruleSubprogramParam ) ;
     public final void rule__PreDefinedFunctionCall__ParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8737:1: ( ( ruleSubprogramParam ) )
-            // InternalPortugolParser.g:8738:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8654:1: ( ( ruleSubprogramParam ) )
+            // InternalPortugolParser.g:8655:2: ( ruleSubprogramParam )
             {
-            // InternalPortugolParser.g:8738:2: ( ruleSubprogramParam )
-            // InternalPortugolParser.g:8739:3: ruleSubprogramParam
+            // InternalPortugolParser.g:8655:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8656:3: ruleSubprogramParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPreDefinedFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0()); 
@@ -28300,23 +28031,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__FbNameAssignment_0"
-    // InternalPortugolParser.g:8748:1: rule__FunctionCall__FbNameAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalPortugolParser.g:8665:1: rule__FunctionCall__FbNameAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__FunctionCall__FbNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8752:1: ( ( ( RULE_ID ) ) )
-            // InternalPortugolParser.g:8753:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:8669:1: ( ( ( RULE_ID ) ) )
+            // InternalPortugolParser.g:8670:2: ( ( RULE_ID ) )
             {
-            // InternalPortugolParser.g:8753:2: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:8754:3: ( RULE_ID )
+            // InternalPortugolParser.g:8670:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:8671:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameCrossReference_0_0()); 
             }
-            // InternalPortugolParser.g:8755:3: ( RULE_ID )
-            // InternalPortugolParser.g:8756:4: RULE_ID
+            // InternalPortugolParser.g:8672:3: ( RULE_ID )
+            // InternalPortugolParser.g:8673:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameIDTerminalRuleCall_0_0_1()); 
@@ -28353,17 +28084,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FunctionCall__ParamAssignment_2"
-    // InternalPortugolParser.g:8767:1: rule__FunctionCall__ParamAssignment_2 : ( ruleSubprogramParam ) ;
+    // InternalPortugolParser.g:8684:1: rule__FunctionCall__ParamAssignment_2 : ( ruleSubprogramParam ) ;
     public final void rule__FunctionCall__ParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8771:1: ( ( ruleSubprogramParam ) )
-            // InternalPortugolParser.g:8772:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8688:1: ( ( ruleSubprogramParam ) )
+            // InternalPortugolParser.g:8689:2: ( ruleSubprogramParam )
             {
-            // InternalPortugolParser.g:8772:2: ( ruleSubprogramParam )
-            // InternalPortugolParser.g:8773:3: ruleSubprogramParam
+            // InternalPortugolParser.g:8689:2: ( ruleSubprogramParam )
+            // InternalPortugolParser.g:8690:3: ruleSubprogramParam
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0()); 
@@ -28398,23 +28129,23 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DeclaredVar__VarNameAssignment"
-    // InternalPortugolParser.g:8782:1: rule__DeclaredVar__VarNameAssignment : ( ( RULE_ID ) ) ;
+    // InternalPortugolParser.g:8699:1: rule__DeclaredVar__VarNameAssignment : ( ( RULE_ID ) ) ;
     public final void rule__DeclaredVar__VarNameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8786:1: ( ( ( RULE_ID ) ) )
-            // InternalPortugolParser.g:8787:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:8703:1: ( ( ( RULE_ID ) ) )
+            // InternalPortugolParser.g:8704:2: ( ( RULE_ID ) )
             {
-            // InternalPortugolParser.g:8787:2: ( ( RULE_ID ) )
-            // InternalPortugolParser.g:8788:3: ( RULE_ID )
+            // InternalPortugolParser.g:8704:2: ( ( RULE_ID ) )
+            // InternalPortugolParser.g:8705:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarAccess().getVarNameVarNameCrossReference_0()); 
             }
-            // InternalPortugolParser.g:8789:3: ( RULE_ID )
-            // InternalPortugolParser.g:8790:4: RULE_ID
+            // InternalPortugolParser.g:8706:3: ( RULE_ID )
+            // InternalPortugolParser.g:8707:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclaredVarAccess().getVarNameVarNameIDTerminalRuleCall_0_1()); 
@@ -28451,17 +28182,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumericLiteral__IntValueAssignment_0"
-    // InternalPortugolParser.g:8801:1: rule__NumericLiteral__IntValueAssignment_0 : ( RULE_INT ) ;
+    // InternalPortugolParser.g:8718:1: rule__NumericLiteral__IntValueAssignment_0 : ( RULE_INT ) ;
     public final void rule__NumericLiteral__IntValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8805:1: ( ( RULE_INT ) )
-            // InternalPortugolParser.g:8806:2: ( RULE_INT )
+            // InternalPortugolParser.g:8722:1: ( ( RULE_INT ) )
+            // InternalPortugolParser.g:8723:2: ( RULE_INT )
             {
-            // InternalPortugolParser.g:8806:2: ( RULE_INT )
-            // InternalPortugolParser.g:8807:3: RULE_INT
+            // InternalPortugolParser.g:8723:2: ( RULE_INT )
+            // InternalPortugolParser.g:8724:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNumericLiteralAccess().getIntValueINTTerminalRuleCall_0_0()); 
@@ -28492,17 +28223,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumericLiteral__FloatValueAssignment_1"
-    // InternalPortugolParser.g:8816:1: rule__NumericLiteral__FloatValueAssignment_1 : ( RULE_FLOAT ) ;
+    // InternalPortugolParser.g:8733:1: rule__NumericLiteral__FloatValueAssignment_1 : ( RULE_FLOAT ) ;
     public final void rule__NumericLiteral__FloatValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8820:1: ( ( RULE_FLOAT ) )
-            // InternalPortugolParser.g:8821:2: ( RULE_FLOAT )
+            // InternalPortugolParser.g:8737:1: ( ( RULE_FLOAT ) )
+            // InternalPortugolParser.g:8738:2: ( RULE_FLOAT )
             {
-            // InternalPortugolParser.g:8821:2: ( RULE_FLOAT )
-            // InternalPortugolParser.g:8822:3: RULE_FLOAT
+            // InternalPortugolParser.g:8738:2: ( RULE_FLOAT )
+            // InternalPortugolParser.g:8739:3: RULE_FLOAT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNumericLiteralAccess().getFloatValueFLOATTerminalRuleCall_1_0()); 
@@ -28533,17 +28264,17 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringExpression__LiteralStringAssignment"
-    // InternalPortugolParser.g:8831:1: rule__StringExpression__LiteralStringAssignment : ( RULE_STRING ) ;
+    // InternalPortugolParser.g:8748:1: rule__StringExpression__LiteralStringAssignment : ( RULE_STRING ) ;
     public final void rule__StringExpression__LiteralStringAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8835:1: ( ( RULE_STRING ) )
-            // InternalPortugolParser.g:8836:2: ( RULE_STRING )
+            // InternalPortugolParser.g:8752:1: ( ( RULE_STRING ) )
+            // InternalPortugolParser.g:8753:2: ( RULE_STRING )
             {
-            // InternalPortugolParser.g:8836:2: ( RULE_STRING )
-            // InternalPortugolParser.g:8837:3: RULE_STRING
+            // InternalPortugolParser.g:8753:2: ( RULE_STRING )
+            // InternalPortugolParser.g:8754:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getStringExpressionAccess().getLiteralStringSTRINGTerminalRuleCall_0()); 
@@ -28572,10 +28303,10 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     }
     // $ANTLR end "rule__StringExpression__LiteralStringAssignment"
 
-    // $ANTLR start synpred65_InternalPortugolParser
-    public final void synpred65_InternalPortugolParser_fragment() throws RecognitionException {   
-        // InternalPortugolParser.g:5447:3: ( rule__Assignment__Group_1__0 )
-        // InternalPortugolParser.g:5447:3: rule__Assignment__Group_1__0
+    // $ANTLR start synpred64_InternalPortugolParser
+    public final void synpred64_InternalPortugolParser_fragment() throws RecognitionException {   
+        // InternalPortugolParser.g:5364:3: ( rule__Assignment__Group_1__0 )
+        // InternalPortugolParser.g:5364:3: rule__Assignment__Group_1__0
         {
         pushFollow(FOLLOW_2);
         rule__Assignment__Group_1__0();
@@ -28585,15 +28316,15 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
         }
     }
-    // $ANTLR end synpred65_InternalPortugolParser
+    // $ANTLR end synpred64_InternalPortugolParser
 
     // Delegated rules
 
-    public final boolean synpred65_InternalPortugolParser() {
+    public final boolean synpred64_InternalPortugolParser() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred65_InternalPortugolParser_fragment(); // can never throw exception
+            synpred64_InternalPortugolParser_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -28625,8 +28356,8 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x042600988F278200L,0x0000000000000078L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x042600988F278202L,0x0000000000000078L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x2000000000000002L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x2000000000000002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x042200808D000000L,0x0000000000000078L});
