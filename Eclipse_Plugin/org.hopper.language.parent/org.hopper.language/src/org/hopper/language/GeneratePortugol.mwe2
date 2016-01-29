@@ -42,6 +42,7 @@ Workflow {
 					ignoreCase = true
 				}
 			}
+
 			quickFixProvider = {}
 
 			resourceFactoryFragment = {}
@@ -49,6 +50,11 @@ Workflow {
 			generator = {
 				generateJavaMain = true
 			}
+
+			formatter = {}
+
+			grammarAccess = {}
+
 		}
 	}
 }
