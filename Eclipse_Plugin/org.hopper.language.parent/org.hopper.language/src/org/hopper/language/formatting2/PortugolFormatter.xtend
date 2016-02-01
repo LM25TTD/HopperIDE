@@ -4,27 +4,29 @@
 package org.hopper.language.formatting2
 
 import com.google.inject.Inject
+import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
+import org.hopper.language.portugol.AbstractCommand
+import org.hopper.language.portugol.BlockCommand
 import org.hopper.language.portugol.BlockFunction
 import org.hopper.language.portugol.BlockProcedure
 import org.hopper.language.portugol.DeclarationsBlock
 import org.hopper.language.portugol.HeaderBlock
 import org.hopper.language.portugol.Model
 import org.hopper.language.portugol.SubprogramParamDeclaration
+import org.hopper.language.portugol.Subprograms
 import org.hopper.language.portugol.VarDeclaration
 import org.hopper.language.portugol.VarType
 import org.hopper.language.portugol.Variable
 import org.hopper.language.services.PortugolGrammarAccess
-import org.hopper.language.portugol.Subprograms
-import org.hopper.language.portugol.BlockCommand
 
+@SuppressWarnings("all")
 class PortugolFormatter extends AbstractFormatter2 {
 
 	@Inject extension PortugolGrammarAccess
 
 	def dispatch void format(Model model, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		model.getHeader.format;
 		model.getGlobalDeclarations.format;
 		model.getSubprograms.format;
@@ -48,7 +50,7 @@ class PortugolFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(Subprograms subprograms, extension IFormattableDocument document) {
-		for (subprogram : subprograms.blockSubPrograms) {			
+		for (subprogram : subprograms.blockSubPrograms) {
 			subprogram.format
 		}
 	}
@@ -60,11 +62,12 @@ class PortugolFormatter extends AbstractFormatter2 {
 		blockFunction.regionFor.keyword(')').prepend[noSpace]
 		blockFunction.regionFor.keyword(':').surround[oneSpace]
 		blockFunction.declarations.format
-		var beginCommands = blockFunction.regionFor.keyword('inicio')
+		val beginCommands = blockFunction.regionFor.keyword('inicio')
+		val endCommands = blockFunction.regionFor.keyword('fimfuncao')
 		beginCommands.surround[noSpace].prepend[newLine].append[newLine]
-		var endCommands = blockFunction.regionFor.keyword('fimfuncao')
+		interior(beginCommands, endCommands)[indent]
+		blockFunction.commands.format
 		endCommands.prepend[newLine]
-		interior(beginCommands, endCommands)[indent]		
 	}
 
 	def dispatch void format(BlockProcedure blockProcedure, extension IFormattableDocument document) {
@@ -73,11 +76,12 @@ class PortugolFormatter extends AbstractFormatter2 {
 		blockProcedure.regionFor.keyword('(').surround[noSpace]
 		blockProcedure.regionFor.keyword(')').prepend[noSpace]
 		blockProcedure.declarations.format
-		var beginCommands = blockProcedure.regionFor.keyword('inicio')
+		val beginCommands = blockProcedure.regionFor.keyword('inicio')
+		val endCommands = blockProcedure.regionFor.keyword('fimprocedimento')
 		beginCommands.surround[noSpace].prepend[newLine].append[newLine]
-		var endCommands = blockProcedure.regionFor.keyword('fimprocedimento')
-		endCommands.prepend[newLine]
 		interior(beginCommands, endCommands)[indent]
+		blockProcedure.commands.format
+		endCommands.prepend[newLine]
 	}
 
 	def dispatch void format(Variable variable, extension IFormattableDocument document) {
@@ -90,14 +94,21 @@ class PortugolFormatter extends AbstractFormatter2 {
 	def dispatch void format(VarType varType, extension IFormattableDocument document) {
 		varType.surround[noSpace]
 	}
-	
+
 	def dispatch void format(BlockCommand blockCommand, extension IFormattableDocument document) {
 		blockCommand.prepend[newLines = 2].append[noSpace]
-		var beginCommands = blockCommand.regionFor.keyword('inicio')
+		val beginCommands = blockCommand.regionFor.keyword('inicio')
+		val endCommands = blockCommand.regionFor.keyword('fimalgoritmo')
 		beginCommands.surround[noSpace].append[newLine]
-		var endCommands = blockCommand.regionFor.keyword('fimalgoritmo')
-		endCommands.prepend[newLine]
 		interior(beginCommands, endCommands)[indent]
+		blockCommand.commands.format
+		endCommands.prepend[newLine]
+	}
+
+	def dispatch void format(EList<AbstractCommand> commands, extension IFormattableDocument document) {
+		for (command : commands) {
+			command.prepend[newLine]
+		}
 	}
 
 	def dispatch void format(VarDeclaration varDeclaration, extension IFormattableDocument document) {

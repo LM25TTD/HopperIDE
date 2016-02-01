@@ -17,6 +17,7 @@ import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegionsFinder;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.hopper.language.portugol.AbstractCommand;
 import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
@@ -138,7 +139,9 @@ public class PortugolFormatter extends AbstractFormatter2 {
     DeclarationsBlock _declarations = blockFunction.getDeclarations();
     document.<DeclarationsBlock>format(_declarations);
     ISemanticRegionsFinder _regionFor_4 = this.textRegionExtensions.regionFor(blockFunction);
-    ISemanticRegion beginCommands = _regionFor_4.keyword("inicio");
+    final ISemanticRegion beginCommands = _regionFor_4.keyword("inicio");
+    ISemanticRegionsFinder _regionFor_5 = this.textRegionExtensions.regionFor(blockFunction);
+    final ISemanticRegion endCommands = _regionFor_5.keyword("fimfuncao");
     final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
       it.noSpace();
     };
@@ -151,16 +154,16 @@ public class PortugolFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.append(_prepend_1, _function_8);
-    ISemanticRegionsFinder _regionFor_5 = this.textRegionExtensions.regionFor(blockFunction);
-    ISemanticRegion endCommands = _regionFor_5.keyword("fimfuncao");
     final Procedure1<IHiddenRegionFormatter> _function_9 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.prepend(endCommands, _function_9);
-    final Procedure1<IHiddenRegionFormatter> _function_10 = (IHiddenRegionFormatter it) -> {
       it.indent();
     };
-    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_10);
+    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_9);
+    EList<AbstractCommand> _commands = blockFunction.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    final Procedure1<IHiddenRegionFormatter> _function_10 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(endCommands, _function_10);
   }
   
   protected void _format(final BlockProcedure blockProcedure, @Extension final IFormattableDocument document) {
@@ -193,7 +196,9 @@ public class PortugolFormatter extends AbstractFormatter2 {
     DeclarationsBlock _declarations = blockProcedure.getDeclarations();
     document.<DeclarationsBlock>format(_declarations);
     ISemanticRegionsFinder _regionFor_3 = this.textRegionExtensions.regionFor(blockProcedure);
-    ISemanticRegion beginCommands = _regionFor_3.keyword("inicio");
+    final ISemanticRegion beginCommands = _regionFor_3.keyword("inicio");
+    ISemanticRegionsFinder _regionFor_4 = this.textRegionExtensions.regionFor(blockProcedure);
+    final ISemanticRegion endCommands = _regionFor_4.keyword("fimprocedimento");
     final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
       it.noSpace();
     };
@@ -206,16 +211,16 @@ public class PortugolFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.append(_prepend_1, _function_7);
-    ISemanticRegionsFinder _regionFor_4 = this.textRegionExtensions.regionFor(blockProcedure);
-    ISemanticRegion endCommands = _regionFor_4.keyword("fimprocedimento");
     final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.prepend(endCommands, _function_8);
-    final Procedure1<IHiddenRegionFormatter> _function_9 = (IHiddenRegionFormatter it) -> {
       it.indent();
     };
-    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_9);
+    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_8);
+    EList<AbstractCommand> _commands = blockProcedure.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    final Procedure1<IHiddenRegionFormatter> _function_9 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(endCommands, _function_9);
   }
   
   protected void _format(final Variable variable, @Extension final IFormattableDocument document) {
@@ -252,7 +257,9 @@ public class PortugolFormatter extends AbstractFormatter2 {
     };
     document.<BlockCommand>append(_prepend, _function_1);
     ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(blockCommand);
-    ISemanticRegion beginCommands = _regionFor.keyword("inicio");
+    final ISemanticRegion beginCommands = _regionFor.keyword("inicio");
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(blockCommand);
+    final ISemanticRegion endCommands = _regionFor_1.keyword("fimalgoritmo");
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.noSpace();
     };
@@ -261,16 +268,25 @@ public class PortugolFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.append(_surround, _function_3);
-    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(blockCommand);
-    ISemanticRegion endCommands = _regionFor_1.keyword("fimalgoritmo");
     final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.prepend(endCommands, _function_4);
-    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
       it.indent();
     };
-    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_5);
+    document.<ISemanticRegion, ISemanticRegion>interior(beginCommands, endCommands, _function_4);
+    EList<AbstractCommand> _commands = blockCommand.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(endCommands, _function_5);
+  }
+  
+  protected void _format(final EList<AbstractCommand> commands, @Extension final IFormattableDocument document) {
+    for (final AbstractCommand command : commands) {
+      final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+        it.newLine();
+      };
+      document.<AbstractCommand>prepend(command, _function);
+    }
   }
   
   protected void _format(final VarDeclaration varDeclaration, @Extension final IFormattableDocument document) {
@@ -301,55 +317,58 @@ public class PortugolFormatter extends AbstractFormatter2 {
     }
   }
   
-  public void format(final Object blockFunction, final IFormattableDocument document) {
-    if (blockFunction instanceof XtextResource) {
-      _format((XtextResource)blockFunction, document);
+  public void format(final Object commands, final IFormattableDocument document) {
+    if (commands instanceof XtextResource) {
+      _format((XtextResource)commands, document);
       return;
-    } else if (blockFunction instanceof BlockFunction) {
-      _format((BlockFunction)blockFunction, document);
+    } else if (commands instanceof EList) {
+      _format((EList<AbstractCommand>)commands, document);
       return;
-    } else if (blockFunction instanceof BlockProcedure) {
-      _format((BlockProcedure)blockFunction, document);
+    } else if (commands instanceof BlockFunction) {
+      _format((BlockFunction)commands, document);
       return;
-    } else if (blockFunction instanceof BlockCommand) {
-      _format((BlockCommand)blockFunction, document);
+    } else if (commands instanceof BlockProcedure) {
+      _format((BlockProcedure)commands, document);
       return;
-    } else if (blockFunction instanceof DeclarationsBlock) {
-      _format((DeclarationsBlock)blockFunction, document);
+    } else if (commands instanceof BlockCommand) {
+      _format((BlockCommand)commands, document);
       return;
-    } else if (blockFunction instanceof HeaderBlock) {
-      _format((HeaderBlock)blockFunction, document);
+    } else if (commands instanceof DeclarationsBlock) {
+      _format((DeclarationsBlock)commands, document);
       return;
-    } else if (blockFunction instanceof Model) {
-      _format((Model)blockFunction, document);
+    } else if (commands instanceof HeaderBlock) {
+      _format((HeaderBlock)commands, document);
       return;
-    } else if (blockFunction instanceof SubprogramParamDeclaration) {
-      _format((SubprogramParamDeclaration)blockFunction, document);
+    } else if (commands instanceof Model) {
+      _format((Model)commands, document);
       return;
-    } else if (blockFunction instanceof Subprograms) {
-      _format((Subprograms)blockFunction, document);
+    } else if (commands instanceof SubprogramParamDeclaration) {
+      _format((SubprogramParamDeclaration)commands, document);
       return;
-    } else if (blockFunction instanceof VarDeclaration) {
-      _format((VarDeclaration)blockFunction, document);
+    } else if (commands instanceof Subprograms) {
+      _format((Subprograms)commands, document);
       return;
-    } else if (blockFunction instanceof VarType) {
-      _format((VarType)blockFunction, document);
+    } else if (commands instanceof VarDeclaration) {
+      _format((VarDeclaration)commands, document);
       return;
-    } else if (blockFunction instanceof Variable) {
-      _format((Variable)blockFunction, document);
+    } else if (commands instanceof VarType) {
+      _format((VarType)commands, document);
       return;
-    } else if (blockFunction instanceof EObject) {
-      _format((EObject)blockFunction, document);
+    } else if (commands instanceof Variable) {
+      _format((Variable)commands, document);
       return;
-    } else if (blockFunction == null) {
+    } else if (commands instanceof EObject) {
+      _format((EObject)commands, document);
+      return;
+    } else if (commands == null) {
       _format((Void)null, document);
       return;
-    } else if (blockFunction != null) {
-      _format(blockFunction, document);
+    } else if (commands != null) {
+      _format(commands, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(blockFunction, document).toString());
+        Arrays.<Object>asList(commands, document).toString());
     }
   }
 }

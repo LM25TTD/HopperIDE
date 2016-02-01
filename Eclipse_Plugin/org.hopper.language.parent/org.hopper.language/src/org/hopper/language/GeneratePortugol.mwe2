@@ -51,7 +51,9 @@ Workflow {
 				generateJavaMain = true
 			}
 
-			formatter = {}
+			formatter = {
+				generateStub = true
+			}
 
 			grammarAccess = {}
 
