@@ -3,6 +3,7 @@
  */
 package org.hopper.language.formatting2;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
@@ -24,12 +25,15 @@ import org.hopper.language.portugol.BlockProcedure;
 import org.hopper.language.portugol.BlockSubPrograms;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.HeaderBlock;
+import org.hopper.language.portugol.IfStatement;
 import org.hopper.language.portugol.Model;
+import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
+import org.hopper.language.portugol.WriteCommand;
 import org.hopper.language.services.PortugolGrammarAccess;
 
 @SuppressWarnings("all")
@@ -282,11 +286,129 @@ public class PortugolFormatter extends AbstractFormatter2 {
   
   protected void _format(final EList<AbstractCommand> commands, @Extension final IFormattableDocument document) {
     for (final AbstractCommand command : commands) {
-      final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      {
+        final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<AbstractCommand>prepend(command, _function);
+        document.<AbstractCommand>format(command);
+      }
+    }
+  }
+  
+  protected void _format(final ReadCommand readCommand, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.<ReadCommand>surround(readCommand, _function);
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(readCommand);
+    ISemanticRegion _keyword = _regionFor.keyword("(");
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.surround(_keyword, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(readCommand);
+    ISemanticRegion _keyword_1 = _regionFor_1.keyword(")");
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.surround(_keyword_1, _function_2);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(readCommand);
+    ParserRule _eND_COMMANDRule = this._portugolGrammarAccess.getEND_COMMANDRule();
+    ISemanticRegion _ruleCallTo = _regionFor_2.ruleCallTo(_eND_COMMANDRule);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_ruleCallTo, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend, _function_4);
+  }
+  
+  protected void _format(final WriteCommand writeCommand, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.<WriteCommand>surround(writeCommand, _function);
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(writeCommand);
+    ISemanticRegion _keyword = _regionFor.keyword("(");
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.surround(_keyword, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(writeCommand);
+    ISemanticRegion _keyword_1 = _regionFor_1.keyword(")");
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.surround(_keyword_1, _function_2);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(writeCommand);
+    ParserRule _eND_COMMANDRule = this._portugolGrammarAccess.getEND_COMMANDRule();
+    ISemanticRegion _ruleCallTo = _regionFor_2.ruleCallTo(_eND_COMMANDRule);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_ruleCallTo, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend, _function_4);
+  }
+  
+  protected void _format(final IfStatement ifStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(ifStatement);
+    ISemanticRegion regionIfKeyword = _regionFor.keyword("se");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(regionIfKeyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(ifStatement);
+    ISemanticRegion regionThenKeyword = _regionFor_1.keyword("entao");
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionThenKeyword, _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_3);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(ifStatement);
+    ISemanticRegion regionEndifKeyword = _regionFor_2.keyword("fimse");
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.surround(regionEndifKeyword, _function_4);
+    ISemanticRegionsFinder _regionFor_3 = this.textRegionExtensions.regionFor(ifStatement);
+    ISemanticRegion regionElseKeyword = _regionFor_3.keyword("senao");
+    boolean _notEquals = (!Objects.equal(regionElseKeyword, null));
+    if (_notEquals) {
+      final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
         it.newLine();
       };
-      document.<AbstractCommand>prepend(command, _function);
+      document.surround(regionElseKeyword, _function_5);
+      final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+        it.indent();
+      };
+      document.<ISemanticRegion, ISemanticRegion>interior(regionThenKeyword, regionElseKeyword, _function_6);
+      final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+        it.indent();
+      };
+      document.<ISemanticRegion, ISemanticRegion>interior(regionElseKeyword, regionEndifKeyword, _function_7);
+      EList<AbstractCommand> _elseCommands = ifStatement.getElseCommands();
+      document.<EList<AbstractCommand>>format(_elseCommands);
+    } else {
+      final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+        it.indent();
+      };
+      document.<ISemanticRegion, ISemanticRegion>interior(regionThenKeyword, regionEndifKeyword, _function_8);
     }
+    EList<AbstractCommand> _commands = ifStatement.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
   }
   
   protected void _format(final VarDeclaration varDeclaration, @Extension final IFormattableDocument document) {
@@ -329,6 +451,15 @@ public class PortugolFormatter extends AbstractFormatter2 {
       return;
     } else if (commands instanceof BlockProcedure) {
       _format((BlockProcedure)commands, document);
+      return;
+    } else if (commands instanceof IfStatement) {
+      _format((IfStatement)commands, document);
+      return;
+    } else if (commands instanceof ReadCommand) {
+      _format((ReadCommand)commands, document);
+      return;
+    } else if (commands instanceof WriteCommand) {
+      _format((WriteCommand)commands, document);
       return;
     } else if (commands instanceof BlockCommand) {
       _format((BlockCommand)commands, document);

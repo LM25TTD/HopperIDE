@@ -20,6 +20,9 @@ import org.hopper.language.portugol.VarDeclaration
 import org.hopper.language.portugol.VarType
 import org.hopper.language.portugol.Variable
 import org.hopper.language.services.PortugolGrammarAccess
+import org.hopper.language.portugol.ReadCommand
+import org.hopper.language.portugol.WriteCommand
+import org.hopper.language.portugol.IfStatement
 
 @SuppressWarnings("all")
 class PortugolFormatter extends AbstractFormatter2 {
@@ -108,7 +111,45 @@ class PortugolFormatter extends AbstractFormatter2 {
 	def dispatch void format(EList<AbstractCommand> commands, extension IFormattableDocument document) {
 		for (command : commands) {
 			command.prepend[newLine]
+			command.format
 		}
+	}
+
+	def dispatch void format(ReadCommand readCommand, extension IFormattableDocument document) {
+		readCommand.surround[noSpace]
+		readCommand.regionFor.keyword('(').surround[noSpace]
+		readCommand.regionFor.keyword(')').surround[noSpace]
+		readCommand.regionFor.ruleCallTo(END_COMMANDRule).prepend[noSpace].append[newLine]
+	}
+
+	def dispatch void format(WriteCommand writeCommand, extension IFormattableDocument document) {
+		writeCommand.surround[noSpace]
+		writeCommand.regionFor.keyword('(').surround[noSpace]
+		writeCommand.regionFor.keyword(')').surround[noSpace]
+		writeCommand.regionFor.ruleCallTo(END_COMMANDRule).prepend[noSpace].append[newLine]
+	}
+
+	def dispatch void format(IfStatement ifStatement, extension IFormattableDocument document) {
+		var regionIfKeyword = ifStatement.regionFor.keyword('se')
+		regionIfKeyword.prepend[noSpace].append[oneSpace]
+
+		var regionThenKeyword = ifStatement.regionFor.keyword('entao')
+		regionThenKeyword.prepend[oneSpace].append[newLine]
+
+		var regionEndifKeyword = ifStatement.regionFor.keyword('fimse')
+		regionEndifKeyword.surround[newLine]
+
+		var regionElseKeyword = ifStatement.regionFor.keyword('senao')
+		if (regionElseKeyword != null) {
+			regionElseKeyword.surround[newLine]
+			interior(regionThenKeyword, regionElseKeyword)[indent]
+			interior(regionElseKeyword, regionEndifKeyword)[indent]
+			ifStatement.elseCommands.format
+		} else {
+			interior(regionThenKeyword, regionEndifKeyword)[indent]
+		}
+
+		ifStatement.commands.format
 	}
 
 	def dispatch void format(VarDeclaration varDeclaration, extension IFormattableDocument document) {
@@ -123,6 +164,4 @@ class PortugolFormatter extends AbstractFormatter2 {
 			variables.append[oneSpace; autowrap]
 		}
 	}
-
-// TODO: implement for Variable, VarDeclaration, Subprograms, BlockFunction, BlockProcedure, SubprogramParamDeclaration, BlockCommand, ReturnExpression, IfStatement, SwitchCaseStatement, CaseList, OtherCase, ForStatement, WhileStatement, RepeatStatement, SubprogramParam, ReadCommand, WriteCommand, WriteParam, BinaryOperation, UnaryExpression, Expression
 }
