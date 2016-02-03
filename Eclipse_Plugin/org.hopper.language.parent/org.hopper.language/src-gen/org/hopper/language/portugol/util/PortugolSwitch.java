@@ -336,15 +336,6 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.RETURN_EXPRESSION:
-      {
-        ReturnExpression returnExpression = (ReturnExpression)theEObject;
-        T result = caseReturnExpression(returnExpression);
-        if (result == null) result = caseReturnStatement(returnExpression);
-        if (result == null) result = caseAbstractCommand(returnExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case PortugolPackage.BINARY_OPERATION:
       {
         BinaryOperation binaryOperation = (BinaryOperation)theEObject;
@@ -932,22 +923,6 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringExpression(StringExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Return Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Return Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReturnExpression(ReturnExpression object)
   {
     return null;
   }

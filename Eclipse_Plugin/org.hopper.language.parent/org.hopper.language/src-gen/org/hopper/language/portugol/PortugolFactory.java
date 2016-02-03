@@ -339,15 +339,6 @@ public interface PortugolFactory extends EFactory
   StringExpression createStringExpression();
 
   /**
-   * Returns a new object of class '<em>Return Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return Expression</em>'.
-   * @generated
-   */
-  ReturnExpression createReturnExpression();
-
-  /**
    * Returns a new object of class '<em>Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

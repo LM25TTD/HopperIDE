@@ -11945,7 +11945,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:3553:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0()); 
+               before(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); 
             }
             // InternalPortugolParser.g:3554:2: ()
             // InternalPortugolParser.g:3554:3: 
@@ -11953,7 +11953,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0()); 
+               after(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); 
             }
 
             }

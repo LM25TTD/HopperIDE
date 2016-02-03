@@ -23,6 +23,18 @@ import org.hopper.language.services.PortugolGrammarAccess
 import org.hopper.language.portugol.ReadCommand
 import org.hopper.language.portugol.WriteCommand
 import org.hopper.language.portugol.IfStatement
+import org.hopper.language.portugol.SwitchCaseStatement
+import org.eclipse.xtext.impl.CrossReferenceImpl
+import org.eclipse.xtext.CrossReference
+import java.awt.image.CropImageFilter
+import org.eclipse.xtext.XtextFactory
+import org.hopper.language.portugol.PortugolPackage
+
+import static org.hopper.language.portugol.PortugolPackage.Literals.*
+import org.hopper.language.portugol.CaseList
+import org.hopper.language.portugol.OtherCase
+import org.hopper.language.portugol.BreakStatement
+import org.hopper.language.portugol.ReturnStatement
 
 @SuppressWarnings("all")
 class PortugolFormatter extends AbstractFormatter2 {
@@ -150,6 +162,48 @@ class PortugolFormatter extends AbstractFormatter2 {
 		}
 
 		ifStatement.commands.format
+	}
+
+	def dispatch void format(SwitchCaseStatement switchCaseStatement, extension IFormattableDocument document) {
+		switchCaseStatement.regionFor.keyword('escolha').prepend[noSpace].append[oneSpace]
+
+		var regionEndSwitch = switchCaseStatement.regionFor.keyword('fimescolha')
+		var regionVariableRef = switchCaseStatement.regionFor.feature(SWITCH_CASE_STATEMENT__VARIABLE)
+
+		regionVariableRef.prepend[oneSpace].append[newLine]
+		regionEndSwitch.surround[newLine]
+
+		interior(regionVariableRef, regionEndSwitch)[indent]
+
+		switchCaseStatement.caseList.forEach[format]
+		switchCaseStatement.otherCase?.format
+	}
+
+	def dispatch void format(CaseList caseList, extension IFormattableDocument document) {
+		caseList.regionFor.keyword('caso').prepend[newLine].append[oneSpace]
+		caseList.expr.surround[oneSpace]
+		var regionOpenCase = caseList.regionFor.keyword(':')
+		regionOpenCase.prepend[oneSpace].append[newLine]
+		caseList.commands.format
+		caseList.interior[indent]
+	}
+
+	def dispatch void format(OtherCase otherCase, extension IFormattableDocument document) {
+		otherCase.regionFor.keyword('outrocaso').prepend[newLine].append[oneSpace]
+		var regionOpenOtherCase = otherCase.regionFor.keyword(':')
+		regionOpenOtherCase.prepend[oneSpace].append[newLine]
+		otherCase.otherCaseCommands.format
+		otherCase.interior[indent]
+	}
+
+	def dispatch void format(BreakStatement breakStatement, extension IFormattableDocument document) {
+		breakStatement.regionFor.keyword('interrompa').surround[noSpace]
+	}
+
+	def dispatch void format(ReturnStatement returnStatement, extension IFormattableDocument document) {
+		returnStatement.regionFor.keyword('retorne').prepend[noSpace].append[oneSpace]
+		returnStatement.expr.prepend[oneSpace].append[noSpace; autowrap]
+		returnStatement.regionFor.ruleCallTo(END_COMMANDRule).prepend[noSpace].append[newLine]
 	}
 
 	def dispatch void format(VarDeclaration varDeclaration, extension IFormattableDocument document) {

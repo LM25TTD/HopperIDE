@@ -36,7 +36,6 @@ import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.RepeatStatement;
-import org.hopper.language.portugol.ReturnExpression;
 import org.hopper.language.portugol.ReturnStatement;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
@@ -304,13 +303,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * @generated
    */
   private EClass stringExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass returnExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -821,6 +813,16 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getReturnStatement_Expr()
+  {
+    return (EReference)returnStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getIfStatement()
   {
     return ifStatementEClass;
@@ -1311,26 +1313,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReturnExpression()
-  {
-    return returnExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReturnExpression_Expr()
-  {
-    return (EReference)returnExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getBinaryOperation()
   {
     return binaryOperationEClass;
@@ -1496,6 +1478,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     breakStatementEClass = createEClass(BREAK_STATEMENT);
 
     returnStatementEClass = createEClass(RETURN_STATEMENT);
+    createEReference(returnStatementEClass, RETURN_STATEMENT__EXPR);
 
     ifStatementEClass = createEClass(IF_STATEMENT);
     createEReference(ifStatementEClass, IF_STATEMENT__EXPR);
@@ -1562,9 +1545,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     stringExpressionEClass = createEClass(STRING_EXPRESSION);
     createEAttribute(stringExpressionEClass, STRING_EXPRESSION__LITERAL_STRING);
 
-    returnExpressionEClass = createEClass(RETURN_EXPRESSION);
-    createEReference(returnExpressionEClass, RETURN_EXPRESSION__EXPR);
-
     binaryOperationEClass = createEClass(BINARY_OPERATION);
     createEReference(binaryOperationEClass, BINARY_OPERATION__LEFT);
     createEAttribute(binaryOperationEClass, BINARY_OPERATION__OP);
@@ -1621,7 +1601,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     declaredVarEClass.getESuperTypes().add(this.getExpression());
     numericLiteralEClass.getESuperTypes().add(this.getExpression());
     stringExpressionEClass.getESuperTypes().add(this.getExpression());
-    returnExpressionEClass.getESuperTypes().add(this.getReturnStatement());
     binaryOperationEClass.getESuperTypes().add(this.getExpression());
     unaryExpressionEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
@@ -1687,6 +1666,7 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
     initEClass(breakStatementEClass, BreakStatement.class, "BreakStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturnStatement_Expr(), this.getExpression(), null, "expr", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIfStatement_Expr(), this.getExpression(), null, "expr", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1752,9 +1732,6 @@ public class PortugolPackageImpl extends EPackageImpl implements PortugolPackage
 
     initEClass(stringExpressionEClass, StringExpression.class, "StringExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStringExpression_LiteralString(), ecorePackage.getEString(), "literalString", null, 0, 1, StringExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(returnExpressionEClass, ReturnExpression.class, "ReturnExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturnExpression_Expr(), this.getExpression(), null, "expr", null, 0, 1, ReturnExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binaryOperationEClass, BinaryOperation.class, "BinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinaryOperation_Left(), this.getExpression(), null, "left", null, 0, 1, BinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -81,7 +81,7 @@ BreakStatement:
 	{BreakStatement} 'interrompa';
 
 ReturnStatement:
-	{ReturnExpression} 'retorne' expr=Expression;
+	{ReturnStatement} 'retorne' expr=Expression;
 
 IfStatement:
 	'se' expr=Expression 'entao'

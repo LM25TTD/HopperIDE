@@ -7,6 +7,7 @@ import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.ParserRule;
@@ -23,13 +24,20 @@ import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
 import org.hopper.language.portugol.BlockSubPrograms;
+import org.hopper.language.portugol.BreakStatement;
+import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
+import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
 import org.hopper.language.portugol.Model;
+import org.hopper.language.portugol.OtherCase;
+import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ReadCommand;
+import org.hopper.language.portugol.ReturnStatement;
 import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
+import org.hopper.language.portugol.SwitchCaseStatement;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
@@ -411,6 +419,154 @@ public class PortugolFormatter extends AbstractFormatter2 {
     document.<EList<AbstractCommand>>format(_commands);
   }
   
+  protected void _format(final SwitchCaseStatement switchCaseStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(switchCaseStatement);
+    ISemanticRegion _keyword = _regionFor.keyword("escolha");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(switchCaseStatement);
+    ISemanticRegion regionEndSwitch = _regionFor_1.keyword("fimescolha");
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(switchCaseStatement);
+    ISemanticRegion regionVariableRef = _regionFor_2.feature(PortugolPackage.Literals.SWITCH_CASE_STATEMENT__VARIABLE);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionVariableRef, _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.surround(regionEndSwitch, _function_4);
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(regionVariableRef, regionEndSwitch, _function_5);
+    EList<CaseList> _caseList = switchCaseStatement.getCaseList();
+    final Consumer<CaseList> _function_6 = (CaseList it) -> {
+      document.<CaseList>format(it);
+    };
+    _caseList.forEach(_function_6);
+    OtherCase _otherCase = switchCaseStatement.getOtherCase();
+    if (_otherCase!=null) {
+      document.<OtherCase>format(_otherCase);
+    }
+  }
+  
+  protected void _format(final CaseList caseList, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(caseList);
+    ISemanticRegion _keyword = _regionFor.keyword("caso");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    Expression _expr = caseList.getExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.<Expression>surround(_expr, _function_2);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(caseList);
+    ISemanticRegion regionOpenCase = _regionFor_1.keyword(":");
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionOpenCase, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_4);
+    EList<AbstractCommand> _commands = caseList.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<CaseList>interior(caseList, _function_5);
+  }
+  
+  protected void _format(final OtherCase otherCase, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(otherCase);
+    ISemanticRegion _keyword = _regionFor.keyword("outrocaso");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(otherCase);
+    ISemanticRegion regionOpenOtherCase = _regionFor_1.keyword(":");
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionOpenOtherCase, _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_3);
+    EList<AbstractCommand> _otherCaseCommands = otherCase.getOtherCaseCommands();
+    document.<EList<AbstractCommand>>format(_otherCaseCommands);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<OtherCase>interior(otherCase, _function_4);
+  }
+  
+  protected void _format(final BreakStatement breakStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(breakStatement);
+    ISemanticRegion _keyword = _regionFor.keyword("interrompa");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.surround(_keyword, _function);
+  }
+  
+  protected void _format(final ReturnStatement returnStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(returnStatement);
+    ISemanticRegion _keyword = _regionFor.keyword("retorne");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    Expression _expr = returnStatement.getExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    Expression _prepend_1 = document.<Expression>prepend(_expr, _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+      it.autowrap();
+    };
+    document.<Expression>append(_prepend_1, _function_3);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(returnStatement);
+    ParserRule _eND_COMMANDRule = this._portugolGrammarAccess.getEND_COMMANDRule();
+    ISemanticRegion _ruleCallTo = _regionFor_1.ruleCallTo(_eND_COMMANDRule);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend_2 = document.prepend(_ruleCallTo, _function_4);
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_2, _function_5);
+  }
+  
   protected void _format(final VarDeclaration varDeclaration, @Extension final IFormattableDocument document) {
     ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(varDeclaration);
     List<ISemanticRegion> _keywords = _regionFor.keywords(",");
@@ -452,17 +608,29 @@ public class PortugolFormatter extends AbstractFormatter2 {
     } else if (commands instanceof BlockProcedure) {
       _format((BlockProcedure)commands, document);
       return;
+    } else if (commands instanceof BreakStatement) {
+      _format((BreakStatement)commands, document);
+      return;
     } else if (commands instanceof IfStatement) {
       _format((IfStatement)commands, document);
       return;
     } else if (commands instanceof ReadCommand) {
       _format((ReadCommand)commands, document);
       return;
+    } else if (commands instanceof ReturnStatement) {
+      _format((ReturnStatement)commands, document);
+      return;
+    } else if (commands instanceof SwitchCaseStatement) {
+      _format((SwitchCaseStatement)commands, document);
+      return;
     } else if (commands instanceof WriteCommand) {
       _format((WriteCommand)commands, document);
       return;
     } else if (commands instanceof BlockCommand) {
       _format((BlockCommand)commands, document);
+      return;
+    } else if (commands instanceof CaseList) {
+      _format((CaseList)commands, document);
       return;
     } else if (commands instanceof DeclarationsBlock) {
       _format((DeclarationsBlock)commands, document);
@@ -472,6 +640,9 @@ public class PortugolFormatter extends AbstractFormatter2 {
       return;
     } else if (commands instanceof Model) {
       _format((Model)commands, document);
+      return;
+    } else if (commands instanceof OtherCase) {
+      _format((OtherCase)commands, document);
       return;
     } else if (commands instanceof SubprogramParamDeclaration) {
       _format((SubprogramParamDeclaration)commands, document);

@@ -3550,9 +3550,9 @@ rule__ReturnStatement__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0()); }
+	{ before(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); }
 	()
-	{ after(grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0()); }
+	{ after(grammarAccess.getReturnStatementAccess().getReturnStatementAction_0()); }
 )
 ;
 finally {

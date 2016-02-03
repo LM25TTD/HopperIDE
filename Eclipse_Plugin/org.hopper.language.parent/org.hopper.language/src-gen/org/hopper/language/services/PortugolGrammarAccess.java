@@ -682,20 +682,20 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	public class ReturnStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.hopper.language.Portugol.ReturnStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cReturnExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cReturnStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRetorneKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cExprAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cExprExpressionParserRuleCall_2_0 = (RuleCall)cExprAssignment_2.eContents().get(0);
 		
 		//ReturnStatement:
-		//	{ReturnExpression} 'retorne' expr=Expression;
+		//	{ReturnStatement} 'retorne' expr=Expression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ReturnExpression} 'retorne' expr=Expression
+		//{ReturnStatement} 'retorne' expr=Expression
 		public Group getGroup() { return cGroup; }
 		
-		//{ReturnExpression}
-		public Action getReturnExpressionAction_0() { return cReturnExpressionAction_0; }
+		//{ReturnStatement}
+		public Action getReturnStatementAction_0() { return cReturnStatementAction_0; }
 		
 		//'retorne'
 		public Keyword getRetorneKeyword_1() { return cRetorneKeyword_1; }
@@ -2409,7 +2409,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ReturnStatement:
-	//	{ReturnExpression} 'retorne' expr=Expression;
+	//	{ReturnStatement} 'retorne' expr=Expression;
 	public ReturnStatementElements getReturnStatementAccess() {
 		return pReturnStatement;
 	}

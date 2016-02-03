@@ -671,13 +671,22 @@ public interface PortugolPackage extends EPackage
   int RETURN_STATEMENT = 18;
 
   /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__EXPR = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Return Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+  int RETURN_STATEMENT_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -1362,34 +1371,6 @@ public interface PortugolPackage extends EPackage
   int STRING_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.ReturnExpressionImpl <em>Return Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.ReturnExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReturnExpression()
-   * @generated
-   */
-  int RETURN_EXPRESSION = 35;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_EXPRESSION__EXPR = RETURN_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Return Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_EXPRESSION_FEATURE_COUNT = RETURN_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1397,7 +1378,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int BINARY_OPERATION = 36;
+  int BINARY_OPERATION = 35;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1470,7 +1451,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 37;
+  int UNARY_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1534,7 +1515,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 38;
+  int LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -2015,6 +1996,17 @@ public interface PortugolPackage extends EPackage
    * @generated
    */
   EClass getReturnStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ReturnStatement#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.hopper.language.portugol.ReturnStatement#getExpr()
+   * @see #getReturnStatement()
+   * @generated
+   */
+  EReference getReturnStatement_Expr();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.IfStatement <em>If Statement</em>}'.
@@ -2540,27 +2532,6 @@ public interface PortugolPackage extends EPackage
   EAttribute getStringExpression_LiteralString();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.ReturnExpression <em>Return Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Return Expression</em>'.
-   * @see org.hopper.language.portugol.ReturnExpression
-   * @generated
-   */
-  EClass getReturnExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.ReturnExpression#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.hopper.language.portugol.ReturnExpression#getExpr()
-   * @see #getReturnExpression()
-   * @generated
-   */
-  EReference getReturnExpression_Expr();
-
-  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BinaryOperation <em>Binary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3043,6 +3014,14 @@ public interface PortugolPackage extends EPackage
     EClass RETURN_STATEMENT = eINSTANCE.getReturnStatement();
 
     /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_STATEMENT__EXPR = eINSTANCE.getReturnStatement_Expr();
+
+    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.IfStatementImpl <em>If Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3465,24 +3444,6 @@ public interface PortugolPackage extends EPackage
      * @generated
      */
     EAttribute STRING_EXPRESSION__LITERAL_STRING = eINSTANCE.getStringExpression_LiteralString();
-
-    /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ReturnExpressionImpl <em>Return Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.ReturnExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getReturnExpression()
-     * @generated
-     */
-    EClass RETURN_EXPRESSION = eINSTANCE.getReturnExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RETURN_EXPRESSION__EXPR = eINSTANCE.getReturnExpression_Expr();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.

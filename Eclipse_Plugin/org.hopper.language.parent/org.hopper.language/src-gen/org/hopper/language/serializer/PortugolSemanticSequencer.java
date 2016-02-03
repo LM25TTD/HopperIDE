@@ -37,7 +37,7 @@ import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.RepeatStatement;
-import org.hopper.language.portugol.ReturnExpression;
+import org.hopper.language.portugol.ReturnStatement;
 import org.hopper.language.portugol.StringExpression;
 import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.SubprogramParamDeclaration;
@@ -169,8 +169,8 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.REPEAT_STATEMENT:
 				sequence_RepeatStatement(context, (RepeatStatement) semanticObject); 
 				return; 
-			case PortugolPackage.RETURN_EXPRESSION:
-				sequence_ReturnStatement(context, (ReturnExpression) semanticObject); 
+			case PortugolPackage.RETURN_STATEMENT:
+				sequence_ReturnStatement(context, (ReturnStatement) semanticObject); 
 				return; 
 			case PortugolPackage.STRING_EXPRESSION:
 				sequence_StringExpression(context, (StringExpression) semanticObject); 
@@ -701,16 +701,16 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractCommand returns ReturnExpression
-	 *     ReturnStatement returns ReturnExpression
+	 *     AbstractCommand returns ReturnStatement
+	 *     ReturnStatement returns ReturnStatement
 	 *
 	 * Constraint:
 	 *     expr=Expression
 	 */
-	protected void sequence_ReturnStatement(ISerializationContext context, ReturnExpression semanticObject) {
+	protected void sequence_ReturnStatement(ISerializationContext context, ReturnStatement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.RETURN_EXPRESSION__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.RETURN_EXPRESSION__EXPR));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.RETURN_STATEMENT__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.RETURN_STATEMENT__EXPR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getReturnStatementAccess().getExprExpressionParserRuleCall_2_0(), semanticObject.getExpr());

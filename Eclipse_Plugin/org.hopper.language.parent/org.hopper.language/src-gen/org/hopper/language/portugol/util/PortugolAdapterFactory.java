@@ -251,11 +251,6 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createStringExpressionAdapter();
       }
       @Override
-      public Adapter caseReturnExpression(ReturnExpression object)
-      {
-        return createReturnExpressionAdapter();
-      }
-      @Override
       public Adapter caseBinaryOperation(BinaryOperation object)
       {
         return createBinaryOperationAdapter();
@@ -813,21 +808,6 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ReturnExpression <em>Return Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.hopper.language.portugol.ReturnExpression
-   * @generated
-   */
-  public Adapter createReturnExpressionAdapter()
   {
     return null;
   }

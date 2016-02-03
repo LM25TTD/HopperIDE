@@ -1229,7 +1229,7 @@ ruleReturnStatement returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0(),
+					grammarAccess.getReturnStatementAccess().getReturnStatementAction_0(),
 					$current);
 			}
 		)

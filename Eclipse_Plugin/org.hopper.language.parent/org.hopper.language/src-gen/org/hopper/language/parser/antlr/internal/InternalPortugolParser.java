@@ -3658,7 +3658,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               				current = forceCreateModelElement(
-              					grammarAccess.getReturnStatementAccess().getReturnExpressionAction_0(),
+              					grammarAccess.getReturnStatementAccess().getReturnStatementAction_0(),
               					current);
               			
             }
