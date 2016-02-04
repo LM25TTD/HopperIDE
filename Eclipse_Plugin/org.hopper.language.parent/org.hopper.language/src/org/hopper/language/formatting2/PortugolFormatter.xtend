@@ -35,6 +35,9 @@ import org.hopper.language.portugol.CaseList
 import org.hopper.language.portugol.OtherCase
 import org.hopper.language.portugol.BreakStatement
 import org.hopper.language.portugol.ReturnStatement
+import org.hopper.language.portugol.ForStatement
+import org.hopper.language.portugol.RepeatStatement
+import org.hopper.language.portugol.WhileStatement
 
 @SuppressWarnings("all")
 class PortugolFormatter extends AbstractFormatter2 {
@@ -210,6 +213,57 @@ class PortugolFormatter extends AbstractFormatter2 {
 		for (commas : varDeclaration.regionFor.keywords(',')) {
 			commas.prepend[noSpace].append[oneSpace; autowrap]
 		}
+	}
+
+	def dispatch void format(ForStatement forStatement, extension IFormattableDocument document) {
+		forStatement.regionFor.keyword('para').prepend[noSpace].append[oneSpace]
+		forStatement.operatorExpr.surround[oneSpace]
+		forStatement.regionFor.keyword('de').surround[oneSpace]
+		forStatement.startExpr.surround[oneSpace]
+		forStatement.regionFor.keyword('ate').surround[oneSpace]
+		forStatement.endExpr.surround[oneSpace]
+
+		forStatement.regionFor.keyword('passo')?.surround[oneSpace]
+		forStatement.startExpr?.surround[oneSpace]
+		var regionDoKw = forStatement.regionFor.keyword('faca')
+		regionDoKw.prepend[oneSpace].append[newLine]
+
+		forStatement.commands.format
+
+		var regionEndFor = forStatement.regionFor.keyword('fimpara')
+		regionEndFor.surround[newLine]
+
+		interior(regionDoKw, regionEndFor)[indent]
+	}
+
+	def dispatch void format(RepeatStatement repeatStatement, extension IFormattableDocument document) {
+		var regionRepeatKw = repeatStatement.regionFor.keyword('repita')
+		regionRepeatKw.prepend[noSpace].append[newLine]
+
+		var regionUntilKw = repeatStatement.regionFor.keyword('ate')
+		regionUntilKw.prepend[newLine].append[oneSpace]
+
+		interior(regionRepeatKw, regionUntilKw)[indent]
+
+		repeatStatement.commands.format
+
+		repeatStatement.untilExpr.prepend[oneSpace].append[noSpace]
+		repeatStatement.regionFor.ruleCallTo(END_COMMANDRule)?.prepend[noSpace].append[newLine]
+	}
+
+	def dispatch void format(WhileStatement whileStatement, extension IFormattableDocument document) {
+		whileStatement.regionFor.keyword('enquanto').prepend[noSpace].append[oneSpace]
+		whileStatement.whileExpr.surround[oneSpace]
+
+		var regionDoKw = whileStatement.regionFor.keyword('faca')
+		regionDoKw.prepend[oneSpace].append[newLine]
+
+		whileStatement.commands.format
+
+		var regionEndFor = whileStatement.regionFor.keyword('fimenquanto')
+		regionEndFor.surround[newLine]
+
+		interior(regionDoKw, regionEndFor)[indent]
 	}
 
 	def dispatch void format(SubprogramParamDeclaration subprogramParamDeclaration,

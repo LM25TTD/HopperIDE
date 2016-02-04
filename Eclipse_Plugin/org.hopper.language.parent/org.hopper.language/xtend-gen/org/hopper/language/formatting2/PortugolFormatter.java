@@ -28,12 +28,14 @@ import org.hopper.language.portugol.BreakStatement;
 import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
 import org.hopper.language.portugol.Model;
 import org.hopper.language.portugol.OtherCase;
 import org.hopper.language.portugol.PortugolPackage;
 import org.hopper.language.portugol.ReadCommand;
+import org.hopper.language.portugol.RepeatStatement;
 import org.hopper.language.portugol.ReturnStatement;
 import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
@@ -41,6 +43,7 @@ import org.hopper.language.portugol.SwitchCaseStatement;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarType;
 import org.hopper.language.portugol.Variable;
+import org.hopper.language.portugol.WhileStatement;
 import org.hopper.language.portugol.WriteCommand;
 import org.hopper.language.services.PortugolGrammarAccess;
 
@@ -583,6 +586,175 @@ public class PortugolFormatter extends AbstractFormatter2 {
     }
   }
   
+  protected void _format(final ForStatement forStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion _keyword = _regionFor.keyword("para");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    Expression _operatorExpr = forStatement.getOperatorExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.<Expression>surround(_operatorExpr, _function_2);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion _keyword_1 = _regionFor_1.keyword("de");
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.surround(_keyword_1, _function_3);
+    Expression _startExpr = forStatement.getStartExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.<Expression>surround(_startExpr, _function_4);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion _keyword_2 = _regionFor_2.keyword("ate");
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.surround(_keyword_2, _function_5);
+    Expression _endExpr = forStatement.getEndExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.<Expression>surround(_endExpr, _function_6);
+    ISemanticRegionsFinder _regionFor_3 = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion _keyword_3 = _regionFor_3.keyword("passo");
+    if (_keyword_3!=null) {
+      final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+        it.oneSpace();
+      };
+      document.surround(_keyword_3, _function_7);
+    }
+    Expression _startExpr_1 = forStatement.getStartExpr();
+    if (_startExpr_1!=null) {
+      final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+        it.oneSpace();
+      };
+      document.<Expression>surround(_startExpr_1, _function_8);
+    }
+    ISemanticRegionsFinder _regionFor_4 = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion regionDoKw = _regionFor_4.keyword("faca");
+    final Procedure1<IHiddenRegionFormatter> _function_9 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionDoKw, _function_9);
+    final Procedure1<IHiddenRegionFormatter> _function_10 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_10);
+    EList<AbstractCommand> _commands = forStatement.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    ISemanticRegionsFinder _regionFor_5 = this.textRegionExtensions.regionFor(forStatement);
+    ISemanticRegion regionEndFor = _regionFor_5.keyword("fimpara");
+    final Procedure1<IHiddenRegionFormatter> _function_11 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.surround(regionEndFor, _function_11);
+    final Procedure1<IHiddenRegionFormatter> _function_12 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(regionDoKw, regionEndFor, _function_12);
+  }
+  
+  protected void _format(final RepeatStatement repeatStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(repeatStatement);
+    ISemanticRegion regionRepeatKw = _regionFor.keyword("repita");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(regionRepeatKw, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend, _function_1);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(repeatStatement);
+    ISemanticRegion regionUntilKw = _regionFor_1.keyword("ate");
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionUntilKw, _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend_1, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(regionRepeatKw, regionUntilKw, _function_4);
+    EList<AbstractCommand> _commands = repeatStatement.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    Expression _untilExpr = repeatStatement.getUntilExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    Expression _prepend_2 = document.<Expression>prepend(_untilExpr, _function_5);
+    final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    document.<Expression>append(_prepend_2, _function_6);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(repeatStatement);
+    ParserRule _eND_COMMANDRule = this._portugolGrammarAccess.getEND_COMMANDRule();
+    ISemanticRegion _ruleCallTo = _regionFor_2.ruleCallTo(_eND_COMMANDRule);
+    ISemanticRegion _prepend_3 = null;
+    if (_ruleCallTo!=null) {
+      final Procedure1<IHiddenRegionFormatter> _function_7 = (IHiddenRegionFormatter it) -> {
+        it.noSpace();
+      };
+      _prepend_3=document.prepend(_ruleCallTo, _function_7);
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_8 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_3, _function_8);
+  }
+  
+  protected void _format(final WhileStatement whileStatement, @Extension final IFormattableDocument document) {
+    ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(whileStatement);
+    ISemanticRegion _keyword = _regionFor.keyword("enquanto");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.noSpace();
+    };
+    ISemanticRegion _prepend = document.prepend(_keyword, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.append(_prepend, _function_1);
+    Expression _whileExpr = whileStatement.getWhileExpr();
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    document.<Expression>surround(_whileExpr, _function_2);
+    ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(whileStatement);
+    ISemanticRegion regionDoKw = _regionFor_1.keyword("faca");
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.oneSpace();
+    };
+    ISemanticRegion _prepend_1 = document.prepend(regionDoKw, _function_3);
+    final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(_prepend_1, _function_4);
+    EList<AbstractCommand> _commands = whileStatement.getCommands();
+    document.<EList<AbstractCommand>>format(_commands);
+    ISemanticRegionsFinder _regionFor_2 = this.textRegionExtensions.regionFor(whileStatement);
+    ISemanticRegion regionEndFor = _regionFor_2.keyword("fimenquanto");
+    final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.surround(regionEndFor, _function_5);
+    final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(regionDoKw, regionEndFor, _function_6);
+  }
+  
   protected void _format(final SubprogramParamDeclaration subprogramParamDeclaration, @Extension final IFormattableDocument document) {
     ISemanticRegionsFinder _regionFor = this.textRegionExtensions.regionFor(subprogramParamDeclaration);
     List<ISemanticRegion> _keywords = _regionFor.keywords(";");
@@ -611,17 +783,26 @@ public class PortugolFormatter extends AbstractFormatter2 {
     } else if (commands instanceof BreakStatement) {
       _format((BreakStatement)commands, document);
       return;
+    } else if (commands instanceof ForStatement) {
+      _format((ForStatement)commands, document);
+      return;
     } else if (commands instanceof IfStatement) {
       _format((IfStatement)commands, document);
       return;
     } else if (commands instanceof ReadCommand) {
       _format((ReadCommand)commands, document);
       return;
+    } else if (commands instanceof RepeatStatement) {
+      _format((RepeatStatement)commands, document);
+      return;
     } else if (commands instanceof ReturnStatement) {
       _format((ReturnStatement)commands, document);
       return;
     } else if (commands instanceof SwitchCaseStatement) {
       _format((SwitchCaseStatement)commands, document);
+      return;
+    } else if (commands instanceof WhileStatement) {
+      _format((WhileStatement)commands, document);
       return;
     } else if (commands instanceof WriteCommand) {
       _format((WriteCommand)commands, document);
