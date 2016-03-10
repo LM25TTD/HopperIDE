@@ -11,17 +11,32 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.hopper.language.portugol.Model
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.hopper.language.portugol.DeclaredVar
+
+import static extension org.junit.Assert.*;
+import org.hopper.language.portugol.Expression
+import org.hopper.language.portugol.BinaryOperation
+import org.hopper.language.portugol.UnaryOperation
+import org.hopper.language.portugol.IntLiteral
+import org.hopper.language.portugol.FloatLiteral
+import org.hopper.language.portugol.PiLiteral
+import org.hopper.language.portugol.StringLiteral
+import org.hopper.language.portugol.BooleanLiteral
+import org.hopper.language.portugol.FunctionCall
+import org.hopper.language.portugol.SubprogramParam
+import org.hopper.language.portugol.Operator
 
 @RunWith(XtextRunner)
 @InjectWith(PortugolInjectorProvider)
 class PortugolParsingTest {
 
-	@Inject
-	ParseHelper<Model> parseHelper;
+	@Inject	extension ParseHelper<Model>	
+	@Inject extension ValidationTestHelper
 
 	@Test
 	def void testIfScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Maior_de_dois";
 			// Função : Faça um Programa que peça dois números e imprima o maior deles.
 			// Autor :    Iasmim Cunha
@@ -49,7 +64,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Negativo_ou_positivo";
 			// Função : Faça um Programa que peça um valor
 			//          e mostre na tela se o valor é positivo ou negativo.
@@ -77,7 +92,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario3() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_05";
 			
 			// Descricao : Programa faz a leitura de duas notas parciais de um aluno e
@@ -118,7 +133,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario4() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_06";
 			
 			// Descricao : Programa que le três números inteiros e mostra o maior deles.
@@ -164,7 +179,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario5() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_07";
 			
 			// Descricao : Programa que le três números e mostra o maior e o menor deles.
@@ -223,7 +238,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario6() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_08";
 			
 			// Descrição : Programa que pergunta o preço de três produtos e
@@ -268,7 +283,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testIfScenario7() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "decrescente";
 			// Função : Lê três números e os mostra em ordem decrescente
 			// Autor :  Leandro Bentes
@@ -322,7 +337,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testCaseScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_03";
 			
 			// Descricao : Programa que verifica se uma letra digitada é "F" ou "M". 
@@ -360,7 +375,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testCaseScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "questao_04";
 			
 			// Descricao: Programa que verifica se uma letra digitada é vogal ou consoante.
@@ -408,7 +423,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testFunctionsScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "funcao_imposto";
 			
 			var
@@ -434,7 +449,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testFunctionsScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "funcao_positivo_negativo";
 			
 			var
@@ -464,7 +479,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testFunctionsScenario3() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "funcao_soma";
 			
 			var
@@ -493,7 +508,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testFunctionsScenario4() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "imprime_nesima_01";
 			
 			var
@@ -522,7 +537,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testFunctionsScenario5() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "imprime_nesima_02";
 			
 			var
@@ -551,7 +566,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "AlgoritmoFibonacci";
 			// Função : Gera a sequencia de Fibonacci até a posicao informada pelo usuario
 			//          Consideremos a série como 1 1 2 3 5 8 13 21 34 ...
@@ -599,7 +614,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "FibMaior500";
 			var
 			// Função : Gera a sequencia de Fibonacci até que o valor seja maior que 500
@@ -631,7 +646,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario3() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Fatorial";
 			// Função : Calcula o fatorial de um número inteiro fornecido pelo usuário
 			// Autor :  Leandro Bentes
@@ -669,7 +684,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario4() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "MaiorMenorSoma";
 			// Função : Dado um conjunto de N números inteiros positivos, determina o menor
 			//          valor, o maior valor e a soma dos valores.
@@ -720,7 +735,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario5() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "MaiorMenorSomaLimited";
 			// Função : Dado um conjunto de N números, determina o menor valor, o 
 			//			maior valor e a soma dos valores.
@@ -770,7 +785,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario6() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Fatorial de numeros inteiros positivos menores ou iguais a 16";
 			// Função : Fatorial de numeros inteiros positivos menores ou iguais a 16
 			// Autor :  Daniel Aquino
@@ -804,7 +819,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario7() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Numero primo";
 			// Função : Determinar se número é o não é primo
 			// Autor : Daniel
@@ -843,7 +858,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario8() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Numero primo";
 			// Função : Determinar se número é o não é primo.
 			//          Se não primo, mostrar todos os seus divisiveis.
@@ -888,7 +903,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario9() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Numero primo";
 			// Função : Determinar se número é o não é primo.
 			//          Se não primo, mostrar todos os seus divisiveis.
@@ -940,7 +955,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario10() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Média de idade";
 			// Função : Calcula a média de notas
 			// Autor : Daniel Aquino
@@ -979,7 +994,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testLoopScenario11() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Média de idade";
 			// Função : Calcula a média de idade
 			// Autor : Daniel Aquino
@@ -1025,7 +1040,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "01_Alo Mundo";
 			// Função :       Mostrar a Mensagem "Alo Mundo" na tela
 			// Autor :        Williams Araújo
@@ -1041,7 +1056,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "02_numero_informado";
 						// Função : Recebe um número informado pelo usuário
 						//          e então mostre a mensagem O número informado
@@ -1062,7 +1077,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario3() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "03_soma";
 			// Função : Imprime a soma de dois números informados pelo usuário.
 			// Autor : Williams Araújo
@@ -1087,7 +1102,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario4() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "04_media";
 			// Função : Calcula a Média de 4 notas bimestrais informadas pelo usuario
 			// Autor : Williams Araújo
@@ -1118,7 +1133,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario5() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "05_metros_centimetros";
 			// Função :  Converte um valor em metros informado pelo usuário
 			//           para centímetros.
@@ -1141,7 +1156,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario6() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "06_area_circulo";
 			// Função :  Recebe o raio do círculo informada pelo usuário,calcula
 			//           e mostra sua área.
@@ -1165,7 +1180,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario7() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Dobro_quadrado";
 			// Função :Faça um Programa que calcule a área de um quadrado
 			//        , em seguida mostre o dobro desta área para o usuário.
@@ -1189,7 +1204,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario8() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Retorna_Salario";
 			// Função :Faça um Programa que pergunte quanto você
 			//         ganha por hora e o número de horas trabalhadas no mês
@@ -1218,7 +1233,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario9() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Transforma_FC";
 			// Função :   Faça um Programa que peça a temperatura
 			//            em graus Farenheit, transforme e mostre
@@ -1242,7 +1257,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testSequenceScenario10() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "Transforma_cf";
 			// Função :Faça um Programa que peça
 			//         a temperatura em graus Celsius
@@ -1266,7 +1281,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testStringScenario1() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "nome_maiusc";
 			// Função : Programa que permita ao usuario digitar
 			//          o seu nome e em seguida mostra o nome do usuario
@@ -1330,7 +1345,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testStringScenario2() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "nome_na_vertical";
 			// Função : Programa que solicita o nome do usuario e o imprime na vertical.
 			// Autor :  Darlisson Jesus
@@ -1378,7 +1393,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testStringScenario3() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "nome_na_vertical_escada";
 			// Função : Programa que solicita o nome do usuario e o imprime na vertical
 			//          em forma de escada.
@@ -1426,7 +1441,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testStringScenario4() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "nome_na_vertical_escada_inv";
 			// Função : Programa que solicita o nome do usuario e o imprime na vertical
 			//          em forma de escada invertida.
@@ -1472,7 +1487,7 @@ class PortugolParsingTest {
 
 	@Test
 	def void testStringScenario5() {
-		val result = parseHelper.parse('''
+		val result = parse('''
 			algoritmo "compara_strings";
 			
 			// Função : Programa que ler 2 strings e informa o
@@ -1534,4 +1549,124 @@ class PortugolParsingTest {
 		''')
 		Assert.assertNotNull(result)
 	}
+	
+	@Test def void testSimpleExpression(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     10;
+		   fimalgoritmo
+		'''.parse.assertNoErrors
+	}	
+	
+	@Test def void testVariableExpression(){
+		'''algoritmo "test_expressions";
+	       var
+		   	i :inteiro;
+		   inicio
+		    i = 10;
+		   fimalgoritmo
+		'''.parse.assertNoErrors
+	}
+	
+	@Test def void testVariableReference(){
+		val expr = '''algoritmo "test_expressions";
+	       var
+		   	i : inteiro;
+		   inicio
+		    i = 10;
+		    i;
+		   fimalgoritmo
+		'''.parse
+		
+		expr.assertNoErrors
+		
+		var refVar = (expr.commands.commands.get(1) as DeclaredVar)
+		var declVar = (expr.globalDeclarations.vars.get(0).varDeclaration.vars.get(0))
+			
+		refVar.varName.name.assertSame(declVar.name);
+		
+	}
+	
+	def stringRep(Expression e) {
+		switch (e) {
+			BinaryOperation: '''«IF !e.op.op.equalsIgnoreCase('^')»(«e.left.stringRep» «e.op.stringRep» «e.right.stringRep»)«ELSE»Math.pow(«e.left.stringRep», «e.right.stringRep»)«ENDIF»'''
+			UnaryOperation: '''(«e.op.stringRep» «e.operand.stringRep»)'''
+			StringLiteral: '''«e.value»'''
+			IntLiteral: '''«e.value»'''
+			FloatLiteral: '''«e.value»'''
+			PiLiteral: '''Math.PI'''
+			BooleanLiteral: '''«IF e.value.equalsIgnoreCase('verdadeiro')»true«ELSE»false«ENDIF»'''
+			DeclaredVar: '''«e.varName.name»'''
+			FunctionCall: '''«e.fbName.name»(«e.param.stringRep»)'''		
+		}.toString
+	}
+	
+	def stringRep(SubprogramParam params){
+		'''«IF params!=null && params.expression!=null»«FOR expression : params.expression»«IF params.expression.indexOf(expression) > 0», «ENDIF»«expression.stringRep»«ENDFOR»«ENDIF»'''
+	}
+	
+	def stringRep (Operator op){
+		switch(op.op.toUpperCase){
+			case '<-': '''='''			
+			case ('OU') : '''||'''
+			case ('XOU') : '''^'''
+			case ('E') : '''&&'''
+			case ('=') : '''=='''
+			case ('<>') : '''!='''
+			case ('MOD') : '''%'''
+			case ('NAO') : '''!'''
+			default: op.op
+		}
+	}	
+	
+	def assertRepr(CharSequence input, CharSequence expected){
+		input.parse =>[
+			assertNoErrors;
+			expected.assertEquals(
+				(commands.commands.last as Expression).stringRep
+			)
+		]
+	}
+	
+	@Test def void testPlus(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     10 + 5 + 1 + 2;
+		   fimalgoritmo
+		'''.assertRepr("(((10 + 5) + 1) + 2)")
+	}
+	
+	@Test def void testParenthesis(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     (10);
+		   fimalgoritmo
+		'''.parse.commands.commands.get(0) as IntLiteral
+	}
+	
+	@Test def void testPlusWithParenthesis(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     (10 + 5) + (1 + 2);
+		   fimalgoritmo
+		'''.assertRepr("((10 + 5) + (1 + 2))")
+	}
+	
+	@Test def void testPlusMultPrecedence(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     10 + 5 * 2 - 5 / 1;
+		   fimalgoritmo
+		'''.assertRepr("((10 + (5 * 2)) - (5 / 1))")
+	}
+	
+	@Test def void testPrecedences(){
+		'''algoritmo "test_expressions";
+		   inicio
+		     NAO VERDADEIRO OU FALSO E 1 > (1 / 3 + 5 * 2);
+		   fimalgoritmo
+		'''.assertRepr("((! true) || (false && (1 > ((1 / 3) + (5 * 2)))))")
+	}
+	
+	
 }

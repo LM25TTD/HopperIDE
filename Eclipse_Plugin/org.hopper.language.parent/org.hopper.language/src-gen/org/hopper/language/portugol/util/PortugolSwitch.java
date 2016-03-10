@@ -309,12 +309,28 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PortugolPackage.OPERATOR:
+      {
+        Operator operator = (Operator)theEObject;
+        T result = caseOperator(operator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PortugolPackage.DECLARED_VAR:
       {
         DeclaredVar declaredVar = (DeclaredVar)theEObject;
         T result = caseDeclaredVar(declaredVar);
         if (result == null) result = caseExpression(declaredVar);
         if (result == null) result = caseAbstractCommand(declaredVar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.BOOLEAN_LITERAL:
+      {
+        BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
+        T result = caseBooleanLiteral(booleanLiteral);
+        if (result == null) result = caseExpression(booleanLiteral);
+        if (result == null) result = caseAbstractCommand(booleanLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -327,12 +343,42 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.STRING_EXPRESSION:
+      case PortugolPackage.FLOAT_LITERAL:
       {
-        StringExpression stringExpression = (StringExpression)theEObject;
-        T result = caseStringExpression(stringExpression);
-        if (result == null) result = caseExpression(stringExpression);
-        if (result == null) result = caseAbstractCommand(stringExpression);
+        FloatLiteral floatLiteral = (FloatLiteral)theEObject;
+        T result = caseFloatLiteral(floatLiteral);
+        if (result == null) result = caseNumericLiteral(floatLiteral);
+        if (result == null) result = caseExpression(floatLiteral);
+        if (result == null) result = caseAbstractCommand(floatLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.INT_LITERAL:
+      {
+        IntLiteral intLiteral = (IntLiteral)theEObject;
+        T result = caseIntLiteral(intLiteral);
+        if (result == null) result = caseNumericLiteral(intLiteral);
+        if (result == null) result = caseExpression(intLiteral);
+        if (result == null) result = caseAbstractCommand(intLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.STRING_LITERAL:
+      {
+        StringLiteral stringLiteral = (StringLiteral)theEObject;
+        T result = caseStringLiteral(stringLiteral);
+        if (result == null) result = caseExpression(stringLiteral);
+        if (result == null) result = caseAbstractCommand(stringLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.PI_LITERAL:
+      {
+        PiLiteral piLiteral = (PiLiteral)theEObject;
+        T result = casePiLiteral(piLiteral);
+        if (result == null) result = caseNumericLiteral(piLiteral);
+        if (result == null) result = caseExpression(piLiteral);
+        if (result == null) result = caseAbstractCommand(piLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -345,21 +391,30 @@ public class PortugolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.UNARY_EXPRESSION:
+      case PortugolPackage.UNARY_OPERATION:
       {
-        UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-        T result = caseUnaryExpression(unaryExpression);
-        if (result == null) result = caseExpression(unaryExpression);
-        if (result == null) result = caseAbstractCommand(unaryExpression);
+        UnaryOperation unaryOperation = (UnaryOperation)theEObject;
+        T result = caseUnaryOperation(unaryOperation);
+        if (result == null) result = caseExpression(unaryOperation);
+        if (result == null) result = caseAbstractCommand(unaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PortugolPackage.LITERAL:
+      case PortugolPackage.FUNCTION_CALL:
       {
-        Literal literal = (Literal)theEObject;
-        T result = caseLiteral(literal);
-        if (result == null) result = caseExpression(literal);
-        if (result == null) result = caseAbstractCommand(literal);
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = caseExpression(functionCall);
+        if (result == null) result = caseAbstractCommand(functionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PortugolPackage.PROCEDURE_CALL:
+      {
+        ProcedureCall procedureCall = (ProcedureCall)theEObject;
+        T result = caseProcedureCall(procedureCall);
+        if (result == null) result = caseExpression(procedureCall);
+        if (result == null) result = caseAbstractCommand(procedureCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -880,6 +935,22 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperator(Operator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Declared Var</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -891,6 +962,22 @@ public class PortugolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaredVar(DeclaredVar object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanLiteral(BooleanLiteral object)
   {
     return null;
   }
@@ -912,17 +999,65 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>String Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Float Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Float Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStringExpression(StringExpression object)
+  public T caseFloatLiteral(FloatLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntLiteral(IntLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringLiteral(StringLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pi Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pi Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePiLiteral(PiLiteral object)
   {
     return null;
   }
@@ -944,33 +1079,49 @@ public class PortugolSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUnaryExpression(UnaryExpression object)
+  public T caseUnaryOperation(UnaryOperation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLiteral(Literal object)
+  public T caseFunctionCall(FunctionCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Procedure Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Procedure Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProcedureCall(ProcedureCall object)
   {
     return null;
   }

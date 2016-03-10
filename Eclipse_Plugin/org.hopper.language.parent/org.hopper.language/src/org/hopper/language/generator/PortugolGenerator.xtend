@@ -3,24 +3,37 @@
  */
 package org.hopper.language.generator
 
+import java.text.Normalizer
+import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.hopper.language.portugol.AbstractCommand
+import org.hopper.language.portugol.BinaryOperation
+import org.hopper.language.portugol.BlockCommand
 import org.hopper.language.portugol.BlockFunction
 import org.hopper.language.portugol.BlockProcedure
+import org.hopper.language.portugol.BlockSubPrograms
+import org.hopper.language.portugol.BooleanLiteral
 import org.hopper.language.portugol.DeclarationsBlock
+import org.hopper.language.portugol.DeclaredVar
+import org.hopper.language.portugol.Expression
+import org.hopper.language.portugol.FloatLiteral
+import org.hopper.language.portugol.FunctionCall
+import org.hopper.language.portugol.HeaderBlock
+import org.hopper.language.portugol.IntLiteral
 import org.hopper.language.portugol.Model
+import org.hopper.language.portugol.Operator
+import org.hopper.language.portugol.PiLiteral
+import org.hopper.language.portugol.StringLiteral
+import org.hopper.language.portugol.SubprogramParam
 import org.hopper.language.portugol.Subprograms
+import org.hopper.language.portugol.UnaryOperation
 import org.hopper.language.portugol.VarType
 import org.hopper.language.portugol.Variable
-import org.hopper.language.portugol.BlockCommand
-import org.eclipse.emf.common.util.EList
-import org.hopper.language.portugol.AbstractCommand
 import org.hopper.language.portugol.WriteCommand
-import org.hopper.language.portugol.Expression
 import org.hopper.language.portugol.WriteParam
-import org.hopper.language.portugol.StringExpression
 
 /**
  * Generates code from your model files on save.
@@ -29,10 +42,29 @@ import org.hopper.language.portugol.StringExpression
  */
 class PortugolGenerator extends AbstractGenerator {
 
+	private String className;
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (e : resource.allContents.toIterable.filter(typeof(Model))) {
-			fsa.generateFile("generated/" + e.header.algorithmName + ".java", e.compile);
+			generateClassName(e);
+			fsa.generateFile("generated/" + className + ".java", e.compile);
 		}
+	}
+	
+	def generateClassName(Model e) {
+		className = Normalizer.normalize(e.header.algorithmName.trim, Normalizer.Form.NFD);
+		
+		var sbClassName = new StringBuilder(className);
+		
+		var spaceIndex = 0;
+		while ((spaceIndex = sbClassName.indexOf(' ', spaceIndex)) > -1) {
+			var upperLetter = Character.toUpperCase(sbClassName.charAt(spaceIndex + 1));
+			sbClassName.setCharAt(spaceIndex + 1, upperLetter);
+			spaceIndex++;
+		}
+		className = sbClassName.toString();
+		className = className.replaceAll("[^\\p{ASCII}]", "");
+		className = className.replaceAll(" ", "")
 	}
 
 	def compile(Model model) {
@@ -41,7 +73,7 @@ class PortugolGenerator extends AbstractGenerator {
 			
 			import java.lang.*;
 					
-			public class «model.header.algorithmName»{
+			public class «model.header.compile»{
 				«IF model.globalDeclarations != null»
 					«model.globalDeclarations.compile(true)»
 				«ENDIF»	
@@ -52,6 +84,10 @@ class PortugolGenerator extends AbstractGenerator {
 				«model.commands.compile»
 			}	
 		'''
+	}
+	
+	def compile(HeaderBlock header){
+		'''«className»'''
 	}
 
 	def compile(BlockCommand blockCommand) {
@@ -64,21 +100,22 @@ class PortugolGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def compile(EList<AbstractCommand> commands) {
-		'''
-			«IF commands!=null»
-				«FOR command:commands»
-					«IF command instanceof WriteCommand»
-						«compile(command as WriteCommand)»
-					«ENDIF»
+	def compile(EList<AbstractCommand> commands) {		
+		''' 
+			«IF commands != null»
+				«FOR command : commands»
+					«command.compile»
 				«ENDFOR»
 			«ENDIF»
-		'''
+		'''	
 	}
 
 	def compile(
-		WriteCommand command) {
-		'''System.out.print«IF command.writeCommand.equalsIgnoreCase('escreval')»ln«ENDIF»(«command.writeParam.compile»);'''
+		AbstractCommand command) {
+		switch (command) {
+			WriteCommand: '''System.out.print«IF command.writeCommand.equalsIgnoreCase('escreval')»ln«ENDIF»(«command.writeParam.compile»);'''
+			Expression: '''«command.compile»;'''
+		}
 	}
 
 	def compile(
@@ -86,45 +123,68 @@ class PortugolGenerator extends AbstractGenerator {
 		'''«IF writeParam.params != null && writeParam.params.expression != null»«FOR expression : writeParam.params.expression»«expression.compile»«ENDFOR»«ENDIF»'''
 	}
 
-	def compile(Expression expression) {
-		'''«IF expression instanceof StringExpression»"«(expression as StringExpression).literalString»"«ENDIF»'''
+	def compile(Expression e) {
+		switch (e) {
+			BinaryOperation: '''«IF !e.op.op.equalsIgnoreCase('^')»(«e.left.compile» «e.op.compile» «e.right.compile»)«ELSE»Math.pow(«e.left.compile», «e.right.compile»)«ENDIF»'''
+			UnaryOperation: '''(«e.op.compile» «e.operand.compile»)'''
+			StringLiteral: '''«e.value»'''
+			IntLiteral: '''«e.value»'''
+			FloatLiteral: '''«e.value»'''
+			PiLiteral: '''Math.PI'''
+			BooleanLiteral: '''«IF e.value.equalsIgnoreCase('verdadeiro')»true«ELSE»false«ENDIF»'''
+			DeclaredVar: '''«e.varName.name»'''
+			FunctionCall: '''«e.fbName.name»(«e.param.compile»)'''		
+		}.toString
+	}	
+		
+	def compile(SubprogramParam params){
+		'''«IF params!=null && params.expression!=null»«FOR expression : params.expression»«IF params.expression.indexOf(expression) > 0», «ENDIF»«expression.compile»«ENDFOR»«ENDIF»'''
+	}
+	
+	def compile (Operator op){
+		switch(op.op.toUpperCase){
+			case '<-': '''='''			
+			case ('OU') : '''||'''
+			case ('XOU') : '''^'''
+			case ('E') : '''&&'''
+			case ('=') : '''=='''
+			case ('<>') : '''!='''
+			case ('MOD') : '''%'''
+			case ('NAO') : '''!'''
+			default: op.op
+		}
 	}
 
-	def compile(Subprograms subprograms) {
-		'''
-			«FOR subprogram : subprograms.blockSubPrograms»
-				«IF subprogram instanceof BlockFunction»
-					«compile(subprogram as BlockFunction)»
-				«ELSEIF subprogram instanceof BlockProcedure»
-					«compile(subprogram as BlockProcedure)»
-				«ENDIF»
-				
-			«ENDFOR»
-		'''
+	def compile(Subprograms subprograms) {		
+		''' 
+			«IF subprograms != null && subprograms.blockSubPrograms != null»
+				«FOR subprogram : subprograms.blockSubPrograms»
+					«subprogram.compile»
+				«ENDFOR»
+			«ENDIF»
+		'''			
 	}
 
 	def compile(
-		BlockFunction blockFunction) {
-		'''
-			private static «blockFunction.returnType.compile» «blockFunction.functionName.name»(«IF blockFunction.params!=null»«blockFunction.params.paramList.compileAsParameter»«ENDIF»){
-				«IF blockFunction.declarations != null»
-					«blockFunction.declarations.compile(false)»
-					«blockFunction.commands.compile»
-				«ENDIF»	
-			}
-		'''
-	}
-
-	def compile(
-		BlockProcedure blockProcedure) {
-		'''
-			private static void «blockProcedure.procedureName.name»(«IF blockProcedure.params!=null»«blockProcedure.params.paramList.compileAsParameter»«ENDIF»){
-				«IF blockProcedure.declarations != null»
-					«blockProcedure.declarations.compile(false)»
-					«blockProcedure.commands.compile»
-				«ENDIF»	
-			}
-		'''
+		BlockSubPrograms subprogram) {
+		switch (subprogram) {
+			BlockFunction: '''
+				private static «subprogram.returnType.compile» «subprogram.functionName.name»(«IF subprogram.params!=null»«subprogram.params.paramList.compileAsParameter»«ENDIF»){
+					«IF subprogram.declarations != null»
+						«subprogram.declarations.compile(false)»
+						«subprogram.commands.compile»
+					«ENDIF»	
+				}
+			'''
+			BlockProcedure: '''
+				private static void «subprogram.procedureName.name»(«IF subprogram.params!=null»«subprogram.params.paramList.compileAsParameter»«ENDIF»){
+					«IF subprogram.declarations != null»
+						«subprogram.declarations.compile(false)»
+						«subprogram.commands.compile»
+					«ENDIF»	
+				}
+			'''
+		}
 	}
 
 	def compile(DeclarationsBlock declBlock, boolean useModifier) {

@@ -18,32 +18,37 @@ import org.hopper.language.portugol.BinaryOperation;
 import org.hopper.language.portugol.BlockCommand;
 import org.hopper.language.portugol.BlockFunction;
 import org.hopper.language.portugol.BlockProcedure;
+import org.hopper.language.portugol.BooleanLiteral;
 import org.hopper.language.portugol.BreakStatement;
 import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
 import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.DeclaredVarList;
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.FloatLiteral;
 import org.hopper.language.portugol.ForStatement;
+import org.hopper.language.portugol.FunctionCall;
 import org.hopper.language.portugol.FunctionName;
 import org.hopper.language.portugol.HeaderBlock;
 import org.hopper.language.portugol.IfStatement;
-import org.hopper.language.portugol.Literal;
+import org.hopper.language.portugol.IntLiteral;
 import org.hopper.language.portugol.Model;
-import org.hopper.language.portugol.NumericLiteral;
+import org.hopper.language.portugol.Operator;
 import org.hopper.language.portugol.OptDecimalPrecision;
 import org.hopper.language.portugol.OtherCase;
+import org.hopper.language.portugol.PiLiteral;
 import org.hopper.language.portugol.PortugolPackage;
+import org.hopper.language.portugol.ProcedureCall;
 import org.hopper.language.portugol.ProcedureName;
 import org.hopper.language.portugol.ReadCommand;
 import org.hopper.language.portugol.RepeatStatement;
 import org.hopper.language.portugol.ReturnStatement;
-import org.hopper.language.portugol.StringExpression;
+import org.hopper.language.portugol.StringLiteral;
 import org.hopper.language.portugol.SubprogramParam;
 import org.hopper.language.portugol.SubprogramParamDeclaration;
 import org.hopper.language.portugol.Subprograms;
 import org.hopper.language.portugol.SwitchCaseStatement;
-import org.hopper.language.portugol.UnaryExpression;
+import org.hopper.language.portugol.UnaryOperation;
 import org.hopper.language.portugol.VarDeclaration;
 import org.hopper.language.portugol.VarName;
 import org.hopper.language.portugol.VarType;
@@ -79,6 +84,9 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.BLOCK_PROCEDURE:
 				sequence_BlockProcedure(context, (BlockProcedure) semanticObject); 
 				return; 
+			case PortugolPackage.BOOLEAN_LITERAL:
+				sequence_BooleanLiteral(context, (BooleanLiteral) semanticObject); 
+				return; 
 			case PortugolPackage.BREAK_STATEMENT:
 				sequence_BreakStatement(context, (BreakStatement) semanticObject); 
 				return; 
@@ -95,46 +103,16 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_DeclaredVarList(context, (DeclaredVarList) semanticObject); 
 				return; 
 			case PortugolPackage.EXPRESSION:
-				if (rule == grammarAccess.getFunctionCallRule()) {
-					sequence_FunctionCall(context, (Expression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getAbstractCommandRule()
-						|| rule == grammarAccess.getExpressionRule()
-						|| rule == grammarAccess.getAssignmentRule()
-						|| action == grammarAccess.getAssignmentAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getOrExpressionRule()
-						|| action == grammarAccess.getOrExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getXorExpressionRule()
-						|| action == grammarAccess.getXorExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getAndExpressionRule()
-						|| action == grammarAccess.getAndExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getComparisonRule()
-						|| action == grammarAccess.getComparisonAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getEquExpressionRule()
-						|| action == grammarAccess.getEquExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getAddExpressionRule()
-						|| action == grammarAccess.getAddExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getMultiplicativeExpressionRule()
-						|| action == grammarAccess.getMultiplicativeExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getPowerExpressionRule()
-						|| action == grammarAccess.getPowerExpressionAccess().getBinaryOperationLeftAction_1_0_0_0()
-						|| rule == grammarAccess.getUnaryExpressionRule()
-						|| rule == grammarAccess.getPrimaryExpressionRule()) {
-					sequence_FunctionCall_PreDefinedFunctionCall(context, (Expression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getPreDefinedFunctionCallRule()) {
-					sequence_PreDefinedFunctionCall(context, (Expression) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getProcedureCallRule()) {
-					sequence_ProcedureCall(context, (Expression) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_PreDefinedFunctionCall(context, (Expression) semanticObject); 
+				return; 
+			case PortugolPackage.FLOAT_LITERAL:
+				sequence_FloatLiteral(context, (FloatLiteral) semanticObject); 
+				return; 
 			case PortugolPackage.FOR_STATEMENT:
 				sequence_ForStatement(context, (ForStatement) semanticObject); 
+				return; 
+			case PortugolPackage.FUNCTION_CALL:
+				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 				return; 
 			case PortugolPackage.FUNCTION_NAME:
 				sequence_FunctionName(context, (FunctionName) semanticObject); 
@@ -145,20 +123,65 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.IF_STATEMENT:
 				sequence_IfStatement(context, (IfStatement) semanticObject); 
 				return; 
-			case PortugolPackage.LITERAL:
-				sequence_Literal(context, (Literal) semanticObject); 
+			case PortugolPackage.INT_LITERAL:
+				sequence_IntLiteral(context, (IntLiteral) semanticObject); 
 				return; 
 			case PortugolPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case PortugolPackage.NUMERIC_LITERAL:
-				sequence_NumericLiteral(context, (NumericLiteral) semanticObject); 
-				return; 
+			case PortugolPackage.OPERATOR:
+				if (rule == grammarAccess.getAddOperatorRule()) {
+					sequence_AddOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAndOperatorRule()) {
+					sequence_AndOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAssignmentOperatorRule()) {
+					sequence_AssignmentOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getComparisonOperatorRule()) {
+					sequence_ComparisonOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getEqualityOperatorRule()) {
+					sequence_EqualityOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getMultiplicativeOperatorRule()) {
+					sequence_MultiplicativeOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getNotOperatorRule()) {
+					sequence_NotOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getOrOperatorRule()) {
+					sequence_OrOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPowerOperatorRule()) {
+					sequence_PowerOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getXorOperatorRule()) {
+					sequence_XorOperator(context, (Operator) semanticObject); 
+					return; 
+				}
+				else break;
 			case PortugolPackage.OPT_DECIMAL_PRECISION:
 				sequence_OptDecimalPrecision(context, (OptDecimalPrecision) semanticObject); 
 				return; 
 			case PortugolPackage.OTHER_CASE:
 				sequence_OtherCase(context, (OtherCase) semanticObject); 
+				return; 
+			case PortugolPackage.PI_LITERAL:
+				sequence_PiLiteral(context, (PiLiteral) semanticObject); 
+				return; 
+			case PortugolPackage.PROCEDURE_CALL:
+				sequence_ProcedureCall(context, (ProcedureCall) semanticObject); 
 				return; 
 			case PortugolPackage.PROCEDURE_NAME:
 				sequence_ProcedureName(context, (ProcedureName) semanticObject); 
@@ -172,8 +195,8 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.RETURN_STATEMENT:
 				sequence_ReturnStatement(context, (ReturnStatement) semanticObject); 
 				return; 
-			case PortugolPackage.STRING_EXPRESSION:
-				sequence_StringExpression(context, (StringExpression) semanticObject); 
+			case PortugolPackage.STRING_LITERAL:
+				sequence_StringLiteral(context, (StringLiteral) semanticObject); 
 				return; 
 			case PortugolPackage.SUBPROGRAM_PARAM:
 				sequence_SubprogramParam(context, (SubprogramParam) semanticObject); 
@@ -187,8 +210,8 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case PortugolPackage.SWITCH_CASE_STATEMENT:
 				sequence_SwitchCaseStatement(context, (SwitchCaseStatement) semanticObject); 
 				return; 
-			case PortugolPackage.UNARY_EXPRESSION:
-				sequence_UnaryExpression(context, (UnaryExpression) semanticObject); 
+			case PortugolPackage.UNARY_OPERATION:
+				sequence_UnaryOperation(context, (UnaryOperation) semanticObject); 
 				return; 
 			case PortugolPackage.VAR_DECLARATION:
 				sequence_VarDeclaration(context, (VarDeclaration) semanticObject); 
@@ -238,24 +261,72 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns BinaryOperation
 	 *     PowerExpression returns BinaryOperation
 	 *     PowerExpression.BinaryOperation_1_0_0_0 returns BinaryOperation
-	 *     UnaryExpression returns BinaryOperation
+	 *     UnaryOperation returns BinaryOperation
 	 *     PrimaryExpression returns BinaryOperation
 	 *
 	 * Constraint:
 	 *     (
-	 *         (left=Assignment_BinaryOperation_1_0_0_0 op='<-' right=Assignment) | 
-	 *         (left=OrExpression_BinaryOperation_1_0_0_0 op='OU' right=XorExpression) | 
-	 *         (left=XorExpression_BinaryOperation_1_0_0_0 op='XOU' right=AndExpression) | 
-	 *         (left=AndExpression_BinaryOperation_1_0_0_0 (op='&' | op='E') right=Comparison) | 
-	 *         (left=Comparison_BinaryOperation_1_0_0_0 (op='=' | op='<>') right=EquExpression) | 
-	 *         (left=EquExpression_BinaryOperation_1_0_0_0 (op='<' | op='>' | op='<=' | op='>=') right=AddExpression) | 
-	 *         (left=AddExpression_BinaryOperation_1_0_0_0 (op='+' | op='-') right=MultiplicativeExpression) | 
-	 *         (left=MultiplicativeExpression_BinaryOperation_1_0_0_0 (op='*' | op='/' | op='MOD' | op='%') right=PowerExpression) | 
-	 *         (left=PowerExpression_BinaryOperation_1_0_0_0 op='^' right=UnaryExpression)
+	 *         (left=Assignment_BinaryOperation_1_0_0_0 op=AssignmentOperator right=Assignment) | 
+	 *         (left=OrExpression_BinaryOperation_1_0_0_0 op=OrOperator right=XorExpression) | 
+	 *         (left=XorExpression_BinaryOperation_1_0_0_0 op=XorOperator right=AndExpression) | 
+	 *         (left=AndExpression_BinaryOperation_1_0_0_0 op=AndOperator right=Comparison) | 
+	 *         (left=Comparison_BinaryOperation_1_0_0_0 op=ComparisonOperator right=EquExpression) | 
+	 *         (left=EquExpression_BinaryOperation_1_0_0_0 op=EqualityOperator right=AddExpression) | 
+	 *         (left=AddExpression_BinaryOperation_1_0_0_0 op=AddOperator right=MultiplicativeExpression) | 
+	 *         (left=MultiplicativeExpression_BinaryOperation_1_0_0_0 op=MultiplicativeOperator right=PowerExpression) | 
+	 *         (left=PowerExpression_BinaryOperation_1_0_0_0 op=PowerOperator right=UnaryOperation)
 	 *     )
 	 */
 	protected void sequence_AddExpression_AndExpression_Assignment_Comparison_EquExpression_MultiplicativeExpression_OrExpression_PowerExpression_XorExpression(ISerializationContext context, BinaryOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AddOperator returns Operator
+	 *
+	 * Constraint:
+	 *     (op='+' | op='-')
+	 */
+	protected void sequence_AddOperator(ISerializationContext context, Operator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AndOperator returns Operator
+	 *
+	 * Constraint:
+	 *     op='E'
+	 */
+	protected void sequence_AndOperator(ISerializationContext context, Operator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.OPERATOR__OP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAndOperatorAccess().getOpEKeyword_0(), semanticObject.getOp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AssignmentOperator returns Operator
+	 *
+	 * Constraint:
+	 *     op='<-'
+	 */
+	protected void sequence_AssignmentOperator(ISerializationContext context, Operator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.OPERATOR__OP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAssignmentOperatorAccess().getOpLessThanSignHyphenMinusKeyword_0(), semanticObject.getOp());
+		feeder.finish();
 	}
 	
 	
@@ -299,6 +370,41 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractCommand returns BooleanLiteral
+	 *     Expression returns BooleanLiteral
+	 *     Assignment returns BooleanLiteral
+	 *     Assignment.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     OrExpression returns BooleanLiteral
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     XorExpression returns BooleanLiteral
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     AndExpression returns BooleanLiteral
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     Comparison returns BooleanLiteral
+	 *     Comparison.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     EquExpression returns BooleanLiteral
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     AddExpression returns BooleanLiteral
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     MultiplicativeExpression returns BooleanLiteral
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     PowerExpression returns BooleanLiteral
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns BooleanLiteral
+	 *     UnaryOperation returns BooleanLiteral
+	 *     PrimaryExpression returns BooleanLiteral
+	 *     Literal returns BooleanLiteral
+	 *     BooleanLiteral returns BooleanLiteral
+	 *
+	 * Constraint:
+	 *     (value='verdadeiro' | value='falso')
+	 */
+	protected void sequence_BooleanLiteral(ISerializationContext context, BooleanLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractCommand returns BreakStatement
 	 *     BreakStatement returns BreakStatement
 	 *
@@ -318,6 +424,18 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (expr=Expression commands+=AbstractCommand+)
 	 */
 	protected void sequence_CaseList(ISerializationContext context, CaseList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ComparisonOperator returns Operator
+	 *
+	 * Constraint:
+	 *     (op='=' | op='<>')
+	 */
+	protected void sequence_ComparisonOperator(ISerializationContext context, Operator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -368,7 +486,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns DeclaredVar
 	 *     PowerExpression returns DeclaredVar
 	 *     PowerExpression.BinaryOperation_1_0_0_0 returns DeclaredVar
-	 *     UnaryExpression returns DeclaredVar
+	 *     UnaryOperation returns DeclaredVar
 	 *     PrimaryExpression returns DeclaredVar
 	 *     DeclaredVar returns DeclaredVar
 	 *
@@ -388,6 +506,60 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     EqualityOperator returns Operator
+	 *
+	 * Constraint:
+	 *     (op='<' | op='>' | op='<=' | op='>=')
+	 */
+	protected void sequence_EqualityOperator(ISerializationContext context, Operator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCommand returns FloatLiteral
+	 *     Expression returns FloatLiteral
+	 *     Assignment returns FloatLiteral
+	 *     Assignment.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     OrExpression returns FloatLiteral
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     XorExpression returns FloatLiteral
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     AndExpression returns FloatLiteral
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     Comparison returns FloatLiteral
+	 *     Comparison.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     EquExpression returns FloatLiteral
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     AddExpression returns FloatLiteral
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     MultiplicativeExpression returns FloatLiteral
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     PowerExpression returns FloatLiteral
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns FloatLiteral
+	 *     UnaryOperation returns FloatLiteral
+	 *     PrimaryExpression returns FloatLiteral
+	 *     Literal returns FloatLiteral
+	 *     NumericLiteral returns FloatLiteral
+	 *     FloatLiteral returns FloatLiteral
+	 *
+	 * Constraint:
+	 *     value=FLOAT
+	 */
+	protected void sequence_FloatLiteral(ISerializationContext context, FloatLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.FLOAT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.FLOAT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFloatLiteralAccess().getValueFLOATTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AbstractCommand returns ForStatement
 	 *     ForStatement returns ForStatement
 	 *
@@ -401,55 +573,44 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     FunctionCall returns Expression
+	 *     AbstractCommand returns FunctionCall
+	 *     Expression returns FunctionCall
+	 *     Assignment returns FunctionCall
+	 *     Assignment.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     OrExpression returns FunctionCall
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     XorExpression returns FunctionCall
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     AndExpression returns FunctionCall
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     Comparison returns FunctionCall
+	 *     Comparison.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     EquExpression returns FunctionCall
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     AddExpression returns FunctionCall
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     MultiplicativeExpression returns FunctionCall
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     PowerExpression returns FunctionCall
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns FunctionCall
+	 *     UnaryOperation returns FunctionCall
+	 *     PrimaryExpression returns FunctionCall
+	 *     FunctionCall returns FunctionCall
 	 *
 	 * Constraint:
 	 *     (fbName=[FunctionName|ID] param=SubprogramParam)
 	 */
-	protected void sequence_FunctionCall(ISerializationContext context, Expression semanticObject) {
+	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.FUNCTION_CALL__FB_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.FUNCTION_CALL__FB_NAME));
 			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameIDTerminalRuleCall_0_0_1(), semanticObject.getFbName());
-		feeder.accept(grammarAccess.getFunctionCallAccess().getParamSubprogramParamParserRuleCall_2_0(), semanticObject.getParam());
+		feeder.accept(grammarAccess.getFunctionCallAccess().getFbNameFunctionNameIDTerminalRuleCall_1_0_1(), semanticObject.getFbName());
+		feeder.accept(grammarAccess.getFunctionCallAccess().getParamSubprogramParamParserRuleCall_3_0(), semanticObject.getParam());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     AbstractCommand returns Expression
-	 *     Expression returns Expression
-	 *     Assignment returns Expression
-	 *     Assignment.BinaryOperation_1_0_0_0 returns Expression
-	 *     OrExpression returns Expression
-	 *     OrExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     XorExpression returns Expression
-	 *     XorExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     AndExpression returns Expression
-	 *     AndExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     Comparison returns Expression
-	 *     Comparison.BinaryOperation_1_0_0_0 returns Expression
-	 *     EquExpression returns Expression
-	 *     EquExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     AddExpression returns Expression
-	 *     AddExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     MultiplicativeExpression returns Expression
-	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     PowerExpression returns Expression
-	 *     PowerExpression.BinaryOperation_1_0_0_0 returns Expression
-	 *     UnaryExpression returns Expression
-	 *     PrimaryExpression returns Expression
-	 *
-	 * Constraint:
-	 *     ((preDefFunctionName=PredefineFunctions param=SubprogramParam) | (fbName=[FunctionName|ID] param=SubprogramParam))
-	 */
-	protected void sequence_FunctionCall_PreDefinedFunctionCall(ISerializationContext context, Expression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -504,35 +665,43 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractCommand returns Literal
-	 *     Expression returns Literal
-	 *     Assignment returns Literal
-	 *     Assignment.BinaryOperation_1_0_0_0 returns Literal
-	 *     OrExpression returns Literal
-	 *     OrExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     XorExpression returns Literal
-	 *     XorExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     AndExpression returns Literal
-	 *     AndExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     Comparison returns Literal
-	 *     Comparison.BinaryOperation_1_0_0_0 returns Literal
-	 *     EquExpression returns Literal
-	 *     EquExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     AddExpression returns Literal
-	 *     AddExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     MultiplicativeExpression returns Literal
-	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     PowerExpression returns Literal
-	 *     PowerExpression.BinaryOperation_1_0_0_0 returns Literal
-	 *     UnaryExpression returns Literal
-	 *     PrimaryExpression returns Literal
-	 *     Literal returns Literal
+	 *     AbstractCommand returns IntLiteral
+	 *     Expression returns IntLiteral
+	 *     Assignment returns IntLiteral
+	 *     Assignment.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     OrExpression returns IntLiteral
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     XorExpression returns IntLiteral
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     AndExpression returns IntLiteral
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     Comparison returns IntLiteral
+	 *     Comparison.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     EquExpression returns IntLiteral
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     AddExpression returns IntLiteral
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     MultiplicativeExpression returns IntLiteral
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     PowerExpression returns IntLiteral
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns IntLiteral
+	 *     UnaryOperation returns IntLiteral
+	 *     PrimaryExpression returns IntLiteral
+	 *     Literal returns IntLiteral
+	 *     NumericLiteral returns IntLiteral
+	 *     IntLiteral returns IntLiteral
 	 *
 	 * Constraint:
-	 *     {Literal}
+	 *     value=INT
 	 */
-	protected void sequence_Literal(ISerializationContext context, Literal semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_IntLiteral(ISerializationContext context, IntLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.INT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.INT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntLiteralAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -550,35 +719,24 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractCommand returns NumericLiteral
-	 *     Expression returns NumericLiteral
-	 *     Assignment returns NumericLiteral
-	 *     Assignment.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     OrExpression returns NumericLiteral
-	 *     OrExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     XorExpression returns NumericLiteral
-	 *     XorExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     AndExpression returns NumericLiteral
-	 *     AndExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     Comparison returns NumericLiteral
-	 *     Comparison.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     EquExpression returns NumericLiteral
-	 *     EquExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     AddExpression returns NumericLiteral
-	 *     AddExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     MultiplicativeExpression returns NumericLiteral
-	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     PowerExpression returns NumericLiteral
-	 *     PowerExpression.BinaryOperation_1_0_0_0 returns NumericLiteral
-	 *     UnaryExpression returns NumericLiteral
-	 *     PrimaryExpression returns NumericLiteral
-	 *     Literal returns NumericLiteral
-	 *     NumericLiteral returns NumericLiteral
+	 *     MultiplicativeOperator returns Operator
 	 *
 	 * Constraint:
-	 *     (intValue?=INT | floatValue?=FLOAT)
+	 *     (op='*' | op='/' | op='MOD' | op='%')
 	 */
-	protected void sequence_NumericLiteral(ISerializationContext context, NumericLiteral semanticObject) {
+	protected void sequence_MultiplicativeOperator(ISerializationContext context, Operator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NotOperator returns Operator
+	 *
+	 * Constraint:
+	 *     (op='NAO' | op='-')
+	 */
+	protected void sequence_NotOperator(ISerializationContext context, Operator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -597,6 +755,24 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     OrOperator returns Operator
+	 *
+	 * Constraint:
+	 *     op='OU'
+	 */
+	protected void sequence_OrOperator(ISerializationContext context, Operator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.OPERATOR__OP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOrOperatorAccess().getOpOUKeyword_0(), semanticObject.getOp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     OtherCase returns OtherCase
 	 *
 	 * Constraint:
@@ -609,6 +785,88 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     AbstractCommand returns PiLiteral
+	 *     Expression returns PiLiteral
+	 *     Assignment returns PiLiteral
+	 *     Assignment.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     OrExpression returns PiLiteral
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     XorExpression returns PiLiteral
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     AndExpression returns PiLiteral
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     Comparison returns PiLiteral
+	 *     Comparison.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     EquExpression returns PiLiteral
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     AddExpression returns PiLiteral
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     MultiplicativeExpression returns PiLiteral
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     PowerExpression returns PiLiteral
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns PiLiteral
+	 *     UnaryOperation returns PiLiteral
+	 *     PrimaryExpression returns PiLiteral
+	 *     Literal returns PiLiteral
+	 *     NumericLiteral returns PiLiteral
+	 *     PiLiteral returns PiLiteral
+	 *
+	 * Constraint:
+	 *     value='pi'
+	 */
+	protected void sequence_PiLiteral(ISerializationContext context, PiLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.PI_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.PI_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPiLiteralAccess().getValuePiKeyword_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PowerOperator returns Operator
+	 *
+	 * Constraint:
+	 *     op='^'
+	 */
+	protected void sequence_PowerOperator(ISerializationContext context, Operator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.OPERATOR__OP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPowerOperatorAccess().getOpCircumflexAccentKeyword_0(), semanticObject.getOp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractCommand returns Expression
+	 *     Expression returns Expression
+	 *     Assignment returns Expression
+	 *     Assignment.BinaryOperation_1_0_0_0 returns Expression
+	 *     OrExpression returns Expression
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     XorExpression returns Expression
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     AndExpression returns Expression
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     Comparison returns Expression
+	 *     Comparison.BinaryOperation_1_0_0_0 returns Expression
+	 *     EquExpression returns Expression
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     AddExpression returns Expression
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     MultiplicativeExpression returns Expression
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     PowerExpression returns Expression
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns Expression
+	 *     UnaryOperation returns Expression
+	 *     PrimaryExpression returns Expression
 	 *     PreDefinedFunctionCall returns Expression
 	 *
 	 * Constraint:
@@ -630,21 +888,21 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ProcedureCall returns Expression
+	 *     ProcedureCall returns ProcedureCall
 	 *
 	 * Constraint:
 	 *     (fbName=[ProcedureName|ID] param=SubprogramParam)
 	 */
-	protected void sequence_ProcedureCall(ISerializationContext context, Expression semanticObject) {
+	protected void sequence_ProcedureCall(ISerializationContext context, ProcedureCall semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__FB_NAME));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.PROCEDURE_CALL__FB_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.PROCEDURE_CALL__FB_NAME));
 			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.EXPRESSION__PARAM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProcedureCallAccess().getFbNameProcedureNameIDTerminalRuleCall_0_0_1(), semanticObject.getFbName());
-		feeder.accept(grammarAccess.getProcedureCallAccess().getParamSubprogramParamParserRuleCall_2_0(), semanticObject.getParam());
+		feeder.accept(grammarAccess.getProcedureCallAccess().getFbNameProcedureNameIDTerminalRuleCall_1_0_1(), semanticObject.getFbName());
+		feeder.accept(grammarAccess.getProcedureCallAccess().getParamSubprogramParamParserRuleCall_3_0(), semanticObject.getParam());
 		feeder.finish();
 	}
 	
@@ -720,41 +978,41 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractCommand returns StringExpression
-	 *     Expression returns StringExpression
-	 *     Assignment returns StringExpression
-	 *     Assignment.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     OrExpression returns StringExpression
-	 *     OrExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     XorExpression returns StringExpression
-	 *     XorExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     AndExpression returns StringExpression
-	 *     AndExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     Comparison returns StringExpression
-	 *     Comparison.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     EquExpression returns StringExpression
-	 *     EquExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     AddExpression returns StringExpression
-	 *     AddExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     MultiplicativeExpression returns StringExpression
-	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     PowerExpression returns StringExpression
-	 *     PowerExpression.BinaryOperation_1_0_0_0 returns StringExpression
-	 *     UnaryExpression returns StringExpression
-	 *     PrimaryExpression returns StringExpression
-	 *     Literal returns StringExpression
-	 *     StringExpression returns StringExpression
+	 *     AbstractCommand returns StringLiteral
+	 *     Expression returns StringLiteral
+	 *     Assignment returns StringLiteral
+	 *     Assignment.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     OrExpression returns StringLiteral
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     XorExpression returns StringLiteral
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     AndExpression returns StringLiteral
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     Comparison returns StringLiteral
+	 *     Comparison.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     EquExpression returns StringLiteral
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     AddExpression returns StringLiteral
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     MultiplicativeExpression returns StringLiteral
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     PowerExpression returns StringLiteral
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns StringLiteral
+	 *     UnaryOperation returns StringLiteral
+	 *     PrimaryExpression returns StringLiteral
+	 *     Literal returns StringLiteral
+	 *     StringLiteral returns StringLiteral
 	 *
 	 * Constraint:
-	 *     literalString=STRING
+	 *     value=STRING
 	 */
-	protected void sequence_StringExpression(ISerializationContext context, StringExpression semanticObject) {
+	protected void sequence_StringLiteral(ISerializationContext context, StringLiteral semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.STRING_EXPRESSION__LITERAL_STRING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.STRING_EXPRESSION__LITERAL_STRING));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.STRING_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.STRING_LITERAL__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStringExpressionAccess().getLiteralStringSTRINGTerminalRuleCall_0(), semanticObject.getLiteralString());
+		feeder.accept(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -810,34 +1068,43 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractCommand returns UnaryExpression
-	 *     Expression returns UnaryExpression
-	 *     Assignment returns UnaryExpression
-	 *     Assignment.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     OrExpression returns UnaryExpression
-	 *     OrExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     XorExpression returns UnaryExpression
-	 *     XorExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     AndExpression returns UnaryExpression
-	 *     AndExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     Comparison returns UnaryExpression
-	 *     Comparison.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     EquExpression returns UnaryExpression
-	 *     EquExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     AddExpression returns UnaryExpression
-	 *     AddExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     MultiplicativeExpression returns UnaryExpression
-	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     PowerExpression returns UnaryExpression
-	 *     PowerExpression.BinaryOperation_1_0_0_0 returns UnaryExpression
-	 *     UnaryExpression returns UnaryExpression
-	 *     PrimaryExpression returns UnaryExpression
+	 *     AbstractCommand returns UnaryOperation
+	 *     Expression returns UnaryOperation
+	 *     Assignment returns UnaryOperation
+	 *     Assignment.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     OrExpression returns UnaryOperation
+	 *     OrExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     XorExpression returns UnaryOperation
+	 *     XorExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     AndExpression returns UnaryOperation
+	 *     AndExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     Comparison returns UnaryOperation
+	 *     Comparison.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     EquExpression returns UnaryOperation
+	 *     EquExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     AddExpression returns UnaryOperation
+	 *     AddExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     MultiplicativeExpression returns UnaryOperation
+	 *     MultiplicativeExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     PowerExpression returns UnaryOperation
+	 *     PowerExpression.BinaryOperation_1_0_0_0 returns UnaryOperation
+	 *     UnaryOperation returns UnaryOperation
+	 *     PrimaryExpression returns UnaryOperation
 	 *
 	 * Constraint:
-	 *     ((op='NOT' | op='-') operand=UnaryExpression)
+	 *     (op=NotOperator operand=UnaryOperation)
 	 */
-	protected void sequence_UnaryExpression(ISerializationContext context, UnaryExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_UnaryOperation(ISerializationContext context, UnaryOperation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.UNARY_OPERATION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.UNARY_OPERATION__OP));
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.UNARY_OPERATION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.UNARY_OPERATION__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnaryOperationAccess().getOpNotOperatorParserRuleCall_0_1_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getUnaryOperationAccess().getOperandUnaryOperationParserRuleCall_0_2_0(), semanticObject.getOperand());
+		feeder.finish();
 	}
 	
 	
@@ -876,7 +1143,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     VarType returns VarType
 	 *
 	 * Constraint:
-	 *     (typeName='real' | typeName='inteiro' | typeName='caractere' | typeName='caracter')
+	 *     (typeName='real' | typeName='inteiro' | typeName='caractere' | typeName='caracter' | typeName='logico')
 	 */
 	protected void sequence_VarType(ISerializationContext context, VarType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -939,6 +1206,24 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_WriteParam(ISerializationContext context, WriteParam semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     XorOperator returns Operator
+	 *
+	 * Constraint:
+	 *     op='XOU'
+	 */
+	protected void sequence_XorOperator(ISerializationContext context, Operator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PortugolPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PortugolPackage.Literals.OPERATOR__OP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getXorOperatorAccess().getOpXOUKeyword_0(), semanticObject.getOp());
+		feeder.finish();
 	}
 	
 	

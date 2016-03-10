@@ -54,7 +54,7 @@ class PortugolFormatter extends AbstractFormatter2 {
 	def dispatch void format(HeaderBlock headerBlock, extension IFormattableDocument document) {
 		headerBlock.regionFor.keyword('algoritmo').append[oneSpace]
 		headerBlock.regionFor.ruleCallTo(END_COMMANDRule).prepend[noSpace]
-		headerBlock.append[newLine]
+		headerBlock.append[newLines = 2]
 	}
 
 	def dispatch void format(DeclarationsBlock declarationsBlock, extension IFormattableDocument document) {

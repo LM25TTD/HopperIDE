@@ -3,11 +3,7 @@
  */
 package org.hopper.language.portugol.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hopper.language.portugol.NumericLiteral;
 import org.hopper.language.portugol.PortugolPackage;
@@ -16,58 +12,11 @@ import org.hopper.language.portugol.PortugolPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Numeric Literal</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.NumericLiteralImpl#isIntValue <em>Int Value</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.NumericLiteralImpl#isFloatValue <em>Float Value</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class NumericLiteralImpl extends ExpressionImpl implements NumericLiteral
 {
-  /**
-   * The default value of the '{@link #isIntValue() <em>Int Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIntValue()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean INT_VALUE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIntValue() <em>Int Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIntValue()
-   * @generated
-   * @ordered
-   */
-  protected boolean intValue = INT_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isFloatValue() <em>Float Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isFloatValue()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean FLOAT_VALUE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isFloatValue() <em>Float Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isFloatValue()
-   * @generated
-   * @ordered
-   */
-  protected boolean floatValue = FLOAT_VALUE_EDEFAULT;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -87,147 +36,6 @@ public class NumericLiteralImpl extends ExpressionImpl implements NumericLiteral
   protected EClass eStaticClass()
   {
     return PortugolPackage.Literals.NUMERIC_LITERAL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isIntValue()
-  {
-    return intValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIntValue(boolean newIntValue)
-  {
-    boolean oldIntValue = intValue;
-    intValue = newIntValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.NUMERIC_LITERAL__INT_VALUE, oldIntValue, intValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isFloatValue()
-  {
-    return floatValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFloatValue(boolean newFloatValue)
-  {
-    boolean oldFloatValue = floatValue;
-    floatValue = newFloatValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.NUMERIC_LITERAL__FLOAT_VALUE, oldFloatValue, floatValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case PortugolPackage.NUMERIC_LITERAL__INT_VALUE:
-        return isIntValue();
-      case PortugolPackage.NUMERIC_LITERAL__FLOAT_VALUE:
-        return isFloatValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case PortugolPackage.NUMERIC_LITERAL__INT_VALUE:
-        setIntValue((Boolean)newValue);
-        return;
-      case PortugolPackage.NUMERIC_LITERAL__FLOAT_VALUE:
-        setFloatValue((Boolean)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case PortugolPackage.NUMERIC_LITERAL__INT_VALUE:
-        setIntValue(INT_VALUE_EDEFAULT);
-        return;
-      case PortugolPackage.NUMERIC_LITERAL__FLOAT_VALUE:
-        setFloatValue(FLOAT_VALUE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case PortugolPackage.NUMERIC_LITERAL__INT_VALUE:
-        return intValue != INT_VALUE_EDEFAULT;
-      case PortugolPackage.NUMERIC_LITERAL__FLOAT_VALUE:
-        return floatValue != FLOAT_VALUE_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (intValue: ");
-    result.append(intValue);
-    result.append(", floatValue: ");
-    result.append(floatValue);
-    result.append(')');
-    return result.toString();
   }
 
 } //NumericLiteralImpl

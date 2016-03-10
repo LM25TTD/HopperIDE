@@ -42,6 +42,10 @@ Workflow {
 					ignoreCase = true
 				}
 			}
+						
+			scopeProvider={
+				ignoreCase = true
+			}
 
 			quickFixProvider = {}
 

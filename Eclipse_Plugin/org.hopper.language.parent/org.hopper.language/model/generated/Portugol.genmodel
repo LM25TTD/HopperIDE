@@ -119,27 +119,43 @@
     <genClasses ecoreClass="Portugol.ecore#//Expression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//Expression/preDefFunctionName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/param"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//Expression/fbName"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//Operator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//Operator/op"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//DeclaredVar">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//DeclaredVar/varName"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//NumericLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/intValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//NumericLiteral/floatValue"/>
+    <genClasses ecoreClass="Portugol.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//BooleanLiteral/value"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//StringExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//StringExpression/literalString"/>
+    <genClasses ecoreClass="Portugol.ecore#//NumericLiteral"/>
+    <genClasses ecoreClass="Portugol.ecore#//FloatLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//FloatLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//IntLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//IntLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//PiLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//PiLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="Portugol.ecore#//BinaryOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//BinaryOperation/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//BinaryOperation/right"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//UnaryExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Portugol.ecore#//UnaryExpression/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//UnaryExpression/operand"/>
+    <genClasses ecoreClass="Portugol.ecore#//UnaryOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//UnaryOperation/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Portugol.ecore#//UnaryOperation/operand"/>
     </genClasses>
-    <genClasses ecoreClass="Portugol.ecore#//Literal"/>
+    <genClasses ecoreClass="Portugol.ecore#//FunctionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//FunctionCall/fbName"/>
+    </genClasses>
+    <genClasses ecoreClass="Portugol.ecore#//ProcedureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Portugol.ecore#//ProcedureCall/fbName"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

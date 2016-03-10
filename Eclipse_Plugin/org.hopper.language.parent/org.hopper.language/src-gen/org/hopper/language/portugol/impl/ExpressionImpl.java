@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -26,7 +25,6 @@ import org.hopper.language.portugol.SubprogramParam;
  * <ul>
  *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getPreDefFunctionName <em>Pre Def Function Name</em>}</li>
  *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getParam <em>Param</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.ExpressionImpl#getFbName <em>Fb Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,16 +60,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * @ordered
    */
   protected SubprogramParam param;
-
-  /**
-   * The cached value of the '{@link #getFbName() <em>Fb Name</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFbName()
-   * @generated
-   * @ordered
-   */
-  protected EObject fbName;
 
   /**
    * <!-- begin-user-doc -->
@@ -170,49 +158,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getFbName()
-  {
-    if (fbName != null && fbName.eIsProxy())
-    {
-      InternalEObject oldFbName = (InternalEObject)fbName;
-      fbName = eResolveProxy(oldFbName);
-      if (fbName != oldFbName)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
-      }
-    }
-    return fbName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject basicGetFbName()
-  {
-    return fbName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFbName(EObject newFbName)
-  {
-    EObject oldFbName = fbName;
-    fbName = newFbName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.EXPRESSION__FB_NAME, oldFbName, fbName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -238,9 +183,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
         return getPreDefFunctionName();
       case PortugolPackage.EXPRESSION__PARAM:
         return getParam();
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        if (resolve) return getFbName();
-        return basicGetFbName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -260,9 +202,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
         return;
       case PortugolPackage.EXPRESSION__PARAM:
         setParam((SubprogramParam)newValue);
-        return;
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        setFbName((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -284,9 +223,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
       case PortugolPackage.EXPRESSION__PARAM:
         setParam((SubprogramParam)null);
         return;
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        setFbName((EObject)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -305,8 +241,6 @@ public class ExpressionImpl extends AbstractCommandImpl implements Expression
         return PRE_DEF_FUNCTION_NAME_EDEFAULT == null ? preDefFunctionName != null : !PRE_DEF_FUNCTION_NAME_EDEFAULT.equals(preDefFunctionName);
       case PortugolPackage.EXPRESSION__PARAM:
         return param != null;
-      case PortugolPackage.EXPRESSION__FB_NAME:
-        return fbName != null;
     }
     return super.eIsSet(featureID);
   }

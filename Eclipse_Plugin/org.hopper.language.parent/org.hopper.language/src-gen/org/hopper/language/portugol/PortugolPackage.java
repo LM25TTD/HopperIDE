@@ -1179,22 +1179,41 @@ public interface PortugolPackage extends EPackage
   int EXPRESSION__PARAM = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__FB_NAME = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 3;
+  int EXPRESSION_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.OperatorImpl <em>Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.OperatorImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOperator()
+   * @generated
+   */
+  int OPERATOR = 32;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATOR__OP = 0;
+
+  /**
+   * The number of structural features of the '<em>Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATOR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
@@ -1204,7 +1223,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getDeclaredVar()
    * @generated
    */
-  int DECLARED_VAR = 32;
+  int DECLARED_VAR = 33;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1225,15 +1244,6 @@ public interface PortugolPackage extends EPackage
   int DECLARED_VAR__PARAM = EXPRESSION__PARAM;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARED_VAR__FB_NAME = EXPRESSION__FB_NAME;
-
-  /**
    * The feature id for the '<em><b>Var Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1252,6 +1262,52 @@ public interface PortugolPackage extends EPackage
   int DECLARED_VAR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.BooleanLiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBooleanLiteral()
+   * @generated
+   */
+  int BOOLEAN_LITERAL = 34;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1259,7 +1315,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getNumericLiteral()
    * @generated
    */
-  int NUMERIC_LITERAL = 33;
+  int NUMERIC_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1280,50 +1336,23 @@ public interface PortugolPackage extends EPackage
   int NUMERIC_LITERAL__PARAM = EXPRESSION__PARAM;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMERIC_LITERAL__FB_NAME = EXPRESSION__FB_NAME;
-
-  /**
-   * The feature id for the '<em><b>Int Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMERIC_LITERAL__INT_VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Float Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMERIC_LITERAL__FLOAT_VALUE = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Numeric Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMERIC_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int NUMERIC_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.StringExpressionImpl <em>String Expression</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.FloatLiteralImpl <em>Float Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.StringExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
+   * @see org.hopper.language.portugol.impl.FloatLiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFloatLiteral()
    * @generated
    */
-  int STRING_EXPRESSION = 34;
+  int FLOAT_LITERAL = 36;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1332,7 +1361,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+  int FLOAT_LITERAL__PRE_DEF_FUNCTION_NAME = NUMERIC_LITERAL__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1341,34 +1370,163 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__PARAM = EXPRESSION__PARAM;
+  int FLOAT_LITERAL__PARAM = NUMERIC_LITERAL__PARAM;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
+  int FLOAT_LITERAL__VALUE = NUMERIC_LITERAL_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal String</b></em>' attribute.
+   * The number of structural features of the '<em>Float Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION__LITERAL_STRING = EXPRESSION_FEATURE_COUNT + 0;
+  int FLOAT_LITERAL_FEATURE_COUNT = NUMERIC_LITERAL_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>String Expression</em>' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.IntLiteralImpl <em>Int Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.IntLiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getIntLiteral()
+   * @generated
+   */
+  int INT_LITERAL = 37;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int INT_LITERAL__PRE_DEF_FUNCTION_NAME = NUMERIC_LITERAL__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL__PARAM = NUMERIC_LITERAL__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL__VALUE = NUMERIC_LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Int Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL_FEATURE_COUNT = NUMERIC_LITERAL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.StringLiteralImpl <em>String Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.StringLiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringLiteral()
+   * @generated
+   */
+  int STRING_LITERAL = 38;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.PiLiteralImpl <em>Pi Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.PiLiteralImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getPiLiteral()
+   * @generated
+   */
+  int PI_LITERAL = 39;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PI_LITERAL__PRE_DEF_FUNCTION_NAME = NUMERIC_LITERAL__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PI_LITERAL__PARAM = NUMERIC_LITERAL__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PI_LITERAL__VALUE = NUMERIC_LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Pi Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PI_LITERAL_FEATURE_COUNT = NUMERIC_LITERAL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
@@ -1378,7 +1536,7 @@ public interface PortugolPackage extends EPackage
    * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBinaryOperation()
    * @generated
    */
-  int BINARY_OPERATION = 35;
+  int BINARY_OPERATION = 40;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1399,15 +1557,6 @@ public interface PortugolPackage extends EPackage
   int BINARY_OPERATION__PARAM = EXPRESSION__PARAM;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_OPERATION__FB_NAME = EXPRESSION__FB_NAME;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1417,7 +1566,7 @@ public interface PortugolPackage extends EPackage
   int BINARY_OPERATION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1444,14 +1593,14 @@ public interface PortugolPackage extends EPackage
   int BINARY_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.UnaryOperationImpl <em>Unary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.UnaryExpressionImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
+   * @see org.hopper.language.portugol.impl.UnaryOperationImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryOperation()
    * @generated
    */
-  int UNARY_EXPRESSION = 36;
+  int UNARY_OPERATION = 41;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1460,7 +1609,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+  int UNARY_OPERATION__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1469,25 +1618,16 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__PARAM = EXPRESSION__PARAM;
+  int UNARY_OPERATION__PARAM = EXPRESSION__PARAM;
 
   /**
-   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__FB_NAME = EXPRESSION__FB_NAME;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__OP = EXPRESSION_FEATURE_COUNT + 0;
+  int UNARY_OPERATION__OP = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1496,26 +1636,26 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__OPERAND = EXPRESSION_FEATURE_COUNT + 1;
+  int UNARY_OPERATION__OPERAND = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Unary Expression</em>' class.
+   * The number of structural features of the '<em>Unary Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int UNARY_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.hopper.language.portugol.impl.LiteralImpl <em>Literal</em>}' class.
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.FunctionCallImpl <em>Function Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.hopper.language.portugol.impl.LiteralImpl
-   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
+   * @see org.hopper.language.portugol.impl.FunctionCallImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionCall()
    * @generated
    */
-  int LITERAL = 37;
+  int FUNCTION_CALL = 42;
 
   /**
    * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
@@ -1524,7 +1664,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+  int FUNCTION_CALL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
 
   /**
    * The feature id for the '<em><b>Param</b></em>' containment reference.
@@ -1533,7 +1673,7 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL__PARAM = EXPRESSION__PARAM;
+  int FUNCTION_CALL__PARAM = EXPRESSION__PARAM;
 
   /**
    * The feature id for the '<em><b>Fb Name</b></em>' reference.
@@ -1542,16 +1682,62 @@ public interface PortugolPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL__FB_NAME = EXPRESSION__FB_NAME;
+  int FUNCTION_CALL__FB_NAME = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Literal</em>' class.
+   * The number of structural features of the '<em>Function Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+  int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.hopper.language.portugol.impl.ProcedureCallImpl <em>Procedure Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.hopper.language.portugol.impl.ProcedureCallImpl
+   * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getProcedureCall()
+   * @generated
+   */
+  int PROCEDURE_CALL = 43;
+
+  /**
+   * The feature id for the '<em><b>Pre Def Function Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL__PRE_DEF_FUNCTION_NAME = EXPRESSION__PRE_DEF_FUNCTION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL__PARAM = EXPRESSION__PARAM;
+
+  /**
+   * The feature id for the '<em><b>Fb Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL__FB_NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Procedure Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -2447,15 +2633,25 @@ public interface PortugolPackage extends EPackage
   EReference getExpression_Param();
 
   /**
-   * Returns the meta object for the reference '{@link org.hopper.language.portugol.Expression#getFbName <em>Fb Name</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.Operator <em>Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Fb Name</em>'.
-   * @see org.hopper.language.portugol.Expression#getFbName()
-   * @see #getExpression()
+   * @return the meta object for class '<em>Operator</em>'.
+   * @see org.hopper.language.portugol.Operator
    * @generated
    */
-  EReference getExpression_FbName();
+  EClass getOperator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.Operator#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.hopper.language.portugol.Operator#getOp()
+   * @see #getOperator()
+   * @generated
+   */
+  EAttribute getOperator_Op();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.DeclaredVar <em>Declared Var</em>}'.
@@ -2479,6 +2675,27 @@ public interface PortugolPackage extends EPackage
   EReference getDeclaredVar_VarName();
 
   /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.BooleanLiteral <em>Boolean Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Literal</em>'.
+   * @see org.hopper.language.portugol.BooleanLiteral
+   * @generated
+   */
+  EClass getBooleanLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.BooleanLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.hopper.language.portugol.BooleanLiteral#getValue()
+   * @see #getBooleanLiteral()
+   * @generated
+   */
+  EAttribute getBooleanLiteral_Value();
+
+  /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.NumericLiteral <em>Numeric Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2489,47 +2706,88 @@ public interface PortugolPackage extends EPackage
   EClass getNumericLiteral();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.NumericLiteral#isIntValue <em>Int Value</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.FloatLiteral <em>Float Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Int Value</em>'.
-   * @see org.hopper.language.portugol.NumericLiteral#isIntValue()
-   * @see #getNumericLiteral()
+   * @return the meta object for class '<em>Float Literal</em>'.
+   * @see org.hopper.language.portugol.FloatLiteral
    * @generated
    */
-  EAttribute getNumericLiteral_IntValue();
+  EClass getFloatLiteral();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.NumericLiteral#isFloatValue <em>Float Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.FloatLiteral#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Float Value</em>'.
-   * @see org.hopper.language.portugol.NumericLiteral#isFloatValue()
-   * @see #getNumericLiteral()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.hopper.language.portugol.FloatLiteral#getValue()
+   * @see #getFloatLiteral()
    * @generated
    */
-  EAttribute getNumericLiteral_FloatValue();
+  EAttribute getFloatLiteral_Value();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.StringExpression <em>String Expression</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.IntLiteral <em>Int Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>String Expression</em>'.
-   * @see org.hopper.language.portugol.StringExpression
+   * @return the meta object for class '<em>Int Literal</em>'.
+   * @see org.hopper.language.portugol.IntLiteral
    * @generated
    */
-  EClass getStringExpression();
+  EClass getIntLiteral();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.StringExpression#getLiteralString <em>Literal String</em>}'.
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.IntLiteral#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Literal String</em>'.
-   * @see org.hopper.language.portugol.StringExpression#getLiteralString()
-   * @see #getStringExpression()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.hopper.language.portugol.IntLiteral#getValue()
+   * @see #getIntLiteral()
    * @generated
    */
-  EAttribute getStringExpression_LiteralString();
+  EAttribute getIntLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Literal</em>'.
+   * @see org.hopper.language.portugol.StringLiteral
+   * @generated
+   */
+  EClass getStringLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.StringLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.hopper.language.portugol.StringLiteral#getValue()
+   * @see #getStringLiteral()
+   * @generated
+   */
+  EAttribute getStringLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.PiLiteral <em>Pi Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pi Literal</em>'.
+   * @see org.hopper.language.portugol.PiLiteral
+   * @generated
+   */
+  EClass getPiLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.PiLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.hopper.language.portugol.PiLiteral#getValue()
+   * @see #getPiLiteral()
+   * @generated
+   */
+  EAttribute getPiLiteral_Value();
 
   /**
    * Returns the meta object for class '{@link org.hopper.language.portugol.BinaryOperation <em>Binary Operation</em>}'.
@@ -2553,15 +2811,15 @@ public interface PortugolPackage extends EPackage
   EReference getBinaryOperation_Left();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.BinaryOperation#getOp <em>Op</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BinaryOperation#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
+   * @return the meta object for the containment reference '<em>Op</em>'.
    * @see org.hopper.language.portugol.BinaryOperation#getOp()
    * @see #getBinaryOperation()
    * @generated
    */
-  EAttribute getBinaryOperation_Op();
+  EReference getBinaryOperation_Op();
 
   /**
    * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.BinaryOperation#getRight <em>Right</em>}'.
@@ -2575,46 +2833,78 @@ public interface PortugolPackage extends EPackage
   EReference getBinaryOperation_Right();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.UnaryExpression <em>Unary Expression</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.UnaryOperation <em>Unary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unary Expression</em>'.
-   * @see org.hopper.language.portugol.UnaryExpression
+   * @return the meta object for class '<em>Unary Operation</em>'.
+   * @see org.hopper.language.portugol.UnaryOperation
    * @generated
    */
-  EClass getUnaryExpression();
+  EClass getUnaryOperation();
 
   /**
-   * Returns the meta object for the attribute '{@link org.hopper.language.portugol.UnaryExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.UnaryOperation#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.hopper.language.portugol.UnaryExpression#getOp()
-   * @see #getUnaryExpression()
+   * @return the meta object for the containment reference '<em>Op</em>'.
+   * @see org.hopper.language.portugol.UnaryOperation#getOp()
+   * @see #getUnaryOperation()
    * @generated
    */
-  EAttribute getUnaryExpression_Op();
+  EReference getUnaryOperation_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.UnaryExpression#getOperand <em>Operand</em>}'.
+   * Returns the meta object for the containment reference '{@link org.hopper.language.portugol.UnaryOperation#getOperand <em>Operand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Operand</em>'.
-   * @see org.hopper.language.portugol.UnaryExpression#getOperand()
-   * @see #getUnaryExpression()
+   * @see org.hopper.language.portugol.UnaryOperation#getOperand()
+   * @see #getUnaryOperation()
    * @generated
    */
-  EReference getUnaryExpression_Operand();
+  EReference getUnaryOperation_Operand();
 
   /**
-   * Returns the meta object for class '{@link org.hopper.language.portugol.Literal <em>Literal</em>}'.
+   * Returns the meta object for class '{@link org.hopper.language.portugol.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Literal</em>'.
-   * @see org.hopper.language.portugol.Literal
+   * @return the meta object for class '<em>Function Call</em>'.
+   * @see org.hopper.language.portugol.FunctionCall
    * @generated
    */
-  EClass getLiteral();
+  EClass getFunctionCall();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.FunctionCall#getFbName <em>Fb Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fb Name</em>'.
+   * @see org.hopper.language.portugol.FunctionCall#getFbName()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_FbName();
+
+  /**
+   * Returns the meta object for class '{@link org.hopper.language.portugol.ProcedureCall <em>Procedure Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Procedure Call</em>'.
+   * @see org.hopper.language.portugol.ProcedureCall
+   * @generated
+   */
+  EClass getProcedureCall();
+
+  /**
+   * Returns the meta object for the reference '{@link org.hopper.language.portugol.ProcedureCall#getFbName <em>Fb Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fb Name</em>'.
+   * @see org.hopper.language.portugol.ProcedureCall#getFbName()
+   * @see #getProcedureCall()
+   * @generated
+   */
+  EReference getProcedureCall_FbName();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3376,12 +3666,22 @@ public interface PortugolPackage extends EPackage
     EReference EXPRESSION__PARAM = eINSTANCE.getExpression_Param();
 
     /**
-     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.OperatorImpl <em>Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.OperatorImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getOperator()
+     * @generated
+     */
+    EClass OPERATOR = eINSTANCE.getOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__FB_NAME = eINSTANCE.getExpression_FbName();
+    EAttribute OPERATOR__OP = eINSTANCE.getOperator_Op();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.DeclaredVarImpl <em>Declared Var</em>}' class.
@@ -3402,6 +3702,24 @@ public interface PortugolPackage extends EPackage
     EReference DECLARED_VAR__VAR_NAME = eINSTANCE.getDeclaredVar_VarName();
 
     /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.BooleanLiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getBooleanLiteral()
+     * @generated
+     */
+    EClass BOOLEAN_LITERAL = eINSTANCE.getBooleanLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN_LITERAL__VALUE = eINSTANCE.getBooleanLiteral_Value();
+
+    /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.NumericLiteralImpl <em>Numeric Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3412,38 +3730,76 @@ public interface PortugolPackage extends EPackage
     EClass NUMERIC_LITERAL = eINSTANCE.getNumericLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.FloatLiteralImpl <em>Float Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.FloatLiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFloatLiteral()
      * @generated
      */
-    EAttribute NUMERIC_LITERAL__INT_VALUE = eINSTANCE.getNumericLiteral_IntValue();
+    EClass FLOAT_LITERAL = eINSTANCE.getFloatLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Float Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMERIC_LITERAL__FLOAT_VALUE = eINSTANCE.getNumericLiteral_FloatValue();
+    EAttribute FLOAT_LITERAL__VALUE = eINSTANCE.getFloatLiteral_Value();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.StringExpressionImpl <em>String Expression</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.IntLiteralImpl <em>Int Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.StringExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringExpression()
+     * @see org.hopper.language.portugol.impl.IntLiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getIntLiteral()
      * @generated
      */
-    EClass STRING_EXPRESSION = eINSTANCE.getStringExpression();
+    EClass INT_LITERAL = eINSTANCE.getIntLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Literal String</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STRING_EXPRESSION__LITERAL_STRING = eINSTANCE.getStringExpression_LiteralString();
+    EAttribute INT_LITERAL__VALUE = eINSTANCE.getIntLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.StringLiteralImpl <em>String Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.StringLiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getStringLiteral()
+     * @generated
+     */
+    EClass STRING_LITERAL = eINSTANCE.getStringLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_LITERAL__VALUE = eINSTANCE.getStringLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.PiLiteralImpl <em>Pi Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.PiLiteralImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getPiLiteral()
+     * @generated
+     */
+    EClass PI_LITERAL = eINSTANCE.getPiLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PI_LITERAL__VALUE = eINSTANCE.getPiLiteral_Value();
 
     /**
      * The meta object literal for the '{@link org.hopper.language.portugol.impl.BinaryOperationImpl <em>Binary Operation</em>}' class.
@@ -3464,12 +3820,12 @@ public interface PortugolPackage extends EPackage
     EReference BINARY_OPERATION__LEFT = eINSTANCE.getBinaryOperation_Left();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BINARY_OPERATION__OP = eINSTANCE.getBinaryOperation_Op();
+    EReference BINARY_OPERATION__OP = eINSTANCE.getBinaryOperation_Op();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -3480,22 +3836,22 @@ public interface PortugolPackage extends EPackage
     EReference BINARY_OPERATION__RIGHT = eINSTANCE.getBinaryOperation_Right();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.UnaryOperationImpl <em>Unary Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.UnaryExpressionImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryExpression()
+     * @see org.hopper.language.portugol.impl.UnaryOperationImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getUnaryOperation()
      * @generated
      */
-    EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
+    EClass UNARY_OPERATION = eINSTANCE.getUnaryOperation();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute UNARY_EXPRESSION__OP = eINSTANCE.getUnaryExpression_Op();
+    EReference UNARY_OPERATION__OP = eINSTANCE.getUnaryOperation_Op();
 
     /**
      * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
@@ -3503,17 +3859,43 @@ public interface PortugolPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference UNARY_EXPRESSION__OPERAND = eINSTANCE.getUnaryExpression_Operand();
+    EReference UNARY_OPERATION__OPERAND = eINSTANCE.getUnaryOperation_Operand();
 
     /**
-     * The meta object literal for the '{@link org.hopper.language.portugol.impl.LiteralImpl <em>Literal</em>}' class.
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.FunctionCallImpl <em>Function Call</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.hopper.language.portugol.impl.LiteralImpl
-     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getLiteral()
+     * @see org.hopper.language.portugol.impl.FunctionCallImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getFunctionCall()
      * @generated
      */
-    EClass LITERAL = eINSTANCE.getLiteral();
+    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+    /**
+     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__FB_NAME = eINSTANCE.getFunctionCall_FbName();
+
+    /**
+     * The meta object literal for the '{@link org.hopper.language.portugol.impl.ProcedureCallImpl <em>Procedure Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.hopper.language.portugol.impl.ProcedureCallImpl
+     * @see org.hopper.language.portugol.impl.PortugolPackageImpl#getProcedureCall()
+     * @generated
+     */
+    EClass PROCEDURE_CALL = eINSTANCE.getProcedureCall();
+
+    /**
+     * The meta object literal for the '<em><b>Fb Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCEDURE_CALL__FB_NAME = eINSTANCE.getProcedureCall_FbName();
 
   }
 

@@ -12,44 +12,35 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.Operator;
 import org.hopper.language.portugol.PortugolPackage;
-import org.hopper.language.portugol.UnaryExpression;
+import org.hopper.language.portugol.UnaryOperation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Unary Expression</b></em>'.
+ * An implementation of the model object '<em><b>Unary Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.UnaryExpressionImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.hopper.language.portugol.impl.UnaryExpressionImpl#getOperand <em>Operand</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.UnaryOperationImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.UnaryOperationImpl#getOperand <em>Operand</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpression
+public class UnaryOperationImpl extends ExpressionImpl implements UnaryOperation
 {
   /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
+  protected Operator op;
 
   /**
    * The cached value of the '{@link #getOperand() <em>Operand</em>}' containment reference.
@@ -66,7 +57,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UnaryExpressionImpl()
+  protected UnaryOperationImpl()
   {
     super();
   }
@@ -79,7 +70,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   @Override
   protected EClass eStaticClass()
   {
-    return PortugolPackage.Literals.UNARY_EXPRESSION;
+    return PortugolPackage.Literals.UNARY_OPERATION;
   }
 
   /**
@@ -87,7 +78,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
+  public Operator getOp()
   {
     return op;
   }
@@ -97,12 +88,37 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOp(String newOp)
+  public NotificationChain basicSetOp(Operator newOp, NotificationChain msgs)
   {
-    String oldOp = op;
+    Operator oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_EXPRESSION__OP, oldOp, op));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_OPERATION__OP, oldOp, newOp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(Operator newOp)
+  {
+    if (newOp != op)
+    {
+      NotificationChain msgs = null;
+      if (op != null)
+        msgs = ((InternalEObject)op).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_OPERATION__OP, null, msgs);
+      if (newOp != null)
+        msgs = ((InternalEObject)newOp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_OPERATION__OP, null, msgs);
+      msgs = basicSetOp(newOp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_OPERATION__OP, newOp, newOp));
   }
 
   /**
@@ -126,7 +142,7 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
     operand = newOperand;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_EXPRESSION__OPERAND, oldOperand, newOperand);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_OPERATION__OPERAND, oldOperand, newOperand);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -143,14 +159,14 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
     {
       NotificationChain msgs = null;
       if (operand != null)
-        msgs = ((InternalEObject)operand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
+        msgs = ((InternalEObject)operand).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_OPERATION__OPERAND, null, msgs);
       if (newOperand != null)
-        msgs = ((InternalEObject)newOperand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_EXPRESSION__OPERAND, null, msgs);
+        msgs = ((InternalEObject)newOperand).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.UNARY_OPERATION__OPERAND, null, msgs);
       msgs = basicSetOperand(newOperand, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_EXPRESSION__OPERAND, newOperand, newOperand));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.UNARY_OPERATION__OPERAND, newOperand, newOperand));
   }
 
   /**
@@ -163,7 +179,9 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   {
     switch (featureID)
     {
-      case PortugolPackage.UNARY_EXPRESSION__OPERAND:
+      case PortugolPackage.UNARY_OPERATION__OP:
+        return basicSetOp(null, msgs);
+      case PortugolPackage.UNARY_OPERATION__OPERAND:
         return basicSetOperand(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -179,9 +197,9 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   {
     switch (featureID)
     {
-      case PortugolPackage.UNARY_EXPRESSION__OP:
+      case PortugolPackage.UNARY_OPERATION__OP:
         return getOp();
-      case PortugolPackage.UNARY_EXPRESSION__OPERAND:
+      case PortugolPackage.UNARY_OPERATION__OPERAND:
         return getOperand();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -197,10 +215,10 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   {
     switch (featureID)
     {
-      case PortugolPackage.UNARY_EXPRESSION__OP:
-        setOp((String)newValue);
+      case PortugolPackage.UNARY_OPERATION__OP:
+        setOp((Operator)newValue);
         return;
-      case PortugolPackage.UNARY_EXPRESSION__OPERAND:
+      case PortugolPackage.UNARY_OPERATION__OPERAND:
         setOperand((Expression)newValue);
         return;
     }
@@ -217,10 +235,10 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   {
     switch (featureID)
     {
-      case PortugolPackage.UNARY_EXPRESSION__OP:
-        setOp(OP_EDEFAULT);
+      case PortugolPackage.UNARY_OPERATION__OP:
+        setOp((Operator)null);
         return;
-      case PortugolPackage.UNARY_EXPRESSION__OPERAND:
+      case PortugolPackage.UNARY_OPERATION__OPERAND:
         setOperand((Expression)null);
         return;
     }
@@ -237,29 +255,12 @@ public class UnaryExpressionImpl extends ExpressionImpl implements UnaryExpressi
   {
     switch (featureID)
     {
-      case PortugolPackage.UNARY_EXPRESSION__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case PortugolPackage.UNARY_EXPRESSION__OPERAND:
+      case PortugolPackage.UNARY_OPERATION__OP:
+        return op != null;
+      case PortugolPackage.UNARY_OPERATION__OPERAND:
         return operand != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
-  }
-
-} //UnaryExpressionImpl
+} //UnaryOperationImpl

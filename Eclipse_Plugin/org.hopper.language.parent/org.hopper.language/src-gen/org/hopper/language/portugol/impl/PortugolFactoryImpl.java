@@ -97,12 +97,18 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
       case PortugolPackage.WRITE_PARAM: return createWriteParam();
       case PortugolPackage.OPT_DECIMAL_PRECISION: return createOptDecimalPrecision();
       case PortugolPackage.EXPRESSION: return createExpression();
+      case PortugolPackage.OPERATOR: return createOperator();
       case PortugolPackage.DECLARED_VAR: return createDeclaredVar();
+      case PortugolPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
       case PortugolPackage.NUMERIC_LITERAL: return createNumericLiteral();
-      case PortugolPackage.STRING_EXPRESSION: return createStringExpression();
+      case PortugolPackage.FLOAT_LITERAL: return createFloatLiteral();
+      case PortugolPackage.INT_LITERAL: return createIntLiteral();
+      case PortugolPackage.STRING_LITERAL: return createStringLiteral();
+      case PortugolPackage.PI_LITERAL: return createPiLiteral();
       case PortugolPackage.BINARY_OPERATION: return createBinaryOperation();
-      case PortugolPackage.UNARY_EXPRESSION: return createUnaryExpression();
-      case PortugolPackage.LITERAL: return createLiteral();
+      case PortugolPackage.UNARY_OPERATION: return createUnaryOperation();
+      case PortugolPackage.FUNCTION_CALL: return createFunctionCall();
+      case PortugolPackage.PROCEDURE_CALL: return createProcedureCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -465,10 +471,32 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Operator createOperator()
+  {
+    OperatorImpl operator = new OperatorImpl();
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DeclaredVar createDeclaredVar()
   {
     DeclaredVarImpl declaredVar = new DeclaredVarImpl();
     return declaredVar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanLiteral createBooleanLiteral()
+  {
+    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
+    return booleanLiteral;
   }
 
   /**
@@ -487,10 +515,43 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringExpression createStringExpression()
+  public FloatLiteral createFloatLiteral()
   {
-    StringExpressionImpl stringExpression = new StringExpressionImpl();
-    return stringExpression;
+    FloatLiteralImpl floatLiteral = new FloatLiteralImpl();
+    return floatLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntLiteral createIntLiteral()
+  {
+    IntLiteralImpl intLiteral = new IntLiteralImpl();
+    return intLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringLiteral createStringLiteral()
+  {
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PiLiteral createPiLiteral()
+  {
+    PiLiteralImpl piLiteral = new PiLiteralImpl();
+    return piLiteral;
   }
 
   /**
@@ -509,10 +570,10 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnaryExpression createUnaryExpression()
+  public UnaryOperation createUnaryOperation()
   {
-    UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-    return unaryExpression;
+    UnaryOperationImpl unaryOperation = new UnaryOperationImpl();
+    return unaryOperation;
   }
 
   /**
@@ -520,10 +581,21 @@ public class PortugolFactoryImpl extends EFactoryImpl implements PortugolFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Literal createLiteral()
+  public FunctionCall createFunctionCall()
   {
-    LiteralImpl literal = new LiteralImpl();
-    return literal;
+    FunctionCallImpl functionCall = new FunctionCallImpl();
+    return functionCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProcedureCall createProcedureCall()
+  {
+    ProcedureCallImpl procedureCall = new ProcedureCallImpl();
+    return procedureCall;
   }
 
   /**

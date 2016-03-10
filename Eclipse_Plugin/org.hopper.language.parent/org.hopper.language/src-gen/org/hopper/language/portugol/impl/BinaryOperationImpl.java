@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.hopper.language.portugol.BinaryOperation;
 import org.hopper.language.portugol.Expression;
+import org.hopper.language.portugol.Operator;
 import org.hopper.language.portugol.PortugolPackage;
 
 /**
@@ -43,24 +44,14 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
   protected Expression left;
 
   /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
+  protected Operator op;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -146,7 +137,7 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
+  public Operator getOp()
   {
     return op;
   }
@@ -156,12 +147,37 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOp(String newOp)
+  public NotificationChain basicSetOp(Operator newOp, NotificationChain msgs)
   {
-    String oldOp = op;
+    Operator oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.BINARY_OPERATION__OP, oldOp, op));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PortugolPackage.BINARY_OPERATION__OP, oldOp, newOp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(Operator newOp)
+  {
+    if (newOp != op)
+    {
+      NotificationChain msgs = null;
+      if (op != null)
+        msgs = ((InternalEObject)op).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BINARY_OPERATION__OP, null, msgs);
+      if (newOp != null)
+        msgs = ((InternalEObject)newOp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PortugolPackage.BINARY_OPERATION__OP, null, msgs);
+      msgs = basicSetOp(newOp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.BINARY_OPERATION__OP, newOp, newOp));
   }
 
   /**
@@ -224,6 +240,8 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
     {
       case PortugolPackage.BINARY_OPERATION__LEFT:
         return basicSetLeft(null, msgs);
+      case PortugolPackage.BINARY_OPERATION__OP:
+        return basicSetOp(null, msgs);
       case PortugolPackage.BINARY_OPERATION__RIGHT:
         return basicSetRight(null, msgs);
     }
@@ -264,7 +282,7 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
         setLeft((Expression)newValue);
         return;
       case PortugolPackage.BINARY_OPERATION__OP:
-        setOp((String)newValue);
+        setOp((Operator)newValue);
         return;
       case PortugolPackage.BINARY_OPERATION__RIGHT:
         setRight((Expression)newValue);
@@ -287,7 +305,7 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
         setLeft((Expression)null);
         return;
       case PortugolPackage.BINARY_OPERATION__OP:
-        setOp(OP_EDEFAULT);
+        setOp((Operator)null);
         return;
       case PortugolPackage.BINARY_OPERATION__RIGHT:
         setRight((Expression)null);
@@ -309,28 +327,11 @@ public class BinaryOperationImpl extends ExpressionImpl implements BinaryOperati
       case PortugolPackage.BINARY_OPERATION__LEFT:
         return left != null;
       case PortugolPackage.BINARY_OPERATION__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+        return op != null;
       case PortugolPackage.BINARY_OPERATION__RIGHT:
         return right != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
   }
 
 } //BinaryOperationImpl

@@ -236,9 +236,19 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
+      public Adapter caseOperator(Operator object)
+      {
+        return createOperatorAdapter();
+      }
+      @Override
       public Adapter caseDeclaredVar(DeclaredVar object)
       {
         return createDeclaredVarAdapter();
+      }
+      @Override
+      public Adapter caseBooleanLiteral(BooleanLiteral object)
+      {
+        return createBooleanLiteralAdapter();
       }
       @Override
       public Adapter caseNumericLiteral(NumericLiteral object)
@@ -246,9 +256,24 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createNumericLiteralAdapter();
       }
       @Override
-      public Adapter caseStringExpression(StringExpression object)
+      public Adapter caseFloatLiteral(FloatLiteral object)
       {
-        return createStringExpressionAdapter();
+        return createFloatLiteralAdapter();
+      }
+      @Override
+      public Adapter caseIntLiteral(IntLiteral object)
+      {
+        return createIntLiteralAdapter();
+      }
+      @Override
+      public Adapter caseStringLiteral(StringLiteral object)
+      {
+        return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter casePiLiteral(PiLiteral object)
+      {
+        return createPiLiteralAdapter();
       }
       @Override
       public Adapter caseBinaryOperation(BinaryOperation object)
@@ -256,14 +281,19 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
         return createBinaryOperationAdapter();
       }
       @Override
-      public Adapter caseUnaryExpression(UnaryExpression object)
+      public Adapter caseUnaryOperation(UnaryOperation object)
       {
-        return createUnaryExpressionAdapter();
+        return createUnaryOperationAdapter();
       }
       @Override
-      public Adapter caseLiteral(Literal object)
+      public Adapter caseFunctionCall(FunctionCall object)
       {
-        return createLiteralAdapter();
+        return createFunctionCallAdapter();
+      }
+      @Override
+      public Adapter caseProcedureCall(ProcedureCall object)
+      {
+        return createProcedureCallAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -768,6 +798,21 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Operator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.Operator
+   * @generated
+   */
+  public Adapter createOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.DeclaredVar <em>Declared Var</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -778,6 +823,21 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclaredVarAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.BooleanLiteral <em>Boolean Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.BooleanLiteral
+   * @generated
+   */
+  public Adapter createBooleanLiteralAdapter()
   {
     return null;
   }
@@ -798,16 +858,61 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.StringExpression <em>String Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.FloatLiteral <em>Float Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.StringExpression
+   * @see org.hopper.language.portugol.FloatLiteral
    * @generated
    */
-  public Adapter createStringExpressionAdapter()
+  public Adapter createFloatLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.IntLiteral <em>Int Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.IntLiteral
+   * @generated
+   */
+  public Adapter createIntLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.StringLiteral
+   * @generated
+   */
+  public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.PiLiteral <em>Pi Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.PiLiteral
+   * @generated
+   */
+  public Adapter createPiLiteralAdapter()
   {
     return null;
   }
@@ -828,31 +933,46 @@ public class PortugolAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.UnaryExpression <em>Unary Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.UnaryOperation <em>Unary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.UnaryExpression
+   * @see org.hopper.language.portugol.UnaryOperation
    * @generated
    */
-  public Adapter createUnaryExpressionAdapter()
+  public Adapter createUnaryOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.Literal <em>Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.hopper.language.portugol.Literal
+   * @see org.hopper.language.portugol.FunctionCall
    * @generated
    */
-  public Adapter createLiteralAdapter()
+  public Adapter createFunctionCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.hopper.language.portugol.ProcedureCall <em>Procedure Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.hopper.language.portugol.ProcedureCall
+   * @generated
+   */
+  public Adapter createProcedureCallAdapter()
   {
     return null;
   }

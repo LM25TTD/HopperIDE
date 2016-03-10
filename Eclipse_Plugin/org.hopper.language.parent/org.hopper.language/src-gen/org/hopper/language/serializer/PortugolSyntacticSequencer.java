@@ -34,12 +34,6 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getEND_COMMANDRule())
 			return getEND_COMMANDToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getFLOATRule())
-			return getFLOATToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getINTRule())
-			return getINTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getPiLiteralRule())
-			return getPiLiteralToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -51,35 +45,6 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return ";";
-	}
-	
-	/**
-	 * terminal FLOAT:
-	 * 	INT '.' INT;
-	 */
-	protected String getFLOATToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return ".";
-	}
-	
-	/**
-	 * terminal INT returns ecore::EInt: ('0'..'9')+;
-	 */
-	protected String getINTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
-	
-	/**
-	 * PiLiteral:
-	 * 	'pi';
-	 */
-	protected String getPiLiteralToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "pi";
 	}
 	
 	@Override
@@ -101,15 +66,15 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) PiLiteral (rule start)
-	 *     (rule start) (ambiguity) PiLiteral END_COMMAND (rule start)
 	 *     (rule start) (ambiguity) fbName=[FunctionName|ID]
-	 *     (rule start) (ambiguity) floatValue?=FLOAT
-	 *     (rule start) (ambiguity) intValue?=INT
-	 *     (rule start) (ambiguity) literalString=STRING
-	 *     (rule start) (ambiguity) op='-'
-	 *     (rule start) (ambiguity) op='NOT'
+	 *     (rule start) (ambiguity) op=NotOperator
 	 *     (rule start) (ambiguity) preDefFunctionName=PredefineFunctions
+	 *     (rule start) (ambiguity) value='falso'
+	 *     (rule start) (ambiguity) value='pi'
+	 *     (rule start) (ambiguity) value='verdadeiro'
+	 *     (rule start) (ambiguity) value=FLOAT
+	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) value=STRING
 	 *     (rule start) (ambiguity) varName=[VarName|ID]
 	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
@@ -122,8 +87,7 @@ public class PortugolSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) op='-'
-	 *     (rule start) (ambiguity) op='NOT'
+	 *     (rule start) (ambiguity) op=NotOperator
 	 *     (rule start) (ambiguity) {BinaryOperation.left=}
 	 */
 	protected void emit_PrimaryExpression_LeftParenthesisKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

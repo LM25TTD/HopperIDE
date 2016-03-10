@@ -29,7 +29,7 @@ VarName:
 	name=ID;
 
 VarType:
-	typeName=('real' | 'inteiro' | 'caractere' | 'caracter');
+	typeName=('real' | 'inteiro' | 'caractere' | 'caracter' | 'logico');
 
 Subprograms:
 	(blockSubPrograms+=BlockSubPrograms)+;
@@ -138,34 +138,74 @@ Expression returns Expression:
 	Assignment;
 
 Assignment returns Expression:
-	OrExpression (=> ({BinaryOperation.left=current} op=('<-')) right=Assignment)*;
+	OrExpression (=> ({BinaryOperation.left=current} op=AssignmentOperator) right=Assignment)*;
 
 OrExpression returns Expression:
-	XorExpression (=> ({BinaryOperation.left=current} op=("OU")) right=XorExpression)*;
+	XorExpression (=> ({BinaryOperation.left=current} op=OrOperator) right=XorExpression)*;
 
 XorExpression returns Expression:
-	AndExpression (=> ({BinaryOperation.left=current} op=("XOU")) right=AndExpression)*;
+	AndExpression (=> ({BinaryOperation.left=current} op=XorOperator) right=AndExpression)*;
 
 AndExpression returns Expression:
-	Comparison (=> ({BinaryOperation.left=current} op=('&' | 'E')) right=Comparison)*;
+	Comparison (=> ({BinaryOperation.left=current} op=AndOperator) right=Comparison)*;
 
 Comparison returns Expression:
-	EquExpression (=> ({BinaryOperation.left=current} op=('=' | '<>')) right=EquExpression)*;
+	EquExpression (=> ({BinaryOperation.left=current} op=ComparisonOperator) right=EquExpression)*;
 
 EquExpression returns Expression:
-	AddExpression (=> ({BinaryOperation.left=current} op=('<' | '>' | '<=' | '>=')) right=AddExpression)*;
+	AddExpression (=> ({BinaryOperation.left=current} op=EqualityOperator) right=AddExpression)*;
 
 AddExpression returns Expression:
-	MultiplicativeExpression (=> ({BinaryOperation.left=current} op=('+' | '-')) right=MultiplicativeExpression)*;
+	MultiplicativeExpression (=> ({BinaryOperation.left=current} op=AddOperator)  right=MultiplicativeExpression)*;
 
 MultiplicativeExpression returns Expression:
-	PowerExpression (=> ({BinaryOperation.left=current} op=('*' | '/' | 'MOD' | '%')) right=PowerExpression)*;
+	PowerExpression (=> ({BinaryOperation.left=current} op=MultiplicativeOperator) right=PowerExpression)*;
 
 PowerExpression returns Expression:
-	UnaryExpression (=> ({BinaryOperation.left=current} op=('^')) right=UnaryExpression)*;
+	UnaryOperation (=> ({BinaryOperation.left=current} op=PowerOperator) right=UnaryOperation)*;
 
-UnaryExpression returns Expression:
-	{UnaryExpression} op=('NOT' | '-') operand=UnaryExpression /* right associativity */
+AssignmentOperator returns Operator:
+	op='<-'
+;
+
+OrOperator returns Operator:
+	op='OU'
+;
+
+XorOperator returns Operator:
+	op='XOU'
+;
+
+AndOperator returns Operator:
+	op=('E')
+;
+
+ComparisonOperator returns Operator:
+	op=('=' | '<>')
+;
+
+EqualityOperator returns Operator:
+	op=('<' | '>' | '<=' | '>=')
+;
+
+AddOperator returns Operator:
+	op=('+' | '-')
+;
+
+MultiplicativeOperator returns Operator:
+	op=('*' | '/' | 'MOD' | '%')
+;
+
+PowerOperator returns Operator:
+	op=('^')
+;
+
+NotOperator returns Operator:
+	op=('NAO'|'-')
+;
+
+UnaryOperation returns Expression:
+	{UnaryOperation} op=NotOperator operand=UnaryOperation /* right associativity */
 	| PrimaryExpression;
 
 PrimaryExpression returns Expression:
@@ -179,33 +219,47 @@ PreDefinedFunctionCall returns Expression:
 	preDefFunctionName=PredefineFunctions '(' param=SubprogramParam ')';
 
 FunctionCall returns Expression:
-	fbName=[FunctionName] '(' param=SubprogramParam ')';
+	{FunctionCall} fbName=[FunctionName] '(' param=SubprogramParam ')';
 
 PredefineFunctions:
 	'maiusc' | 'compr' | 'raizq' | 'copia';
 
 ProcedureCall returns Expression:
-	fbName=[ProcedureName] '(' param=SubprogramParam ')';
+	{ProcedureCall} fbName=[ProcedureName] '(' param=SubprogramParam ')';
 
-Literal returns Expression:
-	{Literal} PiLiteral
-	| NumericLiteral
-	| StringExpression;
+Literal returns Expression:	
+	  NumericLiteral
+	| StringLiteral
+	| BooleanLiteral;
 
 DeclaredVar:
 	varName=[VarName];
 
-NumericLiteral:
-	intValue?=INT | floatValue?=FLOAT;
+BooleanLiteral:
+	value = ('verdadeiro' | 'falso')
+;
 
-StringExpression:
-	literalString=STRING;
+NumericLiteral:
+	IntLiteral | FloatLiteral | PiLiteral;
+
+FloatLiteral:
+	value=FLOAT
+;
+
+IntLiteral:
+	value=INT
+;
+
+StringLiteral:
+	value=STRING
+;
 
 PiLiteral:
-	'pi';
+	value='pi'
+;
 
-terminal FLOAT:
-	INT '.' INT;
+terminal FLOAT returns ecore::EFloat:
+	INT+ '.' INT+;
 
 END_COMMAND:
 	';';

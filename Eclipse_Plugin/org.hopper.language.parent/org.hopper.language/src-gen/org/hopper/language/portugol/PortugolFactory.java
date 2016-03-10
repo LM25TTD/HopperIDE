@@ -312,6 +312,15 @@ public interface PortugolFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operator</em>'.
+   * @generated
+   */
+  Operator createOperator();
+
+  /**
    * Returns a new object of class '<em>Declared Var</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -319,6 +328,15 @@ public interface PortugolFactory extends EFactory
    * @generated
    */
   DeclaredVar createDeclaredVar();
+
+  /**
+   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @generated
+   */
+  BooleanLiteral createBooleanLiteral();
 
   /**
    * Returns a new object of class '<em>Numeric Literal</em>'.
@@ -330,13 +348,40 @@ public interface PortugolFactory extends EFactory
   NumericLiteral createNumericLiteral();
 
   /**
-   * Returns a new object of class '<em>String Expression</em>'.
+   * Returns a new object of class '<em>Float Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Expression</em>'.
+   * @return a new object of class '<em>Float Literal</em>'.
    * @generated
    */
-  StringExpression createStringExpression();
+  FloatLiteral createFloatLiteral();
+
+  /**
+   * Returns a new object of class '<em>Int Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Literal</em>'.
+   * @generated
+   */
+  IntLiteral createIntLiteral();
+
+  /**
+   * Returns a new object of class '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Literal</em>'.
+   * @generated
+   */
+  StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Pi Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pi Literal</em>'.
+   * @generated
+   */
+  PiLiteral createPiLiteral();
 
   /**
    * Returns a new object of class '<em>Binary Operation</em>'.
@@ -348,22 +393,31 @@ public interface PortugolFactory extends EFactory
   BinaryOperation createBinaryOperation();
 
   /**
-   * Returns a new object of class '<em>Unary Expression</em>'.
+   * Returns a new object of class '<em>Unary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unary Expression</em>'.
+   * @return a new object of class '<em>Unary Operation</em>'.
    * @generated
    */
-  UnaryExpression createUnaryExpression();
+  UnaryOperation createUnaryOperation();
 
   /**
-   * Returns a new object of class '<em>Literal</em>'.
+   * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal</em>'.
+   * @return a new object of class '<em>Function Call</em>'.
    * @generated
    */
-  Literal createLiteral();
+  FunctionCall createFunctionCall();
+
+  /**
+   * Returns a new object of class '<em>Procedure Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Procedure Call</em>'.
+   * @generated
+   */
+  ProcedureCall createProcedureCall();
 
   /**
    * Returns the package supported by this factory.

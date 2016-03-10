@@ -9,50 +9,50 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.hopper.language.portugol.IntLiteral;
 import org.hopper.language.portugol.PortugolPackage;
-import org.hopper.language.portugol.StringExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>String Expression</b></em>'.
+ * An implementation of the model object '<em><b>Int Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.impl.StringExpressionImpl#getLiteralString <em>Literal String</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.impl.IntLiteralImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StringExpressionImpl extends ExpressionImpl implements StringExpression
+public class IntLiteralImpl extends NumericLiteralImpl implements IntLiteral
 {
   /**
-   * The default value of the '{@link #getLiteralString() <em>Literal String</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLiteralString()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String LITERAL_STRING_EDEFAULT = null;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getLiteralString() <em>Literal String</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLiteralString()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String literalString = LITERAL_STRING_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StringExpressionImpl()
+  protected IntLiteralImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
   @Override
   protected EClass eStaticClass()
   {
-    return PortugolPackage.Literals.STRING_EXPRESSION;
+    return PortugolPackage.Literals.INT_LITERAL;
   }
 
   /**
@@ -73,9 +73,9 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLiteralString()
+  public int getValue()
   {
-    return literalString;
+    return value;
   }
 
   /**
@@ -83,12 +83,12 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLiteralString(String newLiteralString)
+  public void setValue(int newValue)
   {
-    String oldLiteralString = literalString;
-    literalString = newLiteralString;
+    int oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.STRING_EXPRESSION__LITERAL_STRING, oldLiteralString, literalString));
+      eNotify(new ENotificationImpl(this, Notification.SET, PortugolPackage.INT_LITERAL__VALUE, oldValue, value));
   }
 
   /**
@@ -101,8 +101,8 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
   {
     switch (featureID)
     {
-      case PortugolPackage.STRING_EXPRESSION__LITERAL_STRING:
-        return getLiteralString();
+      case PortugolPackage.INT_LITERAL__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
   {
     switch (featureID)
     {
-      case PortugolPackage.STRING_EXPRESSION__LITERAL_STRING:
-        setLiteralString((String)newValue);
+      case PortugolPackage.INT_LITERAL__VALUE:
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
   {
     switch (featureID)
     {
-      case PortugolPackage.STRING_EXPRESSION__LITERAL_STRING:
-        setLiteralString(LITERAL_STRING_EDEFAULT);
+      case PortugolPackage.INT_LITERAL__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
   {
     switch (featureID)
     {
-      case PortugolPackage.STRING_EXPRESSION__LITERAL_STRING:
-        return LITERAL_STRING_EDEFAULT == null ? literalString != null : !LITERAL_STRING_EDEFAULT.equals(literalString);
+      case PortugolPackage.INT_LITERAL__VALUE:
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +168,10 @@ public class StringExpressionImpl extends ExpressionImpl implements StringExpres
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (literalString: ");
-    result.append(literalString);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //StringExpressionImpl
+} //IntLiteralImpl

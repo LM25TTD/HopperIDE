@@ -79,7 +79,7 @@ public class PortugolFormatter extends AbstractFormatter2 {
     };
     document.prepend(_ruleCallTo, _function_1);
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
+      it.setNewLines(2);
     };
     document.<HeaderBlock>append(headerBlock, _function_2);
   }

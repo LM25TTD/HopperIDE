@@ -6,48 +6,48 @@ package org.hopper.language.portugol;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Unary Expression</b></em>'.
+ * A representation of the model object '<em><b>Unary Operation</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.hopper.language.portugol.UnaryExpression#getOp <em>Op</em>}</li>
- *   <li>{@link org.hopper.language.portugol.UnaryExpression#getOperand <em>Operand</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.UnaryOperation#getOp <em>Op</em>}</li>
+ *   <li>{@link org.hopper.language.portugol.UnaryOperation#getOperand <em>Operand</em>}</li>
  * </ul>
  *
- * @see org.hopper.language.portugol.PortugolPackage#getUnaryExpression()
+ * @see org.hopper.language.portugol.PortugolPackage#getUnaryOperation()
  * @model
  * @generated
  */
-public interface UnaryExpression extends Expression
+public interface UnaryOperation extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
+   * If the meaning of the '<em>Op</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see org.hopper.language.portugol.PortugolPackage#getUnaryExpression_Op()
-   * @model
+   * @return the value of the '<em>Op</em>' containment reference.
+   * @see #setOp(Operator)
+   * @see org.hopper.language.portugol.PortugolPackage#getUnaryOperation_Op()
+   * @model containment="true"
    * @generated
    */
-  String getOp();
+  Operator getOp();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.UnaryExpression#getOp <em>Op</em>}' attribute.
+   * Sets the value of the '{@link org.hopper.language.portugol.UnaryOperation#getOp <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
+   * @param value the new value of the '<em>Op</em>' containment reference.
    * @see #getOp()
    * @generated
    */
-  void setOp(String value);
+  void setOp(Operator value);
 
   /**
    * Returns the value of the '<em><b>Operand</b></em>' containment reference.
@@ -59,14 +59,14 @@ public interface UnaryExpression extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operand</em>' containment reference.
    * @see #setOperand(Expression)
-   * @see org.hopper.language.portugol.PortugolPackage#getUnaryExpression_Operand()
+   * @see org.hopper.language.portugol.PortugolPackage#getUnaryOperation_Operand()
    * @model containment="true"
    * @generated
    */
   Expression getOperand();
 
   /**
-   * Sets the value of the '{@link org.hopper.language.portugol.UnaryExpression#getOperand <em>Operand</em>}' containment reference.
+   * Sets the value of the '{@link org.hopper.language.portugol.UnaryOperation#getOperand <em>Operand</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Operand</em>' containment reference.
@@ -75,4 +75,4 @@ public interface UnaryExpression extends Expression
    */
   void setOperand(Expression value);
 
-} // UnaryExpression
+} // UnaryOperation
