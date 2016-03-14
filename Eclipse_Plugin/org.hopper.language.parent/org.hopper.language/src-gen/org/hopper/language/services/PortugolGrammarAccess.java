@@ -885,7 +885,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cParaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cOperatorExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOperatorExprExpressionParserRuleCall_1_0 = (RuleCall)cOperatorExprAssignment_1.eContents().get(0);
+		private final RuleCall cOperatorExprDeclaredVarParserRuleCall_1_0 = (RuleCall)cOperatorExprAssignment_1.eContents().get(0);
 		private final Keyword cDeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cStartExprAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStartExprExpressionParserRuleCall_3_0 = (RuleCall)cStartExprAssignment_3.eContents().get(0);
@@ -902,24 +902,24 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFimparaKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ForStatement:
-		//	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
+		//	'para' operatorExpr=DeclaredVar 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
 		//	'faca'
 		//	commands+=AbstractCommand+
 		//	'fimpara';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)? 'faca'
+		//'para' operatorExpr=DeclaredVar 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)? 'faca'
 		//commands+=AbstractCommand+ 'fimpara'
 		public Group getGroup() { return cGroup; }
 		
 		//'para'
 		public Keyword getParaKeyword_0() { return cParaKeyword_0; }
 		
-		//operatorExpr=Expression
+		//operatorExpr=DeclaredVar
 		public Assignment getOperatorExprAssignment_1() { return cOperatorExprAssignment_1; }
 		
-		//Expression
-		public RuleCall getOperatorExprExpressionParserRuleCall_1_0() { return cOperatorExprExpressionParserRuleCall_1_0; }
+		//DeclaredVar
+		public RuleCall getOperatorExprDeclaredVarParserRuleCall_1_0() { return cOperatorExprDeclaredVarParserRuleCall_1_0; }
 		
 		//'de'
 		public Keyword getDeKeyword_2() { return cDeKeyword_2; }
@@ -2690,7 +2690,7 @@ public class PortugolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ForStatement:
-	//	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
+	//	'para' operatorExpr=DeclaredVar 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
 	//	'faca'
 	//	commands+=AbstractCommand+
 	//	'fimpara';

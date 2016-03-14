@@ -8364,9 +8364,9 @@ rule__ForStatement__OperatorExprAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0()); }
-		ruleExpression
-		{ after(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0()); }
+		{ before(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0()); }
+		ruleDeclaredVar
+		{ after(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0()); }
 	)
 ;
 finally {

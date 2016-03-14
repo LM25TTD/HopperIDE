@@ -27,6 +27,7 @@ import org.hopper.language.portugol.BlockSubPrograms;
 import org.hopper.language.portugol.BreakStatement;
 import org.hopper.language.portugol.CaseList;
 import org.hopper.language.portugol.DeclarationsBlock;
+import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.HeaderBlock;
@@ -92,7 +93,7 @@ public class PortugolFormatter extends AbstractFormatter2 {
     };
     ISemanticRegion _append = document.append(_keyword, _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-      it.newLine();
+      it.setNewLines(2);
     };
     document.prepend(_append, _function_1);
     final EList<Variable> vars = declarationsBlock.getVars();
@@ -597,11 +598,11 @@ public class PortugolFormatter extends AbstractFormatter2 {
       it.oneSpace();
     };
     document.append(_prepend, _function_1);
-    Expression _operatorExpr = forStatement.getOperatorExpr();
+    DeclaredVar _operatorExpr = forStatement.getOperatorExpr();
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.oneSpace();
     };
-    document.<Expression>surround(_operatorExpr, _function_2);
+    document.<DeclaredVar>surround(_operatorExpr, _function_2);
     ISemanticRegionsFinder _regionFor_1 = this.textRegionExtensions.regionFor(forStatement);
     ISemanticRegion _keyword_1 = _regionFor_1.keyword("de");
     final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {

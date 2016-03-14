@@ -106,7 +106,7 @@
         eType="#//AbstractCommand" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//AbstractCommand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operatorExpr" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operatorExpr" eType="#//DeclaredVar"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startExpr" eType="#//Expression"
         containment="true"/>

@@ -58,7 +58,7 @@ class PortugolFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(DeclarationsBlock declarationsBlock, extension IFormattableDocument document) {
-		declarationsBlock.regionFor.keyword('var').append[newLine].prepend[newLine]
+		declarationsBlock.regionFor.keyword('var').append[newLine].prepend[newLines = 2]
 		val vars = declarationsBlock.getVars()
 		for (Variable variable : vars) {
 			variable.format;

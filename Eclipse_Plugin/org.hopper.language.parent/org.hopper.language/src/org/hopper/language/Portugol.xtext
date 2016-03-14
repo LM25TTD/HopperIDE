@@ -104,7 +104,7 @@ OtherCase:
 	(otherCaseCommands+=AbstractCommand)+;
 
 ForStatement:
-	'para' operatorExpr=Expression 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
+	'para' operatorExpr=DeclaredVar 'de' startExpr=Expression 'ate' endExpr=Expression ('passo' stepExpe=Expression)?
 	'faca'
 	(commands+=AbstractCommand)+
 	'fimpara';

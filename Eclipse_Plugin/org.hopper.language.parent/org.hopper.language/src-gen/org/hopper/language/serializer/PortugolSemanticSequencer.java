@@ -564,7 +564,7 @@ public class PortugolSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ForStatement returns ForStatement
 	 *
 	 * Constraint:
-	 *     (operatorExpr=Expression startExpr=Expression endExpr=Expression stepExpe=Expression? commands+=AbstractCommand+)
+	 *     (operatorExpr=DeclaredVar startExpr=Expression endExpr=Expression stepExpe=Expression? commands+=AbstractCommand+)
 	 */
 	protected void sequence_ForStatement(ISerializationContext context, ForStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

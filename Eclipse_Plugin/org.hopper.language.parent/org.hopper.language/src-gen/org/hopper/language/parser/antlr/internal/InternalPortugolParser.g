@@ -1576,9 +1576,9 @@ ruleForStatement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0());
 				}
-				lv_operatorExpr_1_0=ruleExpression
+				lv_operatorExpr_1_0=ruleDeclaredVar
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForStatementRule());
@@ -1587,7 +1587,7 @@ ruleForStatement returns [EObject current=null]
 						$current,
 						"operatorExpr",
 						lv_operatorExpr_1_0,
-						"org.hopper.language.Portugol.Expression");
+						"org.hopper.language.Portugol.DeclaredVar");
 					afterParserOrEnumRuleCall();
 				}
 			)

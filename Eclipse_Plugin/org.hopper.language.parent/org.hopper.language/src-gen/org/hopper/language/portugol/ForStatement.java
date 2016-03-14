@@ -36,12 +36,12 @@ public interface ForStatement extends AbstractCommand
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operator Expr</em>' containment reference.
-   * @see #setOperatorExpr(Expression)
+   * @see #setOperatorExpr(DeclaredVar)
    * @see org.hopper.language.portugol.PortugolPackage#getForStatement_OperatorExpr()
    * @model containment="true"
    * @generated
    */
-  Expression getOperatorExpr();
+  DeclaredVar getOperatorExpr();
 
   /**
    * Sets the value of the '{@link org.hopper.language.portugol.ForStatement#getOperatorExpr <em>Operator Expr</em>}' containment reference.
@@ -51,7 +51,7 @@ public interface ForStatement extends AbstractCommand
    * @see #getOperatorExpr()
    * @generated
    */
-  void setOperatorExpr(Expression value);
+  void setOperatorExpr(DeclaredVar value);
 
   /**
    * Returns the value of the '<em><b>Start Expr</b></em>' containment reference.

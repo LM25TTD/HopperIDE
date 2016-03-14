@@ -4661,7 +4661,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForStatement"
-    // InternalPortugolParser.g:1564:1: ruleForStatement returns [EObject current=null] : (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleExpression ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara ) ;
+    // InternalPortugolParser.g:1564:1: ruleForStatement returns [EObject current=null] : (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleDeclaredVar ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara ) ;
     public final EObject ruleForStatement() throws RecognitionException {
         EObject current = null;
 
@@ -4686,31 +4686,31 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPortugolParser.g:1570:2: ( (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleExpression ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara ) )
-            // InternalPortugolParser.g:1571:2: (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleExpression ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara )
+            // InternalPortugolParser.g:1570:2: ( (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleDeclaredVar ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara ) )
+            // InternalPortugolParser.g:1571:2: (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleDeclaredVar ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara )
             {
-            // InternalPortugolParser.g:1571:2: (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleExpression ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara )
-            // InternalPortugolParser.g:1572:3: otherlv_0= Para ( (lv_operatorExpr_1_0= ruleExpression ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara
+            // InternalPortugolParser.g:1571:2: (otherlv_0= Para ( (lv_operatorExpr_1_0= ruleDeclaredVar ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara )
+            // InternalPortugolParser.g:1572:3: otherlv_0= Para ( (lv_operatorExpr_1_0= ruleDeclaredVar ) ) otherlv_2= De ( (lv_startExpr_3_0= ruleExpression ) ) otherlv_4= Ate ( (lv_endExpr_5_0= ruleExpression ) ) (otherlv_6= Passo ( (lv_stepExpe_7_0= ruleExpression ) ) )? otherlv_8= Faca ( (lv_commands_9_0= ruleAbstractCommand ) )+ otherlv_10= Fimpara
             {
-            otherlv_0=(Token)match(input,Para,FOLLOW_22); if (state.failed) return current;
+            otherlv_0=(Token)match(input,Para,FOLLOW_6); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getForStatementAccess().getParaKeyword_0());
               		
             }
-            // InternalPortugolParser.g:1576:3: ( (lv_operatorExpr_1_0= ruleExpression ) )
-            // InternalPortugolParser.g:1577:4: (lv_operatorExpr_1_0= ruleExpression )
+            // InternalPortugolParser.g:1576:3: ( (lv_operatorExpr_1_0= ruleDeclaredVar ) )
+            // InternalPortugolParser.g:1577:4: (lv_operatorExpr_1_0= ruleDeclaredVar )
             {
-            // InternalPortugolParser.g:1577:4: (lv_operatorExpr_1_0= ruleExpression )
-            // InternalPortugolParser.g:1578:5: lv_operatorExpr_1_0= ruleExpression
+            // InternalPortugolParser.g:1577:4: (lv_operatorExpr_1_0= ruleDeclaredVar )
+            // InternalPortugolParser.g:1578:5: lv_operatorExpr_1_0= ruleDeclaredVar
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0());
+              					newCompositeNode(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0());
               				
             }
             pushFollow(FOLLOW_30);
-            lv_operatorExpr_1_0=ruleExpression();
+            lv_operatorExpr_1_0=ruleDeclaredVar();
 
             state._fsp--;
             if (state.failed) return current;
@@ -4723,7 +4723,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
               						current,
               						"operatorExpr",
               						lv_operatorExpr_1_0,
-              						"org.hopper.language.Portugol.Expression");
+              						"org.hopper.language.Portugol.DeclaredVar");
               					afterParserOrEnumRuleCall();
               				
             }
@@ -10022,7 +10022,7 @@ public class InternalPortugolParser extends AbstractInternalAntlrParser {
                 {
                 int LA48_3 = input.LA(2);
 
-                if ( (LA48_3==EOF||LA48_3==Entao||LA48_3==Passo||LA48_3==Faca||LA48_3==MOD||(LA48_3>=XOU && LA48_3<=Ate)||(LA48_3>=LessThanSignHyphenMinus && LA48_3<=De)||LA48_3==PercentSign||(LA48_3>=RightParenthesis && LA48_3<=CircumflexAccent)) ) {
+                if ( (LA48_3==EOF||LA48_3==Entao||LA48_3==Passo||LA48_3==Faca||LA48_3==MOD||(LA48_3>=XOU && LA48_3<=Ate)||(LA48_3>=LessThanSignHyphenMinus && LA48_3<=OU)||LA48_3==PercentSign||(LA48_3>=RightParenthesis && LA48_3<=CircumflexAccent)) ) {
                     alt48=4;
                 }
                 else if ( (LA48_3==LeftParenthesis) ) {

@@ -16,24 +16,36 @@ import org.hopper.language.portugol.BlockFunction
 import org.hopper.language.portugol.BlockProcedure
 import org.hopper.language.portugol.BlockSubPrograms
 import org.hopper.language.portugol.BooleanLiteral
+import org.hopper.language.portugol.BreakStatement
+import org.hopper.language.portugol.CaseList
 import org.hopper.language.portugol.DeclarationsBlock
 import org.hopper.language.portugol.DeclaredVar
 import org.hopper.language.portugol.Expression
 import org.hopper.language.portugol.FloatLiteral
+import org.hopper.language.portugol.ForStatement
 import org.hopper.language.portugol.FunctionCall
 import org.hopper.language.portugol.HeaderBlock
+import org.hopper.language.portugol.IfStatement
 import org.hopper.language.portugol.IntLiteral
 import org.hopper.language.portugol.Model
 import org.hopper.language.portugol.Operator
+import org.hopper.language.portugol.OtherCase
 import org.hopper.language.portugol.PiLiteral
+import org.hopper.language.portugol.ReadCommand
+import org.hopper.language.portugol.RepeatStatement
+import org.hopper.language.portugol.ReturnStatement
 import org.hopper.language.portugol.StringLiteral
 import org.hopper.language.portugol.SubprogramParam
 import org.hopper.language.portugol.Subprograms
+import org.hopper.language.portugol.SwitchCaseStatement
 import org.hopper.language.portugol.UnaryOperation
+import org.hopper.language.portugol.VarName
 import org.hopper.language.portugol.VarType
 import org.hopper.language.portugol.Variable
+import org.hopper.language.portugol.WhileStatement
 import org.hopper.language.portugol.WriteCommand
 import org.hopper.language.portugol.WriteParam
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Generates code from your model files on save.
@@ -50,12 +62,13 @@ class PortugolGenerator extends AbstractGenerator {
 			fsa.generateFile("generated/" + className + ".java", e.compile);
 		}
 	}
-	
+
 	def generateClassName(Model e) {
 		className = Normalizer.normalize(e.header.algorithmName.trim, Normalizer.Form.NFD);
-		
+		className = className.replaceAll("_", " ")
+
 		var sbClassName = new StringBuilder(className);
-		
+
 		var spaceIndex = 0;
 		while ((spaceIndex = sbClassName.indexOf(' ', spaceIndex)) > -1) {
 			var upperLetter = Character.toUpperCase(sbClassName.charAt(spaceIndex + 1));
@@ -65,6 +78,7 @@ class PortugolGenerator extends AbstractGenerator {
 		className = sbClassName.toString();
 		className = className.replaceAll("[^\\p{ASCII}]", "");
 		className = className.replaceAll(" ", "")
+		className = className.toFirstUpper;
 	}
 
 	def compile(Model model) {
@@ -72,6 +86,9 @@ class PortugolGenerator extends AbstractGenerator {
 			package hopper;
 			
 			import java.lang.*;
+			import java.io.BufferedReader;
+			import java.io.IOException;
+			import java.io.InputStreamReader;
 					
 			public class «model.header.compile»{
 				«IF model.globalDeclarations != null»
@@ -85,14 +102,14 @@ class PortugolGenerator extends AbstractGenerator {
 			}	
 		'''
 	}
-	
-	def compile(HeaderBlock header){
+
+	def compile(HeaderBlock header) {
 		'''«className»'''
 	}
 
 	def compile(BlockCommand blockCommand) {
 		'''
-			public static void main(String[] args){
+			public static void main(String[] args) throws IOException {
 				«IF blockCommand.commands!=null»
 					«blockCommand.commands.compile»
 				«ENDIF»
@@ -100,69 +117,224 @@ class PortugolGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def compile(EList<AbstractCommand> commands) {		
+	def compile(EList<AbstractCommand> commands) {
 		''' 
 			«IF commands != null»
 				«FOR command : commands»
 					«command.compile»
 				«ENDFOR»
 			«ENDIF»
-		'''	
+		'''
+	}
+
+	def compile(AbstractCommand command) {
+		switch (command) {
+			ReadCommand: '''«command.compile»'''
+			WriteCommand: '''«command.compile»'''
+			Expression: '''«command.compile»;'''
+			IfStatement: '''«command.compile»'''
+			SwitchCaseStatement: '''«command.compile»'''
+			ForStatement: '''«command.compile»'''
+			RepeatStatement: '''«command.compile»'''
+			WhileStatement: '''«command.compile»'''
+			BreakStatement: '''break;'''
+			ReturnStatement: '''return;'''
+		}
+	}
+
+	def compile(ReadCommand readCommand) {
+		var compiledStatement = new StringBuilder()
+		if (readCommand != null && readCommand.paramList != null && readCommand.paramList.vars != null) {
+
+			compiledStatement.append('''
+				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+				String ___inputRead;	
+							
+			''')
+
+			for (currentVar : readCommand.paramList.vars) {
+
+				compiledStatement.append('''
+					___inputRead = br.readLine();
+				''')
+
+				var parentProcedure = currentVar.getContainerOfType(BlockProcedure)
+
+				if (parentProcedure != null) {
+					compileVarReadStatement(parentProcedure.declarations, currentVar, compiledStatement)
+				} else {
+					var parentFunction = currentVar.getContainerOfType(BlockFunction)
+					if (parentFunction != null) {
+						compileVarReadStatement(parentFunction.declarations, currentVar, compiledStatement)
+					} else {
+						var parentModel = currentVar.getContainerOfType(Model)
+						if (parentModel != null) {
+							compileVarReadStatement(parentModel.globalDeclarations, currentVar, compiledStatement)
+						}
+					}
+				}
+			}
+		}
+
+		return compiledStatement.toString
+	}
+
+	def compileVarReadStatement(DeclarationsBlock declarations, VarName currentVar, StringBuilder compiledStatement) {
+		if (declarations != null && declarations.vars != null) {
+			var varLists = declarations.vars
+			for (varItem : varLists) {
+				if (varItem.varDeclaration != null && varItem.varDeclaration.vars != null) {
+					var varNames = varItem.varDeclaration.vars;
+					val varType = varItem.type
+					var castType = ""
+
+					switch (varType.typeName.toUpperCase) {
+						case 'REAL': castType = 'Float.parseFloat('
+						case 'INTEIRO': castType = 'Integer.parseInt('
+						case 'LOGICO': castType = 'Boolean.parseBoolean('
+					}
+
+					for (varName : varNames) {
+						if (currentVar.name.equalsIgnoreCase(varName.name)) {
+							compiledStatement.append(
+								'''try{«varName.name» = «castType»___inputRead«IF !castType.isNullOrEmpty»)«ENDIF»;}catch(NumberFormatException nfe){System.err.println("Invalid Format!");}'''
+							)
+						}
+					}
+				}
+			}
+		}
 	}
 
 	def compile(
-		AbstractCommand command) {
-		switch (command) {
-			WriteCommand: '''System.out.print«IF command.writeCommand.equalsIgnoreCase('escreval')»ln«ENDIF»(«command.writeParam.compile»);'''
-			Expression: '''«command.compile»;'''
-		}
+		WriteCommand command) {
+		'''System.out.print«IF command.writeCommand.equalsIgnoreCase('escreval')»ln«ENDIF»(«command.writeParam.compile»);'''
+	}
+
+	def compile(WhileStatement whileStmt) {
+		'''
+			while(«whileStmt.whileExpr.compile»){
+				«whileStmt.commands.compile»
+			}
+		'''
+	}
+
+	def compile(RepeatStatement rptStmt) {
+		'''
+			do{
+				«rptStmt.commands.compile»
+			}while(«rptStmt.untilExpr.compile»);
+		'''
+	}
+
+	def compile(
+		ForStatement forStmt) {
+		'''
+			«forStmt.operatorExpr.compile» = «forStmt.startExpr.compile»;
+			while(«forStmt.operatorExpr.compile» != «forStmt.endExpr.compile»){								
+				«forStmt.commands.compile»
+				«IF forStmt.stepExpe != null»«forStmt.operatorExpr.compile» = «forStmt.stepExpe.compile»;«ELSE»«forStmt.operatorExpr.compile»++;«ENDIF»
+			}
+		'''
+	}
+
+	def compile(SwitchCaseStatement swcaseStmt) {
+		'''
+			switch(«swcaseStmt.variable.name»){
+				«FOR caseStmt : swcaseStmt.caseList»
+					«caseStmt.compile»
+				«ENDFOR»
+				«IF swcaseStmt.otherCase!=null»
+					«swcaseStmt.otherCase.compile»
+				«ENDIF»
+			}
+		'''
+	}
+
+	def compile(CaseList caseStmt) {
+		'''
+			case «caseStmt.expr.compile»:
+				«caseStmt.commands.compile»			
+		'''
+	}
+
+	def compile(OtherCase caseStmt) {
+		'''
+			default:
+				«caseStmt.otherCaseCommands.compile»			
+		'''
+	}
+
+	def compile(IfStatement ifstmt) {
+		'''
+			if(«ifstmt.expr.compile»){
+				«ifstmt.commands.compile»
+			}«IF ifstmt.elseCommands !=null»else{
+					«ifstmt.elseCommands.compile»
+			}«ENDIF»
+		'''
 	}
 
 	def compile(
 		WriteParam writeParam) {
-		'''«IF writeParam.params != null && writeParam.params.expression != null»«FOR expression : writeParam.params.expression»«expression.compile»«ENDFOR»«ENDIF»'''
+		'''«IF writeParam.params != null && writeParam.params.expression != null»«FOR expression : writeParam.params.expression»«IF writeParam.params.expression.indexOf(expression)>0»+«ENDIF»«expression.compile»«ENDFOR»«ENDIF»'''
 	}
 
 	def compile(Expression e) {
 		switch (e) {
-			BinaryOperation: '''«IF !e.op.op.equalsIgnoreCase('^')»(«e.left.compile» «e.op.compile» «e.right.compile»)«ELSE»Math.pow(«e.left.compile», «e.right.compile»)«ENDIF»'''
-			UnaryOperation: '''(«e.op.compile» «e.operand.compile»)'''
-			StringLiteral: '''«e.value»'''
+			BinaryOperation: '''«e.compile»'''
+			UnaryOperation: '''«e.compile»'''
+			StringLiteral: '''"«e.value»"'''
 			IntLiteral: '''«e.value»'''
 			FloatLiteral: '''«e.value»'''
 			PiLiteral: '''Math.PI'''
-			BooleanLiteral: '''«IF e.value.equalsIgnoreCase('verdadeiro')»true«ELSE»false«ENDIF»'''
+			BooleanLiteral: '''«e.compile»'''
 			DeclaredVar: '''«e.varName.name»'''
-			FunctionCall: '''«e.fbName.name»(«e.param.compile»)'''		
+			FunctionCall: '''«e.fbName.name»(«e.param.compile»)'''
 		}.toString
-	}	
-		
-	def compile(SubprogramParam params){
+	}
+
+	def compile(
+		BinaryOperation e) {
+		'''«IF !e.op.op.equalsIgnoreCase('^')»«e.left.compile» «e.op.compile» «e.right.compile»«ELSE»Math.pow(«e.left.compile», «e.right.compile»)«ENDIF»'''
+	}
+
+	def compile(UnaryOperation e) {
+		'''«e.op.compile» «e.operand.compile»'''
+	}
+
+	def compile(BooleanLiteral boolit) {
+		'''«IF boolit.value.equalsIgnoreCase('verdadeiro')»true«ELSE»false«ENDIF»'''
+	}
+
+	def compile(
+		SubprogramParam params) {
 		'''«IF params!=null && params.expression!=null»«FOR expression : params.expression»«IF params.expression.indexOf(expression) > 0», «ENDIF»«expression.compile»«ENDFOR»«ENDIF»'''
 	}
-	
-	def compile (Operator op){
-		switch(op.op.toUpperCase){
-			case '<-': '''='''			
-			case ('OU') : '''||'''
-			case ('XOU') : '''^'''
-			case ('E') : '''&&'''
-			case ('=') : '''=='''
-			case ('<>') : '''!='''
-			case ('MOD') : '''%'''
-			case ('NAO') : '''!'''
-			default: op.op
+
+	def compile(Operator op) {
+		switch (op.op.toUpperCase) {
+			case '<-': '''='''
+			case ('OU'): '''||'''
+			case ('XOU'): '''^'''
+			case ('E'): '''&&'''
+			case ('='): '''=='''
+			case ('<>'): '''!='''
+			case ('MOD'): '''%'''
+			case ('NAO'): '''!'''
+			default:
+				op.op
 		}
 	}
 
-	def compile(Subprograms subprograms) {		
+	def compile(Subprograms subprograms) {
 		''' 
 			«IF subprograms != null && subprograms.blockSubPrograms != null»
 				«FOR subprogram : subprograms.blockSubPrograms»
 					«subprogram.compile»
 				«ENDFOR»
 			«ENDIF»
-		'''			
+		'''
 	}
 
 	def compile(

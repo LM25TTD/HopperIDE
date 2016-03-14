@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.hopper.language.portugol.AbstractCommand;
+import org.hopper.language.portugol.DeclaredVar;
 import org.hopper.language.portugol.Expression;
 import org.hopper.language.portugol.ForStatement;
 import org.hopper.language.portugol.PortugolPackage;
@@ -50,7 +51,7 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
    * @generated
    * @ordered
    */
-  protected Expression operatorExpr;
+  protected DeclaredVar operatorExpr;
 
   /**
    * The cached value of the '{@link #getStartExpr() <em>Start Expr</em>}' containment reference.
@@ -118,7 +119,7 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getOperatorExpr()
+  public DeclaredVar getOperatorExpr()
   {
     return operatorExpr;
   }
@@ -128,9 +129,9 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetOperatorExpr(Expression newOperatorExpr, NotificationChain msgs)
+  public NotificationChain basicSetOperatorExpr(DeclaredVar newOperatorExpr, NotificationChain msgs)
   {
-    Expression oldOperatorExpr = operatorExpr;
+    DeclaredVar oldOperatorExpr = operatorExpr;
     operatorExpr = newOperatorExpr;
     if (eNotificationRequired())
     {
@@ -145,7 +146,7 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperatorExpr(Expression newOperatorExpr)
+  public void setOperatorExpr(DeclaredVar newOperatorExpr)
   {
     if (newOperatorExpr != operatorExpr)
     {
@@ -379,7 +380,7 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
     switch (featureID)
     {
       case PortugolPackage.FOR_STATEMENT__OPERATOR_EXPR:
-        setOperatorExpr((Expression)newValue);
+        setOperatorExpr((DeclaredVar)newValue);
         return;
       case PortugolPackage.FOR_STATEMENT__START_EXPR:
         setStartExpr((Expression)newValue);
@@ -409,7 +410,7 @@ public class ForStatementImpl extends AbstractCommandImpl implements ForStatemen
     switch (featureID)
     {
       case PortugolPackage.FOR_STATEMENT__OPERATOR_EXPR:
-        setOperatorExpr((Expression)null);
+        setOperatorExpr((DeclaredVar)null);
         return;
       case PortugolPackage.FOR_STATEMENT__START_EXPR:
         setStartExpr((Expression)null);

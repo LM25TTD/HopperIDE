@@ -7082,7 +7082,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
                 if ( (LA12_3==LeftParenthesis) ) {
                     alt12=3;
                 }
-                else if ( (LA12_3==EOF||LA12_3==Entao||LA12_3==Passo||LA12_3==Faca||LA12_3==MOD||(LA12_3>=XOU && LA12_3<=Ate)||(LA12_3>=LessThanSignHyphenMinus && LA12_3<=De)||LA12_3==PercentSign||(LA12_3>=RightParenthesis && LA12_3<=CircumflexAccent)) ) {
+                else if ( (LA12_3==EOF||LA12_3==Entao||LA12_3==Passo||LA12_3==Faca||LA12_3==MOD||(LA12_3>=XOU && LA12_3<=Ate)||(LA12_3>=LessThanSignHyphenMinus && LA12_3<=OU)||LA12_3==PercentSign||(LA12_3>=RightParenthesis && LA12_3<=CircumflexAccent)) ) {
                     alt12=4;
                 }
                 else {
@@ -15220,7 +15220,7 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
             // InternalPortugolParser.g:4534:1: ( rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1 )
             // InternalPortugolParser.g:4535:2: rule__ForStatement__Group__0__Impl rule__ForStatement__Group__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_7);
             rule__ForStatement__Group__0__Impl();
 
             state._fsp--;
@@ -27250,28 +27250,28 @@ public class InternalPortugolParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ForStatement__OperatorExprAssignment_1"
-    // InternalPortugolParser.g:8361:1: rule__ForStatement__OperatorExprAssignment_1 : ( ruleExpression ) ;
+    // InternalPortugolParser.g:8361:1: rule__ForStatement__OperatorExprAssignment_1 : ( ruleDeclaredVar ) ;
     public final void rule__ForStatement__OperatorExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalPortugolParser.g:8365:1: ( ( ruleExpression ) )
-            // InternalPortugolParser.g:8366:2: ( ruleExpression )
+            // InternalPortugolParser.g:8365:1: ( ( ruleDeclaredVar ) )
+            // InternalPortugolParser.g:8366:2: ( ruleDeclaredVar )
             {
-            // InternalPortugolParser.g:8366:2: ( ruleExpression )
-            // InternalPortugolParser.g:8367:3: ruleExpression
+            // InternalPortugolParser.g:8366:2: ( ruleDeclaredVar )
+            // InternalPortugolParser.g:8367:3: ruleDeclaredVar
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0()); 
+               before(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleExpression();
+            ruleDeclaredVar();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getForStatementAccess().getOperatorExprExpressionParserRuleCall_1_0()); 
+               after(grammarAccess.getForStatementAccess().getOperatorExprDeclaredVarParserRuleCall_1_0()); 
             }
 
             }
